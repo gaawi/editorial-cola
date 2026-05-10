@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#fafaf9">
+<title>Editorial/cola</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{font-family:Georgia,'Times New Roman',serif;background:#fafaf9;color:#1c1917;min-height:100vh;-webkit-font-smoothing:antialiased}
+body{padding-bottom:env(safe-area-inset-bottom)}
+button,input,textarea,select{font-family:inherit;font-size:16px}
+button{cursor:pointer;border:none;background:none;color:inherit}
+.top-header{position:sticky;top:0;z-index:100;background:white;border-bottom:1px solid #e7e5e4;padding:14px 20px;padding-top:calc(14px + env(safe-area-inset-top));display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:18px;letter-spacing:-0.02em}
+.logo strong{font-weight:bold}
+.logo span{color:#a8a29e;font-weight:300}
+.sync-indicator{display:flex;align-items:center;gap:6px;font-size:11px;color:#78716c}
+.sync-dot{width:8px;height:8px;border-radius:50%;background:#10b981}
+.sync-dot.syncing{background:#f59e0b;animation:pulse 1s infinite}
+.sync-dot.error{background:#dc2626}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+main{padding:24px 20px 100px;max-width:100%}
+.page{display:none}
+.page.active{display:block}
+.eyebrow{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#78716c;margin-bottom:8px}
+h1{font-size:28px;line-height:1.15;letter-spacing:-0.01em;color:#1c1917;font-weight:bold}
+h1 em{color:#b45309;font-style:normal}
+.subtitle{color:#57534e;font-style:italic;margin-top:8px;font-size:14px}
+.page-header{margin-bottom:24px}
+.loading,.empty{text-align:center;padding:60px 20px;color:#78716c;font-style:italic}
+.filter-tabs{display:flex;background:white;border:1px solid #e7e5e4;border-radius:8px;overflow:hidden;margin-bottom:16px}
+.filter-tab{flex:1;padding:10px;font-size:13px;color:#57534e;text-align:center;min-height:40px;transition:all 0.15s}
+.filter-tab.active{background:#1c1917;color:white}
+.ideas-list{display:flex;flex-direction:column;gap:12px}
+.idea-card{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:14px;width:100%;text-align:left;color:inherit;cursor:pointer;transition:all 0.15s;display:flex;align-items:flex-start;gap:12px}
+.idea-card:active{background:#fafaf9;transform:scale(0.99)}
+.idea-thumb{width:56px;height:56px;flex-shrink:0;border-radius:6px;overflow:hidden;background:#f5f5f4;position:relative}
+.idea-thumb img{width:100%;height:100%;object-fit:cover}
+.idea-thumb.no-img{display:flex;align-items:center;justify-content:center;font-size:22px;color:#a8a29e}
+.idea-content{flex:1;min-width:0}
+.idea-meta{display:flex;align-items:center;gap:6px;margin-bottom:5px;flex-wrap:wrap}
+.pill-dark{padding:3px 7px;background:#1c1917;color:white;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:bold;border-radius:3px}
+.format-badge{padding:3px 7px;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;font-weight:bold;border-radius:3px;background:#f5f5f4;color:#44403c}
+.format-badge.blog{background:#e0e7ff;color:#3730a3}
+.format-badge.instagram{background:linear-gradient(135deg,#fbbf24,#f43f5e,#a855f7);color:white}
+.format-badge.linkedin{background:#1d4ed8;color:white}
+.status-badge{padding:3px 7px;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;border-radius:3px}
+.status-badge.draft{background:#fef3c7;color:#78350f}
+.status-badge.idea{background:#f3e8ff;color:#6b21a8}
+.status-badge.ready{background:#d1fae5;color:#064e3b}
+.status-badge.published{background:#f5f5f4;color:#44403c}
+.status-badge.discarded{background:#fee2e2;color:#991b1b}
+.idea-title{font-size:15px;font-weight:bold;line-height:1.25;margin-bottom:4px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.idea-angle{font-size:12px;color:#57534e;font-style:italic;line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.back-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 0;font-size:14px;color:#57534e;margin-bottom:16px;min-height:44px}
+.detail-meta{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:16px;margin-bottom:16px}
+.detail-tags{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.detail-title{font-size:22px;font-weight:bold;letter-spacing:-0.01em;line-height:1.2;margin-bottom:8px}
+.detail-angle{font-size:13px;color:#57534e;font-style:italic;line-height:1.4;margin-bottom:14px}
+.detail-source{padding-top:12px;border-top:1px solid #f5f5f4;font-size:12px;color:#78716c;word-break:break-all}
+.detail-source a{color:#44403c;text-decoration:underline}
+.detail-image-wrap{background:white;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;margin-bottom:16px}
+.detail-image{width:100%;aspect-ratio:1;background:#f5f5f4}
+.detail-image img{width:100%;height:100%;object-fit:cover}
+.detail-image-empty{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#a8a29e;font-size:14px;font-style:italic}
+.detail-image-edit{padding:12px;border-top:1px solid #f5f5f4}
+.input-text{width:100%;padding:10px 12px;border:1px solid #e7e5e4;border-radius:6px;font-size:14px;background:#fafaf9}
+.input-text:focus{outline:2px solid #1c1917;background:white}
+.content-block{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:16px;margin-bottom:16px}
+.content-block-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.content-block-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:bold;color:#44403c;display:flex;align-items:center;gap:6px}
+.content-block-actions{display:flex;gap:6px}
+.small-btn{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#57534e;padding:6px 10px;border-radius:6px;background:#f5f5f4;min-height:32px}
+.small-btn:active{background:#e7e5e4}
+.small-btn.primary{background:#1c1917;color:white}
+.small-btn.primary:active{background:#292524}
+.content-text{font-size:14px;line-height:1.5;color:#292524;white-space:pre-line;padding:12px;background:#fafaf9;border-radius:6px;border:1px solid #f5f5f4}
+.content-text.empty{color:#a8a29e;font-style:italic}
+textarea.editable{width:100%;border:1px solid #d6d3d1;border-radius:6px;padding:12px;font-size:14px;line-height:1.5;resize:vertical;min-height:120px;background:white}
+textarea.editable:focus{outline:2px solid #1c1917}
+.hashtags-display{margin-top:10px;padding:10px 12px;background:#fafaf9;border-radius:6px;border:1px solid #f5f5f4;font-size:13px;color:#1d4ed8;word-break:break-word}
+.action-bar{position:fixed;bottom:76px;left:0;right:0;background:white;border-top:1px solid #e7e5e4;padding:12px 16px;z-index:90;display:none;box-shadow:0 -4px 16px rgba(0,0,0,0.04)}
+.action-buttons-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.action-btn{padding:12px 8px;border-radius:6px;font-size:13px;transition:all 0.15s;display:flex;align-items:center;justify-content:center;gap:4px;min-height:44px;font-weight:600}
+.action-btn.discard{background:white;border:1px solid #e7e5e4;color:#57534e}
+.action-btn.discard:active{background:#fafaf9}
+.action-btn.save{background:#1c1917;color:white}
+.action-btn.save:active{background:#292524}
+.action-btn.ready{background:#10b981;color:white}
+.action-btn.ready:active{background:#059669}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e7e5e4;padding:8px 0;padding-bottom:calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:space-around;z-index:100;box-shadow:0 -4px 16px rgba(0,0,0,0.04)}
+.nav-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 12px;color:#78716c;font-size:10px;letter-spacing:0.05em;flex:1;min-height:48px;position:relative;transition:color 0.15s}
+.nav-btn-icon{font-size:22px;line-height:1}
+.nav-btn.active{color:#1c1917;font-weight:bold}
+.nav-btn.active::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:24px;height:3px;background:#1c1917;border-radius:2px}
+.nav-badge{position:absolute;top:4px;right:16px;background:#f59e0b;color:white;font-size:10px;font-weight:bold;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.fab{position:fixed;right:20px;bottom:90px;width:56px;height:56px;border-radius:28px;background:#1c1917;color:white;font-size:28px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,0.2);z-index:80;transition:transform 0.15s}
+.fab:active{transform:scale(0.95)}
+.toast{position:fixed;bottom:90px;left:16px;right:16px;background:#1c1917;color:white;padding:14px 16px;border-radius:10px;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,0.3);transform:translateY(120px);opacity:0;transition:all 0.3s;z-index:200;text-align:center}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.error{background:#991b1b}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:flex-end;justify-content:center;z-index:300}
+.modal-bg.show{display:flex}
+.modal{background:white;width:100%;max-width:500px;border-radius:16px 16px 0 0;padding:20px;padding-bottom:calc(20px + env(safe-area-inset-bottom));max-height:90vh;overflow-y:auto}
+.modal h2{font-size:20px;margin-bottom:16px}
+.modal-field{margin-bottom:14px}
+.modal-label{display:block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#78716c;margin-bottom:6px;font-weight:bold}
+.modal-field select,.modal-field input,.modal-field textarea{width:100%;padding:10px 12px;border:1px solid #e7e5e4;border-radius:6px;font-size:15px;background:white;font-family:inherit}
+.modal-field textarea{min-height:80px;resize:vertical;line-height:1.5}
+.modal-actions{display:flex;gap:8px;margin-top:20px}
+.modal-actions button{flex:1;padding:12px;border-radius:6px;font-size:14px;font-weight:600;min-height:48px}
+.modal-actions .cancel{background:white;border:1px solid #e7e5e4;color:#57534e}
+.modal-actions .save{background:#1c1917;color:white}
+@media (min-width:768px){
+main{max-width:720px;margin:0 auto;padding:32px 24px 100px}
+h1{font-size:36px}
+.bottom-nav{padding:0;justify-content:center;gap:8px}
+.nav-btn{flex-direction:row;gap:8px;font-size:13px;padding:16px 20px;flex:0}
+.nav-btn-icon{font-size:16px}
+.nav-badge{position:static;margin-left:4px}
+.action-bar{bottom:16px;left:50%;transform:translateX(-50%);max-width:720px;width:calc(100% - 48px);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.15)}
+.fab{bottom:100px}
+}
+</style>
+</head>
+<body>
+<header class="top-header">
+<div class="logo"><strong>Editorial</strong><span>/cola</span></div>
+<div class="sync-indicator" id="sync-indicator"><span class="sync-dot" id="sync-dot"></span><span id="sync-text">Conectado</span></div>
+</header>
+<main>
+<section class="page active" id="page-all">
+<div class="page-header"><p class="eyebrow">Todas las ideas</p><h1>Banco editorial</h1><p class="subtitle" id="all-subtitle">Cargando…</p></div>
+<div class="filter-tabs" id="project-filter">
+<button class="filter-tab active" data-project="all">Todos</button>
+<button class="filter-tab" data-project="ADAR">ADAR</button>
+<button class="filter-tab" data-project="CreArtBox">CreArtBox</button>
+</div>
+<div class="filter-tabs" id="format-filter">
+<button class="filter-tab active" data-format="all">Todo</button>
+<button class="filter-tab" data-format="instagram">Instagram</button>
+<button class="filter-tab" data-format="linkedin">LinkedIn</button>
+<button class="filter-tab" data-format="blog">Blog</button>
+</div>
+<div class="ideas-list" id="all-list"><div class="loading">Cargando ideas…</div></div>
+</section>
+<section class="page" id="page-drafts">
+<div class="page-header"><p class="eyebrow">Por revisar</p><h1>Borradores</h1><p class="subtitle">Ideas que esperan tu revisión</p></div>
+<div class="ideas-list" id="drafts-list"><div class="loading">Cargando…</div></div>
+</section>
+<section class="page" id="page-ready">
+<div class="page-header"><p class="eyebrow">Listos</p><h1>Listos para publicar</h1><p class="subtitle">Cuando los publiques, márcalos como publicados</p></div>
+<div class="ideas-list" id="ready-list"><div class="loading">Cargando…</div></div>
+</section>
+<section class="page" id="page-archive">
+<div class="page-header"><p class="eyebrow">Archivo</p><h1>Histórico</h1><p class="subtitle">Lo que ya publicaste y lo que descartaste</p></div>
+<div class="filter-tabs">
+<button class="filter-tab active" data-archive="published">Publicados</button>
+<button class="filter-tab" data-archive="discarded">Descartados</button>
+</div>
+<div class="ideas-list" id="archive-list"><div class="loading">Cargando…</div></div>
+</section>
+<section class="page" id="page-detail">
+<button class="back-btn" id="back-btn">← Volver</button>
+<div class="detail-meta">
+<div class="detail-tags" id="detail-tags"></div>
+<h2 class="detail-title" id="detail-title"></h2>
+<p class="detail-angle" id="detail-angle"></p>
+<div class="detail-source" id="detail-source"></div>
+</div>
+<div class="detail-image-wrap">
+<div class="detail-image" id="detail-image-container"></div>
+<div class="detail-image-edit"><label class="modal-label">URL de imagen</label><input type="text" class="input-text" id="detail-image-url" placeholder="https://…"></div>
+</div>
+<div class="content-block" id="block-es">
+<div class="content-block-header"><span class="content-block-title">📝 Contenido (ES)</span><div class="content-block-actions"><button class="small-btn" id="btn-copy-es">📋 Copiar</button><button class="small-btn primary" id="btn-edit-es">✏️ Editar</button></div></div>
+<div class="content-text" id="content-es-display"></div>
+<textarea class="editable" id="content-es-edit" style="display:none;" rows="8"></textarea>
+</div>
+<div class="content-block" id="block-en">
+<div class="content-block-header"><span class="content-block-title">📝 Content (EN)</span><div class="content-block-actions"><button class="small-btn" id="btn-copy-en">📋 Copy</button><button class="small-btn primary" id="btn-edit-en">✏️ Edit</button></div></div>
+<div class="content-text" id="content-en-display"></div>
+<textarea class="editable" id="content-en-edit" style="display:none;" rows="8"></textarea>
+</div>
+<div class="content-block" id="block-hashtags">
+<div class="content-block-header"><span class="content-block-title"># Hashtags</span><div class="content-block-actions"><button class="small-btn" id="btn-copy-hashtags">📋 Copiar</button><button class="small-btn primary" id="btn-edit-hashtags">✏️ Editar</button></div></div>
+<div class="hashtags-display" id="hashtags-display"></div>
+<textarea class="editable" id="hashtags-edit" style="display:none;" rows="2"></textarea>
+</div>
+<div class="content-block">
+<div class="content-block-header"><span class="content-block-title">🗒️ Notas internas</span><button class="small-btn primary" id="btn-edit-notes">✏️ Editar</button></div>
+<div class="content-text" id="notes-display"></div>
+<textarea class="editable" id="notes-edit" style="display:none;" rows="3"></textarea>
+</div>
+<div style="height:160px;"></div>
+</section>
+</main>
+<div class="action-bar" id="action-bar">
+<div class="action-buttons-grid">
+<button class="action-btn discard" id="btn-discard">🗑️ Descartar</button>
+<button class="action-btn save" id="btn-mark-published">✓ Publicado</button>
+<button class="action-btn ready" id="btn-mark-ready">📌 Listo</button>
+</div>
+</div>
+<nav class="bottom-nav">
+<button class="nav-btn active" data-page="all"><span class="nav-btn-icon">⌂</span><span>Todas</span></button>
+<button class="nav-btn" data-page="drafts"><span class="nav-btn-icon">✏️</span><span>Borradores</span><span class="nav-badge" id="badge-drafts">0</span></button>
+<button class="nav-btn" data-page="ready"><span class="nav-btn-icon">📌</span><span>Listos</span></button>
+<button class="nav-btn" data-page="archive"><span class="nav-btn-icon">📚</span><span>Archivo</span></button>
+</nav>
+<button class="fab" id="fab" title="Crear nueva idea">+</button>
+<div class="modal-bg" id="modal-new">
+<div class="modal">
+<h2>Nueva idea</h2>
+<div class="modal-field"><label class="modal-label">Proyecto</label><select id="new-project"><option value="ADAR">ADAR</option><option value="CreArtBox">CreArtBox</option></select></div>
+<div class="modal-field"><label class="modal-label">Formato</label><select id="new-format"><option value="instagram">Instagram</option><option value="linkedin">LinkedIn</option><option value="blog">Blog</option></select></div>
+<div class="modal-field"><label class="modal-label">Título</label><input type="text" id="new-title" placeholder="Título de la idea"></div>
+<div class="modal-field"><label class="modal-label">Ángulo / Descripción breve</label><textarea id="new-angle" placeholder="¿De qué va? Una frase basta…"></textarea></div>
+<div class="modal-actions"><button class="cancel" id="modal-cancel">Cancelar</button><button class="save" id="modal-save">Guardar</button></div>
+</div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const SUPABASE_URL='https://jvozrnkbkbeoohcwpufs.supabase.co';
+const SUPABASE_KEY='sb_publishable_lKa7oozfRDiLqldme12NHA_UakU-Rc_';
+const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+let allIdeas=[],currentIdea=null,activeProject='all',activeFormat='all',activeArchive='published';
+function setSync(s,m){const d=document.getElementById('sync-dot'),t=document.getElementById('sync-text');d.className='sync-dot '+(s==='ok'?'':s);t.textContent=m}
+async function loadIdeas(){setSync('syncing','Cargando…');const{data,error}=await supabase.from('ideas').select('*').order('updated_at',{ascending:false});if(error){console.error(error);setSync('error','Error de conexión');toast('No se pudo conectar','error');return}allIdeas=data||[];setSync('ok','Conectado');renderAll();updateBadges()}
+function ideaCardHtml(i){const t=i.image_url?`<div class="idea-thumb"><img src="${i.image_url}" alt="" onerror="this.parentElement.classList.add('no-img');this.parentElement.innerHTML='${formatIcon(i.format)}';"></div>`:`<div class="idea-thumb no-img">${formatIcon(i.format)}</div>`;return`<button class="idea-card" onclick="openIdea(${i.id})">${t}<div class="idea-content"><div class="idea-meta"><span class="pill-dark">${i.project}</span><span class="format-badge ${i.format}">${formatLabel(i.format)}</span><span class="status-badge ${i.status}">${statusLabel(i.status)}</span></div><div class="idea-title">${escapeHtml(i.title||'(sin título)')}</div>${i.angle?`<div class="idea-angle">${escapeHtml(i.angle)}</div>`:''}</div></button>`}
+function formatIcon(f){return{instagram:'📱',linkedin:'💼',blog:'📰'}[f]||'📝'}
+function formatLabel(f){return{instagram:'Instagram',linkedin:'LinkedIn',blog:'Blog'}[f]||f}
+function statusLabel(s){return{draft:'Borrador',idea:'Idea',ready:'Listo',published:'Publicado',discarded:'Descartado'}[s]||s}
+function escapeHtml(t){const d=document.createElement('div');d.textContent=t||'';return d.innerHTML}
+function renderAll(){let f=allIdeas.filter(i=>i.status!=='published'&&i.status!=='discarded');if(activeProject!=='all')f=f.filter(i=>i.project===activeProject);if(activeFormat!=='all')f=f.filter(i=>i.format===activeFormat);document.getElementById('all-subtitle').textContent=`${f.length} ${f.length===1?'idea activa':'ideas activas'}`;document.getElementById('all-list').innerHTML=f.length===0?'<div class="empty">No hay ideas que coincidan</div>':f.map(ideaCardHtml).join('');const d=allIdeas.filter(i=>i.status==='draft'||i.status==='idea');document.getElementById('drafts-list').innerHTML=d.length===0?'<div class="empty">No hay borradores 🎉</div>':d.map(ideaCardHtml).join('');const r=allIdeas.filter(i=>i.status==='ready');document.getElementById('ready-list').innerHTML=r.length===0?'<div class="empty">Aún no hay nada listo</div>':r.map(ideaCardHtml).join('');const a=allIdeas.filter(i=>i.status===activeArchive);document.getElementById('archive-list').innerHTML=a.length===0?`<div class="empty">No hay ${activeArchive==='published'?'publicados':'descartados'}</div>`:a.map(ideaCardHtml).join('')}
+function updateBadges(){const d=allIdeas.filter(i=>i.status==='draft'||i.status==='idea').length,b=document.getElementById('badge-drafts');if(d===0){b.style.display='none'}else{b.style.display='flex';b.textContent=d}}
+function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+p).classList.add('active');document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));if(p!=='detail'){const b=document.querySelector(`.nav-btn[data-page="${p}"]`);if(b)b.classList.add('active')}document.getElementById('action-bar').style.display=(p==='detail')?'block':'none';document.getElementById('fab').style.display=(p==='detail')?'none':'flex';window.scrollTo(0,0)}
+document.querySelectorAll('.nav-btn[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.querySelectorAll('#project-filter .filter-tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('#project-filter .filter-tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');activeProject=t.dataset.project;renderAll()}));
+document.querySelectorAll('#format-filter .filter-tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('#format-filter .filter-tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');activeFormat=t.dataset.format;renderAll()}));
+document.querySelectorAll('[data-archive]').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('[data-archive]').forEach(x=>x.classList.remove('active'));t.classList.add('active');activeArchive=t.dataset.archive;renderAll()}));
+function openIdea(id){currentIdea=allIdeas.find(i=>i.id===id);if(!currentIdea)return;renderDetail();showPage('detail')}
+function renderDetail(){const i=currentIdea;document.getElementById('detail-tags').innerHTML=`<span class="pill-dark">${i.project}</span><span class="format-badge ${i.format}">${formatLabel(i.format)}</span><span class="status-badge ${i.status}">${statusLabel(i.status)}</span>`;document.getElementById('detail-title').textContent=i.title||'';document.getElementById('detail-angle').textContent=i.angle||'';document.getElementById('detail-source').innerHTML=i.source_url?`Fuente: <a href="${i.source_url}" target="_blank">${i.source_url}</a>`:'<span style="color:#a8a29e;font-style:italic;">Sin fuente</span>';const ic=document.getElementById('detail-image-container');if(i.image_url){ic.innerHTML=`<img src="${i.image_url}" alt="">`}else{ic.innerHTML='<div class="detail-image-empty">Sin imagen</div>'}document.getElementById('detail-image-url').value=i.image_url||'';const be=document.getElementById('block-es');if(i.project==='ADAR'||i.content_es){be.style.display='block';const d=document.getElementById('content-es-display');if(i.content_es){d.textContent=i.content_es;d.classList.remove('empty')}else{d.textContent='(vacío)';d.classList.add('empty')}}else{be.style.display='none'}const ben=document.getElementById('block-en');if(i.project==='CreArtBox'||i.content_en){ben.style.display='block';const d=document.getElementById('content-en-display');if(i.content_en){d.textContent=i.content_en;d.classList.remove('empty')}else{d.textContent='(empty)';d.classList.add('empty')}}else{ben.style.display='none'}const bh=document.getElementById('block-hashtags');if(i.format==='blog'){bh.style.display='none'}else{bh.style.display='block';document.getElementById('hashtags-display').textContent=i.hashtags||'(sin hashtags)'}const nd=document.getElementById('notes-display');if(i.notes){nd.textContent=i.notes;nd.classList.remove('empty')}else{nd.textContent='(sin notas)';nd.classList.add('empty')}const br=document.getElementById('btn-mark-ready'),bp=document.getElementById('btn-mark-published');if(i.status==='ready'){br.style.display='none'}else{br.style.display='flex'}if(i.status==='published'){bp.disabled=true;bp.style.opacity='0.5'}else{bp.disabled=false;bp.style.opacity='1'}resetEdit('es');resetEdit('en');resetEdit('hashtags');resetEdit('notes')}
+function resetEdit(f){const d=document.getElementById(`content-${f}-display`)||document.getElementById(`${f}-display`),e=document.getElementById(`content-${f}-edit`)||document.getElementById(`${f}-edit`);if(d)d.style.display='';if(e)e.style.display='none';const b=document.getElementById(`btn-edit-${f}`);if(b){b.textContent=f==='en'?'✏️ Edit':'✏️ Editar'}}
+document.getElementById('back-btn').addEventListener('click',()=>showPage('all'));
+function setupEdit(f,g,n){const b=document.getElementById(`btn-edit-${f}`);if(!b)return;b.addEventListener('click',async()=>{const d=document.getElementById(`content-${f}-display`)||document.getElementById(`${f}-display`),e=document.getElementById(`content-${f}-edit`)||document.getElementById(`${f}-edit`);const editing=e.style.display==='block';if(!editing){e.value=g()||'';d.style.display='none';e.style.display='block';e.focus();b.textContent='✓ Guardar'}else{await updateField(n,e.value);d.style.display='';e.style.display='none';b.textContent=f==='en'?'✏️ Edit':'✏️ Editar';renderDetail()}})}
+setupEdit('es',()=>currentIdea.content_es,'content_es');
+setupEdit('en',()=>currentIdea.content_en,'content_en');
+setupEdit('hashtags',()=>currentIdea.hashtags,'hashtags');
+setupEdit('notes',()=>currentIdea.notes,'notes');
+document.getElementById('detail-image-url').addEventListener('blur',async e=>{if(e.target.value!==currentIdea.image_url){await updateField('image_url',e.target.value);renderDetail()}});
+async function copyClip(t){try{await navigator.clipboard.writeText(t);toast('📋 Copiado')}catch(e){toast('No se pudo copiar','error')}}
+document.getElementById('btn-copy-es').addEventListener('click',()=>copyClip((currentIdea.content_es||'')+(currentIdea.hashtags?'\n\n'+currentIdea.hashtags:'')));
+document.getElementById('btn-copy-en').addEventListener('click',()=>copyClip((currentIdea.content_en||'')+(currentIdea.hashtags?'\n\n'+currentIdea.hashtags:'')));
+document.getElementById('btn-copy-hashtags').addEventListener('click',()=>copyClip(currentIdea.hashtags||''));
+async function updateField(f,v){setSync('syncing','Guardando…');const{error}=await supabase.from('ideas').update({[f]:v,updated_at:new Date().toISOString()}).eq('id',currentIdea.id);if(error){console.error(error);setSync('error','Error');toast('Error al guardar','error');return false}currentIdea[f]=v;const idx=allIdeas.findIndex(i=>i.id===currentIdea.id);if(idx>-1)allIdeas[idx][f]=v;setSync('ok','Guardado');setTimeout(()=>setSync('ok','Conectado'),1500);return true}
+document.getElementById('btn-mark-ready').addEventListener('click',async()=>{if(await updateField('status','ready')){toast('📌 Listo para publicar');renderAll();updateBadges();setTimeout(()=>showPage('all'),800)}});
+document.getElementById('btn-mark-published').addEventListener('click',async()=>{if(currentIdea.status==='published')return;if(!confirm('¿Confirmas que ya lo publicaste?'))return;if(await updateField('status','published')){toast('✓ Publicado');renderAll();updateBadges();setTimeout(()=>showPage('all'),800)}});
+document.getElementById('btn-discard').addEventListener('click',async()=>{if(!confirm('¿Descartar esta idea?'))return;if(await updateField('status','discarded')){toast('🗑️ Descartado');renderAll();updateBadges();setTimeout(()=>showPage('all'),800)}});
+document.getElementById('fab').addEventListener('click',()=>{document.getElementById('new-title').value='';document.getElementById('new-angle').value='';document.getElementById('modal-new').classList.add('show')});
+document.getElementById('modal-cancel').addEventListener('click',()=>document.getElementById('modal-new').classList.remove('show'));
+document.getElementById('modal-save').addEventListener('click',async()=>{const t=document.getElementById('new-title').value.trim();if(!t){toast('Ponle un título','error');return}const n={project:document.getElementById('new-project').value,format:document.getElementById('new-format').value,status:'idea',title:t,angle:document.getElementById('new-angle').value.trim()};setSync('syncing','Creando…');const{error}=await supabase.from('ideas').insert(n).select();if(error){console.error(error);setSync('error','Error');toast('Error al crear','error');return}setSync('ok','Conectado');document.getElementById('modal-new').classList.remove('show');toast('✓ Idea creada');await loadIdeas()});
+document.getElementById('modal-new').addEventListener('click',e=>{if(e.target.id==='modal-new')e.target.classList.remove('show')});
+function toast(m,t){const x=document.getElementById('toast');x.textContent=m;x.className='toast show'+(t==='error'?' error':'');setTimeout(()=>x.classList.remove('show'),3000)}
+loadIdeas();
+</script>
+</body>
+</html>

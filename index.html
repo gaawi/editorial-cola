@@ -1,1 +1,795 @@
-SEE_LOCAL_FILE
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#fafaf9">
+<title>Editorial/cola</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{font-family:Georgia,'Times New Roman',serif;background:#fafaf9;color:#1c1917;min-height:100vh;-webkit-font-smoothing:antialiased}
+body{padding-bottom:env(safe-area-inset-bottom)}
+button,input,textarea,select{font-family:inherit;font-size:16px}
+button{cursor:pointer;border:none;background:none;color:inherit}
+
+.top-header{position:sticky;top:0;z-index:100;background:white;border-bottom:1px solid #e7e5e4;padding:13px 20px;padding-top:calc(13px + env(safe-area-inset-top));display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:18px;letter-spacing:-0.02em}
+.logo strong{font-weight:bold}
+.logo span{color:#a8a29e;font-weight:300}
+.sync-indicator{display:flex;align-items:center;gap:6px;font-size:11px;color:#78716c}
+.sync-dot{width:7px;height:7px;border-radius:50%;background:#10b981;flex-shrink:0}
+.sync-dot.syncing{background:#f59e0b;animation:pulse 1s infinite}
+.sync-dot.error{background:#dc2626}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+main{padding:20px 20px 120px}
+.page{display:none}
+.page.active{display:block}
+.page-header{margin-bottom:20px}
+.eyebrow{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#78716c;margin-bottom:5px}
+h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
+.subtitle{color:#57534e;font-style:italic;margin-top:5px;font-size:14px}
+
+.stats-row{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.stats-row::-webkit-scrollbar{display:none}
+.stat-chip{flex-shrink:0;background:white;border:1px solid #e7e5e4;border-radius:20px;padding:5px 12px;font-size:12px;color:#57534e;display:flex;align-items:center;gap:5px}
+.stat-chip strong{color:#1c1917;font-size:14px}
+
+.search-bar{display:flex;gap:8px;margin-bottom:12px}
+.search-wrap{flex:1;position:relative}
+.search-wrap input{width:100%;padding:9px 12px 9px 34px;border:1px solid #e7e5e4;border-radius:8px;font-size:14px;background:white;color:#1c1917}
+.search-wrap input:focus{outline:2px solid #1c1917}
+.search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:13px;pointer-events:none}
+.sort-btn{padding:9px 12px;border:1px solid #e7e5e4;border-radius:8px;font-size:12px;background:white;color:#57534e;white-space:nowrap}
+.sort-btn:active{background:#f5f5f4}
+
+.filter-tabs{display:flex;background:white;border:1px solid #e7e5e4;border-radius:8px;overflow:hidden;margin-bottom:12px}
+.filter-tab{flex:1;padding:9px 4px;font-size:12px;color:#57534e;text-align:center;min-height:36px;transition:background 0.12s,color 0.12s;border:none;background:none;cursor:pointer}
+.filter-tab.active{background:#1c1917;color:white}
+
+.ideas-list{display:flex;flex-direction:column;gap:10px}
+.idea-card{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:14px;width:100%;text-align:left;color:inherit;cursor:pointer;transition:border-color 0.12s;display:flex;align-items:flex-start;gap:12px}
+.idea-card:active{background:#fafaf9}
+.idea-thumb{width:50px;height:50px;flex-shrink:0;border-radius:8px;background:#f5f5f4;display:flex;align-items:center;justify-content:center;font-size:22px;overflow:hidden}
+.idea-thumb img{width:100%;height:100%;object-fit:cover}
+.idea-content{flex:1;min-width:0}
+.idea-meta{display:flex;align-items:center;gap:5px;margin-bottom:5px;flex-wrap:wrap}
+.pill{padding:2px 7px;font-size:10px;letter-spacing:0.07em;text-transform:uppercase;font-weight:bold;border-radius:3px;flex-shrink:0}
+.pill-dark{background:#1c1917;color:white}
+.pill-instagram{background:linear-gradient(135deg,#fbbf24,#f43f5e,#a855f7);color:white}
+.pill-linkedin{background:#1d4ed8;color:white}
+.pill-blog{background:#e0e7ff;color:#3730a3}
+.pill-draft{background:#fef3c7;color:#78350f}
+.pill-idea{background:#f3e8ff;color:#6b21a8}
+.pill-ready{background:#d1fae5;color:#064e3b}
+.pill-published{background:#f5f5f4;color:#44403c}
+.pill-discarded{background:#fee2e2;color:#991b1b}
+.idea-title{font-size:15px;font-weight:bold;line-height:1.25;margin-bottom:3px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.idea-angle{font-size:12px;color:#57534e;font-style:italic;line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+
+.loading,.empty-state{text-align:center;padding:48px 20px;color:#78716c;font-style:italic}
+.empty-title{font-size:16px;font-weight:bold;color:#44403c;margin-bottom:6px;font-style:normal}
+.empty-text{font-size:14px}
+
+.ready-card{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:16px;margin-bottom:10px}
+.ready-preview{font-size:13px;line-height:1.5;color:#44403c;margin:10px 0;padding:10px;background:#fafaf9;border-radius:6px;border:1px solid #f5f5f4;white-space:pre-line;max-height:100px;overflow:hidden}
+.ready-btns{display:flex;gap:8px;margin-top:10px}
+.ready-btn{flex:1;padding:10px;border-radius:6px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;gap:5px}
+.ready-btn.copy{background:#f5f5f4;color:#1c1917}
+.ready-btn.done{background:#10b981;color:white}
+.ready-btn:active{opacity:0.8}
+
+.back-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 0;font-size:14px;color:#57534e;margin-bottom:16px;min-height:44px}
+.detail-card{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:16px;margin-bottom:14px}
+.detail-tags{display:flex;align-items:center;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.detail-title{font-size:22px;font-weight:bold;line-height:1.2;margin-bottom:8px}
+.detail-angle{font-size:13px;color:#57534e;font-style:italic;line-height:1.4;margin-bottom:12px}
+.detail-source{font-size:12px;color:#78716c;word-break:break-all;padding-top:12px;border-top:1px solid #f5f5f4}
+.detail-source a{color:#44403c;text-decoration:underline}
+
+.img-section{background:white;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;margin-bottom:14px}
+.img-display{width:100%;max-height:240px;background:#f5f5f4;display:flex;align-items:center;justify-content:center;color:#a8a29e;font-size:13px;font-style:italic;overflow:hidden}
+.img-display img{width:100%;max-height:240px;object-fit:cover}
+.img-input{padding:12px}
+.field-label{display:block;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#78716c;margin-bottom:5px;font-weight:bold}
+.field-input{width:100%;padding:9px 12px;border:1px solid #e7e5e4;border-radius:6px;font-size:14px;background:#fafaf9;color:#1c1917}
+.field-input:focus{outline:2px solid #1c1917;background:white}
+
+.content-block{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:16px;margin-bottom:14px}
+.block-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px}
+.block-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:bold;color:#44403c}
+.block-actions{display:flex;gap:6px;flex-shrink:0}
+.sm-btn{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#57534e;padding:6px 10px;border-radius:6px;background:#f5f5f4;min-height:32px;font-family:inherit;border:none;cursor:pointer}
+.sm-btn:active{background:#e7e5e4}
+.sm-btn.accent{background:#1c1917;color:white}
+.sm-btn.accent:active{background:#292524}
+.content-display{font-size:14px;line-height:1.6;color:#292524;white-space:pre-wrap;padding:12px;background:#fafaf9;border-radius:6px;border:1px solid #f5f5f4;min-height:44px}
+.content-display.muted{color:#a8a29e;font-style:italic}
+.hashtags-text{padding:10px 12px;background:#fafaf9;border-radius:6px;border:1px solid #f5f5f4;font-size:13px;color:#1d4ed8;word-break:break-word;line-height:1.5}
+.edit-area{display:none;margin-top:8px}
+.edit-textarea{width:100%;border:1px solid #d6d3d1;border-radius:6px;padding:12px;font-size:14px;line-height:1.6;resize:vertical;min-height:120px;background:white;font-family:inherit;color:#1c1917}
+.edit-textarea:focus{outline:2px solid #1c1917}
+.char-counter{margin-top:6px;font-size:11px;text-align:right;color:#a8a29e}
+.char-counter.warn{color:#d97706}
+.char-counter.over{color:#dc2626;font-weight:bold}
+
+.action-bar{position:fixed;bottom:62px;left:0;right:0;background:white;border-top:1px solid #e7e5e4;padding:12px 16px;z-index:90;display:none;box-shadow:0 -4px 16px rgba(0,0,0,0.06)}
+.action-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.action-btn{padding:12px 6px;border-radius:8px;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:5px;min-height:46px;font-family:inherit;border:none;cursor:pointer}
+.action-btn:active{opacity:0.75}
+.btn-discard{background:white;border:1px solid #e7e5e4;color:#57534e}
+.btn-publish{background:#1c1917;color:white}
+.btn-ready{background:#10b981;color:white}
+
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e7e5e4;padding:5px 0;padding-bottom:calc(5px + env(safe-area-inset-bottom));display:flex;z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,0.04)}
+.nav-btn{display:flex;flex-direction:column;align-items:center;gap:1px;padding:5px 4px;color:#78716c;font-size:9px;letter-spacing:0.03em;flex:1;min-height:46px;position:relative;transition:color 0.12s;text-transform:uppercase;background:none;border:none;cursor:pointer}
+.nav-icon{font-size:20px;line-height:1}
+.nav-btn.active{color:#1c1917;font-weight:bold}
+.nav-btn.active::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:24px;height:2px;background:#1c1917;border-radius:2px}
+.nav-badge{position:absolute;top:3px;right:calc(50% - 20px);background:#f59e0b;color:white;font-size:9px;font-weight:bold;min-width:15px;height:15px;border-radius:8px;display:none;align-items:center;justify-content:center;padding:0 3px}
+
+.fab{position:fixed;right:20px;bottom:72px;width:50px;height:50px;border-radius:25px;background:#1c1917;color:white;font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:80;transition:transform 0.15s;border:none;cursor:pointer}
+.fab:active{transform:scale(0.93)}
+
+.toast{position:fixed;bottom:74px;left:16px;right:16px;background:#1c1917;color:white;padding:13px 16px;border-radius:10px;font-size:14px;box-shadow:0 8px 24px rgba(0,0,0,0.2);transform:translateY(130px);opacity:0;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);z-index:200;text-align:center}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.error{background:#991b1b}
+
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:flex-end;justify-content:center;z-index:300}
+.modal-bg.show{display:flex}
+.modal{background:white;width:100%;max-width:520px;border-radius:16px 16px 0 0;padding:20px;padding-bottom:calc(20px + env(safe-area-inset-bottom));max-height:90vh;overflow-y:auto}
+.modal-handle{width:36px;height:3px;background:#e7e5e4;border-radius:2px;margin:0 auto 16px}
+.modal h2{font-size:20px;margin-bottom:16px}
+.modal-field{margin-bottom:14px}
+.modal-field label{display:block;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#78716c;margin-bottom:5px;font-weight:bold}
+.modal-field select,.modal-field input,.modal-field textarea{width:100%;padding:10px 12px;border:1px solid #e7e5e4;border-radius:8px;font-size:15px;background:white;font-family:inherit;color:#1c1917}
+.modal-field textarea{min-height:80px;resize:vertical;line-height:1.5}
+.modal-actions{display:flex;gap:8px;margin-top:20px}
+.modal-actions button{flex:1;padding:13px;border-radius:8px;font-size:15px;font-weight:600;min-height:48px;font-family:inherit;cursor:pointer;border:none}
+.modal-cancel{background:white;border:1px solid #e7e5e4 !important;color:#57534e}
+.modal-save{background:#1c1917;color:white}
+
+.gen-block{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:16px;margin-bottom:14px}
+.gen-block h3{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:bold;color:#78716c;margin-bottom:12px}
+.gen-select{width:100%;padding:10px 12px;border:1px solid #e7e5e4;border-radius:8px;font-size:15px;background:white;font-family:inherit;color:#1c1917;margin-bottom:10px}
+.gen-textarea{width:100%;padding:10px 12px;border:1px solid #e7e5e4;border-radius:8px;font-size:15px;background:white;font-family:inherit;color:#1c1917;min-height:90px;resize:vertical;line-height:1.5}
+.tone-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:4px}
+.tone-btn{padding:9px;border:1px solid #e7e5e4;border-radius:8px;font-size:13px;color:#57534e;font-family:inherit;cursor:pointer;background:white;transition:all 0.12s;text-align:center}
+.tone-btn.active{background:#1c1917;color:white;border-color:#1c1917}
+.prompt-box{background:#f5f5f4;border:1px solid #e7e5e4;border-radius:8px;padding:14px;font-size:12px;line-height:1.7;color:#292524;white-space:pre-wrap;word-break:break-word;max-height:280px;overflow-y:auto;font-family:'Courier New',monospace}
+.gen-copy-btn{width:100%;padding:14px;background:#1c1917;color:white;border-radius:8px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;border:none;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px}
+.gen-copy-btn:active{background:#292524}
+.gen-hint{background:#fef9c3;border:1px solid #fde68a;border-radius:8px;padding:12px 14px;font-size:13px;color:#713f12;line-height:1.6;margin-top:10px;display:none}
+.gen-hint.show{display:block}
+
+@media(min-width:768px){
+  main{max-width:720px;margin:0 auto;padding:28px 24px 120px}
+  h1{font-size:30px}
+  .bottom-nav{justify-content:center}
+  .nav-btn{flex-direction:row;gap:8px;font-size:12px;padding:14px 20px;flex:0;text-transform:none}
+  .nav-icon{font-size:16px}
+  .nav-badge{position:static;margin-left:2px}
+  .action-bar{bottom:16px;left:50%;transform:translateX(-50%);max-width:720px;width:calc(100% - 48px);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+  .fab{bottom:24px}
+}
+</style>
+</head>
+<body>
+
+<header class="top-header">
+  <div class="logo"><strong>Editorial</strong><span>/cola</span></div>
+  <div class="sync-indicator">
+    <span class="sync-dot" id="sync-dot"></span>
+    <span id="sync-text">Conectando…</span>
+  </div>
+</header>
+
+<main>
+
+<section class="page active" id="page-all">
+  <div class="page-header">
+    <p class="eyebrow">Banco de ideas</p>
+    <h1>Editorial/cola</h1>
+  </div>
+  <div class="stats-row" id="stats-row"></div>
+  <div class="search-bar">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="search" id="search-input" placeholder="Buscar ideas…" autocomplete="off">
+    </div>
+    <button class="sort-btn" id="sort-btn">↕ Reciente</button>
+  </div>
+  <div class="filter-tabs" id="project-filter">
+    <button class="filter-tab active" data-project="all">Todos</button>
+    <button class="filter-tab" data-project="ADAR">ADAR</button>
+    <button class="filter-tab" data-project="CreArtBox">CreArtBox</button>
+  </div>
+  <div class="filter-tabs" id="format-filter">
+    <button class="filter-tab active" data-format="all">Todo</button>
+    <button class="filter-tab" data-format="instagram">Instagram</button>
+    <button class="filter-tab" data-format="linkedin">LinkedIn</button>
+    <button class="filter-tab" data-format="blog">Blog</button>
+  </div>
+  <div class="ideas-list" id="all-list"><div class="loading">Cargando ideas…</div></div>
+</section>
+
+<section class="page" id="page-drafts">
+  <div class="page-header">
+    <p class="eyebrow">Por revisar</p>
+    <h1>Borradores</h1>
+    <p class="subtitle">Ideas pendientes de contenido o revisión</p>
+  </div>
+  <div class="ideas-list" id="drafts-list"><div class="loading">Cargando…</div></div>
+</section>
+
+<section class="page" id="page-generate">
+  <div class="page-header">
+    <p class="eyebrow">Asistente editorial</p>
+    <h1>Generar con IA</h1>
+    <p class="subtitle">Construye un prompt y pégalo en Claude o ChatGPT</p>
+  </div>
+  <div class="gen-block">
+    <h3>1 · Configura</h3>
+    <label class="field-label">Proyecto</label>
+    <select class="gen-select" id="gen-project">
+      <option value="ADAR">Festival ADAR (español)</option>
+      <option value="CreArtBox">CreArtBox (inglés)</option>
+    </select>
+    <label class="field-label">Formato</label>
+    <select class="gen-select" id="gen-format">
+      <option value="instagram">Instagram</option>
+      <option value="linkedin">LinkedIn</option>
+      <option value="blog">Blog / artículo</option>
+    </select>
+    <label class="field-label">Tono</label>
+    <div class="tone-grid" id="gen-tone">
+      <button class="tone-btn active" data-tone="inspirador">✨ Inspirador</button>
+      <button class="tone-btn" data-tone="educativo">📚 Educativo</button>
+      <button class="tone-btn" data-tone="cercano">💬 Cercano</button>
+      <button class="tone-btn" data-tone="profesional">💼 Profesional</button>
+    </div>
+  </div>
+  <div class="gen-block">
+    <h3>2 · El tema</h3>
+    <label class="field-label">¿Sobre qué quieres publicar?</label>
+    <textarea class="gen-textarea" id="gen-topic" placeholder="Ej: Los beneficios de la improvisación teatral para la comunicación en equipos de trabajo…"></textarea>
+  </div>
+  <div class="gen-block">
+    <h3>3 · Tu prompt</h3>
+    <div class="prompt-box" id="prompt-box">Escribe el tema arriba para generar el prompt…</div>
+    <button class="gen-copy-btn" id="gen-copy-btn">📋 Copiar prompt completo</button>
+    <div class="gen-hint" id="gen-hint">
+      <strong>✅ Prompt copiado.</strong> Ahora:<br>
+      1. Abre <strong>claude.ai</strong> o <strong>chatgpt.com</strong><br>
+      2. Pega el prompt y envíalo<br>
+      3. Copia la respuesta y crea una nueva idea con el botón <strong>+</strong>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="page-ready">
+  <div class="page-header">
+    <p class="eyebrow">Para publicar</p>
+    <h1>Listos</h1>
+    <p class="subtitle">Copia el contenido, publica y marca como hecho</p>
+  </div>
+  <div id="ready-list"><div class="loading">Cargando…</div></div>
+</section>
+
+<section class="page" id="page-archive">
+  <div class="page-header">
+    <p class="eyebrow">Historial</p>
+    <h1>Archivo</h1>
+    <p class="subtitle">Publicados y descartados</p>
+  </div>
+  <div class="filter-tabs">
+    <button class="filter-tab active" data-archive="published">Publicados</button>
+    <button class="filter-tab" data-archive="discarded">Descartados</button>
+  </div>
+  <div class="ideas-list" id="archive-list"><div class="loading">Cargando…</div></div>
+</section>
+
+<section class="page" id="page-detail">
+  <button class="back-btn" id="back-btn">← Volver</button>
+  <div class="detail-card">
+    <div class="detail-tags" id="detail-tags"></div>
+    <h2 class="detail-title" id="detail-title"></h2>
+    <p class="detail-angle" id="detail-angle"></p>
+    <div class="detail-source" id="detail-source"></div>
+  </div>
+  <div class="img-section">
+    <div class="img-display" id="img-display">Sin imagen</div>
+    <div class="img-input">
+      <label class="field-label">URL de imagen</label>
+      <input type="text" class="field-input" id="detail-img-url" placeholder="https://…">
+    </div>
+  </div>
+  <div class="content-block" id="block-es">
+    <div class="block-head">
+      <span class="block-title">📝 Contenido (ES)</span>
+      <div class="block-actions">
+        <button class="sm-btn" id="btn-copy-es">📋 Copiar</button>
+        <button class="sm-btn accent" id="btn-edit-es">✏️ Editar</button>
+      </div>
+    </div>
+    <div class="content-display muted" id="content-es-display">(vacío)</div>
+    <div class="edit-area" id="edit-area-es">
+      <textarea class="edit-textarea" id="content-es-edit" rows="8" oninput="updateCounter(this,'es')"></textarea>
+      <div class="char-counter" id="counter-es"></div>
+    </div>
+  </div>
+  <div class="content-block" id="block-en">
+    <div class="block-head">
+      <span class="block-title">📝 Content (EN)</span>
+      <div class="block-actions">
+        <button class="sm-btn" id="btn-copy-en">📋 Copy</button>
+        <button class="sm-btn accent" id="btn-edit-en">✏️ Edit</button>
+      </div>
+    </div>
+    <div class="content-display muted" id="content-en-display">(empty)</div>
+    <div class="edit-area" id="edit-area-en">
+      <textarea class="edit-textarea" id="content-en-edit" rows="8" oninput="updateCounter(this,'en')"></textarea>
+      <div class="char-counter" id="counter-en"></div>
+    </div>
+  </div>
+  <div class="content-block" id="block-hashtags">
+    <div class="block-head">
+      <span class="block-title"># Hashtags</span>
+      <div class="block-actions">
+        <button class="sm-btn" id="btn-copy-hashtags">📋 Copiar</button>
+        <button class="sm-btn accent" id="btn-edit-hashtags">✏️ Editar</button>
+      </div>
+    </div>
+    <div class="hashtags-text" id="hashtags-display"></div>
+    <div class="edit-area" id="edit-area-hashtags">
+      <textarea class="edit-textarea" id="hashtags-edit" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="content-block">
+    <div class="block-head">
+      <span class="block-title">🗒️ Notas internas</span>
+      <button class="sm-btn accent" id="btn-edit-notes">✏️ Editar</button>
+    </div>
+    <div class="content-display muted" id="notes-display">(sin notas)</div>
+    <div class="edit-area" id="edit-area-notes">
+      <textarea class="edit-textarea" id="notes-edit" rows="3"></textarea>
+    </div>
+  </div>
+  <div style="height:160px"></div>
+</section>
+
+</main>
+
+<div class="action-bar" id="action-bar">
+  <div class="action-grid">
+    <button class="action-btn btn-discard" id="btn-discard">🗑️ Descartar</button>
+    <button class="action-btn btn-publish" id="btn-mark-published">✓ Publicado</button>
+    <button class="action-btn btn-ready" id="btn-mark-ready">📌 Listo</button>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <button class="nav-btn active" data-page="all"><span class="nav-icon">⌂</span><span>Todas</span></button>
+  <button class="nav-btn" data-page="drafts"><span class="nav-icon">✏️</span><span>Borradores</span><span class="nav-badge" id="badge-drafts"></span></button>
+  <button class="nav-btn" data-page="generate"><span class="nav-icon">⚡</span><span>Generar</span></button>
+  <button class="nav-btn" data-page="ready"><span class="nav-icon">📌</span><span>Listos</span><span class="nav-badge" id="badge-ready"></span></button>
+  <button class="nav-btn" data-page="archive"><span class="nav-icon">📚</span><span>Archivo</span></button>
+</nav>
+
+<button class="fab" id="fab">+</button>
+
+<div class="modal-bg" id="modal-new">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <h2>Nueva idea</h2>
+    <div class="modal-field"><label>Proyecto</label><select id="new-project"><option value="ADAR">Festival ADAR</option><option value="CreArtBox">CreArtBox</option></select></div>
+    <div class="modal-field"><label>Formato</label><select id="new-format"><option value="instagram">Instagram</option><option value="linkedin">LinkedIn</option><option value="blog">Blog</option></select></div>
+    <div class="modal-field"><label>Título</label><input type="text" id="new-title" placeholder="Título de la idea"></div>
+    <div class="modal-field"><label>Ángulo / Descripción breve</label><textarea id="new-angle" placeholder="¿De qué va? Una frase basta…"></textarea></div>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="modal-cancel">Cancelar</button>
+      <button class="modal-save" id="modal-save">Guardar idea</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const SUPABASE_URL = 'https://jvozrnkbkbeoohcwpufs.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_lKa7oozfRDiLqldme12NHA_UakU-Rc_';
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let ideas = [], current = null, prevPage = 'all';
+let activeProject = 'all', activeFormat = 'all', activeArchive = 'published';
+let activeSort = 'recent', searchQuery = '';
+const CHAR_LIMITS = { instagram: 2200, linkedin: 3000, blog: 0 };
+
+function setSync(state, msg) {
+  document.getElementById('sync-dot').className = 'sync-dot' + (state === 'ok' ? '' : ' ' + state);
+  document.getElementById('sync-text').textContent = msg;
+}
+
+async function loadIdeas() {
+  setSync('syncing', 'Cargando…');
+  const { data, error } = await sb.from('ideas').select('*').order('updated_at', { ascending: false });
+  if (error) {
+    console.error(error);
+    setSync('error', 'Error de conexión');
+    toast('No se pudo conectar a Supabase', 'error');
+    return;
+  }
+  ideas = data || [];
+  setSync('ok', 'Conectado');
+  renderAll();
+  updateBadges();
+  updateStats();
+}
+
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-btn[data-page]').forEach(b => b.classList.remove('active'));
+  const nb = document.querySelector(`.nav-btn[data-page="${page}"]`);
+  if (nb) nb.classList.add('active');
+  const isDetail = page === 'detail';
+  document.getElementById('action-bar').style.display = isDetail ? 'block' : 'none';
+  document.getElementById('fab').style.display = isDetail ? 'none' : 'flex';
+  if (!isDetail) prevPage = page;
+  window.scrollTo(0, 0);
+}
+
+document.querySelectorAll('.nav-btn[data-page]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.page)));
+document.getElementById('back-btn').addEventListener('click', () => showPage(prevPage));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('page-detail').classList.contains('active')) showPage(prevPage);
+});
+
+function getFiltered() {
+  let list = ideas.filter(i => i.status !== 'published' && i.status !== 'discarded');
+  if (activeProject !== 'all') list = list.filter(i => i.project === activeProject);
+  if (activeFormat !== 'all') list = list.filter(i => i.format === activeFormat);
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    list = list.filter(i => (i.title || '').toLowerCase().includes(q) || (i.angle || '').toLowerCase().includes(q));
+  }
+  if (activeSort === 'oldest') list = [...list].sort((a, b) => new Date(a.updated_at) - new Date(b.updated_at));
+  else if (activeSort === 'az') list = [...list].sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+  return list;
+}
+
+function renderAll() {
+  const filtered = getFiltered();
+  const noMatch = (activeProject !== 'all' || activeFormat !== 'all' || searchQuery) ? 'Prueba con otros filtros' : 'Crea tu primera idea con el botón +';
+  document.getElementById('all-list').innerHTML = filtered.length ? filtered.map(ideaCardHtml).join('') : emptyHtml('Sin ideas activas', noMatch);
+  const drafts = ideas.filter(i => i.status === 'draft' || i.status === 'idea');
+  document.getElementById('drafts-list').innerHTML = drafts.length ? drafts.map(ideaCardHtml).join('') : emptyHtml('Sin borradores', 'Crea una idea nueva con el botón +');
+  const ready = ideas.filter(i => i.status === 'ready');
+  document.getElementById('ready-list').innerHTML = ready.length ? ready.map(readyCardHtml).join('') : emptyHtml('Nada listo aún', 'Abre una idea y pulsa 📌 Listo');
+  const archive = ideas.filter(i => i.status === activeArchive);
+  document.getElementById('archive-list').innerHTML = archive.length ? archive.map(ideaCardHtml).join('') : emptyHtml(activeArchive === 'published' ? 'Sin publicados' : 'Sin descartados', '');
+}
+
+function updateStats() {
+  const a = ideas.filter(i => i.status !== 'published' && i.status !== 'discarded').length;
+  const d = ideas.filter(i => i.status === 'draft' || i.status === 'idea').length;
+  const r = ideas.filter(i => i.status === 'ready').length;
+  const p = ideas.filter(i => i.status === 'published').length;
+  document.getElementById('stats-row').innerHTML =
+    `<div class="stat-chip"><strong>${a}</strong> activas</div><div class="stat-chip"><strong>${d}</strong> borradores</div><div class="stat-chip"><strong>${r}</strong> listas</div><div class="stat-chip"><strong>${p}</strong> publicadas</div>`;
+}
+
+function updateBadges() {
+  const d = ideas.filter(i => i.status === 'draft' || i.status === 'idea').length;
+  const r = ideas.filter(i => i.status === 'ready').length;
+  const db = document.getElementById('badge-drafts');
+  const rb = document.getElementById('badge-ready');
+  db.style.display = d ? 'flex' : 'none'; if (d) db.textContent = d;
+  rb.style.display = r ? 'flex' : 'none'; if (r) rb.textContent = r;
+}
+
+function ideaCardHtml(i) {
+  const thumb = i.image_url
+    ? `<div class="idea-thumb"><img src="${esc(i.image_url)}" alt="" loading="lazy"></div>`
+    : `<div class="idea-thumb">${fmtIcon(i.format)}</div>`;
+  return `<button class="idea-card" onclick="openIdea(${i.id})">${thumb}<div class="idea-content"><div class="idea-meta"><span class="pill pill-dark">${esc(i.project)}</span><span class="pill pill-${i.format}">${fmtLabel(i.format)}</span><span class="pill pill-${i.status}">${statusLabel(i.status)}</span></div><div class="idea-title">${esc(i.title || '(sin título)')}</div>${i.angle ? `<div class="idea-angle">${esc(i.angle)}</div>` : ''}</div></button>`;
+}
+
+function readyCardHtml(i) {
+  const body = i.project === 'ADAR' ? i.content_es : i.content_en;
+  const preview = body ? body.substring(0, 140) + (body.length > 140 ? '…' : '') : '';
+  return `<div class="ready-card"><div class="idea-meta"><span class="pill pill-dark">${esc(i.project)}</span><span class="pill pill-${i.format}">${fmtLabel(i.format)}</span></div><div class="idea-title" style="font-size:16px;margin-top:8px">${esc(i.title || '(sin título)')}</div>${preview ? `<div class="ready-preview">${esc(preview)}</div>` : ''}<div class="ready-btns"><button class="ready-btn copy" onclick="copyReady(${i.id})">📋 Copiar contenido</button><button class="ready-btn done" onclick="quickPublish(${i.id})">✓ Publicado</button></div></div>`;
+}
+
+function emptyHtml(title, text) {
+  return `<div class="empty-state"><div class="empty-title">${title}</div>${text ? `<div class="empty-text">${text}</div>` : ''}</div>`;
+}
+
+function openIdea(id) {
+  current = ideas.find(i => i.id === id);
+  if (!current) return;
+  renderDetail();
+  showPage('detail');
+}
+
+function renderDetail() {
+  const i = current;
+  document.getElementById('detail-tags').innerHTML = `<span class="pill pill-dark">${esc(i.project)}</span><span class="pill pill-${i.format}">${fmtLabel(i.format)}</span><span class="pill pill-${i.status}">${statusLabel(i.status)}</span>`;
+  document.getElementById('detail-title').textContent = i.title || '';
+  document.getElementById('detail-angle').textContent = i.angle || '';
+  document.getElementById('detail-source').innerHTML = i.source_url ? `Fuente: <a href="${esc(i.source_url)}" target="_blank" rel="noopener">${esc(i.source_url)}</a>` : '<span style="color:#a8a29e;font-style:italic">Sin fuente</span>';
+  const imgDisp = document.getElementById('img-display');
+  imgDisp.innerHTML = i.image_url ? `<img src="${esc(i.image_url)}" alt="">` : 'Sin imagen';
+  document.getElementById('detail-img-url').value = i.image_url || '';
+  document.getElementById('block-es').style.display = (i.project === 'ADAR' || i.content_es) ? 'block' : 'none';
+  document.getElementById('block-en').style.display = (i.project === 'CreArtBox' || i.content_en) ? 'block' : 'none';
+  document.getElementById('block-hashtags').style.display = i.format === 'blog' ? 'none' : 'block';
+  setDisplay('content-es-display', i.content_es, '(vacío — haz clic en Editar para añadir)');
+  setDisplay('content-en-display', i.content_en, '(empty — click Edit to add)');
+  document.getElementById('hashtags-display').textContent = i.hashtags || '(sin hashtags)';
+  setDisplay('notes-display', i.notes, '(sin notas)');
+  document.getElementById('btn-mark-ready').style.display = i.status === 'ready' ? 'none' : 'flex';
+  const pb = document.getElementById('btn-mark-published');
+  pb.disabled = i.status === 'published';
+  pb.style.opacity = i.status === 'published' ? '0.5' : '1';
+  ['es', 'en', 'hashtags', 'notes'].forEach(resetEditField);
+}
+
+function setDisplay(id, val, placeholder) {
+  const el = document.getElementById(id);
+  if (val) { el.textContent = val; el.classList.remove('muted'); }
+  else { el.textContent = placeholder; el.classList.add('muted'); }
+}
+
+function resetEditField(field) {
+  const display = document.getElementById(`content-${field}-display`) || document.getElementById(`${field}-display`);
+  const area = document.getElementById(`edit-area-${field}`);
+  const btn = document.getElementById(`btn-edit-${field}`);
+  if (display) display.style.display = '';
+  if (area) area.style.display = 'none';
+  if (btn) btn.textContent = field === 'en' ? '✏️ Edit' : '✏️ Editar';
+}
+
+function setupEdit(field, getter, dbField) {
+  const btn = document.getElementById(`btn-edit-${field}`);
+  if (!btn) return;
+  btn.addEventListener('click', async () => {
+    const display = document.getElementById(`content-${field}-display`) || document.getElementById(`${field}-display`);
+    const area = document.getElementById(`edit-area-${field}`);
+    const ta = document.getElementById(`content-${field}-edit`) || document.getElementById(`${field}-edit`);
+    const editing = area.style.display === 'block';
+    if (!editing) {
+      ta.value = getter() || '';
+      display.style.display = 'none';
+      area.style.display = 'block';
+      ta.focus();
+      btn.textContent = '✓ Guardar';
+      if (field === 'es' || field === 'en') updateCounter(ta, field);
+    } else {
+      if (await updateField(dbField, ta.value)) {
+        display.style.display = '';
+        area.style.display = 'none';
+        btn.textContent = field === 'en' ? '✏️ Edit' : '✏️ Editar';
+        renderDetail();
+      }
+    }
+  });
+}
+
+function updateCounter(ta, field) {
+  const counter = document.getElementById(`counter-${field}`);
+  if (!counter || !current) return;
+  const limit = CHAR_LIMITS[current.format] || 0;
+  if (!limit) { counter.textContent = ''; return; }
+  const len = ta.value.length;
+  counter.textContent = `${len.toLocaleString()} / ${limit.toLocaleString()} caracteres`;
+  const pct = len / limit;
+  counter.className = 'char-counter' + (pct > 1 ? ' over' : pct > 0.9 ? ' warn' : '');
+}
+
+async function updateField(field, value) {
+  setSync('syncing', 'Guardando…');
+  const { error } = await sb.from('ideas').update({ [field]: value, updated_at: new Date().toISOString() }).eq('id', current.id);
+  if (error) { console.error(error); setSync('error', 'Error'); toast('No se pudo guardar', 'error'); return false; }
+  current[field] = value;
+  const idx = ideas.findIndex(i => i.id === current.id);
+  if (idx > -1) ideas[idx][field] = value;
+  setSync('ok', 'Guardado ✓');
+  setTimeout(() => setSync('ok', 'Conectado'), 2000);
+  return true;
+}
+
+setupEdit('es', () => current.content_es, 'content_es');
+setupEdit('en', () => current.content_en, 'content_en');
+setupEdit('hashtags', () => current.hashtags, 'hashtags');
+setupEdit('notes', () => current.notes, 'notes');
+
+document.getElementById('detail-img-url').addEventListener('blur', async e => {
+  if (current && e.target.value !== current.image_url) { await updateField('image_url', e.target.value); renderDetail(); }
+});
+
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); toast('📋 Copiado al portapapeles'); }
+  catch { toast('No se pudo copiar', 'error'); }
+}
+
+document.getElementById('btn-copy-es').addEventListener('click', () => copyText((current.content_es || '') + (current.hashtags ? '\n\n' + current.hashtags : '')));
+document.getElementById('btn-copy-en').addEventListener('click', () => copyText((current.content_en || '') + (current.hashtags ? '\n\n' + current.hashtags : '')));
+document.getElementById('btn-copy-hashtags').addEventListener('click', () => copyText(current.hashtags || ''));
+
+document.getElementById('btn-mark-ready').addEventListener('click', async () => {
+  if (await updateField('status', 'ready')) { toast('📌 Listo para publicar'); renderAll(); updateBadges(); updateStats(); setTimeout(() => showPage('ready'), 700); }
+});
+document.getElementById('btn-mark-published').addEventListener('click', async () => {
+  if (current.status === 'published') return;
+  if (!confirm('¿Confirmas que ya lo publicaste?')) return;
+  if (await updateField('status', 'published')) { toast('✓ Publicado'); renderAll(); updateBadges(); updateStats(); setTimeout(() => showPage('archive'), 700); }
+});
+document.getElementById('btn-discard').addEventListener('click', async () => {
+  if (!confirm('¿Descartar esta idea?')) return;
+  if (await updateField('status', 'discarded')) { toast('🗑️ Descartada'); renderAll(); updateBadges(); updateStats(); setTimeout(() => showPage(prevPage), 700); }
+});
+
+async function copyReady(id) {
+  const idea = ideas.find(i => i.id === id);
+  if (!idea) return;
+  const body = idea.project === 'ADAR' ? idea.content_es : idea.content_en;
+  copyText((body || idea.title || '') + (idea.hashtags ? '\n\n' + idea.hashtags : ''));
+}
+
+async function quickPublish(id) {
+  const idea = ideas.find(i => i.id === id);
+  if (!idea || !confirm(`¿Confirmas que publicaste "${idea.title}"?`)) return;
+  const { error } = await sb.from('ideas').update({ status: 'published', updated_at: new Date().toISOString() }).eq('id', id);
+  if (error) { toast('Error al actualizar', 'error'); return; }
+  idea.status = 'published';
+  toast('✓ Publicado');
+  renderAll(); updateBadges(); updateStats();
+}
+
+document.querySelectorAll('#project-filter .filter-tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('#project-filter .filter-tab').forEach(x => x.classList.remove('active'));
+  t.classList.add('active'); activeProject = t.dataset.project; renderAll();
+}));
+document.querySelectorAll('#format-filter .filter-tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('#format-filter .filter-tab').forEach(x => x.classList.remove('active'));
+  t.classList.add('active'); activeFormat = t.dataset.format; renderAll();
+}));
+document.querySelectorAll('[data-archive]').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('[data-archive]').forEach(x => x.classList.remove('active'));
+  t.classList.add('active'); activeArchive = t.dataset.archive; renderAll();
+}));
+
+const SORT_CYCLE = ['recent', 'oldest', 'az'];
+const SORT_LABELS = { recent: '↕ Reciente', oldest: '↕ Antiguo', az: '↕ A–Z' };
+document.getElementById('sort-btn').addEventListener('click', () => {
+  activeSort = SORT_CYCLE[(SORT_CYCLE.indexOf(activeSort) + 1) % 3];
+  document.getElementById('sort-btn').textContent = SORT_LABELS[activeSort];
+  renderAll();
+});
+
+let searchTimer;
+document.getElementById('search-input').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => { searchQuery = e.target.value.trim(); renderAll(); }, 200);
+});
+
+document.getElementById('fab').addEventListener('click', () => {
+  document.getElementById('new-title').value = '';
+  document.getElementById('new-angle').value = '';
+  document.getElementById('modal-new').classList.add('show');
+});
+document.getElementById('modal-cancel').addEventListener('click', () => document.getElementById('modal-new').classList.remove('show'));
+document.getElementById('modal-new').addEventListener('click', e => { if (e.target.id === 'modal-new') e.target.classList.remove('show'); });
+document.getElementById('modal-save').addEventListener('click', async () => {
+  const title = document.getElementById('new-title').value.trim();
+  if (!title) { toast('El título es obligatorio', 'error'); return; }
+  setSync('syncing', 'Creando…');
+  const { error } = await sb.from('ideas').insert({
+    project: document.getElementById('new-project').value,
+    format: document.getElementById('new-format').value,
+    status: 'idea', title,
+    angle: document.getElementById('new-angle').value.trim(),
+  });
+  if (error) { console.error(error); setSync('error', 'Error'); toast('Error al crear', 'error'); return; }
+  setSync('ok', 'Conectado');
+  document.getElementById('modal-new').classList.remove('show');
+  toast('✓ Idea creada');
+  await loadIdeas();
+});
+
+const PROJECT_DATA = {
+  ADAR: { name: 'Festival ADAR', desc: 'festival de artes escénicas en español (festivaladar.com)', lang: 'español' },
+  CreArtBox: { name: 'CreArtBox', desc: 'art and creativity brand based in NYC (creartbox.nyc)', lang: 'English' }
+};
+const FMT_ES = {
+  instagram: '- Post de Instagram\n- Entre 800 y 1500 caracteres\n- Usa emojis estratégicamente\n- CTA al final\n- Entre 10 y 15 hashtags relevantes',
+  linkedin: '- Post de LinkedIn\n- Entre 600 y 1200 caracteres\n- Tono profesional pero cercano\n- Máximo 5 hashtags al final',
+  blog: '- Artículo de blog\n- Título SEO optimizado\n- Introducción de gancho (100-150 palabras)\n- 3-5 secciones con subtítulos H2\n- Conclusión con CTA\n- Meta descripción de 160 caracteres'
+};
+const FMT_EN = {
+  instagram: '- Instagram post\n- 800 to 1500 characters\n- Use emojis strategically\n- Strong CTA at the end\n- 10 to 15 relevant hashtags',
+  linkedin: '- LinkedIn post\n- 600 to 1200 characters\n- Professional but approachable tone\n- Up to 5 hashtags at the end',
+  blog: '- Blog article\n- SEO-optimized title\n- Hook introduction (100-150 words)\n- 3-5 sections with H2 headings\n- Conclusion with CTA\n- 160-character meta description'
+};
+
+function buildPrompt() {
+  const project = document.getElementById('gen-project').value;
+  const format = document.getElementById('gen-format').value;
+  const topic = (document.getElementById('gen-topic').value || '').trim();
+  const toneEl = document.querySelector('#gen-tone .tone-btn.active');
+  const tone = toneEl ? toneEl.dataset.tone : 'inspirador';
+  if (!topic) return 'Escribe el tema arriba para generar el prompt…';
+  const p = PROJECT_DATA[project];
+  const isES = project === 'ADAR';
+  if (isES) {
+    return `Eres un experto en marketing de contenidos para ${p.name}, un ${p.desc}.
+
+TEMA: ${topic}
+TONO: ${tone}
+FORMATO:
+${FMT_ES[format]}
+
+Genera el contenido en ${p.lang} y responde con este formato exacto:
+
+TÍTULO: [título corto para identificar esta idea]
+ÁNGULO: [una frase que describe el enfoque único]
+CONTENIDO:
+[el contenido completo listo para publicar]
+HASHTAGS:
+[hashtags separados por espacios]`;
+  } else {
+    return `You are a content marketing expert for ${p.name}, an ${p.desc}.
+
+TOPIC: ${topic}
+TONE: ${tone}
+FORMAT:
+${FMT_EN[format]}
+
+Generate the content in ${p.lang} and respond with this exact format:
+
+TITLE: [short title to identify this idea]
+ANGLE: [one sentence describing the unique approach]
+CONTENT:
+[the full content ready to publish]
+HASHTAGS:
+[hashtags separated by spaces]`;
+  }
+}
+
+function refreshPrompt() { document.getElementById('prompt-box').textContent = buildPrompt(); }
+
+document.getElementById('gen-topic').addEventListener('input', refreshPrompt);
+document.getElementById('gen-project').addEventListener('change', refreshPrompt);
+document.getElementById('gen-format').addEventListener('change', refreshPrompt);
+document.querySelectorAll('#gen-tone .tone-btn').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#gen-tone .tone-btn').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); refreshPrompt();
+}));
+document.getElementById('gen-copy-btn').addEventListener('click', async () => {
+  const prompt = buildPrompt();
+  if (prompt.startsWith('Escribe')) { toast('Escribe el tema primero', 'error'); return; }
+  await copyText(prompt);
+  document.getElementById('gen-hint').classList.add('show');
+});
+
+function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+function fmtIcon(f) { return { instagram: '📱', linkedin: '💼', blog: '📰' }[f] || '📝'; }
+function fmtLabel(f) { return { instagram: 'Instagram', linkedin: 'LinkedIn', blog: 'Blog' }[f] || f; }
+function statusLabel(s) { return { draft: 'Borrador', idea: 'Idea', ready: 'Listo', published: 'Publicado', discarded: 'Descartado' }[s] || s; }
+
+let toastTimer;
+function toast(msg, type) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast show' + (type === 'error' ? ' error' : '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+loadIdeas();
+</script>
+</body>
+</html>

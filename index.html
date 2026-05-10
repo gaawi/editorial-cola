@@ -349,6 +349,19 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
   </div>
 </div>
 
+<div class="modal-bg" id="modal-discard">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <h2>¿Por qué descartamos esta idea?</h2>
+    <p style="font-size:13px;color:#78716c;margin:-8px 0 16px">Tu respuesta me ayudará a mejorar los próximos posts.</p>
+    <div class="modal-field"><label>Motivo</label><textarea id="discard-reason" placeholder="Ej: el tono no encajaba, ya publicamos algo similar, faltaba imagen…" style="min-height:100px"></textarea></div>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="discard-cancel">Cancelar</button>
+      <button class="modal-save" style="background:#991b1b" id="discard-confirm">Descartar</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -591,9 +604,22 @@ document.getElementById('btn-mark-published').addEventListener('click', async ()
   if (!confirm('¿Confirmas que ya lo publicaste?')) return;
   if (await updateField('status', 'published')) { toast('✓ Publicado'); renderAll(); updateBadges(); updateStats(); setTimeout(() => showPage('archive'), 700); }
 });
-document.getElementById('btn-discard').addEventListener('click', async () => {
-  if (!confirm('¿Descartar esta idea?')) return;
-  if (await updateField('status', 'discarded')) { toast('🗑️ Descartada'); renderAll(); updateBadges(); updateStats(); setTimeout(() => showPage(prevPage), 700); }
+document.getElementById('btn-discard').addEventListener('click', () => {
+  document.getElementById('discard-reason').value = '';
+  document.getElementById('modal-discard').classList.add('show');
+});
+document.getElementById('discard-cancel').addEventListener('click', () => document.getElementById('modal-discard').classList.remove('show'));
+document.getElementById('modal-discard').addEventListener('click', e => { if (e.target.id === 'modal-discard') e.target.classList.remove('show'); });
+document.getElementById('discard-confirm').addEventListener('click', async () => {
+  const reason = document.getElementById('discard-reason').value.trim();
+  document.getElementById('modal-discard').classList.remove('show');
+  const id = current.id;
+  const { error } = await sb.from('ideas').update({ status: 'discarded', notes: reason || null, updated_at: new Date().toISOString() }).eq('id', id);
+  if (!error) {
+    const idx = ideas.findIndex(i => i.id === id);
+    if (idx !== -1) { ideas[idx].status = 'discarded'; ideas[idx].notes = reason || null; }
+    toast('🗑️ Descartada'); renderAll(); updateBadges(); updateStats(); setTimeout(() => showPage(prevPage), 700);
+  } else { toast('Error al descartar', 'error'); }
 });
 
 async function copyReady(id) {

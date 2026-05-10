@@ -151,18 +151,19 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 .modal-cancel{background:white;border:1px solid #e7e5e4 !important;color:#57534e}
 .modal-save{background:#1c1917;color:white}
 
-.gen-block{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:16px;margin-bottom:14px}
-.gen-block h3{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:bold;color:#78716c;margin-bottom:12px}
-.gen-select{width:100%;padding:10px 12px;border:1px solid #e7e5e4;border-radius:8px;font-size:15px;background:white;font-family:inherit;color:#1c1917;margin-bottom:10px}
-.gen-textarea{width:100%;padding:10px 12px;border:1px solid #e7e5e4;border-radius:8px;font-size:15px;background:white;font-family:inherit;color:#1c1917;min-height:90px;resize:vertical;line-height:1.5}
-.tone-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:4px}
-.tone-btn{padding:9px;border:1px solid #e7e5e4;border-radius:8px;font-size:13px;color:#57534e;font-family:inherit;cursor:pointer;background:white;transition:all 0.12s;text-align:center}
-.tone-btn.active{background:#1c1917;color:white;border-color:#1c1917}
-.prompt-box{background:#f5f5f4;border:1px solid #e7e5e4;border-radius:8px;padding:14px;font-size:12px;line-height:1.7;color:#292524;white-space:pre-wrap;word-break:break-word;max-height:280px;overflow-y:auto;font-family:'Courier New',monospace}
-.gen-copy-btn{width:100%;padding:14px;background:#1c1917;color:white;border-radius:8px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;border:none;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px}
-.gen-copy-btn:active{background:#292524}
-.gen-hint{background:#fef9c3;border:1px solid #fde68a;border-radius:8px;padding:12px 14px;font-size:13px;color:#713f12;line-height:1.6;margin-top:10px;display:none}
-.gen-hint.show{display:block}
+/* Preview card — cómo se verá publicado */
+.preview-card{background:white;border:1px solid #e7e5e4;border-radius:12px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.preview-header{padding:10px 14px;border-bottom:1px solid #f5f5f4;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#78716c;font-weight:bold;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.preview-platform{display:inline-flex;align-items:center;gap:6px}
+.preview-image{width:100%;background:#f5f5f4;display:flex;align-items:center;justify-content:center;color:#a8a29e;font-size:13px;font-style:italic;overflow:hidden;aspect-ratio:1/1}
+.preview-image.linkedin{aspect-ratio:1.91/1}
+.preview-image.blog{aspect-ratio:16/9}
+.preview-image img{width:100%;height:100%;object-fit:cover;display:block}
+.preview-body{padding:14px 16px 16px}
+.preview-caption{font-size:14px;line-height:1.55;color:#1c1917;white-space:pre-wrap;word-break:break-word}
+.preview-caption.empty{color:#a8a29e;font-style:italic}
+.preview-hashtags{margin-top:10px;font-size:13px;color:#1d4ed8;word-break:break-word;line-height:1.5}
+.preview-hashtags:empty{display:none}
 
 @media(min-width:768px){
   main{max-width:720px;margin:0 auto;padding:28px 24px 120px}
@@ -188,10 +189,10 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 
 <main>
 
-<section class="page active" id="page-all">
+<section class="page active" id="page-drafts">
   <div class="page-header">
-    <p class="eyebrow">Banco de ideas</p>
-    <h1>Editorial/cola</h1>
+    <p class="eyebrow">Por revisar</p>
+    <h1>Borradores</h1>
   </div>
   <div class="stats-row" id="stats-row"></div>
   <div class="search-bar">
@@ -212,61 +213,7 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
     <button class="filter-tab" data-format="linkedin">LinkedIn</button>
     <button class="filter-tab" data-format="blog">Blog</button>
   </div>
-  <div class="ideas-list" id="all-list"><div class="loading">Cargando ideas…</div></div>
-</section>
-
-<section class="page" id="page-drafts">
-  <div class="page-header">
-    <p class="eyebrow">Por revisar</p>
-    <h1>Borradores</h1>
-    <p class="subtitle">Ideas pendientes de contenido o revisión</p>
-  </div>
-  <div class="ideas-list" id="drafts-list"><div class="loading">Cargando…</div></div>
-</section>
-
-<section class="page" id="page-generate">
-  <div class="page-header">
-    <p class="eyebrow">Asistente editorial</p>
-    <h1>Generar con IA</h1>
-    <p class="subtitle">Construye un prompt y pégalo en Claude o ChatGPT</p>
-  </div>
-  <div class="gen-block">
-    <h3>1 · Configura</h3>
-    <label class="field-label">Proyecto</label>
-    <select class="gen-select" id="gen-project">
-      <option value="ADAR">Festival ADAR (español)</option>
-      <option value="CreArtBox">CreArtBox (inglés)</option>
-    </select>
-    <label class="field-label">Formato</label>
-    <select class="gen-select" id="gen-format">
-      <option value="instagram">Instagram</option>
-      <option value="linkedin">LinkedIn</option>
-      <option value="blog">Blog / artículo</option>
-    </select>
-    <label class="field-label">Tono</label>
-    <div class="tone-grid" id="gen-tone">
-      <button class="tone-btn active" data-tone="inspirador">✨ Inspirador</button>
-      <button class="tone-btn" data-tone="educativo">📚 Educativo</button>
-      <button class="tone-btn" data-tone="cercano">💬 Cercano</button>
-      <button class="tone-btn" data-tone="profesional">💼 Profesional</button>
-    </div>
-  </div>
-  <div class="gen-block">
-    <h3>2 · El tema</h3>
-    <label class="field-label">¿Sobre qué quieres publicar?</label>
-    <textarea class="gen-textarea" id="gen-topic" placeholder="Ej: Los beneficios de la improvisación teatral para la comunicación en equipos de trabajo…"></textarea>
-  </div>
-  <div class="gen-block">
-    <h3>3 · Tu prompt</h3>
-    <div class="prompt-box" id="prompt-box">Escribe el tema arriba para generar el prompt…</div>
-    <button class="gen-copy-btn" id="gen-copy-btn">📋 Copiar prompt completo</button>
-    <div class="gen-hint" id="gen-hint">
-      <strong>✅ Prompt copiado.</strong> Ahora:<br>
-      1. Abre <strong>claude.ai</strong> o <strong>chatgpt.com</strong><br>
-      2. Pega el prompt y envíalo<br>
-      3. Copia la respuesta y crea una nueva idea con el botón <strong>+</strong>
-    </div>
-  </div>
+  <div class="ideas-list" id="drafts-list"><div class="loading">Cargando ideas…</div></div>
 </section>
 
 <section class="page" id="page-ready">
@@ -293,19 +240,33 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 
 <section class="page" id="page-detail">
   <button class="back-btn" id="back-btn">← Volver</button>
+
   <div class="detail-card">
     <div class="detail-tags" id="detail-tags"></div>
     <h2 class="detail-title" id="detail-title"></h2>
     <p class="detail-angle" id="detail-angle"></p>
     <div class="detail-source" id="detail-source"></div>
   </div>
-  <div class="img-section">
-    <div class="img-display" id="img-display">Sin imagen</div>
-    <div class="img-input">
-      <label class="field-label">URL de imagen</label>
-      <input type="text" class="field-input" id="detail-img-url" placeholder="https://…">
+
+  <!-- Preview: cómo se verá publicado -->
+  <div class="preview-card" id="preview-card">
+    <div class="preview-header" id="preview-header">Preview</div>
+    <div class="preview-image" id="preview-image"></div>
+    <div class="preview-body">
+      <div class="preview-caption" id="preview-caption"></div>
+      <div class="preview-hashtags" id="preview-hashtags"></div>
     </div>
   </div>
+
+  <!-- Edit: imagen -->
+  <div class="content-block">
+    <div class="block-head">
+      <span class="block-title">🖼️ Imagen</span>
+    </div>
+    <input type="text" class="field-input" id="detail-img-url" placeholder="https://…">
+  </div>
+
+  <!-- Edit: contenido ES -->
   <div class="content-block" id="block-es">
     <div class="block-head">
       <span class="block-title">📝 Contenido (ES)</span>
@@ -320,6 +281,8 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
       <div class="char-counter" id="counter-es"></div>
     </div>
   </div>
+
+  <!-- Edit: contenido EN -->
   <div class="content-block" id="block-en">
     <div class="block-head">
       <span class="block-title">📝 Content (EN)</span>
@@ -334,6 +297,8 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
       <div class="char-counter" id="counter-en"></div>
     </div>
   </div>
+
+  <!-- Edit: hashtags -->
   <div class="content-block" id="block-hashtags">
     <div class="block-head">
       <span class="block-title"># Hashtags</span>
@@ -347,16 +312,7 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
       <textarea class="edit-textarea" id="hashtags-edit" rows="3"></textarea>
     </div>
   </div>
-  <div class="content-block">
-    <div class="block-head">
-      <span class="block-title">🗒️ Notas internas</span>
-      <button class="sm-btn accent" id="btn-edit-notes">✏️ Editar</button>
-    </div>
-    <div class="content-display muted" id="notes-display">(sin notas)</div>
-    <div class="edit-area" id="edit-area-notes">
-      <textarea class="edit-textarea" id="notes-edit" rows="3"></textarea>
-    </div>
-  </div>
+
   <div style="height:160px"></div>
 </section>
 
@@ -371,9 +327,7 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 </div>
 
 <nav class="bottom-nav">
-  <button class="nav-btn active" data-page="all"><span class="nav-icon">⌂</span><span>Todas</span></button>
-  <button class="nav-btn" data-page="drafts"><span class="nav-icon">✏️</span><span>Borradores</span><span class="nav-badge" id="badge-drafts"></span></button>
-  <button class="nav-btn" data-page="generate"><span class="nav-icon">⚡</span><span>Generar</span></button>
+  <button class="nav-btn active" data-page="drafts"><span class="nav-icon">✏️</span><span>Borradores</span><span class="nav-badge" id="badge-drafts"></span></button>
   <button class="nav-btn" data-page="ready"><span class="nav-icon">📌</span><span>Listos</span><span class="nav-badge" id="badge-ready"></span></button>
   <button class="nav-btn" data-page="archive"><span class="nav-icon">📚</span><span>Archivo</span></button>
 </nav>
@@ -402,7 +356,7 @@ const SUPABASE_URL = 'https://jvozrnkbkbeoohcwpufs.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_lKa7oozfRDiLqldme12NHA_UakU-Rc_';
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-let ideas = [], current = null, prevPage = 'all';
+let ideas = [], current = null, prevPage = 'drafts';
 let activeProject = 'all', activeFormat = 'all', activeArchive = 'published';
 let activeSort = 'recent', searchQuery = '';
 const CHAR_LIMITS = { instagram: 2200, linkedin: 3000, blog: 0 };
@@ -447,8 +401,8 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && document.getElementById('page-detail').classList.contains('active')) showPage(prevPage);
 });
 
-function getFiltered() {
-  let list = ideas.filter(i => i.status !== 'published' && i.status !== 'discarded');
+function getFilteredDrafts() {
+  let list = ideas.filter(i => i.status === 'draft' || i.status === 'idea');
   if (activeProject !== 'all') list = list.filter(i => i.project === activeProject);
   if (activeFormat !== 'all') list = list.filter(i => i.format === activeFormat);
   if (searchQuery) {
@@ -461,11 +415,9 @@ function getFiltered() {
 }
 
 function renderAll() {
-  const filtered = getFiltered();
+  const filtered = getFilteredDrafts();
   const noMatch = (activeProject !== 'all' || activeFormat !== 'all' || searchQuery) ? 'Prueba con otros filtros' : 'Crea tu primera idea con el botón +';
-  document.getElementById('all-list').innerHTML = filtered.length ? filtered.map(ideaCardHtml).join('') : emptyHtml('Sin ideas activas', noMatch);
-  const drafts = ideas.filter(i => i.status === 'draft' || i.status === 'idea');
-  document.getElementById('drafts-list').innerHTML = drafts.length ? drafts.map(ideaCardHtml).join('') : emptyHtml('Sin borradores', 'Crea una idea nueva con el botón +');
+  document.getElementById('drafts-list').innerHTML = filtered.length ? filtered.map(ideaCardHtml).join('') : emptyHtml('Sin borradores', noMatch);
   const ready = ideas.filter(i => i.status === 'ready');
   document.getElementById('ready-list').innerHTML = ready.length ? ready.map(readyCardHtml).join('') : emptyHtml('Nada listo aún', 'Abre una idea y pulsa 📌 Listo');
   const archive = ideas.filter(i => i.status === activeArchive);
@@ -473,12 +425,11 @@ function renderAll() {
 }
 
 function updateStats() {
-  const a = ideas.filter(i => i.status !== 'published' && i.status !== 'discarded').length;
   const d = ideas.filter(i => i.status === 'draft' || i.status === 'idea').length;
   const r = ideas.filter(i => i.status === 'ready').length;
   const p = ideas.filter(i => i.status === 'published').length;
   document.getElementById('stats-row').innerHTML =
-    `<div class="stat-chip"><strong>${a}</strong> activas</div><div class="stat-chip"><strong>${d}</strong> borradores</div><div class="stat-chip"><strong>${r}</strong> listas</div><div class="stat-chip"><strong>${p}</strong> publicadas</div>`;
+    `<div class="stat-chip"><strong>${d}</strong> borradores</div><div class="stat-chip"><strong>${r}</strong> listas</div><div class="stat-chip"><strong>${p}</strong> publicadas</div>`;
 }
 
 function updateBadges() {
@@ -520,8 +471,9 @@ function renderDetail() {
   document.getElementById('detail-title').textContent = i.title || '';
   document.getElementById('detail-angle').textContent = i.angle || '';
   document.getElementById('detail-source').innerHTML = i.source_url ? `Fuente: <a href="${esc(i.source_url)}" target="_blank" rel="noopener">${esc(i.source_url)}</a>` : '<span style="color:#a8a29e;font-style:italic">Sin fuente</span>';
-  const imgDisp = document.getElementById('img-display');
-  imgDisp.innerHTML = i.image_url ? `<img src="${esc(i.image_url)}" alt="">` : 'Sin imagen';
+
+  renderPreview();
+
   document.getElementById('detail-img-url').value = i.image_url || '';
   document.getElementById('block-es').style.display = (i.project === 'ADAR' || i.content_es) ? 'block' : 'none';
   document.getElementById('block-en').style.display = (i.project === 'CreArtBox' || i.content_en) ? 'block' : 'none';
@@ -529,12 +481,25 @@ function renderDetail() {
   setDisplay('content-es-display', i.content_es, '(vacío — haz clic en Editar para añadir)');
   setDisplay('content-en-display', i.content_en, '(empty — click Edit to add)');
   document.getElementById('hashtags-display').textContent = i.hashtags || '(sin hashtags)';
-  setDisplay('notes-display', i.notes, '(sin notas)');
   document.getElementById('btn-mark-ready').style.display = i.status === 'ready' ? 'none' : 'flex';
   const pb = document.getElementById('btn-mark-published');
   pb.disabled = i.status === 'published';
   pb.style.opacity = i.status === 'published' ? '0.5' : '1';
-  ['es', 'en', 'hashtags', 'notes'].forEach(resetEditField);
+  ['es', 'en', 'hashtags'].forEach(resetEditField);
+}
+
+function renderPreview() {
+  const i = current;
+  const body = i.project === 'ADAR' ? i.content_es : i.content_en;
+  const platform = fmtLabel(i.format);
+  document.getElementById('preview-header').innerHTML = `<span class="preview-platform">${fmtIcon(i.format)} Preview · ${platform}</span>`;
+  const imgEl = document.getElementById('preview-image');
+  imgEl.className = 'preview-image' + (i.format === 'linkedin' ? ' linkedin' : i.format === 'blog' ? ' blog' : '');
+  imgEl.innerHTML = i.image_url ? `<img src="${esc(i.image_url)}" alt="">` : 'Falta imagen';
+  const capEl = document.getElementById('preview-caption');
+  if (body) { capEl.textContent = body; capEl.classList.remove('empty'); }
+  else { capEl.textContent = '(escribe el contenido abajo para verlo aquí)'; capEl.classList.add('empty'); }
+  document.getElementById('preview-hashtags').textContent = (i.format !== 'blog' && i.hashtags) ? i.hashtags : '';
 }
 
 function setDisplay(id, val, placeholder) {
@@ -604,10 +569,9 @@ async function updateField(field, value) {
 setupEdit('es', () => current.content_es, 'content_es');
 setupEdit('en', () => current.content_en, 'content_en');
 setupEdit('hashtags', () => current.hashtags, 'hashtags');
-setupEdit('notes', () => current.notes, 'notes');
 
 document.getElementById('detail-img-url').addEventListener('blur', async e => {
-  if (current && e.target.value !== current.image_url) { await updateField('image_url', e.target.value); renderDetail(); }
+  if (current && e.target.value !== current.image_url) { await updateField('image_url', e.target.value); renderPreview(); }
 });
 
 async function copyText(text) {
@@ -698,81 +662,6 @@ document.getElementById('modal-save').addEventListener('click', async () => {
   document.getElementById('modal-new').classList.remove('show');
   toast('✓ Idea creada');
   await loadIdeas();
-});
-
-const PROJECT_DATA = {
-  ADAR: { name: 'Festival ADAR', desc: 'festival de artes escénicas en español (festivaladar.com)', lang: 'español' },
-  CreArtBox: { name: 'CreArtBox', desc: 'art and creativity brand based in NYC (creartbox.nyc)', lang: 'English' }
-};
-const FMT_ES = {
-  instagram: '- Post de Instagram\n- Entre 800 y 1500 caracteres\n- Usa emojis estratégicamente\n- CTA al final\n- Entre 10 y 15 hashtags relevantes',
-  linkedin: '- Post de LinkedIn\n- Entre 600 y 1200 caracteres\n- Tono profesional pero cercano\n- Máximo 5 hashtags al final',
-  blog: '- Artículo de blog\n- Título SEO optimizado\n- Introducción de gancho (100-150 palabras)\n- 3-5 secciones con subtítulos H2\n- Conclusión con CTA\n- Meta descripción de 160 caracteres'
-};
-const FMT_EN = {
-  instagram: '- Instagram post\n- 800 to 1500 characters\n- Use emojis strategically\n- Strong CTA at the end\n- 10 to 15 relevant hashtags',
-  linkedin: '- LinkedIn post\n- 600 to 1200 characters\n- Professional but approachable tone\n- Up to 5 hashtags at the end',
-  blog: '- Blog article\n- SEO-optimized title\n- Hook introduction (100-150 words)\n- 3-5 sections with H2 headings\n- Conclusion with CTA\n- 160-character meta description'
-};
-
-function buildPrompt() {
-  const project = document.getElementById('gen-project').value;
-  const format = document.getElementById('gen-format').value;
-  const topic = (document.getElementById('gen-topic').value || '').trim();
-  const toneEl = document.querySelector('#gen-tone .tone-btn.active');
-  const tone = toneEl ? toneEl.dataset.tone : 'inspirador';
-  if (!topic) return 'Escribe el tema arriba para generar el prompt…';
-  const p = PROJECT_DATA[project];
-  const isES = project === 'ADAR';
-  if (isES) {
-    return `Eres un experto en marketing de contenidos para ${p.name}, un ${p.desc}.
-
-TEMA: ${topic}
-TONO: ${tone}
-FORMATO:
-${FMT_ES[format]}
-
-Genera el contenido en ${p.lang} y responde con este formato exacto:
-
-TÍTULO: [título corto para identificar esta idea]
-ÁNGULO: [una frase que describe el enfoque único]
-CONTENIDO:
-[el contenido completo listo para publicar]
-HASHTAGS:
-[hashtags separados por espacios]`;
-  } else {
-    return `You are a content marketing expert for ${p.name}, an ${p.desc}.
-
-TOPIC: ${topic}
-TONE: ${tone}
-FORMAT:
-${FMT_EN[format]}
-
-Generate the content in ${p.lang} and respond with this exact format:
-
-TITLE: [short title to identify this idea]
-ANGLE: [one sentence describing the unique approach]
-CONTENT:
-[the full content ready to publish]
-HASHTAGS:
-[hashtags separated by spaces]`;
-  }
-}
-
-function refreshPrompt() { document.getElementById('prompt-box').textContent = buildPrompt(); }
-
-document.getElementById('gen-topic').addEventListener('input', refreshPrompt);
-document.getElementById('gen-project').addEventListener('change', refreshPrompt);
-document.getElementById('gen-format').addEventListener('change', refreshPrompt);
-document.querySelectorAll('#gen-tone .tone-btn').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('#gen-tone .tone-btn').forEach(x => x.classList.remove('active'));
-  b.classList.add('active'); refreshPrompt();
-}));
-document.getElementById('gen-copy-btn').addEventListener('click', async () => {
-  const prompt = buildPrompt();
-  if (prompt.startsWith('Escribe')) { toast('Escribe el tema primero', 'error'); return; }
-  await copyText(prompt);
-  document.getElementById('gen-hint').classList.add('show');
 });
 
 function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }

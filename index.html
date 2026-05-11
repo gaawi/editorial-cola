@@ -14,15 +14,20 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 button,input,textarea,select{font-family:inherit;font-size:16px}
 button{cursor:pointer;border:none;background:none;color:inherit}
 
-.top-header{position:sticky;top:0;z-index:100;background:white;border-bottom:1px solid #e7e5e4;padding:13px 20px;padding-top:calc(13px + env(safe-area-inset-top));display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:18px;letter-spacing:-0.02em}
+.top-header{position:sticky;top:0;z-index:120;background:white;border-bottom:1px solid #e7e5e4;padding:13px 20px;padding-top:calc(13px + env(safe-area-inset-top));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:18px;letter-spacing:-0.02em;flex-shrink:0}
 .logo strong{font-weight:bold}
 .logo span{color:#a8a29e;font-weight:300}
+.header-right{display:flex;align-items:center;gap:10px}
 .sync-indicator{display:flex;align-items:center;gap:6px;font-size:11px;color:#78716c}
 .sync-dot{width:7px;height:7px;border-radius:50%;background:#10b981;flex-shrink:0}
 .sync-dot.syncing{background:#f59e0b;animation:pulse 1s infinite}
 .sync-dot.error{background:#dc2626}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.notes-btn{padding:7px 12px;border:1px solid #e7e5e4;border-radius:6px;font-size:12px;color:#57534e;background:white;white-space:nowrap;cursor:pointer;display:flex;align-items:center;gap:5px}
+.notes-btn:hover{background:#f5f5f4}
+
+.side-nav{display:none}
 
 main{padding:20px 20px 120px}
 .page{display:none}
@@ -51,7 +56,7 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 
 .ideas-list{display:flex;flex-direction:column;gap:10px}
 .idea-card{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:14px;width:100%;text-align:left;color:inherit;cursor:pointer;transition:border-color 0.12s;display:flex;align-items:flex-start;gap:12px}
-.idea-card:active{background:#fafaf9}
+.idea-card:active,.idea-card:hover{background:#fafaf9;border-color:#d6d3d1}
 .idea-thumb{width:50px;height:50px;flex-shrink:0;border-radius:8px;background:#f5f5f4;display:flex;align-items:center;justify-content:center;font-size:22px;overflow:hidden}
 .idea-thumb img{width:100%;height:100%;object-fit:cover}
 .idea-content{flex:1;min-width:0}
@@ -82,6 +87,7 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 .ready-btn:active{opacity:0.8}
 
 .back-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 0;font-size:14px;color:#57534e;margin-bottom:16px;min-height:44px}
+.detail-cols{display:block}
 .detail-card{background:white;border:1px solid #e7e5e4;border-radius:10px;padding:16px;margin-bottom:14px}
 .detail-tags{display:flex;align-items:center;gap:6px;margin-bottom:12px;flex-wrap:wrap}
 .detail-title{font-size:22px;font-weight:bold;line-height:1.2;margin-bottom:8px}
@@ -89,10 +95,6 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 .detail-source{font-size:12px;color:#78716c;word-break:break-all;padding-top:12px;border-top:1px solid #f5f5f4}
 .detail-source a{color:#44403c;text-decoration:underline}
 
-.img-section{background:white;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;margin-bottom:14px}
-.img-display{width:100%;max-height:240px;background:#f5f5f4;display:flex;align-items:center;justify-content:center;color:#a8a29e;font-size:13px;font-style:italic;overflow:hidden}
-.img-display img{width:100%;max-height:240px;object-fit:cover}
-.img-input{padding:12px}
 .field-label{display:block;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#78716c;margin-bottom:5px;font-weight:bold}
 .field-input{width:100%;padding:9px 12px;border:1px solid #e7e5e4;border-radius:6px;font-size:14px;background:#fafaf9;color:#1c1917}
 .field-input:focus{outline:2px solid #1c1917;background:white}
@@ -139,9 +141,10 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:flex-end;justify-content:center;z-index:300}
 .modal-bg.show{display:flex}
-.modal{background:white;width:100%;max-width:520px;border-radius:16px 16px 0 0;padding:20px;padding-bottom:calc(20px + env(safe-area-inset-bottom));max-height:90vh;overflow-y:auto}
+.modal{background:white;width:100%;max-width:560px;border-radius:16px 16px 0 0;padding:20px;padding-bottom:calc(20px + env(safe-area-inset-bottom));max-height:90vh;overflow-y:auto}
 .modal-handle{width:36px;height:3px;background:#e7e5e4;border-radius:2px;margin:0 auto 16px}
 .modal h2{font-size:20px;margin-bottom:16px}
+.modal-desc{font-size:13px;color:#78716c;margin:-8px 0 16px;line-height:1.5}
 .modal-field{margin-bottom:14px}
 .modal-field label{display:block;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#78716c;margin-bottom:5px;font-weight:bold}
 .modal-field select,.modal-field input,.modal-field textarea{width:100%;padding:10px 12px;border:1px solid #e7e5e4;border-radius:8px;font-size:15px;background:white;font-family:inherit;color:#1c1917}
@@ -151,39 +154,83 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 .modal-cancel{background:white;border:1px solid #e7e5e4 !important;color:#57534e}
 .modal-save{background:#1c1917;color:white}
 
-/* Preview card — cómo se verá publicado */
 .preview-card{background:white;border:1px solid #e7e5e4;border-radius:12px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
-.preview-header{padding:10px 14px;border-bottom:1px solid #f5f5f4;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#78716c;font-weight:bold;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.preview-header{padding:10px 14px;border-bottom:1px solid #f5f5f4;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#78716c;font-weight:bold;display:flex;align-items:center;gap:8px}
 .preview-platform{display:inline-flex;align-items:center;gap:6px}
 .preview-image{width:100%;background:#f5f5f4;display:flex;align-items:center;justify-content:center;color:#a8a29e;font-size:13px;font-style:italic;overflow:hidden;aspect-ratio:1/1}
 .preview-image.linkedin{aspect-ratio:1.91/1}
 .preview-image.blog{aspect-ratio:16/9}
 .preview-image img{width:100%;height:100%;object-fit:cover;display:block}
 .preview-body{padding:14px 16px 16px}
-.preview-caption{font-size:14px;line-height:1.55;color:#1c1917;white-space:pre-wrap;word-break:break-word}
+.preview-caption{font-size:14px;line-height:1.55;color:#1c1917;white-space:pre-wrap;word-break:break-word;max-height:320px;overflow-y:auto}
 .preview-caption.empty{color:#a8a29e;font-style:italic}
 .preview-hashtags{margin-top:10px;font-size:13px;color:#1d4ed8;word-break:break-word;line-height:1.5}
 .preview-hashtags:empty{display:none}
 
-@media(min-width:768px){
-  main{max-width:720px;margin:0 auto;padding:28px 24px 120px}
+/* ── Desktop layout ─────────────────────────────────────────────────────── */
+@media(min-width:960px){
+  body{padding-bottom:0}
+  .top-header{padding-left:232px}
+
+  .side-nav{display:flex;flex-direction:column;position:fixed;top:0;left:0;width:220px;height:100vh;background:white;border-right:1px solid #e7e5e4;padding:16px 12px 20px;z-index:130;overflow-y:auto}
+  .side-logo{font-size:16px;letter-spacing:-0.02em;padding:10px 8px 16px;border-bottom:1px solid #f5f5f4;margin-bottom:10px}
+  .side-logo strong{font-weight:bold}
+  .side-logo span{color:#a8a29e;font-weight:300}
+  .side-btn{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:7px;font-size:14px;color:#57534e;text-align:left;width:100%;background:none;border:none;cursor:pointer;transition:background 0.1s,color 0.1s;margin-bottom:2px;position:relative;font-family:inherit}
+  .side-btn:hover{background:#f5f5f4}
+  .side-btn.active{background:#1c1917;color:white;font-weight:600}
+  .side-btn .s-badge{margin-left:auto;background:#f59e0b;color:white;font-size:9px;font-weight:bold;min-width:18px;height:18px;border-radius:9px;display:none;align-items:center;justify-content:center;padding:0 4px}
+  .side-divider{height:1px;background:#f5f5f4;margin:10px 0}
+  .side-spacer{flex:1}
+  .side-new-btn{background:#1c1917 !important;color:white !important;font-weight:600;margin-bottom:6px}
+  .side-new-btn:hover{background:#292524 !important}
+
+  .bottom-nav{display:none !important}
+  .fab{display:none !important}
+
+  main{margin-left:220px;padding:32px 44px 60px;max-width:none}
+  .action-bar{left:220px;bottom:0;border-radius:0;box-shadow:none}
+
+  .detail-cols{display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start}
+  .detail-left{position:sticky;top:20px}
+  .detail-right{min-width:0}
+  .back-btn{margin-bottom:20px}
   h1{font-size:30px}
-  .bottom-nav{justify-content:center}
-  .nav-btn{flex-direction:row;gap:8px;font-size:12px;padding:14px 20px;flex:0;text-transform:none}
-  .nav-icon{font-size:16px}
-  .nav-badge{position:static;margin-left:2px}
-  .action-bar{bottom:16px;left:50%;transform:translateX(-50%);max-width:720px;width:calc(100% - 48px);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12)}
-  .fab{bottom:24px}
+  .ideas-list{gap:12px}
+  .idea-card{padding:16px}
+  .idea-thumb{width:60px;height:60px}
+}
+
+@media(min-width:1280px){
+  .side-nav{width:240px}
+  .top-header{padding-left:252px}
+  main{margin-left:240px;max-width:1140px}
+  .action-bar{left:240px}
+  .detail-cols{grid-template-columns:420px 1fr}
 }
 </style>
 </head>
 <body>
 
+<nav class="side-nav" id="side-nav">
+  <div class="side-logo"><strong>Editorial</strong><span>/cola</span></div>
+  <button class="side-btn active" data-page="drafts">✏️ Borradores<span class="s-badge" id="sbadge-drafts"></span></button>
+  <button class="side-btn" data-page="ready">📌 Listos<span class="s-badge" id="sbadge-ready"></span></button>
+  <button class="side-btn" data-page="archive">📚 Archivo</button>
+  <div class="side-divider"></div>
+  <div class="side-spacer"></div>
+  <button class="side-btn side-new-btn" id="side-fab">+ Nueva idea</button>
+  <button class="side-btn" id="btn-open-notes">📝 Notas generales</button>
+</nav>
+
 <header class="top-header">
   <div class="logo"><strong>Editorial</strong><span>/cola</span></div>
-  <div class="sync-indicator">
-    <span class="sync-dot" id="sync-dot"></span>
-    <span id="sync-text">Conectando…</span>
+  <div class="header-right">
+    <button class="notes-btn" id="btn-open-notes-mobile">📝 Notas</button>
+    <div class="sync-indicator">
+      <span class="sync-dot" id="sync-dot"></span>
+      <span id="sync-text">Conectando…</span>
+    </div>
   </div>
 </header>
 
@@ -240,80 +287,79 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
 
 <section class="page" id="page-detail">
   <button class="back-btn" id="back-btn">← Volver</button>
+  <div class="detail-cols">
 
-  <div class="detail-card">
-    <div class="detail-tags" id="detail-tags"></div>
-    <h2 class="detail-title" id="detail-title"></h2>
-    <p class="detail-angle" id="detail-angle"></p>
-    <div class="detail-source" id="detail-source"></div>
-  </div>
-
-  <!-- Preview: cómo se verá publicado -->
-  <div class="preview-card" id="preview-card">
-    <div class="preview-header" id="preview-header">Preview</div>
-    <div class="preview-image" id="preview-image"></div>
-    <div class="preview-body">
-      <div class="preview-caption" id="preview-caption"></div>
-      <div class="preview-hashtags" id="preview-hashtags"></div>
-    </div>
-  </div>
-
-  <!-- Edit: imagen -->
-  <div class="content-block">
-    <div class="block-head">
-      <span class="block-title">🖼️ Imagen</span>
-    </div>
-    <input type="text" class="field-input" id="detail-img-url" placeholder="https://…">
-  </div>
-
-  <!-- Edit: contenido ES -->
-  <div class="content-block" id="block-es">
-    <div class="block-head">
-      <span class="block-title">📝 Contenido (ES)</span>
-      <div class="block-actions">
-        <button class="sm-btn" id="btn-copy-es">📋 Copiar</button>
-        <button class="sm-btn accent" id="btn-edit-es">✏️ Editar</button>
+    <div class="detail-left">
+      <div class="detail-card">
+        <div class="detail-tags" id="detail-tags"></div>
+        <h2 class="detail-title" id="detail-title"></h2>
+        <p class="detail-angle" id="detail-angle"></p>
+        <div class="detail-source" id="detail-source"></div>
+      </div>
+      <div class="preview-card" id="preview-card">
+        <div class="preview-header" id="preview-header">Preview</div>
+        <div class="preview-image" id="preview-image"></div>
+        <div class="preview-body">
+          <div class="preview-caption" id="preview-caption"></div>
+          <div class="preview-hashtags" id="preview-hashtags"></div>
+        </div>
       </div>
     </div>
-    <div class="content-display muted" id="content-es-display">(vacío)</div>
-    <div class="edit-area" id="edit-area-es">
-      <textarea class="edit-textarea" id="content-es-edit" rows="8" oninput="updateCounter(this,'es')"></textarea>
-      <div class="char-counter" id="counter-es"></div>
-    </div>
-  </div>
 
-  <!-- Edit: contenido EN -->
-  <div class="content-block" id="block-en">
-    <div class="block-head">
-      <span class="block-title">📝 Content (EN)</span>
-      <div class="block-actions">
-        <button class="sm-btn" id="btn-copy-en">📋 Copy</button>
-        <button class="sm-btn accent" id="btn-edit-en">✏️ Edit</button>
+    <div class="detail-right">
+      <div class="content-block">
+        <div class="block-head"><span class="block-title">🖼️ Imagen</span></div>
+        <input type="text" class="field-input" id="detail-img-url" placeholder="https://…">
       </div>
-    </div>
-    <div class="content-display muted" id="content-en-display">(empty)</div>
-    <div class="edit-area" id="edit-area-en">
-      <textarea class="edit-textarea" id="content-en-edit" rows="8" oninput="updateCounter(this,'en')"></textarea>
-      <div class="char-counter" id="counter-en"></div>
-    </div>
-  </div>
 
-  <!-- Edit: hashtags -->
-  <div class="content-block" id="block-hashtags">
-    <div class="block-head">
-      <span class="block-title"># Hashtags</span>
-      <div class="block-actions">
-        <button class="sm-btn" id="btn-copy-hashtags">📋 Copiar</button>
-        <button class="sm-btn accent" id="btn-edit-hashtags">✏️ Editar</button>
+      <div class="content-block" id="block-es">
+        <div class="block-head">
+          <span class="block-title">📝 Contenido (ES)</span>
+          <div class="block-actions">
+            <button class="sm-btn" id="btn-copy-es">📋 Copiar</button>
+            <button class="sm-btn accent" id="btn-edit-es">✏️ Editar</button>
+          </div>
+        </div>
+        <div class="content-display muted" id="content-es-display">(vacío)</div>
+        <div class="edit-area" id="edit-area-es">
+          <textarea class="edit-textarea" id="content-es-edit" rows="10" oninput="updateCounter(this,'es')"></textarea>
+          <div class="char-counter" id="counter-es"></div>
+        </div>
       </div>
-    </div>
-    <div class="hashtags-text" id="hashtags-display"></div>
-    <div class="edit-area" id="edit-area-hashtags">
-      <textarea class="edit-textarea" id="hashtags-edit" rows="3"></textarea>
-    </div>
-  </div>
 
-  <div style="height:160px"></div>
+      <div class="content-block" id="block-en">
+        <div class="block-head">
+          <span class="block-title">📝 Content (EN)</span>
+          <div class="block-actions">
+            <button class="sm-btn" id="btn-copy-en">📋 Copy</button>
+            <button class="sm-btn accent" id="btn-edit-en">✏️ Edit</button>
+          </div>
+        </div>
+        <div class="content-display muted" id="content-en-display">(empty)</div>
+        <div class="edit-area" id="edit-area-en">
+          <textarea class="edit-textarea" id="content-en-edit" rows="10" oninput="updateCounter(this,'en')"></textarea>
+          <div class="char-counter" id="counter-en"></div>
+        </div>
+      </div>
+
+      <div class="content-block" id="block-hashtags">
+        <div class="block-head">
+          <span class="block-title"># Hashtags</span>
+          <div class="block-actions">
+            <button class="sm-btn" id="btn-copy-hashtags">📋 Copiar</button>
+            <button class="sm-btn accent" id="btn-edit-hashtags">✏️ Editar</button>
+          </div>
+        </div>
+        <div class="hashtags-text" id="hashtags-display"></div>
+        <div class="edit-area" id="edit-area-hashtags">
+          <textarea class="edit-textarea" id="hashtags-edit" rows="3"></textarea>
+        </div>
+      </div>
+
+      <div style="height:80px"></div>
+    </div>
+
+  </div>
 </section>
 
 </main>
@@ -353,11 +399,24 @@ h1{font-size:26px;line-height:1.15;letter-spacing:-0.01em;font-weight:bold}
   <div class="modal">
     <div class="modal-handle"></div>
     <h2>¿Por qué descartamos esta idea?</h2>
-    <p style="font-size:13px;color:#78716c;margin:-8px 0 16px">Tu respuesta me ayudará a mejorar los próximos posts.</p>
-    <div class="modal-field"><label>Motivo</label><textarea id="discard-reason" placeholder="Ej: el tono no encajaba, ya publicamos algo similar, faltaba imagen…" style="min-height:100px"></textarea></div>
+    <p class="modal-desc">Tu respuesta me ayuda a mejorar los próximos posts.</p>
+    <div class="modal-field"><label>Motivo</label><textarea id="discard-reason" placeholder="Ej: tono no encajaba, ya publicamos algo similar, faltaba imagen…" style="min-height:100px"></textarea></div>
     <div class="modal-actions">
       <button class="modal-cancel" id="discard-cancel">Cancelar</button>
       <button class="modal-save" style="background:#991b1b" id="discard-confirm">Descartar</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-bg" id="modal-notes">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <h2>Notas generales</h2>
+    <p class="modal-desc">Escribe aquí comentarios sobre la línea editorial, qué mejorar, temas a evitar o ideas sueltas. Lo leo en cada sesión.</p>
+    <div class="modal-field"><label>Comentarios</label><textarea id="notes-textarea" rows="10" placeholder="Ej: los posts de ADAR son demasiado largos, más acción y menos reflexión. En CreArtBox evitar hablar de NYC como si fuera el centro del mundo…" style="min-height:160px"></textarea></div>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="notes-cancel">Cerrar</button>
+      <button class="modal-save" id="notes-save">Guardar notas</button>
     </div>
   </div>
 </div>
@@ -372,6 +431,7 @@ const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 let ideas = [], current = null, prevPage = 'drafts';
 let activeProject = 'all', activeFormat = 'all', activeArchive = 'published';
 let activeSort = 'recent', searchQuery = '';
+let globalNotesId = null;
 const CHAR_LIMITS = { instagram: 2200, linkedin: 3000, blog: 0 };
 
 function setSync(state, msg) {
@@ -382,17 +442,16 @@ function setSync(state, msg) {
 async function loadIdeas() {
   setSync('syncing', 'Cargando…');
   const { data, error } = await sb.from('ideas').select('*').order('updated_at', { ascending: false });
-  if (error) {
-    console.error(error);
-    setSync('error', 'Error de conexión');
-    toast('No se pudo conectar a Supabase', 'error');
-    return;
+  if (error) { setSync('error', 'Error de conexión'); toast('No se pudo conectar a Supabase', 'error'); return; }
+  const all = data || [];
+  const notesRow = all.find(i => i.title === '__global_notes__');
+  if (notesRow) {
+    globalNotesId = notesRow.id;
+    document.getElementById('notes-textarea').value = notesRow.content_es || '';
   }
-  ideas = data || [];
+  ideas = all.filter(i => i.title !== '__global_notes__');
   setSync('ok', 'Conectado');
-  renderAll();
-  updateBadges();
-  updateStats();
+  renderAll(); updateBadges(); updateStats();
 }
 
 function showPage(page) {
@@ -401,6 +460,9 @@ function showPage(page) {
   document.querySelectorAll('.nav-btn[data-page]').forEach(b => b.classList.remove('active'));
   const nb = document.querySelector(`.nav-btn[data-page="${page}"]`);
   if (nb) nb.classList.add('active');
+  document.querySelectorAll('.side-btn[data-page]').forEach(b => b.classList.remove('active'));
+  const sb2 = document.querySelector(`.side-btn[data-page="${page}"]`);
+  if (sb2) sb2.classList.add('active');
   const isDetail = page === 'detail';
   document.getElementById('action-bar').style.display = isDetail ? 'block' : 'none';
   document.getElementById('fab').style.display = isDetail ? 'none' : 'flex';
@@ -409,9 +471,13 @@ function showPage(page) {
 }
 
 document.querySelectorAll('.nav-btn[data-page]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.page)));
+document.querySelectorAll('.side-btn[data-page]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.page)));
 document.getElementById('back-btn').addEventListener('click', () => showPage(prevPage));
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && document.getElementById('page-detail').classList.contains('active')) showPage(prevPage);
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-bg.show').forEach(m => m.classList.remove('show'));
+    if (document.getElementById('page-detail').classList.contains('active')) showPage(prevPage);
+  }
 });
 
 function getFilteredDrafts() {
@@ -442,16 +508,18 @@ function updateStats() {
   const r = ideas.filter(i => i.status === 'ready').length;
   const p = ideas.filter(i => i.status === 'published').length;
   document.getElementById('stats-row').innerHTML =
-    `<div class="stat-chip"><strong>${d}</strong> borradores</div><div class="stat-chip"><strong>${r}</strong> listas</div><div class="stat-chip"><strong>${p}</strong> publicadas</div>`;
+    `<div class="stat-chip"><strong>${d}</strong> borradores</div><div class="stat-chip"><strong>${r}</strong> listos</div><div class="stat-chip"><strong>${p}</strong> publicadas</div>`;
 }
 
 function updateBadges() {
   const d = ideas.filter(i => i.status === 'draft' || i.status === 'idea').length;
   const r = ideas.filter(i => i.status === 'ready').length;
-  const db = document.getElementById('badge-drafts');
-  const rb = document.getElementById('badge-ready');
+  const db = document.getElementById('badge-drafts'), rb = document.getElementById('badge-ready');
   db.style.display = d ? 'flex' : 'none'; if (d) db.textContent = d;
   rb.style.display = r ? 'flex' : 'none'; if (r) rb.textContent = r;
+  const sdb = document.getElementById('sbadge-drafts'), srb = document.getElementById('sbadge-ready');
+  sdb.style.display = d ? 'flex' : 'none'; if (d) sdb.textContent = d;
+  srb.style.display = r ? 'flex' : 'none'; if (r) srb.textContent = r;
 }
 
 function ideaCardHtml(i) {
@@ -463,7 +531,7 @@ function ideaCardHtml(i) {
 
 function readyCardHtml(i) {
   const body = i.project === 'ADAR' ? i.content_es : i.content_en;
-  const preview = body ? body.substring(0, 140) + (body.length > 140 ? '…' : '') : '';
+  const preview = body ? body.substring(0, 160) + (body.length > 160 ? '…' : '') : '';
   return `<div class="ready-card"><div class="idea-meta"><span class="pill pill-dark">${esc(i.project)}</span><span class="pill pill-${i.format}">${fmtLabel(i.format)}</span></div><div class="idea-title" style="font-size:16px;margin-top:8px">${esc(i.title || '(sin título)')}</div>${preview ? `<div class="ready-preview">${esc(preview)}</div>` : ''}<div class="ready-btns"><button class="ready-btn copy" onclick="copyReady(${i.id})">📋 Copiar contenido</button><button class="ready-btn done" onclick="quickPublish(${i.id})">✓ Publicado</button></div></div>`;
 }
 
@@ -484,9 +552,7 @@ function renderDetail() {
   document.getElementById('detail-title').textContent = i.title || '';
   document.getElementById('detail-angle').textContent = i.angle || '';
   document.getElementById('detail-source').innerHTML = i.source_url ? `Fuente: <a href="${esc(i.source_url)}" target="_blank" rel="noopener">${esc(i.source_url)}</a>` : '<span style="color:#a8a29e;font-style:italic">Sin fuente</span>';
-
   renderPreview();
-
   document.getElementById('detail-img-url').value = i.image_url || '';
   document.getElementById('block-es').style.display = (i.project === 'ADAR' || i.content_es) ? 'block' : 'none';
   document.getElementById('block-en').style.display = (i.project === 'CreArtBox' || i.content_en) ? 'block' : 'none';
@@ -504,11 +570,10 @@ function renderDetail() {
 function renderPreview() {
   const i = current;
   const body = i.project === 'ADAR' ? i.content_es : i.content_en;
-  const platform = fmtLabel(i.format);
-  document.getElementById('preview-header').innerHTML = `<span class="preview-platform">${fmtIcon(i.format)} Preview · ${platform}</span>`;
+  document.getElementById('preview-header').innerHTML = `<span class="preview-platform">${fmtIcon(i.format)} Preview · ${fmtLabel(i.format)}</span>`;
   const imgEl = document.getElementById('preview-image');
   imgEl.className = 'preview-image' + (i.format === 'linkedin' ? ' linkedin' : i.format === 'blog' ? ' blog' : '');
-  imgEl.innerHTML = i.image_url ? `<img src="${esc(i.image_url)}" alt="">` : 'Falta imagen';
+  imgEl.innerHTML = i.image_url ? `<img src="${esc(i.image_url)}" alt="">` : '<span style="padding:20px">Falta imagen</span>';
   const capEl = document.getElementById('preview-caption');
   if (body) { capEl.textContent = body; capEl.classList.remove('empty'); }
   else { capEl.textContent = '(escribe el contenido abajo para verlo aquí)'; capEl.classList.add('empty'); }
@@ -570,7 +635,7 @@ function updateCounter(ta, field) {
 async function updateField(field, value) {
   setSync('syncing', 'Guardando…');
   const { error } = await sb.from('ideas').update({ [field]: value, updated_at: new Date().toISOString() }).eq('id', current.id);
-  if (error) { console.error(error); setSync('error', 'Error'); toast('No se pudo guardar', 'error'); return false; }
+  if (error) { setSync('error', 'Error'); toast('No se pudo guardar', 'error'); return false; }
   current[field] = value;
   const idx = ideas.findIndex(i => i.id === current.id);
   if (idx > -1) ideas[idx][field] = value;
@@ -639,6 +704,29 @@ async function quickPublish(id) {
   renderAll(); updateBadges(); updateStats();
 }
 
+function openNotesModal() {
+  document.getElementById('modal-notes').classList.add('show');
+  setTimeout(() => document.getElementById('notes-textarea').focus(), 50);
+}
+document.getElementById('btn-open-notes').addEventListener('click', openNotesModal);
+document.getElementById('btn-open-notes-mobile').addEventListener('click', openNotesModal);
+document.getElementById('notes-cancel').addEventListener('click', () => document.getElementById('modal-notes').classList.remove('show'));
+document.getElementById('modal-notes').addEventListener('click', e => { if (e.target.id === 'modal-notes') e.target.classList.remove('show'); });
+document.getElementById('notes-save').addEventListener('click', async () => {
+  const text = document.getElementById('notes-textarea').value.trim();
+  setSync('syncing', 'Guardando notas…');
+  let error;
+  if (globalNotesId) {
+    ({ error } = await sb.from('ideas').update({ content_es: text || null, updated_at: new Date().toISOString() }).eq('id', globalNotesId));
+  } else {
+    const res = await sb.from('ideas').insert({ title: '__global_notes__', project: '_meta_', format: 'notes', status: 'idea', content_es: text || null, updated_at: new Date().toISOString() }).select('id').single();
+    error = res.error;
+    if (!error) globalNotesId = res.data.id;
+  }
+  if (error) { setSync('error', 'Error'); toast('Error al guardar notas', 'error'); }
+  else { setSync('ok', 'Conectado'); toast('📝 Notas guardadas'); document.getElementById('modal-notes').classList.remove('show'); }
+});
+
 document.querySelectorAll('#project-filter .filter-tab').forEach(t => t.addEventListener('click', () => {
   document.querySelectorAll('#project-filter .filter-tab').forEach(x => x.classList.remove('active'));
   t.classList.add('active'); activeProject = t.dataset.project; renderAll();
@@ -666,11 +754,14 @@ document.getElementById('search-input').addEventListener('input', e => {
   searchTimer = setTimeout(() => { searchQuery = e.target.value.trim(); renderAll(); }, 200);
 });
 
-document.getElementById('fab').addEventListener('click', () => {
+function openNewModal() {
   document.getElementById('new-title').value = '';
   document.getElementById('new-angle').value = '';
   document.getElementById('modal-new').classList.add('show');
-});
+  setTimeout(() => document.getElementById('new-title').focus(), 50);
+}
+document.getElementById('fab').addEventListener('click', openNewModal);
+document.getElementById('side-fab').addEventListener('click', openNewModal);
 document.getElementById('modal-cancel').addEventListener('click', () => document.getElementById('modal-new').classList.remove('show'));
 document.getElementById('modal-new').addEventListener('click', e => { if (e.target.id === 'modal-new') e.target.classList.remove('show'); });
 document.getElementById('modal-save').addEventListener('click', async () => {
@@ -683,7 +774,7 @@ document.getElementById('modal-save').addEventListener('click', async () => {
     status: 'idea', title,
     angle: document.getElementById('new-angle').value.trim(),
   });
-  if (error) { console.error(error); setSync('error', 'Error'); toast('Error al crear', 'error'); return; }
+  if (error) { setSync('error', 'Error'); toast('Error al crear', 'error'); return; }
   setSync('ok', 'Conectado');
   document.getElementById('modal-new').classList.remove('show');
   toast('✓ Idea creada');

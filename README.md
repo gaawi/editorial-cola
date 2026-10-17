@@ -7,7 +7,48 @@ y solo publica cuando se le dice.
 Las ideas salen del **kit de redes** del repositorio de ADAR, que se lee sin
 tocarlo: ni el kit ni los archivos de revisión se modifican nunca desde aquí.
 
-## Lo único que hay que preparar
+## Dos caminos
+
+Se puede publicar por **Metricool**, que ya tiene las cuentas conectadas, o
+hablando directamente con **Meta**. Hacen lo mismo y comparten todo menos el
+último paso.
+
+|  | Metricool | Meta |
+|---|---|---|
+| Hace falta | token de la API de Metricool | app propia + token de Página |
+| App Review | no | puede que sí |
+| Cuándo sale | pasa por el planificador: «ahora» son unos minutos | en el acto |
+| Imágenes | las copia él; vale png o jpg | solo JPEG por URL pública |
+| Requisito | plan Advanced o Custom | nada |
+
+Si no hay nada configurado se usa Meta; con `METRICOOL_TOKEN` puesto, Metricool.
+`--via meta` o `--via metricool` manda sobre eso.
+
+## Metricool
+
+El token está en **Configuración de la cuenta → API**. Hace falta también el
+`userId`, que sale de la URL al abrir una marca. En los ajustes del entorno:
+
+```
+METRICOOL_TOKEN     el token de la API
+METRICOOL_USER_ID   el número que va detrás de userId en la URL
+METRICOOL_BLOG_ID   solo si el token alcanza más de una marca
+```
+
+`node publicar.mjs cuentas` dice qué marcas alcanza y qué redes tienen
+conectadas.
+
+Metricool **no publica en el acto**: todo pasa por su planificador. Sin
+`--cuando`, la entrada se programa para dentro de cinco minutos con
+autoPublish puesto, que es lo más cerca que se llega de publicar ya. Con
+`--cuando 2026-10-20T09:30` se programa para esa hora, y con `--borrador` se
+queda en el planificador sin salir.
+
+Los planes Free y Starter no tienen API. Ahí el camino es el MCP de Metricool
+(`ai.metricool.com/mcp`), que se añade al cliente y no pasa por este
+repositorio.
+
+## Meta
 
 Un **token de Meta** con permiso para publicar en la Página de Facebook y en
 la cuenta de Instagram vinculada a ella.
@@ -28,7 +69,7 @@ la cuenta de Instagram vinculada a ella.
 Ese token se guarda en los **ajustes del entorno** de la sesión (el menú del
 entorno en la barra de título → *Edit*), como secreto de red o variable de
 entorno, con el nombre `META_TOKEN`. La siguiente sesión ya lo encuentra. No
-hace falta pegarlo en el chat.
+hace falta pegarlo en el chat — y lo mismo vale para el de Metricool.
 
 Opcionales, si el token alcanza más de una Página: `FB_PAGE_ID` y `IG_USER_ID`.
 `node publicar.mjs cuentas` dice cuáles son.
@@ -42,6 +83,7 @@ node publicar.mjs ver en/currents  # la ficha y el pie que saldría en cada red
 
 node publicar.mjs publicar --idea en/currents --red ambas        # ensayo
 node publicar.mjs publicar --idea en/currents --red ambas --ya   # de verdad
+node publicar.mjs publicar --idea en/currents --via metricool --cuando 2026-10-20T09:30 --ya
 
 node publicar.mjs subir foto.jpg   # deja una imagen en una URL pública
 node publicar.mjs registro         # lo publicado desde aquí
@@ -60,10 +102,11 @@ node publicar.mjs publicar --texto "…" --enlace https://… --red fb
 
 ## Lo que conviene saber
 
-- **Instagram solo acepta una URL pública de un JPEG.** No hay subida directa:
-  Meta va a buscar la imagen a ese enlace en el momento de publicar. Las fotos
-  del kit ya están servidas (el CDN de ADAR, creartbox.nyc) y valen tal cual.
-  Para una imagen que esté solo en el portátil, `subir` la deja en
+- **La imagen siempre tiene que estar en una URL pública que no caduque.**
+  Publicando contra Meta, además, solo vale JPEG: Meta va a buscarla al
+  publicar. Metricool se la copia antes a su servidor y acepta más formatos.
+  Las fotos del kit ya están servidas (el CDN de ADAR, creartbox.nyc) y valen
+  tal cual. Para una imagen que esté solo en el portátil, `subir` la deja en
   `imagenes/` de este repositorio y devuelve su URL.
 - **Instagram no publica sin imagen.** Facebook sí.
 - El pie de cada red se compone con la misma receta que el kit
@@ -79,6 +122,7 @@ node publicar.mjs publicar --texto "…" --enlace https://… --red fb
 ```
 publicar.mjs      la línea de órdenes
 lib/meta.mjs      Graph API: Facebook e Instagram
+lib/metricool.mjs el planificador de Metricool
 lib/ideas.mjs     lee el material del kit de redes (solo lectura)
 lib/textos.mjs    el pie de cada red y los repasos previos
 registro.jsonl    lo publicado desde aquí

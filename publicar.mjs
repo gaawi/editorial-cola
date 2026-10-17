@@ -21,6 +21,7 @@ import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { descubrirCuentas, publicarFacebook, publicarInstagram } from './lib/meta.mjs';
+import { marcas, normalizarImagen, programar } from './lib/metricool.mjs';
 import { cargarIdeas, clave, buscar } from './lib/ideas.mjs';
 import { pie, asomo, repasar, REDES } from './lib/textos.mjs';
 
@@ -81,6 +82,60 @@ async function credenciales() {
     paginaId: process.env.FB_PAGE_ID || fichero.paginaId || null,
     igId: process.env.IG_USER_ID || fichero.igId || null,
   };
+}
+
+/**
+ * Metricool, que es la otra vía: ya tiene las cuentas conectadas, así que no
+ * hace falta app de Meta. Pide plan Advanced o Custom.
+ */
+async function credencialesMetricool() {
+  const archivo = join(AQUI, 'credenciales.json');
+  const fichero = existsSync(archivo) ? JSON.parse(await readFile(archivo, 'utf8')).metricool || {} : {};
+  const token = process.env.METRICOOL_TOKEN || fichero.token;
+  if (!token) {
+    throw new Error(
+      'No hay token de Metricool.\n' +
+        '  Está en Metricool → Configuración de la cuenta → API.\n' +
+        '  Ponlo en el entorno como METRICOOL_TOKEN, con METRICOOL_USER_ID.'
+    );
+  }
+  const userId = process.env.METRICOOL_USER_ID || fichero.userId;
+  if (!userId) throw new Error('Falta METRICOOL_USER_ID: sale de la URL de Metricool al abrir una marca.');
+  return { token, userId: String(userId), blogId: process.env.METRICOOL_BLOG_ID || fichero.blogId || null };
+}
+
+/** Por dónde se publica. Lo que se pida, y si no, lo que esté configurado. */
+async function elegirVia(op) {
+  if (op.via === 'metricool' || op.via === 'meta') return op.via;
+  if (op.via) morir(`No sé publicar «por ${op.via}»: es «meta» o «metricool».`);
+  if (process.env.METRICOOL_TOKEN) return 'metricool';
+  if (process.env.META_TOKEN) return 'meta';
+  const archivo = join(AQUI, 'credenciales.json');
+  if (existsSync(archivo)) {
+    const f = JSON.parse(await readFile(archivo, 'utf8'));
+    if (f.metricool?.token) return 'metricool';
+    if (f.token) return 'meta';
+  }
+  return 'meta';
+}
+
+/** La marca de Metricool con la que se trabaja. */
+async function marcaActiva() {
+  const cred = await credencialesMetricool();
+  const lista = await marcas(cred);
+  if (!lista.length) throw new Error('Ese token de Metricool no alcanza ninguna marca.');
+  if (cred.blogId) {
+    const m = lista.find((x) => x.blogId === cred.blogId);
+    if (!m) throw new Error(`El token no alcanza la marca ${cred.blogId}.`);
+    return { cred, marca: m };
+  }
+  if (lista.length > 1) {
+    throw new Error(
+      'El token alcanza varias marcas; di con cuál:\n' +
+        lista.map((m) => `  METRICOOL_BLOG_ID=${m.blogId}  ${m.nombre}`).join('\n')
+    );
+  }
+  return { cred: { ...cred, blogId: lista[0].blogId }, marca: lista[0] };
 }
 
 /** La Página con la que se trabaja y su token, resueltas del token que haya. */
@@ -153,12 +208,30 @@ function señal(rev, ancho = 0) {
 
 // ── Órdenes ───────────────────────────────────────────────────────────────
 
-async function ordenCuentas() {
-  const { pagina, igId, igNombre } = await cuentaActiva();
-  console.log(C.fuerte('Facebook  ') + pagina.nombre + C.gris('  id ' + pagina.id));
-  if (igId) console.log(C.fuerte('Instagram ') + '@' + (igNombre || '?') + C.gris('  id ' + igId));
-  else console.log(C.ambar('Instagram  sin cuenta de empresa vinculada a esa Página.'));
-  console.log(C.gris('\nPara no volver a descubrirlo: FB_PAGE_ID=' + pagina.id + (igId ? '  IG_USER_ID=' + igId : '')));
+async function ordenCuentas(op) {
+  const via = await elegirVia(op);
+  console.log(C.gris(`vía por defecto: ${via}\n`));
+
+  try {
+    const { pagina, igId, igNombre } = await cuentaActiva();
+    console.log(C.fuerte('── Meta'));
+    console.log('  Facebook   ' + pagina.nombre + C.gris('  id ' + pagina.id));
+    if (igId) console.log('  Instagram  @' + (igNombre || '?') + C.gris('  id ' + igId));
+    else console.log(C.ambar('  Instagram  sin cuenta de empresa vinculada a esa Página.'));
+    console.log(C.gris('  FB_PAGE_ID=' + pagina.id + (igId ? '  IG_USER_ID=' + igId : '')));
+  } catch (e) {
+    console.log(C.fuerte('── Meta') + C.gris('  ' + e.message.split('\n')[0]));
+  }
+
+  try {
+    const { cred, marca } = await marcaActiva();
+    console.log(C.fuerte('\n── Metricool'));
+    console.log('  ' + marca.nombre + C.gris('  blogId ' + marca.blogId));
+    if (marca.redes.length) console.log(C.gris('  conectadas: ' + marca.redes.join(', ')));
+    console.log(C.gris('  METRICOOL_BLOG_ID=' + cred.blogId));
+  } catch (e) {
+    console.log(C.fuerte('\n── Metricool') + C.gris('  ' + e.message.split('\n')[0]));
+  }
 }
 
 async function ordenIdeas(op) {
@@ -243,10 +316,12 @@ async function ordenPublicar(op) {
   if (op['texto-ig']) texto.ig = String(op['texto-ig']);
   if (op['texto-fb']) texto.fb = String(op['texto-fb']);
 
+  const via = await elegirVia(op);
+
   // Repaso antes de nada: si algo no cuadra, aquí se para.
   const pegas = [];
   for (const red of redes) {
-    for (const p of repasar({ red, texto: texto[red], imagen })) pegas.push(`${REDES[red].nombre}: ${p}`);
+    for (const p of repasar({ red, texto: texto[red], imagen, via })) pegas.push(`${REDES[red].nombre}: ${p}`);
   }
   if (pegas.length) {
     console.error(C.rojo('✗ No publico:'));
@@ -256,30 +331,34 @@ async function ordenPublicar(op) {
 
   // El ensayo se puede ver sin credenciales: así se repasa el texto antes de
   // tener el token. Para publicar de verdad, ya no.
-  let cuenta = null;
+  let destino = null;
   let sinCuenta = null;
   try {
-    cuenta = await cuentaActiva();
+    destino = via === 'metricool' ? await marcaActiva() : await cuentaActiva();
   } catch (e) {
     if (op.ya) throw e;
     sinCuenta = e.message;
   }
-  if (cuenta && redes.includes('ig') && !cuenta.igId) {
+  if (via === 'meta' && destino && redes.includes('ig') && !destino.igId) {
     morir('No hay cuenta de Instagram vinculada a esa Página.');
   }
 
+  const aDonde = (red) => {
+    if (!destino) return C.gris('la cuenta que se configure');
+    if (via === 'metricool') return destino.marca.nombre + C.gris(' (Metricool)');
+    return red === 'ig' ? '@' + (destino.igNombre || destino.igId) : destino.pagina.nombre;
+  };
+
   // Ensayo: enseñar exactamente lo que saldría. Es lo que se hace por defecto.
   if (!op.ya) {
-    console.log(C.ambar('ENSAYO') + C.gris('  — nada se ha publicado. Añade --ya para hacerlo de verdad.\n'));
+    console.log(C.ambar('ENSAYO') + C.gris(`  — nada se ha publicado. Por ${via}. Añade --ya para hacerlo de verdad.\n`));
     if (sinCuenta) console.log(C.ambar('⚠ ') + sinCuenta.split('\n')[0] + C.gris('  (el texto se puede repasar igual)\n'));
     console.log(C.gris('imagen  ') + (imagen || 'ninguna'));
+    if (via === 'metricool') {
+      console.log(C.gris('cuando  ') + (op.cuando || 'dentro de 5 minutos') + (op.borrador ? C.ambar('  · como borrador') : ''));
+    }
     for (const red of redes) {
-      const destino = !cuenta
-        ? C.gris('la cuenta que se configure')
-        : red === 'ig'
-          ? '@' + (cuenta.igNombre || cuenta.igId)
-          : cuenta.pagina.nombre;
-      console.log('\n' + C.fuerte(`── ${REDES[red].nombre} → ${destino}`) + C.gris(`  ${texto[red].length}/${REDES[red].limite}`));
+      console.log('\n' + C.fuerte(`── ${REDES[red].nombre} → ${aDonde(red)}`) + C.gris(`  ${texto[red].length}/${REDES[red].limite}`));
       console.log(C.gris('se verá:  ') + asomo(texto[red], red));
       console.log(C.gris('─────────'));
       console.log(texto[red]);
@@ -287,33 +366,56 @@ async function ordenPublicar(op) {
     return;
   }
 
+  // Metricool no publica imágenes de fuera: primero las copia a su servidor.
+  let mediaId = null;
+  if (via === 'metricool' && imagen) {
+    mediaId = await normalizarImagen(imagen, destino.cred);
+  }
+
   for (const red of redes) {
     try {
-      const r =
-        red === 'ig'
-          ? await publicarInstagram({
-              igId: cuenta.igId,
-              token: cuenta.pagina.token,
-              texto: texto.ig,
-              imagen,
-              aviso: (m) => process.stdout.write(C.gris(`  ${m}\r`)),
-            })
-          : await publicarFacebook({
-              paginaId: cuenta.pagina.id,
-              token: cuenta.pagina.token,
-              texto: texto.fb,
-              imagen,
-              enlace: op.enlace,
-            });
-      console.log(C.verde('✓ ') + REDES[red].nombre + '  ' + r.enlace);
+      let r;
+      if (via === 'metricool') {
+        r = await programar({
+          red,
+          texto: texto[red],
+          mediaId,
+          fecha: op.cuando,
+          zona: op.zona || process.env.TZ_PUBLICACION,
+          borrador: op.borrador,
+          autoPublicar: !op.borrador,
+          cred: destino.cred,
+        });
+        console.log(C.verde('✓ ') + REDES[red].nombre + C.gris(`  ${op.borrador ? 'borrador' : 'programado'} para ${r.cuando}`) + '  ' + r.enlace);
+      } else {
+        r =
+          red === 'ig'
+            ? await publicarInstagram({
+                igId: destino.igId,
+                token: destino.pagina.token,
+                texto: texto.ig,
+                imagen,
+                aviso: (m) => process.stdout.write(C.gris(`  ${m}\r`)),
+              })
+            : await publicarFacebook({
+                paginaId: destino.pagina.id,
+                token: destino.pagina.token,
+                texto: texto.fb,
+                imagen,
+                enlace: op.enlace,
+              });
+        console.log(C.verde('✓ ') + REDES[red].nombre + '  ' + r.enlace);
+      }
       await appendFile(
         REGISTRO,
         JSON.stringify({
           fecha: new Date().toISOString(),
+          via,
           red,
           idea: etiqueta,
           id: r.id,
           enlace: r.enlace,
+          cuando: r.cuando || null,
           imagen,
           texto: texto[red],
         }) + '\n'
@@ -330,7 +432,10 @@ async function ordenRegistro(op) {
   const lineas = (await readFile(REGISTRO, 'utf8')).trim().split('\n').filter(Boolean);
   for (const l of lineas.slice(-Number(op.n || 20))) {
     const r = JSON.parse(l);
-    console.log(`${r.fecha.slice(0, 16).replace('T', ' ')}  ${REDES[r.red]?.nombre.padEnd(9)} ${r.idea || C.gris('suelto')}`);
+    console.log(
+      `${r.fecha.slice(0, 16).replace('T', ' ')}  ${(REDES[r.red]?.nombre || r.red).padEnd(9)} ` +
+        `${(r.via || 'meta').padEnd(9)} ${r.idea || C.gris('suelto')}`
+    );
     console.log('  ' + C.gris(r.enlace));
   }
 }
@@ -352,13 +457,19 @@ opciones de publicar
   --imagen <url>               manda sobre la imagen de la ficha
   --enlace <url>               solo Facebook, entrada sin foto
   --red ig | fb | ambas        por defecto, ambas
+  --via meta | metricool       por defecto, la que tenga credenciales
   --ya                         publicar de verdad
+
+solo por Metricool (que programa, no publica en el acto)
+  --cuando <2026-10-20T09:30>  por defecto, dentro de cinco minutos
+  --zona Europe/Madrid         por defecto, Europe/Madrid
+  --borrador                   dejarlo en el planificador sin publicar
 `;
 
 const { sueltos, op } = argumentos(process.argv.slice(2));
 const orden = sueltos.shift();
 try {
-  if (orden === 'cuentas') await ordenCuentas();
+  if (orden === 'cuentas') await ordenCuentas(op);
   else if (orden === 'ideas') await ordenIdeas(op);
   else if (orden === 'ver') await ordenVer(sueltos, op);
   else if (orden === 'publicar') await ordenPublicar(op);

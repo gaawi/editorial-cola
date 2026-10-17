@@ -1,0 +1,11 @@
+# Ruta secreta: la URL del conector será https://<tu-worker>.workers.dev/mcp/<MCP_SECRET>
+MCP_SECRET=pon-aqui-una-cadena-larga-y-aleatoria
+
+# LinkedIn (opcional)
+LINKEDIN_TOKEN=
+LINKEDIN_AUTHOR_URN=urn:li:person:XXXX
+
+# Meta: Facebook Página e Instagram (opcional)
+META_PAGE_TOKEN=
+FACEBOOK_PAGE_ID=
+INSTAGRAM_ACCOUNT_ID=

@@ -7,10 +7,16 @@ y solo publica cuando se le dice.
 Las ideas salen del **kit de redes** del repositorio de ADAR, que se lee sin
 tocarlo: ni el kit ni los archivos de revisión se modifican nunca desde aquí.
 
-## Dos caminos
+## Tres caminos
 
-Se puede publicar por **Metricool**, que ya tiene las cuentas conectadas, o
-hablando directamente con **Meta**. Hacen lo mismo y comparten todo menos el
+El que está en uso es el **conector de Metricool** en claude.ai: se activa en
+la conversación y Claude llama a sus herramientas directamente, sin token ni
+plan de pago. Entonces esta herramienta hace la mitad de delante —sacar la
+idea del kit, componer el pie de cada red, repasarlo y enseñar el ensayo— y
+el conector se encarga de mandarlo.
+
+Los otros dos no necesitan conector y viven enteros aquí: la **API de
+Metricool** y **Meta** directamente. Hacen lo mismo y comparten todo menos el
 último paso.
 
 |  | Metricool | Meta |
@@ -22,7 +28,8 @@ hablando directamente con **Meta**. Hacen lo mismo y comparten todo menos el
 | Requisito | plan Advanced o Custom | nada |
 
 Si no hay nada configurado se usa Meta; con `METRICOOL_TOKEN` puesto, Metricool.
-`--via meta` o `--via metricool` manda sobre eso.
+`--via meta` o `--via metricool` manda sobre eso. El conector no se elige con
+`--via`: no pasa por aquí.
 
 ## Metricool
 
@@ -44,9 +51,8 @@ autoPublish puesto, que es lo más cerca que se llega de publicar ya. Con
 `--cuando 2026-10-20T09:30` se programa para esa hora, y con `--borrador` se
 queda en el planificador sin salir.
 
-Los planes Free y Starter no tienen API. Ahí el camino es el MCP de Metricool
-(`ai.metricool.com/mcp`), que se añade al cliente y no pasa por este
-repositorio.
+Los planes Free y Starter no tienen API. Ahí el camino es el conector de
+Metricool, que funciona con cualquier plan.
 
 ## Meta
 
@@ -114,6 +120,11 @@ node publicar.mjs publicar --texto "…" --enlace https://… --red fb
   navegador: si allí cambia la forma del pie, hay que cambiarla aquí también.
 - Lo que el kit guarda en el navegador (textos corregidos a mano desde el
   panel) no se ve desde aquí; lo que se lee es el material del repositorio.
+- **Solo se publica lo que esté en «listo».** Los otros seis estados del panel
+  —idea, borrador, hay que cambiar algo, en espera, descartado, sin marcar—
+  salen con un aviso delante. El estado lo decide él, no esto.
+- Las fotos con ruta relativa (`/kit/…`) se resuelven contra festivaladar.com,
+  que es desde donde el kit las sirve. Se cambia con `SITIO_KIT`.
 - Cada publicación se anota en `registro.jsonl`. El estado del panel
   (`revisiones*.json`, en el repositorio de ADAR) no se toca.
 

@@ -194,16 +194,45 @@ async function unaIdea(texto, soloMarca) {
   return encontradas[0];
 }
 
+// Los siete estados del desplegable del panel, con el mismo nombre que allí.
+// Verde: se puede publicar. Rojo: no se toca. Lo demás, todavía no está.
+const ESTADOS = {
+  listo: { texto: 'listo', color: 'verde' },
+  cambios: { texto: 'cambios', color: 'rojo' },
+  descartado: { texto: 'descartado', color: 'rojo' },
+  espera: { texto: 'espera', color: 'ambar' },
+  borrador: { texto: 'borrador', color: 'ambar' },
+  idea: { texto: 'idea', color: 'gris' },
+  '': { texto: '—', color: 'gris' },
+};
+
+/**
+ * Algunas fichas traen la foto con ruta relativa porque el kit la sirve desde
+ * el propio sitio. Ni Meta ni Metricool pueden ir a buscar eso: necesitan la
+ * URL entera. Las imágenes del kit viven en festivaladar.com, también las de
+ * CreArtBox, que es lo que dice el comentario de kit-creartbox.ts.
+ */
+function urlImagen(img) {
+  if (!img) return null;
+  if (/^https?:\/\//i.test(img)) return img;
+  const sitio = process.env.SITIO_KIT || 'festivaladar.com';
+  return `https://${sitio}${img.startsWith('/') ? '' : '/'}${img}`;
+}
+
 function señal(rev, ancho = 0) {
-  const texto = rev.estado === 'listo' ? 'listo'
-    : rev.estado === 'cambios' ? 'cambios'
-    : rev.estado === 'espera' ? 'espera'
-    : '—';
-  const color = rev.estado === 'listo' ? C.verde : rev.estado === 'cambios' ? C.rojo
-    : rev.estado === 'espera' ? C.ambar : C.gris;
+  const e = ESTADOS[rev.estado || ''] || { texto: rev.estado, color: 'gris' };
   // Se rellena antes de colorear: si no, los códigos de color cuentan y la
   // columna se descuadra.
-  return color(texto.padEnd(ancho));
+  return C[e.color](e.texto.padEnd(ancho));
+}
+
+/** ¿Lo ha dado él por bueno? Solo «listo» lo es; lo demás, no todavía. */
+function luzVerde(rev) {
+  if (rev.estado === 'listo') return null;
+  if (rev.estado === 'descartado') return 'está descartada en el panel';
+  if (rev.estado === 'cambios') return 'está marcada «hay que cambiar algo»' + (rev.nota ? ': ' + rev.nota : '');
+  if (rev.estado) return `está en «${ESTADOS[rev.estado]?.texto || rev.estado}», no en «listo»`;
+  return 'no está marcada en el panel';
 }
 
 // ── Órdenes ───────────────────────────────────────────────────────────────
@@ -247,7 +276,7 @@ async function ordenIdeas(op) {
     const hechas = Object.keys(f.rev.publicado || {});
     const yaIgFb = ['ig', 'fb'].filter((r) => hechas.includes(r));
     console.log(
-      `${C.fuerte(clave(f.idea).padEnd(34))} ${señal(f.rev, 8)} ${(f.idea.date || '—').padEnd(10)}  ` +
+      `${C.fuerte(clave(f.idea).padEnd(34))} ${señal(f.rev, 10)} ${(f.idea.date || '—').padEnd(10)}  ` +
         (f.idea.image ? '' : C.ambar('sin imagen  ')) +
         (yaIgFb.length ? C.gris('ya en ' + yaIgFb.join('+')) : '')
     );
@@ -257,7 +286,7 @@ async function ordenIdeas(op) {
 
 async function ordenVer(sueltos, op) {
   const f = await unaIdea(sueltos[0] || morir('Dime qué idea: node publicar.mjs ver <clave>'), op.marca);
-  const imagen = op.imagen || f.idea.image;
+  const imagen = op.imagen || urlImagen(f.idea.image);
   console.log(C.fuerte(f.idea.title));
   console.log(C.gris(`${f.marca} · ${clave(f.idea)} · ${f.idea.date} · ${f.idea.status}`));
   console.log(C.gris('enlace  ') + f.idea.url);
@@ -303,11 +332,10 @@ async function ordenPublicar(op) {
   if (op.idea) {
     const f = await unaIdea(String(op.idea), op.marca);
     etiqueta = `${f.marca}:${clave(f.idea)}`;
-    imagen = imagen || f.idea.image;
+    imagen = imagen || urlImagen(f.idea.image);
     for (const red of redes) texto[red] = pie(f.idea, f.brand, red);
-    if (f.rev.estado === 'cambios') {
-      console.log(C.ambar('⚠ Esta ficha está marcada «cambios» en el panel' + (f.rev.nota ? ': ' + f.rev.nota : '') + '.'));
-    }
+    const pega = luzVerde(f.rev);
+    if (pega) console.log(C.ambar('⚠ ') + 'Ojo: esta ficha ' + pega + '.');
   } else {
     const suelto = op['texto-archivo'] ? await readFile(String(op['texto-archivo']), 'utf8') : op.texto;
     if (!suelto) morir('Dime qué publicar: --idea <clave> o --texto "…" o --texto-archivo <ruta>.');

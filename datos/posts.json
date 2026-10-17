@@ -1,0 +1,3062 @@
+{
+ "generado": "2026-10-17T20:53:39.547Z",
+ "origen": "gaawi/adar",
+ "marcas": {
+  "creartbox": {
+   "marca": {
+    "id": "creartbox",
+    "org": "CreArtBox",
+    "stamp": "CREARTBOX",
+    "site": "creartbox.nyc",
+    "logo": "/logos/creartbox.png",
+    "ink": "#070706",
+    "paper": "#F2EFE8",
+    "accent": "#FFC403",
+    "overPhotoInk": "#F2EFE8",
+    "ctaInk": "#F2EFE8",
+    "textBg": "#100F0E",
+    "textTitle": "#F2EFE8",
+    "textBody": "#C9C3B9",
+    "textFoot": "#9C968C",
+    "display": "\"Literata\", Georgia, serif",
+    "ui": "\"Archivo\", Helvetica, Arial, sans-serif",
+    "label": "\"Archivo\", Helvetica, Arial, sans-serif",
+    "labelWeight": "600",
+    "titleWeight": "600",
+    "fontsHref": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap",
+    "fontLoads": [
+     "600 64px \"Literata\"",
+     "400 32px \"Archivo\"",
+     "600 32px \"Archivo\"",
+     "700 32px \"Archivo\""
+    ]
+   },
+   "posts": [
+    {
+     "clave": "en/season-2026-27",
+     "lang": "en",
+     "slug": "season-2026-27",
+     "kind": "post",
+     "title": "CreArtBox announces its twelfth season",
+     "excerpt": "Four productions at The DiMenna Center, eleven works from the open call, one world premiere, touring dates in Illinois, Kentucky and the Hudson Valley, a residency in Finland, and the seventh Festival ADAR in Asturias.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-ensemble.jpg",
+     "url": "https://creartbox.nyc/press/season-2026-27.html",
+     "date": "2026-09-10",
+     "tags": [
+      "Season202627",
+      "DiMennaCenter",
+      "CallForScores",
+      "FestivalADAR"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "CreArtBox announces its twelfth season",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Four nights at The DiMenna Center",
+       "body": "The centre of the season is the New York Series: four productions at The DiMenna Center for Classical Music, each at 7:30 pm. Currents, Winterlight, Pressure and Release, Feverdream."
+      },
+      {
+       "type": "text",
+       "title": "Eleven works came through the open call",
+       "body": "Eleven of the works this season reached the programme through CreArtBox's open call for scores, more than in any season before. In April an entire evening is given over to it."
+      },
+      {
+       "type": "text",
+       "title": "A world premiere in December",
+       "body": "Winterlight opens with the world premiere of Hannah Selin's Tectonic Lullaby for piano quintet, and closes with Stravinsky's Petroushka in a chamber arrangement."
+      },
+      {
+       "type": "text",
+       "title": "On tour: Illinois, Kentucky, the Hudson Valley",
+       "body": "The ensemble opens the Engelbach-Hart Music Festival at Illinois College with free admission, plays the Chamber Music Society of Louisville, and brings Masked Sounds to Saugerties."
+      },
+      {
+       "type": "text",
+       "title": "Five days in Kuopio",
+       "body": "Guillermo Laporta and Josefina Urraca spend five days at the Kuopio Conservatory in Finland, giving masterclasses and a workshop on building a chamber piece on stage: working closer to the audience, drawing on design and other disciplines."
+      },
+      {
+       "type": "text",
+       "title": "The season ends in Asturias",
+       "body": "The seventh Festival ADAR runs from 2 to 15 August 2027 across rural Asturias: residencies, micro-concerts and stops in small towns, played in churches, hórreos and mountain villages rather than concert halls."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "CreArtBox announces its twelfth season\n\nFour productions at The DiMenna Center, eleven works from the open call, one world premiere, touring dates in Illinois, Kentucky and the Hudson Valley, a residency in Finland, and the seventh Festival ADAR in Asturias.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Season202627",
+       "asomo": "CreArtBox announces its twelfth season Four productions at The DiMenna Center, eleven works from the open call, one world pre…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "CreArtBox announces its twelfth season\n\nFour productions at The DiMenna Center, eleven works from the open call, one world premiere, touring dates in Illinois, Kentucky and the Hudson Valley, a residency in Finland, and the seventh Festival ADAR in Asturias.\n\nhttps://creartbox.nyc/press/season-2026-27.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "CreArtBox announces its twelfth season Four productions at The DiMenna Center, eleven works from the open call, one world premiere, touring dates in Illinois, Kentucky and the Hudson Valley, a residency in Finland, and the seventh Festival ADAR in Asturias. https://creartbox.nyc/press/season-2026-27.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "listo",
+      "nota": "",
+      "publicado": {
+       "ig": "2026-10-01T07:16:18.972Z",
+       "tt": "2026-10-01T07:16:19.922Z",
+       "fb": "2026-10-01T07:16:21.356Z",
+       "li": "2026-10-01T07:16:22.023Z",
+       "x": "2026-10-01T07:16:22.647Z"
+      }
+     }
+    },
+    {
+     "clave": "en/currents",
+     "lang": "en",
+     "slug": "currents",
+     "kind": "post",
+     "title": "Currents opens the season",
+     "excerpt": "Built around one idea. Current: moving air, moving water, energy going from one place to another. 30 October 2026, The DiMenna Center, 7:30 pm.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-currents-dimenna.jpg",
+     "url": "https://creartbox.nyc/concerts.html",
+     "date": "2026-10-30",
+     "tags": [
+      "Currents",
+      "DiMennaCenter",
+      "NewYorkSeries"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Currents opens the season",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "One idea, held all evening",
+       "body": "Current: moving air, moving water, energy going from one place to another. Every work on the programme is a different way of carrying something across."
+      },
+      {
+       "type": "text",
+       "title": "New music beside Brahms and both Schumanns",
+       "body": "Eric Moe's Laminar Flow in Upsidedown Creek and a new piece by the ensemble's flutist Guillermo Laporta sit alongside Brahms, Robert Schumann and Clara Schumann."
+      },
+      {
+       "type": "text",
+       "title": "Eric Moe",
+       "body": "A Guggenheim fellow, honoured by the American Academy of Arts and Letters. His score reached the programme through the open call."
+      },
+      {
+       "type": "text",
+       "title": "Tickets",
+       "body": "On sale now through Eventbrite. The DiMenna Center for Classical Music, 30 October 2026, 7:30 pm."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Currents opens the season\n\nBuilt around one idea. Current: moving air, moving water, energy going from one place to another. 30 October 2026, The DiMenna Center, 7:30 pm.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Currents",
+       "asomo": "Currents opens the season Built around one idea. Current: moving air, moving water, energy going from one place to another. 3…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Currents opens the season\n\nBuilt around one idea. Current: moving air, moving water, energy going from one place to another. 30 October 2026, The DiMenna Center, 7:30 pm.\n\nhttps://creartbox.nyc/concerts.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "Currents opens the season Built around one idea. Current: moving air, moving water, energy going from one place to another. 30 October 2026, The DiMenna Center, 7:30 pm. https://creartbox.nyc/concerts.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "listo",
+      "nota": "",
+      "publicado": {
+       "ig": "2026-10-01T07:05:23.668Z",
+       "fb": "2026-10-01T07:09:12.200Z",
+       "tt": "2026-10-01T07:15:54.572Z",
+       "li": "2026-10-01T07:17:04.348Z",
+       "x": "2026-10-01T07:17:20.603Z"
+      }
+     }
+    },
+    {
+     "clave": "en/winterlight",
+     "lang": "en",
+     "slug": "winterlight",
+     "kind": "post",
+     "title": "Winterlight: a world premiere, and Petroushka",
+     "excerpt": "Hannah Selin's Tectonic Lullaby for piano quintet gets its first performance, and the evening closes with Stravinsky's Petroushka in a chamber arrangement. 11 December 2026.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-in-performance.jpg",
+     "url": "https://creartbox.nyc/concerts.html",
+     "date": "2026-12-11",
+     "tags": [
+      "Winterlight",
+      "WorldPremiere",
+      "Stravinsky",
+      "NewYorkSeries"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Winterlight: a world premiere, and Petroushka",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "A first performance",
+       "body": "The evening opens with the world premiere of Hannah Selin's Tectonic Lullaby, written for piano quintet."
+      },
+      {
+       "type": "text",
+       "title": "Petroushka, five players",
+       "body": "It closes with Stravinsky's Petroushka in a chamber arrangement: the ballet reduced to the forces of the room, and the more exposed for it."
+      },
+      {
+       "type": "text",
+       "title": "December in New York",
+       "body": "The DiMenna Center for Classical Music, 11 December 2026, 7:30 pm."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Winterlight: a world premiere, and Petroushka\n\nHannah Selin's Tectonic Lullaby for piano quintet gets its first performance, and the evening closes with Stravinsky's Petroushka in a chamber arrangement. 11 December 2026.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Winterlight",
+       "asomo": "Winterlight: a world premiere, and Petroushka Hannah Selin's Tectonic Lullaby for piano quintet gets its first performance, a…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Winterlight: a world premiere, and Petroushka\n\nHannah Selin's Tectonic Lullaby for piano quintet gets its first performance, and the evening closes with Stravinsky's Petroushka in a chamber arrangement. 11 December 2026.\n\nhttps://creartbox.nyc/concerts.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "Winterlight: a world premiere, and Petroushka Hannah Selin's Tectonic Lullaby for piano quintet gets its first performance, and the evening closes with Stravinsky's Petroushka in a chamber arrangement. 11 December 2026. https://creartbox.nyc/concerts.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "en/pressure-and-release",
+     "lang": "en",
+     "slug": "pressure-and-release",
+     "kind": "post",
+     "title": "Pressure and Release: seven works, seven composers, one evening",
+     "excerpt": "An entire production given over to the open call, the first time CreArtBox has programmed a whole evening this way. 23 April 2027.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-fragile-form.jpg",
+     "url": "https://creartbox.nyc/concerts.html",
+     "date": "2027-04-23",
+     "tags": [
+      "PressureAndRelease",
+      "CallForScores",
+      "NewMusic",
+      "NewYorkSeries"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Pressure and Release: seven works, seven composers, one evening",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Seven composers in one night",
+       "body": "Yurui (Rain), Alex Burtzos, Luke Carlson, Gilad Cohen, Samantha Leigh Sack, Paul Novak and Sam Wu. Seven works, chosen from the open call, played in a single evening."
+      },
+      {
+       "type": "text",
+       "title": "Awarded before they reached us",
+       "body": "Paul Novak and Sam Wu have both taken the ASCAP Foundation's Morton Gould Young Composer Award, Novak with the Leo Kaplan Award."
+      },
+      {
+       "type": "text",
+       "title": "Why a whole evening",
+       "body": "Eleven of the works we play this year came through the open call, more than in any season before. In April we give it the stage on its own."
+      },
+      {
+       "type": "text",
+       "title": "Details",
+       "body": "The DiMenna Center for Classical Music, 23 April 2027, 7:30 pm."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Pressure and Release: seven works, seven composers, one evening\n\nAn entire production given over to the open call, the first time CreArtBox has programmed a whole evening this way. 23 April 2027.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #PressureAndRelease",
+       "asomo": "Pressure and Release: seven works, seven composers, one evening An entire production given over to the open call, the first t…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Pressure and Release: seven works, seven composers, one evening\n\nAn entire production given over to the open call, the first time CreArtBox has programmed a whole evening this way. 23 April 2027.\n\nhttps://creartbox.nyc/concerts.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "Pressure and Release: seven works, seven composers, one evening An entire production given over to the open call, the first time CreArtBox has programmed a whole evening this way. 23 April 2027. https://creartbox.nyc/concerts.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "en/feverdream",
+     "lang": "en",
+     "slug": "feverdream",
+     "kind": "post",
+     "title": "Feverdream closes the twelfth season",
+     "excerpt": "Sibelius's Piano Quintet in G minor, and a score by Festival ADAR's composer in residence that reached New York through the open call. 7 May 2027.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-festival-adar.jpg",
+     "url": "https://creartbox.nyc/concerts.html",
+     "date": "2027-05-07",
+     "tags": [
+      "Feverdream",
+      "Sibelius",
+      "NewYorkSeries",
+      "FestivalADAR"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Feverdream closes the twelfth season",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Sibelius in G minor",
+       "body": "The season closes with the Piano Quintet in G minor: early Sibelius, and rarely played."
+      },
+      {
+       "type": "text",
+       "title": "A score that travelled both ways",
+       "body": "Zygmund de Somogyi is Festival ADAR's composer in residence. Their score reached CreArtBox through the open call, and it closes the season in New York."
+      },
+      {
+       "type": "text",
+       "title": "Royal Philharmonic Society, Fromm Foundation",
+       "body": "De Somogyi is a Royal Philharmonic Society composer for 2025 and a Fromm Foundation fellow."
+      },
+      {
+       "type": "text",
+       "title": "Details",
+       "body": "The DiMenna Center for Classical Music, 7 May 2027, 7:30 pm."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Feverdream closes the twelfth season\n\nSibelius's Piano Quintet in G minor, and a score by Festival ADAR's composer in residence that reached New York through the open call. 7 May 2027.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Feverdream",
+       "asomo": "Feverdream closes the twelfth season Sibelius's Piano Quintet in G minor, and a score by Festival ADAR's composer in residenc…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Feverdream closes the twelfth season\n\nSibelius's Piano Quintet in G minor, and a score by Festival ADAR's composer in residence that reached New York through the open call. 7 May 2027.\n\nhttps://creartbox.nyc/concerts.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "Feverdream closes the twelfth season Sibelius's Piano Quintet in G minor, and a score by Festival ADAR's composer in residence that reached New York through the open call. 7 May 2027. https://creartbox.nyc/concerts.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "en/currents-walk-on",
+     "lang": "en",
+     "slug": "currents-walk-on",
+     "kind": "post",
+     "title": "The players walk on stage already playing",
+     "excerpt": "Currents opens with Brown Leaves Moving. The five musicians start offstage and walk on as they play, so the ensemble forms in front of the audience instead of waiting for it. 30 October, The DiMenna Center.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-in-performance.jpg",
+     "url": "https://creartbox.nyc/concerts/currents-2026.html",
+     "date": "2026-10-30",
+     "tags": [
+      "Currents",
+      "BrownLeavesMoving",
+      "DiMennaCenter",
+      "NewYorkSeries"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "The players walk on stage already playing",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "The stage is empty when the music starts",
+       "body": "Brown Leaves Moving begins with the players offstage. They walk on as they play, over an electronic background, so the ensemble forms in front of the audience instead of waiting for it."
+      },
+      {
+       "type": "text",
+       "title": "Four minutes",
+       "body": "It is the shortest work of the night and the first one. Guillermo Laporta wrote it in 2018, for the suite AWAVE, first performed in Queens that year."
+      },
+      {
+       "type": "text",
+       "title": "Why it opens",
+       "body": "Currents assembles five works around a single idea: movement carried from one place to another. Two of them take the idea literally. This is the one that does it with the players themselves."
+      },
+      {
+       "type": "text",
+       "title": "Details",
+       "body": "30 October 2026, 7:30 pm. The DiMenna Center for Classical Music, 450 W 37th St. About 60 minutes, played without intermission."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "The players walk on stage already playing\n\nCurrents opens with Brown Leaves Moving. The five musicians start offstage and walk on as they play, so the ensemble forms in front of the audience instead of waiting for it. 30 October, The DiMenna Center.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Currents",
+       "asomo": "The players walk on stage already playing Currents opens with Brown Leaves Moving. The five musicians start offstage and walk…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "The players walk on stage already playing\n\nCurrents opens with Brown Leaves Moving. The five musicians start offstage and walk on as they play, so the ensemble forms in front of the audience instead of waiting for it. 30 October, The DiMenna Center.\n\nhttps://creartbox.nyc/concerts/currents-2026.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "The players walk on stage already playing Currents opens with Brown Leaves Moving. The five musicians start offstage and walk on as they play, so the ensemble forms in front of the audience instead of waiting for it. 30 October, The DiMenna Center. https://creartbox.nyc/concerts/currents-2026.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "cambios",
+      "nota": "no me convence, del todo pero me gusta la idea",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "en/currents-joachim",
+     "lang": "en",
+     "slug": "currents-joachim",
+     "kind": "post",
+     "title": "One violinist connects three works on this programme",
+     "excerpt": "Joseph Joachim received the dedication of Clara Schumann's Three Romances in 1853, and it was Joachim who read the viola part of Brahms's A minor Trio in rehearsal. Both are on the programme on 30 October.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-currents-dimenna.jpg",
+     "url": "https://creartbox.nyc/concerts/currents-2026.html",
+     "date": "2026-10-30",
+     "tags": [
+      "Currents",
+      "ClaraSchumann",
+      "Brahms",
+      "DiMennaCenter"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "One violinist connects three works on this programme",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "1853, a dedication",
+       "body": "Clara Schumann's Three Romances, Op. 22 carry a dedication to the violinist Joseph Joachim."
+      },
+      {
+       "type": "text",
+       "title": "The trio, played with viola",
+       "body": "It was Joachim who read the viola part of Brahms's Trio in A minor, Op. 114 in rehearsal. That is the scoring heard here: viola, cello and piano."
+      },
+      {
+       "type": "text",
+       "title": "1844, Clara at the Gewandhaus",
+       "body": "Clara Schumann gave the first public performance of her husband's Piano Quartet in E-flat major at the Leipzig Gewandhaus in 1844. It closes the evening, twenty-eight minutes of it."
+      },
+      {
+       "type": "text",
+       "title": "Details",
+       "body": "Currents. 30 October 2026, 7:30 pm. The DiMenna Center, New York."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "One violinist connects three works on this programme\n\nJoseph Joachim received the dedication of Clara Schumann's Three Romances in 1853, and it was Joachim who read the viola part of Brahms's A minor Trio in rehearsal. Both are on the programme on 30 October.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Currents",
+       "asomo": "One violinist connects three works on this programme Joseph Joachim received the dedication of Clara Schumann's Three Romance…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "One violinist connects three works on this programme\n\nJoseph Joachim received the dedication of Clara Schumann's Three Romances in 1853, and it was Joachim who read the viola part of Brahms's A minor Trio in rehearsal. Both are on the programme on 30 October.\n\nhttps://creartbox.nyc/concerts/currents-2026.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "One violinist connects three works on this programme Joseph Joachim received the dedication of Clara Schumann's Three Romances in 1853, and it was Joachim who read the viola part of Brahms's A minor Trio in rehearsal. Both are on the programme on 30 October. https://creartbox.nyc/concerts/currents-2026.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "en/currents-laminar-flow",
+     "lang": "en",
+     "slug": "currents-laminar-flow",
+     "kind": "post",
+     "title": "A title taken from fluid dynamics",
+     "excerpt": "Laminar flow is movement in smooth parallel layers, with no mixing between them. The opposite of turbulence. Eric Moe's Laminar Flow in Upsidedown Creek reached the season through the open call.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-ensemble.jpg",
+     "url": "https://creartbox.nyc/concerts/currents-2026.html",
+     "date": "2026-10-30",
+     "tags": [
+      "Currents",
+      "EricMoe",
+      "CallForScores",
+      "NewMusic"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "A title taken from fluid dynamics",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Laminar flow",
+       "body": "In fluid dynamics, movement in smooth parallel layers with no mixing between them. The opposite of turbulence."
+      },
+      {
+       "type": "text",
+       "title": "It came in through the open call",
+       "body": "Eric Moe's score reached the season through CreArtBox's open Call for Scores, which has run since the ensemble's first season. Eleven works this season arrived the same way, more than in any season before."
+      },
+      {
+       "type": "text",
+       "title": "Eric Moe",
+       "body": "A Guggenheim fellow, honoured by the American Academy of Arts and Letters."
+      },
+      {
+       "type": "text",
+       "title": "Details",
+       "body": "Currents. 30 October 2026, 7:30 pm. The DiMenna Center, New York."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "A title taken from fluid dynamics\n\nLaminar flow is movement in smooth parallel layers, with no mixing between them. The opposite of turbulence. Eric Moe's Laminar Flow in Upsidedown Creek reached the season through the open call.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Currents",
+       "asomo": "A title taken from fluid dynamics Laminar flow is movement in smooth parallel layers, with no mixing between them. The opposi…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "A title taken from fluid dynamics\n\nLaminar flow is movement in smooth parallel layers, with no mixing between them. The opposite of turbulence. Eric Moe's Laminar Flow in Upsidedown Creek reached the season through the open call.\n\nhttps://creartbox.nyc/concerts/currents-2026.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "A title taken from fluid dynamics Laminar flow is movement in smooth parallel layers, with no mixing between them. The opposite of turbulence. Eric Moe's Laminar Flow in Upsidedown Creek reached the season through the open call. https://creartbox.nyc/concerts/currents-2026.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "idea",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "en/currents-who-plays",
+     "lang": "en",
+     "slug": "currents-who-plays",
+     "kind": "social",
+     "title": "Who is on stage on 30 October",
+     "excerpt": "Guillermo Laporta, flute. Josefina Urraca, piano. Emilie-Anne Gendron, violin. Matthew Cohen, viola. Julia Yang, cello.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-ensemble.jpg",
+     "url": "https://creartbox.nyc/concerts/currents-2026.html",
+     "date": "2026-10-30",
+     "tags": [
+      "Currents",
+      "DiMennaCenter",
+      "ChamberMusic"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Who is on stage on 30 October",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "The five",
+       "body": "Guillermo Laporta, flute. Josefina Urraca, piano. Emilie-Anne Gendron, violin. Matthew Cohen, viola. Julia Yang, cello."
+      },
+      {
+       "type": "text",
+       "title": "Where they play the rest of the year",
+       "body": "Gendron is a longtime member of the Momenta Quartet and one of the concertmasters of the Orpheus Chamber Orchestra. Cohen was a special prize winner at the Primrose International Viola Competition."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Who is on stage on 30 October\n\nGuillermo Laporta, flute. Josefina Urraca, piano. Emilie-Anne Gendron, violin. Matthew Cohen, viola. Julia Yang, cello.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Currents",
+       "asomo": "Who is on stage on 30 October Guillermo Laporta, flute. Josefina Urraca, piano. Emilie-Anne Gendron, violin. Matthew Cohen, v…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Who is on stage on 30 October\n\nGuillermo Laporta, flute. Josefina Urraca, piano. Emilie-Anne Gendron, violin. Matthew Cohen, viola. Julia Yang, cello.\n\nhttps://creartbox.nyc/concerts/currents-2026.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "Who is on stage on 30 October Guillermo Laporta, flute. Josefina Urraca, piano. Emilie-Anne Gendron, violin. Matthew Cohen, viola. Julia Yang, cello. https://creartbox.nyc/concerts/currents-2026.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "en/currents-the-night",
+     "lang": "en",
+     "slug": "currents-the-night",
+     "kind": "social",
+     "title": "Sixty minutes, no interval",
+     "excerpt": "Currents runs about an hour, played straight through. Tickets from $15. The premium seats are the closest rows to the players, and come with a small treat on the night, usually chocolate.",
+     "image": "https://creartbox.nyc/assets/press/photos/creartbox-currents-dimenna.jpg",
+     "url": "https://creartbox.nyc/concerts/currents-2026.html",
+     "date": "2026-10-30",
+     "tags": [
+      "Currents",
+      "Tickets",
+      "DiMennaCenter"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Sixty minutes, no interval",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "The shape of it",
+       "body": "Five works, about sixty minutes, played without intermission. The DiMenna Center for Classical Music, 450 W 37th St, 7:30 pm."
+      },
+      {
+       "type": "text",
+       "title": "Tickets",
+       "body": "From $15, through Eventbrite. The premium tier is the closest rows to the players, and comes with a small treat on the night, usually chocolate."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Sixty minutes, no interval\n\nCurrents runs about an hour, played straight through. Tickets from $15. The premium seats are the closest rows to the players, and come with a small treat on the night, usually chocolate.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Currents",
+       "asomo": "Sixty minutes, no interval Currents runs about an hour, played straight through. Tickets from $15. The premium seats are the …",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Sixty minutes, no interval\n\nCurrents runs about an hour, played straight through. Tickets from $15. The premium seats are the closest rows to the players, and come with a small treat on the night, usually chocolate.\n\nhttps://creartbox.nyc/concerts/currents-2026.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "Sixty minutes, no interval Currents runs about an hour, played straight through. Tickets from $15. The premium seats are the closest rows to the players, and come with a small treat on the night, usually chocolate. https://creartbox.nyc/concerts/currents-2026.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "en/currents-programme-online",
+     "lang": "en",
+     "slug": "currents-programme-online",
+     "kind": "social",
+     "title": "Read the program before the concert!",
+     "excerpt": "The printed booklet for Currents is on the site: all sixteen pages, the program with the timing of every work, and the notes. Turn the pages, zoom in, or download the PDF.",
+     "image": "https://festivaladar.com/kit/creartbox-currents-programa.jpg",
+     "url": "https://creartbox.nyc/programs/currents-2026.html",
+     "date": "2026-10-30",
+     "tags": [
+      "Currents",
+      "ConcertProgramme",
+      "DiMennaCenter",
+      "NewYorkSeries"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Read the program before the concert!",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "New on the site",
+       "body": "The printed booklet for Currents is online, all sixteen pages. Turn the pages, zoom in, read it full screen, or download the PDF."
+      },
+      {
+       "type": "text",
+       "title": "What is in it",
+       "body": "The program with the timing of every work, fifty-six minutes of music in total. Notes on all five pieces. And the photographs from the series."
+      },
+      {
+       "type": "text",
+       "title": "Things you can find out before you come",
+       "body": "Why Brown Leaves Moving begins with the players offstage. What laminar flow is. How Joseph Joachim ties together three of the five works."
+      },
+      {
+       "type": "text",
+       "title": "Details",
+       "body": "Currents. 30 October 2026, 7:30 pm. The DiMenna Center, New York."
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Read the program before the concert!\n\nThe printed booklet for Currents is on the site: all sixteen pages, the program with the timing of every work, and the notes. Turn the pages, zoom in, or download the PDF.\n\nFull release at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Currents",
+       "asomo": "Read the program before the concert! The printed booklet for Currents is on the site: all sixteen pages, the program with the…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Read the program before the concert!\n\nThe printed booklet for Currents is on the site: all sixteen pages, the program with the timing of every work, and the notes. Turn the pages, zoom in, or download the PDF.\n\nhttps://creartbox.nyc/programs/currents-2026.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "Read the program before the concert! The printed booklet for Currents is on the site: all sixteen pages, the program with the timing of every work, and the notes. Turn the pages, zoom in, or download the PDF. https://creartbox.nyc/programs/currents-2026.html #CreArtBox #ChamberMusic",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "en/eric-moe-interview",
+     "lang": "en",
+     "slug": "eric-moe-interview",
+     "kind": "entrevista",
+     "title": "Eight questions for Eric Moe",
+     "excerpt": "The piece that opens our twelfth season is named after a stream in Montana. Its composer on laminar flow, a tango with three dancers, and what to listen for near the end. Photo: Mara Rago.",
+     "image": "https://festivaladar.com/kit/eric-moe.jpg",
+     "url": "https://creartbox.nyc/news/eight-questions-for-eric-moe.html",
+     "date": "2026-10-02",
+     "tags": [
+      "EricMoe",
+      "Currents",
+      "CallForScores",
+      "NewMusic"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Eight questions for Eric Moe",
+       "body": ""
+      },
+      {
+       "type": "cta",
+       "title": "Read the release",
+       "body": "Full press release at creartbox.nyc · link in bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Eight questions for Eric Moe\n\nThe piece that opens our twelfth season is named after a stream in Montana. Its composer on laminar flow, a tango with three dancers, and what to listen for near the end. Photo: Mara Rago.\n\nFull interview at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #EricMoe",
+       "asomo": "Eight questions for Eric Moe The piece that opens our twelfth season is named after a stream in Montana. Its composer on lami…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Eight questions for Eric Moe\n\nWe have interviewed the composer Eric Moe because on 30 October we play his Laminar Flow in Upsidedown Creek at The DiMenna Center for Classical Music, in Currents, the first night of our twelfth season. The piece reached the programme through our open Call for Scores, and it sits that evening between Brahms and both Schumanns. Moe is a Guggenheim fellow, honoured by the American Academy of Arts and Letters, and co-directs Music on the Edge in Pittsburgh, which means he reads scores from the other side of the desk as well. Four weeks before the concert, we sent him eight questions.\n\nWhere did the title Laminar Flow in Upsidedown Creek come from?\n\n“Laminar flow” is a term used to describe a fluid moving smoothly without eddies or turbulence. Upsidedown Creek is a short steep stream that dives off the Lake Plateau in the Beartooth Mountains of Montana into the Boulder River. (A hiking trail that ascends along the stream has a famous inverted sign at the trailhead). I admit that there’s not a lot of laminar flow in the actual Upsidedown Creek – I’ve been up and down the trail more than once – but my piece has a lot of quietly syncopated, gently flowing music with melodies that often turn upside down while re-examining themselves.\n\nWhat was the initial idea or image behind the piece?\n\nThe visual idea of the piece came from looking at mountain streams and taking delight in the places where water sheets transparently over rocks and streambed. The kinetic idea of the piece came from performing and listening to suave tango-inspired compositions by Pablo Ortiz; a tango with three dancers.\n\nWhat does “flow” mean to you musically?\n\n“Flow” suggests more or less continual, more or less gentle rhythmic movement to me; a flow state is something I seek when writing music.\n\nIs there something in the piece you would especially like listeners to notice or listen for?\n\nIt’s not essential to the enjoyment of the piece, but there’s a place near the end of the piece that I think is pretty cool. In the piece up to that point, there are essentially two melodic lines that the instruments take turns expressing. These two streams that have been flowing side by side – the soprano and bass lines – are finally joined by a third in a gentle apotheosis.\n\nHow does nature, science, or the physical world influence the way you think about music?\n\nAs the title suggests, I’m a nature-lover and a science-lover as well as a music-, art-, and literature-lover. I look to experience the sublime wherever I can find it in all its various forms and flavors.\n\nWhat are some recent or upcoming projects you’re particularly excited about and would like to share?\n\nMy song cycle Girl Soup, a setting of surreal feminist poems by the poet Sawako Nakayasu, will be premiered on December 6 in New York by soprano Anna Elder and pianist Huizi Zhang (details forthcoming). A portrait CD, No Time Like The Present, including my new piano concerto has just been released by bmop/sound.\n\nWhat are you most curious to hear in CreArtBox’s interpretation of the piece?\n\nI’m very excited to hear what will be (as far as I know) only the second performance of the trio. The piece provides an intimate experience for the performers, who are (to an unusual degree) completing or echoing one another’s musical thoughts throughout. Additionally, I’m curious to hear Laminar Flow in the context of pieces I have loved and studied for many years (Schumann, Brahms).\n\nYou co-direct Music on the Edge and have been programming new music in Pittsburgh for years. From the other side of the desk: what makes you say yes to a score you have never heard of?\n\nIn considering new work for programming, in addition to pieces with engaging, unsurprising qualities – rhythmic interest (unrelated to tempo, btw), fresh musical ideas, dramatic pacing – I admire and favor pieces that will provide a rewarding experience for the performer. This doesn’t mean that the piece has to be easy or even idiomatically written for the instruments – after all, overcoming challenges is part of the joy of musicmaking. But if the performers are excited about the piece, then listeners are bound to be excited as well.\n\nhttps://creartbox.nyc/news/eight-questions-for-eric-moe.html\n\n#CreArtBox #ChamberMusic",
+       "asomo": "Eight questions for Eric Moe We have interviewed the composer Eric Moe because on 30 October we play his Laminar Flow in Upsidedown Creek at The DiMenna Center for Classical Music, in Currents, the first night of our twelfth season. The piece reached the programme through our open Call for Scores, and it sits that evening between Brahms and both Schumanns. Moe is a Guggenheim fellow, honoured by the American Academy of Arts and Letters, and co-directs Music on the Edge in Pit…",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "borrador",
+      "nota": "Escrito con las respuestas que mandó Eric el 2 de octubre. Repásalo y, si encaja, pásalo a «Listo para publicar». El crédito de la foto (Mara Rago) va en la entradilla, así que sale solo en todos los pies: no lo quites al editar.",
+      "publicado": {}
+     }
+    }
+   ]
+  },
+  "adar": {
+   "marca": {
+    "id": "adar",
+    "org": "Festival ADAR",
+    "stamp": "FESTIVAL ADAR",
+    "site": "festivaladar.com",
+    "logo": "/logos/adar.png",
+    "ink": "#0a0907",
+    "paper": "#f6f4ee",
+    "accent": "#f5d72f",
+    "overPhotoInk": "#ffffff",
+    "ctaInk": "#f5d72f",
+    "textBg": "#f6f4ee",
+    "textTitle": "#0a0907",
+    "textBody": "#1c1a16",
+    "textFoot": "#6e6a5c",
+    "display": "\"Alegreya\", Georgia, serif",
+    "ui": "\"Chivo\", system-ui, sans-serif",
+    "label": "\"Chivo Mono\", ui-monospace, monospace",
+    "labelWeight": "500",
+    "titleWeight": "740",
+    "fontsHref": "https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Alegreya+SC:ital,wght@0,400;0,500;0,700;1,400&family=Chivo:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&family=Chivo+Mono:wght@400;500&display=swap",
+    "fontLoads": [
+     "740 64px \"Alegreya\"",
+     "400 32px \"Chivo\"",
+     "700 32px \"Chivo\"",
+     "500 24px \"Chivo Mono\""
+    ]
+   },
+   "posts": [
+    {
+     "clave": "es/por-que-tocar-bach-en-un-horreo",
+     "lang": "es",
+     "slug": "por-que-tocar-bach-en-un-horreo",
+     "kind": "post",
+     "title": "¿Por qué tocar a Bach en un hórreo y no en un auditorio?",
+     "excerpt": "En ADAR el sitio no es el decorado: es la mitad de la música. Una reflexión sobre por qué una iglesia de aldea, un hórreo o un parador cambian lo que se oye y lo que se siente.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/por-que-tocar-bach-en-un-horreo/",
+     "date": "2026-08-25",
+     "tags": [
+      "site-specific",
+      "acústica",
+      "medio rural",
+      "programación"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "¿Por qué tocar a Bach en un hórreo y no en un auditorio?",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La sala también toca",
+       "body": "Un auditorio moderno está diseñado para desaparecer. Su trabajo es no molestar: que el sonido llegue igual de limpio a la fila 1 y a la 20, que nada distraiga. Es una maravilla de la ingeniería, y para muchísima música es lo ideal."
+      },
+      {
+       "type": "text",
+       "title": "Escuchar con el cuerpo entero",
+       "body": "En un auditorio escuchas con los oídos. En los espacios de ADAR escuchas con todo. Notas el frío de la piedra, el olor a madera vieja, la luz que entra de lado a las ocho de la tarde."
+      },
+      {
+       "type": "text",
+       "title": "Una decisión, no una limitación",
+       "body": "Conviene decirlo claro, porque a veces se malinterpreta: ADAR no toca en aldeas porque no tenga auditorio. Toca en aldeas porque quiere. Llevar la música a donde no se la espera no es un plan B."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "¿Por qué tocar a Bach en un hórreo y no en un auditorio?\n\nEn ADAR el sitio no es el decorado: es la mitad de la música. Una reflexión sobre por qué una iglesia de aldea, un hórreo o un parador cambian lo que se oye y lo que se siente.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #sitespecific",
+       "asomo": "¿Por qué tocar a Bach en un hórreo y no en un auditorio? En ADAR el sitio no es el decorado: es la mitad de la música. Una re…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "¿Por qué tocar a Bach en un hórreo y no en un auditorio?\n\nEn ADAR el sitio no es el decorado: es la mitad de la música. Una reflexión sobre por qué una iglesia de aldea, un hórreo o un parador cambian lo que se oye y lo que se siente.\n\nhttps://festivaladar.com/es/blog/por-que-tocar-bach-en-un-horreo/\n\n#FestivalADAR #Asturias",
+       "asomo": "¿Por qué tocar a Bach en un hórreo y no en un auditorio? En ADAR el sitio no es el decorado: es la mitad de la música. Una reflexión sobre por qué una iglesia de aldea, un hórreo o un parador cambian lo que se oye y lo que se siente. https://festivaladar.com/es/blog/por-que-tocar-bach-en-un-horreo/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/la-espana-que-no-se-vacia",
+     "lang": "es",
+     "slug": "la-espana-que-no-se-vacia",
+     "kind": "post",
+     "title": "La España que no se vacía cuando hay música",
+     "excerpt": "Se habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motivos para quedarse. Un festival no arregla eso, pero puede ser uno de esos motivos.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/la-espana-que-no-se-vacia/",
+     "date": "2026-08-20",
+     "tags": [
+      "España vaciada",
+      "cultura rural",
+      "manifiesto",
+      "acceso cultural"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "La España que no se vacía cuando hay música",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "El vacío cultural también cuenta",
+       "body": "Cuando en un territorio no pasa nada (ni un concierto, ni una exposición, ni un acontecimiento que merezca la pena contar), se instala una idea peligrosa: la de que lo importante ocurre siempre en otro sitio."
+      },
+      {
+       "type": "text",
+       "title": "Lo que un festival sí puede hacer (y lo que no)",
+       "body": "Seamos honestos: un festival no repuebla un concejo, no crea empleo estable, no arregla la carretera ni trae el médico. Prometer eso sería mentir, y no nos gusta mentir."
+      },
+      {
+       "type": "text",
+       "title": "Llenar, aunque sea por una noche",
+       "body": "Cada vez que una iglesia de aldea se llena para escuchar música, ese pueblo, esa noche, no está vacío. Está exactamente al revés: está en el centro de algo. No es un truco de marketing."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "La España que no se vacía cuando hay música\n\nSe habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motivos para quedarse. Un festival no arregla eso, pero puede ser uno de esos motivos.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Españavaciada",
+       "asomo": "La España que no se vacía cuando hay música Se habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "La España que no se vacía cuando hay música\n\nSe habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motivos para quedarse. Un festival no arregla eso, pero puede ser uno de esos motivos.\n\nhttps://festivaladar.com/es/blog/la-espana-que-no-se-vacia/\n\n#FestivalADAR #Asturias",
+       "asomo": "La España que no se vacía cuando hay música Se habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motivos para quedarse. Un festival no arregla eso, pero puede ser uno de esos motivos. https://festivaladar.com/es/blog/la-espana-que-no-se-vacia/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/estrenamos-blog",
+     "lang": "es",
+     "slug": "estrenamos-blog",
+     "kind": "post",
+     "title": "Estrenamos blog",
+     "excerpt": "Un sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio rural asturiano.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_5.jpg",
+     "url": "https://festivaladar.com/es/blog/estrenamos-blog/",
+     "date": "2026-08-18",
+     "tags": [
+      "novedades"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Estrenamos blog",
+       "body": ""
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Estrenamos blog\n\nUn sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio rural asturiano.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #novedades",
+       "asomo": "Estrenamos blog Un sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio r…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Estrenamos blog\n\nUn sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio rural asturiano.\n\nhttps://festivaladar.com/es/blog/estrenamos-blog/\n\n#FestivalADAR #Asturias",
+       "asomo": "Estrenamos blog Un sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio rural asturiano. https://festivaladar.com/es/blog/estrenamos-blog/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/el-programa-antes-del-concierto",
+     "lang": "es",
+     "slug": "el-programa-antes-del-concierto",
+     "kind": "post",
+     "title": "Publicamos el programa de mano antes del concierto",
+     "excerpt": "El programa de mano suele ser un papel que vive una hora y acaba en un bolso. Lo subimos entero a la web semanas antes, con las notas y los tiempos de cada obra. Sirve a quien duda si venir, a quien no puede venir, y después se queda.",
+     "image": "https://festivaladar.com/kit/creartbox-currents-programa.jpg",
+     "url": "https://festivaladar.com/es/blog/el-programa-antes-del-concierto/",
+     "date": "2026-10-01",
+     "tags": [
+      "programa de mano",
+      "archivo",
+      "modelo",
+      "documentación"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Publicamos el programa de mano antes del concierto",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "A quien está decidiendo si viene",
+       "body": "Un cartel dice cinco nombres y una hora. No dice si el Brahms que vas a oír es el del clarinete o la versión con viola, ni cuánto dura, ni si hay descanso. El programa sí. Y con eso, quien duda puede decidir con información en vez de con fe."
+      },
+      {
+       "type": "text",
+       "title": "A quien no puede venir",
+       "body": "Esta es la parte que más nos importa, y es la misma razón por la que documentamos todo lo que hacemos: nuestros aforos son pequeños y muchas de las personas a las que les interesaría lo que tocamos están lejos."
+      },
+      {
+       "type": "text",
+       "title": "A quien prefiere leer con luz",
+       "body": "Las notas de un programa se leen mal en una sala a oscuras, apurando antes de que empiece, o entre obra y obra con el móvil tapado para no molestar. Leerlas tres días antes, sentado, con tiempo, es sencillamente mejor."
+      },
+      {
+       "type": "text",
+       "title": "Y después, se queda",
+       "body": "Un concierto dura una hora. El programa, si está en la web, dura mientras dure la web. Dentro de cinco años, cuando alguien busque qué se tocó aquella noche, no va a encontrar un cartel con cinco apellidos."
+      },
+      {
+       "type": "text",
+       "title": "Lo que nos obliga a nosotros",
+       "body": "Hay una consecuencia que no habíamos previsto y que ha resultado ser la más útil. Si el programa tiene que estar publicado semanas antes, las notas hay que escribirlas semanas antes. Ya no se pueden despachar el martes anterior."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Publicamos el programa de mano antes del concierto\n\nEl programa de mano suele ser un papel que vive una hora y acaba en un bolso. Lo subimos entero a la web semanas antes, con las notas y los tiempos de cada obra. Sirve a quien duda si venir, a quien no puede venir, y después se queda.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #programademano",
+       "asomo": "Publicamos el programa de mano antes del concierto El programa de mano suele ser un papel que vive una hora y acaba en un bol…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Publicamos el programa de mano antes del concierto\n\nEl programa de mano suele ser un papel que vive una hora y acaba en un bolso. Lo subimos entero a la web semanas antes, con las notas y los tiempos de cada obra. Sirve a quien duda si venir, a quien no puede venir, y después se queda.\n\nhttps://festivaladar.com/es/blog/el-programa-antes-del-concierto/\n\n#FestivalADAR #Asturias",
+       "asomo": "Publicamos el programa de mano antes del concierto El programa de mano suele ser un papel que vive una hora y acaba en un bolso. Lo subimos entero a la web semanas antes, con las notas y los tiempos de cada obra. Sirve a quien duda si venir, a quien no puede venir, y después se queda. https://festivaladar.com/es/blog/el-programa-antes-del-concierto/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/el-mapa-de-adar-catorce-concejos",
+     "lang": "es",
+     "slug": "el-mapa-de-adar-catorce-concejos",
+     "kind": "post",
+     "title": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias",
+     "excerpt": "De Belmonte a Taramundi, de Llanes a Somiedo. Un recorrido por el mapa que el festival ha ido dibujando en seis ediciones, y por qué el mapa importa tanto como la música.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/el-mapa-de-adar-catorce-concejos/",
+     "date": "2026-09-30",
+     "tags": [
+      "mapa",
+      "territorio",
+      "concejos",
+      "red"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "De un punto a una red",
+       "body": "Belmonte de Miranda es la casa desde 2021."
+      },
+      {
+       "type": "text",
+       "title": "Por qué itinerar en vez de crecer en un sitio",
+       "body": "Cualquier gestor cultural te dirá que lo eficiente es lo contrario de lo que hacemos. Consolidas una sede, fidelizas un público, amortizas el equipo técnico, dejas de montar y desmontar. Itinerar es caro, agotador y logísticamente absurdo."
+      },
+      {
+       "type": "text",
+       "title": "Lo que hemos aprendido del mapa",
+       "body": "Que el occidente lo agradece más."
+      },
+      {
+       "type": "text",
+       "title": "Una idea de Asturias",
+       "body": "Al final, el mapa dice algo que no cabe en ningún cartel."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias\n\nDe Belmonte a Taramundi, de Llanes a Somiedo. Un recorrido por el mapa que el festival ha ido dibujando en seis ediciones, y por qué el mapa importa tanto como la música.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #mapa",
+       "asomo": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias De Belmonte a Taramundi, de Llanes a Somiedo. Un recorrid…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias\n\nDe Belmonte a Taramundi, de Llanes a Somiedo. Un recorrido por el mapa que el festival ha ido dibujando en seis ediciones, y por qué el mapa importa tanto como la música.\n\nhttps://festivaladar.com/es/blog/el-mapa-de-adar-catorce-concejos/\n\n#FestivalADAR #Asturias",
+       "asomo": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias De Belmonte a Taramundi, de Llanes a Somiedo. Un recorrido por el mapa que el festival ha ido dibujando en seis ediciones, y por qué el mapa importa tanto como la música. https://festivaladar.com/es/blog/el-mapa-de-adar-catorce-concejos/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/por-que-documentamos-todo",
+     "lang": "es",
+     "slug": "por-que-documentamos-todo",
+     "kind": "post",
+     "title": "Por qué un festival pequeño documenta todo lo que hace",
+     "excerpt": "Tenemos un archivo navegable por años, lugares y formatos, con foto y vídeo profesional de cada acción. No es vanidad ni burocracia: para un proyecto rural, el archivo es la herramienta de supervivencia.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/12_Paseo_sonoro_en_el_Museo_de_las_Ayalgas_Belmonte_de_Miranda/06.jpg",
+     "url": "https://festivaladar.com/es/blog/por-que-documentamos-todo/",
+     "date": "2026-09-28",
+     "tags": [
+      "archivo",
+      "memoria de acciones",
+      "modelo",
+      "documentación"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Por qué un festival pequeño documenta todo lo que hace",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "1. Porque es la prueba de que existimos",
+       "body": "Empecemos por la más práctica y la menos romántica. Somos una asociación sin ánimo de lucro con sede en una aldea de cien habitantes. Cada año tenemos que convencer a instituciones, patrocinadores y ayuntamientos de que merece la pena apoyar esto."
+      },
+      {
+       "type": "text",
+       "title": "2. Porque los sitios donde tocamos son frágiles",
+       "body": "Esta es la razón que más nos pesa. Tocamos en monasterios con problemas de conservación. En paneras de madera que llevan siglos aguantando y que dependen de que alguien las cuide. En hórreos que se caen en silencio, uno a uno, cuando nadie los usa."
+      },
+      {
+       "type": "text",
+       "title": "3. Porque el aforo es diminuto y el archivo no tiene aforo",
+       "body": "Un concierto en un monasterio rural puede tener ochenta personas dentro. Eso es maravilloso, esa cercanía es justo lo que buscamos, y es, a la vez, poquísimo."
+      },
+      {
+       "type": "text",
+       "title": "4. Porque es una herramienta de trabajo, no un álbum de recuerdos",
+       "body": "El archivo no está ordenado para la nostalgia. Está ordenado para usarse. Sirve para preparar informes y memorias. Para responder a la prensa con material bueno en dos minutos. Para redactar convocatorias."
+      },
+      {
+       "type": "text",
+       "title": "El sesgo que estamos corrigiendo",
+       "body": "Hay una última cosa, más de fondo. La historia cultural del medio rural está mal documentada, y no por casualidad. Lo que ocurre en las capitales se archiva, se critica en prensa, se estudia."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Por qué un festival pequeño documenta todo lo que hace\n\nTenemos un archivo navegable por años, lugares y formatos, con foto y vídeo profesional de cada acción. No es vanidad ni burocracia: para un proyecto rural, el archivo es la herramienta de supervivencia.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #archivo",
+       "asomo": "Por qué un festival pequeño documenta todo lo que hace Tenemos un archivo navegable por años, lugares y formatos, con foto y …",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Por qué un festival pequeño documenta todo lo que hace\n\nTenemos un archivo navegable por años, lugares y formatos, con foto y vídeo profesional de cada acción. No es vanidad ni burocracia: para un proyecto rural, el archivo es la herramienta de supervivencia.\n\nhttps://festivaladar.com/es/blog/por-que-documentamos-todo/\n\n#FestivalADAR #Asturias",
+       "asomo": "Por qué un festival pequeño documenta todo lo que hace Tenemos un archivo navegable por años, lugares y formatos, con foto y vídeo profesional de cada acción. No es vanidad ni burocracia: para un proyecto rural, el archivo es la herramienta de supervivencia. https://festivaladar.com/es/blog/por-que-documentamos-todo/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/mizuko-kaji-el-escenario-como-obra",
+     "lang": "es",
+     "slug": "mizuko-kaji-el-escenario-como-obra",
+     "kind": "post",
+     "title": "Llenar de tul un auditorio vacío: cuando el escenario es la obra",
+     "excerpt": "En 2023 Mizuko Kaji convirtió el escenario del Auditorio As Quintas en una instalación que el público podía recorrer, días antes de que allí se diera un concierto. Una idea sencilla y muy astuta.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/03_Instalacion_artistica_de_luz_y_proyecciones_Mizuko_Kaji/42.jpg",
+     "url": "https://festivaladar.com/es/blog/mizuko-kaji-el-escenario-como-obra/",
+     "date": "2026-09-26",
+     "tags": [
+      "Mizuko Kaji",
+      "instalación",
+      "El Franco",
+      "2023"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Llenar de tul un auditorio vacío: cuando el escenario es la obra",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Invertir el orden de las cosas",
+       "body": "Piensa en cómo funciona normalmente un auditorio. El escenario es territorio prohibido. Es el sitio al que no se sube, separado del público por una convención tan fuerte que nadie necesita vigilarla."
+      },
+      {
+       "type": "text",
+       "title": "Por qué tul",
+       "body": "La elección del material tampoco es casual, y quien haya visto tul a contraluz lo entenderá. El tul es casi nada: una malla transparente, ligerísima, que apenas existe como objeto."
+      },
+      {
+       "type": "text",
+       "title": "La música como parte de la instalación, no como fondo",
+       "body": "Un detalle que nos importa: la pieza de Guillermo Laporta que acompañaba el recorrido no era música ambiental."
+      },
+      {
+       "type": "text",
+       "title": "El comienzo de una línea",
+       "body": "Aquella instalación tiene además un valor histórico dentro del festival: 2023 fue el año en que ADAR empezó a programar instalaciones de artistas internacionales. Kaji y Celeste Oram abrieron esa vía."
+      },
+      {
+       "type": "text",
+       "title": "La lección para cualquiera",
+       "body": "Si hay algo que llevarse de la instalación de Mizuko Kaji es esto: a veces no hace falta cambiar el sitio, solo cambiar quién puede entrar y por dónde. El Auditorio As Quintas era el mismo edificio antes y después."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Llenar de tul un auditorio vacío: cuando el escenario es la obra\n\nEn 2023 Mizuko Kaji convirtió el escenario del Auditorio As Quintas en una instalación que el público podía recorrer, días antes de que allí se diera un concierto. Una idea sencilla y muy astuta.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #MizukoKaji",
+       "asomo": "Llenar de tul un auditorio vacío: cuando el escenario es la obra En 2023 Mizuko Kaji convirtió el escenario del Auditorio As …",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Llenar de tul un auditorio vacío: cuando el escenario es la obra\n\nEn 2023 Mizuko Kaji convirtió el escenario del Auditorio As Quintas en una instalación que el público podía recorrer, días antes de que allí se diera un concierto. Una idea sencilla y muy astuta.\n\nhttps://festivaladar.com/es/blog/mizuko-kaji-el-escenario-como-obra/\n\n#FestivalADAR #Asturias",
+       "asomo": "Llenar de tul un auditorio vacío: cuando el escenario es la obra En 2023 Mizuko Kaji convirtió el escenario del Auditorio As Quintas en una instalación que el público podía recorrer, días antes de que allí se diera un concierto. Una idea sencilla y muy astuta. https://festivaladar.com/es/blog/mizuko-kaji-el-escenario-como-obra/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/las-compositoras-que-programamos",
+     "lang": "es",
+     "slug": "las-compositoras-que-programamos",
+     "kind": "post",
+     "title": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)",
+     "excerpt": "Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es lo fácil, no lo difícil.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/10_Concierto_en_la_Iglesia_de_Santa_Maria_de_Sabada_Colunga/PXL_20220810_175359505.jpg",
+     "url": "https://festivaladar.com/es/blog/las-compositoras-que-programamos/",
+     "date": "2026-09-24",
+     "tags": [
+      "compositoras",
+      "programación",
+      "Caroline Shaw",
+      "Jessie Montgomery"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La nómina",
+       "body": "Andrea Casarrubios, violonchelista y compositora española: obra estrenada en el Carnegie Hall, encargos de la Sinfónica de Chicago y de Sphinx Virtuosi, nominación al Grammy en 2025, doctorado con John Corigliano."
+      },
+      {
+       "type": "text",
+       "title": "Lo difícil no es encontrarlas",
+       "body": "Ahí está el punto. Ninguno de esos nombres necesita una explicación indulgente. Pulitzer, Grammy, Carnegie Hall, Sinfónica de Chicago. Si programar mujeres exigiera bajar el nivel, esta lista sería otra."
+      },
+      {
+       "type": "text",
+       "title": "El detalle que más nos importa",
+       "body": "Fíjate en algo de la lista anterior: casi todas ellas son compositoras vivas. Eso es lo verdaderamente decisivo, más que el género."
+      },
+      {
+       "type": "text",
+       "title": "Cómo funciona en la práctica",
+       "body": "La receta que usamos no tiene ningún misterio: poner lo nuevo dentro de lo conocido. Nadie programa una noche entera de música de 2024 en un pueblo donde no hay costumbre de conciertos."
+      },
+      {
+       "type": "text",
+       "title": "Sin etiqueta",
+       "body": "Así que no, no lo llamamos cuota. Lo llamamos programar bien. Buscamos la mejor música que podamos conseguir, de gente que esté haciendo algo que nos parezca necesario, y la ponemos en el sitio donde signifique más."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)\n\nCasarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es lo fácil, no lo difícil.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #compositoras",
+       "asomo": "Las compositoras que programamos (y por qué no lo llamamos «cuota») Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Or…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)\n\nCasarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es lo fácil, no lo difícil.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Asturias",
+       "asomo": "Las compositoras que programamos (y por qué no lo llamamos «cuota») Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es lo fácil, no lo difícil. https://festivaladar.com/es/blog/las-compositoras-que-programamos/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/la-tiendina-sube-a-la-aldea",
+     "lang": "es",
+     "slug": "la-tiendina-sube-a-la-aldea",
+     "kind": "post",
+     "title": "La tiendina sube a la aldea. La música también.",
+     "excerpt": "En los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube. Esa furgoneta explica, mejor que cualquier informe, por qué el festival va a los pueblos en vez de pedirles que vengan.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/la-tiendina-sube-a-la-aldea/",
+     "date": "2026-09-23",
+     "tags": [
+      "medio rural",
+      "acceso cultural",
+      "itinerancia",
+      "Leiguarda"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "La tiendina sube a la aldea. La música también.",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Nadie le pide a una aldea que baje a por el pan",
+       "body": "En el medio rural, lo esencial viaja. Es así desde siempre y a nadie le parece raro. La compra sube. El correo sube. Si vives en una aldea de montaña, hay una parte del mundo que está organizada para llegar hasta ti."
+      },
+      {
+       "type": "text",
+       "title": "Con la cultura decimos justo lo contrario",
+       "body": "Con la música damos por hecho lo inverso. El concierto está en la ciudad. La exposición está en la ciudad. Si te interesa de verdad, ya conducirás. Y quien no puede, o no quiere hacer una hora de carretera de puerto de noche, simplemente no va."
+      },
+      {
+       "type": "text",
+       "title": "«Otra cosa que pasa lejos»",
+       "body": "Si lo concentráramos todo en un sitio tendríamos un buen festival local. Para los vecinos de Taramundi o de Somiedo seguiría siendo lo de siempre: otra cosa que pasa lejos. Justo el problema del que partimos."
+      },
+      {
+       "type": "text",
+       "title": "Por eso vamos nosotros",
+       "body": "Tenemos sede en Leiguarda, pero el festival no se queda en ella: tiene también un mapa. Catorce concejos en seis ediciones. En vez de pedirle al territorio que venga, vamos nosotros. Como la tiendina."
+      },
+      {
+       "type": "text",
+       "title": "Esta vez, lo importante pasa aquí",
+       "body": "Y eso cambia la frase entera. Deja de ser «hay un concierto, pero está lejos» y pasa a ser «hay un concierto, y es en la iglesia de al lado». Una noche al año, en tu pueblo, lo importante no ocurre en otro sitio."
+      },
+      {
+       "type": "text",
+       "title": "Lo mismo que hace la furgoneta",
+       "body": "No es una metáfora bonita: es la misma decisión logística, tomada por la misma razón. Cuesta más montar y desmontar catorce veces que abrir catorce veces la misma puerta. Se hace igual, porque de eso va vivir aquí."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "La tiendina sube a la aldea. La música también.\n\nEn los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube. Esa furgoneta explica, mejor que cualquier informe, por qué el festival va a los pueblos en vez de pedirles que vengan.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #accesocultural",
+       "asomo": "La tiendina sube a la aldea. La música también. En los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube.…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "La tiendina sube a la aldea. La música también.\n\nEn los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube. Esa furgoneta explica, mejor que cualquier informe, por qué el festival va a los pueblos en vez de pedirles que vengan.\n\nhttps://festivaladar.com/es/blog/la-tiendina-sube-a-la-aldea/\n\n#FestivalADAR #Asturias",
+       "asomo": "La tiendina sube a la aldea. La música también. En los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube. Esa furgoneta explica, mejor que cualquier informe, por qué el festival va a los pueblos en vez de pedirles que vengan. https://festivaladar.com/es/blog/la-tiendina-sube-a-la-aldea/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/como-elegimos-un-sitio",
+     "lang": "es",
+     "slug": "como-elegimos-un-sitio",
+     "kind": "post",
+     "title": "Cómo elegimos un sitio para un concierto (el método completo)",
+     "excerpt": "Un monasterio bonito no es automáticamente un buen escenario. Contamos, paso a paso, cómo decidimos dónde se toca: los seis filtros que aplicamos y las preguntas incómodas que hay que hacerse.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/17_Concierto_en_el_Palacio_de_Miranda-Valdecarzana_Grado_2024/20.jpg",
+     "url": "https://festivaladar.com/es/blog/como-elegimos-un-sitio/",
+     "date": "2026-09-22",
+     "tags": [
+      "cómo funciona",
+      "producción",
+      "site-specific",
+      "método"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Cómo elegimos un sitio para un concierto (el método completo)",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "1. Lo bonito no es suficiente",
+       "body": "El error de principiante es elegir por la foto. Asturias está llena de sitios espectaculares, y la tentación de programar «donde queda bien» es enorme. Pero un sitio bonito con mala acústica produce un concierto malo con buenas fotos."
+      },
+      {
+       "type": "text",
+       "title": "2. Diálogo con el lugar",
+       "body": "Aquí está la diferencia entre alquilar un espacio y trabajar con él. Antes de decidir nada, hay que averiguar qué es ese sitio para la gente que vive alrededor. ¿Es una iglesia en uso, donde hay misa el domingo?"
+      },
+      {
+       "type": "text",
+       "title": "3. Las necesidades técnicas, sin autoengaño",
+       "body": "Es la fase donde mueren la mitad de los sueños, y hay que ser brutalmente honesto. ¿Hay electricidad? ¿Aguanta la instalación un equipo de sonido y luces, o salta el diferencial?"
+      },
+      {
+       "type": "text",
+       "title": "4. La experiencia del público, de principio a fin",
+       "body": "Aquí pensamos en la noche entera, no solo en la hora de música. Cómo llega la gente. Si va a encontrar el sitio de noche o va a estar dando vueltas por una carretera sin señalizar. Cuánto rato va a estar de pie esperando."
+      },
+      {
+       "type": "text",
+       "title": "5. El relato: ¿por qué aquí?",
+       "body": "Este filtro es el que más candidatos descarta, y el que más nos define. La pregunta es: ¿este concierto tiene sentido en este sitio, o podría ser en cualquier otro? Si la respuesta es «podría ser en cualquier otro», no lo hacemos."
+      },
+      {
+       "type": "text",
+       "title": "6. La documentación",
+       "body": "El último paso se decide antes, no después: cómo se va a fotografiar y filmar. Suena a comunicación, y también lo es. Pero para nosotros es parte de la obra. El concierto lo viven ochenta personas; el archivo lo puede ver cualquiera, hoy o en veinte años."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Cómo elegimos un sitio para un concierto (el método completo)\n\nUn monasterio bonito no es automáticamente un buen escenario. Contamos, paso a paso, cómo decidimos dónde se toca: los seis filtros que aplicamos y las preguntas incómodas que hay que hacerse.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #cómofunciona",
+       "asomo": "Cómo elegimos un sitio para un concierto (el método completo) Un monasterio bonito no es automáticamente un buen escenario. C…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Cómo elegimos un sitio para un concierto (el método completo)\n\nUn monasterio bonito no es automáticamente un buen escenario. Contamos, paso a paso, cómo decidimos dónde se toca: los seis filtros que aplicamos y las preguntas incómodas que hay que hacerse.\n\nhttps://festivaladar.com/es/blog/como-elegimos-un-sitio/\n\n#FestivalADAR #Asturias",
+       "asomo": "Cómo elegimos un sitio para un concierto (el método completo) Un monasterio bonito no es automáticamente un buen escenario. Contamos, paso a paso, cómo decidimos dónde se toca: los seis filtros que aplicamos y las preguntas incómodas que hay que hacerse. https://festivaladar.com/es/blog/como-elegimos-un-sitio/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/grado-tres-eventos-en-una-noche",
+     "lang": "es",
+     "slug": "grado-tres-eventos-en-una-noche",
+     "kind": "post",
+     "title": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero",
+     "excerpt": "Un concierto en un palacio, una performance en una capilla y una instalación con comida dentro de un cubículo abandonado de la oficina de turismo. Crónica de la noche más ambiciosa de 2024.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/17_Instalacion_site_specific_de_sara_k_william/image20.jpg",
+     "url": "https://festivaladar.com/es/blog/grado-tres-eventos-en-una-noche/",
+     "date": "2026-09-20",
+     "tags": [
+      "Grado",
+      "2024",
+      "Sarah K. Williams",
+      "instalación"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La caja de cristal que llevaba años vacía",
+       "body": "De los tres, el que más nos gusta contar es el de Sarah K. Williams, artista visual residente en Nueva York e invitada de la edición de 2024."
+      },
+      {
+       "type": "text",
+       "title": "Por qué el arte con comida no es una broma",
+       "body": "A la instalación de Williams se le puede poner la etiqueta fácil de «ocurrencia». Nos parece justo lo contrario, y en un contexto rural especialmente. La comida es el lenguaje social por defecto de cualquier pueblo."
+      },
+      {
+       "type": "text",
+       "title": "Tres formatos, tres públicos, un pueblo",
+       "body": "La programación simultánea de esa noche tenía además una lógica de acceso. En el palacio, un concierto de cámara: formato reconocible, para quien quiere sentarse y escuchar."
+      },
+      {
+       "type": "text",
+       "title": "Grado, un socio recurrente",
+       "body": "Grado no fue un sitio de paso. Aparece en varias ediciones de ADAR, con el Palacio de Miranda-Valdecarzana, la Capilla de los Dolores y el Palacio de Fontela como escenarios recurrentes. Es uno de esos municipios donde la relación se ha sostenido en el tiempo."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero\n\nUn concierto en un palacio, una performance en una capilla y una instalación con comida dentro de un cubículo abandonado de la oficina de turismo. Crónica de la noche más ambiciosa de 2024.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Grado",
+       "asomo": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero Un concierto en un palacio, una performance en una capilla y un…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero\n\nUn concierto en un palacio, una performance en una capilla y una instalación con comida dentro de un cubículo abandonado de la oficina de turismo. Crónica de la noche más ambiciosa de 2024.\n\nhttps://festivaladar.com/es/blog/grado-tres-eventos-en-una-noche/\n\n#FestivalADAR #Asturias",
+       "asomo": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero Un concierto en un palacio, una performance en una capilla y una instalación con comida dentro de un cubículo abandonado de la oficina de turismo. Crónica de la noche más ambiciosa de 2024. https://festivaladar.com/es/blog/grado-tres-eventos-en-una-noche/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/bach-filmado-en-leiguarda",
+     "lang": "es",
+     "slug": "bach-filmado-en-leiguarda",
+     "kind": "post",
+     "title": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda",
+     "excerpt": "Una suite de Bach para violonchelo solo, un cinematógrafo y una aldea de Belmonte de Miranda. Por qué un festival de música invierte en hacer cine además de conciertos.",
+     "image": "https://i.ytimg.com/vi/Xk_Qz361e0o/maxresdefault.jpg",
+     "url": "https://festivaladar.com/es/blog/bach-filmado-en-leiguarda/",
+     "date": "2026-09-18",
+     "tags": [
+      "videoarte",
+      "Guillermo Ordás",
+      "Bach",
+      "2023",
+      "archivo"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Grabar un concierto no es hacer cine",
+       "body": "Casi todos los festivales graban sus conciertos. Se pone una cámara al fondo, quizá dos, y se sube el resultado a YouTube. Es útil: sirve de prueba, de memoria y de material para pedir subvenciones."
+      },
+      {
+       "type": "text",
+       "title": "Por qué las suites de Bach y por qué en una aldea",
+       "body": "La elección de la obra no podía ser mejor. Las suites para violonchelo solo de Bach son una persona sola con un instrumento: sin acompañamiento, sin orquesta, sin nada donde esconderse. Es la música más desnuda del repertorio occidental."
+      },
+      {
+       "type": "text",
+       "title": "Un festival de diez días, una obra para siempre",
+       "body": "Aquí está la razón práctica por la que invertimos en esto, y es bastante desnuda también. Un concierto dura una hora y lo ven las personas que caben en la sala. En un monasterio rural eso pueden ser ochenta personas."
+      },
+      {
+       "type": "text",
+       "title": "La documentación como parte de la obra",
+       "body": "Esto forma parte de un principio más amplio del proyecto: el archivo. Todo lo que hacemos se documenta con estándares profesionales, foto y vídeo, y se ordena para que pueda reutilizarse (en prensa, en convocatorias, en la memoria del proyecto)."
+      },
+      {
+       "type": "text",
+       "title": "Verlo",
+       "body": "El vídeo está disponible en nuestro canal, y se sigue viendo tres años después de rodarse."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda\n\nUna suite de Bach para violonchelo solo, un cinematógrafo y una aldea de Belmonte de Miranda. Por qué un festival de música invierte en hacer cine además de conciertos.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #videoarte",
+       "asomo": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda Una suite de Bach para violonchelo solo, un cinematógrafo y…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda\n\nUna suite de Bach para violonchelo solo, un cinematógrafo y una aldea de Belmonte de Miranda. Por qué un festival de música invierte en hacer cine además de conciertos.\n\nhttps://festivaladar.com/es/blog/bach-filmado-en-leiguarda/\n\n#FestivalADAR #Asturias",
+       "asomo": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda Una suite de Bach para violonchelo solo, un cinematógrafo y una aldea de Belmonte de Miranda. Por qué un festival de música invierte en hacer cine además de conciertos. https://festivaladar.com/es/blog/bach-filmado-en-leiguarda/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/taramundi-cuchillos-y-mussorgsky",
+     "lang": "es",
+     "slug": "taramundi-cuchillos-y-mussorgsky",
+     "kind": "post",
+     "title": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky",
+     "excerpt": "En el extremo occidental de Asturias hay un pueblo famoso por su cuchillería hecha a mano. En 2025 tocamos allí Telemann, Falla y Mussorgsky. Sobre oficios que se aprenden con las manos.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.13_Iglesia%20de%20Taramundi_Fotos/25.08.13_Iglesia%20de%20Taramundi_WEB/25.08.13_Iglesia%20de%20Taramundi_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/taramundi-cuchillos-y-mussorgsky/",
+     "date": "2026-09-16",
+     "tags": [
+      "Taramundi",
+      "2025",
+      "artesanía",
+      "oficios"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Dos oficios que se parecen más de lo que parece",
+       "body": "Un cuchillo de Taramundi y una sonata de Telemann tienen mucho en común, aunque suene raro decirlo. Los dos se aprenden con las manos. No hay manera de aprender a forjar leyendo sobre forja, igual que no hay manera de aprender a tocar leyendo sobre música."
+      },
+      {
+       "type": "text",
+       "title": "El programa: tres siglos y tres países",
+       "body": "Merece la pena mirar la elección, porque no es casual. Telemann, alemán del barroco, prolífico y luminoso: el artesano perfecto de la música, alguien que produjo con una regularidad de taller."
+      },
+      {
+       "type": "text",
+       "title": "Por qué el occidente",
+       "body": "Taramundi está lejos. Lejos de Oviedo, lejos de la autovía, lejos de todo lo que se considera «el centro». Y esa es una de las razones de que fuéramos."
+      },
+      {
+       "type": "text",
+       "title": "Lo que queda",
+       "body": "Un concierto de una hora en la iglesia de un pueblo de dos mil habitantes no cambia la vida de nadie. Pero deja una idea flotando, y las ideas duran."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky\n\nEn el extremo occidental de Asturias hay un pueblo famoso por su cuchillería hecha a mano. En 2025 tocamos allí Telemann, Falla y Mussorgsky. Sobre oficios que se aprenden con las manos.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Taramundi",
+       "asomo": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky En el extremo occidental de Asturias hay un pueblo famo…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky\n\nEn el extremo occidental de Asturias hay un pueblo famoso por su cuchillería hecha a mano. En 2025 tocamos allí Telemann, Falla y Mussorgsky. Sobre oficios que se aprenden con las manos.\n\nhttps://festivaladar.com/es/blog/taramundi-cuchillos-y-mussorgsky/\n\n#FestivalADAR #Asturias",
+       "asomo": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky En el extremo occidental de Asturias hay un pueblo famoso por su cuchillería hecha a mano. En 2025 tocamos allí Telemann, Falla y Mussorgsky. Sobre oficios que se aprenden con las manos. https://festivaladar.com/es/blog/taramundi-cuchillos-y-mussorgsky/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/por-que-encargamos-musica-nueva",
+     "lang": "es",
+     "slug": "por-que-encargamos-musica-nueva",
+     "kind": "post",
+     "title": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva",
+     "excerpt": "En su primer concierto, un festival sin historial ni presupuesto encargó una pieza nueva. Cinco años después seguimos haciéndolo. Por qué el encargo es la decisión más arriesgada y más importante que tomamos.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg",
+     "url": "https://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/",
+     "date": "2026-09-14",
+     "tags": [
+      "encargos",
+      "compositor residente",
+      "obra nueva",
+      "modelo"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Una pieza nueva la primera noche",
+       "body": "El 14 de agosto de 2021, en el campo de la iglesia de Leiguarda, el programa del concierto inaugural incluía Mendelssohn, Haydn, Falla, John Harbison... y Atlantic, de Marcos Fernández, escrita expresamente para la ocasión."
+      },
+      {
+       "type": "text",
+       "title": "Un festival puede consumir cultura o producirla",
+       "body": "Esta es la distinción que más nos importa, y vale para cualquier festival del mundo. Hay festivales que son programadores: eligen bien entre lo que existe, lo traen, lo presentan. Es un trabajo legítimo y difícil, y el público lo agradece."
+      },
+      {
+       "type": "text",
+       "title": "Lo que le pedimos a un compositor",
+       "body": "Nuestros encargos no son un cheque en blanco. Piden una cosa muy concreta: que la pieza escuche el sitio."
+      },
+      {
+       "type": "text",
+       "title": "El territorio como material, no como excusa",
+       "body": "Cuando esto sale bien, el resultado es música que le habla directamente a su público sin necesidad de traducción. Pensemos en Afilador, de Andrea Casarrubios, que tocamos en el mercado de Pola de Somiedo."
+      },
+      {
+       "type": "text",
+       "title": "Lo que arriesgamos y por qué merece la pena",
+       "body": "Seamos honestos sobre el riesgo. Un encargo puede salir regular. Puede no conectar. Cuesta dinero que podría gastarse en cosas más seguras. Y el público que viene a escuchar a Vivaldi no ha pedido una obra de 2026."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva\n\nEn su primer concierto, un festival sin historial ni presupuesto encargó una pieza nueva. Cinco años después seguimos haciéndolo. Por qué el encargo es la decisión más arriesgada y más importante que tomamos.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #encargos",
+       "asomo": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva En su primer concierto, un festival sin historial ni …",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva\n\nEn su primer concierto, un festival sin historial ni presupuesto encargó una pieza nueva. Cinco años después seguimos haciéndolo. Por qué el encargo es la decisión más arriesgada y más importante que tomamos.\n\nhttps://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/\n\n#FestivalADAR #Asturias",
+       "asomo": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva En su primer concierto, un festival sin historial ni presupuesto encargó una pieza nueva. Cinco años después seguimos haciéndolo. Por qué el encargo es la decisión más arriesgada y más importante que tomamos. https://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/monasterios-mil-anos-de-acustica",
+     "lang": "es",
+     "slug": "monasterios-mil-anos-de-acustica",
+     "kind": "post",
+     "title": "Mil años de acústica gratis: por qué tocamos en monasterios",
+     "excerpt": "Obona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llena de monasterios que llevan siglos siendo, sin saberlo, las mejores salas de conciertos del norte de España.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.12_Monasterio%20de%20Obona_Fotos/25.08.12_Monasterio%20de%20Obona_WEB/25.08.12_Monasterio%20de%20Obona_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/monasterios-mil-anos-de-acustica/",
+     "date": "2026-09-12",
+     "tags": [
+      "monasterios",
+      "Obona",
+      "Tineo",
+      "acústica",
+      "patrimonio"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Mil años de acústica gratis: por qué tocamos en monasterios",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La acústica no se diseñó, pero funciona",
+       "body": "Nadie construyó Obona pensando en música de cámara. Y sin embargo, ahí está el asunto: los monasterios se construyeron para el sonido humano. Su función era albergar canto litúrgico varias veces al día, todos los días, durante siglos."
+      },
+      {
+       "type": "text",
+       "title": "Obona: uno de los cenobios más antiguos de Asturias",
+       "body": "El 12 de agosto de 2025 llenamos el Monasterio de Santa María la Real de Obona, en Tineo, uno de los cenobios más antiguos de Asturias."
+      },
+      {
+       "type": "text",
+       "title": "Lo que el edificio le hace al público",
+       "body": "Hay un efecto que se nota en cuanto la gente entra y que no tiene nada que ver con la física. Un monasterio impone un tipo de atención. Nadie lo pide, no hay un cartel de silencio: ocurre solo."
+      },
+      {
+       "type": "text",
+       "title": "Un patrimonio que necesita ser usado",
+       "body": "Aquí está la razón menos poética y más importante de todas. Muchos de estos monasterios tienen problemas de conservación, poco uso y visitas escasas. Y un edificio sin uso es un edificio que se cae."
+      },
+      {
+       "type": "text",
+       "title": "Mil años esperando",
+       "body": "Nos gusta pensarlo así. Alguien apiló esas piedras hace nueve siglos y las apiló, entre otras cosas, para que el sonido se comportara de una manera concreta. Durante generaciones se usaron para eso."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Mil años de acústica gratis: por qué tocamos en monasterios\n\nObona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llena de monasterios que llevan siglos siendo, sin saberlo, las mejores salas de conciertos del norte de España.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #monasterios",
+       "asomo": "Mil años de acústica gratis: por qué tocamos en monasterios Obona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llen…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Mil años de acústica gratis: por qué tocamos en monasterios\n\nObona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llena de monasterios que llevan siglos siendo, sin saberlo, las mejores salas de conciertos del norte de España.\n\nhttps://festivaladar.com/es/blog/monasterios-mil-anos-de-acustica/\n\n#FestivalADAR #Asturias",
+       "asomo": "Mil años de acústica gratis: por qué tocamos en monasterios Obona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llena de monasterios que llevan siglos siendo, sin saberlo, las mejores salas de conciertos del norte de España. https://festivaladar.com/es/blog/monasterios-mil-anos-de-acustica/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/menhir-geopuncion-paisaje",
+     "lang": "es",
+     "slug": "menhir-geopuncion-paisaje",
+     "kind": "post",
+     "title": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir",
+     "excerpt": "El Colectivo Menhir trabaja con una premisa desconcertante y preciosa: que una pieza musical puede funcionar como un menhir virtual y reconfigurar la relación entre lo humano y lo que no lo es.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/adar24fx30/12/IMG_0203.jpg",
+     "url": "https://festivaladar.com/es/blog/menhir-geopuncion-paisaje/",
+     "date": "2026-09-10",
+     "tags": [
+      "Colectivo Menhir",
+      "paisaje",
+      "arte sonoro",
+      "artistas"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Qué demonios significa eso",
+       "body": "Vamos despacio, porque la idea merece el esfuerzo. Un menhir es una piedra grande que alguien puso de pie hace miles de años. No sirve para nada práctico: no es un muro, ni un refugio, ni una herramienta."
+      },
+      {
+       "type": "text",
+       "title": "Por qué esto nos toca de lleno",
+       "body": "Cuando encontramos esta idea, tuvimos la sensación incómoda y agradable de que alguien había teorizado lo que nosotros hacíamos por instinto."
+      },
+      {
+       "type": "text",
+       "title": "Lo humano y lo no humano",
+       "body": "La otra mitad de su investigación es igual de pertinente para un festival rural."
+      },
+      {
+       "type": "text",
+       "title": "Una trayectoria que respalda la teoría",
+       "body": "Todo esto podría quedarse en especulación agradable si no hubiera obra detrás. La hay."
+      },
+      {
+       "type": "text",
+       "title": "La escucha como forma de conocimiento",
+       "body": "Nos quedamos con una última idea suya, la que más nos sirve: la de que escuchar es una manera de conocer, no solo de disfrutar. Solemos tratar la música como entretenimiento o como emoción."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir\n\nEl Colectivo Menhir trabaja con una premisa desconcertante y preciosa: que una pieza musical puede funcionar como un menhir virtual y reconfigurar la relación entre lo humano y lo que no lo es.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #ColectivoMenhir",
+       "asomo": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir El Colectivo Menhir trabaja con una premisa …",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir\n\nEl Colectivo Menhir trabaja con una premisa desconcertante y preciosa: que una pieza musical puede funcionar como un menhir virtual y reconfigurar la relación entre lo humano y lo que no lo es.\n\nhttps://festivaladar.com/es/blog/menhir-geopuncion-paisaje/\n\n#FestivalADAR #Asturias",
+       "asomo": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir El Colectivo Menhir trabaja con una premisa desconcertante y preciosa: que una pieza musical puede funcionar como un menhir virtual y reconfigurar la relación entre lo humano y lo que no lo es. https://festivaladar.com/es/blog/menhir-geopuncion-paisaje/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/toccata-and-bruise-la-musica-del-tacto",
+     "lang": "es",
+     "slug": "toccata-and-bruise-la-musica-del-tacto",
+     "kind": "post",
+     "title": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959",
+     "excerpt": "Celeste Oram escribió un dúo para piano y pianista donde el sonido acaba desapareciendo y solo queda el gesto. Una de las piezas más extrañas y hermosas que han pasado por Leiguarda.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/03_Instalacion_Toccata_and_Bruise_Celeste_Oram/083.jpg",
+     "url": "https://festivaladar.com/es/blog/toccata-and-bruise-la-musica-del-tacto/",
+     "date": "2026-09-08",
+     "tags": [
+      "Celeste Oram",
+      "instalación",
+      "2023",
+      "arte visual"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Quién es Celeste Oram",
+       "body": "Celeste Oram es compositora y diseñadora de proyecciones, originaria de Nueva Zelanda y residente en Nueva York. Cedió Toccata & Bruise para la edición de 2023 del festival, donde se presentó como instalación audiovisual en la propia sede de Leiguarda."
+      },
+      {
+       "type": "text",
+       "title": "La grabación que el público casi no oye",
+       "body": "Aquí está el mecanismo secreto de la obra, y es de una elegancia extraña. Mientras toca, la pianista está escuchando a Glenn Gould."
+      },
+      {
+       "type": "text",
+       "title": "Órgano contra piano: dos maneras de tocar",
+       "body": "La obra plantea un contraste que quizá nunca te habías planteado, y que es fascinante en cuanto lo ves. El órgano apenas responde al tacto. Aprietas una tecla y el aire pasa: suene fuerte o suave no depende de cómo la aprietes."
+      },
+      {
+       "type": "text",
+       "title": "Cuando el sonido desaparece y solo queda el gesto",
+       "body": "La estructura sigue las tres secciones de la obra original: fuga, toccata y fantasía. Pero lo que ocurre por el camino es lo más radical."
+      },
+      {
+       "type": "text",
+       "title": "Por qué esto, en Leiguarda",
+       "body": "Alguien podría preguntar qué hace una instalación conceptual neozelandesa en una aldea asturiana. Nuestra respuesta es doble. La primera: porque la gente aguanta muchísimo más de lo que se piensa."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959\n\nCeleste Oram escribió un dúo para piano y pianista donde el sonido acaba desapareciendo y solo queda el gesto. Una de las piezas más extrañas y hermosas que han pasado por Leiguarda.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #CelesteOram",
+       "asomo": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959 Celeste Oram escribió un dúo para piano y pianista don…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959\n\nCeleste Oram escribió un dúo para piano y pianista donde el sonido acaba desapareciendo y solo queda el gesto. Una de las piezas más extrañas y hermosas que han pasado por Leiguarda.\n\nhttps://festivaladar.com/es/blog/toccata-and-bruise-la-musica-del-tacto/\n\n#FestivalADAR #Asturias",
+       "asomo": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959 Celeste Oram escribió un dúo para piano y pianista donde el sonido acaba desapareciendo y solo queda el gesto. Una de las piezas más extrañas y hermosas que han pasado por Leiguarda. https://festivaladar.com/es/blog/toccata-and-bruise-la-musica-del-tacto/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/somiedo-musica-donde-viven-los-osos",
+     "lang": "es",
+     "slug": "somiedo-musica-donde-viven-los-osos",
+     "kind": "post",
+     "title": "Somiedo: un concierto donde vive la mayor población de osos de España",
+     "excerpt": "En 2024 llevamos la música de cámara al mercado de Pola de Somiedo, capital de un parque natural que es Reserva de la Biosfera. Sobre música, osos y la palabra «sostenible» usada en serio.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/14_Concierto_en_el_Mercado_de_Pola_de_Somiedo/Pola_01_00_02_03.jpg",
+     "url": "https://festivaladar.com/es/blog/somiedo-musica-donde-viven-los-osos/",
+     "date": "2026-09-06",
+     "tags": [
+      "Somiedo",
+      "2024",
+      "naturaleza",
+      "mercado",
+      "IV edición"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Somiedo: un concierto donde vive la mayor población de osos de España",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Por qué un mercado y no una iglesia",
+       "body": "Podríamos haber buscado un templo, que es lo cómodo. Elegimos el mercado, y la decisión dice bastante de cómo pensamos. Un mercado es el sitio más civil que tiene un pueblo. No es sagrado, no es institucional, no impone silencio por sí mismo."
+      },
+      {
+       "type": "text",
+       "title": "Un programa que no se cortó un pelo",
+       "body": "Tocaron Guillermo Laporta (flauta), Mario Molina (piano), Jone de la Fuente (violín), Almudena Arribas (viola) y Natania Hoffman (violonchelo). Y el programa fue este: - Andrea Casarrubios · Mensajes de Agua - Mozart · Cuarteto para piano en mi bemol mayor, K."
+      },
+      {
+       "type": "text",
+       "title": "La palabra «sostenible», dicha en serio",
+       "body": "En un sitio como Somiedo es fácil caer en el discurso fácil sobre naturaleza y armonía. Preferimos ser concretos, porque hay algo real que sí ocurre."
+      },
+      {
+       "type": "text",
+       "title": "Lo que se oye en la montaña",
+       "body": "Hay una última cosa, y es puramente física. En Somiedo se oye distinto. La altitud, el aire limpio, la absoluta falta de ruido de fondo. Un pianissimo que en una ciudad se perdería del todo, allí llega entero."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Somiedo: un concierto donde vive la mayor población de osos de España\n\nEn 2024 llevamos la música de cámara al mercado de Pola de Somiedo, capital de un parque natural que es Reserva de la Biosfera. Sobre música, osos y la palabra «sostenible» usada en serio.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Somiedo",
+       "asomo": "Somiedo: un concierto donde vive la mayor población de osos de España En 2024 llevamos la música de cámara al mercado de Pola…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Somiedo: un concierto donde vive la mayor población de osos de España\n\nEn 2024 llevamos la música de cámara al mercado de Pola de Somiedo, capital de un parque natural que es Reserva de la Biosfera. Sobre música, osos y la palabra «sostenible» usada en serio.\n\nhttps://festivaladar.com/es/blog/somiedo-musica-donde-viven-los-osos/\n\n#FestivalADAR #Asturias",
+       "asomo": "Somiedo: un concierto donde vive la mayor población de osos de España En 2024 llevamos la música de cámara al mercado de Pola de Somiedo, capital de un parque natural que es Reserva de la Biosfera. Sobre música, osos y la palabra «sostenible» usada en serio. https://festivaladar.com/es/blog/somiedo-musica-donde-viven-los-osos/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/una-ballena-en-un-monasterio",
+     "lang": "es",
+     "slug": "una-ballena-en-un-monasterio",
+     "kind": "post",
+     "title": "Una ballena encima de una montaña: la noche más onírica de ADAR",
+     "excerpt": "Un pueblo despierta y encuentra una ballena tendida en la cima de la montaña. Con esa leyenda, el ensemble Ballarte llenó de música antigua y realismo mágico el monasterio de San Antolín de Bedón.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/una-ballena-en-un-monasterio/",
+     "date": "2026-09-04",
+     "tags": [
+      "Ballarte",
+      "2025",
+      "Llanes",
+      "música antigua",
+      "monasterio"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Una ballena encima de una montaña: la noche más onírica de ADAR",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "De dónde sale la ballena",
+       "body": "La leyenda no es asturiana. Está inspirada en el perfil de la montaña de Montserrat, en Cataluña: ese macizo de formas redondeadas que, mirado con la cabeza adecuada, puede parecer un animal enorme dormido."
+      },
+      {
+       "type": "text",
+       "title": "Trovadores del siglo XXI",
+       "body": "The Whale es un espectáculo de varias capas: música, interpretación, instalación escénica y elementos audiovisuales. Pero su ambición declarada es más antigua que todo eso."
+      },
+      {
+       "type": "text",
+       "title": "Por qué en Bedón",
+       "body": "El monasterio de San Antolín de Bedón es uno de esos sitios que hacen la mitad del trabajo antes de que empiece la música. Un monasterio de origen medieval cerca de la costa de Llanes, con la piedra a la vista y una atmósfera que no necesita añadidos."
+      },
+      {
+       "type": "text",
+       "title": "La residencia que hizo posible la noche",
+       "body": "Aquí está el detalle que más nos gusta de todo esto: Ballarte no llegó, tocó y se fue. Fueron artistas residentes durante la semana previa, trabajando en Leiguarda y preparando la puesta en escena para el marco concreto de Bedón."
+      },
+      {
+       "type": "text",
+       "title": "Lo que se lleva el público",
+       "body": "Una ballena en una montaña es un buen resumen de lo que intentamos programar: algo que no te esperas, en un sitio que no te esperas, contado con una seriedad artística que no admite discusión."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Una ballena encima de una montaña: la noche más onírica de ADAR\n\nUn pueblo despierta y encuentra una ballena tendida en la cima de la montaña. Con esa leyenda, el ensemble Ballarte llenó de música antigua y realismo mágico el monasterio de San Antolín de Bedón.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Ballarte",
+       "asomo": "Una ballena encima de una montaña: la noche más onírica de ADAR Un pueblo despierta y encuentra una ballena tendida en la cim…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Una ballena encima de una montaña: la noche más onírica de ADAR\n\nUn pueblo despierta y encuentra una ballena tendida en la cima de la montaña. Con esa leyenda, el ensemble Ballarte llenó de música antigua y realismo mágico el monasterio de San Antolín de Bedón.\n\nhttps://festivaladar.com/es/blog/una-ballena-en-un-monasterio/\n\n#FestivalADAR #Asturias",
+       "asomo": "Una ballena encima de una montaña: la noche más onírica de ADAR Un pueblo despierta y encuentra una ballena tendida en la cima de la montaña. Con esa leyenda, el ensemble Ballarte llenó de música antigua y realismo mágico el monasterio de San Antolín de Bedón. https://festivaladar.com/es/blog/una-ballena-en-un-monasterio/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/andrea-casarrubios-seven",
+     "lang": "es",
+     "slug": "andrea-casarrubios-seven",
+     "kind": "post",
+     "title": "SEVEN: la obra que suena a las siete de la tarde de la pandemia",
+     "excerpt": "Andrea Casarrubios estrenó en el Carnegie Hall una pieza para violonchelo dedicada a los trabajadores esenciales. En 2025 la tocó en la iglesia de Leiguarda. Retrato de una música nominada al Grammy.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.16_Iglesia%20de%20Leiguarda_Fotos/25.08.16_Iglesia%20de%20Leiguarda_WEB/25.08.16_Iglesia%20de%20Leiguarda_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/andrea-casarrubios-seven/",
+     "date": "2026-09-02",
+     "tags": [
+      "Andrea Casarrubios",
+      "compositoras",
+      "2025",
+      "Leiguarda"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "SEVEN: la obra que suena a las siete de la tarde de la pandemia",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Quién es Andrea Casarrubios",
+       "body": "Casarrubios es violonchelista y compositora española, y su currículum es de los que cuesta resumir sin que parezca exagerado."
+      },
+      {
+       "type": "text",
+       "title": "Un programa que atravesaba dos siglos y medio",
+       "body": "El recital de Leiguarda es un buen ejemplo de cómo se construye un programa que no aburre a nadie y no renuncia a nada."
+      },
+      {
+       "type": "text",
+       "title": "Lo que significa que toque en Leiguarda",
+       "body": "Aquí está la parte que nos importa de verdad, y no es el currículum. Que una compositora nominada al Grammy, con encargos de la Sinfónica de Chicago, toque en la iglesia de una aldea de cien habitantes no es un favor que nos hace ni una anomalía divertida."
+      },
+      {
+       "type": "text",
+       "title": "La música que nace de algo real",
+       "body": "Si hay un motivo por el que SEVEN nos parece la pieza perfecta para un festival como este, es que habla de algo que le pasó a todo el mundo. No es música abstracta para iniciados. Es una obra sobre gente que fue a trabajar cuando ir a trabajar daba miedo."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "SEVEN: la obra que suena a las siete de la tarde de la pandemia\n\nAndrea Casarrubios estrenó en el Carnegie Hall una pieza para violonchelo dedicada a los trabajadores esenciales. En 2025 la tocó en la iglesia de Leiguarda. Retrato de una música nominada al Grammy.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #AndreaCasarrubios",
+       "asomo": "SEVEN: la obra que suena a las siete de la tarde de la pandemia Andrea Casarrubios estrenó en el Carnegie Hall una pieza para…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "SEVEN: la obra que suena a las siete de la tarde de la pandemia\n\nAndrea Casarrubios estrenó en el Carnegie Hall una pieza para violonchelo dedicada a los trabajadores esenciales. En 2025 la tocó en la iglesia de Leiguarda. Retrato de una música nominada al Grammy.\n\nhttps://festivaladar.com/es/blog/andrea-casarrubios-seven/\n\n#FestivalADAR #Asturias",
+       "asomo": "SEVEN: la obra que suena a las siete de la tarde de la pandemia Andrea Casarrubios estrenó en el Carnegie Hall una pieza para violonchelo dedicada a los trabajadores esenciales. En 2025 la tocó en la iglesia de Leiguarda. Retrato de una música nominada al Grammy. https://festivaladar.com/es/blog/andrea-casarrubios-seven/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/el-horreo-como-sala-de-conciertos",
+     "lang": "es",
+     "slug": "el-horreo-como-sala-de-conciertos",
+     "kind": "post",
+     "title": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento",
+     "excerpt": "Convocamos un concurso para encontrar los mejores hórreos de Asturias y convertirlos en salas de conciertos. Lo que descubrimos dentro no lo esperábamos: la madera sobre pegollos tiene una acústica propia.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/el-horreo-como-sala-de-conciertos/",
+     "date": "2026-08-31",
+     "tags": [
+      "hórreos",
+      "concurso",
+      "acústica",
+      "Susacasa",
+      "2025"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "«No queremos usar un contenedor»",
+       "body": "Esa fue la regla que nos pusimos desde el principio, y conviene explicarla porque marca la diferencia entre lo que hicimos y lo que se hace muchas veces. Es fácil coger un edificio bonito y meterle un concierto dentro."
+      },
+      {
+       "type": "text",
+       "title": "Lo que descubrimos al tocar dentro",
+       "body": "Aquí viene la parte que no habíamos previsto. Un hórreo suena. Es una estructura de madera elevada sobre pegollos, con paredes de tabla, sin cimientos que la aten al suelo y con aire por debajo."
+      },
+      {
+       "type": "text",
+       "title": "Susacasa: permacultura, una panera y una tiorba",
+       "body": "Uno de los espacios seleccionados fue Susacasa Agrocultural, en Gozón, donde el festival de 2025 arrancó el 5 de agosto."
+      },
+      {
+       "type": "text",
+       "title": "Lo que de verdad conseguimos",
+       "body": "El concurso tenía una excusa artística, pero su efecto real fue otro. Durante unas semanas, cientos de personas en Asturias miraron su hórreo con otros ojos. Le hicieron fotos. Lo enseñaron."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento\n\nConvocamos un concurso para encontrar los mejores hórreos de Asturias y convertirlos en salas de conciertos. Lo que descubrimos dentro no lo esperábamos: la madera sobre pegollos tiene una acústica propia.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #hórreos",
+       "asomo": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento Convocamos un concurso para encontrar los m…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento\n\nConvocamos un concurso para encontrar los mejores hórreos de Asturias y convertirlos en salas de conciertos. Lo que descubrimos dentro no lo esperábamos: la madera sobre pegollos tiene una acústica propia.\n\nhttps://festivaladar.com/es/blog/el-horreo-como-sala-de-conciertos/\n\n#FestivalADAR #Asturias",
+       "asomo": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento Convocamos un concurso para encontrar los mejores hórreos de Asturias y convertirlos en salas de conciertos. Lo que descubrimos dentro no lo esperábamos: la madera sobre pegollos tiene una acústica propia. https://festivaladar.com/es/blog/el-horreo-como-sala-de-conciertos/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/que-es-un-paseo-sonoro",
+     "lang": "es",
+     "slug": "que-es-un-paseo-sonoro",
+     "kind": "post",
+     "title": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito)",
+     "excerpt": "No es un concierto con el público de pie. Es un formato donde tú decides el orden, la distancia y el tiempo. Cómo funciona el paseo sonoro y por qué en el medio rural funciona mejor que en cualquier sala.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/12_Paseo_sonoro_en_el_Museo_de_las_Ayalgas_Belmonte_de_Miranda/06.jpg",
+     "url": "https://festivaladar.com/es/blog/que-es-un-paseo-sonoro/",
+     "date": "2026-08-29",
+     "tags": [
+      "paseo sonoro",
+      "formatos",
+      "Museo de las Ayalgas",
+      "2023"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito)",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "En un concierto te sientas. En un paseo, decides.",
+       "body": "En un concierto convencional, todas las decisiones están tomadas antes de que llegues. Dónde te sientas, en qué orden escuchas las obras, a qué distancia estás de cada instrumento, cuándo empieza y cuándo acaba."
+      },
+      {
+       "type": "text",
+       "title": "El día que Bach sonó entre motos antiguas",
+       "body": "El ejemplo que mejor lo explica pasó el 12 de agosto de 2023, en el Museo de las Ayalgas de Silviella, en Belmonte de Miranda."
+      },
+      {
+       "type": "text",
+       "title": "La misma noche, tres capas de patrimonio",
+       "body": "Aquella jornada de 2023 siguió y es un buen retrato de cómo pensamos la programación."
+      },
+      {
+       "type": "text",
+       "title": "Por qué en el campo funciona mejor",
+       "body": "Los paseos sonoros se hacen también en ciudades, pero en el medio rural tienen una ventaja difícil de igualar. El silencio de base. Cuando el ruido de fondo es casi nulo, un instrumento a cuarenta metros se oye."
+      },
+      {
+       "type": "text",
+       "title": "La verdadera razón",
+       "body": "Si tuviéramos que decir por qué es nuestro formato favorito, sería esta: el paseo sonoro elimina la frontera entre escenario y público. No hay tarima, no hay foso, no hay «arriba» y «abajo»."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito)\n\nNo es un concierto con el público de pie. Es un formato donde tú decides el orden, la distancia y el tiempo. Cómo funciona el paseo sonoro y por qué en el medio rural funciona mejor que en cualquier sala.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #paseosonoro",
+       "asomo": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito) No es un concierto con el público de pie. Es un fo…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito)\n\nNo es un concierto con el público de pie. Es un formato donde tú decides el orden, la distancia y el tiempo. Cómo funciona el paseo sonoro y por qué en el medio rural funciona mejor que en cualquier sala.\n\nhttps://festivaladar.com/es/blog/que-es-un-paseo-sonoro/\n\n#FestivalADAR #Asturias",
+       "asomo": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito) No es un concierto con el público de pie. Es un formato donde tú decides el orden, la distancia y el tiempo. Cómo funciona el paseo sonoro y por qué en el medio rural funciona mejor que en cualquier sala. https://festivaladar.com/es/blog/que-es-un-paseo-sonoro/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/leiguarda-47-la-sede",
+     "lang": "es",
+     "slug": "leiguarda-47-la-sede",
+     "kind": "post",
+     "title": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo",
+     "excerpt": "Sala de ensayo con piano de cola, estudio de producción, alojamiento y espacio de conciertos, todo en el mismo edificio de montaña. Por dentro de la sede donde ADAR se cocina los otros once meses del año.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/16_Micro_Conciertos_y_Paseo_Sonoro_en_Leiguarda/03.jpg",
+     "url": "https://festivaladar.com/es/blog/leiguarda-47-la-sede/",
+     "date": "2026-08-27",
+     "tags": [
+      "sede",
+      "Leiguarda",
+      "residencias",
+      "cómo funciona"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Una casa restaurada en la montaña",
+       "body": "La sede de ADAR es una casa restaurada en la montaña del occidente asturiano. Y la mejor manera de describirla es por lo que no es: No es una sala de conciertos. No tiene taquilla, ni butacas numeradas, ni camerinos."
+      },
+      {
+       "type": "text",
+       "title": "Por qué eso cambia el trabajo",
+       "body": "Quienes residen en Leiguarda 47 conviven, comen juntos y desarrollan sus proyectos codo con codo. Puede sonar a detalle logístico. Es, en realidad, el corazón del método. Piensa cómo funciona normalmente."
+      },
+      {
+       "type": "text",
+       "title": "Más de 18 artistas, cuatro países",
+       "body": "Desde 2020 han pasado por la sede más de dieciocho artistas de España, Italia, Alemania y Países Bajos, y a esa lista se le suman cada año nombres de Estados Unidos, Nueva Zelanda o Lituania que llegan invitados al festival."
+      },
+      {
+       "type": "text",
+       "title": "La residencia y el festival, un mismo ecosistema",
+       "body": "Esto explica el modelo entero. En ADAR, la residencia y el festival no son dos programas distintos: son el mismo ecosistema en dos momentos. Durante el año, en la sede se ensaya, se compone, se graba y se prueba material."
+      },
+      {
+       "type": "text",
+       "title": "La ventaja secreta del silencio",
+       "body": "Hay una última cosa que ningún estudio de ciudad puede ofrecer, y que los artistas mencionan siempre: el silencio. No el silencio relativo de un local insonorizado, con el zumbido del aire acondicionado y el tráfico de fondo."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo\n\nSala de ensayo con piano de cola, estudio de producción, alojamiento y espacio de conciertos, todo en el mismo edificio de montaña. Por dentro de la sede donde ADAR se cocina los otros once meses del año.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #sede",
+       "asomo": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo Sala de ensayo con piano de cola, estudio de p…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo\n\nSala de ensayo con piano de cola, estudio de producción, alojamiento y espacio de conciertos, todo en el mismo edificio de montaña. Por dentro de la sede donde ADAR se cocina los otros once meses del año.\n\nhttps://festivaladar.com/es/blog/leiguarda-47-la-sede/\n\n#FestivalADAR #Asturias",
+       "asomo": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo Sala de ensayo con piano de cola, estudio de producción, alojamiento y espacio de conciertos, todo en el mismo edificio de montaña. Por dentro de la sede donde ADAR se cocina los otros once meses del año. https://festivaladar.com/es/blog/leiguarda-47-la-sede/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/de-nueva-york-a-una-aldea",
+     "lang": "es",
+     "slug": "de-nueva-york-a-una-aldea",
+     "kind": "post",
+     "title": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR",
+     "excerpt": "Un día tocan en Nueva York y otro en una panera de Leiguarda. La historia de cómo dos músicos convirtieron una finca asturiana por rehabilitar en la sede de un festival internacional.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/09_Concierto_visual_en_Soto_del_Barco/PXL_20220809_190711391.jpg",
+     "url": "https://festivaladar.com/es/blog/de-nueva-york-a-una-aldea/",
+     "date": "2026-08-25",
+     "tags": [
+      "origen",
+      "Nueva York",
+      "Leiguarda",
+      "Josefina Urraca",
+      "Guillermo Laporta"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Un pack completo: finca, casa, cuadra, pajar, hórreo",
+       "body": "Su búsqueda por Asturias terminó en Leiguarda, una aldea del concejo de Belmonte de Miranda. Lo que compraron era exactamente lo que hay a cientos por rehabilitar en la región: «finca, casa, cuadra, pajar, hórreo…», en sus propias palabras."
+      },
+      {
+       "type": "text",
+       "title": "Del sueño al registro oficial",
+       "body": "No dejaron pasar mucho tiempo. El sueño tenía nombre y registro: Asociación para el Desarrollo de las Artes en el Medio Rural (ADAR), fundada en 2020."
+      },
+      {
+       "type": "text",
+       "title": "«Con una buena conexión, los proyectos no tienen por qué diferir tanto»",
+       "body": "Hay una frase de Josefina Urraca que se nos quedó grabada y que explica por qué ADAR programa lo que programa: > La música es universal y sabemos que con una buena conexión entre Leiguarda y Nueva York los proyectos no tienen por qué diferir tanto."
+      },
+      {
+       "type": "text",
+       "title": "Vivir donde trabajas",
+       "body": "Lo que hace distinto a ADAR de un festival gestionado desde una oficina en la ciudad es sencillo: sus directores viven aquí. No aterrizan en agosto y se van en septiembre. Son vecinos. Se cruzan con el público en la tienda."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR\n\nUn día tocan en Nueva York y otro en una panera de Leiguarda. La historia de cómo dos músicos convirtieron una finca asturiana por rehabilitar en la sede de un festival internacional.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #origen",
+       "asomo": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR Un día tocan en Nueva York y otro en una panera de Leigu…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR\n\nUn día tocan en Nueva York y otro en una panera de Leiguarda. La historia de cómo dos músicos convirtieron una finca asturiana por rehabilitar en la sede de un festival internacional.\n\nhttps://festivaladar.com/es/blog/de-nueva-york-a-una-aldea/\n\n#FestivalADAR #Asturias",
+       "asomo": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR Un día tocan en Nueva York y otro en una panera de Leiguarda. La historia de cómo dos músicos convirtieron una finca asturiana por rehabilitar en la sede de un festival internacional. https://festivaladar.com/es/blog/de-nueva-york-a-una-aldea/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/el-orballo-del-primer-concierto",
+     "lang": "es",
+     "slug": "el-orballo-del-primer-concierto",
+     "kind": "post",
+     "title": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021",
+     "excerpt": "Toda la semana había hecho sol. La noche del estreno, en el campo de la iglesia de Leiguarda, empezó a orbayar. No pudo tocarse el programa entero, y aun así aquella fue la noche que lo cambió todo.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg",
+     "url": "https://festivaladar.com/es/blog/el-orballo-del-primer-concierto/",
+     "date": "2026-08-24",
+     "tags": [
+      "2021",
+      "primera edición",
+      "Leiguarda",
+      "historia"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Una semana de sol y justo esa noche, orballo",
+       "body": "Había hecho sol toda la semana."
+      },
+      {
+       "type": "text",
+       "title": "Más de 120 personas en una aldea de cien habitantes",
+       "body": "El dato que todavía nos emociona: se juntaron más de 120 personas. En una aldea de apenas un centenar de habitantes. Aquella noche había más gente en el campo de la iglesia de Leiguarda que vecinos censados en Leiguarda."
+      },
+      {
+       "type": "text",
+       "title": "Lo que se tocó aquella noche",
+       "body": "El programa ya contenía, en germen, todo lo que ADAR sería después. Obras de Mendelssohn, Haydn y Falla, el repertorio clásico y la tradición española, junto a John Harbison, compositor estadounidense contemporáneo."
+      },
+      {
+       "type": "text",
+       "title": "Lo que aprendimos con la lluvia",
+       "body": "Aquella noche nos dio, sin pretenderlo, las tres reglas con las que seguimos trabajando cinco ediciones más tarde: Que el sitio manda. No puedes controlar el orballo, ni la luz, ni la temperatura."
+      },
+      {
+       "type": "text",
+       "title": "Cinco años después",
+       "body": "De aquella noche salió el compromiso de volver cada agosto. Y volvimos: en 2022, 2023, 2024, 2025 y 2026, ampliando cada vez el mapa de concejos, de espacios y de artistas."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021\n\nToda la semana había hecho sol. La noche del estreno, en el campo de la iglesia de Leiguarda, empezó a orbayar. No pudo tocarse el programa entero, y aun así aquella fue la noche que lo cambió todo.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #2021",
+       "asomo": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021 Toda la semana había hecho sol. La noche del est…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021\n\nToda la semana había hecho sol. La noche del estreno, en el campo de la iglesia de Leiguarda, empezó a orbayar. No pudo tocarse el programa entero, y aun así aquella fue la noche que lo cambió todo.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Asturias",
+       "asomo": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021 Toda la semana había hecho sol. La noche del estreno, en el campo de la iglesia de Leiguarda, empezó a orbayar. No pudo tocarse el programa entero, y aun así aquella fue la noche que lo cambió todo. https://festivaladar.com/es/blog/el-orballo-del-primer-concierto/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/seis-ediciones-de-adar",
+     "lang": "es",
+     "slug": "seis-ediciones-de-adar",
+     "kind": "post",
+     "title": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera",
+     "excerpt": "Acaba la sexta edición. Un buen momento para mirar atrás sin nostalgia y contar, con honestidad, qué hemos aprendido en estos años y hacia dónde va el proyecto.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/05.08.26_Parador%20de%20Corias_Fotos/05.08.26_Parador%20de%20Corias_WEB/05.08.26_Parador%20de%20Corias_WEB_3.jpg",
+     "url": "https://festivaladar.com/es/blog/seis-ediciones-de-adar/",
+     "date": "2026-08-23",
+     "tags": [
+      "ADAR",
+      "retrospectiva",
+      "VI edición",
+      "2027"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "1. El nivel no hay que bajarlo. Nunca.",
+       "body": "Al empezar, más de una vez nos preguntaron si \"para el pueblo\" no convendría una programación más ligera, más fácil. Seis ediciones después lo tenemos clarísimo: no. El público del medio rural no quiere una versión descafeinada de la cultura."
+      },
+      {
+       "type": "text",
+       "title": "2. El sitio importa tanto como el programa.",
+       "body": "Aprendimos que un concierto en una iglesia de aldea, en un parador, en un alto de monte, no es el mismo concierto que en un auditorio. El lugar entra en la música."
+      },
+      {
+       "type": "text",
+       "title": "3. Lo extraordinario cabe en un pueblo.",
+       "body": "Una birbynė lituana. Un eclipse total de sol. Una residencia artística. Música que va de Bach a David Lang en la misma noche. Nada de eso \"sobra\" en el medio rural: encaja mejor de lo que nadie esperaba."
+      },
+      {
+       "type": "text",
+       "title": "4. Esto no lo hace un festival: lo hace una comunidad.",
+       "body": "Es la lección más importante."
+      },
+      {
+       "type": "text",
+       "title": "Y ahora, hacia 2027",
+       "body": "No vamos a caer en la nostalgia, porque el proyecto mira hacia delante. Ya estamos trabajando en la próxima edición, con cosas que aún no podemos contar pero que nos hacen mucha ilusión."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera\n\nAcaba la sexta edición. Un buen momento para mirar atrás sin nostalgia y contar, con honestidad, qué hemos aprendido en estos años y hacia dónde va el proyecto.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #ADAR",
+       "asomo": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera Acaba la sexta edición. Un buen momen…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera\n\nAcaba la sexta edición. Un buen momento para mirar atrás sin nostalgia y contar, con honestidad, qué hemos aprendido en estos años y hacia dónde va el proyecto.\n\nhttps://festivaladar.com/es/blog/seis-ediciones-de-adar/\n\n#FestivalADAR #Asturias",
+       "asomo": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera Acaba la sexta edición. Un buen momento para mirar atrás sin nostalgia y contar, con honestidad, qué hemos aprendido en estos años y hacia dónde va el proyecto. https://festivaladar.com/es/blog/seis-ediciones-de-adar/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/la-espicha-despues-del-ultimo-acorde",
+     "lang": "es",
+     "slug": "la-espicha-despues-del-ultimo-acorde",
+     "kind": "post",
+     "title": "La espicha después del último acorde: por qué la música y la sidra terminan juntas",
+     "excerpt": "En ADAR el concierto no acaba cuando se apagan las luces. Acaba con una espicha, sidra en mano, artistas y público mezclados. Y eso no es el postre: es parte de la idea.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/la-espicha-despues-del-ultimo-acorde/",
+     "date": "2026-08-22",
+     "tags": [
+      "espicha",
+      "sidra",
+      "comunidad",
+      "clausura"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "La espicha después del último acorde: por qué la música y la sidra terminan juntas",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Qué es una espicha (por si no eres de aquí)",
+       "body": "Para quien no sea asturiano: una espicha es una reunión en torno a la sidra. El nombre viene del espiche, el palo que tapa el agujero del tonel; \"espichar\" es abrirlo y empezar a escanciar."
+      },
+      {
+       "type": "text",
+       "title": "Por qué la ponemos al final de un concierto",
+       "body": "Podría parecer un simple detalle simpático, el \"vino de honor\" de toda la vida. Es mucho más que eso. La espicha hace un trabajo que ninguna otra parte del festival puede hacer: aplana la jerarquía."
+      },
+      {
+       "type": "text",
+       "title": "El concierto no era el evento: la noche entera lo era",
+       "body": "Esto conecta con algo que creemos a fondo. El acontecimiento no es solo la hora de música. Es la tarde entera: el viaje hasta la aldea, el reencuentro a la entrada, el concierto, y la espicha que lo cierra."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "La espicha después del último acorde: por qué la música y la sidra terminan juntas\n\nEn ADAR el concierto no acaba cuando se apagan las luces. Acaba con una espicha, sidra en mano, artistas y público mezclados. Y eso no es el postre: es parte de la idea.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #espicha",
+       "asomo": "La espicha después del último acorde: por qué la música y la sidra terminan juntas En ADAR el concierto no acaba cuando se ap…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "La espicha después del último acorde: por qué la música y la sidra terminan juntas\n\nEn ADAR el concierto no acaba cuando se apagan las luces. Acaba con una espicha, sidra en mano, artistas y público mezclados. Y eso no es el postre: es parte de la idea.\n\nhttps://festivaladar.com/es/blog/la-espicha-despues-del-ultimo-acorde/\n\n#FestivalADAR #Asturias",
+       "asomo": "La espicha después del último acorde: por qué la música y la sidra terminan juntas En ADAR el concierto no acaba cuando se apagan las luces. Acaba con una espicha, sidra en mano, artistas y público mezclados. Y eso no es el postre: es parte de la idea. https://festivaladar.com/es/blog/la-espicha-despues-del-ultimo-acorde/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/como-escuchar-sweet-air-david-lang",
+     "lang": "es",
+     "slug": "como-escuchar-sweet-air-david-lang",
+     "kind": "post",
+     "title": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea)",
+     "excerpt": "«No entiendo la música moderna» es la frase más repetida y la más injusta. Una pequeña guía para escuchar sin miedo, a partir de una obra que sonó en la clausura de ADAR.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/como-escuchar-sweet-air-david-lang/",
+     "date": "2026-08-21",
+     "tags": [
+      "música contemporánea",
+      "David Lang",
+      "guía de escucha",
+      "clausura"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea)",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Quién es David Lang",
+       "body": "David Lang es un compositor estadounidense, premio Pulitzer de música en 2008 por su The Little Match Girl Passion, y una de las cabezas del colectivo Bang on a Can, que lleva décadas acercando la música de hoy a públicos que creían que no era para ellos."
+      },
+      {
+       "type": "text",
+       "title": "El error: escucharla como si fuera Beethoven",
+       "body": "El malentendido casi siempre viene de aquí. Escuchamos música contemporánea esperando lo que nos dio la música del XIX: un tema que reconoces, un clímax, una resolución con moraleja. Y cuando eso no llega, concluimos que \"no la entendemos\"."
+      },
+      {
+       "type": "text",
+       "title": "Una guía de escucha en tres gestos",
+       "body": "Para la próxima vez que te enfrentes a una pieza así, prueba esto: 1. Deja de buscar la melodía. Escucha la textura: cómo se mezclan los instrumentos, cómo cambia el color del sonido. Ahí está el acontecimiento."
+      },
+      {
+       "type": "text",
+       "title": "Por qué la programamos",
+       "body": "En ADAR mezclamos a Bach con Ligeti, a Vivaldi con David Lang, a propósito. No para presumir de modernos, sino porque la buena música de todas las épocas se lleva mejor de lo que la gente teme."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea)\n\n«No entiendo la música moderna» es la frase más repetida y la más injusta. Una pequeña guía para escuchar sin miedo, a partir de una obra que sonó en la clausura de ADAR.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #músicacontemporánea",
+       "asomo": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea) «No entiendo la música moderna» es la…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea)\n\n«No entiendo la música moderna» es la frase más repetida y la más injusta. Una pequeña guía para escuchar sin miedo, a partir de una obra que sonó en la clausura de ADAR.\n\nhttps://festivaladar.com/es/blog/como-escuchar-sweet-air-david-lang/\n\n#FestivalADAR #Asturias",
+       "asomo": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea) «No entiendo la música moderna» es la frase más repetida y la más injusta. Una pequeña guía para escuchar sin miedo, a partir de una obra que sonó en la clausura de ADAR. https://festivaladar.com/es/blog/como-escuchar-sweet-air-david-lang/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/germanavicius-california-sketches",
+     "lang": "es",
+     "slug": "germanavicius-california-sketches",
+     "kind": "post",
+     "title": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches»",
+     "excerpt": "Un compositor lituano que estudió en California, música pensada para instrumentos de folclore báltico y una iglesia asturiana. La historia de una obra que cruzó tres mundos para sonar aquí.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/11.08.26_El%20Franco_Fotos/11.08.26_El%20Franco_WEB/11.08.26_El%20Franco_WEB_4.jpg",
+     "url": "https://festivaladar.com/es/blog/germanavicius-california-sketches/",
+     "date": "2026-08-19",
+     "tags": [
+      "Germanavičius",
+      "compositores",
+      "Lituania",
+      "música contemporánea"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches»",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Un lituano que aprendió a escuchar en California",
+       "body": "Germanavičius nació en Lituania, pero su formación es un mapa del mundo: estudió en Vilnius, en Dartington (Inglaterra), en San Francisco y en Helsinki."
+      },
+      {
+       "type": "text",
+       "title": "La obsesión que lo conecta todo: el folclore",
+       "body": "Aquí está el hilo secreto que hace de esta programación algo más que una casualidad bonita."
+      },
+      {
+       "type": "text",
+       "title": "Por qué esto importa en un pueblo de Belmonte",
+       "body": "Podría parecer un lujo intelectual, algo \"para entendidos\". No lo es. Es exactamente lo contrario. Lo que cuenta esta obra, sin decir una palabra, es que el folclore no es un museo, sino materia viva con la que un creador de hoy sigue trabajando."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches»\n\nUn compositor lituano que estudió en California, música pensada para instrumentos de folclore báltico y una iglesia asturiana. La historia de una obra que cruzó tres mundos para sonar aquí.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Germanavičius",
+       "asomo": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches» Un compositor lituano que estudió en California, músi…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches»\n\nUn compositor lituano que estudió en California, música pensada para instrumentos de folclore báltico y una iglesia asturiana. La historia de una obra que cruzó tres mundos para sonar aquí.\n\nhttps://festivaladar.com/es/blog/germanavicius-california-sketches/\n\n#FestivalADAR #Asturias",
+       "asomo": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches» Un compositor lituano que estudió en California, música pensada para instrumentos de folclore báltico y una iglesia asturiana. La historia de una obra que cruzó tres mundos para sonar aquí. https://festivaladar.com/es/blog/germanavicius-california-sketches/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/horreos-y-paneras-concurso",
+     "lang": "es",
+     "slug": "horreos-y-paneras-concurso",
+     "kind": "post",
+     "title": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura",
+     "excerpt": "El hórreo es la obra de arquitectura popular más asturiana que existe, y desaparece en silencio. Contamos por qué ADAR, un festival de música, decidió meterse a defenderlo.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/horreos-y-paneras-concurso/",
+     "date": "2026-08-18",
+     "tags": [
+      "hórreos",
+      "patrimonio",
+      "arquitectura popular",
+      "concurso"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La escultura útil de Asturias",
+       "body": "El hórreo es probablemente la pieza de arquitectura popular más reconocible del noroeste peninsular."
+      },
+      {
+       "type": "text",
+       "title": "Un patrimonio que se cae sin ruido",
+       "body": "El problema es que el hórreo se está muriendo de éxito histórico y de olvido presente. Ya no se guarda grano en ellos. Sin uso, muchos se abandonan; sin mantenimiento, la madera se pudre; sin relevo en el pueblo, no queda quien los arregle."
+      },
+      {
+       "type": "text",
+       "title": "Por qué esto es asunto de un festival",
+       "body": "Aquí es donde encaja ADAR. Porque nuestra idea nunca fue solo \"traer conciertos al campo\". Fue poner el foco sobre el medio rural y todo lo que guarda: su música, su gente, sus paisajes y también sus construcciones."
+      },
+      {
+       "type": "text",
+       "title": "La misma causa por otros medios",
+       "body": "Un concierto en una iglesia de aldea y un concurso de hórreos persiguen lo mismo: que el medio rural no se lea como un sitio vacío del que la gente se va, sino como un sitio lleno de cosas que merecen quedarse."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura\n\nEl hórreo es la obra de arquitectura popular más asturiana que existe, y desaparece en silencio. Contamos por qué ADAR, un festival de música, decidió meterse a defenderlo.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #hórreos",
+       "asomo": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura El hórreo es la obra de arquitectura po…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura\n\nEl hórreo es la obra de arquitectura popular más asturiana que existe, y desaparece en silencio. Contamos por qué ADAR, un festival de música, decidió meterse a defenderlo.\n\nhttps://festivaladar.com/es/blog/horreos-y-paneras-concurso/\n\n#FestivalADAR #Asturias",
+       "asomo": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura El hórreo es la obra de arquitectura popular más asturiana que existe, y desaparece en silencio. Contamos por qué ADAR, un festival de música, decidió meterse a defenderlo. https://festivaladar.com/es/blog/horreos-y-paneras-concurso/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/equilibrium-residencia-la-casona",
+     "lang": "es",
+     "slug": "equilibrium-residencia-la-casona",
+     "kind": "post",
+     "title": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo",
+     "excerpt": "Una residencia artística no es un ensayo con vistas bonitas. Es lo que hicimos en La Casona de Belmonte: dejar que la música se cocine despacio, en el sitio, hasta que huele al lugar donde nace.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_5.jpg",
+     "url": "https://festivaladar.com/es/blog/equilibrium-residencia-la-casona/",
+     "date": "2026-08-17",
+     "tags": [
+      "residencia",
+      "La Casona de Belmonte",
+      "proceso creativo",
+      "Equilibrium"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Vivir el sitio antes de tocarlo",
+       "body": "En La Casona de Belmonte reunimos a un grupo de artistas para trabajar Equilibrium durante varios días. No vinieron a dar un concierto y marcharse: vinieron a quedarse."
+      },
+      {
+       "type": "text",
+       "title": "El proceso también es la obra",
+       "body": "Solemos pensar que lo valioso es el producto: el concierto, el disco, el aplauso. Pero en una residencia el proceso es tan importante como el estreno. Ahí es donde se prueban ideas que quizá no salen."
+      },
+      {
+       "type": "text",
+       "title": "Por qué lo hacemos en el medio rural",
+       "body": "Podríamos hacer las residencias en una ciudad, con más comodidades. Las hacemos aquí a propósito, por dos razones. La primera, por los artistas: el medio rural es un laboratorio, no un destino de segunda."
+      },
+      {
+       "type": "text",
+       "title": "Lo que se queda",
+       "body": "Cuando los artistas se van, algo permanece. Una obra que existe porque este valle existe. Una relación entre unos músicos y un lugar. Y la prueba, para quien lo vio, de que aquí no solo se consume cultura de visita: aquí también se crea."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo\n\nUna residencia artística no es un ensayo con vistas bonitas. Es lo que hicimos en La Casona de Belmonte: dejar que la música se cocine despacio, en el sitio, hasta que huele al lugar donde nace.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #residencia",
+       "asomo": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo Una residencia artística no es un ensayo con vistas bo…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo\n\nUna residencia artística no es un ensayo con vistas bonitas. Es lo que hicimos en La Casona de Belmonte: dejar que la música se cocine despacio, en el sitio, hasta que huele al lugar donde nace.\n\nhttps://festivaladar.com/es/blog/equilibrium-residencia-la-casona/\n\n#FestivalADAR #Asturias",
+       "asomo": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo Una residencia artística no es un ensayo con vistas bonitas. Es lo que hicimos en La Casona de Belmonte: dejar que la música se cocine despacio, en el sitio, hasta que huele al lugar donde nace. https://festivaladar.com/es/blog/equilibrium-residencia-la-casona/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/una-birbyne-en-leiguarda",
+     "lang": "es",
+     "slug": "una-birbyne-en-leiguarda",
+     "kind": "post",
+     "title": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana",
+     "excerpt": "Žilvinas Brazauskas tocó en Leiguarda un instrumento que empezó siendo un juguete de pastores lituanos hace cuatro siglos. La historia de la birbynė es también la historia de por qué el mundo cabe en una aldea.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.15_Iglesia%20de%20Leiguarda_Fotos/26.08.15_Iglesia%20de%20Leiguarda_WEB/26.08.15_Iglesia%20de%20Leiguarda_WEB_6.jpg",
+     "url": "https://festivaladar.com/es/blog/una-birbyne-en-leiguarda/",
+     "date": "2026-08-16",
+     "tags": [
+      "birbynė",
+      "instrumentos",
+      "Leiguarda",
+      "Lituania"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Un juguete de pastores del año 1625",
+       "body": "La birbynė no nació en un conservatorio. Nació en el campo. Es un instrumento de viento lituano, primo lejano del clarinete, hecho en origen con paja, corteza o cuerno de animal, con una lengüeta simple o doble."
+      },
+      {
+       "type": "text",
+       "title": "De una aldea lituana a otra asturiana",
+       "body": "Piénsalo un momento. Un instrumento que empezó siendo el entretenimiento de un chaval cuidando ovejas en Lituania acabó, cuatro siglos después, sonando bajo las bóvedas de una iglesia de Belmonte de Miranda, delante de vecinos de Leiguarda."
+      },
+      {
+       "type": "text",
+       "title": "Un clarinetista que se atreve con las dos cosas",
+       "body": "Žilvinas Brazauskas (lituano, formado en la gran tradición clarinetística europea) no tocó solo la birbynė. En el mismo programa pasó del clarinete al instrumento de su tierra y viceversa."
+      },
+      {
+       "type": "text",
+       "title": "Por qué lo trajimos hasta aquí",
+       "body": "Podríamos haber programado un clarinete \"normal\" y nadie habría protestado."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana\n\nŽilvinas Brazauskas tocó en Leiguarda un instrumento que empezó siendo un juguete de pastores lituanos hace cuatro siglos. La historia de la birbynė es también la historia de por qué el mundo cabe en una aldea.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #birbynė",
+       "asomo": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana Žilvinas Brazauskas tocó en Leig…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana\n\nŽilvinas Brazauskas tocó en Leiguarda un instrumento que empezó siendo un juguete de pastores lituanos hace cuatro siglos. La historia de la birbynė es también la historia de por qué el mundo cabe en una aldea.\n\nhttps://festivaladar.com/es/blog/una-birbyne-en-leiguarda/\n\n#FestivalADAR #Asturias",
+       "asomo": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana Žilvinas Brazauskas tocó en Leiguarda un instrumento que empezó siendo un juguete de pastores lituanos hace cuatro siglos. La historia de la birbynė es también la historia de por qué el mundo cabe en una aldea. https://festivaladar.com/es/blog/una-birbyne-en-leiguarda/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "clave": "es/el-eclipse-que-apago-asturias",
+     "lang": "es",
+     "slug": "el-eclipse-que-apago-asturias",
+     "kind": "post",
+     "title": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse",
+     "excerpt": "El 12 de agosto de 2026 Asturias vivió el primer eclipse total de sol sobre la España peninsular en 121 años. Lo esperamos tocando, en un alto de Belmonte, con la música pensada para el instante exacto de la sombra.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/el-eclipse-que-apago-asturias/",
+     "date": "2026-08-13",
+     "tags": [
+      "eclipse",
+      "crónica",
+      "La Corredoria",
+      "2026"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Tocar contra el reloj del cielo",
+       "body": "Un eclipse no admite ensayo con público, ni segundo pase. La totalidad estaba prevista para las 20:27, con el sol a apenas diez grados sobre el horizonte, casi rozando el mar por el oeste."
+      },
+      {
+       "type": "text",
+       "title": "Música para la sombra",
+       "body": "La pregunta que nos hicimos al diseñar el programa fue sencilla y difícil: ¿qué se toca mientras el mundo se queda a oscuras? No quisimos ilustrar el eclipse ni \"acompañarlo\" como quien pone banda sonora."
+      },
+      {
+       "type": "text",
+       "title": "Por qué esto es exactamente lo que hace ADAR",
+       "body": "Un festival de ciudad habría llevado el eclipse a un auditorio con pantalla. Nosotros hicimos lo de siempre, solo que con un decorado imposible de igualar: poner la música donde de verdad pasan las cosas."
+      },
+      {
+       "type": "cta",
+       "title": "Léelo entero",
+       "body": "Artículo completo en festivaladar.com · enlace en la bio"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse\n\nEl 12 de agosto de 2026 Asturias vivió el primer eclipse total de sol sobre la España peninsular en 121 años. Lo esperamos tocando, en un alto de Belmonte, con la música pensada para el instante exacto de la sombra.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #eclipse",
+       "asomo": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse El 12 de agosto de 2026 Asturias vivió el primer ec…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse\n\nEl 12 de agosto de 2026 Asturias vivió el primer eclipse total de sol sobre la España peninsular en 121 años. Lo esperamos tocando, en un alto de Belmonte, con la música pensada para el instante exacto de la sombra.\n\nhttps://festivaladar.com/es/blog/el-eclipse-que-apago-asturias/\n\n#FestivalADAR #Asturias",
+       "asomo": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse El 12 de agosto de 2026 Asturias vivió el primer eclipse total de sol sobre la España peninsular en 121 años. Lo esperamos tocando, en un alto de Belmonte, con la música pensada para el instante exacto de la sombra. https://festivaladar.com/es/blog/el-eclipse-que-apago-asturias/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    }
+   ]
+  }
+ }
+}

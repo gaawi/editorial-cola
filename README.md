@@ -1,6 +1,38 @@
 # editorial/cola
 
-Publicar en Facebook e Instagram desde el chat. No tiene pantalla a propósito:
+Dos cosas que comparten material: **la app de aprobar**, que se abre en el
+móvil y enseña cada post como se va a ver en Instagram y en Facebook, y la
+**herramienta de publicar**, que sale desde el chat.
+
+## La app de aprobar
+
+Vive en la raíz y se despliega en Vercel. Solo hace tres cosas: enseñar,
+decidir y guardar. No genera imágenes para descargar, no edita textos, no
+tiene calendario: para eso está el kit de ADAR mientras siga en pie.
+
+```
+index.html · app.js · estilo.css   la app (solo móvil, 402×874)
+motor.js                           el motor de dibujo del kit, traído tal cual
+entrar.html                        la puerta: entrar con GitHub
+middleware.js                      sin cookie firmada, no se entra
+api/auth.js · api/callback.js      el relevo de OAuth, copiado de ADAR
+datos/posts.json                   las fichas, generadas desde el repo de ADAR
+aprobaciones.json                  lo que se decide, lo escribe la propia app
+construir-datos.mjs                rehace datos/posts.json
+```
+
+Cuando cambien las fichas en ADAR hay que rehacer los datos:
+
+```sh
+node construir-datos.mjs      # lee ../adar y escribe datos/posts.json
+```
+
+**El motor de dibujo es una copia.** Está traído de
+`src/components/KitRedes.astro` con las mismas medidas, y solo el estilo
+cinta. Si allí cambian las proporciones, hay que traer el cambio a mano: es
+la única copia que existe.
+
+## Publicar en Facebook e Instagram desde el chat. No tiene pantalla a propósito:
 la herramienta la ejecuta Claude en la conversación, enseña lo que va a salir,
 y solo publica cuando se le dice.
 

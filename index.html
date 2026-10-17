@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f5f4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Aprobar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Alegreya+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="barra">
+  <button id="atras" class="atras" hidden aria-label="Volver">‹</button>
+  <h1 id="titulo">Aprobar</h1>
+  <button id="marca" class="marca">CreArtBox</button>
+</header>
+
+<!-- ── Lista ─────────────────────────────────────────────────────────── -->
+<main id="lista" class="pantalla activa">
+  <nav class="filtros" id="filtros">
+    <button class="chip activo" data-filtro="pendientes">Pendientes</button>
+    <button class="chip" data-filtro="listos">Listos</button>
+    <button class="chip" data-filtro="todas">Todas</button>
+  </nav>
+  <div id="fichas" class="fichas"></div>
+  <p id="vacio" class="vacio" hidden>Nada por aquí.</p>
+</main>
+
+<!-- ── Una ficha ─────────────────────────────────────────────────────── -->
+<main id="detalle" class="pantalla">
+  <nav class="redes" id="redes">
+    <button class="red activo" data-red="ig">Instagram</button>
+    <button class="red" data-red="fb">Facebook</button>
+    <button class="red" data-red="story">Historia</button>
+  </nav>
+
+  <div id="escenario" class="escenario"></div>
+
+  <section class="decidir">
+    <div class="estado-actual" id="estado-actual"></div>
+    <div class="botones">
+      <button id="aprobar" class="btn btn-si">Listo para publicar</button>
+      <button id="cambios" class="btn btn-no">Hay que cambiar algo</button>
+    </div>
+    <label class="nota" id="caja-nota" hidden>
+      <span>Qué hay que cambiar</span>
+      <textarea id="nota" rows="3" placeholder="Ej.: el titular es largo, la foto no es esa…"></textarea>
+      <button id="guardar-nota" class="btn btn-no">Guardar</button>
+    </label>
+  </section>
+</main>
+
+<div id="aviso" class="aviso" hidden></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

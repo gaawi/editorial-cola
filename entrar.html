@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Entrar</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+  body { display: grid; place-items: center; min-height: 100svh; padding: 24px; }
+  .puerta { text-align: center; max-width: 320px; }
+  .puerta h1 { font-family: Literata, Georgia, serif; font-size: 24px; margin-bottom: 8px; }
+  .puerta p { color: var(--suave); font-size: 14px; line-height: 1.5; margin-bottom: 24px; }
+  .puerta .btn { width: 100%; background: #1c1917; border-color: #1c1917; color: #fff; }
+  .puerta .mal { color: var(--no); font-size: 13px; margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="puerta">
+  <h1>Aprobar</h1>
+  <p>Los borradores no son públicos. Entra con la cuenta de GitHub que puede escribir en el repositorio.</p>
+  <button id="entrar" class="btn">Entrar con GitHub</button>
+  <p class="mal" id="mal" hidden></p>
+</div>
+<script>
+document.getElementById('entrar').addEventListener('click', function () {
+  var w = window.open('/api/auth', 'cola-gh', 'width=700,height=740');
+  if (!w) return fallo('El navegador bloqueó la ventana. Permite las emergentes.');
+  window.addEventListener('message', function recibir(ev) {
+    if (ev.origin !== window.location.origin || typeof ev.data !== 'string') return;
+    if (ev.data === 'authorizing:github') { try { w.postMessage('cola', window.location.origin); } catch (e) {} return; }
+    var m = ev.data.match(/^authorization:github:(success|error):([\s\S]*)$/);
+    if (!m) return;
+    window.removeEventListener('message', recibir);
+    if (m[1] === 'success') {
+      // La cookie firmada ya viene puesta por /api/callback.
+      try { sessionStorage.setItem('cola_gh_token', JSON.parse(m[2]).token); } catch (e) {}
+      location.href = '/';
+    } else {
+      var d = {}; try { d = JSON.parse(m[2]); } catch (e) {}
+      fallo(d.error || 'GitHub no dio permiso.');
+    }
+  });
+});
+function fallo(t) { var e = document.getElementById('mal'); e.textContent = t; e.hidden = false; }
+</script>
+</body>
+</html>

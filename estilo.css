@@ -1,0 +1,188 @@
+/* La app se usa desde un iPhone 16 Pro (402×874) con Brave o Chrome.
+ * No hay versión de escritorio a propósito: se mide y se prueba a ese ancho.
+ * El cromo es neutro para que no compita con las vistas previas, que son las
+ * que tienen que parecerse a Instagram y a Facebook de verdad. */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --papel: #faf9f8;
+  --tinta: #1c1917;
+  --suave: #57534e;
+  --tenue: #a8a29e;
+  --filete: #e7e5e4;
+  --si: #15803d;
+  --no: #b91c1c;
+  --espera: #b45309;
+}
+
+html, body {
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: Archivo, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: contain;
+}
+button, textarea { font: inherit; color: inherit; }
+button { background: none; border: none; cursor: pointer; }
+
+/* ── Barra ─────────────────────────────────────────────────────────── */
+.barra {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px; padding-top: calc(12px + env(safe-area-inset-top));
+  background: rgba(250, 249, 248, 0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--filete);
+}
+.barra h1 { flex: 1; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+.atras { font-size: 28px; line-height: 1; width: 32px; margin-left: -6px; color: var(--suave); }
+.marca {
+  font-size: 12px; font-weight: 600; color: var(--suave);
+  border: 1px solid var(--filete); border-radius: 999px; padding: 6px 12px; background: #fff;
+}
+
+.pantalla { display: none; padding: 0 16px 48px; padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
+.pantalla.activa { display: block; }
+
+/* ── Filtros ───────────────────────────────────────────────────────── */
+.filtros { display: flex; gap: 8px; padding: 14px 0 12px; }
+.chip {
+  flex: 1; min-height: 36px; font-size: 13px; color: var(--suave);
+  border: 1px solid var(--filete); border-radius: 999px; background: #fff;
+}
+.chip.activo { background: var(--tinta); color: #fff; border-color: var(--tinta); }
+
+/* ── Lista de fichas ───────────────────────────────────────────────── */
+.fichas { display: flex; flex-direction: column; gap: 10px; }
+.ficha {
+  display: flex; gap: 12px; align-items: flex-start; width: 100%; text-align: left;
+  background: #fff; border: 1px solid var(--filete); border-radius: 14px; padding: 12px;
+}
+.ficha:active { background: #f5f5f4; }
+.ficha img, .ficha .sinfoto {
+  width: 56px; height: 56px; flex: 0 0 56px; border-radius: 10px;
+  object-fit: cover; background: #f5f5f4;
+}
+.ficha .txt { min-width: 0; flex: 1; }
+.ficha h2 {
+  font-family: Literata, Georgia, serif; font-size: 15px; font-weight: 600; line-height: 1.25;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.ficha .pie { display: flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 11px; color: var(--tenue); }
+
+.sello { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; border-radius: 4px; }
+.sello.listo { background: #dcfce7; color: var(--si); }
+.sello.cambios { background: #fee2e2; color: var(--no); }
+.sello.espera, .sello.borrador { background: #fef3c7; color: var(--espera); }
+.sello.idea, .sello.sin { background: #f5f5f4; color: var(--suave); }
+.sello.descartado { background: #e7e5e4; color: var(--suave); text-decoration: line-through; }
+.sello.publicado { background: var(--tinta); color: #fff; }
+
+.vacio { text-align: center; color: var(--tenue); font-style: italic; padding: 56px 0; }
+
+/* ── Selector de red ───────────────────────────────────────────────── */
+.redes { display: flex; gap: 6px; padding: 14px 0 16px; }
+.red {
+  flex: 1; min-height: 36px; font-size: 13px; color: var(--suave);
+  border: 1px solid var(--filete); border-radius: 10px; background: #fff;
+}
+.red.activo { background: var(--tinta); color: #fff; border-color: var(--tinta); }
+
+/* ── Vistas previas ────────────────────────────────────────────────── */
+.escenario { display: flex; justify-content: center; }
+
+/* Instagram */
+.ig {
+  width: 100%; background: #fff; color: #000;
+  border: 1px solid #dbdbdb; border-radius: 12px; overflow: hidden;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px; line-height: 18px;
+}
+.ig-cab { display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
+.ig-av { width: 32px; height: 32px; flex: 0 0 32px; border-radius: 50%; object-fit: cover; background: #efefef;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px #ff2f72; }
+.ig-usuario { font-weight: 600; font-size: 13px; flex: 1; }
+.ig-mas { color: #262626; font-size: 18px; line-height: 1; letter-spacing: 1px; }
+.ig-carrete { position: relative; }
+.ig-carrete .tira { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.ig-carrete .tira::-webkit-scrollbar { display: none; }
+.ig-carrete canvas { width: 100%; flex: 0 0 100%; scroll-snap-align: center; display: block; aspect-ratio: 1/1; background: #000; }
+.ig-cuenta { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,.6); color: #fff;
+  font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
+.ig-puntos { display: flex; justify-content: center; gap: 4px; padding: 10px 0 2px; }
+.ig-puntos i { width: 6px; height: 6px; border-radius: 50%; background: #c7c7c7; }
+.ig-puntos i.on { background: #0095f6; }
+.ig-acciones { display: flex; align-items: center; gap: 16px; padding: 10px 12px 6px; }
+.ig-acciones svg { width: 24px; height: 24px; stroke: #262626; fill: none; stroke-width: 1.7; }
+.ig-acciones .guardar { margin-left: auto; display: flex; }
+.ig-pie { padding: 2px 12px 12px; white-space: pre-wrap; word-break: break-word; }
+.ig-pie b { font-weight: 600; margin-right: 5px; }
+.ig-pie .eti { color: #00376b; }
+.ig-pie .mas { color: #8e8e8e; }
+.ig-hora { padding: 0 12px 12px; font-size: 11px; color: #8e8e8e; text-transform: uppercase; letter-spacing: .02em; }
+
+/* Facebook */
+.fb {
+  width: 100%; background: #fff; color: #080809;
+  border: 1px solid #dddfe2; border-radius: 10px; overflow: hidden;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px; line-height: 20px;
+}
+.fb-cab { display: flex; align-items: center; gap: 10px; padding: 12px 12px 8px; }
+.fb-av { width: 40px; height: 40px; flex: 0 0 40px; border-radius: 50%; object-fit: cover; background: #e4e6eb; }
+.fb-nombre { font-weight: 600; font-size: 15px; }
+.fb-meta { font-size: 12px; color: #65676b; }
+.fb-texto { padding: 0 12px 10px; white-space: pre-wrap; word-break: break-word; }
+.fb-texto a, .fb-texto .eti { color: #216fdb; }
+.fb-texto .mas { color: #65676b; font-weight: 600; }
+.fb img, .fb canvas { width: 100%; display: block; }
+.fb-acciones { display: flex; border-top: 1px solid #e4e6eb; margin-top: 4px; }
+.fb-acciones span { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 9px 0; font-size: 13px; font-weight: 600; color: #65676b; }
+.fb-acciones svg { width: 17px; height: 17px; stroke: #65676b; fill: none; stroke-width: 1.8; }
+
+/* Historia */
+.story { position: relative; width: 100%; aspect-ratio: 9/16; border-radius: 14px; overflow: hidden; background: #000; }
+.story canvas { width: 100%; height: 100%; display: block; object-fit: cover; }
+.story .barrita { position: absolute; top: 10px; left: 10px; right: 10px; height: 2.5px;
+  background: rgba(255,255,255,.35); border-radius: 2px; }
+.story .barrita i { display: block; width: 38%; height: 100%; background: #fff; border-radius: 2px; }
+.story .quien { position: absolute; top: 22px; left: 10px; right: 10px;
+  display: flex; align-items: center; gap: 8px; color: #fff;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5); }
+.story .quien img { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; object-fit: cover; }
+.story .quien small { font-weight: 400; opacity: .8; }
+.story .responder { position: absolute; left: 10px; right: 10px; bottom: 12px;
+  display: flex; align-items: center; gap: 10px; }
+.story .responder span { flex: 1; border: 1px solid rgba(255,255,255,.7); border-radius: 999px;
+  padding: 9px 14px; color: rgba(255,255,255,.9); font-size: 13px;
+  font-family: -apple-system, sans-serif; }
+.story .responder svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 1.8; flex: 0 0 24px; }
+
+/* ── Decidir ───────────────────────────────────────────────────────── */
+.decidir { margin-top: 18px; }
+.estado-actual { font-size: 13px; color: var(--suave); margin-bottom: 12px; min-height: 18px; }
+.estado-actual b { color: var(--tinta); }
+.botones { display: flex; flex-direction: column; gap: 8px; }
+.btn { min-height: 48px; border-radius: 12px; font-size: 15px; font-weight: 600; border: 1px solid; }
+.btn-si { background: var(--si); border-color: var(--si); color: #fff; }
+.btn-no { background: #fff; border-color: var(--filete); color: var(--suave); }
+.btn:active { transform: scale(.99); }
+.nota { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+/* `display` en una clase gana al atributo [hidden]: hay que devolvérselo. */
+[hidden] { display: none !important; }
+.nota span { font-size: 12px; color: var(--suave); }
+.nota textarea {
+  width: 100%; border: 1px solid var(--filete); border-radius: 10px; padding: 10px;
+  font-size: 16px; resize: vertical; background: #fff;
+}
+
+/* ── Aviso ─────────────────────────────────────────────────────────── */
+.aviso {
+  position: fixed; left: 16px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 100; background: var(--tinta); color: #fff;
+  padding: 12px 14px; border-radius: 12px; font-size: 14px; text-align: center;
+}
+.aviso.mal { background: var(--no); }

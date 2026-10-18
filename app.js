@@ -44,6 +44,40 @@ let filtro = 'pendientes';
 let filtroEtq = null;       // id de tipo o de concierto, o null
 let HISTORICO = null;
 
+/**
+ * Pedir un texto sin usar prompt(), que en el móvil saca el diálogo del
+ * sistema con su «Suppress Alerts» y encima bloquea la página.
+ * Devuelve el texto, o null si se cancela.
+ */
+function pedirTexto({ titulo, valor = '', ayuda = '', aceptar = 'Guardar', largo = true }) {
+  return new Promise((resolve) => {
+    const hoja = document.createElement('div');
+    hoja.className = 'pide';
+    hoja.innerHTML = `
+      <div class="pide-caja">
+        <h3>${escapar(titulo)}</h3>
+        ${ayuda ? `<p>${escapar(ayuda)}</p>` : ''}
+        ${largo
+          ? `<textarea rows="4" placeholder="Escribe aquí…"></textarea>`
+          : `<input type="text" placeholder="Escribe aquí…">`}
+        <div class="pide-botones">
+          <button class="btn btn-no" data-no>Cancelar</button>
+          <button class="btn btn-si" data-si>${escapar(aceptar)}</button>
+        </div>
+      </div>`;
+    document.body.appendChild(hoja);
+    const campo = hoja.querySelector('textarea, input');
+    campo.value = valor;
+    setTimeout(() => campo.focus(), 50);
+
+    const cerrar = (v) => { hoja.remove(); resolve(v); };
+    hoja.querySelector('[data-si]').onclick = () => cerrar(campo.value.trim());
+    hoja.querySelector('[data-no]').onclick = () => cerrar(null);
+    hoja.onclick = (e) => { if (e.target === hoja) cerrar(null); };
+    campo.onkeydown = (e) => { if (e.key === 'Enter' && !largo) { e.preventDefault(); cerrar(campo.value.trim()); } };
+  });
+}
+
 // ── Avisos ─────────────────────────────────────────────────────────────
 let avisoTope;
 function aviso(texto, mal) {
@@ -211,9 +245,13 @@ function observarLienzos() {
 /** Decidir desde el muro, sin abrir la ficha. */
 async function decidirEn(p, estado, art) {
   if (estado === 'cambios') {
-    const nota = prompt('¿Qué hay que mejorar?', estadoDe(p).nota || '');
+    const nota = await pedirTexto({
+      titulo: '¿Qué hay que mejorar?',
+      ayuda: p.title,
+      valor: estadoDe(p).nota || '',
+    });
     if (nota === null) return;
-    return guardarDecision(p, 'cambios', nota.trim(), art);
+    return guardarDecision(p, 'cambios', nota, art);
   }
   // Volver a tocar la que ya estaba la quita.
   const ya = estadoDe(p).estado === estado;
@@ -520,7 +558,11 @@ async function api(ruta, opciones = {}) {
     },
   });
   if (r.status === 401) { sessionStorage.removeItem(CLAVE_TOKEN); throw new Error('El permiso caducó. Vuelve a intentarlo.'); }
-  if (!r.ok && r.status !== 404) throw new Error(`GitHub ${r.status}: ${(await r.json().catch(() => ({}))).message || ''}`);
+  if (!r.ok && r.status !== 404) {
+    const e = new Error(`GitHub ${r.status}: ${(await r.json().catch(() => ({}))).message || ''}`);
+    e.estado = r.status;
+    throw e;
+  }
   return r.status === 404 ? null : r.json();
 }
 
@@ -530,25 +572,39 @@ async function api(ruta, opciones = {}) {
  * rechaza la escritura en vez de pisarla, y `fundir` decide qué conservar.
  */
 async function guardarJSON(ruta, fundir, mensaje) {
-  const enRepo = await api(`/contents/${ruta}?ref=${RAMA}`);
-  let remoto = {};
-  let sha = null;
-  if (enRepo) {
-    sha = enRepo.sha;
-    remoto = JSON.parse(decodeURIComponent(escape(atob(enRepo.content.replace(/\n/g, '')))));
+  // GitHub sirve la lectura desde una caché que va por detrás de la
+  // escritura: al guardar dos veces seguidas, la segunda lee un sha viejo y
+  // la rechaza con un 409. No es un choque de verdad —aquí escribe una sola
+  // persona—, así que se vuelve a leer y se reintenta.
+  let ultimo;
+  for (let intento = 0; intento < 4; intento++) {
+    if (intento) await new Promise((r) => setTimeout(r, 400 * intento));
+    const enRepo = await api(`/contents/${ruta}?ref=${RAMA}&t=${Date.now()}`);
+    let remoto = {};
+    let sha = null;
+    if (enRepo) {
+      sha = enRepo.sha;
+      try { remoto = JSON.parse(decodeURIComponent(escape(atob(enRepo.content.replace(/\n/g, ''))))); } catch {}
+    }
+    const cuerpo = fundir(remoto);
+    cuerpo.actualizado = new Date().toISOString();
+    try {
+      const res = await api(`/contents/${ruta}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          message: mensaje,
+          content: btoa(unescape(encodeURIComponent(JSON.stringify(cuerpo, null, 1) + '\n'))),
+          branch: RAMA,
+          ...(sha ? { sha } : {}),
+        }),
+      });
+      return res.content.sha;
+    } catch (e) {
+      if (e.estado !== 409) throw e;
+      ultimo = e;
+    }
   }
-  const cuerpo = fundir(remoto);
-  cuerpo.actualizado = new Date().toISOString();
-  const res = await api(`/contents/${ruta}`, {
-    method: 'PUT',
-    body: JSON.stringify({
-      message: mensaje,
-      content: btoa(unescape(encodeURIComponent(JSON.stringify(cuerpo, null, 1) + '\n'))),
-      branch: RAMA,
-      ...(sha ? { sha } : {}),
-    }),
-  });
-  return res.content.sha;
+  throw new Error('GitHub sigue rechazando la escritura. Espera un momento y vuelve a darle.');
 }
 
 // ── Guardar una etiqueta ───────────────────────────────────────────────
@@ -579,14 +635,26 @@ async function etiquetar(campo, valor) {
 }
 
 async function nuevaEtiqueta() {
-  const nombre = prompt('Name of the new tag (in English):');
-  if (!nombre || !nombre.trim()) return;
-  const id = nombre.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const nombre = await pedirTexto({
+    titulo: 'Nueva etiqueta',
+    ayuda: 'En inglés, como las demás.',
+    aceptar: 'Crear',
+    largo: false,
+  });
+  if (!nombre) return;
+  const id = nombre.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   if (!id) return aviso('Ese nombre no vale.', true);
-  const estilo = prompt('Style: cinta, bloque, marco or limpia', 'cinta');
+  const estilo = await pedirTexto({
+    titulo: 'Con qué estilo se dibuja',
+    ayuda: 'cinta · bloque · marco · limpia',
+    valor: 'cinta',
+    aceptar: 'Crear',
+    largo: false,
+  });
+  if (estilo === null) return;
   const t = {
     id,
-    nombre: nombre.trim(),
+    nombre,
     estilo: ['cinta', 'bloque', 'marco', 'limpia'].includes(estilo) ? estilo : 'cinta',
     color: '#57534e',
     que: '',

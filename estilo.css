@@ -310,3 +310,20 @@ button { background: none; border: none; cursor: pointer; }
 .visor-hueco .story { border-radius: 0; max-height: 100%; width: auto; aspect-ratio: 9/16; }
 .visor-pie { background: var(--papel); padding: 10px 12px calc(12px + env(safe-area-inset-bottom)); }
 .visor-pie .decidir-fila { padding: 0; }
+
+
+/* ── Pedir un texto, sin el diálogo del sistema ────────────────────── */
+.pide { position: fixed; inset: 0; z-index: 400; background: rgba(0,0,0,.45); display: flex; align-items: flex-end; }
+.pide-caja {
+  width: 100%; background: var(--papel); border-radius: 18px 18px 0 0;
+  padding: 20px 16px calc(20px + env(safe-area-inset-bottom));
+}
+.pide-caja h3 { font-family: Literata, Georgia, serif; font-size: 18px; margin-bottom: 4px; }
+.pide-caja p { font-size: 13px; color: var(--tenue); margin-bottom: 12px; line-height: 1.35; }
+.pide-caja textarea, .pide-caja input {
+  width: 100%; border: 1px solid var(--filete); border-radius: 10px; padding: 11px;
+  font: inherit; font-size: 16px; background: #fff; resize: vertical; margin-bottom: 12px;
+}
+.pide-caja textarea:focus, .pide-caja input:focus { outline: 2px solid var(--tinta); border-color: transparent; }
+.pide-botones { display: flex; gap: 8px; }
+.pide-botones .btn { flex: 1; }

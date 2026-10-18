@@ -14,6 +14,15 @@ const REPO = 'gaawi/editorial-cola';
 const RAMA = 'main';
 const ARCHIVO = 'aprobaciones.json';
 
+// Las cuatro que caben bajo un post. Son cuatro de los siete estados del
+// panel, con el nombre de lo que uno hace, no de en qué queda la ficha.
+const DECISIONES = [
+  { estado: 'listo',      icono: '✓', texto: 'Listo' },
+  { estado: 'espera',     icono: '◷', texto: 'Posponer' },
+  { estado: 'cambios',    icono: '✎', texto: 'Mejorar' },
+  { estado: 'descartado', icono: '×', texto: 'Descartar' },
+];
+
 const ESTADOS = {
   listo: 'Listo para publicar',
   cambios: 'Hay que cambiar algo',
@@ -76,6 +85,51 @@ function pintarFiltrosEtq() {
   cont.innerHTML = trozos.join('');
 }
 
+/**
+ * La fila de circulitos, como la de la app. Llevan la foto de la ficha y no
+ * la historia dibujada: es lo que Instagram enseña ahí, y dibujar doce
+ * lienzos de 1080×1920 para unos círculos de 62 px no lo justifica. La
+ * historia entera se dibuja al tocarlos.
+ */
+function pintarHistorias(posts) {
+  const cont = $('#historias');
+  cont.innerHTML = posts
+    .map((p) => {
+      const visto = estadoDe(p).estado === 'listo' || estadoDe(p).estado === 'descartado';
+      return `<button data-clave="${p.clave}">
+        <span class="aro${visto ? ' vista' : ''}"><img src="${p.image || ''}" alt="" loading="lazy"></span>
+        <small>${escapar(p.title)}</small>
+      </button>`;
+    })
+    .join('');
+}
+
+async function abrirHistoria(clave) {
+  const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === clave);
+  if (!p) return;
+  const v = $('#visor');
+  $('#visor-hueco').innerHTML = '<p class="vacio" style="color:#777">Dibujando…</p>';
+  $('#visor-pie').innerHTML = `<div class="decidir-fila">${DECISIONES.map((d) => `
+    <button class="dec ${d.estado}${estadoDe(p).estado === d.estado ? ' on' : ''}" data-dec="${d.estado}">
+      <em>${d.icono}</em>${d.texto}
+    </button>`).join('')}</div>`;
+  $('#visor-pie').querySelector('.decidir-fila').onclick = (ev) => {
+    const b = ev.target.closest('.dec');
+    if (!b) return;
+    decidirEn(p, b.dataset.dec, null).then(() => {
+      $('#visor-pie').querySelectorAll('.dec').forEach((x) =>
+        x.classList.toggle('on', x.dataset.dec === estadoDe(p).estado));
+      pintarLista();
+    });
+  };
+  v.hidden = false;
+  try {
+    $('#visor-hueco').replaceChildren(await pintarHistoria(p));
+  } catch (e) {
+    $('#visor-hueco').innerHTML = `<p class="vacio" style="color:#777">No se pudo dibujar</p>`;
+  }
+}
+
 function pintarLista() {
   pintarFiltrosEtq();
   const cont = $('#fichas');
@@ -89,24 +143,118 @@ function pintarLista() {
   });
 
   $('#vacio').hidden = posts.length > 0;
-  for (const p of posts) {
-    const b = document.createElement('button');
-    b.className = 'ficha';
-    const e = estadoDe(p);
-    const pub = yaPublicado(p);
-    b.innerHTML = `
-      ${p.image ? `<img src="${p.image}" alt="" loading="lazy">` : '<span class="sinfoto"></span>'}
-      <span class="txt">
-        <h2>${escapar(p.title)}</h2>
-        <span class="pie">
-          ${p.tipo && tipoDe(p.tipo) ? pastilla(tipoDe(p.tipo).nombre, tipoDe(p.tipo).color, true, 'etq etq-mini') : ''}
-          ${p.concierto && conciertoDe(p.concierto) ? `<span class="etq etq-mini" style="color:var(--suave)">${escapar(conciertoDe(p.concierto).nombre)}</span>` : ''}
-          <span class="sello ${e.estado}">${ESTADOS[e.estado] || e.estado}</span>
-          ${pub.length ? `<span class="sello publicado">ya en ${pub.join('+')}</span>` : ''}
-        </span>
-      </span>`;
-    b.addEventListener('click', () => abrir(p));
-    cont.appendChild(b);
+  pintarHistorias(posts);
+  for (const p of posts) cont.appendChild(tarjeta(p));
+  observarLienzos();
+}
+
+/** Un post del muro: como se verá, con la decisión debajo. */
+function tarjeta(p) {
+  const e = estadoDe(p);
+  const t = p.tipo ? tipoDe(p.tipo) : null;
+  const c = p.concierto ? conciertoDe(p.concierto) : null;
+  const pub = yaPublicado(p);
+
+  const art = document.createElement('article');
+  art.className = 'tarjeta';
+  art.dataset.clave = p.clave;
+  art.innerHTML = `
+    <div class="cabecera-ficha">
+      ${t ? pastilla(t.nombre, t.color, true, 'etq etq-mini') : ''}
+      ${c ? `<span class="etq etq-mini" style="color:var(--suave)">${escapar(c.nombre)}</span>` : ''}
+      ${pub.length ? `<span class="sello publicado">ya en ${pub.join('+')}</span>` : ''}
+      <span class="crece"></span>
+      <span>${p.date || ''}</span>
+    </div>
+    <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
+    ${e.nota ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
+    <div class="decidir-fila">
+      ${DECISIONES.map((d) => `
+        <button class="dec ${d.estado}${e.estado === d.estado ? ' on' : ''}" data-dec="${d.estado}">
+          <em>${d.icono}</em>${d.texto}
+        </button>`).join('')}
+    </div>
+    <button class="abrir">Ver en Facebook y como historia ·  Etiquetas ›</button>`;
+
+  art.querySelector('.abrir').addEventListener('click', () => abrir(p));
+  art.querySelector('.decidir-fila').addEventListener('click', (ev) => {
+    const b = ev.target.closest('.dec');
+    if (b) decidirEn(p, b.dataset.dec, art);
+  });
+  return art;
+}
+
+/**
+ * Dibujar doce posts a la vez atasca el móvil, así que cada uno se dibuja
+ * cuando se asoma por la pantalla y no antes.
+ */
+let vigia = null;
+function observarLienzos() {
+  vigia?.disconnect();
+  vigia = new IntersectionObserver(async (entradas) => {
+    for (const en of entradas) {
+      if (!en.isIntersecting) continue;
+      vigia.unobserve(en.target);
+      const clave = en.target.dataset.clave;
+      const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === clave);
+      const hueco = en.target.querySelector('.hueco-ig');
+      try {
+        hueco.replaceChildren(await pintarInstagram(p));
+      } catch (err) {
+        hueco.innerHTML = `<div class="espera-lienzo">No se pudo dibujar</div>`;
+      }
+    }
+  }, { rootMargin: '600px 0px' });
+  document.querySelectorAll('.tarjeta').forEach((t) => vigia.observe(t));
+}
+
+/** Decidir desde el muro, sin abrir la ficha. */
+async function decidirEn(p, estado, art) {
+  if (estado === 'cambios') {
+    const nota = prompt('¿Qué hay que mejorar?', estadoDe(p).nota || '');
+    if (nota === null) return;
+    return guardarDecision(p, 'cambios', nota.trim(), art);
+  }
+  // Volver a tocar la que ya estaba la quita.
+  const ya = estadoDe(p).estado === estado;
+  return guardarDecision(p, ya ? '' : estado, '', art);
+}
+
+async function guardarDecision(p, estado, nota, art) {
+  const antes = APROB.posts[p.clave];
+  if (estado) APROB.posts[p.clave] = { estado, nota, titulo: p.title, fecha: new Date().toISOString() };
+  else delete APROB.posts[p.clave];
+  refrescarDecisiones(p, art);
+  aviso('Guardando…');
+  try {
+    await guardarJSON('aprobaciones.json', (remoto) => {
+      APROB.posts = { ...(remoto.posts || {}), ...APROB.posts };
+      if (!estado) delete APROB.posts[p.clave];
+      return {
+        _ayuda: 'Aprobaciones escritas desde la app. Cada clave es «idioma/slug». '
+          + 'estado: listo · espera · cambios · descartado. Lo escribe la propia app.',
+        posts: APROB.posts,
+      };
+    }, `${ESTADOS[estado] || 'Sin marcar'}: ${p.title}`);
+    aviso(estado ? ESTADOS[estado] : 'Desmarcado');
+  } catch (e) {
+    if (antes) APROB.posts[p.clave] = antes; else delete APROB.posts[p.clave];
+    refrescarDecisiones(p, art);
+    aviso(e.message, true);
+  }
+}
+
+function refrescarDecisiones(p, art) {
+  if (!art) return;
+  const e = estadoDe(p);
+  art.querySelectorAll('.dec').forEach((b) => b.classList.toggle('on', b.dataset.dec === e.estado));
+  const vieja = art.querySelector('.nota-puesta');
+  if (vieja) vieja.remove();
+  if (e.nota) {
+    const n = document.createElement('p');
+    n.className = 'nota-puesta';
+    n.textContent = `“${e.nota}”`;
+    art.querySelector('.decidir-fila').before(n);
   }
 }
 
@@ -526,6 +674,11 @@ $('#redes').addEventListener('click', (e) => {
   document.querySelectorAll('.red').forEach((c) => c.classList.toggle('activo', c === b));
   pintarPrevia(b.dataset.red);
 });
+$('#historias').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-clave]');
+  if (b) abrirHistoria(b.dataset.clave);
+});
+$('#visor-cerrar').addEventListener('click', () => { $('#visor').hidden = true; });
 $('#pestanas').addEventListener('click', (e) => {
   const b = e.target.closest('.pest');
   if (!b) return;

@@ -242,3 +242,71 @@ button { background: none; border: none; cursor: pointer; }
 .hoja-datos .cifras span { font-size: 11px; color: var(--tenue); }
 .hoja-datos a { display: block; text-align: center; padding: 12px; border: 1px solid var(--filete);
   border-radius: 10px; color: var(--suave); text-decoration: none; font-size: 14px; background: #fff; }
+
+
+/* ── El muro ───────────────────────────────────────────────────────── */
+/* Una lista de fichas no se parece a lo que vas a publicar. Esto sí: se
+ * desplaza como la app, con la decisión colgando de cada post. Los lienzos
+ * se dibujan al asomarse, que si no el móvil se atraganta con doce. */
+.muro { display: flex; flex-direction: column; gap: 22px; margin: 0 -16px; padding-bottom: 8px; }
+.tarjeta { background: #fff; border-top: 1px solid var(--filete); border-bottom: 1px solid var(--filete); }
+.tarjeta .ig { border: none; border-radius: 0; }
+.tarjeta .espera-lienzo {
+  width: 100%; aspect-ratio: 4/5; background: #f5f5f4;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--tenue); font-size: 12px; font-style: italic;
+}
+
+/* La fila de decidir, pegada bajo cada post */
+.decidir-fila { display: flex; gap: 6px; padding: 10px 12px 12px; }
+.dec {
+  flex: 1; min-height: 44px; border-radius: 10px; border: 1px solid var(--filete);
+  background: #fff; font-size: 12px; font-weight: 600; color: var(--suave);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+}
+.dec em { font-style: normal; font-size: 15px; line-height: 1; }
+.dec.on { color: #fff; border-color: transparent; }
+.dec.listo.on { background: var(--si); }
+.dec.espera.on { background: var(--espera); }
+.dec.cambios.on { background: #6366f1; }
+.dec.descartado.on { background: var(--no); }
+
+.tarjeta .cabecera-ficha {
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px 0; font-size: 11px; color: var(--tenue);
+}
+.tarjeta .cabecera-ficha .crece { flex: 1; }
+.tarjeta .nota-puesta {
+  padding: 0 12px 10px; font-size: 12px; color: var(--suave); font-style: italic;
+}
+.tarjeta .abrir {
+  display: block; width: 100%; text-align: center; padding: 10px;
+  font-size: 12px; color: var(--tenue); border-top: 1px solid var(--filete);
+}
+
+
+/* ── Los circulitos de las historias ───────────────────────────────── */
+.historias { display: flex; gap: 14px; overflow-x: auto; padding: 14px 0 4px; scrollbar-width: none; }
+.historias::-webkit-scrollbar { display: none; }
+.historias button { flex-shrink: 0; width: 66px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.historias .aro {
+  width: 62px; height: 62px; border-radius: 50%; padding: 2.5px;
+  background: linear-gradient(45deg, #fbbf24, #f43f5e, #a855f7);
+}
+.historias .aro.vista { background: var(--filete); }
+.historias img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+  border: 2.5px solid var(--papel); background: #eee; }
+.historias small {
+  font-size: 10px; color: var(--suave); line-height: 1.15; text-align: center;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* ── El visor a pantalla completa ──────────────────────────────────── */
+.visor { position: fixed; inset: 0; z-index: 300; background: #000; display: flex; flex-direction: column; }
+.visor-cerrar {
+  position: absolute; top: calc(10px + env(safe-area-inset-top)); right: 12px; z-index: 2;
+  width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,.45); color: #fff; font-size: 22px; line-height: 1;
+}
+.visor-hueco { flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.visor-hueco .story { border-radius: 0; max-height: 100%; width: auto; aspect-ratio: 9/16; }
+.visor-pie { background: var(--papel); padding: 10px 12px calc(12px + env(safe-area-inset-bottom)); }
+.visor-pie .decidir-fila { padding: 0; }

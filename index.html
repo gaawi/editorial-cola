@@ -32,8 +32,9 @@
       <button class="chip" data-filtro="listos">Listos</button>
       <button class="chip" data-filtro="todas">Todas</button>
     </nav>
+    <nav class="historias" id="historias"></nav>
     <nav class="etiquetas-filtro" id="etiquetas-filtro"></nav>
-    <div id="fichas" class="fichas"></div>
+    <div id="fichas" class="muro"></div>
     <p id="vacio" class="vacio" hidden>Nada por aquí.</p>
   </div>
 
@@ -79,6 +80,13 @@
     <img id="hoja-img" alt="">
     <div class="hoja-datos" id="hoja-datos"></div>
   </div>
+</div>
+
+<!-- Una historia a pantalla completa, al tocar un circulito -->
+<div id="visor" class="visor" hidden>
+  <button class="visor-cerrar" id="visor-cerrar" aria-label="Cerrar">×</button>
+  <div class="visor-hueco" id="visor-hueco"></div>
+  <div class="visor-pie" id="visor-pie"></div>
 </div>
 
 <div id="aviso" class="aviso" hidden></div>

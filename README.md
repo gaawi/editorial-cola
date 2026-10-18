@@ -7,7 +7,10 @@ móvil y enseña cada post como se va a ver en Instagram y en Facebook, y la
 ## La app de aprobar
 
 Vive en la raíz y se despliega en Vercel. Solo hace tres cosas: enseñar,
-decidir y guardar. No genera imágenes para descargar, no edita textos, no
+decidir y guardar. Y enseña como se va a ver: es un muro que se desplaza
+como la app, con los circulitos de las historias arriba y la decisión
+colgando de cada post —**Listo · Posponer · Mejorar · Descartar**, que son
+cuatro de los siete estados del panel dichos como lo que uno hace—. No genera imágenes para descargar, no edita textos, no
 tiene calendario: para eso está el kit de ADAR mientras siga en pie.
 
 ```

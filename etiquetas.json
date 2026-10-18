@@ -208,6 +208,26 @@
   "creartbox:en/eric-moe-interview": {
    "tipo": "interview",
    "concierto": "currents"
+  },
+  "creartbox:en/currents-full-room": {
+   "tipo": "context",
+   "concierto": "currents"
+  },
+  "creartbox:en/currents-clara": {
+   "tipo": "context",
+   "concierto": "currents"
+  },
+  "creartbox:en/currents-video-art": {
+   "tipo": "context",
+   "concierto": "currents"
+  },
+  "creartbox:en/currents-open-call-moe": {
+   "tipo": "context",
+   "concierto": "currents"
+  },
+  "creartbox:en/currents-recap": {
+   "tipo": "recap",
+   "concierto": "currents"
   }
  },
  "nuevas": [],

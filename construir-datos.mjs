@@ -27,13 +27,14 @@ const SITIO_KIT = process.env.SITIO_KIT || 'festivaladar.com';
 const TOPE_SLIDES = Number(process.env.TOPE_SLIDES || 4);
 
 /**
- * Recorta el carrusel conservando lo que importa: la portada, las primeras
- * de texto y el cierre, que es el que lleva a dónde ir.
+ * Recorta el carrusel. Fuera la diapositiva de cierre que monta el kit —la
+ * de «Read the release»—: era siempre la misma y el último sitio donde uno
+ * mira es el que menos se puede desperdiciar. Lo que queda es la portada y
+ * lo que de verdad se cuenta.
  */
 function recortar(slides) {
-  if (slides.length <= TOPE_SLIDES) return slides;
-  const cierre = slides[slides.length - 1];
-  return slides.slice(0, TOPE_SLIDES - 1).concat([cierre]);
+  const sinPrensa = slides.filter((s) => s.type !== 'cta');
+  return sinPrensa.slice(0, TOPE_SLIDES);
 }
 
 /**

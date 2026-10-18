@@ -1,5 +1,12 @@
 {
- "_ayuda": "Aprobaciones escritas desde la app de aprobar. Lo escribe la propia app.",
- "actualizado": null,
- "posts": {}
+ "_ayuda": "Aprobaciones escritas desde la app. Cada clave es «idioma/slug». estado: listo · espera · cambios · descartado. Lo escribe la propia app.",
+ "posts": {
+  "en/currents-laminar-flow": {
+   "estado": "descartado",
+   "nota": "",
+   "titulo": "A title taken from fluid dynamics",
+   "fecha": "2026-10-18T13:05:12.805Z"
+  }
+ },
+ "actualizado": "2026-10-18T13:05:15.137Z"
 }

@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-18T15:14:45.013Z",
+ "generado": "2026-10-18T15:25:51.011Z",
  "origen": "gaawi/adar",
  "marcas": {
   "creartbox": {
@@ -14,6 +14,11 @@
     "accent": "#FFC403",
     "onAccent": "#0B0705",
     "overPhotoInk": "#F2EFE8",
+    "sobreFoto": "#F2EFE8",
+    "sobreFotoMedio": "#C9C3B9",
+    "sobreFotoDim": "#9C968C",
+    "sobreFotoMudo": "#6B655D",
+    "filete": "#2B2825",
     "ctaInk": "#F2EFE8",
     "textBg": "#100F0E",
     "textTitle": "#F2EFE8",
@@ -27,6 +32,7 @@
     "fontsHref": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap",
     "fontLoads": [
      "600 64px \"Literata\"",
+     "italic 400 32px \"Literata\"",
      "400 32px \"Archivo\"",
      "600 32px \"Archivo\"",
      "700 32px \"Archivo\""
@@ -214,6 +220,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "en/season-2026-27",
      "lang": "en",
      "slug": "season-2026-27",
@@ -244,11 +251,6 @@
        "type": "text",
        "title": "Eleven works came through the open call",
        "body": "Eleven of the works this season reached the programme through CreArtBox's open call for scores, more than in any season before. In April an entire evening is given over to it."
-      },
-      {
-       "type": "text",
-       "title": "A world premiere in December",
-       "body": "Winterlight opens with the world premiere of Hannah Selin's Tectonic Lullaby for piano quintet, and closes with Stravinsky's Petroushka in a chamber arrangement."
       }
      ],
      "pies": {
@@ -290,6 +292,7 @@
      "concierto": "currents",
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents",
      "lang": "en",
      "slug": "currents",
@@ -319,11 +322,6 @@
        "type": "text",
        "title": "New music beside Brahms and both Schumanns",
        "body": "Eric Moe's Laminar Flow in Upsidedown Creek and a new piece by the ensemble's flutist Guillermo Laporta sit alongside Brahms, Robert Schumann and Clara Schumann."
-      },
-      {
-       "type": "text",
-       "title": "Eric Moe",
-       "body": "A Guggenheim fellow, honoured by the American Academy of Arts and Letters. His score reached the programme through the open call."
       }
      ],
      "pies": {
@@ -362,6 +360,7 @@
      "concierto": "winterlight",
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "en/winterlight",
      "lang": "en",
      "slug": "winterlight",
@@ -392,11 +391,6 @@
        "type": "text",
        "title": "Petroushka, five players",
        "body": "It closes with Stravinsky's Petroushka in a chamber arrangement: the ballet reduced to the forces of the room, and the more exposed for it."
-      },
-      {
-       "type": "text",
-       "title": "December in New York",
-       "body": "The DiMenna Center for Classical Music, 11 December 2026, 7:30 pm."
       }
      ],
      "pies": {
@@ -429,6 +423,7 @@
      "concierto": "pressure",
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "en/pressure-and-release",
      "lang": "en",
      "slug": "pressure-and-release",
@@ -459,11 +454,6 @@
        "type": "text",
        "title": "Awarded before they reached us",
        "body": "Paul Novak and Sam Wu have both taken the ASCAP Foundation's Morton Gould Young Composer Award, Novak with the Leo Kaplan Award."
-      },
-      {
-       "type": "text",
-       "title": "Why a whole evening",
-       "body": "Eleven of the works we play this year came through the open call, more than in any season before. In April we give it the stage on its own."
       }
      ],
      "pies": {
@@ -496,6 +486,7 @@
      "concierto": "feverdream",
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "en/feverdream",
      "lang": "en",
      "slug": "feverdream",
@@ -526,11 +517,6 @@
        "type": "text",
        "title": "A score that travelled both ways",
        "body": "Zygmund de Somogyi is Festival ADAR's composer in residence. Their score reached CreArtBox through the open call, and it closes the season in New York."
-      },
-      {
-       "type": "text",
-       "title": "Royal Philharmonic Society, Fromm Foundation",
-       "body": "De Somogyi is a Royal Philharmonic Society composer for 2025 and a Fromm Foundation fellow."
       }
      ],
      "pies": {
@@ -563,6 +549,7 @@
      "concierto": "currents",
      "estilo": "marco",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-walk-on",
      "lang": "en",
      "slug": "currents-walk-on",
@@ -593,11 +580,6 @@
        "type": "text",
        "title": "Four minutes",
        "body": "It is the shortest work of the night and the first one. Guillermo Laporta wrote it in 2018, for the suite AWAVE, first performed in Queens that year."
-      },
-      {
-       "type": "text",
-       "title": "Why it opens",
-       "body": "Currents assembles five works around a single idea: movement carried from one place to another. Two of them take the idea literally. This is the one that does it with the players themselves."
       }
      ],
      "pies": {
@@ -630,6 +612,7 @@
      "concierto": "currents",
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-joachim",
      "lang": "en",
      "slug": "currents-joachim",
@@ -660,11 +643,6 @@
        "type": "text",
        "title": "The trio, played with viola",
        "body": "It was Joachim who read the viola part of Brahms's Trio in A minor, Op. 114 in rehearsal. That is the scoring heard here: viola, cello and piano."
-      },
-      {
-       "type": "text",
-       "title": "1844, Clara at the Gewandhaus",
-       "body": "Clara Schumann gave the first public performance of her husband's Piano Quartet in E-flat major at the Leipzig Gewandhaus in 1844. It closes the evening, twenty-eight minutes of it."
       }
      ],
      "pies": {
@@ -697,6 +675,7 @@
      "concierto": "currents",
      "estilo": "marco",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-laminar-flow",
      "lang": "en",
      "slug": "currents-laminar-flow",
@@ -727,11 +706,6 @@
        "type": "text",
        "title": "It came in through the open call",
        "body": "Eric Moe's score reached the season through CreArtBox's open Call for Scores, which has run since the ensemble's first season. Eleven works this season arrived the same way, more than in any season before."
-      },
-      {
-       "type": "text",
-       "title": "Eric Moe",
-       "body": "A Guggenheim fellow, honoured by the American Academy of Arts and Letters."
       }
      ],
      "pies": {
@@ -764,6 +738,7 @@
      "concierto": "currents",
      "estilo": "limpia",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-who-plays",
      "lang": "en",
      "slug": "currents-who-plays",
@@ -823,8 +798,42 @@
      },
      "tipo": "program",
      "concierto": "currents",
-     "estilo": "franja",
+     "estilo": "tabla",
      "cifra": null,
+     "tabla": {
+      "rotulo": "30 October 2026 · 7:30 pm · The DiMenna Center",
+      "filas": [
+       {
+        "quien": "Guillermo Laporta",
+        "que": "Brown Leaves Moving",
+        "cifra": "4′"
+       },
+       {
+        "quien": "Johannes Brahms",
+        "que": "Trio in A minor, Op. 114",
+        "cifra": "8′"
+       },
+       {
+        "quien": "Eric Moe",
+        "que": "Laminar Flow in Upsidedown Creek",
+        "cifra": "5′"
+       },
+       {
+        "quien": "Clara Schumann",
+        "que": "Three Romances, Op. 22",
+        "cifra": "11′"
+       },
+       {
+        "quien": "Robert Schumann",
+        "que": "Piano Quartet in E-flat major, Op. 47",
+        "cifra": "28′"
+       }
+      ],
+      "total": {
+       "que": "Total playing time",
+       "cifra": "56′"
+      }
+     },
      "clave": "en/currents-the-night",
      "lang": "en",
      "slug": "currents-the-night",
@@ -889,6 +898,7 @@
      "concierto": "currents",
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-programme-online",
      "lang": "en",
      "slug": "currents-programme-online",
@@ -919,11 +929,6 @@
        "type": "text",
        "title": "What is in it",
        "body": "The program with the timing of every work, fifty-six minutes of music in total. Notes on all five pieces. And the photographs from the series."
-      },
-      {
-       "type": "text",
-       "title": "Things you can find out before you come",
-       "body": "Why Brown Leaves Moving begins with the players offstage. What laminar flow is. How Joseph Joachim ties together three of the five works."
       }
      ],
      "pies": {
@@ -959,6 +964,7 @@
      "concierto": "currents",
      "estilo": "limpia",
      "cifra": null,
+     "tabla": null,
      "clave": "en/eric-moe-interview",
      "lang": "en",
      "slug": "eric-moe-interview",
@@ -1011,6 +1017,7 @@
      "concierto": "currents",
      "estilo": "duo",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-cello-retune",
      "lang": "en",
      "slug": "currents-cello-retune",
@@ -1072,6 +1079,7 @@
      "concierto": "currents",
      "estilo": "cartel",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-brahms-quit",
      "lang": "en",
      "slug": "currents-brahms-quit",
@@ -1133,6 +1141,7 @@
      "concierto": "currents",
      "estilo": "marco",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-clara-last",
      "lang": "en",
      "slug": "currents-clara-last",
@@ -1199,6 +1208,7 @@
       "valor": "250",
       "pie": "seats in the hall. On 30 October we would like every one of them taken."
      },
+     "tabla": null,
      "clave": "en/currents-full-room",
      "lang": "en",
      "slug": "currents-full-room",
@@ -1260,6 +1270,7 @@
      "concierto": "currents",
      "estilo": "bloque",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-open-call-moe",
      "lang": "en",
      "slug": "currents-open-call-moe",
@@ -1322,6 +1333,7 @@
      "concierto": "currents",
      "estilo": "limpia",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-you-can-see",
      "lang": "en",
      "slug": "currents-you-can-see",
@@ -1387,6 +1399,7 @@
       "valor": "$15",
       "pie": "is the cheapest seat in the hall. If that is still the reason you are not coming, write to us."
      },
+     "tabla": null,
      "clave": "en/currents-no-barrier",
      "lang": "en",
      "slug": "currents-no-barrier",
@@ -1448,6 +1461,7 @@
      "concierto": "currents",
      "estilo": "limpia",
      "cifra": null,
+     "tabla": null,
      "clave": "en/currents-recap",
      "lang": "en",
      "slug": "currents-recap",
@@ -1511,6 +1525,11 @@
     "accent": "#f5d72f",
     "onAccent": "#0a0907",
     "overPhotoInk": "#ffffff",
+    "sobreFoto": "#ffffff",
+    "sobreFotoMedio": "#e4e1d8",
+    "sobreFotoDim": "#b9b4a7",
+    "sobreFotoMudo": "#8e8a7e",
+    "filete": "#2a2721",
     "ctaInk": "#f5d72f",
     "textBg": "#f6f4ee",
     "textTitle": "#0a0907",
@@ -1708,6 +1727,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/por-que-tocar-bach-en-un-horreo",
      "lang": "es",
      "slug": "por-que-tocar-bach-en-un-horreo",
@@ -1738,11 +1758,6 @@
        "type": "text",
        "title": "Escuchar con el cuerpo entero",
        "body": "En un auditorio escuchas con los oídos. En los espacios de ADAR escuchas con todo. Notas el frío de la piedra, el olor a madera vieja, la luz que entra de lado a las ocho de la tarde."
-      },
-      {
-       "type": "text",
-       "title": "Una decisión, no una limitación",
-       "body": "Conviene decirlo claro, porque a veces se malinterpreta: ADAR no toca en aldeas porque no tenga auditorio. Toca en aldeas porque quiere. Llevar la música a donde no se la espera no es un plan B."
       }
      ],
      "pies": {
@@ -1775,6 +1790,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/la-espana-que-no-se-vacia",
      "lang": "es",
      "slug": "la-espana-que-no-se-vacia",
@@ -1805,11 +1821,6 @@
        "type": "text",
        "title": "Lo que un festival sí puede hacer (y lo que no)",
        "body": "Seamos honestos: un festival no repuebla un concejo, no crea empleo estable, no arregla la carretera ni trae el médico. Prometer eso sería mentir, y no nos gusta mentir."
-      },
-      {
-       "type": "text",
-       "title": "Llenar, aunque sea por una noche",
-       "body": "Cada vez que una iglesia de aldea se llena para escuchar música, ese pueblo, esa noche, no está vacío. Está exactamente al revés: está en el centro de algo. No es un truco de marketing."
       }
      ],
      "pies": {
@@ -1842,6 +1853,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/estrenamos-blog",
      "lang": "es",
      "slug": "estrenamos-blog",
@@ -1891,6 +1903,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/el-programa-antes-del-concierto",
      "lang": "es",
      "slug": "el-programa-antes-del-concierto",
@@ -1921,11 +1934,6 @@
        "type": "text",
        "title": "A quien no puede venir",
        "body": "Esta es la parte que más nos importa, y es la misma razón por la que documentamos todo lo que hacemos: nuestros aforos son pequeños y muchas de las personas a las que les interesaría lo que tocamos están lejos."
-      },
-      {
-       "type": "text",
-       "title": "A quien prefiere leer con luz",
-       "body": "Las notas de un programa se leen mal en una sala a oscuras, apurando antes de que empiece, o entre obra y obra con el móvil tapado para no molestar. Leerlas tres días antes, sentado, con tiempo, es sencillamente mejor."
       }
      ],
      "pies": {
@@ -1958,6 +1966,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/el-mapa-de-adar-catorce-concejos",
      "lang": "es",
      "slug": "el-mapa-de-adar-catorce-concejos",
@@ -1988,11 +1997,6 @@
        "type": "text",
        "title": "Por qué itinerar en vez de crecer en un sitio",
        "body": "Cualquier gestor cultural te dirá que lo eficiente es lo contrario de lo que hacemos. Consolidas una sede, fidelizas un público, amortizas el equipo técnico, dejas de montar y desmontar. Itinerar es caro, agotador y logísticamente absurdo."
-      },
-      {
-       "type": "text",
-       "title": "Lo que hemos aprendido del mapa",
-       "body": "Que el occidente lo agradece más."
       }
      ],
      "pies": {
@@ -2025,6 +2029,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/por-que-documentamos-todo",
      "lang": "es",
      "slug": "por-que-documentamos-todo",
@@ -2055,11 +2060,6 @@
        "type": "text",
        "title": "2. Porque los sitios donde tocamos son frágiles",
        "body": "Esta es la razón que más nos pesa. Tocamos en monasterios con problemas de conservación. En paneras de madera que llevan siglos aguantando y que dependen de que alguien las cuide. En hórreos que se caen en silencio, uno a uno, cuando nadie los usa."
-      },
-      {
-       "type": "text",
-       "title": "3. Porque el aforo es diminuto y el archivo no tiene aforo",
-       "body": "Un concierto en un monasterio rural puede tener ochenta personas dentro. Eso es maravilloso, esa cercanía es justo lo que buscamos, y es, a la vez, poquísimo."
       }
      ],
      "pies": {
@@ -2092,6 +2092,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/mizuko-kaji-el-escenario-como-obra",
      "lang": "es",
      "slug": "mizuko-kaji-el-escenario-como-obra",
@@ -2122,11 +2123,6 @@
        "type": "text",
        "title": "Por qué tul",
        "body": "La elección del material tampoco es casual, y quien haya visto tul a contraluz lo entenderá. El tul es casi nada: una malla transparente, ligerísima, que apenas existe como objeto."
-      },
-      {
-       "type": "text",
-       "title": "La música como parte de la instalación, no como fondo",
-       "body": "Un detalle que nos importa: la pieza de Guillermo Laporta que acompañaba el recorrido no era música ambiental."
       }
      ],
      "pies": {
@@ -2159,6 +2155,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/las-compositoras-que-programamos",
      "lang": "es",
      "slug": "las-compositoras-que-programamos",
@@ -2189,11 +2186,6 @@
        "type": "text",
        "title": "Lo difícil no es encontrarlas",
        "body": "Ahí está el punto. Ninguno de esos nombres necesita una explicación indulgente. Pulitzer, Grammy, Carnegie Hall, Sinfónica de Chicago. Si programar mujeres exigiera bajar el nivel, esta lista sería otra."
-      },
-      {
-       "type": "text",
-       "title": "El detalle que más nos importa",
-       "body": "Fíjate en algo de la lista anterior: casi todas ellas son compositoras vivas. Eso es lo verdaderamente decisivo, más que el género."
       }
      ],
      "pies": {
@@ -2226,6 +2218,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/la-tiendina-sube-a-la-aldea",
      "lang": "es",
      "slug": "la-tiendina-sube-a-la-aldea",
@@ -2256,11 +2249,6 @@
        "type": "text",
        "title": "Con la cultura decimos justo lo contrario",
        "body": "Con la música damos por hecho lo inverso. El concierto está en la ciudad. La exposición está en la ciudad. Si te interesa de verdad, ya conducirás. Y quien no puede, o no quiere hacer una hora de carretera de puerto de noche, simplemente no va."
-      },
-      {
-       "type": "text",
-       "title": "«Otra cosa que pasa lejos»",
-       "body": "Si lo concentráramos todo en un sitio tendríamos un buen festival local. Para los vecinos de Taramundi o de Somiedo seguiría siendo lo de siempre: otra cosa que pasa lejos. Justo el problema del que partimos."
       }
      ],
      "pies": {
@@ -2293,6 +2281,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/como-elegimos-un-sitio",
      "lang": "es",
      "slug": "como-elegimos-un-sitio",
@@ -2323,11 +2312,6 @@
        "type": "text",
        "title": "2. Diálogo con el lugar",
        "body": "Aquí está la diferencia entre alquilar un espacio y trabajar con él. Antes de decidir nada, hay que averiguar qué es ese sitio para la gente que vive alrededor. ¿Es una iglesia en uso, donde hay misa el domingo?"
-      },
-      {
-       "type": "text",
-       "title": "3. Las necesidades técnicas, sin autoengaño",
-       "body": "Es la fase donde mueren la mitad de los sueños, y hay que ser brutalmente honesto. ¿Hay electricidad? ¿Aguanta la instalación un equipo de sonido y luces, o salta el diferencial?"
       }
      ],
      "pies": {
@@ -2360,6 +2344,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/grado-tres-eventos-en-una-noche",
      "lang": "es",
      "slug": "grado-tres-eventos-en-una-noche",
@@ -2390,11 +2375,6 @@
        "type": "text",
        "title": "Por qué el arte con comida no es una broma",
        "body": "A la instalación de Williams se le puede poner la etiqueta fácil de «ocurrencia». Nos parece justo lo contrario, y en un contexto rural especialmente. La comida es el lenguaje social por defecto de cualquier pueblo."
-      },
-      {
-       "type": "text",
-       "title": "Tres formatos, tres públicos, un pueblo",
-       "body": "La programación simultánea de esa noche tenía además una lógica de acceso. En el palacio, un concierto de cámara: formato reconocible, para quien quiere sentarse y escuchar."
       }
      ],
      "pies": {
@@ -2427,6 +2407,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/bach-filmado-en-leiguarda",
      "lang": "es",
      "slug": "bach-filmado-en-leiguarda",
@@ -2458,11 +2439,6 @@
        "type": "text",
        "title": "Por qué las suites de Bach y por qué en una aldea",
        "body": "La elección de la obra no podía ser mejor. Las suites para violonchelo solo de Bach son una persona sola con un instrumento: sin acompañamiento, sin orquesta, sin nada donde esconderse. Es la música más desnuda del repertorio occidental."
-      },
-      {
-       "type": "text",
-       "title": "Un festival de diez días, una obra para siempre",
-       "body": "Aquí está la razón práctica por la que invertimos en esto, y es bastante desnuda también. Un concierto dura una hora y lo ven las personas que caben en la sala. En un monasterio rural eso pueden ser ochenta personas."
       }
      ],
      "pies": {
@@ -2495,6 +2471,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/taramundi-cuchillos-y-mussorgsky",
      "lang": "es",
      "slug": "taramundi-cuchillos-y-mussorgsky",
@@ -2525,11 +2502,6 @@
        "type": "text",
        "title": "El programa: tres siglos y tres países",
        "body": "Merece la pena mirar la elección, porque no es casual. Telemann, alemán del barroco, prolífico y luminoso: el artesano perfecto de la música, alguien que produjo con una regularidad de taller."
-      },
-      {
-       "type": "text",
-       "title": "Por qué el occidente",
-       "body": "Taramundi está lejos. Lejos de Oviedo, lejos de la autovía, lejos de todo lo que se considera «el centro». Y esa es una de las razones de que fuéramos."
       }
      ],
      "pies": {
@@ -2562,6 +2534,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/por-que-encargamos-musica-nueva",
      "lang": "es",
      "slug": "por-que-encargamos-musica-nueva",
@@ -2592,11 +2565,6 @@
        "type": "text",
        "title": "Un festival puede consumir cultura o producirla",
        "body": "Esta es la distinción que más nos importa, y vale para cualquier festival del mundo. Hay festivales que son programadores: eligen bien entre lo que existe, lo traen, lo presentan. Es un trabajo legítimo y difícil, y el público lo agradece."
-      },
-      {
-       "type": "text",
-       "title": "Lo que le pedimos a un compositor",
-       "body": "Nuestros encargos no son un cheque en blanco. Piden una cosa muy concreta: que la pieza escuche el sitio."
       }
      ],
      "pies": {
@@ -2629,6 +2597,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/monasterios-mil-anos-de-acustica",
      "lang": "es",
      "slug": "monasterios-mil-anos-de-acustica",
@@ -2660,11 +2629,6 @@
        "type": "text",
        "title": "Obona: uno de los cenobios más antiguos de Asturias",
        "body": "El 12 de agosto de 2025 llenamos el Monasterio de Santa María la Real de Obona, en Tineo, uno de los cenobios más antiguos de Asturias."
-      },
-      {
-       "type": "text",
-       "title": "Lo que el edificio le hace al público",
-       "body": "Hay un efecto que se nota en cuanto la gente entra y que no tiene nada que ver con la física. Un monasterio impone un tipo de atención. Nadie lo pide, no hay un cartel de silencio: ocurre solo."
       }
      ],
      "pies": {
@@ -2697,6 +2661,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/menhir-geopuncion-paisaje",
      "lang": "es",
      "slug": "menhir-geopuncion-paisaje",
@@ -2727,11 +2692,6 @@
        "type": "text",
        "title": "Por qué esto nos toca de lleno",
        "body": "Cuando encontramos esta idea, tuvimos la sensación incómoda y agradable de que alguien había teorizado lo que nosotros hacíamos por instinto."
-      },
-      {
-       "type": "text",
-       "title": "Lo humano y lo no humano",
-       "body": "La otra mitad de su investigación es igual de pertinente para un festival rural."
       }
      ],
      "pies": {
@@ -2764,6 +2724,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/toccata-and-bruise-la-musica-del-tacto",
      "lang": "es",
      "slug": "toccata-and-bruise-la-musica-del-tacto",
@@ -2794,11 +2755,6 @@
        "type": "text",
        "title": "La grabación que el público casi no oye",
        "body": "Aquí está el mecanismo secreto de la obra, y es de una elegancia extraña. Mientras toca, la pianista está escuchando a Glenn Gould."
-      },
-      {
-       "type": "text",
-       "title": "Órgano contra piano: dos maneras de tocar",
-       "body": "La obra plantea un contraste que quizá nunca te habías planteado, y que es fascinante en cuanto lo ves. El órgano apenas responde al tacto. Aprietas una tecla y el aire pasa: suene fuerte o suave no depende de cómo la aprietes."
       }
      ],
      "pies": {
@@ -2831,6 +2787,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/somiedo-musica-donde-viven-los-osos",
      "lang": "es",
      "slug": "somiedo-musica-donde-viven-los-osos",
@@ -2862,11 +2819,6 @@
        "type": "text",
        "title": "Un programa que no se cortó un pelo",
        "body": "Tocaron Guillermo Laporta (flauta), Mario Molina (piano), Jone de la Fuente (violín), Almudena Arribas (viola) y Natania Hoffman (violonchelo). Y el programa fue este: - Andrea Casarrubios · Mensajes de Agua - Mozart · Cuarteto para piano en mi bemol mayor, K."
-      },
-      {
-       "type": "text",
-       "title": "La palabra «sostenible», dicha en serio",
-       "body": "En un sitio como Somiedo es fácil caer en el discurso fácil sobre naturaleza y armonía. Preferimos ser concretos, porque hay algo real que sí ocurre."
       }
      ],
      "pies": {
@@ -2899,6 +2851,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/una-ballena-en-un-monasterio",
      "lang": "es",
      "slug": "una-ballena-en-un-monasterio",
@@ -2930,11 +2883,6 @@
        "type": "text",
        "title": "Trovadores del siglo XXI",
        "body": "The Whale es un espectáculo de varias capas: música, interpretación, instalación escénica y elementos audiovisuales. Pero su ambición declarada es más antigua que todo eso."
-      },
-      {
-       "type": "text",
-       "title": "Por qué en Bedón",
-       "body": "El monasterio de San Antolín de Bedón es uno de esos sitios que hacen la mitad del trabajo antes de que empiece la música. Un monasterio de origen medieval cerca de la costa de Llanes, con la piedra a la vista y una atmósfera que no necesita añadidos."
       }
      ],
      "pies": {
@@ -2967,6 +2915,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/andrea-casarrubios-seven",
      "lang": "es",
      "slug": "andrea-casarrubios-seven",
@@ -2997,11 +2946,6 @@
        "type": "text",
        "title": "Un programa que atravesaba dos siglos y medio",
        "body": "El recital de Leiguarda es un buen ejemplo de cómo se construye un programa que no aburre a nadie y no renuncia a nada."
-      },
-      {
-       "type": "text",
-       "title": "Lo que significa que toque en Leiguarda",
-       "body": "Aquí está la parte que nos importa de verdad, y no es el currículum. Que una compositora nominada al Grammy, con encargos de la Sinfónica de Chicago, toque en la iglesia de una aldea de cien habitantes no es un favor que nos hace ni una anomalía divertida."
       }
      ],
      "pies": {
@@ -3034,6 +2978,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/el-horreo-como-sala-de-conciertos",
      "lang": "es",
      "slug": "el-horreo-como-sala-de-conciertos",
@@ -3065,11 +3010,6 @@
        "type": "text",
        "title": "Lo que descubrimos al tocar dentro",
        "body": "Aquí viene la parte que no habíamos previsto. Un hórreo suena. Es una estructura de madera elevada sobre pegollos, con paredes de tabla, sin cimientos que la aten al suelo y con aire por debajo."
-      },
-      {
-       "type": "text",
-       "title": "Susacasa: permacultura, una panera y una tiorba",
-       "body": "Uno de los espacios seleccionados fue Susacasa Agrocultural, en Gozón, donde el festival de 2025 arrancó el 5 de agosto."
       }
      ],
      "pies": {
@@ -3102,6 +3042,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/que-es-un-paseo-sonoro",
      "lang": "es",
      "slug": "que-es-un-paseo-sonoro",
@@ -3132,11 +3073,6 @@
        "type": "text",
        "title": "El día que Bach sonó entre motos antiguas",
        "body": "El ejemplo que mejor lo explica pasó el 12 de agosto de 2023, en el Museo de las Ayalgas de Silviella, en Belmonte de Miranda."
-      },
-      {
-       "type": "text",
-       "title": "La misma noche, tres capas de patrimonio",
-       "body": "Aquella jornada de 2023 siguió y es un buen retrato de cómo pensamos la programación."
       }
      ],
      "pies": {
@@ -3169,6 +3105,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/leiguarda-47-la-sede",
      "lang": "es",
      "slug": "leiguarda-47-la-sede",
@@ -3199,11 +3136,6 @@
        "type": "text",
        "title": "Por qué eso cambia el trabajo",
        "body": "Quienes residen en Leiguarda 47 conviven, comen juntos y desarrollan sus proyectos codo con codo. Puede sonar a detalle logístico. Es, en realidad, el corazón del método. Piensa cómo funciona normalmente."
-      },
-      {
-       "type": "text",
-       "title": "Más de 18 artistas, cuatro países",
-       "body": "Desde 2020 han pasado por la sede más de dieciocho artistas de España, Italia, Alemania y Países Bajos, y a esa lista se le suman cada año nombres de Estados Unidos, Nueva Zelanda o Lituania que llegan invitados al festival."
       }
      ],
      "pies": {
@@ -3236,6 +3168,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/de-nueva-york-a-una-aldea",
      "lang": "es",
      "slug": "de-nueva-york-a-una-aldea",
@@ -3267,11 +3200,6 @@
        "type": "text",
        "title": "Del sueño al registro oficial",
        "body": "No dejaron pasar mucho tiempo. El sueño tenía nombre y registro: Asociación para el Desarrollo de las Artes en el Medio Rural (ADAR), fundada en 2020."
-      },
-      {
-       "type": "text",
-       "title": "«Con una buena conexión, los proyectos no tienen por qué diferir tanto»",
-       "body": "Hay una frase de Josefina Urraca que se nos quedó grabada y que explica por qué ADAR programa lo que programa: > La música es universal y sabemos que con una buena conexión entre Leiguarda y Nueva York los proyectos no tienen por qué diferir tanto."
       }
      ],
      "pies": {
@@ -3304,6 +3232,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/el-orballo-del-primer-concierto",
      "lang": "es",
      "slug": "el-orballo-del-primer-concierto",
@@ -3334,11 +3263,6 @@
        "type": "text",
        "title": "Más de 120 personas en una aldea de cien habitantes",
        "body": "El dato que todavía nos emociona: se juntaron más de 120 personas. En una aldea de apenas un centenar de habitantes. Aquella noche había más gente en el campo de la iglesia de Leiguarda que vecinos censados en Leiguarda."
-      },
-      {
-       "type": "text",
-       "title": "Lo que se tocó aquella noche",
-       "body": "El programa ya contenía, en germen, todo lo que ADAR sería después. Obras de Mendelssohn, Haydn y Falla, el repertorio clásico y la tradición española, junto a John Harbison, compositor estadounidense contemporáneo."
       }
      ],
      "pies": {
@@ -3371,6 +3295,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/seis-ediciones-de-adar",
      "lang": "es",
      "slug": "seis-ediciones-de-adar",
@@ -3401,11 +3326,6 @@
        "type": "text",
        "title": "2. El sitio importa tanto como el programa.",
        "body": "Aprendimos que un concierto en una iglesia de aldea, en un parador, en un alto de monte, no es el mismo concierto que en un auditorio. El lugar entra en la música."
-      },
-      {
-       "type": "text",
-       "title": "3. Lo extraordinario cabe en un pueblo.",
-       "body": "Una birbynė lituana. Un eclipse total de sol. Una residencia artística. Música que va de Bach a David Lang en la misma noche. Nada de eso \"sobra\" en el medio rural: encaja mejor de lo que nadie esperaba."
       }
      ],
      "pies": {
@@ -3438,6 +3358,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/la-espicha-despues-del-ultimo-acorde",
      "lang": "es",
      "slug": "la-espicha-despues-del-ultimo-acorde",
@@ -3468,11 +3389,6 @@
        "type": "text",
        "title": "Por qué la ponemos al final de un concierto",
        "body": "Podría parecer un simple detalle simpático, el \"vino de honor\" de toda la vida. Es mucho más que eso. La espicha hace un trabajo que ninguna otra parte del festival puede hacer: aplana la jerarquía."
-      },
-      {
-       "type": "text",
-       "title": "El concierto no era el evento: la noche entera lo era",
-       "body": "Esto conecta con algo que creemos a fondo. El acontecimiento no es solo la hora de música. Es la tarde entera: el viaje hasta la aldea, el reencuentro a la entrada, el concierto, y la espicha que lo cierra."
       }
      ],
      "pies": {
@@ -3505,6 +3421,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/como-escuchar-sweet-air-david-lang",
      "lang": "es",
      "slug": "como-escuchar-sweet-air-david-lang",
@@ -3535,11 +3452,6 @@
        "type": "text",
        "title": "El error: escucharla como si fuera Beethoven",
        "body": "El malentendido casi siempre viene de aquí. Escuchamos música contemporánea esperando lo que nos dio la música del XIX: un tema que reconoces, un clímax, una resolución con moraleja. Y cuando eso no llega, concluimos que \"no la entendemos\"."
-      },
-      {
-       "type": "text",
-       "title": "Una guía de escucha en tres gestos",
-       "body": "Para la próxima vez que te enfrentes a una pieza así, prueba esto: 1. Deja de buscar la melodía. Escucha la textura: cómo se mezclan los instrumentos, cómo cambia el color del sonido. Ahí está el acontecimiento."
       }
      ],
      "pies": {
@@ -3572,6 +3484,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/germanavicius-california-sketches",
      "lang": "es",
      "slug": "germanavicius-california-sketches",
@@ -3602,11 +3515,6 @@
        "type": "text",
        "title": "La obsesión que lo conecta todo: el folclore",
        "body": "Aquí está el hilo secreto que hace de esta programación algo más que una casualidad bonita."
-      },
-      {
-       "type": "text",
-       "title": "Por qué esto importa en un pueblo de Belmonte",
-       "body": "Podría parecer un lujo intelectual, algo \"para entendidos\". No lo es. Es exactamente lo contrario. Lo que cuenta esta obra, sin decir una palabra, es que el folclore no es un museo, sino materia viva con la que un creador de hoy sigue trabajando."
       }
      ],
      "pies": {
@@ -3639,6 +3547,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/horreos-y-paneras-concurso",
      "lang": "es",
      "slug": "horreos-y-paneras-concurso",
@@ -3669,11 +3578,6 @@
        "type": "text",
        "title": "Un patrimonio que se cae sin ruido",
        "body": "El problema es que el hórreo se está muriendo de éxito histórico y de olvido presente. Ya no se guarda grano en ellos. Sin uso, muchos se abandonan; sin mantenimiento, la madera se pudre; sin relevo en el pueblo, no queda quien los arregle."
-      },
-      {
-       "type": "text",
-       "title": "Por qué esto es asunto de un festival",
-       "body": "Aquí es donde encaja ADAR. Porque nuestra idea nunca fue solo \"traer conciertos al campo\". Fue poner el foco sobre el medio rural y todo lo que guarda: su música, su gente, sus paisajes y también sus construcciones."
       }
      ],
      "pies": {
@@ -3706,6 +3610,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/equilibrium-residencia-la-casona",
      "lang": "es",
      "slug": "equilibrium-residencia-la-casona",
@@ -3736,11 +3641,6 @@
        "type": "text",
        "title": "El proceso también es la obra",
        "body": "Solemos pensar que lo valioso es el producto: el concierto, el disco, el aplauso. Pero en una residencia el proceso es tan importante como el estreno. Ahí es donde se prueban ideas que quizá no salen."
-      },
-      {
-       "type": "text",
-       "title": "Por qué lo hacemos en el medio rural",
-       "body": "Podríamos hacer las residencias en una ciudad, con más comodidades. Las hacemos aquí a propósito, por dos razones. La primera, por los artistas: el medio rural es un laboratorio, no un destino de segunda."
       }
      ],
      "pies": {
@@ -3773,6 +3673,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/una-birbyne-en-leiguarda",
      "lang": "es",
      "slug": "una-birbyne-en-leiguarda",
@@ -3803,11 +3704,6 @@
        "type": "text",
        "title": "De una aldea lituana a otra asturiana",
        "body": "Piénsalo un momento. Un instrumento que empezó siendo el entretenimiento de un chaval cuidando ovejas en Lituania acabó, cuatro siglos después, sonando bajo las bóvedas de una iglesia de Belmonte de Miranda, delante de vecinos de Leiguarda."
-      },
-      {
-       "type": "text",
-       "title": "Un clarinetista que se atreve con las dos cosas",
-       "body": "Žilvinas Brazauskas (lituano, formado en la gran tradición clarinetística europea) no tocó solo la birbynė. En el mismo programa pasó del clarinete al instrumento de su tierra y viceversa."
       }
      ],
      "pies": {
@@ -3840,6 +3736,7 @@
      "concierto": null,
      "estilo": "cinta",
      "cifra": null,
+     "tabla": null,
      "clave": "es/el-eclipse-que-apago-asturias",
      "lang": "es",
      "slug": "el-eclipse-que-apago-asturias",
@@ -3870,11 +3767,6 @@
        "type": "text",
        "title": "Música para la sombra",
        "body": "La pregunta que nos hicimos al diseñar el programa fue sencilla y difícil: ¿qué se toca mientras el mundo se queda a oscuras? No quisimos ilustrar el eclipse ni \"acompañarlo\" como quien pone banda sonora."
-      },
-      {
-       "type": "text",
-       "title": "Por qué esto es exactamente lo que hace ADAR",
-       "body": "Un festival de ciudad habría llevado el eclipse a un auditorio con pantalla. Nosotros hicimos lo de siempre, solo que con un decorado imposible de igualar: poner la música donde de verdad pasan las cosas."
       }
      ],
      "pies": {

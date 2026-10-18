@@ -23,8 +23,9 @@ const ADAR = process.env.ADAR_DIR || resolve(AQUI, '../adar');
 const SITIO_KIT = process.env.SITIO_KIT || 'festivaladar.com';
 
 // Cuántas diapositivas como mucho. El kit monta hasta ocho y son demasiadas
-// para un carrusel: nadie llega al final. Portada + dos + cierre.
-const TOPE_SLIDES = Number(process.env.TOPE_SLIDES || 4);
+// para un carrusel: nadie llega al final. Él lo apuntó dos veces en el panel
+// —«demasiados slides, reduce»— así que portada y dos, no portada y tres.
+const TOPE_SLIDES = Number(process.env.TOPE_SLIDES || 3);
 
 /**
  * Recorta el carrusel. Fuera la diapositiva de cierre que monta el kit —la
@@ -108,6 +109,10 @@ function marcaParaDibujar(b) {
     id: b.id, org: b.org, stamp: b.stamp, site: b.site, logo: b.logo,
     ink: b.ink, paper: b.paper, accent: b.accent, onAccent: b.onAccent,
     overPhotoInk: b.overPhotoInk,
+    // La escala de papel del manual: se apaga con tinta, no con alfa.
+    sobreFoto: b.sobreFoto, sobreFotoMedio: b.sobreFotoMedio,
+    sobreFotoDim: b.sobreFotoDim, sobreFotoMudo: b.sobreFotoMudo,
+    filete: b.filete,
     ctaInk: b.ctaInk, textBg: b.textBg, textTitle: b.textTitle,
     textBody: b.textBody, textFoot: b.textFoot,
     display: b.display, ui: b.ui, label: b.label,
@@ -155,8 +160,10 @@ for (const nombre of marcas) {
         // ese manda: ocho fichas de «context» seguidas salían las ocho con
         // el mismo marco, y eso no es ritmo, es monotonía.
         estilo: p.estilo || (tipo ? tipo.estilo : 'cinta'),
-        // El dato que dibuja el estilo «cifra». Sin esto se cae a «cinta».
+        // Lo que dibujan «cifra» y «tabla». Sin su dato, el estilo no
+        // puede pintarse y el motor se cae al de por defecto.
         cifra: p.cifra || null,
+        tabla: p.tabla || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

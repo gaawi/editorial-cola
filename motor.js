@@ -32,9 +32,22 @@ export const TAMANOS = {
  *   cifra   — el dato ocupa la imagen. La foto es el fondo del número.
  *   cartel  — tipografía a tamaño de pared y un filo de foto abajo.
  *   duo     — la foto en blanco y negro y el titular sobre un panel ámbar.
- *   franja  — la banda de señal cruzada, con el titular torcido encima.
+ *   tabla   — el orden de la noche, compuesto. Cifras en versales tabulares.
+ *
+ * Hubo una quinta, «franja», una banda ámbar cruzada a seis grados. Se
+ * quitó: el manual dice «square everywhere, including buttons», y una banda
+ * torcida es lo más lejos de eso que se puede llegar.
+ *
+ * Las tres reglas de creartbox.nyc/brand.html que mandan aquí:
+ *   · Una señal por pantalla. El ámbar se usa UNA vez, en lo que hay que
+ *     leer primero. Todo lo demás baja por la escala de papel.
+ *   · Se apaga con tinta, no con alfa. Nada de rgba(papel, 0.6).
+ *   · Los títulos van a 0,94 de interlineado. Es su firma tipográfica.
  */
-export const ESTILOS = ['cinta', 'bloque', 'marco', 'limpia', 'cifra', 'cartel', 'duo', 'franja'];
+export const ESTILOS = ['cinta', 'bloque', 'marco', 'limpia', 'cifra', 'cartel', 'duo', 'tabla'];
+
+/** El interlineado de los titulares, que el manual fija en 0,94. */
+const PLOMO = 0.94;
 
 export function crearMotor(B) {
   const DISPLAY = B.display;
@@ -48,6 +61,14 @@ export function crearMotor(B) {
     const n = parseInt(h, 16);
     return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
   }
+
+  // La escala de papel del manual. Si una marca no la trae, se cae al tono
+  // entero antes que a un alfa: el alfa es justo lo que se quiere evitar.
+  const TINTA = B.sobreFoto || B.overPhotoInk;
+  const TINTA_MEDIA = B.sobreFotoMedio || TINTA;
+  const TINTA_DIM = B.sobreFotoDim || TINTA;
+  const TINTA_MUDA = B.sobreFotoMudo || TINTA_DIM;
+  const FILETE = B.filete || B.ink;
 
   function rotulo(ctx, size, color, spacing) {
     ctx.font = `${B.labelWeight} ${size}px ${LABEL}`;
@@ -192,15 +213,15 @@ export function crearMotor(B) {
         ctx.fillRect(0, H - bandH, W, Math.max(5, Math.round(W * 0.009)));
 
         const bTop = H - bandH + Math.round(pad * 0.75);
-        rotulo(ctx, rotSize, B.accent, Math.round(rotSize * 0.16));
+        rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
         ctx.fillText(B.stamp, pad, bTop + rotSize);
         sinEspaciado(ctx);
         const bAvail = bandH - Math.round(pad * 0.75) - rotSize * 3.4 - safeBottom;
-        const bfit = encajar(ctx, slide.title, W - pad * 2 - safeRight, bAvail, TW, DISPLAY, Math.round(W * 0.070), Math.round(W * 0.032));
+        const bfit = encajar(ctx, slide.title, W - pad * 2 - safeRight, bAvail, TW, DISPLAY, Math.round(W * 0.070), Math.round(W * 0.032), PLOMO);
         ctx.font = `${TW} ${bfit.size}px ${DISPLAY}`; ctx.fillStyle = B.paper;
         const byy = bTop + rotSize * 2.6 + bfit.size * 0.86;
-        bfit.lines.forEach((l, i) => ctx.fillText(l, pad, byy + i * bfit.size * 1.12));
-        rotulo(ctx, rotSize, rgba(B.paper, 0.6), 0);
+        bfit.lines.forEach((l, i) => ctx.fillText(l, pad, byy + i * bfit.size * PLOMO));
+        rotulo(ctx, rotSize, TINTA_MUDA, 0);
         ctx.fillText(B.site, pad, H - Math.round(pad * 0.4) - safeBottom);
         sinEspaciado(ctx);
         return;
@@ -219,12 +240,12 @@ export function crearMotor(B) {
         // dominio se quitaron a petición suya: ensuciaban la foto y la marca
         // ya se lee en el nombre de la cuenta, justo encima en el muro.
         const mAvail = H - safeTop - safeBottom;
-        const mfit = encajar(ctx, slide.title, W - pad * 2.4 - safeRight, mAvail * 0.50, TW, DISPLAY, Math.round(W * 0.078), Math.round(W * 0.034));
+        const mfit = encajar(ctx, slide.title, W - pad * 2.4 - safeRight, mAvail * 0.50, TW, DISPLAY, Math.round(W * 0.078), Math.round(W * 0.034), PLOMO);
         ctx.textAlign = 'center';
-        const mBlockH = mfit.lines.length * mfit.size * 1.12;
+        const mBlockH = mfit.lines.length * mfit.size * PLOMO;
         const myy = safeTop + (mAvail - mBlockH) / 2 + mfit.size * 0.86;
         ctx.font = `${TW} ${mfit.size}px ${DISPLAY}`; ctx.fillStyle = B.overPhotoInk;
-        mfit.lines.forEach((l, i) => ctx.fillText(l, W / 2, myy + i * mfit.size * 1.12));
+        mfit.lines.forEach((l, i) => ctx.fillText(l, W / 2, myy + i * mfit.size * PLOMO));
         ctx.textAlign = 'left';
         return;
       }
@@ -255,7 +276,9 @@ export function crearMotor(B) {
         const pf = encajar(ctx, pie, util, H * 0.22, '400', UI, Math.round(W * 0.046), Math.round(W * 0.028), 1.38);
         const pieH = pf.lines.length * pf.size * 1.38;
 
-        const ruleH2 = Math.max(4, Math.round(W * 0.007));
+        // Hairline, no barra: el manual pone los filetes en 1px a su escala
+        // de página (1120 de ancho), que aquí son tres.
+        const ruleH2 = Math.max(2, Math.round(W * 0.0026));
         // El bloque se arma siempre igual —filete, rótulo, cifra, pie— y solo
         // cambia de dónde cuelga.
         const rotBase = arriba
@@ -263,10 +286,12 @@ export function crearMotor(B) {
           : H - pad - safeBottom - pieH - Math.round(W * 0.040) - Math.round(cs * 0.76) - Math.round(W * 0.034);
         const cifraBase = rotBase + Math.round(cs * 0.76) + Math.round(W * 0.034);
 
-        ctx.fillStyle = B.accent;
+        // La única señal de la pantalla es el número. El filete y el rótulo
+        // son filete y tinta dim: separan y sitúan, no gritan.
+        ctx.fillStyle = FILETE;
         ctx.fillRect(pad, rotBase - rotSize - Math.round(W * 0.030), Math.round(W * 0.14), ruleH2);
         if (post.cifra.rotulo) {
-          rotulo(ctx, rotSize, B.accent, Math.round(rotSize * 0.16));
+          rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
           ctx.fillText(String(post.cifra.rotulo).toUpperCase(), pad, rotBase);
           sinEspaciado(ctx);
         }
@@ -289,17 +314,16 @@ export function crearMotor(B) {
         ctx.fillStyle = B.accent; ctx.fillRect(0, H - tira - filo, W, filo);
 
         const arriba = pad + safeTop;
-        rotulo(ctx, rotSize, B.accent, Math.round(rotSize * 0.16));
+        rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
         ctx.fillText(B.stamp, pad, arriba + rotSize);
         sinEspaciado(ctx);
 
         const techo = arriba + rotSize * 2.4;
         const suelo = H - tira - filo - Math.round(pad * 0.7);
-        // Plomo de cartel: 1,04. Las líneas casi se tocan, que es el efecto.
-        const cf = encajar(ctx, slide.title, W - pad * 2 - safeRight, suelo - techo, TW, DISPLAY, Math.round(W * 0.145), Math.round(W * 0.050), 1.04);
+        const cf = encajar(ctx, slide.title, W - pad * 2 - safeRight, suelo - techo, TW, DISPLAY, Math.round(W * 0.145), Math.round(W * 0.050), PLOMO);
         ctx.font = `${TW} ${cf.size}px ${DISPLAY}`; ctx.fillStyle = B.paper;
-        const cy = suelo - cf.lines.length * cf.size * 1.04 + cf.size * 0.82;
-        cf.lines.forEach((l, i) => ctx.fillText(l, pad, cy + i * cf.size * 1.04));
+        const cy = suelo - cf.lines.length * cf.size * PLOMO + cf.size * 0.82;
+        cf.lines.forEach((l, i) => ctx.fillText(l, pad, cy + i * cf.size * PLOMO));
         return;
       }
 
@@ -312,38 +336,109 @@ export function crearMotor(B) {
         duotono(ctx, 0, 0, W, H, B.ink, B.paper);
 
         const panelW = Math.round(W * 0.86);
-        const df = encajar(ctx, slide.title, panelW - pad * 1.8, H * 0.34, TW, DISPLAY, Math.round(W * 0.080), Math.round(W * 0.038), 1.14);
-        const panelH = Math.round(df.lines.length * df.size * 1.14 + pad * 1.4);
+        const df = encajar(ctx, slide.title, panelW - pad * 1.8, H * 0.34, TW, DISPLAY, Math.round(W * 0.080), Math.round(W * 0.038), PLOMO);
+        const panelH = Math.round(df.lines.length * df.size * PLOMO + pad * 1.4);
         const panelY = H - safeBottom - Math.round(pad * 0.7) - panelH;
         ctx.fillStyle = B.accent; ctx.fillRect(0, panelY, panelW, panelH);
         ctx.font = `${TW} ${df.size}px ${DISPLAY}`; ctx.fillStyle = B.onAccent || B.ink;
         const dy = panelY + Math.round(pad * 0.7) + df.size * 0.84;
-        df.lines.forEach((l, i) => ctx.fillText(l, pad, dy + i * df.size * 1.14));
+        df.lines.forEach((l, i) => ctx.fillText(l, pad, dy + i * df.size * PLOMO));
         return;
       }
 
-      // La banda cruzada. Seis grados: lo justo para que se note que está
-      // torcida y no parezca que se ha descuadrado al exportar.
-      if (estilo === 'franja') {
-        await foto(ctx, post.image, 0, 0, W, H);
-        ctx.fillStyle = rgba(B.ink, 0.22); ctx.fillRect(0, 0, W, H);
+      // El orden de la noche, compuesto. No es una foto con texto encima:
+      // es un documento, y por eso va sobre --foso en vez de sobre sala.
+      // Autor en versalitas de rótulo, obra en Literata cursiva porque el
+      // manual pide cursiva en los títulos de obra, y duración a la derecha.
+      if (estilo === 'tabla' && post.tabla) {
+        ctx.fillStyle = B.textBg || B.ink; ctx.fillRect(0, 0, W, H);
+        const filas = post.tabla.filas || [];
+        const hair = Math.max(2, Math.round(W * 0.0026));
+        const util = W - pad * 2 - safeRight;
+        const colCifra = W - pad - safeRight;
 
-        const ff = encajar(ctx, slide.title, W - pad * 2.6 - safeRight, H * 0.30, TW, DISPLAY, Math.round(W * 0.074), Math.round(W * 0.036), 1.14);
-        const bandaH = Math.round(ff.lines.length * ff.size * 1.14 + pad * 1.1);
-        const eje = H - safeBottom - Math.round(H * (fmt === 'fb' ? 0.30 : 0.26));
+        let y = pad + safeTop + rotSize;
+        if (post.tabla.rotulo) {
+          rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
+          ctx.fillText(String(post.tabla.rotulo).toUpperCase(), pad, y);
+          sinEspaciado(ctx);
+        }
 
-        ctx.save();
-        ctx.translate(W / 2, eje);
-        ctx.rotate((-6 * Math.PI) / 180);
+        y += Math.round(W * 0.040);
+        const tf = encajar(ctx, slide.title, util, H * 0.20, TW, DISPLAY, Math.round(W * 0.064), Math.round(W * 0.036), PLOMO);
+        ctx.font = `${TW} ${tf.size}px ${DISPLAY}`; ctx.fillStyle = B.paper;
+        tf.lines.forEach((l, i) => ctx.fillText(l, pad, y + tf.size * 0.82 + i * tf.size * PLOMO));
+        y += tf.lines.length * tf.size * PLOMO + Math.round(W * 0.034);
+
+        // La única señal: el filete bajo el titular. De ahí para abajo, pelo.
         ctx.fillStyle = B.accent;
-        ctx.fillRect(-W, -bandaH / 2, W * 2, bandaH);
-        ctx.font = `${TW} ${ff.size}px ${DISPLAY}`; ctx.fillStyle = B.onAccent || B.ink;
-        const fy = -bandaH / 2 + Math.round(pad * 0.55) + ff.size * 0.84;
-        ff.lines.forEach((l, i) => ctx.fillText(l, -W / 2 + pad, fy + i * ff.size * 1.14));
-        ctx.restore();
+        ctx.fillRect(pad, y, Math.round(W * 0.16), Math.max(3, Math.round(W * 0.005)));
+        y += Math.round(W * 0.046);
 
-        rotulo(ctx, rotSize, rgba(B.paper, 0.78), Math.round(rotSize * 0.16));
-        ctx.fillText(B.stamp, pad, pad + safeTop + rotSize);
+        // Las filas se reparten lo que queda, con su propio aire.
+        const pie = rotSize * 2.2;
+        const libre = H - safeBottom - Math.round(pad * 0.8) - pie - y;
+        // Las filas se comen lo que hay: una tabla con un palmo de hueco
+        // debajo parece que se ha quedado a medias. Tope alto para que en
+        // 1200×630 no se estiren hasta deformarse.
+        const alto = Math.min(Math.round(W * 0.145), Math.floor(libre / Math.max(1, filas.length + (post.tabla.total ? 1 : 0))));
+        const quienS = Math.max(12, Math.round(alto * 0.20));
+
+        // La columna de duraciones tiene calle propia: se mide la más ancha
+        // y el título de obra se compone en lo que queda. Un cuerpo para
+        // todas las filas, el mayor con el que entra la obra más larga; por
+        // fila quedaría disparejo y una tabla despareja no es una tabla.
+        let obraS = Math.round(alto * 0.335);
+        const minObra = Math.round(alto * 0.20);
+        const todas = filas.map((f) => String(f.cifra))
+          .concat(post.tabla.total ? [String(post.tabla.total.cifra)] : []);
+        const anchoObra = () => {
+          ctx.font = `600 ${obraS}px ${UI}`;
+          const calle = Math.max(...todas.map((c) => ctx.measureText(c).width)) + Math.round(W * 0.045);
+          return util - calle;
+        };
+        while (obraS > minObra) {
+          const disp = anchoObra();
+          ctx.font = `italic 400 ${obraS}px ${DISPLAY}`;
+          if (filas.every((f) => ctx.measureText(f.que).width <= disp)) break;
+          obraS -= 2;
+        }
+        const anchoDisp = anchoObra();
+
+        const linea = (quien, obra, cifra, tono, pesoObra) => {
+          ctx.fillStyle = FILETE; ctx.fillRect(pad, y, util, hair);
+          const base = y + alto * 0.52;
+          rotulo(ctx, quienS, TINTA_DIM, Math.round(quienS * 0.16));
+          ctx.fillText(String(quien).toUpperCase(), pad, base - obraS * 0.72);
+          sinEspaciado(ctx);
+          ctx.font = `${pesoObra} ${obraS}px ${DISPLAY}`; ctx.fillStyle = tono;
+          // Si aun así una obra se pasa, se aprieta a su calle en vez de
+          // meterse en la de la cifra. Nunca se corta un título de obra.
+          ctx.fillText(obra, pad, base + obraS * 0.44, anchoDisp);
+          // La duración, a la derecha y en la de texto: son cifras tabulares.
+          ctx.font = `500 ${Math.round(obraS * 0.86)}px ${UI}`;
+          ctx.textAlign = 'right';
+          ctx.fillText(cifra, colCifra, base + obraS * 0.44);
+          ctx.textAlign = 'left';
+          y += alto;
+        };
+
+        for (const f of filas) linea(f.quien, f.que, f.cifra, B.paper, `italic 400`);
+        if (post.tabla.total) {
+          ctx.fillStyle = FILETE; ctx.fillRect(pad, y, util, hair);
+          const base = y + alto * 0.52;
+          rotulo(ctx, quienS, TINTA_DIM, Math.round(quienS * 0.16));
+          ctx.fillText(String(post.tabla.total.que).toUpperCase(), pad, base + obraS * 0.10);
+          ctx.textAlign = 'right';
+          ctx.font = `600 ${obraS}px ${UI}`; ctx.fillStyle = B.paper;
+          ctx.fillText(post.tabla.total.cifra, colCifra, base + obraS * 0.10);
+          ctx.textAlign = 'left';
+          sinEspaciado(ctx);
+          y += alto;
+        }
+
+        rotulo(ctx, rotSize, TINTA_MUDA, 0);
+        ctx.fillText(B.site, pad, H - Math.round(pad * 0.5) - safeBottom);
         sinEspaciado(ctx);
         return;
       }
@@ -357,14 +452,15 @@ export function crearMotor(B) {
       ctx.fillStyle = g; ctx.fillRect(0, gTop, W, H - gTop);
 
       const maxTitleH = H * (fmt === 'story' ? 0.30 : 0.34);
-      const fit = encajar(ctx, slide.title, W - pad * 2 - safeRight, maxTitleH, TW, DISPLAY, Math.round(W * 0.072), Math.round(W * 0.034));
-      const lineH = Math.round(fit.size * 1.12);
+      const fit = encajar(ctx, slide.title, W - pad * 2 - safeRight, maxTitleH, TW, DISPLAY, Math.round(W * 0.072), Math.round(W * 0.034), PLOMO);
+      const lineH = Math.round(fit.size * PLOMO);
       const baseY = H - pad - safeBottom;
       const startY = baseY - fit.lines.length * lineH + lineH * 0.8;
 
       ctx.fillStyle = B.accent;
       ctx.fillRect(pad, startY - lineH * 0.8 - Math.round(rotSize * 2.2), Math.round(W * 0.09), Math.max(3, Math.round(W * 0.005)));
-      rotulo(ctx, rotSize, B.accent, Math.round(rotSize * 0.16));
+      // Una señal por pantalla: la lleva el filete. El sello baja a dim.
+      rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
       ctx.fillText(B.stamp, pad, startY - lineH * 0.8 - Math.round(rotSize * 0.75));
       sinEspaciado(ctx);
 
@@ -372,7 +468,7 @@ export function crearMotor(B) {
       ctx.fillStyle = B.overPhotoInk;
       fit.lines.forEach((l, i) => ctx.fillText(l, pad, startY + i * lineH));
 
-      rotulo(ctx, rotSize, rgba(B.paper, 0.72), 0);
+      rotulo(ctx, rotSize, TINTA_MUDA, 0);
       ctx.fillText(B.site, pad, H - Math.round(pad * 0.4) - safeBottom);
       sinEspaciado(ctx);
       return;
@@ -400,11 +496,11 @@ export function crearMotor(B) {
       ctx.font = `${TW} ${cf.size}px ${DISPLAY}`; ctx.fillStyle = B.ctaInk;
       const cy = cTop + ruleH + gapRule + cf.size * 0.86;
       cf.lines.forEach((l, i) => ctx.fillText(l, pad, cy + i * cf.size * 1.12));
-      ctx.font = `400 ${cbf.size}px ${UI}`; ctx.fillStyle = rgba(B.paper, 0.9);
+      ctx.font = `400 ${cbf.size}px ${UI}`; ctx.fillStyle = TINTA_MEDIA;
       const by = cTop + ruleH + gapRule + cTitleH + gapBody + cbf.size * 0.86;
       cbf.lines.forEach((l, i) => ctx.fillText(l, pad, by + i * cbf.size * 1.42));
 
-      rotulo(ctx, rotSize, rgba(B.paper, 0.6), 0);
+      rotulo(ctx, rotSize, TINTA_MUDA, 0);
       ctx.fillText(B.site, pad, footY);
       sinEspaciado(ctx);
       return;
@@ -434,8 +530,8 @@ export function crearMotor(B) {
     // type === 'text'
     const tBg = estilo === 'bloque' ? B.ink : B.textBg;
     const tTitulo = estilo === 'bloque' ? B.paper : B.textTitle;
-    const tCuerpo = estilo === 'bloque' ? rgba(B.paper, 0.88) : B.textBody;
-    const tPie = estilo === 'bloque' ? rgba(B.paper, 0.55) : B.textFoot;
+    const tCuerpo = estilo === 'bloque' ? TINTA_MEDIA : B.textBody;
+    const tPie = estilo === 'bloque' ? TINTA_MUDA : B.textFoot;
     ctx.fillStyle = tBg; ctx.fillRect(0, 0, W, H);
     if (estilo === 'marco') {
       const tInset = Math.round(W * 0.05);

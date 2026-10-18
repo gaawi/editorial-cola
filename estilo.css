@@ -100,7 +100,7 @@ button { background: none; border: none; cursor: pointer; }
   font-size: 14px; line-height: 18px;
 }
 .ig-cab { display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
-.ig-av { width: 32px; height: 32px; flex: 0 0 32px; border-radius: 50%; object-fit: cover; background: #efefef;
+.ig-av { width: 32px; height: 32px; flex: 0 0 32px; border-radius: 50%; object-fit: contain; background: #fff;
   box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px #ff2f72; }
 .ig-usuario { font-weight: 600; font-size: 13px; flex: 1; }
 .ig-mas { color: #262626; font-size: 18px; line-height: 1; letter-spacing: 1px; }
@@ -130,7 +130,7 @@ button { background: none; border: none; cursor: pointer; }
   font-size: 15px; line-height: 20px;
 }
 .fb-cab { display: flex; align-items: center; gap: 10px; padding: 12px 12px 8px; }
-.fb-av { width: 40px; height: 40px; flex: 0 0 40px; border-radius: 50%; object-fit: cover; background: #e4e6eb; }
+.fb-av { width: 40px; height: 40px; flex: 0 0 40px; border-radius: 50%; object-fit: contain; background: #fff; }
 .fb-nombre { font-weight: 600; font-size: 15px; }
 .fb-meta { font-size: 12px; color: #65676b; }
 .fb-texto { padding: 0 12px 10px; white-space: pre-wrap; word-break: break-word; }
@@ -152,7 +152,7 @@ button { background: none; border: none; cursor: pointer; }
   display: flex; align-items: center; gap: 8px; color: #fff;
   font-family: -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600;
   text-shadow: 0 1px 3px rgba(0,0,0,.5); }
-.story .quien img { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; object-fit: cover; }
+.story .quien img { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; object-fit: contain; background: #fff; }
 .story .quien small { font-weight: 400; opacity: .8; }
 .story .responder { position: absolute; left: 10px; right: 10px; bottom: 12px;
   display: flex; align-items: center; gap: 10px; }

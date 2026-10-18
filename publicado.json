@@ -1,0 +1,49 @@
+{
+  "_ayuda": "Dónde ha salido cada ficha. Se llena solo cuando publica publicar.mjs o Claude por Metricool; lo de antes del 17 de octubre de 2026 se anotó a mano desde el checklist del panel, y de esos no hay URL porque nadie la guardó.",
+  "actualizado": "2026-10-18T14:05:00+02:00",
+  "posts": {
+    "creartbox:en/season-2026-27": {
+      "articulo": "https://creartbox.nyc/press/season-2026-27.html",
+      "redes": {
+        "ig": { "fecha": "2026-10-01", "url": null, "origen": "a mano" },
+        "fb": { "fecha": "2026-10-01", "url": null, "origen": "a mano" },
+        "li": { "fecha": "2026-10-01", "url": null, "origen": "a mano" },
+        "tt": { "fecha": "2026-10-01", "url": null, "origen": "a mano" },
+        "x":  { "fecha": "2026-10-01", "url": null, "origen": "a mano" }
+      }
+    },
+    "creartbox:en/currents": {
+      "articulo": "https://creartbox.nyc/concerts.html",
+      "redes": {
+        "ig": { "fecha": "2026-10-01", "url": null, "origen": "a mano" },
+        "fb": { "fecha": "2026-10-01", "url": null, "origen": "a mano" },
+        "li": { "fecha": "2026-10-01", "url": null, "origen": "a mano" },
+        "tt": { "fecha": "2026-10-01", "url": null, "origen": "a mano" },
+        "x":  { "fecha": "2026-10-01", "url": null, "origen": "a mano" }
+      }
+    },
+    "creartbox:en/currents-programme-online": {
+      "articulo": "https://creartbox.nyc/programs/currents-2026.html",
+      "redes": {
+        "ig": {
+          "fecha": "2026-10-18",
+          "url": "https://www.instagram.com/p/DeonR6gCCAx/",
+          "origen": "metricool",
+          "nota": "El del 17 salió con la foto pelada y hay que borrarlo: https://www.instagram.com/p/Dem490KFbLw/"
+        },
+        "fb": {
+          "fecha": "2026-10-18",
+          "url": "https://facebook.com/1841708931294706/posts/1842413647890901",
+          "origen": "metricool",
+          "nota": "El del 17 salió con la foto pelada: https://facebook.com/1841708931294706/posts/1841727561292843"
+        },
+        "ig-story": { "fecha": "2026-10-17", "url": null, "origen": "metricool", "nota": "Publicada a mano desde el móvil para poder ponerle la pegatina de enlace." }
+      }
+    },
+    "creartbox:en/eric-moe-interview": {
+      "articulo": "https://creartbox.nyc/news/eight-questions-for-eric-moe.html",
+      "redes": {},
+      "nota": "La entrevista está publicada en la web, pero en redes no ha salido en ninguna. En el panel sigue en «borrador» con tu nota de repasarla."
+    }
+  }
+}

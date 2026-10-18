@@ -26,6 +26,7 @@ const ESTADOS = {
 
 let DATOS = null;
 let MARCA = 'creartbox';
+let CUENTAS = null;
 let MOTOR = null;
 let APROB = { posts: {} };
 let shaAprob = null;
@@ -130,14 +131,14 @@ async function pintarInstagram(p) {
   caja.className = 'ig';
   caja.innerHTML = `
     <div class="ig-cab">
-      <img class="ig-av" src="${p.image || ''}" alt="">
-      <span class="ig-usuario">${MARCA === 'creartbox' ? 'creartboxnyc' : 'festivaladar'}</span>
+      <img class="ig-av" src="${CUENTAS.avatar}" alt="">
+      <span class="ig-usuario">${CUENTAS.ig}</span>
       <span class="ig-mas">•••</span>
     </div>
     <div class="ig-carrete"><div class="tira"></div>${slides.length > 1 ? `<span class="ig-cuenta">1/${slides.length}</span>` : ''}</div>
     ${slides.length > 1 ? `<div class="ig-puntos">${slides.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}
     <div class="ig-acciones">${ICONOS.corazon}${ICONOS.comentar}${ICONOS.enviar}<span class="guardar">${ICONOS.guardar}</span></div>
-    <div class="ig-pie"><b>${MARCA === 'creartbox' ? 'creartboxnyc' : 'festivaladar'}</b>${pintarPie(p.pies.ig.texto, 125, 'mas', 'más', false)}</div>
+    <div class="ig-pie"><b>${CUENTAS.ig}</b>${pintarPie(p.pies.ig.texto, 125, 'mas', 'más', false)}</div>
     <div class="ig-hora">Hace un momento</div>`;
 
   const tira = caja.querySelector('.tira');
@@ -161,9 +162,9 @@ async function pintarFacebook(p) {
   caja.className = 'fb';
   caja.innerHTML = `
     <div class="fb-cab">
-      <img class="fb-av" src="${p.image || ''}" alt="">
+      <img class="fb-av" src="${CUENTAS.avatar}" alt="">
       <span>
-        <div class="fb-nombre">${MARCA === 'creartbox' ? 'CreArtBox' : 'Festival ADAR'}</div>
+        <div class="fb-nombre">${CUENTAS.fb}</div>
         <div class="fb-meta">Ahora · 🌐</div>
       </span>
     </div>
@@ -183,8 +184,8 @@ async function pintarHistoria(p) {
   caja.innerHTML = `
     <div class="barrita"><i></i></div>
     <div class="quien">
-      <img src="${p.image || ''}" alt="">
-      <span>${MARCA === 'creartbox' ? 'creartboxnyc' : 'festivaladar'}</span>
+      <img src="${CUENTAS.avatar}" alt="">
+      <span>${CUENTAS.ig}</span>
       <small>ahora</small>
     </div>
     <div class="responder"><span>Enviar mensaje</span>${ICONOS.corazon}${ICONOS.enviar}</div>`;
@@ -348,16 +349,20 @@ async function arrancar() {
   } catch {}
   if (!APROB.posts) APROB.posts = {};
 
-  MOTOR = crearMotor(DATOS.marcas[MARCA].marca);
-  $('#marca').textContent = DATOS.marcas[MARCA].marca.org;
+  cambiarMarca(MARCA);
   pintarLista();
+}
+
+function cambiarMarca(m) {
+  MARCA = m;
+  MOTOR = crearMotor(DATOS.marcas[MARCA].marca);
+  CUENTAS = DATOS.marcas[MARCA].cuentas;
+  $('#marca').textContent = DATOS.marcas[MARCA].marca.org;
 }
 
 $('#atras').addEventListener('click', volver);
 $('#marca').addEventListener('click', () => {
-  MARCA = MARCA === 'creartbox' ? 'adar' : 'creartbox';
-  MOTOR = crearMotor(DATOS.marcas[MARCA].marca);
-  $('#marca').textContent = DATOS.marcas[MARCA].marca.org;
+  cambiarMarca(MARCA === 'creartbox' ? 'adar' : 'creartbox');
   pintarLista();
 });
 $('#filtros').addEventListener('click', (e) => {

@@ -29,6 +29,19 @@ function urlImagen(img) {
   return `https://${SITIO_KIT}${img.startsWith('/') ? '' : '/'}${img}`;
 }
 
+/**
+ * Cómo se llama cada marca en cada red, y con qué cara sale.
+ *
+ * El avatar de CreArtBox es el de verdad: la imagen de la página de Facebook,
+ * descargada de Metricool y guardada aquí para no depender de su CDN. Antes
+ * las vistas previas ponían la foto del propio post como avatar, que no se
+ * parece a nada.
+ */
+const CUENTAS = {
+  creartbox: { ig: 'creartboxnyc', fb: 'CreArtBox', avatar: 'avatares/creartbox.png' },
+  adar: { ig: 'festivaladar', fb: 'Festival ADAR', avatar: 'avatares/adar.png' },
+};
+
 /** Solo lo que el motor de dibujo mira. El resto de la marca no hace falta. */
 function marcaParaDibujar(b) {
   return {
@@ -58,6 +71,7 @@ for (const nombre of marcas) {
 
   salida.marcas[nombre] = {
     marca: marcaParaDibujar(brand),
+    cuentas: CUENTAS[nombre],
     posts: ideas.map((p) => {
       const r = rev[clave(p)] || {};
       return {

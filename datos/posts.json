@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-17T20:53:39.547Z",
+ "generado": "2026-10-18T12:23:30.365Z",
  "origen": "gaawi/adar",
  "marcas": {
   "creartbox": {
@@ -30,6 +30,11 @@
      "600 32px \"Archivo\"",
      "700 32px \"Archivo\""
     ]
+   },
+   "cuentas": {
+    "ig": "creartboxnyc",
+    "fb": "CreArtBox",
+    "avatar": "avatares/creartbox.png"
    },
    "posts": [
     {
@@ -828,6 +833,11 @@
      "700 32px \"Chivo\"",
      "500 24px \"Chivo Mono\""
     ]
+   },
+   "cuentas": {
+    "ig": "festivaladar",
+    "fb": "Festival ADAR",
+    "avatar": "avatares/adar.png"
    },
    "posts": [
     {

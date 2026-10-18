@@ -61,6 +61,10 @@ async function revisiones(marca) {
   return JSON.parse(await readFile(archivo, 'utf8')).posts || {};
 }
 
+// Las etiquetas viven en su propio archivo porque la app las edita.
+const ETIQUETAS = JSON.parse(await readFile(join(AQUI, 'etiquetas.json'), 'utf8'));
+const TIPOS = Object.fromEntries(ETIQUETAS.tipos.concat(ETIQUETAS.nuevas || []).map((t) => [t.id, t]));
+
 const soloMarca = process.argv[2];
 const marcas = soloMarca ? [soloMarca] : ['creartbox', 'adar'];
 const salida = { generado: new Date().toISOString(), origen: 'gaawi/adar', marcas: {} };
@@ -72,9 +76,16 @@ for (const nombre of marcas) {
   salida.marcas[nombre] = {
     marca: marcaParaDibujar(brand),
     cuentas: CUENTAS[nombre],
+    etiquetas: { tipos: ETIQUETAS.tipos.concat(ETIQUETAS.nuevas || []), conciertos: ETIQUETAS.conciertos },
     posts: ideas.map((p) => {
       const r = rev[clave(p)] || {};
+      const etq = ETIQUETAS.fichas[`${nombre}:${clave(p)}`] || {};
+      const tipo = TIPOS[etq.tipo];
       return {
+        // El estilo no se elige: lo decide para qué es el post.
+        tipo: etq.tipo || null,
+        concierto: etq.concierto || null,
+        estilo: tipo ? tipo.estilo : 'cinta',
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

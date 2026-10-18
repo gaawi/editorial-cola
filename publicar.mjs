@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 
 import { descubrirCuentas, publicarFacebook, publicarInstagram } from './lib/meta.mjs';
 import { marcas, normalizarImagen, programar } from './lib/metricool.mjs';
-import { imagenesDelKit } from './lib/kit.mjs';
+import { imagenesDe } from './lib/render.mjs';
 import { cargarIdeas, clave, buscar } from './lib/ideas.mjs';
 import { pie, asomo, repasar, REDES } from './lib/textos.mjs';
 
@@ -361,23 +361,34 @@ async function ordenPublicar(op) {
   // Qué imagen lleva cada red, por orden: la que se pida a mano, la que dibuja
   // el kit, o —solo si se pide— la foto de origen pelada.
   if (op.imagen) {
-    for (const red of redes) imagenes[red] = String(op.imagen);
+    for (const red of redes) imagenes[red] = [String(op.imagen)];
   } else if (ficha && op['foto-pelada']) {
-    for (const red of redes) imagenes[red] = urlImagen(ficha.idea.image);
+    for (const red of redes) imagenes[red] = [urlImagen(ficha.idea.image)];
   } else if (ficha && ficha.idea.image) {
     if (op.ya) {
-      console.log(C.gris('Sacando las imágenes del kit…'));
-      const hechas = await imagenesDelKit({
+      console.log(C.gris('Dibujando las imágenes…'));
+      const formatos = Object.fromEntries(redes.map((r) => [r, r]));
+      const hechas = await imagenesDe({
         marca: ficha.marca,
         clave: clave(ficha.idea),
-        formatos: redes,
-        adar: resolve(AQUI, '../adar'),
+        formatos,
+        carrusel: !op.suelta,
         aviso: (m) => process.stdout.write(C.gris(`  ${m}\r`)),
       });
-      for (const red of redes) imagenes[red] = await subirImagen(hechas[red], `${clave(ficha.idea).split('/').pop()}-${red}.jpg`);
+      for (const red of redes) {
+        imagenes[red] = [];
+        for (let i = 0; i < hechas[red].length; i++) {
+          imagenes[red].push(await subirImagen(hechas[red][i], `${clave(ficha.idea).split('/').pop()}-${red}-${i + 1}.jpg`));
+        }
+      }
     } else {
-      // En ensayo no se construye el sitio entero: basta con decir qué saldría.
-      for (const red of redes) imagenes[red] = `(la dibuja el kit: ${red === 'ig' ? '1080×1080' : '1200×630'} sobre ${urlImagen(ficha.idea.image)})`;
+      // En ensayo no se dibuja nada: basta con decir qué saldría.
+      const n = ficha.idea.slides.length;
+      for (const red of redes) {
+        imagenes[red] = [red === 'ig' && !op.suelta
+          ? `(carrusel de ${n} en 1080×1350, estilo ${ficha.idea.estilo || 'cinta'})`
+          : `(1 imagen ${red === 'ig' ? '1080×1350' : '1200×630'}, estilo ${ficha.idea.estilo || 'cinta'})`];
+      }
     }
   }
   if (op['texto-ig']) texto.ig = String(op['texto-ig']);
@@ -388,7 +399,7 @@ async function ordenPublicar(op) {
   // Repaso antes de nada: si algo no cuadra, aquí se para.
   const pegas = [];
   for (const red of redes) {
-    const img = imagenes[red];
+    const img = (imagenes[red] || [])[0];
     // En ensayo la imagen del kit todavía no existe: se repasa lo demás.
     const sinDibujar = typeof img === 'string' && img.startsWith('(');
     for (const p of repasar({ red, texto: texto[red], imagen: sinDibujar ? 'https://x/y.jpg' : img, via })) {
@@ -425,7 +436,10 @@ async function ordenPublicar(op) {
   if (!op.ya) {
     console.log(C.ambar('ENSAYO') + C.gris(`  — nada se ha publicado. Por ${via}. Añade --ya para hacerlo de verdad.\n`));
     if (sinCuenta) console.log(C.ambar('⚠ ') + sinCuenta.split('\n')[0] + C.gris('  (el texto se puede repasar igual)\n'));
-    for (const red of redes) console.log(C.gris(`imagen ${red}  `) + (imagenes[red] || 'ninguna'));
+    for (const red of redes) {
+      const l = imagenes[red] || [];
+      console.log(C.gris(`imagen ${red}  `) + (l.length > 1 ? `${l.length} imágenes` : l[0] || 'ninguna'));
+    }
     if (via === 'metricool') {
       console.log(C.gris('cuando  ') + (op.cuando || 'dentro de 5 minutos') + (op.borrador ? C.ambar('  · como borrador') : ''));
     }
@@ -439,9 +453,13 @@ async function ordenPublicar(op) {
   }
 
   // Metricool no publica imágenes de fuera: primero las copia a su servidor.
+  // Metricool no publica imágenes de fuera: primero las copia a su servidor.
   const mediaIds = {};
   if (via === 'metricool') {
-    for (const red of redes) if (imagenes[red]) mediaIds[red] = await normalizarImagen(imagenes[red], destino.cred);
+    for (const red of redes) {
+      mediaIds[red] = [];
+      for (const u of imagenes[red] || []) mediaIds[red].push(await normalizarImagen(u, destino.cred));
+    }
   }
 
   for (const red of redes) {
@@ -451,7 +469,7 @@ async function ordenPublicar(op) {
         r = await programar({
           red,
           texto: texto[red],
-          mediaId: mediaIds[red],
+          mediaIds: mediaIds[red],
           fecha: op.cuando,
           zona: op.zona || process.env.TZ_PUBLICACION,
           borrador: op.borrador,
@@ -527,7 +545,8 @@ opciones de publicar
   --texto "…" | --texto-archivo <ruta>
   --texto-ig "…" --texto-fb "…"   para separar el texto de cada red
   --imagen <url>               manda sobre todo lo demás, la misma en las dos
-  --foto-pelada                la foto de origen, sin pasar por el kit
+  --foto-pelada                la foto de origen, sin pasar por el motor
+  --suelta                     una sola imagen en Instagram, sin carrusel
   --enlace <url>               solo Facebook, entrada sin foto
   --red ig | fb | ambas        por defecto, ambas
   --via meta | metricool       por defecto, la que tenga credenciales

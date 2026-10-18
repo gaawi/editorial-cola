@@ -16,7 +16,11 @@ motor.js                           el motor de dibujo del kit, traído tal cual
 entrar.html                        la puerta: entrar con GitHub
 middleware.js                      sin cookie firmada, no se entra
 api/auth.js · api/callback.js      el relevo de OAuth, copiado de ADAR
+render.html                        la misma página, sin interfaz: dibuja para publicar
 datos/posts.json                   las fichas, generadas desde el repo de ADAR
+datos/historico-ig.json            lo ya publicado en Instagram, con sus números
+datos/miniaturas/                  las portadas de lo publicado, para la rejilla
+etiquetas.json                     los tipos, los conciertos y qué lleva cada ficha
 aprobaciones.json                  lo que se decide, lo escribe la propia app
 construir-datos.mjs                rehace datos/posts.json
 ```
@@ -27,10 +31,28 @@ Cuando cambien las fichas en ADAR hay que rehacer los datos:
 node construir-datos.mjs      # lee ../adar y escribe datos/posts.json
 ```
 
-**El motor de dibujo es una copia.** Está traído de
-`src/components/KitRedes.astro` con las mismas medidas, y solo el estilo
-cinta. Si allí cambian las proporciones, hay que traer el cambio a mano: es
-la única copia que existe.
+**El motor de dibujo salió del kit y ya ha crecido.** Las medidas y los
+cuatro tipos de diapositiva vienen de `KitRedes.astro`, pero aquí dibuja en
+**4:5 (1080×1350)** para Instagram y acepta el estilo desde fuera. Las dos
+cosas hacían falta y el kit no las tiene, así que esto ya no es una copia que
+seguir: es el motor bueno.
+
+Por qué 4:5: la rejilla del perfil de Instagram es vertical y a una imagen
+cuadrada le recorta 108 px por cada lado. El texto empezaba a 92 px, así que
+el titular salía decapitado. Está medido, no supuesto.
+
+**El estilo lo decide la etiqueta**, no el gusto del día: así la rejilla
+tiene ritmo y de un vistazo se sabe qué es cada post.
+
+| Etiqueta | Estilo |
+|---|---|
+| Concert, News, Program | cinta |
+| Context | marco |
+| Offer | bloque |
+| Interview, Video, Recap | foto limpia |
+
+Las etiquetas viven en `etiquetas.json` y se editan desde la app, incluidas
+las nuevas.
 
 ## Publicar en Facebook e Instagram desde el chat. No tiene pantalla a propósito:
 la herramienta la ejecuta Claude en la conversación, enseña lo que va a salir,
@@ -140,11 +162,11 @@ node publicar.mjs publicar --texto "…" --enlace https://… --red fb
 
 ## Lo que conviene saber
 
-- **La imagen la dibuja el kit, no se manda la foto pelada.** Al publicar una
-  ficha se abre el kit de verdad (se construye el sitio, se sirve en local y
-  se pulsa su propio botón de descarga) y se sube lo que sale: 1080×1080 para
-  Instagram y 1200×630 para Facebook, cada una la suya. Con `--foto-pelada`
-  se manda la foto de origen, que es lo que se hacía antes sin querer.
+- **La imagen la dibuja el motor, y va el carrusel entero.** Al publicar una
+  ficha se dibujan todas sus diapositivas en 1080×1350 para Instagram —el
+  kit monta seis y antes salía solo la portada— y la portada en 1200×630 para
+  Facebook. Con `--suelta` va una sola; con `--foto-pelada`, la foto de
+  origen sin pasar por el motor.
 - **La imagen siempre tiene que estar en una URL pública que no caduque.**
   Publicando contra Meta, además, solo vale JPEG: Meta va a buscarla al
   publicar. Metricool se la copia antes a su servidor y acepta más formatos.

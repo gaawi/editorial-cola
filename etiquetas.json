@@ -1,0 +1,42 @@
+{
+  "_ayuda": "Las etiquetas de los posts. Dos ejes: «tipo» (para qué es el post) y «concierto» (a qué fecha pertenece). Los conciertos salen de creartbox.nyc/concerts.html. Cada tipo trae el estilo con que se dibuja, para que la rejilla tenga ritmo y no sean todos iguales. Se pueden añadir etiquetas nuevas desde la app.",
+  "actualizado": "2026-10-18",
+  "tipos": [
+    { "id": "concert",   "nombre": "Concert",   "estilo": "cinta",  "color": "#FFC403", "que": "Date, venue, tickets.", "tuyo": true },
+    { "id": "interview", "nombre": "Interview", "estilo": "limpia", "color": "#8B5CF6", "que": "The News series. The portrait already talks.", "tuyo": true },
+    { "id": "video",     "nombre": "Video",     "estilo": "limpia", "color": "#EC4899", "que": "Reels, recordings, film.", "tuyo": true },
+    { "id": "news",      "nombre": "News",      "estilo": "cinta",  "color": "#0EA5E9", "que": "Press releases, announcements.", "tuyo": true },
+    { "id": "offer",     "nombre": "Offer",     "estilo": "bloque", "color": "#F97316", "que": "Open calls, residencies, discounts. Reads like a notice.", "tuyo": true },
+
+    { "id": "recap",     "nombre": "Recap",     "estilo": "limpia", "color": "#15803D", "que": "After the concert: photos, who played, thanks.", "sugerida": true, "porque": "Es tu formato con más alcance: 758 de media frente a 317 de los anuncios." },
+    { "id": "context",   "nombre": "Context",   "estilo": "marco",  "color": "#B45309", "que": "One work, one performer, one programming decision.", "sugerida": true, "porque": "El post de Casarrubios explicando la obra hizo 1.074. Contar algo concreto funciona." },
+    { "id": "program",   "nombre": "Program",   "estilo": "cinta",  "color": "#0D9488", "que": "The booklet, timings, how to get there.", "sugerida": true, "porque": "Es lo que ya estabas haciendo con el cuadernillo y no tenía nombre." }
+  ],
+  "conciertos": [
+    { "id": "currents",      "nombre": "Currents",            "fecha": "2026-10-30", "sitio": "The DiMenna Center, New York" },
+    { "id": "illinois",      "nombre": "Illinois",            "fecha": "2026-11-06", "sitio": "Rammelkamp Chapel, Illinois College" },
+    { "id": "winterlight",   "nombre": "Winterlight",         "fecha": "2026-12-11", "sitio": "The DiMenna Center, New York" },
+    { "id": "louisville",    "nombre": "Louisville",          "fecha": "2027-02-28", "sitio": "Comstock Hall, Louisville" },
+    { "id": "masked-sounds", "nombre": "Masked Sounds",       "fecha": "2027-04-18", "sitio": "Saugerties, New York" },
+    { "id": "pressure",      "nombre": "Pressure and Release","fecha": "2027-04-23", "sitio": "The DiMenna Center, New York" },
+    { "id": "feverdream",    "nombre": "Feverdream",          "fecha": "2027-05-07", "sitio": "The DiMenna Center, New York" },
+    { "id": "adar-2027",     "nombre": "Festival ADAR 2027",  "fecha": "2027-08-02", "sitio": "Asturias, Spain" },
+    { "id": "gettysburg",    "nombre": "Gettysburg",          "fecha": "2027-09-28", "sitio": "Gettysburg Community Concert Association" },
+    { "id": "chapel",        "nombre": "Chapel Restoration",  "fecha": "2027-10-17", "sitio": "The Chapel Restoration" }
+  ],
+  "fichas": {
+    "creartbox:en/season-2026-27":            { "tipo": "news",      "concierto": null },
+    "creartbox:en/currents":                  { "tipo": "concert",   "concierto": "currents" },
+    "creartbox:en/winterlight":               { "tipo": "concert",   "concierto": "winterlight" },
+    "creartbox:en/pressure-and-release":      { "tipo": "concert",   "concierto": "pressure" },
+    "creartbox:en/feverdream":                { "tipo": "concert",   "concierto": "feverdream" },
+    "creartbox:en/currents-walk-on":          { "tipo": "context",   "concierto": "currents" },
+    "creartbox:en/currents-joachim":          { "tipo": "context",   "concierto": "currents" },
+    "creartbox:en/currents-laminar-flow":     { "tipo": "context",   "concierto": "currents" },
+    "creartbox:en/currents-who-plays":        { "tipo": "context",   "concierto": "currents" },
+    "creartbox:en/currents-the-night":        { "tipo": "program",   "concierto": "currents" },
+    "creartbox:en/currents-programme-online": { "tipo": "program",   "concierto": "currents" },
+    "creartbox:en/eric-moe-interview":        { "tipo": "interview", "concierto": "currents" }
+  },
+  "nuevas": []
+}

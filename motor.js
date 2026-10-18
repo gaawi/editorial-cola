@@ -8,10 +8,25 @@
  * Si allí cambian las medidas, hay que traer el cambio. Es la única copia.
  */
 export const TAMANOS = {
-  ig: [1080, 1080],
+  // 4:5 y no cuadrado, a propósito. La rejilla del perfil de Instagram es
+  // vertical: a una imagen cuadrada le recorta 108 px por cada lado, y el
+  // titular empieza a 92 px, así que se decapita. Medido, no supuesto.
+  ig: [1080, 1350],
+  cuadrada: [1080, 1080],
   story: [1080, 1920],
   fb: [1200, 630],
 };
+
+/**
+ * El estilo con que se dibuja cada diapositiva. No se elige a capricho: lo
+ * decide para qué es el post, así la rejilla tiene ritmo y de un vistazo se
+ * sabe qué es cada cosa.
+ *   cinta   — filete de acento y texto sobre la foto. El de siempre.
+ *   bloque  — banda sólida bajo la foto. Se lee como un aviso.
+ *   marco   — foto a sangre, velo y recuadro. El texto centrado.
+ *   limpia  — la foto y nada más. Para cuando la foto ya lo dice todo.
+ */
+export const ESTILOS = ['cinta', 'bloque', 'marco', 'limpia'];
 
 export function crearMotor(B) {
   const DISPLAY = B.display;
@@ -106,7 +121,7 @@ export function crearMotor(B) {
    * Dibuja una diapositiva en el canvas que se le pase.
    * `fmt` es 'ig', 'story' o 'fb'; `post` trae la foto y `slide` el texto.
    */
-  async function dibujar(canvas, post, slide, idx, total, fmt) {
+  async function dibujar(canvas, post, slide, idx, total, fmt, estilo = 'cinta') {
     const [W, H] = TAMANOS[fmt];
     canvas.width = W; canvas.height = H;
     const ctx = canvas.getContext('2d');
@@ -122,8 +137,64 @@ export function crearMotor(B) {
 
     if (slide.type === 'cover') {
       ctx.fillStyle = B.ink; ctx.fillRect(0, 0, W, H);
-      await foto(ctx, post.image, 0, 0, W, H);
 
+      // La foto y nada más.
+      if (estilo === 'limpia') {
+        await foto(ctx, post.image, 0, 0, W, H);
+        return;
+      }
+
+      // Foto arriba, banda sólida abajo. Para fotos con mucho ruido.
+      if (estilo === 'bloque') {
+        const bandH = Math.round(H * (fmt === 'story' ? 0.42 : 0.46));
+        await foto(ctx, post.image, 0, 0, W, H - bandH);
+        ctx.fillStyle = B.ink; ctx.fillRect(0, H - bandH, W, bandH);
+        ctx.fillStyle = B.accent;
+        ctx.fillRect(0, H - bandH, W, Math.max(5, Math.round(W * 0.009)));
+
+        const bTop = H - bandH + Math.round(pad * 0.75);
+        rotulo(ctx, rotSize, B.accent, Math.round(rotSize * 0.16));
+        ctx.fillText(B.stamp, pad, bTop + rotSize);
+        sinEspaciado(ctx);
+        const bAvail = bandH - Math.round(pad * 0.75) - rotSize * 3.4 - safeBottom;
+        const bfit = encajar(ctx, slide.title, W - pad * 2 - safeRight, bAvail, TW, DISPLAY, Math.round(W * 0.070), Math.round(W * 0.032));
+        ctx.font = `${TW} ${bfit.size}px ${DISPLAY}`; ctx.fillStyle = B.paper;
+        const byy = bTop + rotSize * 2.6 + bfit.size * 0.86;
+        bfit.lines.forEach((l, i) => ctx.fillText(l, pad, byy + i * bfit.size * 1.12));
+        rotulo(ctx, rotSize, rgba(B.paper, 0.6), 0);
+        ctx.fillText(B.site, pad, H - Math.round(pad * 0.4) - safeBottom);
+        sinEspaciado(ctx);
+        return;
+      }
+
+      // Foto a sangre, velo y filete perimetral; el texto, centrado.
+      if (estilo === 'marco') {
+        await foto(ctx, post.image, 0, 0, W, H);
+        ctx.fillStyle = rgba(B.ink, 0.52); ctx.fillRect(0, 0, W, H);
+        const inset = Math.round(W * 0.05);
+        ctx.strokeStyle = rgba(B.accent, 0.85);
+        ctx.lineWidth = Math.max(2, Math.round(W * 0.0035));
+        ctx.strokeRect(inset + safeTop * 0.2, inset + safeTop, W - inset * 2 - safeTop * 0.4, H - inset * 2 - safeTop - safeBottom);
+
+        const mAvail = H - safeTop - safeBottom;
+        const mfit = encajar(ctx, slide.title, W - pad * 2.4 - safeRight, mAvail * 0.44, TW, DISPLAY, Math.round(W * 0.078), Math.round(W * 0.034));
+        ctx.textAlign = 'center';
+        rotulo(ctx, rotSize, B.accent, Math.round(rotSize * 0.18));
+        const mBlockH = rotSize * 2.6 + mfit.lines.length * mfit.size * 1.12;
+        const mTop = safeTop + (mAvail - mBlockH) / 2;
+        ctx.fillText(B.stamp, W / 2, mTop + rotSize);
+        sinEspaciado(ctx);
+        ctx.font = `${TW} ${mfit.size}px ${DISPLAY}`; ctx.fillStyle = B.overPhotoInk;
+        const myy = mTop + rotSize * 2.6 + mfit.size * 0.86;
+        mfit.lines.forEach((l, i) => ctx.fillText(l, W / 2, myy + i * mfit.size * 1.12));
+        rotulo(ctx, rotSize, rgba(B.paper, 0.75), 0);
+        ctx.fillText(B.site, W / 2, H - inset - Math.round(pad * 0.35) - safeBottom);
+        ctx.textAlign = 'left';
+        sinEspaciado(ctx);
+        return;
+      }
+
+      await foto(ctx, post.image, 0, 0, W, H);
       const gTop = fmt === 'story' ? H * 0.42 : H * 0.32;
       const g = ctx.createLinearGradient(0, gTop, 0, H);
       g.addColorStop(0, rgba(B.ink, 0));
@@ -207,7 +278,17 @@ export function crearMotor(B) {
     }
 
     // type === 'text'
-    ctx.fillStyle = B.textBg; ctx.fillRect(0, 0, W, H);
+    const tBg = estilo === 'bloque' ? B.ink : B.textBg;
+    const tTitulo = estilo === 'bloque' ? B.paper : B.textTitle;
+    const tCuerpo = estilo === 'bloque' ? rgba(B.paper, 0.88) : B.textBody;
+    const tPie = estilo === 'bloque' ? rgba(B.paper, 0.55) : B.textFoot;
+    ctx.fillStyle = tBg; ctx.fillRect(0, 0, W, H);
+    if (estilo === 'marco') {
+      const tInset = Math.round(W * 0.05);
+      ctx.strokeStyle = rgba(B.accent, 0.9);
+      ctx.lineWidth = Math.max(2, Math.round(W * 0.0035));
+      ctx.strokeRect(tInset, tInset + safeTop, W - tInset * 2, H - tInset * 2 - safeTop - safeBottom);
+    }
     const tf = encajar(ctx, slide.title, maxW, areaH * 0.34, TW, DISPLAY, Math.round(W * 0.066), Math.round(W * 0.036));
     const tTitleH = tf.lines.length * tf.size * 1.12;
     const bf = encajar(ctx, slide.body, maxW, areaH - tTitleH - ruleH - gapRule - gapBody, '400', UI, Math.round(W * 0.042), Math.round(W * 0.024));
@@ -216,14 +297,14 @@ export function crearMotor(B) {
 
     ctx.fillStyle = B.accent;
     ctx.fillRect(pad, tTop, Math.round(W * 0.12), ruleH);
-    ctx.font = `${TW} ${tf.size}px ${DISPLAY}`; ctx.fillStyle = B.textTitle;
+    ctx.font = `${TW} ${tf.size}px ${DISPLAY}`; ctx.fillStyle = tTitulo;
     const ty = tTop + ruleH + gapRule + tf.size * 0.86;
     tf.lines.forEach((l, i) => ctx.fillText(l, pad, ty + i * tf.size * 1.12));
-    ctx.font = `400 ${bf.size}px ${UI}`; ctx.fillStyle = B.textBody;
+    ctx.font = `400 ${bf.size}px ${UI}`; ctx.fillStyle = tCuerpo;
     const bodyTop = tTop + ruleH + gapRule + tTitleH + gapBody + bf.size * 0.86;
     bf.lines.forEach((l, i) => ctx.fillText(l, pad, bodyTop + i * bf.size * 1.42));
 
-    rotulo(ctx, rotSize, B.textFoot, Math.round(rotSize * 0.12));
+    rotulo(ctx, rotSize, tPie, Math.round(rotSize * 0.12));
     ctx.fillText(`${String(idx + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`, pad, footY);
     ctx.textAlign = 'right';
     ctx.fillText(B.stamp, W - pad, footY);
@@ -231,5 +312,5 @@ export function crearMotor(B) {
     sinEspaciado(ctx);
   }
 
-  return { dibujar, asegurarFuentes };
+  return { dibujar, asegurarFuentes, TAMANOS, ESTILOS };
 }

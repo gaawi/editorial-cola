@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-18T12:23:30.365Z",
+ "generado": "2026-10-18T12:37:04.848Z",
  "origen": "gaawi/adar",
  "marcas": {
   "creartbox": {
@@ -36,8 +36,144 @@
     "fb": "CreArtBox",
     "avatar": "avatares/creartbox.png"
    },
+   "etiquetas": {
+    "tipos": [
+     {
+      "id": "concert",
+      "nombre": "Concert",
+      "estilo": "cinta",
+      "color": "#FFC403",
+      "que": "Date, venue, tickets.",
+      "tuyo": true
+     },
+     {
+      "id": "interview",
+      "nombre": "Interview",
+      "estilo": "limpia",
+      "color": "#8B5CF6",
+      "que": "The News series. The portrait already talks.",
+      "tuyo": true
+     },
+     {
+      "id": "video",
+      "nombre": "Video",
+      "estilo": "limpia",
+      "color": "#EC4899",
+      "que": "Reels, recordings, film.",
+      "tuyo": true
+     },
+     {
+      "id": "news",
+      "nombre": "News",
+      "estilo": "cinta",
+      "color": "#0EA5E9",
+      "que": "Press releases, announcements.",
+      "tuyo": true
+     },
+     {
+      "id": "offer",
+      "nombre": "Offer",
+      "estilo": "bloque",
+      "color": "#F97316",
+      "que": "Open calls, residencies, discounts. Reads like a notice.",
+      "tuyo": true
+     },
+     {
+      "id": "recap",
+      "nombre": "Recap",
+      "estilo": "limpia",
+      "color": "#15803D",
+      "que": "After the concert: photos, who played, thanks.",
+      "sugerida": true,
+      "porque": "Es tu formato con más alcance: 758 de media frente a 317 de los anuncios."
+     },
+     {
+      "id": "context",
+      "nombre": "Context",
+      "estilo": "marco",
+      "color": "#B45309",
+      "que": "One work, one performer, one programming decision.",
+      "sugerida": true,
+      "porque": "El post de Casarrubios explicando la obra hizo 1.074. Contar algo concreto funciona."
+     },
+     {
+      "id": "program",
+      "nombre": "Program",
+      "estilo": "cinta",
+      "color": "#0D9488",
+      "que": "The booklet, timings, how to get there.",
+      "sugerida": true,
+      "porque": "Es lo que ya estabas haciendo con el cuadernillo y no tenía nombre."
+     }
+    ],
+    "conciertos": [
+     {
+      "id": "currents",
+      "nombre": "Currents",
+      "fecha": "2026-10-30",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "illinois",
+      "nombre": "Illinois",
+      "fecha": "2026-11-06",
+      "sitio": "Rammelkamp Chapel, Illinois College"
+     },
+     {
+      "id": "winterlight",
+      "nombre": "Winterlight",
+      "fecha": "2026-12-11",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "louisville",
+      "nombre": "Louisville",
+      "fecha": "2027-02-28",
+      "sitio": "Comstock Hall, Louisville"
+     },
+     {
+      "id": "masked-sounds",
+      "nombre": "Masked Sounds",
+      "fecha": "2027-04-18",
+      "sitio": "Saugerties, New York"
+     },
+     {
+      "id": "pressure",
+      "nombre": "Pressure and Release",
+      "fecha": "2027-04-23",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "feverdream",
+      "nombre": "Feverdream",
+      "fecha": "2027-05-07",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "adar-2027",
+      "nombre": "Festival ADAR 2027",
+      "fecha": "2027-08-02",
+      "sitio": "Asturias, Spain"
+     },
+     {
+      "id": "gettysburg",
+      "nombre": "Gettysburg",
+      "fecha": "2027-09-28",
+      "sitio": "Gettysburg Community Concert Association"
+     },
+     {
+      "id": "chapel",
+      "nombre": "Chapel Restoration",
+      "fecha": "2027-10-17",
+      "sitio": "The Chapel Restoration"
+     }
+    ]
+   },
    "posts": [
     {
+     "tipo": "news",
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "en/season-2026-27",
      "lang": "en",
      "slug": "season-2026-27",
@@ -120,6 +256,9 @@
      }
     },
     {
+     "tipo": "concert",
+     "concierto": "currents",
+     "estilo": "cinta",
      "clave": "en/currents",
      "lang": "en",
      "slug": "currents",
@@ -191,6 +330,9 @@
      }
     },
     {
+     "tipo": "concert",
+     "concierto": "winterlight",
+     "estilo": "cinta",
      "clave": "en/winterlight",
      "lang": "en",
      "slug": "winterlight",
@@ -252,6 +394,9 @@
      }
     },
     {
+     "tipo": "concert",
+     "concierto": "pressure",
+     "estilo": "cinta",
      "clave": "en/pressure-and-release",
      "lang": "en",
      "slug": "pressure-and-release",
@@ -318,6 +463,9 @@
      }
     },
     {
+     "tipo": "concert",
+     "concierto": "feverdream",
+     "estilo": "cinta",
      "clave": "en/feverdream",
      "lang": "en",
      "slug": "feverdream",
@@ -384,6 +532,9 @@
      }
     },
     {
+     "tipo": "context",
+     "concierto": "currents",
+     "estilo": "marco",
      "clave": "en/currents-walk-on",
      "lang": "en",
      "slug": "currents-walk-on",
@@ -450,6 +601,9 @@
      }
     },
     {
+     "tipo": "context",
+     "concierto": "currents",
+     "estilo": "marco",
      "clave": "en/currents-joachim",
      "lang": "en",
      "slug": "currents-joachim",
@@ -516,6 +670,9 @@
      }
     },
     {
+     "tipo": "context",
+     "concierto": "currents",
+     "estilo": "marco",
      "clave": "en/currents-laminar-flow",
      "lang": "en",
      "slug": "currents-laminar-flow",
@@ -582,6 +739,9 @@
      }
     },
     {
+     "tipo": "context",
+     "concierto": "currents",
+     "estilo": "marco",
      "clave": "en/currents-who-plays",
      "lang": "en",
      "slug": "currents-who-plays",
@@ -637,6 +797,9 @@
      }
     },
     {
+     "tipo": "program",
+     "concierto": "currents",
+     "estilo": "cinta",
      "clave": "en/currents-the-night",
      "lang": "en",
      "slug": "currents-the-night",
@@ -692,6 +855,9 @@
      }
     },
     {
+     "tipo": "program",
+     "concierto": "currents",
+     "estilo": "cinta",
      "clave": "en/currents-programme-online",
      "lang": "en",
      "slug": "currents-programme-online",
@@ -758,6 +924,9 @@
      }
     },
     {
+     "tipo": "interview",
+     "concierto": "currents",
+     "estilo": "limpia",
      "clave": "en/eric-moe-interview",
      "lang": "en",
      "slug": "eric-moe-interview",
@@ -839,8 +1008,144 @@
     "fb": "Festival ADAR",
     "avatar": "avatares/adar.png"
    },
+   "etiquetas": {
+    "tipos": [
+     {
+      "id": "concert",
+      "nombre": "Concert",
+      "estilo": "cinta",
+      "color": "#FFC403",
+      "que": "Date, venue, tickets.",
+      "tuyo": true
+     },
+     {
+      "id": "interview",
+      "nombre": "Interview",
+      "estilo": "limpia",
+      "color": "#8B5CF6",
+      "que": "The News series. The portrait already talks.",
+      "tuyo": true
+     },
+     {
+      "id": "video",
+      "nombre": "Video",
+      "estilo": "limpia",
+      "color": "#EC4899",
+      "que": "Reels, recordings, film.",
+      "tuyo": true
+     },
+     {
+      "id": "news",
+      "nombre": "News",
+      "estilo": "cinta",
+      "color": "#0EA5E9",
+      "que": "Press releases, announcements.",
+      "tuyo": true
+     },
+     {
+      "id": "offer",
+      "nombre": "Offer",
+      "estilo": "bloque",
+      "color": "#F97316",
+      "que": "Open calls, residencies, discounts. Reads like a notice.",
+      "tuyo": true
+     },
+     {
+      "id": "recap",
+      "nombre": "Recap",
+      "estilo": "limpia",
+      "color": "#15803D",
+      "que": "After the concert: photos, who played, thanks.",
+      "sugerida": true,
+      "porque": "Es tu formato con más alcance: 758 de media frente a 317 de los anuncios."
+     },
+     {
+      "id": "context",
+      "nombre": "Context",
+      "estilo": "marco",
+      "color": "#B45309",
+      "que": "One work, one performer, one programming decision.",
+      "sugerida": true,
+      "porque": "El post de Casarrubios explicando la obra hizo 1.074. Contar algo concreto funciona."
+     },
+     {
+      "id": "program",
+      "nombre": "Program",
+      "estilo": "cinta",
+      "color": "#0D9488",
+      "que": "The booklet, timings, how to get there.",
+      "sugerida": true,
+      "porque": "Es lo que ya estabas haciendo con el cuadernillo y no tenía nombre."
+     }
+    ],
+    "conciertos": [
+     {
+      "id": "currents",
+      "nombre": "Currents",
+      "fecha": "2026-10-30",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "illinois",
+      "nombre": "Illinois",
+      "fecha": "2026-11-06",
+      "sitio": "Rammelkamp Chapel, Illinois College"
+     },
+     {
+      "id": "winterlight",
+      "nombre": "Winterlight",
+      "fecha": "2026-12-11",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "louisville",
+      "nombre": "Louisville",
+      "fecha": "2027-02-28",
+      "sitio": "Comstock Hall, Louisville"
+     },
+     {
+      "id": "masked-sounds",
+      "nombre": "Masked Sounds",
+      "fecha": "2027-04-18",
+      "sitio": "Saugerties, New York"
+     },
+     {
+      "id": "pressure",
+      "nombre": "Pressure and Release",
+      "fecha": "2027-04-23",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "feverdream",
+      "nombre": "Feverdream",
+      "fecha": "2027-05-07",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "adar-2027",
+      "nombre": "Festival ADAR 2027",
+      "fecha": "2027-08-02",
+      "sitio": "Asturias, Spain"
+     },
+     {
+      "id": "gettysburg",
+      "nombre": "Gettysburg",
+      "fecha": "2027-09-28",
+      "sitio": "Gettysburg Community Concert Association"
+     },
+     {
+      "id": "chapel",
+      "nombre": "Chapel Restoration",
+      "fecha": "2027-10-17",
+      "sitio": "The Chapel Restoration"
+     }
+    ]
+   },
    "posts": [
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/por-que-tocar-bach-en-un-horreo",
      "lang": "es",
      "slug": "por-que-tocar-bach-en-un-horreo",
@@ -902,6 +1207,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/la-espana-que-no-se-vacia",
      "lang": "es",
      "slug": "la-espana-que-no-se-vacia",
@@ -963,6 +1271,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/estrenamos-blog",
      "lang": "es",
      "slug": "estrenamos-blog",
@@ -1006,6 +1317,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/el-programa-antes-del-concierto",
      "lang": "es",
      "slug": "el-programa-antes-del-concierto",
@@ -1077,6 +1391,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/el-mapa-de-adar-catorce-concejos",
      "lang": "es",
      "slug": "el-mapa-de-adar-catorce-concejos",
@@ -1143,6 +1460,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/por-que-documentamos-todo",
      "lang": "es",
      "slug": "por-que-documentamos-todo",
@@ -1214,6 +1534,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/mizuko-kaji-el-escenario-como-obra",
      "lang": "es",
      "slug": "mizuko-kaji-el-escenario-como-obra",
@@ -1285,6 +1608,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/las-compositoras-que-programamos",
      "lang": "es",
      "slug": "las-compositoras-que-programamos",
@@ -1356,6 +1682,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/la-tiendina-sube-a-la-aldea",
      "lang": "es",
      "slug": "la-tiendina-sube-a-la-aldea",
@@ -1432,6 +1761,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/como-elegimos-un-sitio",
      "lang": "es",
      "slug": "como-elegimos-un-sitio",
@@ -1508,6 +1840,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/grado-tres-eventos-en-una-noche",
      "lang": "es",
      "slug": "grado-tres-eventos-en-una-noche",
@@ -1574,6 +1909,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/bach-filmado-en-leiguarda",
      "lang": "es",
      "slug": "bach-filmado-en-leiguarda",
@@ -1646,6 +1984,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/taramundi-cuchillos-y-mussorgsky",
      "lang": "es",
      "slug": "taramundi-cuchillos-y-mussorgsky",
@@ -1712,6 +2053,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/por-que-encargamos-musica-nueva",
      "lang": "es",
      "slug": "por-que-encargamos-musica-nueva",
@@ -1783,6 +2127,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/monasterios-mil-anos-de-acustica",
      "lang": "es",
      "slug": "monasterios-mil-anos-de-acustica",
@@ -1855,6 +2202,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/menhir-geopuncion-paisaje",
      "lang": "es",
      "slug": "menhir-geopuncion-paisaje",
@@ -1926,6 +2276,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/toccata-and-bruise-la-musica-del-tacto",
      "lang": "es",
      "slug": "toccata-and-bruise-la-musica-del-tacto",
@@ -1997,6 +2350,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/somiedo-musica-donde-viven-los-osos",
      "lang": "es",
      "slug": "somiedo-musica-donde-viven-los-osos",
@@ -2064,6 +2420,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/una-ballena-en-un-monasterio",
      "lang": "es",
      "slug": "una-ballena-en-un-monasterio",
@@ -2136,6 +2495,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/andrea-casarrubios-seven",
      "lang": "es",
      "slug": "andrea-casarrubios-seven",
@@ -2202,6 +2564,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/el-horreo-como-sala-de-conciertos",
      "lang": "es",
      "slug": "el-horreo-como-sala-de-conciertos",
@@ -2269,6 +2634,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/que-es-un-paseo-sonoro",
      "lang": "es",
      "slug": "que-es-un-paseo-sonoro",
@@ -2340,6 +2708,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/leiguarda-47-la-sede",
      "lang": "es",
      "slug": "leiguarda-47-la-sede",
@@ -2411,6 +2782,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/de-nueva-york-a-una-aldea",
      "lang": "es",
      "slug": "de-nueva-york-a-una-aldea",
@@ -2478,6 +2852,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/el-orballo-del-primer-concierto",
      "lang": "es",
      "slug": "el-orballo-del-primer-concierto",
@@ -2549,6 +2926,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/seis-ediciones-de-adar",
      "lang": "es",
      "slug": "seis-ediciones-de-adar",
@@ -2620,6 +3000,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/la-espicha-despues-del-ultimo-acorde",
      "lang": "es",
      "slug": "la-espicha-despues-del-ultimo-acorde",
@@ -2681,6 +3064,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/como-escuchar-sweet-air-david-lang",
      "lang": "es",
      "slug": "como-escuchar-sweet-air-david-lang",
@@ -2747,6 +3133,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/germanavicius-california-sketches",
      "lang": "es",
      "slug": "germanavicius-california-sketches",
@@ -2808,6 +3197,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/horreos-y-paneras-concurso",
      "lang": "es",
      "slug": "horreos-y-paneras-concurso",
@@ -2874,6 +3266,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/equilibrium-residencia-la-casona",
      "lang": "es",
      "slug": "equilibrium-residencia-la-casona",
@@ -2940,6 +3335,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/una-birbyne-en-leiguarda",
      "lang": "es",
      "slug": "una-birbyne-en-leiguarda",
@@ -3006,6 +3404,9 @@
      }
     },
     {
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
      "clave": "es/el-eclipse-que-apago-asturias",
      "lang": "es",
      "slug": "el-eclipse-que-apago-asturias",

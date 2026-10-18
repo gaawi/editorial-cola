@@ -107,7 +107,7 @@ button { background: none; border: none; cursor: pointer; }
 .ig-carrete { position: relative; }
 .ig-carrete .tira { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .ig-carrete .tira::-webkit-scrollbar { display: none; }
-.ig-carrete canvas { width: 100%; flex: 0 0 100%; scroll-snap-align: center; display: block; aspect-ratio: 1/1; background: #000; }
+.ig-carrete canvas { width: 100%; flex: 0 0 100%; scroll-snap-align: center; display: block; aspect-ratio: 4/5; background: #000; }
 .ig-cuenta { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,.6); color: #fff;
   font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
 .ig-puntos { display: flex; justify-content: center; gap: 4px; padding: 10px 0 2px; }
@@ -186,3 +186,59 @@ button { background: none; border: none; cursor: pointer; }
   padding: 12px 14px; border-radius: 12px; font-size: 14px; text-align: center;
 }
 .aviso.mal { background: var(--no); }
+
+
+/* ── Pestañas ──────────────────────────────────────────────────────── */
+.pestanas { display: flex; gap: 0; border-bottom: 1px solid var(--filete); margin: 0 -16px 0; padding: 0 16px; }
+.pest {
+  flex: 1; padding: 14px 0 11px; font-size: 14px; font-weight: 500; color: var(--tenue);
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+}
+.pest.activo { color: var(--tinta); border-bottom-color: var(--tinta); }
+
+/* ── Etiquetas ─────────────────────────────────────────────────────── */
+.etiquetas-filtro { display: flex; gap: 6px; overflow-x: auto; padding: 0 0 12px; scrollbar-width: none; }
+.etiquetas-filtro::-webkit-scrollbar { display: none; }
+.etq {
+  flex-shrink: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.02em;
+  padding: 5px 10px; border-radius: 999px; border: 1px solid var(--filete);
+  background: #fff; color: var(--suave); white-space: nowrap;
+}
+.etq.on { color: #fff; border-color: transparent; }
+.etq-mini { font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 700; letter-spacing: 0.04em; }
+
+.etiquetar { margin-top: 18px; }
+.etq-fila { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
+.etq-fila::-webkit-scrollbar { display: none; }
+
+/* ── Rejilla de lo publicado ───────────────────────────────────────── */
+.aviso-suave { font-size: 12px; color: var(--suave); padding: 14px 0 12px; line-height: 1.5; }
+.rejilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 0 -16px; }
+.rejilla button { position: relative; aspect-ratio: 4/5; background: #f5f5f4; }
+.rejilla img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rejilla .num {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 6px 4px;
+  background: linear-gradient(transparent, rgba(0,0,0,.65));
+  color: #fff; font-size: 10px; font-weight: 600; text-align: left;
+}
+
+/* ── Hoja de una publicación ───────────────────────────────────────── */
+.hoja { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.6); display: flex; align-items: flex-end; }
+.hoja-caja {
+  width: 100%; max-height: 88svh; overflow-y: auto; background: var(--papel);
+  border-radius: 18px 18px 0 0; position: relative;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom));
+}
+.hoja-cerrar {
+  position: absolute; top: 10px; right: 12px; z-index: 2;
+  width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,.5); color: #fff; font-size: 20px; line-height: 1;
+}
+.hoja-caja img { width: 100%; display: block; border-radius: 18px 18px 0 0; }
+.hoja-datos { padding: 16px; }
+.hoja-datos .cuando { font-size: 12px; color: var(--tenue); margin-bottom: 8px; }
+.hoja-datos .tema { font-family: Literata, Georgia, serif; font-size: 17px; line-height: 1.3; margin-bottom: 12px; }
+.hoja-datos .cifras { display: flex; gap: 16px; margin-bottom: 14px; }
+.hoja-datos .cifras b { display: block; font-size: 18px; }
+.hoja-datos .cifras span { font-size: 11px; color: var(--tenue); }
+.hoja-datos a { display: block; text-align: center; padding: 12px; border: 1px solid var(--filete);
+  border-radius: 10px; color: var(--suave); text-decoration: none; font-size: 14px; background: #fff; }

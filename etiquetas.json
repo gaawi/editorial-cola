@@ -213,20 +213,32 @@
    "tipo": "context",
    "concierto": "currents"
   },
-  "creartbox:en/currents-clara": {
-   "tipo": "context",
-   "concierto": "currents"
-  },
-  "creartbox:en/currents-video-art": {
-   "tipo": "context",
-   "concierto": "currents"
-  },
   "creartbox:en/currents-open-call-moe": {
    "tipo": "context",
    "concierto": "currents"
   },
   "creartbox:en/currents-recap": {
    "tipo": "recap",
+   "concierto": "currents"
+  },
+  "creartbox:en/currents-cello-retune": {
+   "tipo": "context",
+   "concierto": "currents"
+  },
+  "creartbox:en/currents-brahms-quit": {
+   "tipo": "context",
+   "concierto": "currents"
+  },
+  "creartbox:en/currents-clara-last": {
+   "tipo": "context",
+   "concierto": "currents"
+  },
+  "creartbox:en/currents-you-can-see": {
+   "tipo": "context",
+   "concierto": "currents"
+  },
+  "creartbox:en/currents-no-barrier": {
+   "tipo": "concert",
    "concierto": "currents"
   }
  },

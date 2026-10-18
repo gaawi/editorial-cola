@@ -11,9 +11,13 @@
 // Si no hay sesión, redirige al panel en vez de mostrar un error.
 
 export const config = {
-  // Todo menos la puerta y el relevo de OAuth. Los datos también: son los
-  // borradores, y es justo lo que no puede quedar abierto.
-  matcher: ['/', '/index.html', '/app.js', '/motor.js', '/estilo.css', '/datos/:path*', '/aprobaciones.json'],
+  // Todo menos la puerta y el relevo de OAuth.
+  //
+  // Antes era una lista a mano y se quedaba corta cada vez que se añadía un
+  // archivo: quedaron abiertos registro.jsonl, que lleva el texto de todo lo
+  // publicado, etiquetas.json y el código de la herramienta. Mejor al revés:
+  // cerrado por defecto y se nombra lo que puede pasar.
+  matcher: ['/((?!api/|entrar|_vercel|favicon).*)'],
 };
 
 function hexToBytes(hex) {

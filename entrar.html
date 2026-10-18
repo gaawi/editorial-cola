@@ -4,8 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Entrar</title>
-<link rel="stylesheet" href="estilo.css">
 <style>
+  /* Los estilos van aquí dentro: estilo.css está detrás de la puerta y la
+     puerta no puede depender de lo que hay al otro lado. */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --papel: #faf9f8; --tinta: #1c1917; --suave: #57534e; --filete: #e7e5e4; --no: #b91c1c; }
+  html, body { background: var(--papel); color: var(--tinta);
+    font-family: Archivo, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  .btn { min-height: 48px; border-radius: 12px; font: inherit; font-size: 15px; font-weight: 600;
+    border: 1px solid; cursor: pointer; }
   body { display: grid; place-items: center; min-height: 100svh; padding: 24px; }
   .puerta { text-align: center; max-width: 320px; }
   .puerta h1 { font-family: Literata, Georgia, serif; font-size: 24px; margin-bottom: 8px; }

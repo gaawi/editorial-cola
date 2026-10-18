@@ -57,9 +57,35 @@ tiene ritmo y de un vistazo se sabe qué es cada post.
 El carrusel se corta en **cuatro** diapositivas (portada, dos y cierre): el
 kit monta hasta ocho y nadie llega al final. Se cambia con `TOPE_SLIDES`.
 
-Lo que ya salió en Instagram **desaparece de «Pendientes»** y se marca con un
-enlace a la publicación. Se cruza el titular de la ficha con
+Lo que ya salió en Instagram **desaparece del muro** y se marca con un enlace
+a la publicación. Se cruza el titular de la ficha con
 `datos/historico-ig.json`.
+
+## El calendario
+
+Los conciertos de `etiquetas.json` son el calendario, y de ellos cuelga la
+**ventana** de cada post: cuándo tiene sentido publicarlo.
+
+| Tipo | Ventana | Por qué |
+|---|---|---|
+| Concert | D−45 a D−7 | anunciar pronto y dejar de insistir una semana antes |
+| Interview | D−30 a D−3 | da contexto y aguanta; el mismo día ya no |
+| Context | D−21 a D−2 | la cuesta del concierto |
+| Program | D−14 a D−1 | útil cuando alguien ya ha decidido venir |
+| Recap | D+1 a D+6 | en caliente; a la semana no lo lee nadie |
+
+Lo que no cuelga de un concierto —News, Offer, Video— cuenta treinta días
+desde su propia fecha.
+
+El filtro **«Ahora»** es la vista por defecto y enseña solo lo que está
+dentro de su ventana y sin resolver. **Posponer no es «dentro de una
+semana»**: si el momento aún no ha llegado, vuelve cuando empiece; si ya
+estamos dentro, vuelve en cuatro días sin pasarse del final; y si el momento
+pasó, no vuelve, porque pedirlo sería mentir. Lo pospuesto desaparece
+también de los circulitos.
+
+**Las etiquetas no se ven en la app.** Trabajan por detrás: deciden el
+estilo y la ventana. Para cambiar una, se toca `etiquetas.json`.
 
 Las etiquetas viven en `etiquetas.json` y se editan desde la app, incluidas
 las nuevas.

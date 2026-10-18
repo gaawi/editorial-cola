@@ -41,7 +41,8 @@ let APROB = { posts: {} };
 let shaAprob = null;
 let actual = null;
 let filtro = 'pendientes';
-let filtroEtq = null;       // id de tipo o de concierto, o null
+const HOY = new Date().toISOString().slice(0, 10);
+const DIA = 86400000;
 let HISTORICO = null;
 
 /**
@@ -93,7 +94,7 @@ function aviso(texto, mal) {
 // Manda lo que se haya decidido aquí; si no hay nada, lo que traía el panel.
 function estadoDe(p) {
   const mio = APROB.posts[p.clave];
-  if (mio && mio.estado) return { estado: mio.estado, nota: mio.nota || '', mio: true, fecha: mio.fecha };
+  if (mio && mio.estado) return { estado: mio.estado, nota: mio.nota || '', volver: mio.volver || null, mio: true, fecha: mio.fecha };
   const h = p.heredado || {};
   return { estado: h.estado || 'sin', nota: h.nota || '', mio: false };
 }
@@ -103,22 +104,6 @@ function yaPublicado(p) {
 }
 
 // ── Lista ──────────────────────────────────────────────────────────────
-function pintarFiltrosEtq() {
-  const e = DATOS.marcas[MARCA].etiquetas;
-  const cont = $('#etiquetas-filtro');
-  const usados = new Set(DATOS.marcas[MARCA].posts.flatMap((p) => [p.tipo, p.concierto]).filter(Boolean));
-  const trozos = [`<button class="etq${filtroEtq ? '' : ' on'}" data-etq="" style="${filtroEtq ? '' : 'background:var(--tinta)'}">Todas</button>`];
-  for (const t of e.tipos) {
-    if (!usados.has(t.id)) continue;
-    trozos.push(`<button class="etq${filtroEtq === t.id ? ' on' : ''}" data-etq="${t.id}" style="${filtroEtq === t.id ? `background:${t.color}` : `color:${t.color}`}">${escapar(t.nombre)}</button>`);
-  }
-  for (const c of e.conciertos) {
-    if (!usados.has(c.id)) continue;
-    trozos.push(`<button class="etq${filtroEtq === c.id ? ' on' : ''}" data-etq="${c.id}" style="${filtroEtq === c.id ? 'background:var(--tinta)' : ''}">${escapar(c.nombre)}</button>`);
-  }
-  cont.innerHTML = trozos.join('');
-}
-
 /**
  * La fila de circulitos, como la de la app. Llevan la foto de la ficha y no
  * la historia dibujada: es lo que Instagram enseña ahí, y dibujar doce
@@ -165,16 +150,15 @@ async function abrirHistoria(clave) {
 }
 
 function pintarLista() {
-  pintarFiltrosEtq();
   const cont = $('#fichas');
   cont.innerHTML = '';
   const posts = DATOS.marcas[MARCA].posts.filter((p) => {
     const e = estadoDe(p).estado;
-    if (filtroEtq && p.tipo !== filtroEtq && p.concierto !== filtroEtq) return false;
     if (filtro === 'listos') return e === 'listo';
-    // Pendiente es lo que falta por decidir. Lo que ya salió no lo es.
-    if (filtro === 'pendientes') return e !== 'listo' && e !== 'descartado' && !p.publicadoEn;
-    return true;
+    if (filtro === 'todas') return true;
+    // «Ahora»: lo que tiene sentido esta semana y está sin resolver. Fuera lo
+    // publicado, lo descartado, lo ya aprobado y lo que duerme.
+    return e !== 'listo' && e !== 'descartado' && !p.publicadoEn && enVentana(p) && !dormido(p);
   });
 
   $('#vacio').hidden = posts.length > 0;
@@ -186,7 +170,6 @@ function pintarLista() {
 /** Un post del muro: como se verá, con la decisión debajo. */
 function tarjeta(p) {
   const e = estadoDe(p);
-  const t = p.tipo ? tipoDe(p.tipo) : null;
   const c = p.concierto ? conciertoDe(p.concierto) : null;
   const pub = yaPublicado(p);
 
@@ -195,13 +178,12 @@ function tarjeta(p) {
   art.dataset.clave = p.clave;
   art.innerHTML = `
     <div class="cabecera-ficha">
-      ${t ? pastilla(t.nombre, t.color, true, 'etq etq-mini') : ''}
-      ${c ? `<span class="etq etq-mini" style="color:var(--suave)">${escapar(c.nombre)}</span>` : ''}
+      ${c ? `<span class="cuando-ficha">${escapar(c.nombre)}</span>` : ''}
+      ${cuandoTexto(p) ? `<span class="cuando-ficha tenue">${cuandoTexto(p)}</span>` : ''}
       ${p.publicadoEn
         ? `<a class="sello publicado" href="${p.publicadoEn.url}" target="_blank" rel="noopener">publicado el ${p.publicadoEn.fecha} ↗</a>`
         : pub.length ? `<span class="sello publicado">ya en ${pub.join('+')}</span>` : ''}
       <span class="crece"></span>
-      <span>${p.date || ''}</span>
     </div>
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
     ${e.nota ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
@@ -258,12 +240,23 @@ async function decidirEn(p, estado, art) {
   }
   // Volver a tocar la que ya estaba la quita.
   const ya = estadoDe(p).estado === estado;
-  return guardarDecision(p, ya ? '' : estado, '', art);
+  if (ya) return guardarDecision(p, '', '', art);
+  if (estado === 'espera') {
+    const volver = cuandoVolver(p);
+    await guardarDecision(p, 'espera', '', art, volver);
+    aviso(volver ? `Vuelve el ${volver}` : 'Guardado: a este ya se le pasó el momento');
+    pintarLista();
+    return;
+  }
+  return guardarDecision(p, estado, '', art);
 }
 
-async function guardarDecision(p, estado, nota, art) {
+async function guardarDecision(p, estado, nota, art, volver) {
   const antes = APROB.posts[p.clave];
-  if (estado) APROB.posts[p.clave] = { estado, nota, titulo: p.title, fecha: new Date().toISOString() };
+  if (estado) {
+    APROB.posts[p.clave] = { estado, nota, titulo: p.title, fecha: new Date().toISOString() };
+    if (volver) APROB.posts[p.clave].volver = volver;
+  }
   else delete APROB.posts[p.clave];
   refrescarDecisiones(p, art);
   aviso('Guardando…');
@@ -299,17 +292,45 @@ function refrescarDecisiones(p, art) {
   }
 }
 
-function tipoDe(id) {
-  return (DATOS.marcas[MARCA].etiquetas.tipos || []).find((t) => t.id === id) || null;
+/**
+ * Cuándo volver a enseñar algo pospuesto.
+ *
+ * No es «dentro de una semana» a ciegas: depende de qué sea el post y de
+ * cuándo es su concierto. Si su momento aún no ha llegado, vuelve cuando
+ * empiece. Si ya estamos dentro, vuelve en unos días, sin pasarse del final.
+ * Si el momento ya pasó, no vuelve: pedirlo sería mentir.
+ */
+function cuandoVolver(p) {
+  const v = p.ventana;
+  if (!v) return sumaDias(HOY, 7);
+  if (HOY < v.desde) return v.desde;
+  if (HOY > v.hasta) return null;
+  const en4 = sumaDias(HOY, 4);
+  return en4 > v.hasta ? v.hasta : en4;
 }
-function conciertoDe(id) {
-  return (DATOS.marcas[MARCA].etiquetas.conciertos || []).find((c) => c.id === id) || null;
+function sumaDias(fecha, n) {
+  return new Date(new Date(fecha + 'T12:00:00Z').getTime() + n * DIA).toISOString().slice(0, 10);
+}
+function enVentana(p) {
+  return !p.ventana || (HOY >= p.ventana.desde && HOY <= p.ventana.hasta);
+}
+/** Un pospuesto está dormido hasta su fecha. */
+function dormido(p) {
+  const e = estadoDe(p);
+  return e.estado === 'espera' && (!e.volver || HOY < e.volver);
+}
+/** Para decirlo en la tarjeta sin que parezca una fecha de caducidad. */
+function cuandoTexto(p) {
+  const v = p.ventana;
+  if (!v) return '';
+  if (HOY < v.desde) return `su momento empieza el ${v.desde}`;
+  if (HOY > v.hasta) return `se pasó su momento el ${v.hasta}`;
+  const quedan = Math.round((new Date(v.hasta + 'T12:00:00Z') - new Date(HOY + 'T12:00:00Z')) / DIA);
+  return quedan <= 0 ? 'último día' : `quedan ${quedan} día${quedan === 1 ? '' : 's'}`;
 }
 
-/** La pastilla de una etiqueta. `on` la pinta con su color. */
-function pastilla(texto, color, on, clase = 'etq') {
-  const estilo = on ? `background:${color}` : `color:${color}`;
-  return `<span class="${clase}${on ? ' on' : ''}" style="${estilo}">${escapar(texto)}</span>`;
+function conciertoDe(id) {
+  return (DATOS.marcas[MARCA].etiquetas.conciertos || []).find((c) => c.id === id) || null;
 }
 
 function escapar(s) {
@@ -440,7 +461,6 @@ function abrir(p) {
   $('#titulo').textContent = p.title;
   $('#caja-nota').hidden = true;
   pintarEstadoActual();
-  pintarEtiquetasFicha();
   const red = document.querySelector('.red.activo').dataset.red;
   pintarPrevia(red);
   window.scrollTo(0, 0);
@@ -462,16 +482,6 @@ function pintarEstadoActual() {
   d.innerHTML = `Ahora: <b>${ESTADOS[e.estado] || e.estado}</b>` +
     (e.nota ? ` · ${escapar(e.nota)}` : '') +
     (e.mio ? '' : ' <span style="color:var(--tenue)">(del panel viejo)</span>');
-}
-
-function pintarEtiquetasFicha() {
-  const e = DATOS.marcas[MARCA].etiquetas;
-  $('#etq-tipo').innerHTML = e.tipos
-    .map((t) => `<button class="etq${actual.tipo === t.id ? ' on' : ''}" data-tipo="${t.id}" style="${actual.tipo === t.id ? `background:${t.color}` : `color:${t.color}`}">${escapar(t.nombre)}</button>`)
-    .join('') + '<button class="etq" data-tipo="__nueva" style="color:var(--tenue)">+ New tag</button>';
-  $('#etq-concierto').innerHTML = e.conciertos
-    .map((c) => `<button class="etq${actual.concierto === c.id ? ' on' : ''}" data-conc="${c.id}" style="${actual.concierto === c.id ? 'background:var(--tinta)' : ''}">${escapar(c.nombre)}</button>`)
-    .join('');
 }
 
 // ── La rejilla de lo ya publicado ──────────────────────────────────────
@@ -610,71 +620,6 @@ async function guardarJSON(ruta, fundir, mensaje) {
   throw new Error('GitHub sigue rechazando la escritura. Espera un momento y vuelve a darle.');
 }
 
-// ── Guardar una etiqueta ───────────────────────────────────────────────
-async function etiquetar(campo, valor) {
-  if (!actual) return;
-  const clave = `${MARCA}:${actual.clave}`;
-  const antes = actual[campo === 'tipo' ? 'tipo' : 'concierto'];
-  // Si se vuelve a tocar la que ya estaba, se quita.
-  const nuevo = antes === valor ? null : valor;
-  actual[campo === 'tipo' ? 'tipo' : 'concierto'] = nuevo;
-  if (campo === 'tipo') actual.estilo = (tipoDe(nuevo) || {}).estilo || 'cinta';
-  pintarEtiquetasFicha();
-  aviso('Guardando…');
-  try {
-    await guardarJSON('etiquetas.json', (r) => {
-      r.fichas = r.fichas || {};
-      r.fichas[clave] = { ...(r.fichas[clave] || {}), [campo]: nuevo };
-      return r;
-    }, `${campo}: ${nuevo || 'ninguna'} · ${actual.title}`);
-    aviso('Etiqueta guardada');
-    // El estilo pudo cambiar: se repinta la vista previa.
-    pintarPrevia(document.querySelector('.red.activo').dataset.red);
-  } catch (e) {
-    actual[campo === 'tipo' ? 'tipo' : 'concierto'] = antes;
-    pintarEtiquetasFicha();
-    aviso(e.message, true);
-  }
-}
-
-async function nuevaEtiqueta() {
-  const nombre = await pedirTexto({
-    titulo: 'Nueva etiqueta',
-    ayuda: 'En inglés, como las demás.',
-    aceptar: 'Crear',
-    largo: false,
-  });
-  if (!nombre) return;
-  const id = nombre.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  if (!id) return aviso('Ese nombre no vale.', true);
-  const estilo = await pedirTexto({
-    titulo: 'Con qué estilo se dibuja',
-    ayuda: 'cinta · bloque · marco · limpia',
-    valor: 'cinta',
-    aceptar: 'Crear',
-    largo: false,
-  });
-  if (estilo === null) return;
-  const t = {
-    id,
-    nombre,
-    estilo: ['cinta', 'bloque', 'marco', 'limpia'].includes(estilo) ? estilo : 'cinta',
-    color: '#57534e',
-    que: '',
-    nueva: true,
-  };
-  aviso('Creando…');
-  try {
-    await guardarJSON('etiquetas.json', (r) => {
-      r.nuevas = (r.nuevas || []).filter((x) => x.id !== id).concat([t]);
-      return r;
-    }, `Etiqueta nueva: ${t.nombre}`);
-    DATOS.marcas[MARCA].etiquetas.tipos.push(t);
-    pintarEtiquetasFicha();
-    aviso(`«${t.nombre}» creada`);
-  } catch (e) { aviso(e.message, true); }
-}
-
 // ── Guardar la decisión ────────────────────────────────────────────────
 async function decidir(estado, nota) {
   if (!actual) return;
@@ -759,28 +704,12 @@ $('#pestanas').addEventListener('click', (e) => {
   $('#vista-publicado').hidden = !publicado;
   if (publicado) pintarPublicado();
 });
-$('#etiquetas-filtro').addEventListener('click', (e) => {
-  const b = e.target.closest('.etq');
-  if (!b) return;
-  filtroEtq = b.dataset.etq || null;
-  pintarLista();
-});
 $('#rejilla').addEventListener('click', (e) => {
   const b = e.target.closest('button[data-url]');
   if (b) abrirPublicada(b.dataset.url);
 });
 $('#hoja').addEventListener('click', (e) => {
   if (e.target.id === 'hoja' || e.target.id === 'hoja-cerrar') $('#hoja').hidden = true;
-});
-$('#etq-tipo').addEventListener('click', (e) => {
-  const b = e.target.closest('.etq');
-  if (!b) return;
-  if (b.dataset.tipo === '__nueva') return nuevaEtiqueta();
-  etiquetar('tipo', b.dataset.tipo);
-});
-$('#etq-concierto').addEventListener('click', (e) => {
-  const b = e.target.closest('.etq');
-  if (b) etiquetar('concierto', b.dataset.conc);
 });
 $('#aprobar').addEventListener('click', () => decidir('listo', ''));
 $('#cambios').addEventListener('click', () => {

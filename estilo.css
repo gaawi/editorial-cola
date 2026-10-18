@@ -327,3 +327,9 @@ button { background: none; border: none; cursor: pointer; }
 .pide-caja textarea:focus, .pide-caja input:focus { outline: 2px solid var(--tinta); border-color: transparent; }
 .pide-botones { display: flex; gap: 8px; }
 .pide-botones .btn { flex: 1; }
+
+
+/* El reloj de cada ficha, en su cabecera */
+.cuando-ficha { font-size: 10px; font-weight: 600; letter-spacing: .03em; color: var(--suave);
+  border: 1px solid var(--filete); border-radius: 4px; padding: 2px 7px; }
+.cuando-ficha.tenue { border-color: transparent; color: var(--tenue); font-weight: 400; }

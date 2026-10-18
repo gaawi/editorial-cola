@@ -36,6 +36,36 @@ function recortar(slides) {
   return slides.slice(0, TOPE_SLIDES - 1).concat([cierre]);
 }
 
+/**
+ * Cuándo tiene sentido publicar una ficha.
+ *
+ * El calendario son los conciertos, y de ellos cuelga todo: un «context» de
+ * Currents no pinta nada en agosto y una crónica no existe antes de que el
+ * concierto ocurra. Lo que no cuelga de un concierto se cuenta desde su
+ * propia fecha.
+ */
+function ventanaDe(tipo, concierto, fechaFicha) {
+  const v = tipo?.ventana;
+  const dia = 86400000;
+  if (v && concierto?.fecha) {
+    const d = new Date(concierto.fecha + 'T12:00:00Z').getTime();
+    return {
+      desde: new Date(d + v.desde * dia).toISOString().slice(0, 10),
+      hasta: new Date(d + v.hasta * dia).toISOString().slice(0, 10),
+      ancla: concierto.nombre,
+      porque: v.porque,
+    };
+  }
+  if (!fechaFicha) return null;
+  const d = new Date(fechaFicha + 'T12:00:00Z').getTime();
+  return {
+    desde: fechaFicha,
+    hasta: new Date(d + 30 * dia).toISOString().slice(0, 10),
+    ancla: null,
+    porque: 'No cuelga de ningún concierto: cuenta desde su propia fecha.',
+  };
+}
+
 /** Lo ya publicado en Instagram, para no volver a ofrecerlo. */
 async function yaEnInstagram() {
   const f = join(AQUI, 'datos', 'historico-ig.json');
@@ -115,6 +145,7 @@ for (const nombre of marcas) {
       return {
         // Si ya salió, el muro deja de ofrecerlo como pendiente.
         publicadoEn: salio ? { fecha: salio.fecha, url: salio.url } : null,
+        ventana: ventanaDe(tipo, ETIQUETAS.conciertos.find((c) => c.id === etq.concierto), p.date),
         // El estilo no se elige: lo decide para qué es el post.
         tipo: etq.tipo || null,
         concierto: etq.concierto || null,

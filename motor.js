@@ -176,21 +176,17 @@ export function crearMotor(B) {
         ctx.lineWidth = Math.max(2, Math.round(W * 0.0035));
         ctx.strokeRect(inset + safeTop * 0.2, inset + safeTop, W - inset * 2 - safeTop * 0.4, H - inset * 2 - safeTop - safeBottom);
 
+        // Dentro del recuadro va el titular y nada más. El sello y el
+        // dominio se quitaron a petición suya: ensuciaban la foto y la marca
+        // ya se lee en el nombre de la cuenta, justo encima en el muro.
         const mAvail = H - safeTop - safeBottom;
-        const mfit = encajar(ctx, slide.title, W - pad * 2.4 - safeRight, mAvail * 0.44, TW, DISPLAY, Math.round(W * 0.078), Math.round(W * 0.034));
+        const mfit = encajar(ctx, slide.title, W - pad * 2.4 - safeRight, mAvail * 0.50, TW, DISPLAY, Math.round(W * 0.078), Math.round(W * 0.034));
         ctx.textAlign = 'center';
-        rotulo(ctx, rotSize, B.accent, Math.round(rotSize * 0.18));
-        const mBlockH = rotSize * 2.6 + mfit.lines.length * mfit.size * 1.12;
-        const mTop = safeTop + (mAvail - mBlockH) / 2;
-        ctx.fillText(B.stamp, W / 2, mTop + rotSize);
-        sinEspaciado(ctx);
+        const mBlockH = mfit.lines.length * mfit.size * 1.12;
+        const myy = safeTop + (mAvail - mBlockH) / 2 + mfit.size * 0.86;
         ctx.font = `${TW} ${mfit.size}px ${DISPLAY}`; ctx.fillStyle = B.overPhotoInk;
-        const myy = mTop + rotSize * 2.6 + mfit.size * 0.86;
         mfit.lines.forEach((l, i) => ctx.fillText(l, W / 2, myy + i * mfit.size * 1.12));
-        rotulo(ctx, rotSize, rgba(B.paper, 0.75), 0);
-        ctx.fillText(B.site, W / 2, H - inset - Math.round(pad * 0.35) - safeBottom);
         ctx.textAlign = 'left';
-        sinEspaciado(ctx);
         return;
       }
 

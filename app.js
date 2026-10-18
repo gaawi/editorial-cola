@@ -172,7 +172,8 @@ function pintarLista() {
     const e = estadoDe(p).estado;
     if (filtroEtq && p.tipo !== filtroEtq && p.concierto !== filtroEtq) return false;
     if (filtro === 'listos') return e === 'listo';
-    if (filtro === 'pendientes') return e !== 'listo' && e !== 'descartado';
+    // Pendiente es lo que falta por decidir. Lo que ya salió no lo es.
+    if (filtro === 'pendientes') return e !== 'listo' && e !== 'descartado' && !p.publicadoEn;
     return true;
   });
 
@@ -196,7 +197,9 @@ function tarjeta(p) {
     <div class="cabecera-ficha">
       ${t ? pastilla(t.nombre, t.color, true, 'etq etq-mini') : ''}
       ${c ? `<span class="etq etq-mini" style="color:var(--suave)">${escapar(c.nombre)}</span>` : ''}
-      ${pub.length ? `<span class="sello publicado">ya en ${pub.join('+')}</span>` : ''}
+      ${p.publicadoEn
+        ? `<a class="sello publicado" href="${p.publicadoEn.url}" target="_blank" rel="noopener">publicado el ${p.publicadoEn.fecha} ↗</a>`
+        : pub.length ? `<span class="sello publicado">ya en ${pub.join('+')}</span>` : ''}
       <span class="crece"></span>
       <span>${p.date || ''}</span>
     </div>

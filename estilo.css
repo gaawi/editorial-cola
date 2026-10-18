@@ -77,7 +77,7 @@ button { background: none; border: none; cursor: pointer; }
 .sello.espera, .sello.borrador { background: #fef3c7; color: var(--espera); }
 .sello.idea, .sello.sin { background: #f5f5f4; color: var(--suave); }
 .sello.descartado { background: #e7e5e4; color: var(--suave); text-decoration: line-through; }
-.sello.publicado { background: var(--tinta); color: #fff; }
+.sello.publicado { background: var(--tinta); color: #fff; text-decoration: none; }
 
 .vacio { text-align: center; color: var(--tenue); font-style: italic; padding: 56px 0; }
 

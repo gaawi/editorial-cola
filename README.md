@@ -50,9 +50,16 @@ tiene ritmo y de un vistazo se sabe qué es cada post.
 | Etiqueta | Estilo |
 |---|---|
 | Concert, News, Program | cinta |
-| Context | marco |
+| Context | marco — recuadro y titular, sin sello ni dominio |
 | Offer | bloque |
 | Interview, Video, Recap | foto limpia |
+
+El carrusel se corta en **cuatro** diapositivas (portada, dos y cierre): el
+kit monta hasta ocho y nadie llega al final. Se cambia con `TOPE_SLIDES`.
+
+Lo que ya salió en Instagram **desaparece de «Pendientes»** y se marca con un
+enlace a la publicación. Se cruza el titular de la ficha con
+`datos/historico-ig.json`.
 
 Las etiquetas viven en `etiquetas.json` y se editan desde la app, incluidas
 las nuevas.

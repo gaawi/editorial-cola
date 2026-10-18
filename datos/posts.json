@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-18T12:37:04.848Z",
+ "generado": "2026-10-18T13:13:34.083Z",
  "origen": "gaawi/adar",
  "marcas": {
   "creartbox": {
@@ -171,6 +171,10 @@
    },
    "posts": [
     {
+     "publicadoEn": {
+      "fecha": "2026-09-24",
+      "url": "https://www.instagram.com/p/DdqS3gHChsb/"
+     },
      "tipo": "news",
      "concierto": null,
      "estilo": "cinta",
@@ -206,26 +210,6 @@
        "body": "Eleven of the works this season reached the programme through CreArtBox's open call for scores, more than in any season before. In April an entire evening is given over to it."
       },
       {
-       "type": "text",
-       "title": "A world premiere in December",
-       "body": "Winterlight opens with the world premiere of Hannah Selin's Tectonic Lullaby for piano quintet, and closes with Stravinsky's Petroushka in a chamber arrangement."
-      },
-      {
-       "type": "text",
-       "title": "On tour: Illinois, Kentucky, the Hudson Valley",
-       "body": "The ensemble opens the Engelbach-Hart Music Festival at Illinois College with free admission, plays the Chamber Music Society of Louisville, and brings Masked Sounds to Saugerties."
-      },
-      {
-       "type": "text",
-       "title": "Five days in Kuopio",
-       "body": "Guillermo Laporta and Josefina Urraca spend five days at the Kuopio Conservatory in Finland, giving masterclasses and a workshop on building a chamber piece on stage: working closer to the audience, drawing on design and other disciplines."
-      },
-      {
-       "type": "text",
-       "title": "The season ends in Asturias",
-       "body": "The seventh Festival ADAR runs from 2 to 15 August 2027 across rural Asturias: residencies, micro-concerts and stops in small towns, played in churches, hórreos and mountain villages rather than concert halls."
-      },
-      {
        "type": "cta",
        "title": "Read the release",
        "body": "Full press release at creartbox.nyc · link in bio"
@@ -256,6 +240,10 @@
      }
     },
     {
+     "publicadoEn": {
+      "fecha": "2026-10-01",
+      "url": "https://www.instagram.com/p/Dd8ioPpDRe0/"
+     },
      "tipo": "concert",
      "concierto": "currents",
      "estilo": "cinta",
@@ -290,16 +278,6 @@
        "body": "Eric Moe's Laminar Flow in Upsidedown Creek and a new piece by the ensemble's flutist Guillermo Laporta sit alongside Brahms, Robert Schumann and Clara Schumann."
       },
       {
-       "type": "text",
-       "title": "Eric Moe",
-       "body": "A Guggenheim fellow, honoured by the American Academy of Arts and Letters. His score reached the programme through the open call."
-      },
-      {
-       "type": "text",
-       "title": "Tickets",
-       "body": "On sale now through Eventbrite. The DiMenna Center for Classical Music, 30 October 2026, 7:30 pm."
-      },
-      {
        "type": "cta",
        "title": "Read the release",
        "body": "Full press release at creartbox.nyc · link in bio"
@@ -330,6 +308,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": "concert",
      "concierto": "winterlight",
      "estilo": "cinta",
@@ -365,11 +344,6 @@
        "body": "It closes with Stravinsky's Petroushka in a chamber arrangement: the ballet reduced to the forces of the room, and the more exposed for it."
       },
       {
-       "type": "text",
-       "title": "December in New York",
-       "body": "The DiMenna Center for Classical Music, 11 December 2026, 7:30 pm."
-      },
-      {
        "type": "cta",
        "title": "Read the release",
        "body": "Full press release at creartbox.nyc · link in bio"
@@ -394,6 +368,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": "concert",
      "concierto": "pressure",
      "estilo": "cinta",
@@ -429,16 +404,6 @@
        "body": "Paul Novak and Sam Wu have both taken the ASCAP Foundation's Morton Gould Young Composer Award, Novak with the Leo Kaplan Award."
       },
       {
-       "type": "text",
-       "title": "Why a whole evening",
-       "body": "Eleven of the works we play this year came through the open call, more than in any season before. In April we give it the stage on its own."
-      },
-      {
-       "type": "text",
-       "title": "Details",
-       "body": "The DiMenna Center for Classical Music, 23 April 2027, 7:30 pm."
-      },
-      {
        "type": "cta",
        "title": "Read the release",
        "body": "Full press release at creartbox.nyc · link in bio"
@@ -463,6 +428,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": "concert",
      "concierto": "feverdream",
      "estilo": "cinta",
@@ -498,16 +464,6 @@
        "body": "Zygmund de Somogyi is Festival ADAR's composer in residence. Their score reached CreArtBox through the open call, and it closes the season in New York."
       },
       {
-       "type": "text",
-       "title": "Royal Philharmonic Society, Fromm Foundation",
-       "body": "De Somogyi is a Royal Philharmonic Society composer for 2025 and a Fromm Foundation fellow."
-      },
-      {
-       "type": "text",
-       "title": "Details",
-       "body": "The DiMenna Center for Classical Music, 7 May 2027, 7:30 pm."
-      },
-      {
        "type": "cta",
        "title": "Read the release",
        "body": "Full press release at creartbox.nyc · link in bio"
@@ -532,6 +488,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": "context",
      "concierto": "currents",
      "estilo": "marco",
@@ -567,16 +524,6 @@
        "body": "It is the shortest work of the night and the first one. Guillermo Laporta wrote it in 2018, for the suite AWAVE, first performed in Queens that year."
       },
       {
-       "type": "text",
-       "title": "Why it opens",
-       "body": "Currents assembles five works around a single idea: movement carried from one place to another. Two of them take the idea literally. This is the one that does it with the players themselves."
-      },
-      {
-       "type": "text",
-       "title": "Details",
-       "body": "30 October 2026, 7:30 pm. The DiMenna Center for Classical Music, 450 W 37th St. About 60 minutes, played without intermission."
-      },
-      {
        "type": "cta",
        "title": "Read the release",
        "body": "Full press release at creartbox.nyc · link in bio"
@@ -601,6 +548,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": "context",
      "concierto": "currents",
      "estilo": "marco",
@@ -636,16 +584,6 @@
        "body": "It was Joachim who read the viola part of Brahms's Trio in A minor, Op. 114 in rehearsal. That is the scoring heard here: viola, cello and piano."
       },
       {
-       "type": "text",
-       "title": "1844, Clara at the Gewandhaus",
-       "body": "Clara Schumann gave the first public performance of her husband's Piano Quartet in E-flat major at the Leipzig Gewandhaus in 1844. It closes the evening, twenty-eight minutes of it."
-      },
-      {
-       "type": "text",
-       "title": "Details",
-       "body": "Currents. 30 October 2026, 7:30 pm. The DiMenna Center, New York."
-      },
-      {
        "type": "cta",
        "title": "Read the release",
        "body": "Full press release at creartbox.nyc · link in bio"
@@ -670,6 +608,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": "context",
      "concierto": "currents",
      "estilo": "marco",
@@ -705,16 +644,6 @@
        "body": "Eric Moe's score reached the season through CreArtBox's open Call for Scores, which has run since the ensemble's first season. Eleven works this season arrived the same way, more than in any season before."
       },
       {
-       "type": "text",
-       "title": "Eric Moe",
-       "body": "A Guggenheim fellow, honoured by the American Academy of Arts and Letters."
-      },
-      {
-       "type": "text",
-       "title": "Details",
-       "body": "Currents. 30 October 2026, 7:30 pm. The DiMenna Center, New York."
-      },
-      {
        "type": "cta",
        "title": "Read the release",
        "body": "Full press release at creartbox.nyc · link in bio"
@@ -739,6 +668,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": "context",
      "concierto": "currents",
      "estilo": "marco",
@@ -797,6 +727,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": "program",
      "concierto": "currents",
      "estilo": "cinta",
@@ -855,6 +786,10 @@
      }
     },
     {
+     "publicadoEn": {
+      "fecha": "2026-10-18",
+      "url": "https://www.instagram.com/p/DeonR6gCCAx/"
+     },
      "tipo": "program",
      "concierto": "currents",
      "estilo": "cinta",
@@ -890,16 +825,6 @@
        "body": "The program with the timing of every work, fifty-six minutes of music in total. Notes on all five pieces. And the photographs from the series."
       },
       {
-       "type": "text",
-       "title": "Things you can find out before you come",
-       "body": "Why Brown Leaves Moving begins with the players offstage. What laminar flow is. How Joseph Joachim ties together three of the five works."
-      },
-      {
-       "type": "text",
-       "title": "Details",
-       "body": "Currents. 30 October 2026, 7:30 pm. The DiMenna Center, New York."
-      },
-      {
        "type": "cta",
        "title": "Read the release",
        "body": "Full press release at creartbox.nyc · link in bio"
@@ -924,6 +849,10 @@
      }
     },
     {
+     "publicadoEn": {
+      "fecha": "2026-10-07",
+      "url": "https://www.instagram.com/p/DeMlCCjCkqN/"
+     },
      "tipo": "interview",
      "concierto": "currents",
      "estilo": "limpia",
@@ -1143,6 +1072,7 @@
    },
    "posts": [
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1178,11 +1108,6 @@
        "body": "En un auditorio escuchas con los oídos. En los espacios de ADAR escuchas con todo. Notas el frío de la piedra, el olor a madera vieja, la luz que entra de lado a las ocho de la tarde."
       },
       {
-       "type": "text",
-       "title": "Una decisión, no una limitación",
-       "body": "Conviene decirlo claro, porque a veces se malinterpreta: ADAR no toca en aldeas porque no tenga auditorio. Toca en aldeas porque quiere. Llevar la música a donde no se la espera no es un plan B."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1207,6 +1132,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1242,11 +1168,6 @@
        "body": "Seamos honestos: un festival no repuebla un concejo, no crea empleo estable, no arregla la carretera ni trae el médico. Prometer eso sería mentir, y no nos gusta mentir."
       },
       {
-       "type": "text",
-       "title": "Llenar, aunque sea por una noche",
-       "body": "Cada vez que una iglesia de aldea se llena para escuchar música, ese pueblo, esa noche, no está vacío. Está exactamente al revés: está en el centro de algo. No es un truco de marketing."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1271,6 +1192,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1317,6 +1239,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1352,21 +1275,6 @@
        "body": "Esta es la parte que más nos importa, y es la misma razón por la que documentamos todo lo que hacemos: nuestros aforos son pequeños y muchas de las personas a las que les interesaría lo que tocamos están lejos."
       },
       {
-       "type": "text",
-       "title": "A quien prefiere leer con luz",
-       "body": "Las notas de un programa se leen mal en una sala a oscuras, apurando antes de que empiece, o entre obra y obra con el móvil tapado para no molestar. Leerlas tres días antes, sentado, con tiempo, es sencillamente mejor."
-      },
-      {
-       "type": "text",
-       "title": "Y después, se queda",
-       "body": "Un concierto dura una hora. El programa, si está en la web, dura mientras dure la web. Dentro de cinco años, cuando alguien busque qué se tocó aquella noche, no va a encontrar un cartel con cinco apellidos."
-      },
-      {
-       "type": "text",
-       "title": "Lo que nos obliga a nosotros",
-       "body": "Hay una consecuencia que no habíamos previsto y que ha resultado ser la más útil. Si el programa tiene que estar publicado semanas antes, las notas hay que escribirlas semanas antes. Ya no se pueden despachar el martes anterior."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1391,6 +1299,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1426,16 +1335,6 @@
        "body": "Cualquier gestor cultural te dirá que lo eficiente es lo contrario de lo que hacemos. Consolidas una sede, fidelizas un público, amortizas el equipo técnico, dejas de montar y desmontar. Itinerar es caro, agotador y logísticamente absurdo."
       },
       {
-       "type": "text",
-       "title": "Lo que hemos aprendido del mapa",
-       "body": "Que el occidente lo agradece más."
-      },
-      {
-       "type": "text",
-       "title": "Una idea de Asturias",
-       "body": "Al final, el mapa dice algo que no cabe en ningún cartel."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1460,6 +1359,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1495,21 +1395,6 @@
        "body": "Esta es la razón que más nos pesa. Tocamos en monasterios con problemas de conservación. En paneras de madera que llevan siglos aguantando y que dependen de que alguien las cuide. En hórreos que se caen en silencio, uno a uno, cuando nadie los usa."
       },
       {
-       "type": "text",
-       "title": "3. Porque el aforo es diminuto y el archivo no tiene aforo",
-       "body": "Un concierto en un monasterio rural puede tener ochenta personas dentro. Eso es maravilloso, esa cercanía es justo lo que buscamos, y es, a la vez, poquísimo."
-      },
-      {
-       "type": "text",
-       "title": "4. Porque es una herramienta de trabajo, no un álbum de recuerdos",
-       "body": "El archivo no está ordenado para la nostalgia. Está ordenado para usarse. Sirve para preparar informes y memorias. Para responder a la prensa con material bueno en dos minutos. Para redactar convocatorias."
-      },
-      {
-       "type": "text",
-       "title": "El sesgo que estamos corrigiendo",
-       "body": "Hay una última cosa, más de fondo. La historia cultural del medio rural está mal documentada, y no por casualidad. Lo que ocurre en las capitales se archiva, se critica en prensa, se estudia."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1534,6 +1419,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1569,21 +1455,6 @@
        "body": "La elección del material tampoco es casual, y quien haya visto tul a contraluz lo entenderá. El tul es casi nada: una malla transparente, ligerísima, que apenas existe como objeto."
       },
       {
-       "type": "text",
-       "title": "La música como parte de la instalación, no como fondo",
-       "body": "Un detalle que nos importa: la pieza de Guillermo Laporta que acompañaba el recorrido no era música ambiental."
-      },
-      {
-       "type": "text",
-       "title": "El comienzo de una línea",
-       "body": "Aquella instalación tiene además un valor histórico dentro del festival: 2023 fue el año en que ADAR empezó a programar instalaciones de artistas internacionales. Kaji y Celeste Oram abrieron esa vía."
-      },
-      {
-       "type": "text",
-       "title": "La lección para cualquiera",
-       "body": "Si hay algo que llevarse de la instalación de Mizuko Kaji es esto: a veces no hace falta cambiar el sitio, solo cambiar quién puede entrar y por dónde. El Auditorio As Quintas era el mismo edificio antes y después."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1608,6 +1479,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1643,21 +1515,6 @@
        "body": "Ahí está el punto. Ninguno de esos nombres necesita una explicación indulgente. Pulitzer, Grammy, Carnegie Hall, Sinfónica de Chicago. Si programar mujeres exigiera bajar el nivel, esta lista sería otra."
       },
       {
-       "type": "text",
-       "title": "El detalle que más nos importa",
-       "body": "Fíjate en algo de la lista anterior: casi todas ellas son compositoras vivas. Eso es lo verdaderamente decisivo, más que el género."
-      },
-      {
-       "type": "text",
-       "title": "Cómo funciona en la práctica",
-       "body": "La receta que usamos no tiene ningún misterio: poner lo nuevo dentro de lo conocido. Nadie programa una noche entera de música de 2024 en un pueblo donde no hay costumbre de conciertos."
-      },
-      {
-       "type": "text",
-       "title": "Sin etiqueta",
-       "body": "Así que no, no lo llamamos cuota. Lo llamamos programar bien. Buscamos la mejor música que podamos conseguir, de gente que esté haciendo algo que nos parezca necesario, y la ponemos en el sitio donde signifique más."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1682,6 +1539,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1717,26 +1575,6 @@
        "body": "Con la música damos por hecho lo inverso. El concierto está en la ciudad. La exposición está en la ciudad. Si te interesa de verdad, ya conducirás. Y quien no puede, o no quiere hacer una hora de carretera de puerto de noche, simplemente no va."
       },
       {
-       "type": "text",
-       "title": "«Otra cosa que pasa lejos»",
-       "body": "Si lo concentráramos todo en un sitio tendríamos un buen festival local. Para los vecinos de Taramundi o de Somiedo seguiría siendo lo de siempre: otra cosa que pasa lejos. Justo el problema del que partimos."
-      },
-      {
-       "type": "text",
-       "title": "Por eso vamos nosotros",
-       "body": "Tenemos sede en Leiguarda, pero el festival no se queda en ella: tiene también un mapa. Catorce concejos en seis ediciones. En vez de pedirle al territorio que venga, vamos nosotros. Como la tiendina."
-      },
-      {
-       "type": "text",
-       "title": "Esta vez, lo importante pasa aquí",
-       "body": "Y eso cambia la frase entera. Deja de ser «hay un concierto, pero está lejos» y pasa a ser «hay un concierto, y es en la iglesia de al lado». Una noche al año, en tu pueblo, lo importante no ocurre en otro sitio."
-      },
-      {
-       "type": "text",
-       "title": "Lo mismo que hace la furgoneta",
-       "body": "No es una metáfora bonita: es la misma decisión logística, tomada por la misma razón. Cuesta más montar y desmontar catorce veces que abrir catorce veces la misma puerta. Se hace igual, porque de eso va vivir aquí."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1761,6 +1599,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1796,26 +1635,6 @@
        "body": "Aquí está la diferencia entre alquilar un espacio y trabajar con él. Antes de decidir nada, hay que averiguar qué es ese sitio para la gente que vive alrededor. ¿Es una iglesia en uso, donde hay misa el domingo?"
       },
       {
-       "type": "text",
-       "title": "3. Las necesidades técnicas, sin autoengaño",
-       "body": "Es la fase donde mueren la mitad de los sueños, y hay que ser brutalmente honesto. ¿Hay electricidad? ¿Aguanta la instalación un equipo de sonido y luces, o salta el diferencial?"
-      },
-      {
-       "type": "text",
-       "title": "4. La experiencia del público, de principio a fin",
-       "body": "Aquí pensamos en la noche entera, no solo en la hora de música. Cómo llega la gente. Si va a encontrar el sitio de noche o va a estar dando vueltas por una carretera sin señalizar. Cuánto rato va a estar de pie esperando."
-      },
-      {
-       "type": "text",
-       "title": "5. El relato: ¿por qué aquí?",
-       "body": "Este filtro es el que más candidatos descarta, y el que más nos define. La pregunta es: ¿este concierto tiene sentido en este sitio, o podría ser en cualquier otro? Si la respuesta es «podría ser en cualquier otro», no lo hacemos."
-      },
-      {
-       "type": "text",
-       "title": "6. La documentación",
-       "body": "El último paso se decide antes, no después: cómo se va a fotografiar y filmar. Suena a comunicación, y también lo es. Pero para nosotros es parte de la obra. El concierto lo viven ochenta personas; el archivo lo puede ver cualquiera, hoy o en veinte años."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1840,6 +1659,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1875,16 +1695,6 @@
        "body": "A la instalación de Williams se le puede poner la etiqueta fácil de «ocurrencia». Nos parece justo lo contrario, y en un contexto rural especialmente. La comida es el lenguaje social por defecto de cualquier pueblo."
       },
       {
-       "type": "text",
-       "title": "Tres formatos, tres públicos, un pueblo",
-       "body": "La programación simultánea de esa noche tenía además una lógica de acceso. En el palacio, un concierto de cámara: formato reconocible, para quien quiere sentarse y escuchar."
-      },
-      {
-       "type": "text",
-       "title": "Grado, un socio recurrente",
-       "body": "Grado no fue un sitio de paso. Aparece en varias ediciones de ADAR, con el Palacio de Miranda-Valdecarzana, la Capilla de los Dolores y el Palacio de Fontela como escenarios recurrentes. Es uno de esos municipios donde la relación se ha sostenido en el tiempo."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1909,6 +1719,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -1945,21 +1756,6 @@
        "body": "La elección de la obra no podía ser mejor. Las suites para violonchelo solo de Bach son una persona sola con un instrumento: sin acompañamiento, sin orquesta, sin nada donde esconderse. Es la música más desnuda del repertorio occidental."
       },
       {
-       "type": "text",
-       "title": "Un festival de diez días, una obra para siempre",
-       "body": "Aquí está la razón práctica por la que invertimos en esto, y es bastante desnuda también. Un concierto dura una hora y lo ven las personas que caben en la sala. En un monasterio rural eso pueden ser ochenta personas."
-      },
-      {
-       "type": "text",
-       "title": "La documentación como parte de la obra",
-       "body": "Esto forma parte de un principio más amplio del proyecto: el archivo. Todo lo que hacemos se documenta con estándares profesionales, foto y vídeo, y se ordena para que pueda reutilizarse (en prensa, en convocatorias, en la memoria del proyecto)."
-      },
-      {
-       "type": "text",
-       "title": "Verlo",
-       "body": "El vídeo está disponible en nuestro canal, y se sigue viendo tres años después de rodarse."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -1984,6 +1780,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2019,16 +1816,6 @@
        "body": "Merece la pena mirar la elección, porque no es casual. Telemann, alemán del barroco, prolífico y luminoso: el artesano perfecto de la música, alguien que produjo con una regularidad de taller."
       },
       {
-       "type": "text",
-       "title": "Por qué el occidente",
-       "body": "Taramundi está lejos. Lejos de Oviedo, lejos de la autovía, lejos de todo lo que se considera «el centro». Y esa es una de las razones de que fuéramos."
-      },
-      {
-       "type": "text",
-       "title": "Lo que queda",
-       "body": "Un concierto de una hora en la iglesia de un pueblo de dos mil habitantes no cambia la vida de nadie. Pero deja una idea flotando, y las ideas duran."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2053,6 +1840,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2088,21 +1876,6 @@
        "body": "Esta es la distinción que más nos importa, y vale para cualquier festival del mundo. Hay festivales que son programadores: eligen bien entre lo que existe, lo traen, lo presentan. Es un trabajo legítimo y difícil, y el público lo agradece."
       },
       {
-       "type": "text",
-       "title": "Lo que le pedimos a un compositor",
-       "body": "Nuestros encargos no son un cheque en blanco. Piden una cosa muy concreta: que la pieza escuche el sitio."
-      },
-      {
-       "type": "text",
-       "title": "El territorio como material, no como excusa",
-       "body": "Cuando esto sale bien, el resultado es música que le habla directamente a su público sin necesidad de traducción. Pensemos en Afilador, de Andrea Casarrubios, que tocamos en el mercado de Pola de Somiedo."
-      },
-      {
-       "type": "text",
-       "title": "Lo que arriesgamos y por qué merece la pena",
-       "body": "Seamos honestos sobre el riesgo. Un encargo puede salir regular. Puede no conectar. Cuesta dinero que podría gastarse en cosas más seguras. Y el público que viene a escuchar a Vivaldi no ha pedido una obra de 2026."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2127,6 +1900,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2163,21 +1937,6 @@
        "body": "El 12 de agosto de 2025 llenamos el Monasterio de Santa María la Real de Obona, en Tineo, uno de los cenobios más antiguos de Asturias."
       },
       {
-       "type": "text",
-       "title": "Lo que el edificio le hace al público",
-       "body": "Hay un efecto que se nota en cuanto la gente entra y que no tiene nada que ver con la física. Un monasterio impone un tipo de atención. Nadie lo pide, no hay un cartel de silencio: ocurre solo."
-      },
-      {
-       "type": "text",
-       "title": "Un patrimonio que necesita ser usado",
-       "body": "Aquí está la razón menos poética y más importante de todas. Muchos de estos monasterios tienen problemas de conservación, poco uso y visitas escasas. Y un edificio sin uso es un edificio que se cae."
-      },
-      {
-       "type": "text",
-       "title": "Mil años esperando",
-       "body": "Nos gusta pensarlo así. Alguien apiló esas piedras hace nueve siglos y las apiló, entre otras cosas, para que el sonido se comportara de una manera concreta. Durante generaciones se usaron para eso."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2202,6 +1961,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2237,21 +1997,6 @@
        "body": "Cuando encontramos esta idea, tuvimos la sensación incómoda y agradable de que alguien había teorizado lo que nosotros hacíamos por instinto."
       },
       {
-       "type": "text",
-       "title": "Lo humano y lo no humano",
-       "body": "La otra mitad de su investigación es igual de pertinente para un festival rural."
-      },
-      {
-       "type": "text",
-       "title": "Una trayectoria que respalda la teoría",
-       "body": "Todo esto podría quedarse en especulación agradable si no hubiera obra detrás. La hay."
-      },
-      {
-       "type": "text",
-       "title": "La escucha como forma de conocimiento",
-       "body": "Nos quedamos con una última idea suya, la que más nos sirve: la de que escuchar es una manera de conocer, no solo de disfrutar. Solemos tratar la música como entretenimiento o como emoción."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2276,6 +2021,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2311,21 +2057,6 @@
        "body": "Aquí está el mecanismo secreto de la obra, y es de una elegancia extraña. Mientras toca, la pianista está escuchando a Glenn Gould."
       },
       {
-       "type": "text",
-       "title": "Órgano contra piano: dos maneras de tocar",
-       "body": "La obra plantea un contraste que quizá nunca te habías planteado, y que es fascinante en cuanto lo ves. El órgano apenas responde al tacto. Aprietas una tecla y el aire pasa: suene fuerte o suave no depende de cómo la aprietes."
-      },
-      {
-       "type": "text",
-       "title": "Cuando el sonido desaparece y solo queda el gesto",
-       "body": "La estructura sigue las tres secciones de la obra original: fuga, toccata y fantasía. Pero lo que ocurre por el camino es lo más radical."
-      },
-      {
-       "type": "text",
-       "title": "Por qué esto, en Leiguarda",
-       "body": "Alguien podría preguntar qué hace una instalación conceptual neozelandesa en una aldea asturiana. Nuestra respuesta es doble. La primera: porque la gente aguanta muchísimo más de lo que se piensa."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2350,6 +2081,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2386,16 +2118,6 @@
        "body": "Tocaron Guillermo Laporta (flauta), Mario Molina (piano), Jone de la Fuente (violín), Almudena Arribas (viola) y Natania Hoffman (violonchelo). Y el programa fue este: - Andrea Casarrubios · Mensajes de Agua - Mozart · Cuarteto para piano en mi bemol mayor, K."
       },
       {
-       "type": "text",
-       "title": "La palabra «sostenible», dicha en serio",
-       "body": "En un sitio como Somiedo es fácil caer en el discurso fácil sobre naturaleza y armonía. Preferimos ser concretos, porque hay algo real que sí ocurre."
-      },
-      {
-       "type": "text",
-       "title": "Lo que se oye en la montaña",
-       "body": "Hay una última cosa, y es puramente física. En Somiedo se oye distinto. La altitud, el aire limpio, la absoluta falta de ruido de fondo. Un pianissimo que en una ciudad se perdería del todo, allí llega entero."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2420,6 +2142,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2456,21 +2179,6 @@
        "body": "The Whale es un espectáculo de varias capas: música, interpretación, instalación escénica y elementos audiovisuales. Pero su ambición declarada es más antigua que todo eso."
       },
       {
-       "type": "text",
-       "title": "Por qué en Bedón",
-       "body": "El monasterio de San Antolín de Bedón es uno de esos sitios que hacen la mitad del trabajo antes de que empiece la música. Un monasterio de origen medieval cerca de la costa de Llanes, con la piedra a la vista y una atmósfera que no necesita añadidos."
-      },
-      {
-       "type": "text",
-       "title": "La residencia que hizo posible la noche",
-       "body": "Aquí está el detalle que más nos gusta de todo esto: Ballarte no llegó, tocó y se fue. Fueron artistas residentes durante la semana previa, trabajando en Leiguarda y preparando la puesta en escena para el marco concreto de Bedón."
-      },
-      {
-       "type": "text",
-       "title": "Lo que se lleva el público",
-       "body": "Una ballena en una montaña es un buen resumen de lo que intentamos programar: algo que no te esperas, en un sitio que no te esperas, contado con una seriedad artística que no admite discusión."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2495,6 +2203,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2530,16 +2239,6 @@
        "body": "El recital de Leiguarda es un buen ejemplo de cómo se construye un programa que no aburre a nadie y no renuncia a nada."
       },
       {
-       "type": "text",
-       "title": "Lo que significa que toque en Leiguarda",
-       "body": "Aquí está la parte que nos importa de verdad, y no es el currículum. Que una compositora nominada al Grammy, con encargos de la Sinfónica de Chicago, toque en la iglesia de una aldea de cien habitantes no es un favor que nos hace ni una anomalía divertida."
-      },
-      {
-       "type": "text",
-       "title": "La música que nace de algo real",
-       "body": "Si hay un motivo por el que SEVEN nos parece la pieza perfecta para un festival como este, es que habla de algo que le pasó a todo el mundo. No es música abstracta para iniciados. Es una obra sobre gente que fue a trabajar cuando ir a trabajar daba miedo."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2564,6 +2263,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2600,16 +2300,6 @@
        "body": "Aquí viene la parte que no habíamos previsto. Un hórreo suena. Es una estructura de madera elevada sobre pegollos, con paredes de tabla, sin cimientos que la aten al suelo y con aire por debajo."
       },
       {
-       "type": "text",
-       "title": "Susacasa: permacultura, una panera y una tiorba",
-       "body": "Uno de los espacios seleccionados fue Susacasa Agrocultural, en Gozón, donde el festival de 2025 arrancó el 5 de agosto."
-      },
-      {
-       "type": "text",
-       "title": "Lo que de verdad conseguimos",
-       "body": "El concurso tenía una excusa artística, pero su efecto real fue otro. Durante unas semanas, cientos de personas en Asturias miraron su hórreo con otros ojos. Le hicieron fotos. Lo enseñaron."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2634,6 +2324,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2669,21 +2360,6 @@
        "body": "El ejemplo que mejor lo explica pasó el 12 de agosto de 2023, en el Museo de las Ayalgas de Silviella, en Belmonte de Miranda."
       },
       {
-       "type": "text",
-       "title": "La misma noche, tres capas de patrimonio",
-       "body": "Aquella jornada de 2023 siguió y es un buen retrato de cómo pensamos la programación."
-      },
-      {
-       "type": "text",
-       "title": "Por qué en el campo funciona mejor",
-       "body": "Los paseos sonoros se hacen también en ciudades, pero en el medio rural tienen una ventaja difícil de igualar. El silencio de base. Cuando el ruido de fondo es casi nulo, un instrumento a cuarenta metros se oye."
-      },
-      {
-       "type": "text",
-       "title": "La verdadera razón",
-       "body": "Si tuviéramos que decir por qué es nuestro formato favorito, sería esta: el paseo sonoro elimina la frontera entre escenario y público. No hay tarima, no hay foso, no hay «arriba» y «abajo»."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2708,6 +2384,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2743,21 +2420,6 @@
        "body": "Quienes residen en Leiguarda 47 conviven, comen juntos y desarrollan sus proyectos codo con codo. Puede sonar a detalle logístico. Es, en realidad, el corazón del método. Piensa cómo funciona normalmente."
       },
       {
-       "type": "text",
-       "title": "Más de 18 artistas, cuatro países",
-       "body": "Desde 2020 han pasado por la sede más de dieciocho artistas de España, Italia, Alemania y Países Bajos, y a esa lista se le suman cada año nombres de Estados Unidos, Nueva Zelanda o Lituania que llegan invitados al festival."
-      },
-      {
-       "type": "text",
-       "title": "La residencia y el festival, un mismo ecosistema",
-       "body": "Esto explica el modelo entero. En ADAR, la residencia y el festival no son dos programas distintos: son el mismo ecosistema en dos momentos. Durante el año, en la sede se ensaya, se compone, se graba y se prueba material."
-      },
-      {
-       "type": "text",
-       "title": "La ventaja secreta del silencio",
-       "body": "Hay una última cosa que ningún estudio de ciudad puede ofrecer, y que los artistas mencionan siempre: el silencio. No el silencio relativo de un local insonorizado, con el zumbido del aire acondicionado y el tráfico de fondo."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2782,6 +2444,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2818,16 +2481,6 @@
        "body": "No dejaron pasar mucho tiempo. El sueño tenía nombre y registro: Asociación para el Desarrollo de las Artes en el Medio Rural (ADAR), fundada en 2020."
       },
       {
-       "type": "text",
-       "title": "«Con una buena conexión, los proyectos no tienen por qué diferir tanto»",
-       "body": "Hay una frase de Josefina Urraca que se nos quedó grabada y que explica por qué ADAR programa lo que programa: > La música es universal y sabemos que con una buena conexión entre Leiguarda y Nueva York los proyectos no tienen por qué diferir tanto."
-      },
-      {
-       "type": "text",
-       "title": "Vivir donde trabajas",
-       "body": "Lo que hace distinto a ADAR de un festival gestionado desde una oficina en la ciudad es sencillo: sus directores viven aquí. No aterrizan en agosto y se van en septiembre. Son vecinos. Se cruzan con el público en la tienda."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2852,6 +2505,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2887,21 +2541,6 @@
        "body": "El dato que todavía nos emociona: se juntaron más de 120 personas. En una aldea de apenas un centenar de habitantes. Aquella noche había más gente en el campo de la iglesia de Leiguarda que vecinos censados en Leiguarda."
       },
       {
-       "type": "text",
-       "title": "Lo que se tocó aquella noche",
-       "body": "El programa ya contenía, en germen, todo lo que ADAR sería después. Obras de Mendelssohn, Haydn y Falla, el repertorio clásico y la tradición española, junto a John Harbison, compositor estadounidense contemporáneo."
-      },
-      {
-       "type": "text",
-       "title": "Lo que aprendimos con la lluvia",
-       "body": "Aquella noche nos dio, sin pretenderlo, las tres reglas con las que seguimos trabajando cinco ediciones más tarde: Que el sitio manda. No puedes controlar el orballo, ni la luz, ni la temperatura."
-      },
-      {
-       "type": "text",
-       "title": "Cinco años después",
-       "body": "De aquella noche salió el compromiso de volver cada agosto. Y volvimos: en 2022, 2023, 2024, 2025 y 2026, ampliando cada vez el mapa de concejos, de espacios y de artistas."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -2926,6 +2565,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -2961,21 +2601,6 @@
        "body": "Aprendimos que un concierto en una iglesia de aldea, en un parador, en un alto de monte, no es el mismo concierto que en un auditorio. El lugar entra en la música."
       },
       {
-       "type": "text",
-       "title": "3. Lo extraordinario cabe en un pueblo.",
-       "body": "Una birbynė lituana. Un eclipse total de sol. Una residencia artística. Música que va de Bach a David Lang en la misma noche. Nada de eso \"sobra\" en el medio rural: encaja mejor de lo que nadie esperaba."
-      },
-      {
-       "type": "text",
-       "title": "4. Esto no lo hace un festival: lo hace una comunidad.",
-       "body": "Es la lección más importante."
-      },
-      {
-       "type": "text",
-       "title": "Y ahora, hacia 2027",
-       "body": "No vamos a caer en la nostalgia, porque el proyecto mira hacia delante. Ya estamos trabajando en la próxima edición, con cosas que aún no podemos contar pero que nos hacen mucha ilusión."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -3000,6 +2625,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -3035,11 +2661,6 @@
        "body": "Podría parecer un simple detalle simpático, el \"vino de honor\" de toda la vida. Es mucho más que eso. La espicha hace un trabajo que ninguna otra parte del festival puede hacer: aplana la jerarquía."
       },
       {
-       "type": "text",
-       "title": "El concierto no era el evento: la noche entera lo era",
-       "body": "Esto conecta con algo que creemos a fondo. El acontecimiento no es solo la hora de música. Es la tarde entera: el viaje hasta la aldea, el reencuentro a la entrada, el concierto, y la espicha que lo cierra."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -3064,6 +2685,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -3099,16 +2721,6 @@
        "body": "El malentendido casi siempre viene de aquí. Escuchamos música contemporánea esperando lo que nos dio la música del XIX: un tema que reconoces, un clímax, una resolución con moraleja. Y cuando eso no llega, concluimos que \"no la entendemos\"."
       },
       {
-       "type": "text",
-       "title": "Una guía de escucha en tres gestos",
-       "body": "Para la próxima vez que te enfrentes a una pieza así, prueba esto: 1. Deja de buscar la melodía. Escucha la textura: cómo se mezclan los instrumentos, cómo cambia el color del sonido. Ahí está el acontecimiento."
-      },
-      {
-       "type": "text",
-       "title": "Por qué la programamos",
-       "body": "En ADAR mezclamos a Bach con Ligeti, a Vivaldi con David Lang, a propósito. No para presumir de modernos, sino porque la buena música de todas las épocas se lleva mejor de lo que la gente teme."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -3133,6 +2745,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -3168,11 +2781,6 @@
        "body": "Aquí está el hilo secreto que hace de esta programación algo más que una casualidad bonita."
       },
       {
-       "type": "text",
-       "title": "Por qué esto importa en un pueblo de Belmonte",
-       "body": "Podría parecer un lujo intelectual, algo \"para entendidos\". No lo es. Es exactamente lo contrario. Lo que cuenta esta obra, sin decir una palabra, es que el folclore no es un museo, sino materia viva con la que un creador de hoy sigue trabajando."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -3197,6 +2805,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -3232,16 +2841,6 @@
        "body": "El problema es que el hórreo se está muriendo de éxito histórico y de olvido presente. Ya no se guarda grano en ellos. Sin uso, muchos se abandonan; sin mantenimiento, la madera se pudre; sin relevo en el pueblo, no queda quien los arregle."
       },
       {
-       "type": "text",
-       "title": "Por qué esto es asunto de un festival",
-       "body": "Aquí es donde encaja ADAR. Porque nuestra idea nunca fue solo \"traer conciertos al campo\". Fue poner el foco sobre el medio rural y todo lo que guarda: su música, su gente, sus paisajes y también sus construcciones."
-      },
-      {
-       "type": "text",
-       "title": "La misma causa por otros medios",
-       "body": "Un concierto en una iglesia de aldea y un concurso de hórreos persiguen lo mismo: que el medio rural no se lea como un sitio vacío del que la gente se va, sino como un sitio lleno de cosas que merecen quedarse."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -3266,6 +2865,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -3301,16 +2901,6 @@
        "body": "Solemos pensar que lo valioso es el producto: el concierto, el disco, el aplauso. Pero en una residencia el proceso es tan importante como el estreno. Ahí es donde se prueban ideas que quizá no salen."
       },
       {
-       "type": "text",
-       "title": "Por qué lo hacemos en el medio rural",
-       "body": "Podríamos hacer las residencias en una ciudad, con más comodidades. Las hacemos aquí a propósito, por dos razones. La primera, por los artistas: el medio rural es un laboratorio, no un destino de segunda."
-      },
-      {
-       "type": "text",
-       "title": "Lo que se queda",
-       "body": "Cuando los artistas se van, algo permanece. Una obra que existe porque este valle existe. Una relación entre unos músicos y un lugar. Y la prueba, para quien lo vio, de que aquí no solo se consume cultura de visita: aquí también se crea."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -3335,6 +2925,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -3370,16 +2961,6 @@
        "body": "Piénsalo un momento. Un instrumento que empezó siendo el entretenimiento de un chaval cuidando ovejas en Lituania acabó, cuatro siglos después, sonando bajo las bóvedas de una iglesia de Belmonte de Miranda, delante de vecinos de Leiguarda."
       },
       {
-       "type": "text",
-       "title": "Un clarinetista que se atreve con las dos cosas",
-       "body": "Žilvinas Brazauskas (lituano, formado en la gran tradición clarinetística europea) no tocó solo la birbynė. En el mismo programa pasó del clarinete al instrumento de su tierra y viceversa."
-      },
-      {
-       "type": "text",
-       "title": "Por qué lo trajimos hasta aquí",
-       "body": "Podríamos haber programado un clarinete \"normal\" y nadie habría protestado."
-      },
-      {
        "type": "cta",
        "title": "Léelo entero",
        "body": "Artículo completo en festivaladar.com · enlace en la bio"
@@ -3404,6 +2985,7 @@
      }
     },
     {
+     "publicadoEn": null,
      "tipo": null,
      "concierto": null,
      "estilo": "cinta",
@@ -3437,11 +3019,6 @@
        "type": "text",
        "title": "Música para la sombra",
        "body": "La pregunta que nos hicimos al diseñar el programa fue sencilla y difícil: ¿qué se toca mientras el mundo se queda a oscuras? No quisimos ilustrar el eclipse ni \"acompañarlo\" como quien pone banda sonora."
-      },
-      {
-       "type": "text",
-       "title": "Por qué esto es exactamente lo que hace ADAR",
-       "body": "Un festival de ciudad habría llevado el eclipse a un auditorio con pantalla. Nosotros hicimos lo de siempre, solo que con un decorado imposible de igualar: poner la música donde de verdad pasan las cosas."
       },
       {
        "type": "cta",

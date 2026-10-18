@@ -22,6 +22,35 @@ const AQUI = dirname(fileURLToPath(import.meta.url));
 const ADAR = process.env.ADAR_DIR || resolve(AQUI, '../adar');
 const SITIO_KIT = process.env.SITIO_KIT || 'festivaladar.com';
 
+// Cuántas diapositivas como mucho. El kit monta hasta ocho y son demasiadas
+// para un carrusel: nadie llega al final. Portada + dos + cierre.
+const TOPE_SLIDES = Number(process.env.TOPE_SLIDES || 4);
+
+/**
+ * Recorta el carrusel conservando lo que importa: la portada, las primeras
+ * de texto y el cierre, que es el que lleva a dónde ir.
+ */
+function recortar(slides) {
+  if (slides.length <= TOPE_SLIDES) return slides;
+  const cierre = slides[slides.length - 1];
+  return slides.slice(0, TOPE_SLIDES - 1).concat([cierre]);
+}
+
+/** Lo ya publicado en Instagram, para no volver a ofrecerlo. */
+async function yaEnInstagram() {
+  const f = join(AQUI, 'datos', 'historico-ig.json');
+  if (!existsSync(f)) return [];
+  return (JSON.parse(await readFile(f, 'utf8')).posts || []).map((r) => ({
+    fecha: r[0], url: r[1], tema: String(r[6] || '').toLowerCase(),
+  }));
+}
+/** El titular de la ficha aparece al principio de lo publicado. */
+function casa(titulo, historico) {
+  const t = String(titulo).toLowerCase().replace(/[^\p{L}\p{N} ]/gu, '').trim();
+  if (t.length < 12) return null;
+  return historico.find((h) => h.tema.includes(t.slice(0, Math.min(40, t.length)))) || null;
+}
+
 /** Las fotos con ruta relativa las sirve el sitio; el móvil necesita la URL. */
 function urlImagen(img) {
   if (!img) return null;
@@ -67,6 +96,7 @@ const TIPOS = Object.fromEntries(ETIQUETAS.tipos.concat(ETIQUETAS.nuevas || []).
 
 const soloMarca = process.argv[2];
 const marcas = soloMarca ? [soloMarca] : ['creartbox', 'adar'];
+const HISTORICO = await yaEnInstagram();
 const salida = { generado: new Date().toISOString(), origen: 'gaawi/adar', marcas: {} };
 
 for (const nombre of marcas) {
@@ -81,7 +111,10 @@ for (const nombre of marcas) {
       const r = rev[clave(p)] || {};
       const etq = ETIQUETAS.fichas[`${nombre}:${clave(p)}`] || {};
       const tipo = TIPOS[etq.tipo];
+      const salio = nombre === 'creartbox' ? casa(p.title, HISTORICO) : null;
       return {
+        // Si ya salió, el muro deja de ofrecerlo como pendiente.
+        publicadoEn: salio ? { fecha: salio.fecha, url: salio.url } : null,
         // El estilo no se elige: lo decide para qué es el post.
         tipo: etq.tipo || null,
         concierto: etq.concierto || null,
@@ -96,7 +129,7 @@ for (const nombre of marcas) {
         url: p.url,
         date: p.date,
         tags: p.tags,
-        slides: p.slides,
+        slides: recortar(p.slides),
         // El pie de cada red, ya compuesto, con lo que se ve antes del «más».
         pies: {
           ig: { texto: pie(p, brand, 'ig'), asomo: asomo(pie(p, brand, 'ig'), 'ig'), limite: REDES.ig.limite },

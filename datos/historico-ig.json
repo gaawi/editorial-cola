@@ -1,37 +1,286 @@
 {
-  "_ayuda": "Lo ya publicado en Instagram, sacado de las analíticas de Metricool (conector «posts»), que sí traen el histórico aunque la marca se conectara el 17/10/2026. Sirve para no repetirse y para ver qué funcionó. Texto recortado; el completo se vuelve a pedir cuando haga falta.",
-  "cuenta": "creartboxnyc",
-  "obtenido": "2026-10-18",
-  "columnas": ["fecha", "url", "tipo", "likes", "alcance", "vistas", "tema"],
-  "posts": [
-    ["2026-10-07","https://www.instagram.com/p/DeMlCCjCkqN/","imagen",51,335,658,"Eight questions for Eric Moe · entrevista"],
-    ["2026-10-01","https://www.instagram.com/p/Dd8ioPpDRe0/","carrusel",10,125,329,"Currents opens the season · anuncio de concierto"],
-    ["2026-09-26","https://www.instagram.com/p/DdwUCm3KIgR/","imagen",39,773,1660,"ADAR Artist Residency 2026-27 · convocatoria"],
-    ["2026-09-24","https://www.instagram.com/p/DdqS3gHChsb/","carrusel",54,817,2355,"CreArtBox announces its twelfth season · nota de prensa"],
-    ["2026-04-03","https://www.instagram.com/p/DWrwXOrmKNH/","carrusel",43,479,1305,"Chamber Music Lehigh Valley: concierto y programa escolar · crónica"],
-    ["2026-03-12","https://www.instagram.com/p/DVy2j4kjzN8/","imagen",43,1150,2900,"Ganadores de la convocatoria abierta, 400 solicitudes · convocatoria"],
-    ["2026-02-07","https://www.instagram.com/p/DUdutobkQmw/","carrusel",41,555,1551,"Concierto en DiMenna con Urraca y Gendron, sala llena · crónica"],
-    ["2025-12-15","https://www.instagram.com/p/DSTNeAHCqB0/","carrusel",45,822,2266,"Music Ricercata y Pictures at an Exhibition · crónica"],
-    ["2025-11-20","https://www.instagram.com/p/DRSDqYKEb4L/","imagen",25,136,339,"Chaminade, Music on Madison, Queens Log, GoFundMe · agenda larga"],
-    ["2025-10-28","https://www.instagram.com/p/DQWrsMEjUEe/","carrusel",37,953,3926,"Beyond the Surface: 250 personas, estreno de Cholodenko · crónica"],
-    ["2025-06-07","https://www.instagram.com/p/DKmecKfA3F8/","imagen",63,1309,5727,"Resumen de la temporada 2024-25 · balance"],
-    ["2025-06-03","https://www.instagram.com/p/DKcK8F8AKEQ/","imagen",15,312,822,"Approaching Zero en Flushing Town Hall, gratis · anuncio"],
-    ["2025-05-08","https://www.instagram.com/p/DJZ8fGfSFML/","carrusel",82,969,4321,"Perennial: estreno de Petrushka de cámara · crónica"],
-    ["2025-05-03","https://www.instagram.com/p/DJLV4GmvOkk/","imagen",2,148,404,"T-1 Because You Deserve It · cuenta atrás"],
-    ["2025-05-02","https://www.instagram.com/p/DJIxE_lt_pV/","imagen",3,125,344,"T-2 Hear New Music, Casarrubios · cuenta atrás"],
-    ["2025-05-01","https://www.instagram.com/p/DJGMSass8VX/","imagen",1,119,322,"T-3 The Venue Becomes the Instrument · cuenta atrás"],
-    ["2025-04-30","https://www.instagram.com/p/DJDnfXSOKAH/","imagen",4,134,364,"T-4 See How Music Moves · cuenta atrás"],
-    ["2025-04-27","https://www.instagram.com/p/DI9HKIwOuYI/","imagen",7,140,317,"Perennial: no te llevas un programa · cuenta atrás"],
-    ["2025-04-24","https://www.instagram.com/p/DI06h-4RGiQ/","imagen",13,165,317,"T-10 Forget the Traditional Concert Hall · cuenta atrás"],
-    ["2025-04-23","https://www.instagram.com/p/DI1a7JFu5MP/","imagen",61,1074,3534,"Casarrubios, quinteto de SEVEN, nominado al Grammy · contexto de obra"],
-    ["2025-04-11","https://www.instagram.com/p/DIT9xj5Pryc/","carrusel",92,1068,3298,"Evolving Threads: público en semicírculo, luces LED · crónica"],
-    ["2025-04-03","https://www.instagram.com/p/DH_PUvNuD9m/","imagen",24,435,1098,"Un mes para Perennial en Mark Morris · anuncio"],
-    ["2025-03-31","https://www.instagram.com/p/DH2D44doiyB/","imagen",29,453,624,"Convocatoria de artistas visuales, cierre · convocatoria"],
-    ["2025-03-28","https://www.instagram.com/p/DHv2Chbgj_H/","imagen",17,232,353,"Call for Composers: CA1, CA2, residencia · convocatoria"],
-    ["2025-03-27","https://www.instagram.com/p/DHs_rkbxHxS/","imagen",31,415,1035,"Presentación de Perennial con Sarah K Williams · anuncio"],
-    ["2025-01-14","https://www.instagram.com/p/DEz7W1qRPVj/","carrusel",61,1169,3394,"Año nuevo + estreno de The Soft Moon de Hannah Selin · crónica"],
-    ["2024-11-23","https://www.instagram.com/p/DCujlFjSzrb/","imagen",10,296,578,"X is the New Y, 11 dic en DiMenna · anuncio"],
-    ["2024-02-01","https://www.instagram.com/p/C20n_qDgm2K/","carrusel",31,25,0,"Vídeo nuevo en YouTube: Pictures at an Exhibition · archivo"],
-    ["2023-11-24","https://www.instagram.com/p/C0CoY-WgNqL/","carrusel",52,48,0,"Circle Noir primera edición + próximas fechas · crónica"]
+ "_ayuda": "Lo ya publicado en Instagram, sacado de las analíticas de Metricool (conector «posts»), que sí traen el histórico aunque la marca se conectara el 17/10/2026. Sirve para no repetirse y para ver qué funcionó. Texto recortado; el completo se vuelve a pedir cuando haga falta.",
+ "cuenta": "creartboxnyc",
+ "obtenido": "2026-10-18",
+ "columnas": [
+  "fecha",
+  "url",
+  "tipo",
+  "likes",
+  "alcance",
+  "vistas",
+  "tema"
+ ],
+ "posts": [
+  [
+   "2026-10-18",
+   "https://www.instagram.com/p/DeonR6gCCAx/",
+   "imagen",
+   0,
+   0,
+   0,
+   "Read the program before the concert! · servicio · con la imagen del kit"
+  ],
+  [
+   "2026-10-07",
+   "https://www.instagram.com/p/DeMlCCjCkqN/",
+   "imagen",
+   51,
+   335,
+   658,
+   "Eight questions for Eric Moe · entrevista"
+  ],
+  [
+   "2026-10-01",
+   "https://www.instagram.com/p/Dd8ioPpDRe0/",
+   "carrusel",
+   10,
+   125,
+   329,
+   "Currents opens the season · anuncio de concierto"
+  ],
+  [
+   "2026-09-26",
+   "https://www.instagram.com/p/DdwUCm3KIgR/",
+   "imagen",
+   39,
+   773,
+   1660,
+   "ADAR Artist Residency 2026-27 · convocatoria"
+  ],
+  [
+   "2026-09-24",
+   "https://www.instagram.com/p/DdqS3gHChsb/",
+   "carrusel",
+   54,
+   817,
+   2355,
+   "CreArtBox announces its twelfth season · nota de prensa"
+  ],
+  [
+   "2026-04-03",
+   "https://www.instagram.com/p/DWrwXOrmKNH/",
+   "carrusel",
+   43,
+   479,
+   1305,
+   "Chamber Music Lehigh Valley: concierto y programa escolar · crónica"
+  ],
+  [
+   "2026-03-12",
+   "https://www.instagram.com/p/DVy2j4kjzN8/",
+   "imagen",
+   43,
+   1150,
+   2900,
+   "Ganadores de la convocatoria abierta, 400 solicitudes · convocatoria"
+  ],
+  [
+   "2026-02-07",
+   "https://www.instagram.com/p/DUdutobkQmw/",
+   "carrusel",
+   41,
+   555,
+   1551,
+   "Concierto en DiMenna con Urraca y Gendron, sala llena · crónica"
+  ],
+  [
+   "2025-12-15",
+   "https://www.instagram.com/p/DSTNeAHCqB0/",
+   "carrusel",
+   45,
+   822,
+   2266,
+   "Music Ricercata y Pictures at an Exhibition · crónica"
+  ],
+  [
+   "2025-11-20",
+   "https://www.instagram.com/p/DRSDqYKEb4L/",
+   "imagen",
+   25,
+   136,
+   339,
+   "Chaminade, Music on Madison, Queens Log, GoFundMe · agenda larga"
+  ],
+  [
+   "2025-10-28",
+   "https://www.instagram.com/p/DQWrsMEjUEe/",
+   "carrusel",
+   37,
+   953,
+   3926,
+   "Beyond the Surface: 250 personas, estreno de Cholodenko · crónica"
+  ],
+  [
+   "2025-06-07",
+   "https://www.instagram.com/p/DKmecKfA3F8/",
+   "imagen",
+   63,
+   1309,
+   5727,
+   "Resumen de la temporada 2024-25 · balance"
+  ],
+  [
+   "2025-06-03",
+   "https://www.instagram.com/p/DKcK8F8AKEQ/",
+   "imagen",
+   15,
+   312,
+   822,
+   "Approaching Zero en Flushing Town Hall, gratis · anuncio"
+  ],
+  [
+   "2025-05-08",
+   "https://www.instagram.com/p/DJZ8fGfSFML/",
+   "carrusel",
+   82,
+   969,
+   4321,
+   "Perennial: estreno de Petrushka de cámara · crónica"
+  ],
+  [
+   "2025-05-03",
+   "https://www.instagram.com/p/DJLV4GmvOkk/",
+   "imagen",
+   2,
+   148,
+   404,
+   "T-1 Because You Deserve It · cuenta atrás"
+  ],
+  [
+   "2025-05-02",
+   "https://www.instagram.com/p/DJIxE_lt_pV/",
+   "imagen",
+   3,
+   125,
+   344,
+   "T-2 Hear New Music, Casarrubios · cuenta atrás"
+  ],
+  [
+   "2025-05-01",
+   "https://www.instagram.com/p/DJGMSass8VX/",
+   "imagen",
+   1,
+   119,
+   322,
+   "T-3 The Venue Becomes the Instrument · cuenta atrás"
+  ],
+  [
+   "2025-04-30",
+   "https://www.instagram.com/p/DJDnfXSOKAH/",
+   "imagen",
+   4,
+   134,
+   364,
+   "T-4 See How Music Moves · cuenta atrás"
+  ],
+  [
+   "2025-04-27",
+   "https://www.instagram.com/p/DI9HKIwOuYI/",
+   "imagen",
+   7,
+   140,
+   317,
+   "Perennial: no te llevas un programa · cuenta atrás"
+  ],
+  [
+   "2025-04-24",
+   "https://www.instagram.com/p/DI06h-4RGiQ/",
+   "imagen",
+   13,
+   165,
+   317,
+   "T-10 Forget the Traditional Concert Hall · cuenta atrás"
+  ],
+  [
+   "2025-04-23",
+   "https://www.instagram.com/p/DI1a7JFu5MP/",
+   "imagen",
+   61,
+   1074,
+   3534,
+   "Casarrubios, quinteto de SEVEN, nominado al Grammy · contexto de obra"
+  ],
+  [
+   "2025-04-11",
+   "https://www.instagram.com/p/DIT9xj5Pryc/",
+   "carrusel",
+   92,
+   1068,
+   3298,
+   "Evolving Threads: público en semicírculo, luces LED · crónica"
+  ],
+  [
+   "2025-04-03",
+   "https://www.instagram.com/p/DH_PUvNuD9m/",
+   "imagen",
+   24,
+   435,
+   1098,
+   "Un mes para Perennial en Mark Morris · anuncio"
+  ],
+  [
+   "2025-03-31",
+   "https://www.instagram.com/p/DH2D44doiyB/",
+   "imagen",
+   29,
+   453,
+   624,
+   "Convocatoria de artistas visuales, cierre · convocatoria"
+  ],
+  [
+   "2025-03-28",
+   "https://www.instagram.com/p/DHv2Chbgj_H/",
+   "imagen",
+   17,
+   232,
+   353,
+   "Call for Composers: CA1, CA2, residencia · convocatoria"
+  ],
+  [
+   "2025-03-27",
+   "https://www.instagram.com/p/DHs_rkbxHxS/",
+   "imagen",
+   31,
+   415,
+   1035,
+   "Presentación de Perennial con Sarah K Williams · anuncio"
+  ],
+  [
+   "2025-01-14",
+   "https://www.instagram.com/p/DEz7W1qRPVj/",
+   "carrusel",
+   61,
+   1169,
+   3394,
+   "Año nuevo + estreno de The Soft Moon de Hannah Selin · crónica"
+  ],
+  [
+   "2024-11-23",
+   "https://www.instagram.com/p/DCujlFjSzrb/",
+   "imagen",
+   10,
+   296,
+   578,
+   "X is the New Y, 11 dic en DiMenna · anuncio"
+  ],
+  [
+   "2024-02-01",
+   "https://www.instagram.com/p/C20n_qDgm2K/",
+   "carrusel",
+   31,
+   25,
+   0,
+   "Vídeo nuevo en YouTube: Pictures at an Exhibition · archivo"
+  ],
+  [
+   "2023-11-24",
+   "https://www.instagram.com/p/C0CoY-WgNqL/",
+   "carrusel",
+   52,
+   48,
+   0,
+   "Circle Noir primera edición + próximas fechas · crónica"
   ]
+ ]
 }

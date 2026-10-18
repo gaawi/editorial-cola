@@ -22,6 +22,7 @@ import { fileURLToPath } from 'node:url';
 
 import { descubrirCuentas, publicarFacebook, publicarInstagram } from './lib/meta.mjs';
 import { marcas, normalizarImagen, programar } from './lib/metricool.mjs';
+import { imagenesDelKit } from './lib/kit.mjs';
 import { cargarIdeas, clave, buscar } from './lib/ideas.mjs';
 import { pie, asomo, repasar, REDES } from './lib/textos.mjs';
 
@@ -299,25 +300,37 @@ async function ordenVer(sueltos, op) {
   }
 }
 
-async function ordenSubir(sueltos) {
-  const origen = sueltos[0] || morir('Dime qué archivo: node publicar.mjs subir foto.jpg');
+/**
+ * Deja una imagen en una URL pública y la devuelve.
+ *
+ * Ni Meta ni Metricool aceptan un archivo: van a buscarlo por HTTP cuando
+ * publican, así que tiene que estar servido en algún sitio. Se usa este mismo
+ * repositorio, en la rama en la que estemos.
+ *
+ * Ojo el día que el repositorio pase a privado: raw.githubusercontent deja de
+ * servir y habrá que llevarlas a public/kit/ del repositorio de ADAR, que es
+ * público y lo sirve festivaladar.com.
+ */
+async function subirImagen(origen, etiqueta) {
   if (!existsSync(origen)) morir(`No existe ${origen}.`);
-  if (!/\.jpe?g$/i.test(origen)) morir('Instagram solo acepta JPEG. Convierte la imagen antes.');
-
-  // Instagram va a buscar la imagen por HTTP, así que tiene que estar servida
-  // en algún sitio público: este mismo repositorio, en main, sirve.
-  const nombre = `${new Date().toISOString().slice(0, 10)}-${basename(origen)}`.replace(/[^\w.-]/g, '-');
+  const nombre = `${new Date().toISOString().slice(0, 10)}-${etiqueta || basename(origen)}`.replace(/[^\w.-]/g, '-');
   await mkdir(join(AQUI, 'imagenes'), { recursive: true });
   await copyFile(origen, join(AQUI, 'imagenes', nombre));
 
   const git = (...args) => execFileSync('git', args, { cwd: AQUI, encoding: 'utf8' }).trim();
-  git('add', join('imagenes', nombre));
-  git('commit', '-m', `Imagen para publicar: ${nombre}`);
-  git('push', 'origin', 'HEAD:main');
   const rama = git('rev-parse', '--abbrev-ref', 'HEAD');
+  git('add', join('imagenes', nombre));
+  // Si la imagen ya estaba igual, no hay nada que confirmar y no es un error.
+  try { git('commit', '-m', `Imagen para publicar: ${nombre}`); } catch {}
   git('push', '-u', 'origin', rama);
 
-  const url = `https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/${encodeURIComponent(nombre)}`;
+  return `https://raw.githubusercontent.com/gaawi/editorial-cola/${rama}/imagenes/${encodeURIComponent(nombre)}`;
+}
+
+async function ordenSubir(sueltos) {
+  const origen = sueltos[0] || morir('Dime qué archivo: node publicar.mjs subir foto.jpg');
+  if (!/\.jpe?g$/i.test(origen)) morir('Instagram solo acepta JPEG. Convierte la imagen antes.');
+  const url = await subirImagen(origen);
   console.log(C.verde('✓ ') + 'subida: ' + url);
   return url;
 }
@@ -326,13 +339,16 @@ async function ordenPublicar(op) {
   const redes = op.red === 'ig' ? ['ig'] : op.red === 'fb' ? ['fb'] : ['ig', 'fb'];
 
   let texto = {};
-  let imagen = op.imagen || null;
+  // Una imagen por red: el kit dibuja 1080×1080 para Instagram y 1200×630
+  // para Facebook, y no son recortes la una de la otra.
+  const imagenes = {};
   let etiqueta = null;
+  let ficha = null;
 
   if (op.idea) {
     const f = await unaIdea(String(op.idea), op.marca);
+    ficha = f;
     etiqueta = `${f.marca}:${clave(f.idea)}`;
-    imagen = imagen || urlImagen(f.idea.image);
     for (const red of redes) texto[red] = pie(f.idea, f.brand, red);
     const pega = luzVerde(f.rev);
     if (pega) console.log(C.ambar('⚠ ') + 'Ojo: esta ficha ' + pega + '.');
@@ -340,6 +356,29 @@ async function ordenPublicar(op) {
     const suelto = op['texto-archivo'] ? await readFile(String(op['texto-archivo']), 'utf8') : op.texto;
     if (!suelto) morir('Dime qué publicar: --idea <clave> o --texto "…" o --texto-archivo <ruta>.');
     for (const red of redes) texto[red] = String(suelto).trim();
+  }
+
+  // Qué imagen lleva cada red, por orden: la que se pida a mano, la que dibuja
+  // el kit, o —solo si se pide— la foto de origen pelada.
+  if (op.imagen) {
+    for (const red of redes) imagenes[red] = String(op.imagen);
+  } else if (ficha && op['foto-pelada']) {
+    for (const red of redes) imagenes[red] = urlImagen(ficha.idea.image);
+  } else if (ficha && ficha.idea.image) {
+    if (op.ya) {
+      console.log(C.gris('Sacando las imágenes del kit…'));
+      const hechas = await imagenesDelKit({
+        marca: ficha.marca,
+        clave: clave(ficha.idea),
+        formatos: redes,
+        adar: resolve(AQUI, '../adar'),
+        aviso: (m) => process.stdout.write(C.gris(`  ${m}\r`)),
+      });
+      for (const red of redes) imagenes[red] = await subirImagen(hechas[red], `${clave(ficha.idea).split('/').pop()}-${red}.jpg`);
+    } else {
+      // En ensayo no se construye el sitio entero: basta con decir qué saldría.
+      for (const red of redes) imagenes[red] = `(la dibuja el kit: ${red === 'ig' ? '1080×1080' : '1200×630'} sobre ${urlImagen(ficha.idea.image)})`;
+    }
   }
   if (op['texto-ig']) texto.ig = String(op['texto-ig']);
   if (op['texto-fb']) texto.fb = String(op['texto-fb']);
@@ -349,7 +388,12 @@ async function ordenPublicar(op) {
   // Repaso antes de nada: si algo no cuadra, aquí se para.
   const pegas = [];
   for (const red of redes) {
-    for (const p of repasar({ red, texto: texto[red], imagen, via })) pegas.push(`${REDES[red].nombre}: ${p}`);
+    const img = imagenes[red];
+    // En ensayo la imagen del kit todavía no existe: se repasa lo demás.
+    const sinDibujar = typeof img === 'string' && img.startsWith('(');
+    for (const p of repasar({ red, texto: texto[red], imagen: sinDibujar ? 'https://x/y.jpg' : img, via })) {
+      pegas.push(`${REDES[red].nombre}: ${p}`);
+    }
   }
   if (pegas.length) {
     console.error(C.rojo('✗ No publico:'));
@@ -381,7 +425,7 @@ async function ordenPublicar(op) {
   if (!op.ya) {
     console.log(C.ambar('ENSAYO') + C.gris(`  — nada se ha publicado. Por ${via}. Añade --ya para hacerlo de verdad.\n`));
     if (sinCuenta) console.log(C.ambar('⚠ ') + sinCuenta.split('\n')[0] + C.gris('  (el texto se puede repasar igual)\n'));
-    console.log(C.gris('imagen  ') + (imagen || 'ninguna'));
+    for (const red of redes) console.log(C.gris(`imagen ${red}  `) + (imagenes[red] || 'ninguna'));
     if (via === 'metricool') {
       console.log(C.gris('cuando  ') + (op.cuando || 'dentro de 5 minutos') + (op.borrador ? C.ambar('  · como borrador') : ''));
     }
@@ -395,9 +439,9 @@ async function ordenPublicar(op) {
   }
 
   // Metricool no publica imágenes de fuera: primero las copia a su servidor.
-  let mediaId = null;
-  if (via === 'metricool' && imagen) {
-    mediaId = await normalizarImagen(imagen, destino.cred);
+  const mediaIds = {};
+  if (via === 'metricool') {
+    for (const red of redes) if (imagenes[red]) mediaIds[red] = await normalizarImagen(imagenes[red], destino.cred);
   }
 
   for (const red of redes) {
@@ -407,7 +451,7 @@ async function ordenPublicar(op) {
         r = await programar({
           red,
           texto: texto[red],
-          mediaId,
+          mediaId: mediaIds[red],
           fecha: op.cuando,
           zona: op.zona || process.env.TZ_PUBLICACION,
           borrador: op.borrador,
@@ -422,14 +466,14 @@ async function ordenPublicar(op) {
                 igId: destino.igId,
                 token: destino.pagina.token,
                 texto: texto.ig,
-                imagen,
+                imagen: imagenes.ig,
                 aviso: (m) => process.stdout.write(C.gris(`  ${m}\r`)),
               })
             : await publicarFacebook({
                 paginaId: destino.pagina.id,
                 token: destino.pagina.token,
                 texto: texto.fb,
-                imagen,
+                imagen: imagenes.fb,
                 enlace: op.enlace,
               });
         console.log(C.verde('✓ ') + REDES[red].nombre + '  ' + r.enlace);
@@ -444,7 +488,7 @@ async function ordenPublicar(op) {
           id: r.id,
           enlace: r.enlace,
           cuando: r.cuando || null,
-          imagen,
+          imagen: imagenes[red],
           texto: texto[red],
         }) + '\n'
       );
@@ -482,7 +526,8 @@ opciones de publicar
   --idea <clave>               saca texto e imagen del kit de redes
   --texto "…" | --texto-archivo <ruta>
   --texto-ig "…" --texto-fb "…"   para separar el texto de cada red
-  --imagen <url>               manda sobre la imagen de la ficha
+  --imagen <url>               manda sobre todo lo demás, la misma en las dos
+  --foto-pelada                la foto de origen, sin pasar por el kit
   --enlace <url>               solo Facebook, entrada sin foto
   --red ig | fb | ambas        por defecto, ambas
   --via meta | metricool       por defecto, la que tenga credenciales

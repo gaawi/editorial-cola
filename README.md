@@ -140,6 +140,11 @@ node publicar.mjs publicar --texto "…" --enlace https://… --red fb
 
 ## Lo que conviene saber
 
+- **La imagen la dibuja el kit, no se manda la foto pelada.** Al publicar una
+  ficha se abre el kit de verdad (se construye el sitio, se sirve en local y
+  se pulsa su propio botón de descarga) y se sube lo que sale: 1080×1080 para
+  Instagram y 1200×630 para Facebook, cada una la suya. Con `--foto-pelada`
+  se manda la foto de origen, que es lo que se hacía antes sin querer.
 - **La imagen siempre tiene que estar en una URL pública que no caduque.**
   Publicando contra Meta, además, solo vale JPEG: Meta va a buscarla al
   publicar. Metricool se la copia antes a su servidor y acepta más formatos.

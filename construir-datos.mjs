@@ -106,7 +106,8 @@ const CUENTAS = {
 function marcaParaDibujar(b) {
   return {
     id: b.id, org: b.org, stamp: b.stamp, site: b.site, logo: b.logo,
-    ink: b.ink, paper: b.paper, accent: b.accent, overPhotoInk: b.overPhotoInk,
+    ink: b.ink, paper: b.paper, accent: b.accent, onAccent: b.onAccent,
+    overPhotoInk: b.overPhotoInk,
     ctaInk: b.ctaInk, textBg: b.textBg, textTitle: b.textTitle,
     textBody: b.textBody, textFoot: b.textFoot,
     display: b.display, ui: b.ui, label: b.label,
@@ -147,10 +148,15 @@ for (const nombre of marcas) {
         // Si ya salió, el muro deja de ofrecerlo como pendiente.
         publicadoEn: salio ? { fecha: salio.fecha, url: salio.url } : null,
         ventana: ventanaDe(tipo, ETIQUETAS.conciertos.find((c) => c.id === etq.concierto), p.date),
-        // El estilo no se elige: lo decide para qué es el post.
         tipo: etq.tipo || null,
         concierto: etq.concierto || null,
-        estilo: tipo ? tipo.estilo : 'cinta',
+        // El tipo pone el estilo por defecto, que es lo que le da ritmo a la
+        // rejilla. Pero una ficha puede pedir el suyo —`estilo` en el kit— y
+        // ese manda: ocho fichas de «context» seguidas salían las ocho con
+        // el mismo marco, y eso no es ritmo, es monotonía.
+        estilo: p.estilo || (tipo ? tipo.estilo : 'cinta'),
+        // El dato que dibuja el estilo «cifra». Sin esto se cae a «cinta».
+        cifra: p.cifra || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

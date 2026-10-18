@@ -25,8 +25,16 @@ export const TAMANOS = {
  *   bloque  — banda sólida bajo la foto. Se lee como un aviso.
  *   marco   — foto a sangre, velo y recuadro. El texto centrado.
  *   limpia  — la foto y nada más. Para cuando la foto ya lo dice todo.
+ *
+ * Y cuatro que rompen la retícula a propósito. No se reparten por tipo: se
+ * eligen ficha a ficha, porque uno solo en la pantalla es un golpe y tres
+ * seguidos son un escándalo.
+ *   cifra   — el dato ocupa la imagen. La foto es el fondo del número.
+ *   cartel  — tipografía a tamaño de pared y un filo de foto abajo.
+ *   duo     — la foto en blanco y negro y el titular sobre un panel ámbar.
+ *   franja  — la banda de señal cruzada, con el titular torcido encima.
  */
-export const ESTILOS = ['cinta', 'bloque', 'marco', 'limpia'];
+export const ESTILOS = ['cinta', 'bloque', 'marco', 'limpia', 'cifra', 'cartel', 'duo', 'franja'];
 
 export function crearMotor(B) {
   const DISPLAY = B.display;
@@ -64,12 +72,12 @@ export function crearMotor(B) {
   }
 
   /** Baja el cuerpo hasta que quepa en la caja. Igual que en el kit. */
-  function encajar(ctx, texto, maxW, maxH, peso, familia, inicio, minimo) {
+  function encajar(ctx, texto, maxW, maxH, peso, familia, inicio, minimo, plomo = 1.32) {
     let size = inicio;
     while (size > minimo) {
       ctx.font = `${peso} ${size}px ${familia}`;
       const ls = partir(ctx, texto, maxW);
-      if (ls.length * size * 1.32 <= maxH) return { size, lines: ls };
+      if (ls.length * size * plomo <= maxH) return { size, lines: ls };
       size -= 2;
     }
     ctx.font = `${peso} ${minimo}px ${familia}`;
@@ -115,6 +123,37 @@ export function crearMotor(B) {
       ctx.restore();
       return true;
     } catch { return false; }
+  }
+
+  /**
+   * Pasa a dos tintas lo que ya esté pintado en ese rectángulo: las sombras
+   * al color oscuro y las luces al claro. Se hace con modos de fusión y no
+   * con `ctx.filter` porque el filtro de canvas llegó tarde a WebKit y el
+   * móvil desde el que se aprueba esto es un iPhone.
+   *   «saturation» coge la saturación del origen —cero— y conserva la
+   *   luminosidad de lo de abajo, así que deja la foto en gris.
+   */
+  function duotono(ctx, x, y, w, h, sombra, luz) {
+    ctx.save();
+    ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip();
+    ctx.globalCompositeOperation = 'saturation';
+    ctx.fillStyle = 'hsl(0, 0%, 50%)'; ctx.fillRect(x, y, w, h);
+    ctx.globalCompositeOperation = 'multiply';
+    ctx.fillStyle = luz; ctx.fillRect(x, y, w, h);
+    ctx.globalCompositeOperation = 'screen';
+    ctx.fillStyle = sombra; ctx.fillRect(x, y, w, h);
+    ctx.restore();
+  }
+
+  /** El cuerpo más grande con el que una sola línea cabe a lo ancho. */
+  function aLoAncho(ctx, texto, maxW, maxH, peso, familia) {
+    let size = Math.min(Math.round(maxW * 0.5), Math.round(maxH / 0.74));
+    ctx.font = `${peso} ${size}px ${familia}`;
+    while (ctx.measureText(texto).width > maxW && size > 24) {
+      size -= 4;
+      ctx.font = `${peso} ${size}px ${familia}`;
+    }
+    return size;
   }
 
   /**
@@ -187,6 +226,125 @@ export function crearMotor(B) {
         ctx.font = `${TW} ${mfit.size}px ${DISPLAY}`; ctx.fillStyle = B.overPhotoInk;
         mfit.lines.forEach((l, i) => ctx.fillText(l, W / 2, myy + i * mfit.size * 1.12));
         ctx.textAlign = 'left';
+        return;
+      }
+
+      // ── Los cuatro de riesgo ──────────────────────────────────────────
+
+      // La cifra es el post. El titular no se dibuja: el número y su pie ya
+      // lo dicen, y a tamaño de miniatura se lee un número antes que nada.
+      if (estilo === 'cifra' && post.cifra) {
+        await foto(ctx, post.image, 0, 0, W, H);
+        // Dónde va el bloque. Lo decide la foto: si lo que hay que ver está
+        // abajo —el público de una sala llena—, el número se sube y le deja
+        // el sitio. Por defecto va abajo, que es lo habitual.
+        const arriba = post.cifra.posicion === 'arriba';
+        // Velo en degradado y no plano: se oscurece solo la mitad donde cae
+        // el texto, y la otra respira.
+        const vg = ctx.createLinearGradient(0, 0, 0, H);
+        for (const [t, a] of [[0, 0.26], [0.38, 0.58], [1, 0.90]]) {
+          vg.addColorStop(arriba ? 1 - t : t, rgba(B.ink, a));
+        }
+        ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
+
+        const util = W - pad * 2 - safeRight;
+        const valor = String(post.cifra.valor);
+        // Grande hasta donde den el ancho y el alto: en 1200×630 manda el alto.
+        const cs = aLoAncho(ctx, valor, util, H * 0.46, TW, DISPLAY);
+        const pie = String(post.cifra.pie || '');
+        const pf = encajar(ctx, pie, util, H * 0.22, '400', UI, Math.round(W * 0.046), Math.round(W * 0.028), 1.38);
+        const pieH = pf.lines.length * pf.size * 1.38;
+
+        const ruleH2 = Math.max(4, Math.round(W * 0.007));
+        // El bloque se arma siempre igual —filete, rótulo, cifra, pie— y solo
+        // cambia de dónde cuelga.
+        const rotBase = arriba
+          ? pad + safeTop + ruleH2 + Math.round(W * 0.030) + rotSize
+          : H - pad - safeBottom - pieH - Math.round(W * 0.040) - Math.round(cs * 0.76) - Math.round(W * 0.034);
+        const cifraBase = rotBase + Math.round(cs * 0.76) + Math.round(W * 0.034);
+
+        ctx.fillStyle = B.accent;
+        ctx.fillRect(pad, rotBase - rotSize - Math.round(W * 0.030), Math.round(W * 0.14), ruleH2);
+        if (post.cifra.rotulo) {
+          rotulo(ctx, rotSize, B.accent, Math.round(rotSize * 0.16));
+          ctx.fillText(String(post.cifra.rotulo).toUpperCase(), pad, rotBase);
+          sinEspaciado(ctx);
+        }
+        ctx.font = `${TW} ${cs}px ${DISPLAY}`; ctx.fillStyle = B.accent;
+        ctx.fillText(valor, pad, cifraBase);
+        ctx.font = `400 ${pf.size}px ${UI}`; ctx.fillStyle = B.overPhotoInk;
+        const py = cifraBase + Math.round(W * 0.040) + pf.size * 0.86;
+        pf.lines.forEach((l, i) => ctx.fillText(l, pad, py + i * pf.size * 1.38));
+        return;
+      }
+
+      // Cartel: la tipografía a tamaño de pared, apoyada en un filo de foto.
+      // Es el único que no enseña la foto entera, y por eso no puede ir en
+      // dos fichas seguidas.
+      if (estilo === 'cartel') {
+        ctx.fillStyle = B.ink; ctx.fillRect(0, 0, W, H);
+        const tira = Math.round(H * (fmt === 'fb' ? 0.26 : 0.20));
+        await foto(ctx, post.image, 0, H - tira, W, tira);
+        const filo = Math.max(5, Math.round(W * 0.009));
+        ctx.fillStyle = B.accent; ctx.fillRect(0, H - tira - filo, W, filo);
+
+        const arriba = pad + safeTop;
+        rotulo(ctx, rotSize, B.accent, Math.round(rotSize * 0.16));
+        ctx.fillText(B.stamp, pad, arriba + rotSize);
+        sinEspaciado(ctx);
+
+        const techo = arriba + rotSize * 2.4;
+        const suelo = H - tira - filo - Math.round(pad * 0.7);
+        // Plomo de cartel: 1,04. Las líneas casi se tocan, que es el efecto.
+        const cf = encajar(ctx, slide.title, W - pad * 2 - safeRight, suelo - techo, TW, DISPLAY, Math.round(W * 0.145), Math.round(W * 0.050), 1.04);
+        ctx.font = `${TW} ${cf.size}px ${DISPLAY}`; ctx.fillStyle = B.paper;
+        const cy = suelo - cf.lines.length * cf.size * 1.04 + cf.size * 0.82;
+        cf.lines.forEach((l, i) => ctx.fillText(l, pad, cy + i * cf.size * 1.04));
+        return;
+      }
+
+      // Foto a dos tintas y el titular en negro sobre un panel de señal que
+      // se sale por la izquierda y se queda corto por la derecha. La única
+      // señal de la pantalla es ese panel, así que la foto va sin color.
+      if (estilo === 'duo') {
+        ctx.fillStyle = B.ink; ctx.fillRect(0, 0, W, H);
+        await foto(ctx, post.image, 0, 0, W, H);
+        duotono(ctx, 0, 0, W, H, B.ink, B.paper);
+
+        const panelW = Math.round(W * 0.86);
+        const df = encajar(ctx, slide.title, panelW - pad * 1.8, H * 0.34, TW, DISPLAY, Math.round(W * 0.080), Math.round(W * 0.038), 1.14);
+        const panelH = Math.round(df.lines.length * df.size * 1.14 + pad * 1.4);
+        const panelY = H - safeBottom - Math.round(pad * 0.7) - panelH;
+        ctx.fillStyle = B.accent; ctx.fillRect(0, panelY, panelW, panelH);
+        ctx.font = `${TW} ${df.size}px ${DISPLAY}`; ctx.fillStyle = B.onAccent || B.ink;
+        const dy = panelY + Math.round(pad * 0.7) + df.size * 0.84;
+        df.lines.forEach((l, i) => ctx.fillText(l, pad, dy + i * df.size * 1.14));
+        return;
+      }
+
+      // La banda cruzada. Seis grados: lo justo para que se note que está
+      // torcida y no parezca que se ha descuadrado al exportar.
+      if (estilo === 'franja') {
+        await foto(ctx, post.image, 0, 0, W, H);
+        ctx.fillStyle = rgba(B.ink, 0.22); ctx.fillRect(0, 0, W, H);
+
+        const ff = encajar(ctx, slide.title, W - pad * 2.6 - safeRight, H * 0.30, TW, DISPLAY, Math.round(W * 0.074), Math.round(W * 0.036), 1.14);
+        const bandaH = Math.round(ff.lines.length * ff.size * 1.14 + pad * 1.1);
+        const eje = H - safeBottom - Math.round(H * (fmt === 'fb' ? 0.30 : 0.26));
+
+        ctx.save();
+        ctx.translate(W / 2, eje);
+        ctx.rotate((-6 * Math.PI) / 180);
+        ctx.fillStyle = B.accent;
+        ctx.fillRect(-W, -bandaH / 2, W * 2, bandaH);
+        ctx.font = `${TW} ${ff.size}px ${DISPLAY}`; ctx.fillStyle = B.onAccent || B.ink;
+        const fy = -bandaH / 2 + Math.round(pad * 0.55) + ff.size * 0.84;
+        ff.lines.forEach((l, i) => ctx.fillText(l, -W / 2 + pad, fy + i * ff.size * 1.14));
+        ctx.restore();
+
+        rotulo(ctx, rotSize, rgba(B.paper, 0.78), Math.round(rotSize * 0.16));
+        ctx.fillText(B.stamp, pad, pad + safeTop + rotSize);
+        sinEspaciado(ctx);
         return;
       }
 

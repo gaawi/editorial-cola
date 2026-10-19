@@ -336,12 +336,24 @@ export function crearMotor(B) {
         duotono(ctx, 0, 0, W, H, B.ink, B.paper);
 
         const panelW = Math.round(W * 0.86);
-        const df = encajar(ctx, slide.title, panelW - pad * 1.8, H * 0.34, TW, DISPLAY, Math.round(W * 0.080), Math.round(W * 0.038), PLOMO);
-        const panelH = Math.round(df.lines.length * df.size * PLOMO + pad * 1.4);
+        const df = encajar(ctx, slide.title, panelW - pad * 1.8, H * 0.30, TW, DISPLAY, Math.round(W * 0.080), Math.round(W * 0.038), PLOMO);
+        // El antetítulo, si lo hay: «Did you know?» en versalitas de rótulo
+        // encima del titular, dentro del mismo panel. Sigue siendo una sola
+        // señal, porque la señal es el panel entero.
+        const kick = post.kicker ? String(post.kicker).toUpperCase() : '';
+        const kickH = kick ? Math.round(rotSize * 2.1) : 0;
+        const panelH = Math.round(kickH + df.lines.length * df.size * PLOMO + pad * 1.4);
         const panelY = H - safeBottom - Math.round(pad * 0.7) - panelH;
         ctx.fillStyle = B.accent; ctx.fillRect(0, panelY, panelW, panelH);
+        let dy = panelY + Math.round(pad * 0.7);
+        if (kick) {
+          rotulo(ctx, rotSize, B.onAccent || B.ink, Math.round(rotSize * 0.16));
+          ctx.fillText(kick, pad, dy + rotSize);
+          sinEspaciado(ctx);
+          dy += kickH;
+        }
         ctx.font = `${TW} ${df.size}px ${DISPLAY}`; ctx.fillStyle = B.onAccent || B.ink;
-        const dy = panelY + Math.round(pad * 0.7) + df.size * 0.84;
+        dy += df.size * 0.84;
         df.lines.forEach((l, i) => ctx.fillText(l, pad, dy + i * df.size * PLOMO));
         return;
       }

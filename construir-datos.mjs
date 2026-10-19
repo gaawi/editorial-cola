@@ -186,6 +186,11 @@ for (const nombre of marcas) {
         // enseña en la ficha: más vale verlo al aprobar que descubrirlo
         // cuando ya no hay tiempo de hacer la foto.
         falta: p.falta || null,
+        // Las fotos que se publican tal cual, sin pasar por el motor. Cuando
+        // una ficha las trae, el carrusel son ellas y no hay nada dibujado.
+        fotos: (p.fotos || []).map(urlImagen),
+        // El antetítulo del panel ámbar: «Did you know?» y poco más.
+        kicker: p.kicker || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

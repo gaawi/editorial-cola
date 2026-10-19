@@ -343,13 +343,44 @@ function escapar(s) {
  * En Facebook el enlace se pulsa y sale en azul; en Instagram no se pulsa y
  * sale en texto plano, que es justo el motivo de mandarlo a la bio.
  */
+// Los pies enteros, guardados aparte: meterlos en un atributo obligaría a
+// escapar comillas y saltos de línea, y el texto es de él, no mío.
+const PIES = new Map();
+let nPie = 0;
+
 function pintarPie(texto, corte, claseMas, etiqueta, enlaces) {
-  const visible = texto.length > corte ? texto.slice(0, corte) : texto;
-  const resto = texto.length > corte;
-  let html = escapar(visible).replace(/#[\p{L}\p{N}_]+/gu, (m) => `<span class="eti">${m}</span>`);
-  if (enlaces) html = html.replace(/https?:\/\/[^\s<]+/g, (m) => `<a>${m}</a>`);
-  return html + (resto ? `<span class="${claseMas}">… ${etiqueta}</span>` : '');
+  const id = String(++nPie);
+  PIES.set(id, { texto, enlaces });
+  const largo = texto.length > corte;
+  const corto = largo ? texto.slice(0, corte) : texto;
+  const mas = largo ? `<span class="${claseMas}">… ${etiqueta}</span>` : '';
+  return `<span class="pie-texto${largo ? ' cortado' : ''}" data-pie="${id}">${tintar(corto, enlaces)}${mas}</span>`;
 }
+
+/** Colorea etiquetas y enlaces, que es lo único que pinta cada red. */
+function tintar(texto, enlaces) {
+  let html = escapar(texto).replace(/#[\p{L}\p{N}_]+/gu, (m) => `<span class="eti">${m}</span>`);
+  if (enlaces) html = html.replace(/https?:\/\/[^\s<]+/g, (m) => `<a>${m}</a>`);
+  return html;
+}
+
+/**
+ * El «… más» abría nada: se pintaba para que la vista previa se pareciera a
+ * Instagram y se quedó sin manejador. Daba igual mientras el pie se componía
+ * a partir del titular, porque lo cortado era la coletilla; con los pies
+ * escritos a mano, lo cortado es el post entero.
+ *
+ * Se abre tocando en cualquier parte del texto, no solo en el «más»: en un
+ * móvil esas dos palabras son un blanco de nada.
+ */
+document.addEventListener('click', (ev) => {
+  const caja = ev.target.closest('.pie-texto.cortado');
+  if (!caja) return;
+  const pie = PIES.get(caja.dataset.pie);
+  if (!pie) return;
+  caja.classList.remove('cortado');
+  caja.innerHTML = tintar(pie.texto, pie.enlaces);
+});
 
 // Iconos de trazo, no emoji: el emoji cambia de dibujo en cada sistema y
 // rompía el parecido justo en la fila que más se mira.
@@ -369,9 +400,30 @@ async function lienzo(post, slide, idx, total, fmt) {
   return c;
 }
 
-async function pintarInstagram(p) {
+/**
+ * Una foto que se publica tal cual, sin pasar por el motor. Hay posts que no
+ * quieren diseño: las cinco de Kuopio son las de la web y lo que cuentan lo
+ * cuentan ellas. Se recorta a 4:5 con CSS, que es lo que hace Instagram.
+ */
+function fotoSuelta(url) {
+  const img = new Image();
+  img.className = 'foto-suelta';
+  img.loading = 'lazy';
+  img.src = url;
+  img.alt = '';
+  return img;
+}
+
+/** Las imágenes de un post: sus fotos si las trae, y si no, sus lienzos. */
+function piezasDe(p) {
+  if (p.fotos && p.fotos.length) return { fotos: p.fotos, n: p.fotos.length };
   const esCarrusel = p.slides.length > 1 && p.kind !== 'entrevista';
-  const slides = esCarrusel ? p.slides : [p.slides[0]];
+  return { slides: esCarrusel ? p.slides : [p.slides[0]], n: esCarrusel ? p.slides.length : 1 };
+}
+
+async function pintarInstagram(p) {
+  const piezas = piezasDe(p);
+  const slides = piezas.slides || piezas.fotos;
   const caja = document.createElement('div');
   caja.className = 'ig';
   caja.innerHTML = `
@@ -387,7 +439,11 @@ async function pintarInstagram(p) {
     <div class="ig-hora">Hace un momento</div>`;
 
   const tira = caja.querySelector('.tira');
-  for (let i = 0; i < slides.length; i++) tira.appendChild(await lienzo(p, slides[i], i, slides.length, 'ig'));
+  for (let i = 0; i < slides.length; i++) {
+    tira.appendChild(piezas.fotos
+      ? fotoSuelta(piezas.fotos[i])
+      : await lienzo(p, slides[i], i, slides.length, 'ig'));
+  }
 
   // Los puntos y el contador siguen al dedo, como en la app.
   if (slides.length > 1) {
@@ -419,7 +475,10 @@ async function pintarFacebook(p) {
       <span>${ICONOS.comentar} Comentar</span>
       <span>${ICONOS.compartir} Compartir</span>
     </div>`;
-  caja.insertBefore(await lienzo(p, p.slides[0], 0, 1, 'fb'), caja.querySelector('.fb-acciones'));
+  caja.insertBefore(
+    p.fotos && p.fotos.length ? fotoSuelta(p.fotos[0]) : await lienzo(p, p.slides[0], 0, 1, 'fb'),
+    caja.querySelector('.fb-acciones')
+  );
   return caja;
 }
 
@@ -434,7 +493,10 @@ async function pintarHistoria(p) {
       <small>ahora</small>
     </div>
     <div class="responder"><span>Enviar mensaje</span>${ICONOS.corazon}${ICONOS.enviar}</div>`;
-  caja.insertBefore(await lienzo(p, p.slides[0], 0, 1, 'story'), caja.firstElementChild);
+  caja.insertBefore(
+    p.fotos && p.fotos.length ? fotoSuelta(p.fotos[0]) : await lienzo(p, p.slides[0], 0, 1, 'story'),
+    caja.firstElementChild
+  );
   return caja;
 }
 

@@ -107,7 +107,10 @@ button { background: none; border: none; cursor: pointer; }
 .ig-carrete { position: relative; }
 .ig-carrete .tira { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .ig-carrete .tira::-webkit-scrollbar { display: none; }
-.ig-carrete canvas { width: 100%; flex: 0 0 100%; scroll-snap-align: center; display: block; aspect-ratio: 4/5; background: #000; }
+.ig-carrete canvas,
+.ig-carrete .foto-suelta { width: 100%; flex: 0 0 100%; scroll-snap-align: center; display: block; aspect-ratio: 4/5; background: #000; }
+/* Las fotos sin diseño se recortan a 4:5 como hace Instagram en la rejilla. */
+.foto-suelta { object-fit: cover; }
 .ig-cuenta { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,.6); color: #fff;
   font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
 .ig-puntos { display: flex; justify-content: center; gap: 4px; padding: 10px 0 2px; }
@@ -120,6 +123,9 @@ button { background: none; border: none; cursor: pointer; }
 .ig-pie b { font-weight: 600; margin-right: 5px; }
 .ig-pie .eti { color: #00376b; }
 .ig-pie .mas { color: #8e8e8e; }
+/* Mientras hay texto cortado, tocar el pie lo abre. */
+.pie-texto.cortado { cursor: pointer; }
+.pie-texto { white-space: pre-wrap; }
 .ig-hora { padding: 0 12px 12px; font-size: 11px; color: #8e8e8e; text-transform: uppercase; letter-spacing: .02em; }
 
 /* Facebook */

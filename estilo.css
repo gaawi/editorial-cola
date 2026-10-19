@@ -123,9 +123,13 @@ button { background: none; border: none; cursor: pointer; }
 .ig-pie b { font-weight: 600; margin-right: 5px; }
 .ig-pie .eti { color: #00376b; }
 .ig-pie .mas { color: #8e8e8e; }
-/* Mientras hay texto cortado, tocar el pie lo abre. */
-.pie-texto.cortado { cursor: pointer; }
 .pie-texto { white-space: pre-wrap; }
+/* El pliegue: hasta aquí se ve sin tocar «más» en la red. Lo de después se
+   lee igual, un punto más apagado, para saber qué queda por debajo. */
+.pliegue { display: inline-block; margin: 0 4px; padding: 1px 7px; border-radius: 999px;
+  background: #efefef; color: #8e8e8e; font-size: 11px; font-weight: 600; vertical-align: 2px; }
+.tras-pliegue { color: #5a5a5a; }
+.fb-texto .tras-pliegue { color: #65676b; }
 .ig-hora { padding: 0 12px 12px; font-size: 11px; color: #8e8e8e; text-transform: uppercase; letter-spacing: .02em; }
 
 /* Facebook */
@@ -351,3 +355,7 @@ button { background: none; border: none; cursor: pointer; }
   font-size: 13px;
   line-height: 1.4;
 }
+
+/* Las que solo van como historia: el punto delante del titular avisa de que
+   no hay que buscarlas en el muro, porque ahí no están. */
+#historias .solo-historia small { color: #8e8e8e; }

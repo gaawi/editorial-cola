@@ -191,6 +191,8 @@ for (const nombre of marcas) {
         fotos: (p.fotos || []).map(urlImagen),
         // El antetítulo del panel ámbar: «Did you know?» y poco más.
         kicker: p.kicker || null,
+        // «historia»: va a historias y no al muro. Por defecto, a los dos.
+        formato: p.formato || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

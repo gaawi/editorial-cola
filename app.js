@@ -115,9 +115,10 @@ function pintarHistorias(posts) {
   cont.innerHTML = posts
     .map((p) => {
       const visto = estadoDe(p).estado === 'listo' || estadoDe(p).estado === 'descartado';
-      return `<button data-clave="${p.clave}">
+      const sola = p.formato === 'historia';
+      return `<button data-clave="${p.clave}"${sola ? ' class="solo-historia"' : ''}>
         <span class="aro${visto ? ' vista' : ''}"><img src="${p.image || ''}" alt="" loading="lazy"></span>
-        <small>${escapar(p.title)}</small>
+        <small>${sola ? '· ' : ''}${escapar(p.title)}</small>
       </button>`;
     })
     .join('');
@@ -162,8 +163,14 @@ function pintarLista() {
   });
 
   $('#vacio').hidden = posts.length > 0;
+  // Los circulitos de arriba los lleva todo; el muro, solo lo que es post.
+  // Hay cosas que son una historia y no un post: una curiosidad de treinta
+  // segundos no merece sitio en la rejilla del perfil, que es permanente.
   pintarHistorias(posts);
-  for (const p of posts) cont.appendChild(tarjeta(p));
+  for (const p of posts) {
+    if (p.formato === 'historia') continue;
+    cont.appendChild(tarjeta(p));
+  }
   observarLienzos();
 }
 
@@ -343,18 +350,18 @@ function escapar(s) {
  * En Facebook el enlace se pulsa y sale en azul; en Instagram no se pulsa y
  * sale en texto plano, que es justo el motivo de mandarlo a la bio.
  */
-// Los pies enteros, guardados aparte: meterlos en un atributo obligaría a
-// escapar comillas y saltos de línea, y el texto es de él, no mío.
-const PIES = new Map();
-let nPie = 0;
 
 function pintarPie(texto, corte, claseMas, etiqueta, enlaces) {
-  const id = String(++nPie);
-  PIES.set(id, { texto, enlaces });
-  const largo = texto.length > corte;
-  const corto = largo ? texto.slice(0, corte) : texto;
-  const mas = largo ? `<span class="${claseMas}">… ${etiqueta}</span>` : '';
-  return `<span class="pie-texto${largo ? ' cortado' : ''}" data-pie="${id}">${tintar(corto, enlaces)}${mas}</span>`;
+  // Aquí se lee, no se publica: el texto sale entero y desplegado. El «más»
+  // se queda como marca de dónde corta la red —que es justo lo que hay que
+  // ver al aprobar— pero no esconde nada detrás. Tener que tocar para leer
+  // tu propio post es trabajo de más por una fidelidad que no sirve.
+  if (texto.length <= corte) return `<span class="pie-texto">${tintar(texto, enlaces)}</span>`;
+  return '<span class="pie-texto">'
+    + tintar(texto.slice(0, corte), enlaces)
+    + `<span class="${claseMas} pliegue">${etiqueta} ↓</span>`
+    + `<span class="tras-pliegue">${tintar(texto.slice(corte), enlaces)}</span>`
+    + '</span>';
 }
 
 /** Colorea etiquetas y enlaces, que es lo único que pinta cada red. */
@@ -364,23 +371,6 @@ function tintar(texto, enlaces) {
   return html;
 }
 
-/**
- * El «… más» abría nada: se pintaba para que la vista previa se pareciera a
- * Instagram y se quedó sin manejador. Daba igual mientras el pie se componía
- * a partir del titular, porque lo cortado era la coletilla; con los pies
- * escritos a mano, lo cortado es el post entero.
- *
- * Se abre tocando en cualquier parte del texto, no solo en el «más»: en un
- * móvil esas dos palabras son un blanco de nada.
- */
-document.addEventListener('click', (ev) => {
-  const caja = ev.target.closest('.pie-texto.cortado');
-  if (!caja) return;
-  const pie = PIES.get(caja.dataset.pie);
-  if (!pie) return;
-  caja.classList.remove('cortado');
-  caja.innerHTML = tintar(pie.texto, pie.enlaces);
-});
 
 // Iconos de trazo, no emoji: el emoji cambia de dibujo en cada sistema y
 // rompía el parecido justo en la fila que más se mira.

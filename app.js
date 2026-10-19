@@ -185,10 +185,13 @@ function selloProgramado(p) {
   const cuando = new Date(e.redes[0].cuando);
   const dia = cuando.toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'America/New_York' });
   const hora = cuando.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
-  const redes = e.redes.map((r) => (r.red === 'ig' ? 'Instagram' : 'Facebook')).join(' y ');
-  const que = e.tipo === 'historia' ? 'Historia programada' : 'Programado';
+  // En una línea y corto: esto va en la cabecera de la ficha, al lado del
+  // concierto y de los días que quedan, y no puede comérselos.
+  const redes = e.redes.map((r) => (r.red === 'ig' ? 'IG' : 'FB')).join('+');
+  const que = e.tipo === 'historia' ? 'historia' : 'en cola';
   return `<a class="sello en-cola" href="${PROGRAMADO.calendario}" target="_blank" rel="noopener"
-    >${que}: ${dia}, ${hora} NY · ${redes} ↗</a>`;
+    title="Programado en Metricool. Para cambiarlo o quitarlo hay que ir allí."
+    >${que} ${dia} ${hora} ${redes} ↗</a>`;
 }
 
 /** Un post del muro: como se verá, con la decisión debajo. */

@@ -390,8 +390,11 @@ button { background: none; border: none; cursor: pointer; }
   .pantalla { border-left: 1px solid var(--filete); border-right: 1px solid var(--filete); }
 }
 
-/* Ya está en cola en Metricool: ni se aprueba ni se descarta sin ir allí. */
+/* Ya está en cola en Metricool: ni se aprueba ni se descarta sin ir allí.
+   Va en minúsculas y sin espaciado, al revés que los demás sellos: dice una
+   fecha y una hora, y en versales eso se lee peor y ocupa el doble. */
 .sello.en-cola {
   background: #1d4ed8; color: #fff; text-decoration: none;
-  font-size: 11px; font-weight: 600; padding: 3px 8px;
+  text-transform: none; letter-spacing: 0; font-weight: 600;
+  white-space: nowrap;
 }

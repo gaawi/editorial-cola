@@ -333,3 +333,15 @@ button { background: none; border: none; cursor: pointer; }
 .cuando-ficha { font-size: 10px; font-weight: 600; letter-spacing: .03em; color: var(--suave);
   border: 1px solid var(--filete); border-radius: 4px; padding: 2px 7px; }
 .cuando-ficha.tenue { border-color: transparent; color: var(--tenue); font-weight: 400; }
+
+/* Lo que todavía no se puede publicar porque falta la foto o el vídeo.
+   Va pegado a la imagen y no al pie, porque lo que falta es la imagen. */
+.falta-material {
+  margin: 0;
+  padding: 10px 14px;
+  background: #FFF4D6;
+  border-top: 1px solid #F0DFA8;
+  color: #6B4E00;
+  font-size: 13px;
+  line-height: 1.4;
+}

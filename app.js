@@ -186,6 +186,7 @@ function tarjeta(p) {
       <span class="crece"></span>
     </div>
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
+    ${p.falta ? `<p class="falta-material">Falta material: ${escapar(p.falta)}</p>` : ''}
     ${e.nota ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
     <div class="decidir-fila">
       ${DECISIONES.map((d) => `

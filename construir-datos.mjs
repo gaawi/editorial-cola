@@ -46,9 +46,22 @@ function recortar(slides) {
  * concierto ocurra. Lo que no cuelga de un concierto se cuenta desde su
  * propia fecha.
  */
-function ventanaDe(tipo, concierto, fechaFicha) {
+function ventanaDe(tipo, concierto, fechaFicha, programada) {
   const v = tipo?.ventana;
   const dia = 86400000;
+  // Una ficha escrita a mano con su fecha ya es un calendario: la fecha es
+  // el día en que se publica. La ventana se abre dos semanas antes para
+  // poder aprobarla con tiempo, y se cierra el día de publicar, porque un
+  // «mañana en DiMenna» al día siguiente no vale para nada.
+  if (programada && fechaFicha) {
+    const d = new Date(fechaFicha + 'T12:00:00Z').getTime();
+    return {
+      desde: new Date(d - 14 * dia).toISOString().slice(0, 10),
+      hasta: fechaFicha,
+      ancla: concierto?.nombre || null,
+      porque: 'Lleva fecha propia: se aprueba antes y se publica ese día.',
+    };
+  }
   if (v && concierto?.fecha) {
     const d = new Date(concierto.fecha + 'T12:00:00Z').getTime();
     return {
@@ -152,7 +165,12 @@ for (const nombre of marcas) {
       return {
         // Si ya salió, el muro deja de ofrecerlo como pendiente.
         publicadoEn: salio ? { fecha: salio.fecha, url: salio.url } : null,
-        ventana: ventanaDe(tipo, ETIQUETAS.conciertos.find((c) => c.id === etq.concierto), p.date),
+        ventana: ventanaDe(
+          tipo,
+          ETIQUETAS.conciertos.find((c) => c.id === etq.concierto),
+          p.date,
+          Boolean(p.pie)
+        ),
         tipo: etq.tipo || null,
         concierto: etq.concierto || null,
         // El tipo pone el estilo por defecto, que es lo que le da ritmo a la
@@ -164,6 +182,10 @@ for (const nombre of marcas) {
         // puede pintarse y el motor se cae al de por defecto.
         cifra: p.cifra || null,
         tabla: p.tabla || null,
+        // Qué material falta para que esto se pueda publicar. La app lo
+        // enseña en la ficha: más vale verlo al aprobar que descubrirlo
+        // cuando ya no hay tiempo de hacer la foto.
+        falta: p.falta || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

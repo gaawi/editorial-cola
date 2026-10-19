@@ -38,6 +38,7 @@ let MARCA = 'creartbox';
 let CUENTAS = null;
 let MOTOR = null;
 let APROB = { posts: {} };
+let PROGRAMADO = { posts: {} };
 let shaAprob = null;
 let actual = null;
 let filtro = 'pendientes';
@@ -174,6 +175,22 @@ function pintarLista() {
   observarLienzos();
 }
 
+/**
+ * El sello de «ya está en cola». Dice el día, la hora de Nueva York y en qué
+ * redes, y lleva al calendario de Metricool para cambiarlo o quitarlo.
+ */
+function selloProgramado(p) {
+  const e = (PROGRAMADO.posts || {})[p.clave];
+  if (!e) return '';
+  const cuando = new Date(e.redes[0].cuando);
+  const dia = cuando.toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'America/New_York' });
+  const hora = cuando.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
+  const redes = e.redes.map((r) => (r.red === 'ig' ? 'Instagram' : 'Facebook')).join(' y ');
+  const que = e.tipo === 'historia' ? 'Historia programada' : 'Programado';
+  return `<a class="sello en-cola" href="${PROGRAMADO.calendario}" target="_blank" rel="noopener"
+    >${que}: ${dia}, ${hora} NY · ${redes} ↗</a>`;
+}
+
 /** Un post del muro: como se verá, con la decisión debajo. */
 function tarjeta(p) {
   const e = estadoDe(p);
@@ -190,6 +207,7 @@ function tarjeta(p) {
       ${p.publicadoEn
         ? `<a class="sello publicado" href="${p.publicadoEn.url}" target="_blank" rel="noopener">publicado el ${p.publicadoEn.fecha} ↗</a>`
         : pub.length ? `<span class="sello publicado">ya en ${pub.join('+')}</span>` : ''}
+      ${selloProgramado(p)}
       <span class="crece"></span>
     </div>
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
@@ -722,6 +740,13 @@ async function decidir(estado, nota) {
 // ── Arranque ───────────────────────────────────────────────────────────
 async function arrancar() {
   DATOS = await (await fetch('datos/posts.json', { cache: 'no-store' })).json();
+  // Lo que ya está en cola en Metricool. Sin esto, el muro enseñaba como
+  // pendiente algo que iba a salir solo esa tarde, y se podía descartar sin
+  // enterarse de que ya estaba mandado.
+  try {
+    const r = await fetch('datos/programado.json', { cache: 'no-store' });
+    if (r.ok) PROGRAMADO = await r.json();
+  } catch {}
   // Lo ya decidido: del propio sitio, que es lo último desplegado.
   try {
     const r = await fetch(ARCHIVO + '?t=' + Date.now(), { cache: 'no-store' });

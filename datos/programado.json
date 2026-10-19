@@ -1,0 +1,186 @@
+{
+ "_ayuda": "Lo que está en cola en Metricool, con su hora de Nueva York. Lo escribe quien programa; la app solo lo lee, para que al aprobar se vea lo que ya está mandado y no se descarte por error algo que va a salir solo.",
+ "actualizado": "2026-10-19",
+ "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
+ "posts": {
+  "en/kuopio-residency": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-19T15:00:00-04:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-19T15:05:00-04:00"
+    }
+   ]
+  },
+  "en/currents-sketched-in-october": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-20T11:00:00-04:00"
+    }
+   ]
+  },
+  "en/currents-getting-ready": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-22T15:00:00-04:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-22T15:05:00-04:00"
+    }
+   ]
+  },
+  "en/currents-brahms": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-23T11:00:00-04:00"
+    }
+   ]
+  },
+  "en/currents-offstage": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-24T15:00:00-04:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-24T15:05:00-04:00"
+    }
+   ]
+  },
+  "en/currents-clara": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-25T11:00:00-04:00"
+    }
+   ]
+  },
+  "en/currents-schumann-quartet": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-26T11:00:00-04:00"
+    }
+   ]
+  },
+  "en/currents-two-days": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-28T15:00:00-04:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-28T15:05:00-04:00"
+    }
+   ]
+  },
+  "en/currents-tomorrow": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-29T17:00:00-04:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-29T17:05:00-04:00"
+    }
+   ]
+  },
+  "en/currents-joachim": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-30T11:00:00-04:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-30T11:05:00-04:00"
+    }
+   ]
+  },
+  "en/illinois-preview": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-03T15:00:00-05:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-03T15:05:00-05:00"
+    }
+   ]
+  },
+  "en/illinois-today": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-06T11:00:00-05:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-06T11:05:00-05:00"
+    }
+   ]
+  },
+  "en/awave-tokyo": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-08T15:00:00-05:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-08T15:05:00-05:00"
+    }
+   ]
+  },
+  "en/call-for-scores-reading": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-10T15:00:00-05:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-10T15:05:00-05:00"
+    }
+   ]
+  },
+  "en/winterlight-coming": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-14T15:00:00-05:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-14T15:05:00-05:00"
+    }
+   ]
+  }
+ }
+}

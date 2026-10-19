@@ -387,22 +387,59 @@ export function crearMotor(B) {
       // dos fichas seguidas.
       if (estilo === 'cartel') {
         ctx.fillStyle = B.ink; ctx.fillRect(0, 0, W, H);
-        const tira = Math.round(H * (fmt === 'fb' ? 0.26 : 0.20));
-        await foto(ctx, post.image, 0, H - tira, W, tira);
+        // Sin foto es un cartel de pared de verdad: solo tipografía. Con
+        // foto, un filo abajo. Lo decide la ficha trayendo imagen o no.
+        const lineas = (post.cartel && post.cartel.lineas) || [];
+        const conFoto = Boolean(post.image);
         const filo = Math.max(5, Math.round(W * 0.009));
-        ctx.fillStyle = B.accent; ctx.fillRect(0, H - tira - filo, W, filo);
+        const tira = conFoto ? Math.round(H * (fmt === 'fb' ? 0.26 : 0.20)) : 0;
+        if (conFoto) {
+          await foto(ctx, post.image, 0, H - tira, W, tira);
+          ctx.fillStyle = B.accent; ctx.fillRect(0, H - tira - filo, W, filo);
+        }
 
         const arriba = pad + safeTop;
         rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
         ctx.fillText(B.stamp, pad, arriba + rotSize);
         sinEspaciado(ctx);
 
+        // Las líneas de abajo (fecha, hora, sitio) se reservan su sitio antes
+        // de que el titular decida cuánto ocupa.
+        // Las líneas se encogen hasta que la más larga entra de margen a
+        // margen: una fecha cortada por la derecha no es un cartel.
+        let lf = Math.round(W * 0.040);
+        if (lineas.length) {
+          const anchoUtil = W - pad * 2 - safeRight;
+          while (lf > Math.round(W * 0.024)) {
+            ctx.font = `400 ${lf}px ${UI}`;
+            if (lineas.every((l) => ctx.measureText(String(l)).width <= anchoUtil)) break;
+            lf -= 1;
+          }
+        }
+        const altoLineas = lineas.length ? lineas.length * lf * 1.46 + Math.round(W * 0.05) : 0;
         const techo = arriba + rotSize * 2.4;
-        const suelo = H - tira - filo - Math.round(pad * 0.7);
+        const suelo = (conFoto ? H - tira - filo : H - safeBottom - Math.round(pad * 0.9))
+          - Math.round(pad * 0.7) - altoLineas;
         const cf = encajar(ctx, slide.title, W - pad * 2 - safeRight, suelo - techo, TW, DISPLAY, Math.round(W * 0.145), Math.round(W * 0.050), PLOMO);
         ctx.font = `${TW} ${cf.size}px ${DISPLAY}`; ctx.fillStyle = B.paper;
         const cy = suelo - cf.lines.length * cf.size * PLOMO + cf.size * 0.82;
         cf.lines.forEach((l, i) => ctx.fillText(l, pad, cy + i * cf.size * PLOMO));
+
+        if (lineas.length) {
+          // Un filete de señal separa el titular de los datos. Es el único
+          // ámbar de la pantalla cuando no hay foto debajo.
+          const alto = Math.max(4, Math.round(W * 0.007));
+          let ly = suelo + Math.round(W * 0.050);
+          if (!conFoto) {
+            ctx.fillStyle = B.accent;
+            ctx.fillRect(pad, suelo + Math.round(W * 0.022), Math.round(W * 0.16), alto);
+          }
+          ctx.font = `400 ${lf}px ${UI}`;
+          lineas.forEach((l, i) => {
+            ctx.fillStyle = i === 0 ? B.paper : TINTA_MEDIA;
+            ctx.fillText(String(l), pad, ly + lf * 0.9 + i * lf * 1.46);
+          });
+        }
         return;
       }
 

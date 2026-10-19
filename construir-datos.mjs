@@ -195,6 +195,8 @@ for (const nombre of marcas) {
         formato: p.formato || null,
         // Pegatinas de historia. `senal: true` la pinta en ámbar.
         pegatinas: p.pegatinas || null,
+        // Las líneas de datos del cartel: fecha, hora, sitio, entradas.
+        cartel: p.cartel || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

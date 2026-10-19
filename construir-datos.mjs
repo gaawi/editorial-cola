@@ -197,6 +197,8 @@ for (const nombre of marcas) {
         pegatinas: p.pegatinas || null,
         // Las líneas de datos del cartel: fecha, hora, sitio, entradas.
         cartel: p.cartel || null,
+        // El trapecio ámbar de la portada del cuadernillo.
+        trapecio: p.trapecio || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

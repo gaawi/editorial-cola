@@ -33,6 +33,10 @@ export const TAMANOS = {
  *   cartel  — tipografía a tamaño de pared y un filo de foto abajo.
  *   duo     — la foto en blanco y negro y el titular sobre un panel ámbar.
  *   tabla   — el orden de la noche, compuesto. Cifras en versales tabulares.
+ *   programa — la portada del cuadernillo de mano: todo centrado y el
+ *              trapecio ámbar a sangre abajo. Es el único sitio donde hay
+ *              dos ámbares en pantalla, porque así es su portada de verdad:
+ *              el trapecio es superficie, no señal.
  *
  * Hubo una quinta, «franja», una banda ámbar cruzada a seis grados. Se
  * quitó: el manual dice «square everywhere, including buttons», y una banda
@@ -44,7 +48,7 @@ export const TAMANOS = {
  *   · Se apaga con tinta, no con alfa. Nada de rgba(papel, 0.6).
  *   · Los títulos van a 0,94 de interlineado. Es su firma tipográfica.
  */
-export const ESTILOS = ['cinta', 'bloque', 'marco', 'limpia', 'cifra', 'cartel', 'duo', 'tabla'];
+export const ESTILOS = ['cinta', 'bloque', 'marco', 'limpia', 'cifra', 'cartel', 'duo', 'tabla', 'programa'];
 
 /** El interlineado de los titulares, que el manual fija en 0,94. */
 const PLOMO = 0.94;
@@ -569,6 +573,101 @@ export function crearMotor(B) {
         rotulo(ctx, rotSize, TINTA_MUDA, 0);
         ctx.fillText(B.site, pad, H - Math.round(pad * 0.5) - safeBottom);
         sinEspaciado(ctx);
+        return;
+      }
+
+      // La portada del cuadernillo. Medidas tomadas de
+      // downloads/currents-2026-program.pdf: el trapecio ocupa el tercio de
+      // abajo, entra un 16% por cada lado arriba y se abre hasta un 4%
+      // abajo, donde sangra.
+      if (estilo === 'programa') {
+        ctx.fillStyle = B.ink; ctx.fillRect(0, 0, W, H);
+        const tr = post.trapecio || {};
+        const util = W - pad * 2 - safeRight;
+        const centro = (W - safeRight) / 2;
+        ctx.textAlign = 'center';
+
+        const trH = Math.round(H * (fmt === 'story' ? 0.26 : 0.31));
+        const trY = H - safeBottom - trH;
+
+        let y = pad + safeTop + rotSize;
+        rotulo(ctx, rotSize, B.paper, Math.round(rotSize * 0.2));
+        ctx.fillText(B.stamp, centro, y);
+        sinEspaciado(ctx);
+
+        if (post.kicker) {
+          y += Math.round(H * 0.055);
+          rotulo(ctx, Math.round(rotSize * 0.92), B.accent, Math.round(rotSize * 0.22));
+          ctx.fillText(String(post.kicker).toUpperCase(), centro, y);
+          sinEspaciado(ctx);
+        }
+
+        const lineas = (post.cartel && post.cartel.lineas) || [];
+        let lf = Math.round(W * 0.036);
+        while (lf > Math.round(W * 0.022)) {
+          ctx.font = `400 ${lf}px ${UI}`;
+          if (lineas.every((l) => ctx.measureText(String(l)).width <= util)) break;
+          lf -= 1;
+        }
+        const altoLineas = lineas.length * lf * 1.5;
+
+        const techo = y + Math.round(H * 0.045);
+        const suelo = trY - Math.round(H * 0.05) - altoLineas;
+        const pf = encajar(ctx, slide.title, util, Math.max(1, suelo - techo), TW, DISPLAY, Math.round(W * 0.155), Math.round(W * 0.055), PLOMO);
+        ctx.font = `${TW} ${pf.size}px ${DISPLAY}`; ctx.fillStyle = B.paper;
+        const py2 = techo + (suelo - techo - pf.lines.length * pf.size * PLOMO) / 2 + pf.size * 0.82;
+        pf.lines.forEach((l, i) => ctx.fillText(l, centro, py2 + i * pf.size * PLOMO));
+
+        ctx.font = `400 ${lf}px ${UI}`;
+        lineas.forEach((l, i) => {
+          ctx.fillStyle = i === 0 ? B.paper : TINTA_DIM;
+          ctx.fillText(String(l), centro, suelo + lf * 0.9 + i * lf * 1.5);
+        });
+
+        // El trapecio. Se abre hacia abajo y sangra por abajo.
+        const dentroArriba = Math.round(W * 0.16);
+        const dentroAbajo = Math.round(W * 0.04);
+        ctx.beginPath();
+        ctx.moveTo(dentroArriba, trY);
+        ctx.lineTo(W - dentroArriba, trY);
+        ctx.lineTo(W - dentroAbajo, H);
+        ctx.lineTo(dentroAbajo, H);
+        ctx.closePath();
+        ctx.fillStyle = B.accent; ctx.fill();
+
+        const tinta = B.onAccent || B.ink;
+        let ty2 = trY + Math.round(trH * 0.22);
+        if (tr.rotulo) {
+          rotulo(ctx, Math.round(rotSize * 1.15), tinta, Math.round(rotSize * 0.26));
+          ctx.fillText(String(tr.rotulo).toUpperCase(), centro, ty2);
+          sinEspaciado(ctx);
+        }
+        if (tr.sub) {
+          ty2 += Math.round(trH * 0.14);
+          ctx.font = `400 ${Math.round(W * 0.028)}px ${UI}`; ctx.fillStyle = tinta;
+          ctx.fillText(String(tr.sub), centro, ty2);
+        }
+        if (tr.titulo) {
+          ty2 += Math.round(trH * 0.26);
+          ctx.font = `${TW} ${Math.round(W * 0.062)}px ${DISPLAY}`; ctx.fillStyle = tinta;
+          ctx.fillText(String(tr.titulo), centro, ty2);
+        }
+        if (tr.pie) {
+          ty2 += Math.round(trH * 0.17);
+          rotulo(ctx, Math.round(rotSize * 1.05), tinta, Math.round(rotSize * 0.24));
+          const t = String(tr.pie).toUpperCase();
+          ctx.fillText(t, centro, ty2);
+          // Los dos filetes a los lados, como en la portada.
+          const w2 = ctx.measureText(t).width;
+          const raya = Math.round(W * 0.055);
+          const hueco = Math.round(W * 0.022);
+          ctx.fillRect(centro - w2 / 2 - hueco - raya, ty2 - Math.round(rotSize * 0.3), raya, 2);
+          ctx.fillRect(centro + w2 / 2 + hueco, ty2 - Math.round(rotSize * 0.3), raya, 2);
+          sinEspaciado(ctx);
+        }
+
+        ctx.textAlign = 'left';
+        pegatinas();
         return;
       }
 

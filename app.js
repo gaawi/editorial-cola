@@ -352,15 +352,16 @@ function escapar(s) {
  */
 
 function pintarPie(texto, corte, claseMas, etiqueta, enlaces) {
-  // Aquí se lee, no se publica: el texto sale entero y desplegado. El «más»
-  // se queda como marca de dónde corta la red —que es justo lo que hay que
-  // ver al aprobar— pero no esconde nada detrás. Tener que tocar para leer
-  // tu propio post es trabajo de más por una fidelidad que no sirve.
+  // Aquí se lee, no se publica: el texto sale entero y desplegado.
   if (texto.length <= corte) return `<span class="pie-texto">${tintar(texto, enlaces)}</span>`;
+  // El corte se lleva al final de la palabra: partir «twenty-two» por la
+  // mitad para marcar el pliegue estropea más de lo que informa.
+  let fin = texto.lastIndexOf(' ', corte);
+  if (fin < corte * 0.6) fin = corte;
   return '<span class="pie-texto">'
-    + tintar(texto.slice(0, corte), enlaces)
-    + `<span class="${claseMas} pliegue">${etiqueta} ↓</span>`
-    + `<span class="tras-pliegue">${tintar(texto.slice(corte), enlaces)}</span>`
+    + tintar(texto.slice(0, fin), enlaces)
+    + `<span class="tras-pliegue">${tintar(texto.slice(fin), enlaces)}</span>`
+    + `<small class="aviso-pliegue">Hasta aquí se ve sin tocar «${etiqueta}»; lo gris queda debajo.</small>`
     + '</span>';
 }
 

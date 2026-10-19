@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-19T13:08:14.308Z",
+ "generado": "2026-10-19T13:11:12.869Z",
  "origen": "gaawi/adar",
  "marcas": {
   "creartbox": {
@@ -1071,7 +1071,7 @@
      "estilo": "limpia",
      "cifra": null,
      "tabla": null,
-     "falta": "La foto es la oficial del DiMenna, de su propia web. Para promocionar un concierto en su sala es lo normal, pero mira si quieres acreditarlos en el pie o prefieres una vuestra.",
+     "falta": "Lo de que el año pasado se llenó lo pones tú: no está en la web ni en el archivo, así que va escrito en vuestra voz y no como dato. La foto es de noviembre de 2023, no de la noche de la que habla, por eso el texto no la fecha.",
      "fotos": [],
      "kicker": null,
      "formato": null,
@@ -1080,9 +1080,9 @@
      "lang": "en",
      "slug": "currents-full-house",
      "kind": "social",
-     "title": "The hall is waiting",
-     "excerpt": "Mary Flagler Cary Hall, empty, with eleven days to go. Two hundred and forty seats and a piano under a light. Currents is on 30 October.",
-     "image": "https://festivaladar.com/kit/dimenna-cary-hall.jpg",
+     "title": "It filled up last year",
+     "excerpt": "Mary Flagler Cary Hall holds two hundred and forty, and last year our season opening filled it. Currents is on 30 October and we would like the same.",
+     "image": "https://creartbox.nyc/assets/img/archive/20231114_001.jpg",
      "url": "https://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260",
      "date": "2026-10-21",
      "tags": [
@@ -1093,19 +1093,19 @@
      "slides": [
       {
        "type": "cover",
-       "title": "The hall is waiting",
+       "title": "It filled up last year",
        "body": ""
       }
      ],
      "pies": {
       "ig": {
-       "texto": "An empty hall is a strange thing to be fond of.\n\nThis is Mary Flagler Cary Hall at The DiMenna Center with nobody in it. Two hundred and forty seats, a piano under a light, and very good acoustics going to waste.\n\nIn eleven days it will be full of people and the four of us will be where that piano is, playing Brahms, Clara and Robert Schumann, Eric Moe and Guillermo Laporta. For about an hour, no interval.\n\nRight now it's just sitting there waiting for you.\n\n30 October, 7:30 pm. Tickets in bio.\n\n#CreArtBox #DiMennaCenter #NYCConcerts",
-       "asomo": "An empty hall is a strange thing to be fond of. This is Mary Flagler Cary Hall at The DiMenna Center with nobody in it. Two h…",
+       "texto": "This is the part of a concert we like most, and it happens before anybody plays.\n\nPeople coming in, finding a seat, talking to whoever they came with. The hall holds 240 and last year our season opening filled it, which still surprises us a bit.\n\nOn 30 October we do it again. Brahms, Clara and Robert Schumann, Eric Moe and Guillermo Laporta, with video running the whole way. About an hour, no interval.\n\nIf you have been meaning to come to one of these, this is a good one to pick.\n\nTickets in bio.\n\n#CreArtBox #DiMennaCenter #NYCConcerts",
+       "asomo": "This is the part of a concert we like most, and it happens before anybody plays. People coming in, finding a seat, talking to…",
        "limite": 2200
       },
       "fb": {
-       "texto": "An empty hall is a strange thing to be fond of.\n\nThis is Mary Flagler Cary Hall at The DiMenna Center with nobody in it. Two hundred and forty seats, a piano under a light, and very good acoustics going to waste.\n\nIn eleven days it will be full of people and the four of us will be where that piano is, playing Brahms, Clara and Robert Schumann, Eric Moe and Guillermo Laporta. For about an hour, no interval.\n\nRight now it's just sitting there waiting for you.\n\nhttps://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260\n\n#CreArtBox #DiMennaCenter #NYCConcerts",
-       "asomo": "An empty hall is a strange thing to be fond of. This is Mary Flagler Cary Hall at The DiMenna Center with nobody in it. Two hundred and forty seats, a piano under a light, and very good acoustics going to waste. In eleven days it will be full of people and the four of us will be where that piano is, playing Brahms, Clara and Robert Schumann, Eric Moe and Guillermo Laporta. For about an hour, no interval. Right now it's just sitting there waiting for you. https://www.eventbrit…",
+       "texto": "This is the part of a concert we like most, and it happens before anybody plays.\n\nPeople coming in, finding a seat, talking to whoever they came with. The hall holds 240 and last year our season opening filled it, which still surprises us a bit.\n\nOn 30 October we do it again. Brahms, Clara and Robert Schumann, Eric Moe and Guillermo Laporta, with video running the whole way. About an hour, no interval.\n\nIf you have been meaning to come to one of these, this is a good one to pick.\n\nhttps://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260\n\n#CreArtBox #DiMennaCenter #NYCConcerts",
+       "asomo": "This is the part of a concert we like most, and it happens before anybody plays. People coming in, finding a seat, talking to whoever they came with. The hall holds 240 and last year our season opening filled it, which still surprises us a bit. On 30 October we do it again. Brahms, Clara and Robert Schumann, Eric Moe and Guillermo Laporta, with video running the whole way. About an hour, no interval. If you have been meaning to come to one of these, this is a good one to pick…",
        "limite": 63206
       }
      },

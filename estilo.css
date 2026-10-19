@@ -1,5 +1,9 @@
 /* La app se usa desde un iPhone 16 Pro (402×874) con Brave o Chrome.
- * No hay versión de escritorio a propósito: se mide y se prueba a ese ancho.
+ * Se mide y se prueba a ese ancho. En un escritorio no se estira: se queda
+ * en la misma columna, centrada, porque todo esto está pensado para ese
+ * ancho y estirado no funcionaba. Las vistas previas pasaban a ocupar la
+ * pantalla entera y las flechas del carrusel acababan a medio metro del
+ * contenido, donde nadie las encuentra.
  * El cromo es neutro para que no compita con las vistas previas, que son las
  * que tienen que parecerse a Instagram y a Facebook de verdad. */
 
@@ -124,12 +128,12 @@ button { background: none; border: none; cursor: pointer; }
 .ig-pie .eti { color: #00376b; }
 .ig-pie .mas { color: #8e8e8e; }
 .pie-texto { white-space: pre-wrap; }
-/* El pliegue: hasta aquí se ve sin tocar «más» en la red. Lo de después se
-   lee igual, un punto más apagado, para saber qué queda por debajo. */
-.pliegue { display: inline-block; margin: 0 4px; padding: 1px 7px; border-radius: 999px;
-  background: #efefef; color: #8e8e8e; font-size: 11px; font-weight: 600; vertical-align: 2px; }
-.tras-pliegue { color: #5a5a5a; }
-.fb-texto .tras-pliegue { color: #65676b; }
+/* El pliegue: lo que se ve antes del «más» va en negro y lo de después, más
+   apagado. El cambio de tono ya dice dónde corta la red, así que no hace
+   falta meter nada dentro de la frase. */
+.tras-pliegue { color: #a0a0a0; }
+.fb-texto .tras-pliegue { color: #9aa0a6; }
+.aviso-pliegue { display: block; margin-top: 8px; color: var(--tenue); font-size: 11px; }
 .ig-hora { padding: 0 12px 12px; font-size: 11px; color: #8e8e8e; text-transform: uppercase; letter-spacing: .02em; }
 
 /* Facebook */
@@ -372,3 +376,16 @@ button { background: none; border: none; cursor: pointer; }
 .ig-carrete .paso.alante { right: 0; }
 .ig-carrete .paso:disabled { opacity: 0; pointer-events: none; }
 @media (hover: hover) { .ig-carrete .paso:hover { background: rgba(0, 0, 0, .7); } }
+
+/* ── Escritorio: la misma columna, centrada ────────────────────────── */
+@media (min-width: 520px) {
+  body { background: #e9e7e4; }
+  .barra, .pantalla {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pantalla { background: var(--papel); min-height: 100vh; }
+  .barra { border-left: 1px solid var(--filete); border-right: 1px solid var(--filete); }
+  .pantalla { border-left: 1px solid var(--filete); border-right: 1px solid var(--filete); }
+}

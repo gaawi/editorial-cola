@@ -193,6 +193,8 @@ for (const nombre of marcas) {
         kicker: p.kicker || null,
         // «historia»: va a historias y no al muro. Por defecto, a los dos.
         formato: p.formato || null,
+        // Pegatinas de historia. `senal: true` la pinta en ámbar.
+        pegatinas: p.pegatinas || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

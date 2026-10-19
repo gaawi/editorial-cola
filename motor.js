@@ -130,10 +130,57 @@ export function crearMotor(B) {
   }
 
   /** La foto recortada «cover» dentro de un rectángulo, sin salirse. */
-  async function foto(ctx, src, x, y, w, h, fx = 0.5, fy = 0.5) {
+  /**
+   * Dónde está lo que hay que ver. Recortar siempre por el centro va bien
+   * en 4:5 y fatal en 9:16: de una foto apaisada se queda una columna
+   * estrecha, y en una foto de concierto esa columna suele ser pared negra.
+   *
+   * En un escenario lo que importa es lo que está iluminado, así que se
+   * busca el centro de masas del brillo y se recorta por ahí. Si el servidor
+   * de la foto no manda cabeceras CORS no se pueden leer los píxeles: en ese
+   * caso se vuelve al centro, que es lo que había.
+   */
+  const focos = new Map();
+  function focoDe(img) {
+    const clave = img.src;
+    if (focos.has(clave)) return focos.get(clave);
+    let foco = { x: 0.5, y: 0.5 };
+    try {
+      const n = 48;
+      const c = document.createElement('canvas');
+      c.width = n; c.height = n;
+      const cx = c.getContext('2d', { willReadFrequently: true });
+      cx.drawImage(img, 0, 0, n, n);
+      const d = cx.getImageData(0, 0, n, n).data;
+      let sx = 0, sy = 0, total = 0;
+      for (let i = 0; i < n * n; i++) {
+        const l = (d[i * 4] * 0.299 + d[i * 4 + 1] * 0.587 + d[i * 4 + 2] * 0.114) / 255;
+        // Al cubo: así un foco de luz pesa mucho más que una pared gris y el
+        // encuadre va al sujeto y no al promedio de la sala.
+        const peso = l * l * l;
+        sx += (i % n) * peso; sy += Math.floor(i / n) * peso; total += peso;
+      }
+      if (total > 0) {
+        // Se tira hacia la luz solo a medias: entera se come los bordes.
+        foco = {
+          x: 0.5 + (sx / total / (n - 1) - 0.5) * 0.7,
+          y: 0.5 + (sy / total / (n - 1) - 0.5) * 0.7,
+        };
+      }
+    } catch { /* foto de otro dominio sin CORS: al centro */ }
+    focos.set(clave, foco);
+    return foco;
+  }
+
+  async function foto(ctx, src, x, y, w, h, fx, fy) {
     if (!src) return false;
     try {
       const img = await cargarFoto(src);
+      if (fx === undefined || fy === undefined) {
+        const f = focoDe(img);
+        if (fx === undefined) fx = f.x;
+        if (fy === undefined) fy = f.y;
+      }
       const s = Math.max(w / img.naturalWidth, h / img.naturalHeight);
       const dw = img.naturalWidth * s, dh = img.naturalHeight * s;
       const ox = Math.min(0, Math.max(w - dw, -(dw - w) * fx));
@@ -195,12 +242,42 @@ export function crearMotor(B) {
     const safeTop = fmt === 'story' ? Math.round(H * 0.09) : 0;
     const safeRight = fmt === 'story' ? Math.round(W * 0.16) : 0;
 
+    // Las pegatinas van encima de todo y solo en historias. En el muro no
+    // pintan nada: una pegatina es de las que duran un día.
+    function pegatinas() {
+      if (fmt !== 'story' || !post.pegatinas || !post.pegatinas.length) return;
+      const alto = Math.round(W * 0.075);
+      const cuerpo = Math.round(alto * 0.42);
+      let y = safeTop + Math.round(H * 0.055);
+      for (const peg of post.pegatinas.slice(0, 2)) {
+        const texto = String(peg.texto || peg).toUpperCase();
+        const senal = peg.senal === true;
+        rotulo(ctx, cuerpo, senal ? (B.onAccent || B.ink) : B.ink, Math.round(cuerpo * 0.16));
+        const ancho = Math.round(ctx.measureText(texto).width + alto * 1.1);
+        ctx.save();
+        // Tres grados: lo justo para que se lea como algo pegado encima y no
+        // como parte de la maqueta. Los bordes siguen rectos, que es la casa.
+        ctx.translate(pad + ancho / 2, y + alto / 2);
+        ctx.rotate((-3 * Math.PI) / 180);
+        ctx.fillStyle = senal ? B.accent : B.paper;
+        ctx.fillRect(-ancho / 2, -alto / 2, ancho, alto);
+        ctx.fillStyle = senal ? (B.onAccent || B.ink) : B.ink;
+        ctx.textBaseline = 'middle';
+        ctx.fillText(texto, -ancho / 2 + alto * 0.55, 1);
+        ctx.textBaseline = 'alphabetic';
+        ctx.restore();
+        sinEspaciado(ctx);
+        y += Math.round(alto * 1.35);
+      }
+    }
+
     if (slide.type === 'cover') {
       ctx.fillStyle = B.ink; ctx.fillRect(0, 0, W, H);
 
       // La foto y nada más.
       if (estilo === 'limpia') {
         await foto(ctx, post.image, 0, 0, W, H);
+        pegatinas();
         return;
       }
 
@@ -247,6 +324,7 @@ export function crearMotor(B) {
         ctx.font = `${TW} ${mfit.size}px ${DISPLAY}`; ctx.fillStyle = B.overPhotoInk;
         mfit.lines.forEach((l, i) => ctx.fillText(l, W / 2, myy + i * mfit.size * PLOMO));
         ctx.textAlign = 'left';
+        pegatinas();
         return;
       }
 
@@ -300,6 +378,7 @@ export function crearMotor(B) {
         ctx.font = `400 ${pf.size}px ${UI}`; ctx.fillStyle = B.overPhotoInk;
         const py = cifraBase + Math.round(W * 0.040) + pf.size * 0.86;
         pf.lines.forEach((l, i) => ctx.fillText(l, pad, py + i * pf.size * 1.38));
+        pegatinas();
         return;
       }
 
@@ -355,6 +434,7 @@ export function crearMotor(B) {
         ctx.font = `${TW} ${df.size}px ${DISPLAY}`; ctx.fillStyle = B.onAccent || B.ink;
         dy += df.size * 0.84;
         df.lines.forEach((l, i) => ctx.fillText(l, pad, dy + i * df.size * PLOMO));
+        pegatinas();
         return;
       }
 
@@ -483,6 +563,7 @@ export function crearMotor(B) {
       rotulo(ctx, rotSize, TINTA_MUDA, 0);
       ctx.fillText(B.site, pad, H - Math.round(pad * 0.4) - safeBottom);
       sinEspaciado(ctx);
+      pegatinas();
       return;
     }
 

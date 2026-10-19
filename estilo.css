@@ -359,3 +359,16 @@ button { background: none; border: none; cursor: pointer; }
 /* Las que solo van como historia: el punto delante del titular avisa de que
    no hay que buscarlas en el muro, porque ahí no están. */
 #historias .solo-historia small { color: #8e8e8e; }
+
+/* Pasar de diapositiva con ratón: en el móvil se arrastra, en el escritorio
+   no había manera de hacerlo. Cuadradas, como todo lo de la marca. */
+.ig-carrete .paso {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 34px; height: 44px; border: 0; padding: 0;
+  background: rgba(0, 0, 0, .45); color: #fff;
+  font-size: 24px; line-height: 1; cursor: pointer;
+}
+.ig-carrete .paso.atras { left: 0; }
+.ig-carrete .paso.alante { right: 0; }
+.ig-carrete .paso:disabled { opacity: 0; pointer-events: none; }
+@media (hover: hover) { .ig-carrete .paso:hover { background: rgba(0, 0, 0, .7); } }

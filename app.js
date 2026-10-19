@@ -422,7 +422,10 @@ async function pintarInstagram(p) {
       <span class="ig-usuario">${CUENTAS.ig}</span>
       <span class="ig-mas">•••</span>
     </div>
-    <div class="ig-carrete"><div class="tira"></div>${slides.length > 1 ? `<span class="ig-cuenta">1/${slides.length}</span>` : ''}</div>
+    <div class="ig-carrete"><div class="tira"></div>${slides.length > 1 ? `
+      <span class="ig-cuenta">1/${slides.length}</span>
+      <button class="paso atras" aria-label="Anterior">‹</button>
+      <button class="paso alante" aria-label="Siguiente">›</button>` : ''}</div>
     ${slides.length > 1 ? `<div class="ig-puntos">${slides.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}
     <div class="ig-acciones">${ICONOS.corazon}${ICONOS.comentar}${ICONOS.enviar}<span class="guardar">${ICONOS.guardar}</span></div>
     <div class="ig-pie"><b>${CUENTAS.ig}</b>${pintarPie(p.pies.ig.texto, 125, 'mas', 'más', false)}</div>
@@ -439,10 +442,21 @@ async function pintarInstagram(p) {
   if (slides.length > 1) {
     const puntos = caja.querySelectorAll('.ig-puntos i');
     const cuenta = caja.querySelector('.ig-cuenta');
+    // Con ratón no se puede arrastrar la tira, así que van flechas. En el
+    // móvil estorban poco y en el escritorio son la única manera de pasar.
+    const mover = (d) => tira.scrollBy({ left: d * tira.clientWidth, behavior: 'smooth' });
+    caja.querySelector('.atras').addEventListener('click', () => mover(-1));
+    caja.querySelector('.alante').addEventListener('click', () => mover(1));
+    const marcarFlechas = (i) => {
+      caja.querySelector('.atras').disabled = i === 0;
+      caja.querySelector('.alante').disabled = i >= slides.length - 1;
+    };
+    marcarFlechas(0);
     tira.addEventListener('scroll', () => {
       const i = Math.round(tira.scrollLeft / tira.clientWidth);
       puntos.forEach((d, j) => d.classList.toggle('on', j === i));
       if (cuenta) cuenta.textContent = `${i + 1}/${slides.length}`;
+      marcarFlechas(i);
     }, { passive: true });
   }
   return caja;

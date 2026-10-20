@@ -9,19 +9,8 @@
 import { crearMotor, TAMANOS } from './motor.js';
 
 const $ = (s) => document.querySelector(s);
-const CLAVE_TOKEN = 'cola_gh_token';
-const REPO = 'gaawi/editorial-cola';
 const RAMA = 'main';
 const ARCHIVO = 'aprobaciones.json';
-
-// Las cuatro que caben bajo un post. Son cuatro de los siete estados del
-// panel, con el nombre de lo que uno hace, no de en qué queda la ficha.
-const DECISIONES = [
-  { estado: 'listo',      icono: '✓', texto: 'Listo' },
-  { estado: 'espera',     icono: '◷', texto: 'Posponer' },
-  { estado: 'cambios',    icono: '✎', texto: 'Mejorar' },
-  { estado: 'descartado', icono: '×', texto: 'Descartar' },
-];
 
 const ESTADOS = {
   listo: 'Listo para publicar',
@@ -48,39 +37,6 @@ const HOY = new Date().toISOString().slice(0, 10);
 const DIA = 86400000;
 let HISTORICO = null;
 
-/**
- * Pedir un texto sin usar prompt(), que en el móvil saca el diálogo del
- * sistema con su «Suppress Alerts» y encima bloquea la página.
- * Devuelve el texto, o null si se cancela.
- */
-function pedirTexto({ titulo, valor = '', ayuda = '', aceptar = 'Guardar', largo = true }) {
-  return new Promise((resolve) => {
-    const hoja = document.createElement('div');
-    hoja.className = 'pide';
-    hoja.innerHTML = `
-      <div class="pide-caja">
-        <h3>${escapar(titulo)}</h3>
-        ${ayuda ? `<p>${escapar(ayuda)}</p>` : ''}
-        ${largo
-          ? `<textarea rows="4" placeholder="Escribe aquí…"></textarea>`
-          : `<input type="text" placeholder="Escribe aquí…">`}
-        <div class="pide-botones">
-          <button class="btn btn-no" data-no>Cancelar</button>
-          <button class="btn btn-si" data-si>${escapar(aceptar)}</button>
-        </div>
-      </div>`;
-    document.body.appendChild(hoja);
-    const campo = hoja.querySelector('textarea, input');
-    campo.value = valor;
-    setTimeout(() => campo.focus(), 50);
-
-    const cerrar = (v) => { hoja.remove(); resolve(v); };
-    hoja.querySelector('[data-si]').onclick = () => cerrar(campo.value.trim());
-    hoja.querySelector('[data-no]').onclick = () => cerrar(null);
-    hoja.onclick = (e) => { if (e.target === hoja) cerrar(null); };
-    campo.onkeydown = (e) => { if (e.key === 'Enter' && !largo) { e.preventDefault(); cerrar(campo.value.trim()); } };
-  });
-}
 
 // ── Avisos ─────────────────────────────────────────────────────────────
 let avisoTope;
@@ -132,19 +88,7 @@ async function abrirHistoria(clave) {
   if (!p) return;
   const v = $('#visor');
   $('#visor-hueco').innerHTML = '<p class="vacio" style="color:#777">Dibujando…</p>';
-  $('#visor-pie').innerHTML = `<div class="decidir-fila">${DECISIONES.map((d) => `
-    <button class="dec ${d.estado}${estadoDe(p).estado === d.estado ? ' on' : ''}" data-dec="${d.estado}">
-      <em>${d.icono}</em>${d.texto}
-    </button>`).join('')}</div>`;
-  $('#visor-pie').querySelector('.decidir-fila').onclick = (ev) => {
-    const b = ev.target.closest('.dec');
-    if (!b) return;
-    decidirEn(p, b.dataset.dec, null).then(() => {
-      $('#visor-pie').querySelectorAll('.dec').forEach((x) =>
-        x.classList.toggle('on', x.dataset.dec === estadoDe(p).estado));
-      mostrarVista();
-    });
-  };
+  $('#visor-pie').innerHTML = '<p class="aviso-suave">Los comentarios van por el chat.</p>';
   v.hidden = false;
   try {
     $('#visor-hueco').replaceChildren(await pintarHistoria(p));
@@ -288,20 +232,9 @@ function tarjeta(p, opciones = {}) {
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
     ${p.falta ? `<p class="falta-material">Falta material: ${escapar(p.falta)}</p>` : ''}
     ${e.nota ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
-    ${opciones.sinDecidir ? '' : `<div class="decidir-fila">
-      ${DECISIONES.map((d) => `
-        <button class="dec ${d.estado}${e.estado === d.estado ? ' on' : ''}" data-dec="${d.estado}">
-          <em>${d.icono}</em>${d.texto}
-        </button>`).join('')}
-    </div>`}
     <button class="abrir">Ver en Facebook y como historia ·  Etiquetas ›</button>`;
 
   art.querySelector('.abrir').addEventListener('click', () => abrir(p));
-  if (opciones.sinDecidir) return art;
-  art.querySelector('.decidir-fila').addEventListener('click', (ev) => {
-    const b = ev.target.closest('.dec');
-    if (b) decidirEn(p, b.dataset.dec, art);
-  });
   return art;
 }
 
@@ -329,70 +262,6 @@ function observarLienzos() {
   document.querySelectorAll('.tarjeta').forEach((t) => vigia.observe(t));
 }
 
-/** Decidir desde el muro, sin abrir la ficha. */
-async function decidirEn(p, estado, art) {
-  if (estado === 'cambios') {
-    const nota = await pedirTexto({
-      titulo: '¿Qué hay que mejorar?',
-      ayuda: p.title,
-      valor: estadoDe(p).nota || '',
-    });
-    if (nota === null) return;
-    return guardarDecision(p, 'cambios', nota, art);
-  }
-  // Volver a tocar la que ya estaba la quita.
-  const ya = estadoDe(p).estado === estado;
-  if (ya) return guardarDecision(p, '', '', art);
-  if (estado === 'espera') {
-    const volver = cuandoVolver(p);
-    await guardarDecision(p, 'espera', '', art, volver);
-    aviso(volver ? `Vuelve el ${volver}` : 'Guardado: a este ya se le pasó el momento');
-    mostrarVista();
-    return;
-  }
-  return guardarDecision(p, estado, '', art);
-}
-
-async function guardarDecision(p, estado, nota, art, volver) {
-  const antes = APROB.posts[p.clave];
-  if (estado) {
-    APROB.posts[p.clave] = { estado, nota, titulo: p.title, fecha: new Date().toISOString() };
-    if (volver) APROB.posts[p.clave].volver = volver;
-  }
-  else delete APROB.posts[p.clave];
-  refrescarDecisiones(p, art);
-  aviso('Guardando…');
-  try {
-    await guardarJSON('aprobaciones.json', (remoto) => {
-      APROB.posts = { ...(remoto.posts || {}), ...APROB.posts };
-      if (!estado) delete APROB.posts[p.clave];
-      return {
-        _ayuda: 'Aprobaciones escritas desde la app. Cada clave es «idioma/slug». '
-          + 'estado: listo · espera · cambios · descartado. Lo escribe la propia app.',
-        posts: APROB.posts,
-      };
-    }, `${ESTADOS[estado] || 'Sin marcar'}: ${p.title}`);
-    aviso(estado ? ESTADOS[estado] : 'Desmarcado');
-  } catch (e) {
-    if (antes) APROB.posts[p.clave] = antes; else delete APROB.posts[p.clave];
-    refrescarDecisiones(p, art);
-    aviso(e.message, true);
-  }
-}
-
-function refrescarDecisiones(p, art) {
-  if (!art) return;
-  const e = estadoDe(p);
-  art.querySelectorAll('.dec').forEach((b) => b.classList.toggle('on', b.dataset.dec === e.estado));
-  const vieja = art.querySelector('.nota-puesta');
-  if (vieja) vieja.remove();
-  if (e.nota) {
-    const n = document.createElement('p');
-    n.className = 'nota-puesta';
-    n.textContent = `“${e.nota}”`;
-    art.querySelector('.decidir-fila').before(n);
-  }
-}
 
 /**
  * Cuándo volver a enseñar algo pospuesto.
@@ -621,7 +490,6 @@ function abrir(p) {
   $('#atras').hidden = false;
   $('#marca').hidden = true;
   $('#titulo').textContent = p.title;
-  $('#caja-nota').hidden = true;
   pintarEstadoActual();
   const red = document.querySelector('.red.activo').dataset.red;
   pintarPrevia(red);
@@ -686,131 +554,6 @@ function abrirPublicada(url) {
     </div>
     <a href="${enlace}" target="_blank" rel="noopener">Abrir en Instagram ↗</a>`;
   $('#hoja').hidden = false;
-}
-
-// ── Entrar en GitHub ───────────────────────────────────────────────────
-// El mismo baile que el panel de ADAR: /api/auth abre GitHub, devuelve el
-// token por postMessage y se queda en sessionStorage, o sea que muere al
-// cerrar la pestaña. Aquí no se guarda ningún secreto.
-function pedirToken() {
-  const guardado = sessionStorage.getItem(CLAVE_TOKEN);
-  if (guardado) return Promise.resolve(guardado);
-
-  return new Promise((resolve, reject) => {
-    const w = window.open('/api/auth', 'cola-gh', 'width=700,height=740');
-    if (!w) return reject(new Error('El navegador bloqueó la ventana. Permite las emergentes.'));
-    const tope = setTimeout(() => {
-      window.removeEventListener('message', recibir);
-      reject(new Error('Se agotó el tiempo esperando a GitHub.'));
-    }, 120000);
-
-    function recibir(ev) {
-      if (ev.origin !== window.location.origin || typeof ev.data !== 'string') return;
-      if (ev.data === 'authorizing:github') { try { w.postMessage('cola', window.location.origin); } catch {} return; }
-      const m = ev.data.match(/^authorization:github:(success|error):([\s\S]*)$/);
-      if (!m) return;
-      clearTimeout(tope);
-      window.removeEventListener('message', recibir);
-      let carga;
-      try { carga = JSON.parse(m[2]); } catch { return reject(new Error('Respuesta de GitHub ilegible.')); }
-      if (m[1] === 'success' && carga.token) {
-        sessionStorage.setItem(CLAVE_TOKEN, carga.token);
-        resolve(carga.token);
-      } else reject(new Error(carga.error || 'GitHub no dio permiso.'));
-    }
-    window.addEventListener('message', recibir);
-  });
-}
-
-async function api(ruta, opciones = {}) {
-  const token = await pedirToken();
-  const r = await fetch(`https://api.github.com/repos/${REPO}${ruta}`, {
-    ...opciones,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: 'application/vnd.github+json',
-      ...(opciones.body ? { 'Content-Type': 'application/json' } : {}),
-    },
-  });
-  if (r.status === 401) { sessionStorage.removeItem(CLAVE_TOKEN); throw new Error('El permiso caducó. Vuelve a intentarlo.'); }
-  if (!r.ok && r.status !== 404) {
-    const e = new Error(`GitHub ${r.status}: ${(await r.json().catch(() => ({}))).message || ''}`);
-    e.estado = r.status;
-    throw e;
-  }
-  return r.status === 404 ? null : r.json();
-}
-
-/**
- * Escribe un archivo JSON en el repositorio.
- * Relee el sha justo antes: si alguien lo cambió desde otro sitio, GitHub
- * rechaza la escritura en vez de pisarla, y `fundir` decide qué conservar.
- */
-async function guardarJSON(ruta, fundir, mensaje) {
-  // GitHub sirve la lectura desde una caché que va por detrás de la
-  // escritura: al guardar dos veces seguidas, la segunda lee un sha viejo y
-  // la rechaza con un 409. No es un choque de verdad —aquí escribe una sola
-  // persona—, así que se vuelve a leer y se reintenta.
-  let ultimo;
-  for (let intento = 0; intento < 4; intento++) {
-    if (intento) await new Promise((r) => setTimeout(r, 400 * intento));
-    const enRepo = await api(`/contents/${ruta}?ref=${RAMA}&t=${Date.now()}`);
-    let remoto = {};
-    let sha = null;
-    if (enRepo) {
-      sha = enRepo.sha;
-      try { remoto = JSON.parse(decodeURIComponent(escape(atob(enRepo.content.replace(/\n/g, ''))))); } catch {}
-    }
-    const cuerpo = fundir(remoto);
-    cuerpo.actualizado = new Date().toISOString();
-    try {
-      const res = await api(`/contents/${ruta}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-          message: mensaje,
-          content: btoa(unescape(encodeURIComponent(JSON.stringify(cuerpo, null, 1) + '\n'))),
-          branch: RAMA,
-          ...(sha ? { sha } : {}),
-        }),
-      });
-      return res.content.sha;
-    } catch (e) {
-      if (e.estado !== 409) throw e;
-      ultimo = e;
-    }
-  }
-  throw new Error('GitHub sigue rechazando la escritura. Espera un momento y vuelve a darle.');
-}
-
-// ── Guardar la decisión ────────────────────────────────────────────────
-async function decidir(estado, nota) {
-  if (!actual) return;
-  const antes = APROB.posts[actual.clave];
-  APROB.posts[actual.clave] = {
-    estado,
-    nota: nota || '',
-    titulo: actual.title,
-    fecha: new Date().toISOString(),
-  };
-  pintarEstadoActual();
-  aviso('Guardando…');
-
-  try {
-    await guardarJSON('aprobaciones.json', (remoto) => {
-      APROB.posts = { ...(remoto.posts || {}), ...APROB.posts };
-      return {
-        _ayuda: 'Aprobaciones escritas desde la app de aprobar. Cada clave es «idioma/slug». '
-          + 'estado: listo · cambios · espera · borrador · idea · descartado. Lo escribe la propia app.',
-        posts: APROB.posts,
-      };
-    }, `${estado === 'listo' ? 'Listo' : 'Cambios'}: ${actual.title}`);
-    aviso(estado === 'listo' ? 'Marcado como listo' : 'Guardado');
-    $('#caja-nota').hidden = true;
-  } catch (e) {
-    if (antes) APROB.posts[actual.clave] = antes; else delete APROB.posts[actual.clave];
-    pintarEstadoActual();
-    aviso(e.message, true);
-  }
 }
 
 // ── Arranque ───────────────────────────────────────────────────────────
@@ -901,12 +644,5 @@ $('#rejilla').addEventListener('click', (e) => {
 $('#hoja').addEventListener('click', (e) => {
   if (e.target.id === 'hoja' || e.target.id === 'hoja-cerrar') $('#hoja').hidden = true;
 });
-$('#aprobar').addEventListener('click', () => decidir('listo', ''));
-$('#cambios').addEventListener('click', () => {
-  const caja = $('#caja-nota');
-  caja.hidden = !caja.hidden;
-  if (!caja.hidden) { $('#nota').value = estadoDe(actual).nota || ''; $('#nota').focus(); }
-});
-$('#guardar-nota').addEventListener('click', () => decidir('cambios', $('#nota').value.trim()));
 
 arrancar().catch((e) => aviso('No se pudieron cargar los datos: ' + e.message, true));

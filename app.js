@@ -662,15 +662,23 @@ function eventosCalendario() {
 
   for (const p of DATOS.marcas[MARCA].posts) {
     const prog = (PROGRAMADO.posts || {})[p.clave];
+    const forma = p.formato === 'historia' ? 'historia' : 'post';
+    // Sin foto de origen —como el cartel— se usa la imagen ya dibujada, que
+    // `herramientas/preparar-imagenes.mjs` deja con este nombre para todo lo
+    // que se programa. Si no existe, el cuadrado se queda gris.
+    const dibujada = prog ? `imagenes/${p.clave.replace('/', '-')}-${forma === 'historia' ? 'st' : 'ig'}-1.jpg` : '';
     const comun = {
-      forma: p.formato === 'historia' ? 'historia' : 'post',
-      titulo: p.title, clave: p.clave, miniatura: (p.fotos && p.fotos[0]) || p.image || '',
+      forma, titulo: p.title, clave: p.clave,
+      miniatura: (p.fotos && p.fotos[0]) || p.image || dibujada,
     };
     if (prog) {
       const cuando = prog.redes[0].cuando;
       poner({
         ...comun, fecha: cuando.slice(0, 10), hora: cuando.slice(11, 16), iso: cuando,
         estado: yaSalio(prog) ? 'publicado' : 'programado', salio: yaSalio(prog),
+        // Lo que está en cola y todavía espera material saldrá igualmente: por
+        // eso es donde más conviene que el calendario lo diga.
+        falta: Boolean(p.falta) && !yaSalio(prog),
         redes: prog.redes.map((r) => r.red),
       });
     } else if (grupoDe(p) === 'idea' && p.publicaEl && estadoDe(p).estado !== 'descartado') {

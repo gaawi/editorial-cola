@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-20T15:46:15.181Z",
+ "generado": "2026-10-20T23:06:52.247Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -3743,8 +3743,8 @@
     {
      "publicadoEn": null,
      "ventana": {
-      "desde": "2026-10-08",
-      "hasta": "2026-10-22",
+      "desde": "2026-10-15",
+      "hasta": "2026-10-29",
       "ancla": null,
       "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
      },
@@ -3753,11 +3753,11 @@
      "estilo": "limpia",
      "cifra": null,
      "tabla": null,
-     "falta": "La foto del ensayo de verdad llega el 28, cuatro días después de que salga esto, así que se queda con la que elegiste. Esa va al post del 28, que es el que gana con ser de ese día.",
+     "falta": "Sale el 29 a las 11:00 de Nueva York y espera tu foto del ensayo, que dijiste que llega el 28. Si no llega, saldría con la de archivo cortada que lleva ahora. Para cambiarla hay que rehacer la imagen y actualizar Metricool.",
      "fotos": [],
      "kicker": null,
      "formato": null,
-     "publicaEl": "2026-10-22",
+     "publicaEl": "2026-10-29",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -3771,10 +3771,10 @@
      "slug": "currents-getting-ready",
      "kind": "social",
      "title": "Getting Currents ready",
-     "excerpt": "Rehearsals, scores, projections, lighting cues, and the small things that always take longer than anyone expects. Eight days to go.",
+     "excerpt": "Rehearsals, scores, projections, lighting cues, and the small things that always take longer than anyone expects. Tomorrow night.",
      "image": "https://creartbox.nyc/assets/img/archive/20241211_DSC0103.jpg",
      "url": "https://creartbox.nyc/concerts/currents-2026.html",
-     "date": "2026-10-22",
+     "date": "2026-10-29",
      "tags": [
       "Currents",
       "ChamberMusic",
@@ -3789,13 +3789,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "Putting the 30th together.\n\nBrahms, the Schumanns, a piece by Eric Moe that came in through the open call, and Guillermo's video running underneath all of it.\n\nThere's always more going on than the programme suggests. Rehearsals, yes, but also projection cues, lighting, and the little things that take three times as long as you planned for.\n\nEight days to go. See you at DiMenna.\n\n#CreArtBox #Currents #ChamberMusic",
+       "texto": "Putting the 30th together.\n\nBrahms, the Schumanns, a piece by Eric Moe that came in through the open call, and Guillermo's video running underneath all of it.\n\nThere's always more going on than the programme suggests. Rehearsals, yes, but also projection cues, lighting, and the little things that take three times as long as you planned for.\n\nTomorrow night. See you at DiMenna.\n\n#CreArtBox #Currents #ChamberMusic",
        "asomo": "Putting the 30th together. Brahms, the Schumanns, a piece by Eric Moe that came in through the open call, and Guillermo's vid…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Putting the 30th together.\n\nBrahms, the Schumanns, a piece by Eric Moe that came in through the open call, and Guillermo's video running underneath all of it.\n\nThere's always more going on than the programme suggests. Rehearsals, yes, but also projection cues, lighting, and the little things that take three times as long as you planned for.\n\nEight days to go. See you at DiMenna.\n\nhttps://creartbox.nyc/concerts/currents-2026.html\n\n#CreArtBox #Currents #ChamberMusic",
-       "asomo": "Putting the 30th together. Brahms, the Schumanns, a piece by Eric Moe that came in through the open call, and Guillermo's video running underneath all of it. There's always more going on than the programme suggests. Rehearsals, yes, but also projection cues, lighting, and the little things that take three times as long as you planned for. Eight days to go. See you at DiMenna. https://creartbox.nyc/concerts/currents-2026.html #CreArtBox #Currents #ChamberMusic",
+       "texto": "Putting the 30th together.\n\nBrahms, the Schumanns, a piece by Eric Moe that came in through the open call, and Guillermo's video running underneath all of it.\n\nThere's always more going on than the programme suggests. Rehearsals, yes, but also projection cues, lighting, and the little things that take three times as long as you planned for.\n\nTomorrow night. See you at DiMenna.\n\nhttps://creartbox.nyc/concerts/currents-2026.html\n\n#CreArtBox #Currents #ChamberMusic",
+       "asomo": "Putting the 30th together. Brahms, the Schumanns, a piece by Eric Moe that came in through the open call, and Guillermo's video running underneath all of it. There's always more going on than the programme suggests. Rehearsals, yes, but also projection cues, lighting, and the little things that take three times as long as you planned for. Tomorrow night. See you at DiMenna. https://creartbox.nyc/concerts/currents-2026.html #CreArtBox #Currents #ChamberMusic",
        "limite": 63206
       }
      },
@@ -4086,7 +4086,7 @@
      "estilo": "limpia",
      "cifra": null,
      "tabla": null,
-     "falta": "Esperando tu foto del ensayo del 28. Ahora lleva una de archivo; con una de ese mismo día, un «faltan dos días» pasa de anuncio a instantánea. Está programado, así que al cambiarla hay que rehacer la imagen y actualizarlo en Metricool.",
+     "falta": null,
      "fotos": [],
      "kicker": null,
      "formato": null,
@@ -4147,7 +4147,7 @@
      "estilo": "programa",
      "cifra": null,
      "tabla": null,
-     "falta": "Cartel dibujado aquí, sin foto, como pediste. Si tenéis uno oficial y lo preferís, mándamelo y lo pongo en su lugar.",
+     "falta": null,
      "fotos": [],
      "kicker": "Tomorrow · Opening night",
      "formato": null,

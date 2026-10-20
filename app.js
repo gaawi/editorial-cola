@@ -518,11 +518,16 @@ function pintarEstadoActual() {
 }
 
 // ── La rejilla de lo ya publicado ──────────────────────────────────────
-async function pintarPublicado() {
+async function cargarHistorico() {
   if (!HISTORICO) {
     try { HISTORICO = await (await fetch('datos/historico-ig.json', { cache: 'no-store' })).json(); }
     catch { HISTORICO = { posts: [] }; }
   }
+  return HISTORICO;
+}
+
+async function pintarPublicado() {
+  await cargarHistorico();
   const p = HISTORICO.posts || [];
   const conFoto = p.filter((r) => r[1]);
   $('#resumen-publicado').textContent =
@@ -590,6 +595,8 @@ function cambiarMarca(m) {
 $('#atras').addEventListener('click', volver);
 $('#marca').addEventListener('click', () => {
   cambiarMarca(MARCA === 'creartbox' ? 'adar' : 'creartbox');
+  // El calendario de una marca no tiene por qué dejar a la otra en el mismo día.
+  calMes = null; calDia = null;
   mostrarVista();
 });
 $('#filtros').addEventListener('click', (e) => {
@@ -612,13 +619,187 @@ for (const donde of ['#historias', '#historias-prog', '#historias-pub']) {
   });
 }
 $('#visor-cerrar').addEventListener('click', () => { $('#visor').hidden = true; });
+// ── Calendario ─────────────────────────────────────────────────────────
+// El mes que se ve y el día elegido. Se fijan al entrar por primera vez, en
+// el día de hoy, y después se quedan donde se dejaron aunque se salga a ver
+// una ficha y se vuelva.
+let calMes = null; // 'AAAA-MM'
+let calDia = null; // 'AAAA-MM-DD'
+
+/** Hoy, en la hora de quien mira. */
+const hoyISO = () => new Date().toLocaleDateString('en-CA');
+
+/**
+ * Todo lo que tiene día, agrupado por día. Cuatro fuentes:
+ *   · el histórico de Instagram: lo ya publicado, con su enlace;
+ *   · lo que está en cola en Metricool, que si ya pasó de hora cuenta como
+ *     salido (se deduce del reloj, no se ha comprobado);
+ *   · las ideas que traen su propio día, que son las escritas a mano;
+ *   · los conciertos, que son el calendario del que cuelga todo lo demás.
+ * Lo descartado no está en el plan y no sale.
+ */
+function eventosCalendario() {
+  const por = new Map();
+  const poner = (e) => {
+    if (!por.has(e.fecha)) por.set(e.fecha, []);
+    por.get(e.fecha).push(e);
+  };
+
+  // El histórico es de la cuenta de CreArtBox: en la otra marca no pinta nada.
+  if (MARCA === 'creartbox') {
+    for (const [fecha, url, tipo, , , , tema] of (HISTORICO?.posts || [])) {
+      const code = url.replace(/\/$/, '').split('/').pop();
+      poner({
+        fecha, forma: 'post', estado: 'publicado', url, titulo: tema, tipo,
+        miniatura: `datos/miniaturas/${fecha.replace(/-/g, '')}-${code}.jpg`,
+        redes: ['ig'],
+      });
+    }
+    for (const c of DATOS.marcas[MARCA].etiquetas.conciertos) {
+      poner({ fecha: c.fecha, forma: 'concierto', estado: 'concierto', titulo: c.nombre, sitio: c.sitio });
+    }
+  }
+
+  for (const p of DATOS.marcas[MARCA].posts) {
+    const prog = (PROGRAMADO.posts || {})[p.clave];
+    const comun = {
+      forma: p.formato === 'historia' ? 'historia' : 'post',
+      titulo: p.title, clave: p.clave, miniatura: (p.fotos && p.fotos[0]) || p.image || '',
+    };
+    if (prog) {
+      const cuando = prog.redes[0].cuando;
+      poner({
+        ...comun, fecha: cuando.slice(0, 10), hora: cuando.slice(11, 16), iso: cuando,
+        estado: yaSalio(prog) ? 'publicado' : 'programado', salio: yaSalio(prog),
+        redes: prog.redes.map((r) => r.red),
+      });
+    } else if (grupoDe(p) === 'idea' && p.publicaEl && estadoDe(p).estado !== 'descartado') {
+      poner({ ...comun, fecha: p.publicaEl, estado: 'idea', falta: Boolean(p.falta) });
+    }
+  }
+
+  // Dentro de un día, por hora; lo que no tiene hora, al final.
+  for (const lista of por.values()) lista.sort((a, b) => (a.hora || '99').localeCompare(b.hora || '99'));
+  return por;
+}
+
+const NOMBRE_RED = { ig: 'IG', fb: 'FB' };
+const horaMadrid = (iso) => new Date(iso).toLocaleTimeString('es-ES', {
+  hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid',
+});
+const largo = (fecha, opciones) => new Date(fecha + 'T12:00:00Z')
+  .toLocaleDateString('es-ES', { ...opciones, timeZone: 'UTC' });
+
+async function pintarCalendario() {
+  await cargarHistorico();
+  const hoy = hoyISO();
+  if (!calMes) { calMes = hoy.slice(0, 7); calDia = hoy; }
+  const por = eventosCalendario();
+
+  const [a, m] = calMes.split('-').map(Number);
+  const diasMes = new Date(Date.UTC(a, m, 0)).getUTCDate();
+  const desfase = (new Date(Date.UTC(a, m - 1, 1)).getUTCDay() + 6) % 7; // lunes = 0
+  const semanas = Math.ceil((desfase + diasMes) / 7);
+  $('#cal-titulo').textContent = largo(`${calMes}-01`, { month: 'long', year: 'numeric' });
+
+  let celdas = '';
+  for (let i = 0; i < semanas * 7; i++) {
+    const d = i - desfase + 1;
+    if (d < 1 || d > diasMes) { celdas += '<span class="cal-celda vacia"></span>'; continue; }
+    const fecha = `${calMes}-${String(d).padStart(2, '0')}`;
+    const dia = por.get(fecha) || [];
+    const concierto = dia.some((e) => e.forma === 'concierto');
+    const marcas = dia.filter((e) => e.forma !== 'concierto');
+    const cuantas = marcas.length;
+    celdas += `<button class="cal-celda${fecha === hoy ? ' hoy' : ''}${fecha === calDia ? ' sel' : ''}"
+        data-fecha="${fecha}"
+        aria-label="${largo(fecha, { day: 'numeric', month: 'long' })}${cuantas ? `: ${cuantas}` : ''}${concierto ? ', concierto' : ''}">
+      <span class="cal-num">${d}</span>
+      <span class="cal-marcas">${marcas.slice(0, 4)
+        .map((e) => `<i class="cal-marca ${e.forma} ${e.estado}"></i>`).join('')}${cuantas > 4 ? `<small class="cal-mas">+${cuantas - 4}</small>` : ''}</span>
+      ${concierto ? '<span class="cal-barra"></span>' : ''}
+    </button>`;
+  }
+  $('#cal-rejilla').innerHTML = celdas;
+  pintarDiaCalendario(por);
+}
+
+function filaCalendario(e) {
+  const sello = e.estado === 'idea' ? 'idea' : e.estado === 'programado' ? 'en cola' : (e.salio ? 'salió' : 'publicado');
+  const redes = (e.redes || []).map((r) => NOMBRE_RED[r] || r).join('+');
+  const cuando = e.hora ? `${e.hora} NY · ${horaMadrid(e.iso)} Madrid` : '';
+  const meta = [sello, cuando, redes].filter(Boolean).join(' · ');
+  const mini = e.miniatura
+    ? `<img class="cal-mini" src="${e.miniatura}" alt="" loading="lazy" decoding="async"
+           onerror="this.style.visibility='hidden'">`
+    : '<span class="cal-mini"></span>';
+  return `<button class="cal-item" ${e.url ? `data-url="${e.url}"` : `data-clave="${e.clave}"`}>
+    ${mini}
+    <span class="cal-texto">
+      <span class="cal-meta"><i class="cal-marca ${e.forma} ${e.estado}"></i>${escapar(meta)}</span>
+      <b>${escapar(e.titulo)}</b>
+      ${e.falta ? '<span class="cal-falta">falta material</span>' : ''}
+    </span>
+  </button>`;
+}
+
+function pintarDiaCalendario(por) {
+  const cont = $('#cal-dia');
+  if (!calDia) {
+    cont.innerHTML = '<p class="aviso-suave">Nada este mes.</p>';
+    return;
+  }
+  const dia = por.get(calDia) || [];
+  const concierto = dia.find((e) => e.forma === 'concierto');
+  const cosas = dia.filter((e) => e.forma !== 'concierto');
+  cont.innerHTML = `
+    <h3>${largo(calDia, { weekday: 'long', day: 'numeric', month: 'long' })}</h3>
+    ${concierto ? `<p class="cal-aviso-concierto"><b>${escapar(concierto.titulo)}</b>${concierto.sitio ? ' · ' + escapar(concierto.sitio) : ''}</p>` : ''}
+    ${cosas.length ? cosas.map(filaCalendario).join('') : '<p class="aviso-suave">Nada este día.</p>'}`;
+}
+
+/** Cambia de mes. Si el día elegido no cae en el nuevo, se elige el primero con algo. */
+async function moverMes(delta) {
+  const [a, m] = calMes.split('-').map(Number);
+  const f = new Date(Date.UTC(a, m - 1 + delta, 1));
+  calMes = `${f.getUTCFullYear()}-${String(f.getUTCMonth() + 1).padStart(2, '0')}`;
+  await cargarHistorico();
+  const hoy = hoyISO();
+  if (!calDia || !calDia.startsWith(calMes)) {
+    const por = eventosCalendario();
+    const conAlgo = [...por.keys()].filter((k) => k.startsWith(calMes)).sort();
+    calDia = hoy.startsWith(calMes) ? hoy : (conAlgo[0] || null);
+  }
+  pintarCalendario();
+}
+
+$('#cal-ant').addEventListener('click', () => moverMes(-1));
+$('#cal-sig').addEventListener('click', () => moverMes(1));
+$('#cal-hoy').addEventListener('click', () => { calMes = hoyISO().slice(0, 7); calDia = hoyISO(); pintarCalendario(); });
+$('#cal-rejilla').addEventListener('click', (e) => {
+  const b = e.target.closest('.cal-celda[data-fecha]');
+  if (!b) return;
+  calDia = b.dataset.fecha;
+  pintarCalendario();
+});
+$('#cal-dia').addEventListener('click', (e) => {
+  const b = e.target.closest('.cal-item');
+  if (!b) return;
+  if (b.dataset.url) return abrirPublicada(b.dataset.url);
+  const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === b.dataset.clave);
+  if (!p) return;
+  if (p.formato === 'historia') abrirHistoria(p.clave); else abrir(p);
+});
+
 /** Enseña el apartado que toque y pinta solo ese. */
 function mostrarVista() {
   $('#vista-ideas').hidden = vista !== 'ideas';
   $('#vista-programado').hidden = vista !== 'programado';
   $('#vista-publicado').hidden = vista !== 'publicado';
+  $('#vista-calendario').hidden = vista !== 'calendario';
   if (vista === 'ideas') pintarLista();
   else if (vista === 'programado') pintarProgramado();
+  else if (vista === 'calendario') pintarCalendario();
   else { pintarPublicadas(); pintarPublicado(); }
 }
 

@@ -25,6 +25,7 @@
     <button class="pest activo" data-vista="ideas">Ideas</button>
     <button class="pest" data-vista="programado">Programado</button>
     <button class="pest" data-vista="publicado">Publicado</button>
+    <button class="pest" data-vista="calendario">Calendario</button>
   </nav>
 
   <div id="vista-ideas">
@@ -41,6 +42,25 @@
     <p class="aviso-suave" id="resumen-programado"></p>
     <nav class="historias" id="historias-prog"></nav>
     <div id="fichas-prog" class="muro"></div>
+  </div>
+
+  <div id="vista-calendario" hidden>
+    <div class="cal-cab">
+      <button id="cal-ant" aria-label="Mes anterior">‹</button>
+      <h2 id="cal-titulo"></h2>
+      <button id="cal-sig" aria-label="Mes siguiente">›</button>
+      <button id="cal-hoy" class="cal-hoy">Hoy</button>
+    </div>
+    <div class="cal-semana"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+    <div id="cal-rejilla" class="cal-rejilla"></div>
+    <p class="cal-leyenda">
+      <span><i class="cal-marca post publicado"></i>publicado</span>
+      <span><i class="cal-marca post programado"></i>en cola</span>
+      <span><i class="cal-marca post idea"></i>idea</span>
+      <span><i class="cal-marca historia publicado"></i>historia</span>
+      <span><i class="cal-barra"></i>concierto</span>
+    </p>
+    <section id="cal-dia" class="cal-dia"></section>
   </div>
 
   <div id="vista-publicado" hidden>

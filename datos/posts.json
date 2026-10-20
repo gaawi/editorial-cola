@@ -1,7 +1,2580 @@
 {
- "generado": "2026-10-20T12:07:38.043Z",
+ "generado": "2026-10-20T15:46:15.181Z",
  "origen": "gaawi/adar",
  "marcas": {
+  "adar": {
+   "marca": {
+    "id": "adar",
+    "org": "Festival ADAR",
+    "stamp": "FESTIVAL ADAR",
+    "site": "festivaladar.com",
+    "logo": "/logos/adar.png",
+    "ink": "#0a0907",
+    "paper": "#f6f4ee",
+    "accent": "#f5d72f",
+    "onAccent": "#0a0907",
+    "overPhotoInk": "#ffffff",
+    "sobreFoto": "#ffffff",
+    "sobreFotoMedio": "#e4e1d8",
+    "sobreFotoDim": "#b9b4a7",
+    "sobreFotoMudo": "#8e8a7e",
+    "filete": "#2a2721",
+    "ctaInk": "#f5d72f",
+    "textBg": "#f6f4ee",
+    "textTitle": "#0a0907",
+    "textBody": "#1c1a16",
+    "textFoot": "#6e6a5c",
+    "display": "\"Alegreya\", Georgia, serif",
+    "ui": "\"Chivo\", system-ui, sans-serif",
+    "label": "\"Chivo Mono\", ui-monospace, monospace",
+    "labelWeight": "500",
+    "titleWeight": "740",
+    "fontsHref": "https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Alegreya+SC:ital,wght@0,400;0,500;0,700;1,400&family=Chivo:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&family=Chivo+Mono:wght@400;500&display=swap",
+    "fontLoads": [
+     "740 64px \"Alegreya\"",
+     "400 32px \"Chivo\"",
+     "700 32px \"Chivo\"",
+     "500 24px \"Chivo Mono\""
+    ]
+   },
+   "cuentas": {
+    "ig": "festivaladar",
+    "fb": "Festival ADAR",
+    "avatar": "avatares/adar.png"
+   },
+   "etiquetas": {
+    "tipos": [
+     {
+      "id": "concert",
+      "nombre": "Concert",
+      "estilo": "cinta",
+      "color": "#FFC403",
+      "que": "Date, venue, tickets.",
+      "tuyo": true,
+      "ventana": {
+       "desde": -45,
+       "hasta": -7,
+       "porque": "Anunciar pronto y dejar de insistir una semana antes: a partir de ahí quien iba a venir ya lo sabe."
+      }
+     },
+     {
+      "id": "interview",
+      "nombre": "Interview",
+      "estilo": "limpia",
+      "color": "#8B5CF6",
+      "que": "The News series. The portrait already talks.",
+      "tuyo": true,
+      "ventana": {
+       "desde": -30,
+       "hasta": -3,
+       "porque": "Da contexto y aguanta; pierde sentido el mismo día."
+      }
+     },
+     {
+      "id": "video",
+      "nombre": "Video",
+      "estilo": "limpia",
+      "color": "#EC4899",
+      "que": "Reels, recordings, film.",
+      "tuyo": true,
+      "ventana": null
+     },
+     {
+      "id": "news",
+      "nombre": "News",
+      "estilo": "cinta",
+      "color": "#0EA5E9",
+      "que": "Press releases, announcements.",
+      "tuyo": true,
+      "ventana": null
+     },
+     {
+      "id": "offer",
+      "nombre": "Offer",
+      "estilo": "bloque",
+      "color": "#F97316",
+      "que": "Open calls, residencies, discounts. Reads like a notice.",
+      "tuyo": true,
+      "ventana": null
+     },
+     {
+      "id": "recap",
+      "nombre": "Recap",
+      "estilo": "limpia",
+      "color": "#15803D",
+      "que": "After the concert: photos, who played, thanks.",
+      "sugerida": true,
+      "porque": "Es tu formato con más alcance: 758 de media frente a 317 de los anuncios.",
+      "ventana": {
+       "desde": 1,
+       "hasta": 6,
+       "porque": "En caliente. A la semana ya no lo lee nadie."
+      }
+     },
+     {
+      "id": "context",
+      "nombre": "Context",
+      "estilo": "marco",
+      "color": "#B45309",
+      "que": "One work, one performer, one programming decision.",
+      "sugerida": true,
+      "porque": "El post de Casarrubios explicando la obra hizo 1.074. Contar algo concreto funciona.",
+      "ventana": {
+       "desde": -21,
+       "hasta": -2,
+       "porque": "La cuesta del concierto. Antes no hay a qué agarrarlo."
+      }
+     },
+     {
+      "id": "program",
+      "nombre": "Program",
+      "estilo": "cinta",
+      "color": "#0D9488",
+      "que": "The booklet, timings, how to get there.",
+      "sugerida": true,
+      "porque": "Es lo que ya estabas haciendo con el cuadernillo y no tenía nombre.",
+      "ventana": {
+       "desde": -14,
+       "hasta": -1,
+       "porque": "Útil cuando alguien ya ha decidido venir."
+      }
+     }
+    ],
+    "conciertos": [
+     {
+      "id": "currents",
+      "nombre": "Currents",
+      "fecha": "2026-10-30",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "illinois",
+      "nombre": "Illinois",
+      "fecha": "2026-11-06",
+      "sitio": "Rammelkamp Chapel, Illinois College"
+     },
+     {
+      "id": "winterlight",
+      "nombre": "Winterlight",
+      "fecha": "2026-12-11",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "louisville",
+      "nombre": "Louisville",
+      "fecha": "2027-02-28",
+      "sitio": "Comstock Hall, Louisville"
+     },
+     {
+      "id": "masked-sounds",
+      "nombre": "Masked Sounds",
+      "fecha": "2027-04-18",
+      "sitio": "Saugerties, New York"
+     },
+     {
+      "id": "pressure",
+      "nombre": "Pressure and Release",
+      "fecha": "2027-04-23",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "feverdream",
+      "nombre": "Feverdream",
+      "fecha": "2027-05-07",
+      "sitio": "The DiMenna Center, New York"
+     },
+     {
+      "id": "adar-2027",
+      "nombre": "Festival ADAR 2027",
+      "fecha": "2027-08-02",
+      "sitio": "Asturias, Spain"
+     },
+     {
+      "id": "gettysburg",
+      "nombre": "Gettysburg",
+      "fecha": "2027-09-28",
+      "sitio": "Gettysburg Community Concert Association"
+     },
+     {
+      "id": "chapel",
+      "nombre": "Chapel Restoration",
+      "fecha": "2027-10-17",
+      "sitio": "The Chapel Restoration"
+     }
+    ]
+   },
+   "posts": [
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-25",
+      "hasta": "2026-09-24",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/por-que-tocar-bach-en-un-horreo",
+     "lang": "es",
+     "slug": "por-que-tocar-bach-en-un-horreo",
+     "kind": "post",
+     "title": "¿Por qué tocar a Bach en un hórreo y no en un auditorio?",
+     "excerpt": "En ADAR el sitio no es el decorado: es la mitad de la música. Una reflexión sobre por qué una iglesia de aldea, un hórreo o un parador cambian lo que se oye y lo que se siente.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/por-que-tocar-bach-en-un-horreo/",
+     "date": "2026-08-25",
+     "tags": [
+      "site-specific",
+      "acústica",
+      "medio rural",
+      "programación"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "¿Por qué tocar a Bach en un hórreo y no en un auditorio?",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La sala también toca",
+       "body": "Un auditorio moderno está diseñado para desaparecer. Su trabajo es no molestar: que el sonido llegue igual de limpio a la fila 1 y a la 20, que nada distraiga. Es una maravilla de la ingeniería, y para muchísima música es lo ideal."
+      },
+      {
+       "type": "text",
+       "title": "Escuchar con el cuerpo entero",
+       "body": "En un auditorio escuchas con los oídos. En los espacios de ADAR escuchas con todo. Notas el frío de la piedra, el olor a madera vieja, la luz que entra de lado a las ocho de la tarde."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "¿Por qué tocar a Bach en un hórreo y no en un auditorio?\n\nEn ADAR el sitio no es el decorado: es la mitad de la música. Una reflexión sobre por qué una iglesia de aldea, un hórreo o un parador cambian lo que se oye y lo que se siente.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #sitespecific",
+       "asomo": "¿Por qué tocar a Bach en un hórreo y no en un auditorio? En ADAR el sitio no es el decorado: es la mitad de la música. Una re…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "¿Por qué tocar a Bach en un hórreo y no en un auditorio?\n\nEn ADAR el sitio no es el decorado: es la mitad de la música. Una reflexión sobre por qué una iglesia de aldea, un hórreo o un parador cambian lo que se oye y lo que se siente.\n\nhttps://festivaladar.com/es/blog/por-que-tocar-bach-en-un-horreo/\n\n#FestivalADAR #Asturias",
+       "asomo": "¿Por qué tocar a Bach en un hórreo y no en un auditorio? En ADAR el sitio no es el decorado: es la mitad de la música. Una reflexión sobre por qué una iglesia de aldea, un hórreo o un parador cambian lo que se oye y lo que se siente. https://festivaladar.com/es/blog/por-que-tocar-bach-en-un-horreo/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-20",
+      "hasta": "2026-09-19",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/la-espana-que-no-se-vacia",
+     "lang": "es",
+     "slug": "la-espana-que-no-se-vacia",
+     "kind": "post",
+     "title": "La España que no se vacía cuando hay música",
+     "excerpt": "Se habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motivos para quedarse. Un festival no arregla eso, pero puede ser uno de esos motivos.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/la-espana-que-no-se-vacia/",
+     "date": "2026-08-20",
+     "tags": [
+      "España vaciada",
+      "cultura rural",
+      "manifiesto",
+      "acceso cultural"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "La España que no se vacía cuando hay música",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "El vacío cultural también cuenta",
+       "body": "Cuando en un territorio no pasa nada (ni un concierto, ni una exposición, ni un acontecimiento que merezca la pena contar), se instala una idea peligrosa: la de que lo importante ocurre siempre en otro sitio."
+      },
+      {
+       "type": "text",
+       "title": "Lo que un festival sí puede hacer (y lo que no)",
+       "body": "Seamos honestos: un festival no repuebla un concejo, no crea empleo estable, no arregla la carretera ni trae el médico. Prometer eso sería mentir, y no nos gusta mentir."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "La España que no se vacía cuando hay música\n\nSe habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motivos para quedarse. Un festival no arregla eso, pero puede ser uno de esos motivos.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Españavaciada",
+       "asomo": "La España que no se vacía cuando hay música Se habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "La España que no se vacía cuando hay música\n\nSe habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motivos para quedarse. Un festival no arregla eso, pero puede ser uno de esos motivos.\n\nhttps://festivaladar.com/es/blog/la-espana-que-no-se-vacia/\n\n#FestivalADAR #Asturias",
+       "asomo": "La España que no se vacía cuando hay música Se habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motivos para quedarse. Un festival no arregla eso, pero puede ser uno de esos motivos. https://festivaladar.com/es/blog/la-espana-que-no-se-vacia/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-18",
+      "hasta": "2026-09-17",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/estrenamos-blog",
+     "lang": "es",
+     "slug": "estrenamos-blog",
+     "kind": "post",
+     "title": "Estrenamos blog",
+     "excerpt": "Un sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio rural asturiano.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_5.jpg",
+     "url": "https://festivaladar.com/es/blog/estrenamos-blog/",
+     "date": "2026-08-18",
+     "tags": [
+      "novedades"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Estrenamos blog",
+       "body": ""
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Estrenamos blog\n\nUn sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio rural asturiano.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #novedades",
+       "asomo": "Estrenamos blog Un sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio r…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Estrenamos blog\n\nUn sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio rural asturiano.\n\nhttps://festivaladar.com/es/blog/estrenamos-blog/\n\n#FestivalADAR #Asturias",
+       "asomo": "Estrenamos blog Un sitio para contar lo que pasa entre edición y edición: historias, novedades y la vida cultural del medio rural asturiano. https://festivaladar.com/es/blog/estrenamos-blog/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-10-01",
+      "hasta": "2026-10-31",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/el-programa-antes-del-concierto",
+     "lang": "es",
+     "slug": "el-programa-antes-del-concierto",
+     "kind": "post",
+     "title": "Publicamos el programa de mano antes del concierto",
+     "excerpt": "El programa de mano suele ser un papel que vive una hora y acaba en un bolso. Lo subimos entero a la web semanas antes, con las notas y los tiempos de cada obra. Sirve a quien duda si venir, a quien no puede venir, y después se queda.",
+     "image": "https://festivaladar.com/kit/creartbox-currents-programa.jpg",
+     "url": "https://festivaladar.com/es/blog/el-programa-antes-del-concierto/",
+     "date": "2026-10-01",
+     "tags": [
+      "programa de mano",
+      "archivo",
+      "modelo",
+      "documentación"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Publicamos el programa de mano antes del concierto",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "A quien está decidiendo si viene",
+       "body": "Un cartel dice cinco nombres y una hora. No dice si el Brahms que vas a oír es el del clarinete o la versión con viola, ni cuánto dura, ni si hay descanso. El programa sí. Y con eso, quien duda puede decidir con información en vez de con fe."
+      },
+      {
+       "type": "text",
+       "title": "A quien no puede venir",
+       "body": "Esta es la parte que más nos importa, y es la misma razón por la que documentamos todo lo que hacemos: nuestros aforos son pequeños y muchas de las personas a las que les interesaría lo que tocamos están lejos."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Publicamos el programa de mano antes del concierto\n\nEl programa de mano suele ser un papel que vive una hora y acaba en un bolso. Lo subimos entero a la web semanas antes, con las notas y los tiempos de cada obra. Sirve a quien duda si venir, a quien no puede venir, y después se queda.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #programademano",
+       "asomo": "Publicamos el programa de mano antes del concierto El programa de mano suele ser un papel que vive una hora y acaba en un bol…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Publicamos el programa de mano antes del concierto\n\nEl programa de mano suele ser un papel que vive una hora y acaba en un bolso. Lo subimos entero a la web semanas antes, con las notas y los tiempos de cada obra. Sirve a quien duda si venir, a quien no puede venir, y después se queda.\n\nhttps://festivaladar.com/es/blog/el-programa-antes-del-concierto/\n\n#FestivalADAR #Asturias",
+       "asomo": "Publicamos el programa de mano antes del concierto El programa de mano suele ser un papel que vive una hora y acaba en un bolso. Lo subimos entero a la web semanas antes, con las notas y los tiempos de cada obra. Sirve a quien duda si venir, a quien no puede venir, y después se queda. https://festivaladar.com/es/blog/el-programa-antes-del-concierto/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-30",
+      "hasta": "2026-10-30",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/el-mapa-de-adar-catorce-concejos",
+     "lang": "es",
+     "slug": "el-mapa-de-adar-catorce-concejos",
+     "kind": "post",
+     "title": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias",
+     "excerpt": "De Belmonte a Taramundi, de Llanes a Somiedo. Un recorrido por el mapa que el festival ha ido dibujando en seis ediciones, y por qué el mapa importa tanto como la música.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/el-mapa-de-adar-catorce-concejos/",
+     "date": "2026-09-30",
+     "tags": [
+      "mapa",
+      "territorio",
+      "concejos",
+      "red"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "De un punto a una red",
+       "body": "Belmonte de Miranda es la casa desde 2021."
+      },
+      {
+       "type": "text",
+       "title": "Por qué itinerar en vez de crecer en un sitio",
+       "body": "Cualquier gestor cultural te dirá que lo eficiente es lo contrario de lo que hacemos. Consolidas una sede, fidelizas un público, amortizas el equipo técnico, dejas de montar y desmontar. Itinerar es caro, agotador y logísticamente absurdo."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias\n\nDe Belmonte a Taramundi, de Llanes a Somiedo. Un recorrido por el mapa que el festival ha ido dibujando en seis ediciones, y por qué el mapa importa tanto como la música.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #mapa",
+       "asomo": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias De Belmonte a Taramundi, de Llanes a Somiedo. Un recorrid…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias\n\nDe Belmonte a Taramundi, de Llanes a Somiedo. Un recorrido por el mapa que el festival ha ido dibujando en seis ediciones, y por qué el mapa importa tanto como la música.\n\nhttps://festivaladar.com/es/blog/el-mapa-de-adar-catorce-concejos/\n\n#FestivalADAR #Asturias",
+       "asomo": "El mapa de ADAR: catorce concejos, seis años y una idea de Asturias De Belmonte a Taramundi, de Llanes a Somiedo. Un recorrido por el mapa que el festival ha ido dibujando en seis ediciones, y por qué el mapa importa tanto como la música. https://festivaladar.com/es/blog/el-mapa-de-adar-catorce-concejos/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-28",
+      "hasta": "2026-10-28",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/por-que-documentamos-todo",
+     "lang": "es",
+     "slug": "por-que-documentamos-todo",
+     "kind": "post",
+     "title": "Por qué un festival pequeño documenta todo lo que hace",
+     "excerpt": "Tenemos un archivo navegable por años, lugares y formatos, con foto y vídeo profesional de cada acción. No es vanidad ni burocracia: para un proyecto rural, el archivo es la herramienta de supervivencia.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/12_Paseo_sonoro_en_el_Museo_de_las_Ayalgas_Belmonte_de_Miranda/06.jpg",
+     "url": "https://festivaladar.com/es/blog/por-que-documentamos-todo/",
+     "date": "2026-09-28",
+     "tags": [
+      "archivo",
+      "memoria de acciones",
+      "modelo",
+      "documentación"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Por qué un festival pequeño documenta todo lo que hace",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "1. Porque es la prueba de que existimos",
+       "body": "Empecemos por la más práctica y la menos romántica. Somos una asociación sin ánimo de lucro con sede en una aldea de cien habitantes. Cada año tenemos que convencer a instituciones, patrocinadores y ayuntamientos de que merece la pena apoyar esto."
+      },
+      {
+       "type": "text",
+       "title": "2. Porque los sitios donde tocamos son frágiles",
+       "body": "Esta es la razón que más nos pesa. Tocamos en monasterios con problemas de conservación. En paneras de madera que llevan siglos aguantando y que dependen de que alguien las cuide. En hórreos que se caen en silencio, uno a uno, cuando nadie los usa."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Por qué un festival pequeño documenta todo lo que hace\n\nTenemos un archivo navegable por años, lugares y formatos, con foto y vídeo profesional de cada acción. No es vanidad ni burocracia: para un proyecto rural, el archivo es la herramienta de supervivencia.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #archivo",
+       "asomo": "Por qué un festival pequeño documenta todo lo que hace Tenemos un archivo navegable por años, lugares y formatos, con foto y …",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Por qué un festival pequeño documenta todo lo que hace\n\nTenemos un archivo navegable por años, lugares y formatos, con foto y vídeo profesional de cada acción. No es vanidad ni burocracia: para un proyecto rural, el archivo es la herramienta de supervivencia.\n\nhttps://festivaladar.com/es/blog/por-que-documentamos-todo/\n\n#FestivalADAR #Asturias",
+       "asomo": "Por qué un festival pequeño documenta todo lo que hace Tenemos un archivo navegable por años, lugares y formatos, con foto y vídeo profesional de cada acción. No es vanidad ni burocracia: para un proyecto rural, el archivo es la herramienta de supervivencia. https://festivaladar.com/es/blog/por-que-documentamos-todo/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-26",
+      "hasta": "2026-10-26",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/mizuko-kaji-el-escenario-como-obra",
+     "lang": "es",
+     "slug": "mizuko-kaji-el-escenario-como-obra",
+     "kind": "post",
+     "title": "Llenar de tul un auditorio vacío: cuando el escenario es la obra",
+     "excerpt": "En 2023 Mizuko Kaji convirtió el escenario del Auditorio As Quintas en una instalación que el público podía recorrer, días antes de que allí se diera un concierto. Una idea sencilla y muy astuta.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/03_Instalacion_artistica_de_luz_y_proyecciones_Mizuko_Kaji/42.jpg",
+     "url": "https://festivaladar.com/es/blog/mizuko-kaji-el-escenario-como-obra/",
+     "date": "2026-09-26",
+     "tags": [
+      "Mizuko Kaji",
+      "instalación",
+      "El Franco",
+      "2023"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Llenar de tul un auditorio vacío: cuando el escenario es la obra",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Invertir el orden de las cosas",
+       "body": "Piensa en cómo funciona normalmente un auditorio. El escenario es territorio prohibido. Es el sitio al que no se sube, separado del público por una convención tan fuerte que nadie necesita vigilarla."
+      },
+      {
+       "type": "text",
+       "title": "Por qué tul",
+       "body": "La elección del material tampoco es casual, y quien haya visto tul a contraluz lo entenderá. El tul es casi nada: una malla transparente, ligerísima, que apenas existe como objeto."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Llenar de tul un auditorio vacío: cuando el escenario es la obra\n\nEn 2023 Mizuko Kaji convirtió el escenario del Auditorio As Quintas en una instalación que el público podía recorrer, días antes de que allí se diera un concierto. Una idea sencilla y muy astuta.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #MizukoKaji",
+       "asomo": "Llenar de tul un auditorio vacío: cuando el escenario es la obra En 2023 Mizuko Kaji convirtió el escenario del Auditorio As …",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Llenar de tul un auditorio vacío: cuando el escenario es la obra\n\nEn 2023 Mizuko Kaji convirtió el escenario del Auditorio As Quintas en una instalación que el público podía recorrer, días antes de que allí se diera un concierto. Una idea sencilla y muy astuta.\n\nhttps://festivaladar.com/es/blog/mizuko-kaji-el-escenario-como-obra/\n\n#FestivalADAR #Asturias",
+       "asomo": "Llenar de tul un auditorio vacío: cuando el escenario es la obra En 2023 Mizuko Kaji convirtió el escenario del Auditorio As Quintas en una instalación que el público podía recorrer, días antes de que allí se diera un concierto. Una idea sencilla y muy astuta. https://festivaladar.com/es/blog/mizuko-kaji-el-escenario-como-obra/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-24",
+      "hasta": "2026-10-24",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/las-compositoras-que-programamos",
+     "lang": "es",
+     "slug": "las-compositoras-que-programamos",
+     "kind": "post",
+     "title": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)",
+     "excerpt": "Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es lo fácil, no lo difícil.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/10_Concierto_en_la_Iglesia_de_Santa_Maria_de_Sabada_Colunga/PXL_20220810_175359505.jpg",
+     "url": "https://festivaladar.com/es/blog/las-compositoras-que-programamos/",
+     "date": "2026-09-24",
+     "tags": [
+      "compositoras",
+      "programación",
+      "Caroline Shaw",
+      "Jessie Montgomery"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La nómina",
+       "body": "Andrea Casarrubios, violonchelista y compositora española: obra estrenada en el Carnegie Hall, encargos de la Sinfónica de Chicago y de Sphinx Virtuosi, nominación al Grammy en 2025, doctorado con John Corigliano."
+      },
+      {
+       "type": "text",
+       "title": "Lo difícil no es encontrarlas",
+       "body": "Ahí está el punto. Ninguno de esos nombres necesita una explicación indulgente. Pulitzer, Grammy, Carnegie Hall, Sinfónica de Chicago. Si programar mujeres exigiera bajar el nivel, esta lista sería otra."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)\n\nCasarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es lo fácil, no lo difícil.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #compositoras",
+       "asomo": "Las compositoras que programamos (y por qué no lo llamamos «cuota») Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Or…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)\n\nCasarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es lo fácil, no lo difícil.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Asturias",
+       "asomo": "Las compositoras que programamos (y por qué no lo llamamos «cuota») Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es lo fácil, no lo difícil. https://festivaladar.com/es/blog/las-compositoras-que-programamos/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-23",
+      "hasta": "2026-10-23",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/la-tiendina-sube-a-la-aldea",
+     "lang": "es",
+     "slug": "la-tiendina-sube-a-la-aldea",
+     "kind": "post",
+     "title": "La tiendina sube a la aldea. La música también.",
+     "excerpt": "En los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube. Esa furgoneta explica, mejor que cualquier informe, por qué el festival va a los pueblos en vez de pedirles que vengan.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/la-tiendina-sube-a-la-aldea/",
+     "date": "2026-09-23",
+     "tags": [
+      "medio rural",
+      "acceso cultural",
+      "itinerancia",
+      "Leiguarda"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "La tiendina sube a la aldea. La música también.",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Nadie le pide a una aldea que baje a por el pan",
+       "body": "En el medio rural, lo esencial viaja. Es así desde siempre y a nadie le parece raro. La compra sube. El correo sube. Si vives en una aldea de montaña, hay una parte del mundo que está organizada para llegar hasta ti."
+      },
+      {
+       "type": "text",
+       "title": "Con la cultura decimos justo lo contrario",
+       "body": "Con la música damos por hecho lo inverso. El concierto está en la ciudad. La exposición está en la ciudad. Si te interesa de verdad, ya conducirás. Y quien no puede, o no quiere hacer una hora de carretera de puerto de noche, simplemente no va."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "La tiendina sube a la aldea. La música también.\n\nEn los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube. Esa furgoneta explica, mejor que cualquier informe, por qué el festival va a los pueblos en vez de pedirles que vengan.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #accesocultural",
+       "asomo": "La tiendina sube a la aldea. La música también. En los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube.…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "La tiendina sube a la aldea. La música también.\n\nEn los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube. Esa furgoneta explica, mejor que cualquier informe, por qué el festival va a los pueblos en vez de pedirles que vengan.\n\nhttps://festivaladar.com/es/blog/la-tiendina-sube-a-la-aldea/\n\n#FestivalADAR #Asturias",
+       "asomo": "La tiendina sube a la aldea. La música también. En los pueblos de montaña lo esencial no espera a que vayas a buscarlo: sube. Esa furgoneta explica, mejor que cualquier informe, por qué el festival va a los pueblos en vez de pedirles que vengan. https://festivaladar.com/es/blog/la-tiendina-sube-a-la-aldea/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-22",
+      "hasta": "2026-10-22",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/como-elegimos-un-sitio",
+     "lang": "es",
+     "slug": "como-elegimos-un-sitio",
+     "kind": "post",
+     "title": "Cómo elegimos un sitio para un concierto (el método completo)",
+     "excerpt": "Un monasterio bonito no es automáticamente un buen escenario. Contamos, paso a paso, cómo decidimos dónde se toca: los seis filtros que aplicamos y las preguntas incómodas que hay que hacerse.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/17_Concierto_en_el_Palacio_de_Miranda-Valdecarzana_Grado_2024/20.jpg",
+     "url": "https://festivaladar.com/es/blog/como-elegimos-un-sitio/",
+     "date": "2026-09-22",
+     "tags": [
+      "cómo funciona",
+      "producción",
+      "site-specific",
+      "método"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Cómo elegimos un sitio para un concierto (el método completo)",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "1. Lo bonito no es suficiente",
+       "body": "El error de principiante es elegir por la foto. Asturias está llena de sitios espectaculares, y la tentación de programar «donde queda bien» es enorme. Pero un sitio bonito con mala acústica produce un concierto malo con buenas fotos."
+      },
+      {
+       "type": "text",
+       "title": "2. Diálogo con el lugar",
+       "body": "Aquí está la diferencia entre alquilar un espacio y trabajar con él. Antes de decidir nada, hay que averiguar qué es ese sitio para la gente que vive alrededor. ¿Es una iglesia en uso, donde hay misa el domingo?"
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Cómo elegimos un sitio para un concierto (el método completo)\n\nUn monasterio bonito no es automáticamente un buen escenario. Contamos, paso a paso, cómo decidimos dónde se toca: los seis filtros que aplicamos y las preguntas incómodas que hay que hacerse.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #cómofunciona",
+       "asomo": "Cómo elegimos un sitio para un concierto (el método completo) Un monasterio bonito no es automáticamente un buen escenario. C…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Cómo elegimos un sitio para un concierto (el método completo)\n\nUn monasterio bonito no es automáticamente un buen escenario. Contamos, paso a paso, cómo decidimos dónde se toca: los seis filtros que aplicamos y las preguntas incómodas que hay que hacerse.\n\nhttps://festivaladar.com/es/blog/como-elegimos-un-sitio/\n\n#FestivalADAR #Asturias",
+       "asomo": "Cómo elegimos un sitio para un concierto (el método completo) Un monasterio bonito no es automáticamente un buen escenario. Contamos, paso a paso, cómo decidimos dónde se toca: los seis filtros que aplicamos y las preguntas incómodas que hay que hacerse. https://festivaladar.com/es/blog/como-elegimos-un-sitio/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-20",
+      "hasta": "2026-10-20",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/grado-tres-eventos-en-una-noche",
+     "lang": "es",
+     "slug": "grado-tres-eventos-en-una-noche",
+     "kind": "post",
+     "title": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero",
+     "excerpt": "Un concierto en un palacio, una performance en una capilla y una instalación con comida dentro de un cubículo abandonado de la oficina de turismo. Crónica de la noche más ambiciosa de 2024.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/17_Instalacion_site_specific_de_sara_k_william/image20.jpg",
+     "url": "https://festivaladar.com/es/blog/grado-tres-eventos-en-una-noche/",
+     "date": "2026-09-20",
+     "tags": [
+      "Grado",
+      "2024",
+      "Sarah K. Williams",
+      "instalación"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La caja de cristal que llevaba años vacía",
+       "body": "De los tres, el que más nos gusta contar es el de Sarah K. Williams, artista visual residente en Nueva York e invitada de la edición de 2024."
+      },
+      {
+       "type": "text",
+       "title": "Por qué el arte con comida no es una broma",
+       "body": "A la instalación de Williams se le puede poner la etiqueta fácil de «ocurrencia». Nos parece justo lo contrario, y en un contexto rural especialmente. La comida es el lenguaje social por defecto de cualquier pueblo."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero\n\nUn concierto en un palacio, una performance en una capilla y una instalación con comida dentro de un cubículo abandonado de la oficina de turismo. Crónica de la noche más ambiciosa de 2024.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Grado",
+       "asomo": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero Un concierto en un palacio, una performance en una capilla y un…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero\n\nUn concierto en un palacio, una performance en una capilla y una instalación con comida dentro de un cubículo abandonado de la oficina de turismo. Crónica de la noche más ambiciosa de 2024.\n\nhttps://festivaladar.com/es/blog/grado-tres-eventos-en-una-noche/\n\n#FestivalADAR #Asturias",
+       "asomo": "Tres eventos en una noche: la vez que ADAR ocupó Grado entero Un concierto en un palacio, una performance en una capilla y una instalación con comida dentro de un cubículo abandonado de la oficina de turismo. Crónica de la noche más ambiciosa de 2024. https://festivaladar.com/es/blog/grado-tres-eventos-en-una-noche/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-18",
+      "hasta": "2026-10-18",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/bach-filmado-en-leiguarda",
+     "lang": "es",
+     "slug": "bach-filmado-en-leiguarda",
+     "kind": "post",
+     "title": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda",
+     "excerpt": "Una suite de Bach para violonchelo solo, un cinematógrafo y una aldea de Belmonte de Miranda. Por qué un festival de música invierte en hacer cine además de conciertos.",
+     "image": "https://i.ytimg.com/vi/Xk_Qz361e0o/maxresdefault.jpg",
+     "url": "https://festivaladar.com/es/blog/bach-filmado-en-leiguarda/",
+     "date": "2026-09-18",
+     "tags": [
+      "videoarte",
+      "Guillermo Ordás",
+      "Bach",
+      "2023",
+      "archivo"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Grabar un concierto no es hacer cine",
+       "body": "Casi todos los festivales graban sus conciertos. Se pone una cámara al fondo, quizá dos, y se sube el resultado a YouTube. Es útil: sirve de prueba, de memoria y de material para pedir subvenciones."
+      },
+      {
+       "type": "text",
+       "title": "Por qué las suites de Bach y por qué en una aldea",
+       "body": "La elección de la obra no podía ser mejor. Las suites para violonchelo solo de Bach son una persona sola con un instrumento: sin acompañamiento, sin orquesta, sin nada donde esconderse. Es la música más desnuda del repertorio occidental."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda\n\nUna suite de Bach para violonchelo solo, un cinematógrafo y una aldea de Belmonte de Miranda. Por qué un festival de música invierte en hacer cine además de conciertos.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #videoarte",
+       "asomo": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda Una suite de Bach para violonchelo solo, un cinematógrafo y…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda\n\nUna suite de Bach para violonchelo solo, un cinematógrafo y una aldea de Belmonte de Miranda. Por qué un festival de música invierte en hacer cine además de conciertos.\n\nhttps://festivaladar.com/es/blog/bach-filmado-en-leiguarda/\n\n#FestivalADAR #Asturias",
+       "asomo": "Filmar a Bach en una aldea: el videoarte que se rodó en Leiguarda Una suite de Bach para violonchelo solo, un cinematógrafo y una aldea de Belmonte de Miranda. Por qué un festival de música invierte en hacer cine además de conciertos. https://festivaladar.com/es/blog/bach-filmado-en-leiguarda/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-16",
+      "hasta": "2026-10-16",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/taramundi-cuchillos-y-mussorgsky",
+     "lang": "es",
+     "slug": "taramundi-cuchillos-y-mussorgsky",
+     "kind": "post",
+     "title": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky",
+     "excerpt": "En el extremo occidental de Asturias hay un pueblo famoso por su cuchillería hecha a mano. En 2025 tocamos allí Telemann, Falla y Mussorgsky. Sobre oficios que se aprenden con las manos.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.13_Iglesia%20de%20Taramundi_Fotos/25.08.13_Iglesia%20de%20Taramundi_WEB/25.08.13_Iglesia%20de%20Taramundi_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/taramundi-cuchillos-y-mussorgsky/",
+     "date": "2026-09-16",
+     "tags": [
+      "Taramundi",
+      "2025",
+      "artesanía",
+      "oficios"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Dos oficios que se parecen más de lo que parece",
+       "body": "Un cuchillo de Taramundi y una sonata de Telemann tienen mucho en común, aunque suene raro decirlo. Los dos se aprenden con las manos. No hay manera de aprender a forjar leyendo sobre forja, igual que no hay manera de aprender a tocar leyendo sobre música."
+      },
+      {
+       "type": "text",
+       "title": "El programa: tres siglos y tres países",
+       "body": "Merece la pena mirar la elección, porque no es casual. Telemann, alemán del barroco, prolífico y luminoso: el artesano perfecto de la música, alguien que produjo con una regularidad de taller."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky\n\nEn el extremo occidental de Asturias hay un pueblo famoso por su cuchillería hecha a mano. En 2025 tocamos allí Telemann, Falla y Mussorgsky. Sobre oficios que se aprenden con las manos.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Taramundi",
+       "asomo": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky En el extremo occidental de Asturias hay un pueblo famo…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky\n\nEn el extremo occidental de Asturias hay un pueblo famoso por su cuchillería hecha a mano. En 2025 tocamos allí Telemann, Falla y Mussorgsky. Sobre oficios que se aprenden con las manos.\n\nhttps://festivaladar.com/es/blog/taramundi-cuchillos-y-mussorgsky/\n\n#FestivalADAR #Asturias",
+       "asomo": "Taramundi: el pueblo de los cuchillos artesanos donde sonó Mussorgsky En el extremo occidental de Asturias hay un pueblo famoso por su cuchillería hecha a mano. En 2025 tocamos allí Telemann, Falla y Mussorgsky. Sobre oficios que se aprenden con las manos. https://festivaladar.com/es/blog/taramundi-cuchillos-y-mussorgsky/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-14",
+      "hasta": "2026-10-14",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/por-que-encargamos-musica-nueva",
+     "lang": "es",
+     "slug": "por-que-encargamos-musica-nueva",
+     "kind": "post",
+     "title": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva",
+     "excerpt": "En su primer concierto, un festival sin historial ni presupuesto encargó una pieza nueva. Cinco años después seguimos haciéndolo. Por qué el encargo es la decisión más arriesgada y más importante que tomamos.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg",
+     "url": "https://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/",
+     "date": "2026-09-14",
+     "tags": [
+      "encargos",
+      "compositor residente",
+      "obra nueva",
+      "modelo"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Una pieza nueva la primera noche",
+       "body": "El 14 de agosto de 2021, en el campo de la iglesia de Leiguarda, el programa del concierto inaugural incluía Mendelssohn, Haydn, Falla, John Harbison... y Atlantic, de Marcos Fernández, escrita expresamente para la ocasión."
+      },
+      {
+       "type": "text",
+       "title": "Un festival puede consumir cultura o producirla",
+       "body": "Esta es la distinción que más nos importa, y vale para cualquier festival del mundo. Hay festivales que son programadores: eligen bien entre lo que existe, lo traen, lo presentan. Es un trabajo legítimo y difícil, y el público lo agradece."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva\n\nEn su primer concierto, un festival sin historial ni presupuesto encargó una pieza nueva. Cinco años después seguimos haciéndolo. Por qué el encargo es la decisión más arriesgada y más importante que tomamos.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #encargos",
+       "asomo": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva En su primer concierto, un festival sin historial ni …",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva\n\nEn su primer concierto, un festival sin historial ni presupuesto encargó una pieza nueva. Cinco años después seguimos haciéndolo. Por qué el encargo es la decisión más arriesgada y más importante que tomamos.\n\nhttps://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/\n\n#FestivalADAR #Asturias",
+       "asomo": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva En su primer concierto, un festival sin historial ni presupuesto encargó una pieza nueva. Cinco años después seguimos haciéndolo. Por qué el encargo es la decisión más arriesgada y más importante que tomamos. https://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-12",
+      "hasta": "2026-10-12",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/monasterios-mil-anos-de-acustica",
+     "lang": "es",
+     "slug": "monasterios-mil-anos-de-acustica",
+     "kind": "post",
+     "title": "Mil años de acústica gratis: por qué tocamos en monasterios",
+     "excerpt": "Obona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llena de monasterios que llevan siglos siendo, sin saberlo, las mejores salas de conciertos del norte de España.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.12_Monasterio%20de%20Obona_Fotos/25.08.12_Monasterio%20de%20Obona_WEB/25.08.12_Monasterio%20de%20Obona_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/monasterios-mil-anos-de-acustica/",
+     "date": "2026-09-12",
+     "tags": [
+      "monasterios",
+      "Obona",
+      "Tineo",
+      "acústica",
+      "patrimonio"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Mil años de acústica gratis: por qué tocamos en monasterios",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La acústica no se diseñó, pero funciona",
+       "body": "Nadie construyó Obona pensando en música de cámara. Y sin embargo, ahí está el asunto: los monasterios se construyeron para el sonido humano. Su función era albergar canto litúrgico varias veces al día, todos los días, durante siglos."
+      },
+      {
+       "type": "text",
+       "title": "Obona: uno de los cenobios más antiguos de Asturias",
+       "body": "El 12 de agosto de 2025 llenamos el Monasterio de Santa María la Real de Obona, en Tineo, uno de los cenobios más antiguos de Asturias."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Mil años de acústica gratis: por qué tocamos en monasterios\n\nObona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llena de monasterios que llevan siglos siendo, sin saberlo, las mejores salas de conciertos del norte de España.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #monasterios",
+       "asomo": "Mil años de acústica gratis: por qué tocamos en monasterios Obona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llen…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Mil años de acústica gratis: por qué tocamos en monasterios\n\nObona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llena de monasterios que llevan siglos siendo, sin saberlo, las mejores salas de conciertos del norte de España.\n\nhttps://festivaladar.com/es/blog/monasterios-mil-anos-de-acustica/\n\n#FestivalADAR #Asturias",
+       "asomo": "Mil años de acústica gratis: por qué tocamos en monasterios Obona, Bedón, Cornellana, Villanueva de Oscos. Asturias está llena de monasterios que llevan siglos siendo, sin saberlo, las mejores salas de conciertos del norte de España. https://festivaladar.com/es/blog/monasterios-mil-anos-de-acustica/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-10",
+      "hasta": "2026-10-10",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/menhir-geopuncion-paisaje",
+     "lang": "es",
+     "slug": "menhir-geopuncion-paisaje",
+     "kind": "post",
+     "title": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir",
+     "excerpt": "El Colectivo Menhir trabaja con una premisa desconcertante y preciosa: que una pieza musical puede funcionar como un menhir virtual y reconfigurar la relación entre lo humano y lo que no lo es.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/adar24fx30/12/IMG_0203.jpg",
+     "url": "https://festivaladar.com/es/blog/menhir-geopuncion-paisaje/",
+     "date": "2026-09-10",
+     "tags": [
+      "Colectivo Menhir",
+      "paisaje",
+      "arte sonoro",
+      "artistas"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Qué demonios significa eso",
+       "body": "Vamos despacio, porque la idea merece el esfuerzo. Un menhir es una piedra grande que alguien puso de pie hace miles de años. No sirve para nada práctico: no es un muro, ni un refugio, ni una herramienta."
+      },
+      {
+       "type": "text",
+       "title": "Por qué esto nos toca de lleno",
+       "body": "Cuando encontramos esta idea, tuvimos la sensación incómoda y agradable de que alguien había teorizado lo que nosotros hacíamos por instinto."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir\n\nEl Colectivo Menhir trabaja con una premisa desconcertante y preciosa: que una pieza musical puede funcionar como un menhir virtual y reconfigurar la relación entre lo humano y lo que no lo es.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #ColectivoMenhir",
+       "asomo": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir El Colectivo Menhir trabaja con una premisa …",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir\n\nEl Colectivo Menhir trabaja con una premisa desconcertante y preciosa: que una pieza musical puede funcionar como un menhir virtual y reconfigurar la relación entre lo humano y lo que no lo es.\n\nhttps://festivaladar.com/es/blog/menhir-geopuncion-paisaje/\n\n#FestivalADAR #Asturias",
+       "asomo": "Geopunción: la idea de que la música puede clavarse en el paisaje como un menhir El Colectivo Menhir trabaja con una premisa desconcertante y preciosa: que una pieza musical puede funcionar como un menhir virtual y reconfigurar la relación entre lo humano y lo que no lo es. https://festivaladar.com/es/blog/menhir-geopuncion-paisaje/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-08",
+      "hasta": "2026-10-08",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/toccata-and-bruise-la-musica-del-tacto",
+     "lang": "es",
+     "slug": "toccata-and-bruise-la-musica-del-tacto",
+     "kind": "post",
+     "title": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959",
+     "excerpt": "Celeste Oram escribió un dúo para piano y pianista donde el sonido acaba desapareciendo y solo queda el gesto. Una de las piezas más extrañas y hermosas que han pasado por Leiguarda.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/03_Instalacion_Toccata_and_Bruise_Celeste_Oram/083.jpg",
+     "url": "https://festivaladar.com/es/blog/toccata-and-bruise-la-musica-del-tacto/",
+     "date": "2026-09-08",
+     "tags": [
+      "Celeste Oram",
+      "instalación",
+      "2023",
+      "arte visual"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Quién es Celeste Oram",
+       "body": "Celeste Oram es compositora y diseñadora de proyecciones, originaria de Nueva Zelanda y residente en Nueva York. Cedió Toccata & Bruise para la edición de 2023 del festival, donde se presentó como instalación audiovisual en la propia sede de Leiguarda."
+      },
+      {
+       "type": "text",
+       "title": "La grabación que el público casi no oye",
+       "body": "Aquí está el mecanismo secreto de la obra, y es de una elegancia extraña. Mientras toca, la pianista está escuchando a Glenn Gould."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959\n\nCeleste Oram escribió un dúo para piano y pianista donde el sonido acaba desapareciendo y solo queda el gesto. Una de las piezas más extrañas y hermosas que han pasado por Leiguarda.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #CelesteOram",
+       "asomo": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959 Celeste Oram escribió un dúo para piano y pianista don…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959\n\nCeleste Oram escribió un dúo para piano y pianista donde el sonido acaba desapareciendo y solo queda el gesto. Una de las piezas más extrañas y hermosas que han pasado por Leiguarda.\n\nhttps://festivaladar.com/es/blog/toccata-and-bruise-la-musica-del-tacto/\n\n#FestivalADAR #Asturias",
+       "asomo": "La música del tacto: una pianista, Glenn Gould y una grabación de 1959 Celeste Oram escribió un dúo para piano y pianista donde el sonido acaba desapareciendo y solo queda el gesto. Una de las piezas más extrañas y hermosas que han pasado por Leiguarda. https://festivaladar.com/es/blog/toccata-and-bruise-la-musica-del-tacto/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-06",
+      "hasta": "2026-10-06",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/somiedo-musica-donde-viven-los-osos",
+     "lang": "es",
+     "slug": "somiedo-musica-donde-viven-los-osos",
+     "kind": "post",
+     "title": "Somiedo: un concierto donde vive la mayor población de osos de España",
+     "excerpt": "En 2024 llevamos la música de cámara al mercado de Pola de Somiedo, capital de un parque natural que es Reserva de la Biosfera. Sobre música, osos y la palabra «sostenible» usada en serio.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/14_Concierto_en_el_Mercado_de_Pola_de_Somiedo/Pola_01_00_02_03.jpg",
+     "url": "https://festivaladar.com/es/blog/somiedo-musica-donde-viven-los-osos/",
+     "date": "2026-09-06",
+     "tags": [
+      "Somiedo",
+      "2024",
+      "naturaleza",
+      "mercado",
+      "IV edición"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Somiedo: un concierto donde vive la mayor población de osos de España",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Por qué un mercado y no una iglesia",
+       "body": "Podríamos haber buscado un templo, que es lo cómodo. Elegimos el mercado, y la decisión dice bastante de cómo pensamos. Un mercado es el sitio más civil que tiene un pueblo. No es sagrado, no es institucional, no impone silencio por sí mismo."
+      },
+      {
+       "type": "text",
+       "title": "Un programa que no se cortó un pelo",
+       "body": "Tocaron Guillermo Laporta (flauta), Mario Molina (piano), Jone de la Fuente (violín), Almudena Arribas (viola) y Natania Hoffman (violonchelo). Y el programa fue este: - Andrea Casarrubios · Mensajes de Agua - Mozart · Cuarteto para piano en mi bemol mayor, K."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Somiedo: un concierto donde vive la mayor población de osos de España\n\nEn 2024 llevamos la música de cámara al mercado de Pola de Somiedo, capital de un parque natural que es Reserva de la Biosfera. Sobre música, osos y la palabra «sostenible» usada en serio.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Somiedo",
+       "asomo": "Somiedo: un concierto donde vive la mayor población de osos de España En 2024 llevamos la música de cámara al mercado de Pola…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Somiedo: un concierto donde vive la mayor población de osos de España\n\nEn 2024 llevamos la música de cámara al mercado de Pola de Somiedo, capital de un parque natural que es Reserva de la Biosfera. Sobre música, osos y la palabra «sostenible» usada en serio.\n\nhttps://festivaladar.com/es/blog/somiedo-musica-donde-viven-los-osos/\n\n#FestivalADAR #Asturias",
+       "asomo": "Somiedo: un concierto donde vive la mayor población de osos de España En 2024 llevamos la música de cámara al mercado de Pola de Somiedo, capital de un parque natural que es Reserva de la Biosfera. Sobre música, osos y la palabra «sostenible» usada en serio. https://festivaladar.com/es/blog/somiedo-musica-donde-viven-los-osos/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-04",
+      "hasta": "2026-10-04",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/una-ballena-en-un-monasterio",
+     "lang": "es",
+     "slug": "una-ballena-en-un-monasterio",
+     "kind": "post",
+     "title": "Una ballena encima de una montaña: la noche más onírica de ADAR",
+     "excerpt": "Un pueblo despierta y encuentra una ballena tendida en la cima de la montaña. Con esa leyenda, el ensemble Ballarte llenó de música antigua y realismo mágico el monasterio de San Antolín de Bedón.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/una-ballena-en-un-monasterio/",
+     "date": "2026-09-04",
+     "tags": [
+      "Ballarte",
+      "2025",
+      "Llanes",
+      "música antigua",
+      "monasterio"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Una ballena encima de una montaña: la noche más onírica de ADAR",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "De dónde sale la ballena",
+       "body": "La leyenda no es asturiana. Está inspirada en el perfil de la montaña de Montserrat, en Cataluña: ese macizo de formas redondeadas que, mirado con la cabeza adecuada, puede parecer un animal enorme dormido."
+      },
+      {
+       "type": "text",
+       "title": "Trovadores del siglo XXI",
+       "body": "The Whale es un espectáculo de varias capas: música, interpretación, instalación escénica y elementos audiovisuales. Pero su ambición declarada es más antigua que todo eso."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Una ballena encima de una montaña: la noche más onírica de ADAR\n\nUn pueblo despierta y encuentra una ballena tendida en la cima de la montaña. Con esa leyenda, el ensemble Ballarte llenó de música antigua y realismo mágico el monasterio de San Antolín de Bedón.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Ballarte",
+       "asomo": "Una ballena encima de una montaña: la noche más onírica de ADAR Un pueblo despierta y encuentra una ballena tendida en la cim…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Una ballena encima de una montaña: la noche más onírica de ADAR\n\nUn pueblo despierta y encuentra una ballena tendida en la cima de la montaña. Con esa leyenda, el ensemble Ballarte llenó de música antigua y realismo mágico el monasterio de San Antolín de Bedón.\n\nhttps://festivaladar.com/es/blog/una-ballena-en-un-monasterio/\n\n#FestivalADAR #Asturias",
+       "asomo": "Una ballena encima de una montaña: la noche más onírica de ADAR Un pueblo despierta y encuentra una ballena tendida en la cima de la montaña. Con esa leyenda, el ensemble Ballarte llenó de música antigua y realismo mágico el monasterio de San Antolín de Bedón. https://festivaladar.com/es/blog/una-ballena-en-un-monasterio/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-09-02",
+      "hasta": "2026-10-02",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/andrea-casarrubios-seven",
+     "lang": "es",
+     "slug": "andrea-casarrubios-seven",
+     "kind": "post",
+     "title": "SEVEN: la obra que suena a las siete de la tarde de la pandemia",
+     "excerpt": "Andrea Casarrubios estrenó en el Carnegie Hall una pieza para violonchelo dedicada a los trabajadores esenciales. En 2025 la tocó en la iglesia de Leiguarda. Retrato de una música nominada al Grammy.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.16_Iglesia%20de%20Leiguarda_Fotos/25.08.16_Iglesia%20de%20Leiguarda_WEB/25.08.16_Iglesia%20de%20Leiguarda_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/andrea-casarrubios-seven/",
+     "date": "2026-09-02",
+     "tags": [
+      "Andrea Casarrubios",
+      "compositoras",
+      "2025",
+      "Leiguarda"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "SEVEN: la obra que suena a las siete de la tarde de la pandemia",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Quién es Andrea Casarrubios",
+       "body": "Casarrubios es violonchelista y compositora española, y su currículum es de los que cuesta resumir sin que parezca exagerado."
+      },
+      {
+       "type": "text",
+       "title": "Un programa que atravesaba dos siglos y medio",
+       "body": "El recital de Leiguarda es un buen ejemplo de cómo se construye un programa que no aburre a nadie y no renuncia a nada."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "SEVEN: la obra que suena a las siete de la tarde de la pandemia\n\nAndrea Casarrubios estrenó en el Carnegie Hall una pieza para violonchelo dedicada a los trabajadores esenciales. En 2025 la tocó en la iglesia de Leiguarda. Retrato de una música nominada al Grammy.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #AndreaCasarrubios",
+       "asomo": "SEVEN: la obra que suena a las siete de la tarde de la pandemia Andrea Casarrubios estrenó en el Carnegie Hall una pieza para…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "SEVEN: la obra que suena a las siete de la tarde de la pandemia\n\nAndrea Casarrubios estrenó en el Carnegie Hall una pieza para violonchelo dedicada a los trabajadores esenciales. En 2025 la tocó en la iglesia de Leiguarda. Retrato de una música nominada al Grammy.\n\nhttps://festivaladar.com/es/blog/andrea-casarrubios-seven/\n\n#FestivalADAR #Asturias",
+       "asomo": "SEVEN: la obra que suena a las siete de la tarde de la pandemia Andrea Casarrubios estrenó en el Carnegie Hall una pieza para violonchelo dedicada a los trabajadores esenciales. En 2025 la tocó en la iglesia de Leiguarda. Retrato de una música nominada al Grammy. https://festivaladar.com/es/blog/andrea-casarrubios-seven/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-31",
+      "hasta": "2026-09-30",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/el-horreo-como-sala-de-conciertos",
+     "lang": "es",
+     "slug": "el-horreo-como-sala-de-conciertos",
+     "kind": "post",
+     "title": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento",
+     "excerpt": "Convocamos un concurso para encontrar los mejores hórreos de Asturias y convertirlos en salas de conciertos. Lo que descubrimos dentro no lo esperábamos: la madera sobre pegollos tiene una acústica propia.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_1.jpg",
+     "url": "https://festivaladar.com/es/blog/el-horreo-como-sala-de-conciertos/",
+     "date": "2026-08-31",
+     "tags": [
+      "hórreos",
+      "concurso",
+      "acústica",
+      "Susacasa",
+      "2025"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "«No queremos usar un contenedor»",
+       "body": "Esa fue la regla que nos pusimos desde el principio, y conviene explicarla porque marca la diferencia entre lo que hicimos y lo que se hace muchas veces. Es fácil coger un edificio bonito y meterle un concierto dentro."
+      },
+      {
+       "type": "text",
+       "title": "Lo que descubrimos al tocar dentro",
+       "body": "Aquí viene la parte que no habíamos previsto. Un hórreo suena. Es una estructura de madera elevada sobre pegollos, con paredes de tabla, sin cimientos que la aten al suelo y con aire por debajo."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento\n\nConvocamos un concurso para encontrar los mejores hórreos de Asturias y convertirlos en salas de conciertos. Lo que descubrimos dentro no lo esperábamos: la madera sobre pegollos tiene una acústica propia.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #hórreos",
+       "asomo": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento Convocamos un concurso para encontrar los m…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento\n\nConvocamos un concurso para encontrar los mejores hórreos de Asturias y convertirlos en salas de conciertos. Lo que descubrimos dentro no lo esperábamos: la madera sobre pegollos tiene una acústica propia.\n\nhttps://festivaladar.com/es/blog/el-horreo-como-sala-de-conciertos/\n\n#FestivalADAR #Asturias",
+       "asomo": "Cómo suena un hórreo por dentro: la caja de madera que resultó ser un instrumento Convocamos un concurso para encontrar los mejores hórreos de Asturias y convertirlos en salas de conciertos. Lo que descubrimos dentro no lo esperábamos: la madera sobre pegollos tiene una acústica propia. https://festivaladar.com/es/blog/el-horreo-como-sala-de-conciertos/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-29",
+      "hasta": "2026-09-28",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/que-es-un-paseo-sonoro",
+     "lang": "es",
+     "slug": "que-es-un-paseo-sonoro",
+     "kind": "post",
+     "title": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito)",
+     "excerpt": "No es un concierto con el público de pie. Es un formato donde tú decides el orden, la distancia y el tiempo. Cómo funciona el paseo sonoro y por qué en el medio rural funciona mejor que en cualquier sala.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/12_Paseo_sonoro_en_el_Museo_de_las_Ayalgas_Belmonte_de_Miranda/06.jpg",
+     "url": "https://festivaladar.com/es/blog/que-es-un-paseo-sonoro/",
+     "date": "2026-08-29",
+     "tags": [
+      "paseo sonoro",
+      "formatos",
+      "Museo de las Ayalgas",
+      "2023"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito)",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "En un concierto te sientas. En un paseo, decides.",
+       "body": "En un concierto convencional, todas las decisiones están tomadas antes de que llegues. Dónde te sientas, en qué orden escuchas las obras, a qué distancia estás de cada instrumento, cuándo empieza y cuándo acaba."
+      },
+      {
+       "type": "text",
+       "title": "El día que Bach sonó entre motos antiguas",
+       "body": "El ejemplo que mejor lo explica pasó el 12 de agosto de 2023, en el Museo de las Ayalgas de Silviella, en Belmonte de Miranda."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito)\n\nNo es un concierto con el público de pie. Es un formato donde tú decides el orden, la distancia y el tiempo. Cómo funciona el paseo sonoro y por qué en el medio rural funciona mejor que en cualquier sala.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #paseosonoro",
+       "asomo": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito) No es un concierto con el público de pie. Es un fo…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito)\n\nNo es un concierto con el público de pie. Es un formato donde tú decides el orden, la distancia y el tiempo. Cómo funciona el paseo sonoro y por qué en el medio rural funciona mejor que en cualquier sala.\n\nhttps://festivaladar.com/es/blog/que-es-un-paseo-sonoro/\n\n#FestivalADAR #Asturias",
+       "asomo": "Qué es exactamente un paseo sonoro (y por qué es nuestro formato favorito) No es un concierto con el público de pie. Es un formato donde tú decides el orden, la distancia y el tiempo. Cómo funciona el paseo sonoro y por qué en el medio rural funciona mejor que en cualquier sala. https://festivaladar.com/es/blog/que-es-un-paseo-sonoro/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-27",
+      "hasta": "2026-09-26",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/leiguarda-47-la-sede",
+     "lang": "es",
+     "slug": "leiguarda-47-la-sede",
+     "kind": "post",
+     "title": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo",
+     "excerpt": "Sala de ensayo con piano de cola, estudio de producción, alojamiento y espacio de conciertos, todo en el mismo edificio de montaña. Por dentro de la sede donde ADAR se cocina los otros once meses del año.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/16_Micro_Conciertos_y_Paseo_Sonoro_en_Leiguarda/03.jpg",
+     "url": "https://festivaladar.com/es/blog/leiguarda-47-la-sede/",
+     "date": "2026-08-27",
+     "tags": [
+      "sede",
+      "Leiguarda",
+      "residencias",
+      "cómo funciona"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Una casa restaurada en la montaña",
+       "body": "La sede de ADAR es una casa restaurada en la montaña del occidente asturiano. Y la mejor manera de describirla es por lo que no es: No es una sala de conciertos. No tiene taquilla, ni butacas numeradas, ni camerinos."
+      },
+      {
+       "type": "text",
+       "title": "Por qué eso cambia el trabajo",
+       "body": "Quienes residen en Leiguarda 47 conviven, comen juntos y desarrollan sus proyectos codo con codo. Puede sonar a detalle logístico. Es, en realidad, el corazón del método. Piensa cómo funciona normalmente."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo\n\nSala de ensayo con piano de cola, estudio de producción, alojamiento y espacio de conciertos, todo en el mismo edificio de montaña. Por dentro de la sede donde ADAR se cocina los otros once meses del año.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #sede",
+       "asomo": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo Sala de ensayo con piano de cola, estudio de p…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo\n\nSala de ensayo con piano de cola, estudio de producción, alojamiento y espacio de conciertos, todo en el mismo edificio de montaña. Por dentro de la sede donde ADAR se cocina los otros once meses del año.\n\nhttps://festivaladar.com/es/blog/leiguarda-47-la-sede/\n\n#FestivalADAR #Asturias",
+       "asomo": "Leiguarda 47: no es una sala de conciertos ni un hotel, es una casa de trabajo Sala de ensayo con piano de cola, estudio de producción, alojamiento y espacio de conciertos, todo en el mismo edificio de montaña. Por dentro de la sede donde ADAR se cocina los otros once meses del año. https://festivaladar.com/es/blog/leiguarda-47-la-sede/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-25",
+      "hasta": "2026-09-24",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/de-nueva-york-a-una-aldea",
+     "lang": "es",
+     "slug": "de-nueva-york-a-una-aldea",
+     "kind": "post",
+     "title": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR",
+     "excerpt": "Un día tocan en Nueva York y otro en una panera de Leiguarda. La historia de cómo dos músicos convirtieron una finca asturiana por rehabilitar en la sede de un festival internacional.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/09_Concierto_visual_en_Soto_del_Barco/PXL_20220809_190711391.jpg",
+     "url": "https://festivaladar.com/es/blog/de-nueva-york-a-una-aldea/",
+     "date": "2026-08-25",
+     "tags": [
+      "origen",
+      "Nueva York",
+      "Leiguarda",
+      "Josefina Urraca",
+      "Guillermo Laporta"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Un pack completo: finca, casa, cuadra, pajar, hórreo",
+       "body": "Su búsqueda por Asturias terminó en Leiguarda, una aldea del concejo de Belmonte de Miranda. Lo que compraron era exactamente lo que hay a cientos por rehabilitar en la región: «finca, casa, cuadra, pajar, hórreo…», en sus propias palabras."
+      },
+      {
+       "type": "text",
+       "title": "Del sueño al registro oficial",
+       "body": "No dejaron pasar mucho tiempo. El sueño tenía nombre y registro: Asociación para el Desarrollo de las Artes en el Medio Rural (ADAR), fundada en 2020."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR\n\nUn día tocan en Nueva York y otro en una panera de Leiguarda. La historia de cómo dos músicos convirtieron una finca asturiana por rehabilitar en la sede de un festival internacional.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #origen",
+       "asomo": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR Un día tocan en Nueva York y otro en una panera de Leigu…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR\n\nUn día tocan en Nueva York y otro en una panera de Leiguarda. La historia de cómo dos músicos convirtieron una finca asturiana por rehabilitar en la sede de un festival internacional.\n\nhttps://festivaladar.com/es/blog/de-nueva-york-a-una-aldea/\n\n#FestivalADAR #Asturias",
+       "asomo": "Once años en Nueva York y una cuadra en Leiguarda: el origen de ADAR Un día tocan en Nueva York y otro en una panera de Leiguarda. La historia de cómo dos músicos convirtieron una finca asturiana por rehabilitar en la sede de un festival internacional. https://festivaladar.com/es/blog/de-nueva-york-a-una-aldea/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-24",
+      "hasta": "2026-09-23",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/el-orballo-del-primer-concierto",
+     "lang": "es",
+     "slug": "el-orballo-del-primer-concierto",
+     "kind": "post",
+     "title": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021",
+     "excerpt": "Toda la semana había hecho sol. La noche del estreno, en el campo de la iglesia de Leiguarda, empezó a orbayar. No pudo tocarse el programa entero, y aun así aquella fue la noche que lo cambió todo.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg",
+     "url": "https://festivaladar.com/es/blog/el-orballo-del-primer-concierto/",
+     "date": "2026-08-24",
+     "tags": [
+      "2021",
+      "primera edición",
+      "Leiguarda",
+      "historia"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Una semana de sol y justo esa noche, orballo",
+       "body": "Había hecho sol toda la semana."
+      },
+      {
+       "type": "text",
+       "title": "Más de 120 personas en una aldea de cien habitantes",
+       "body": "El dato que todavía nos emociona: se juntaron más de 120 personas. En una aldea de apenas un centenar de habitantes. Aquella noche había más gente en el campo de la iglesia de Leiguarda que vecinos censados en Leiguarda."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021\n\nToda la semana había hecho sol. La noche del estreno, en el campo de la iglesia de Leiguarda, empezó a orbayar. No pudo tocarse el programa entero, y aun así aquella fue la noche que lo cambió todo.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #2021",
+       "asomo": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021 Toda la semana había hecho sol. La noche del est…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021\n\nToda la semana había hecho sol. La noche del estreno, en el campo de la iglesia de Leiguarda, empezó a orbayar. No pudo tocarse el programa entero, y aun así aquella fue la noche que lo cambió todo.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Asturias",
+       "asomo": "El orballo del primer concierto: cómo nació ADAR una noche de agosto de 2021 Toda la semana había hecho sol. La noche del estreno, en el campo de la iglesia de Leiguarda, empezó a orbayar. No pudo tocarse el programa entero, y aun así aquella fue la noche que lo cambió todo. https://festivaladar.com/es/blog/el-orballo-del-primer-concierto/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-23",
+      "hasta": "2026-09-22",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/seis-ediciones-de-adar",
+     "lang": "es",
+     "slug": "seis-ediciones-de-adar",
+     "kind": "post",
+     "title": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera",
+     "excerpt": "Acaba la sexta edición. Un buen momento para mirar atrás sin nostalgia y contar, con honestidad, qué hemos aprendido en estos años y hacia dónde va el proyecto.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/05.08.26_Parador%20de%20Corias_Fotos/05.08.26_Parador%20de%20Corias_WEB/05.08.26_Parador%20de%20Corias_WEB_3.jpg",
+     "url": "https://festivaladar.com/es/blog/seis-ediciones-de-adar/",
+     "date": "2026-08-23",
+     "tags": [
+      "ADAR",
+      "retrospectiva",
+      "VI edición",
+      "2027"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "1. El nivel no hay que bajarlo. Nunca.",
+       "body": "Al empezar, más de una vez nos preguntaron si \"para el pueblo\" no convendría una programación más ligera, más fácil. Seis ediciones después lo tenemos clarísimo: no. El público del medio rural no quiere una versión descafeinada de la cultura."
+      },
+      {
+       "type": "text",
+       "title": "2. El sitio importa tanto como el programa.",
+       "body": "Aprendimos que un concierto en una iglesia de aldea, en un parador, en un alto de monte, no es el mismo concierto que en un auditorio. El lugar entra en la música."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera\n\nAcaba la sexta edición. Un buen momento para mirar atrás sin nostalgia y contar, con honestidad, qué hemos aprendido en estos años y hacia dónde va el proyecto.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #ADAR",
+       "asomo": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera Acaba la sexta edición. Un buen momen…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera\n\nAcaba la sexta edición. Un buen momento para mirar atrás sin nostalgia y contar, con honestidad, qué hemos aprendido en estos años y hacia dónde va el proyecto.\n\nhttps://festivaladar.com/es/blog/seis-ediciones-de-adar/\n\n#FestivalADAR #Asturias",
+       "asomo": "Seis ediciones de ADAR: lo que hemos aprendido llevando la música donde no se la espera Acaba la sexta edición. Un buen momento para mirar atrás sin nostalgia y contar, con honestidad, qué hemos aprendido en estos años y hacia dónde va el proyecto. https://festivaladar.com/es/blog/seis-ediciones-de-adar/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-22",
+      "hasta": "2026-09-21",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/la-espicha-despues-del-ultimo-acorde",
+     "lang": "es",
+     "slug": "la-espicha-despues-del-ultimo-acorde",
+     "kind": "post",
+     "title": "La espicha después del último acorde: por qué la música y la sidra terminan juntas",
+     "excerpt": "En ADAR el concierto no acaba cuando se apagan las luces. Acaba con una espicha, sidra en mano, artistas y público mezclados. Y eso no es el postre: es parte de la idea.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/la-espicha-despues-del-ultimo-acorde/",
+     "date": "2026-08-22",
+     "tags": [
+      "espicha",
+      "sidra",
+      "comunidad",
+      "clausura"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "La espicha después del último acorde: por qué la música y la sidra terminan juntas",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Qué es una espicha (por si no eres de aquí)",
+       "body": "Para quien no sea asturiano: una espicha es una reunión en torno a la sidra. El nombre viene del espiche, el palo que tapa el agujero del tonel; \"espichar\" es abrirlo y empezar a escanciar."
+      },
+      {
+       "type": "text",
+       "title": "Por qué la ponemos al final de un concierto",
+       "body": "Podría parecer un simple detalle simpático, el \"vino de honor\" de toda la vida. Es mucho más que eso. La espicha hace un trabajo que ninguna otra parte del festival puede hacer: aplana la jerarquía."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "La espicha después del último acorde: por qué la música y la sidra terminan juntas\n\nEn ADAR el concierto no acaba cuando se apagan las luces. Acaba con una espicha, sidra en mano, artistas y público mezclados. Y eso no es el postre: es parte de la idea.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #espicha",
+       "asomo": "La espicha después del último acorde: por qué la música y la sidra terminan juntas En ADAR el concierto no acaba cuando se ap…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "La espicha después del último acorde: por qué la música y la sidra terminan juntas\n\nEn ADAR el concierto no acaba cuando se apagan las luces. Acaba con una espicha, sidra en mano, artistas y público mezclados. Y eso no es el postre: es parte de la idea.\n\nhttps://festivaladar.com/es/blog/la-espicha-despues-del-ultimo-acorde/\n\n#FestivalADAR #Asturias",
+       "asomo": "La espicha después del último acorde: por qué la música y la sidra terminan juntas En ADAR el concierto no acaba cuando se apagan las luces. Acaba con una espicha, sidra en mano, artistas y público mezclados. Y eso no es el postre: es parte de la idea. https://festivaladar.com/es/blog/la-espicha-despues-del-ultimo-acorde/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-21",
+      "hasta": "2026-09-20",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/como-escuchar-sweet-air-david-lang",
+     "lang": "es",
+     "slug": "como-escuchar-sweet-air-david-lang",
+     "kind": "post",
+     "title": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea)",
+     "excerpt": "«No entiendo la música moderna» es la frase más repetida y la más injusta. Una pequeña guía para escuchar sin miedo, a partir de una obra que sonó en la clausura de ADAR.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/como-escuchar-sweet-air-david-lang/",
+     "date": "2026-08-21",
+     "tags": [
+      "música contemporánea",
+      "David Lang",
+      "guía de escucha",
+      "clausura"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea)",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Quién es David Lang",
+       "body": "David Lang es un compositor estadounidense, premio Pulitzer de música en 2008 por su The Little Match Girl Passion, y una de las cabezas del colectivo Bang on a Can, que lleva décadas acercando la música de hoy a públicos que creían que no era para ellos."
+      },
+      {
+       "type": "text",
+       "title": "El error: escucharla como si fuera Beethoven",
+       "body": "El malentendido casi siempre viene de aquí. Escuchamos música contemporánea esperando lo que nos dio la música del XIX: un tema que reconoces, un clímax, una resolución con moraleja. Y cuando eso no llega, concluimos que \"no la entendemos\"."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea)\n\n«No entiendo la música moderna» es la frase más repetida y la más injusta. Una pequeña guía para escuchar sin miedo, a partir de una obra que sonó en la clausura de ADAR.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #músicacontemporánea",
+       "asomo": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea) «No entiendo la música moderna» es la…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea)\n\n«No entiendo la música moderna» es la frase más repetida y la más injusta. Una pequeña guía para escuchar sin miedo, a partir de una obra que sonó en la clausura de ADAR.\n\nhttps://festivaladar.com/es/blog/como-escuchar-sweet-air-david-lang/\n\n#FestivalADAR #Asturias",
+       "asomo": "Cómo escuchar «sweet air» de David Lang (y perderle el miedo a la música contemporánea) «No entiendo la música moderna» es la frase más repetida y la más injusta. Una pequeña guía para escuchar sin miedo, a partir de una obra que sonó en la clausura de ADAR. https://festivaladar.com/es/blog/como-escuchar-sweet-air-david-lang/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-19",
+      "hasta": "2026-09-18",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/germanavicius-california-sketches",
+     "lang": "es",
+     "slug": "germanavicius-california-sketches",
+     "kind": "post",
+     "title": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches»",
+     "excerpt": "Un compositor lituano que estudió en California, música pensada para instrumentos de folclore báltico y una iglesia asturiana. La historia de una obra que cruzó tres mundos para sonar aquí.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/11.08.26_El%20Franco_Fotos/11.08.26_El%20Franco_WEB/11.08.26_El%20Franco_WEB_4.jpg",
+     "url": "https://festivaladar.com/es/blog/germanavicius-california-sketches/",
+     "date": "2026-08-19",
+     "tags": [
+      "Germanavičius",
+      "compositores",
+      "Lituania",
+      "música contemporánea"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches»",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Un lituano que aprendió a escuchar en California",
+       "body": "Germanavičius nació en Lituania, pero su formación es un mapa del mundo: estudió en Vilnius, en Dartington (Inglaterra), en San Francisco y en Helsinki."
+      },
+      {
+       "type": "text",
+       "title": "La obsesión que lo conecta todo: el folclore",
+       "body": "Aquí está el hilo secreto que hace de esta programación algo más que una casualidad bonita."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches»\n\nUn compositor lituano que estudió en California, música pensada para instrumentos de folclore báltico y una iglesia asturiana. La historia de una obra que cruzó tres mundos para sonar aquí.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Germanavičius",
+       "asomo": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches» Un compositor lituano que estudió en California, músi…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches»\n\nUn compositor lituano que estudió en California, música pensada para instrumentos de folclore báltico y una iglesia asturiana. La historia de una obra que cruzó tres mundos para sonar aquí.\n\nhttps://festivaladar.com/es/blog/germanavicius-california-sketches/\n\n#FestivalADAR #Asturias",
+       "asomo": "De San Francisco a Leiguarda: Germanavičius y las «California Sketches» Un compositor lituano que estudió en California, música pensada para instrumentos de folclore báltico y una iglesia asturiana. La historia de una obra que cruzó tres mundos para sonar aquí. https://festivaladar.com/es/blog/germanavicius-california-sketches/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-18",
+      "hasta": "2026-09-17",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/horreos-y-paneras-concurso",
+     "lang": "es",
+     "slug": "horreos-y-paneras-concurso",
+     "kind": "post",
+     "title": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura",
+     "excerpt": "El hórreo es la obra de arquitectura popular más asturiana que existe, y desaparece en silencio. Contamos por qué ADAR, un festival de música, decidió meterse a defenderlo.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/horreos-y-paneras-concurso/",
+     "date": "2026-08-18",
+     "tags": [
+      "hórreos",
+      "patrimonio",
+      "arquitectura popular",
+      "concurso"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La escultura útil de Asturias",
+       "body": "El hórreo es probablemente la pieza de arquitectura popular más reconocible del noroeste peninsular."
+      },
+      {
+       "type": "text",
+       "title": "Un patrimonio que se cae sin ruido",
+       "body": "El problema es que el hórreo se está muriendo de éxito histórico y de olvido presente. Ya no se guarda grano en ellos. Sin uso, muchos se abandonan; sin mantenimiento, la madera se pudre; sin relevo en el pueblo, no queda quien los arregle."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura\n\nEl hórreo es la obra de arquitectura popular más asturiana que existe, y desaparece en silencio. Contamos por qué ADAR, un festival de música, decidió meterse a defenderlo.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #hórreos",
+       "asomo": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura El hórreo es la obra de arquitectura po…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura\n\nEl hórreo es la obra de arquitectura popular más asturiana que existe, y desaparece en silencio. Contamos por qué ADAR, un festival de música, decidió meterse a defenderlo.\n\nhttps://festivaladar.com/es/blog/horreos-y-paneras-concurso/\n\n#FestivalADAR #Asturias",
+       "asomo": "Hórreos y paneras: por qué un festival de música organiza un concurso de arquitectura El hórreo es la obra de arquitectura popular más asturiana que existe, y desaparece en silencio. Contamos por qué ADAR, un festival de música, decidió meterse a defenderlo. https://festivaladar.com/es/blog/horreos-y-paneras-concurso/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-17",
+      "hasta": "2026-09-16",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/equilibrium-residencia-la-casona",
+     "lang": "es",
+     "slug": "equilibrium-residencia-la-casona",
+     "kind": "post",
+     "title": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo",
+     "excerpt": "Una residencia artística no es un ensayo con vistas bonitas. Es lo que hicimos en La Casona de Belmonte: dejar que la música se cocine despacio, en el sitio, hasta que huele al lugar donde nace.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_5.jpg",
+     "url": "https://festivaladar.com/es/blog/equilibrium-residencia-la-casona/",
+     "date": "2026-08-17",
+     "tags": [
+      "residencia",
+      "La Casona de Belmonte",
+      "proceso creativo",
+      "Equilibrium"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Vivir el sitio antes de tocarlo",
+       "body": "En La Casona de Belmonte reunimos a un grupo de artistas para trabajar Equilibrium durante varios días. No vinieron a dar un concierto y marcharse: vinieron a quedarse."
+      },
+      {
+       "type": "text",
+       "title": "El proceso también es la obra",
+       "body": "Solemos pensar que lo valioso es el producto: el concierto, el disco, el aplauso. Pero en una residencia el proceso es tan importante como el estreno. Ahí es donde se prueban ideas que quizá no salen."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo\n\nUna residencia artística no es un ensayo con vistas bonitas. Es lo que hicimos en La Casona de Belmonte: dejar que la música se cocine despacio, en el sitio, hasta que huele al lugar donde nace.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #residencia",
+       "asomo": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo Una residencia artística no es un ensayo con vistas bo…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo\n\nUna residencia artística no es un ensayo con vistas bonitas. Es lo que hicimos en La Casona de Belmonte: dejar que la música se cocine despacio, en el sitio, hasta que huele al lugar donde nace.\n\nhttps://festivaladar.com/es/blog/equilibrium-residencia-la-casona/\n\n#FestivalADAR #Asturias",
+       "asomo": "Equilibrium: qué pasa cuando traes a unos artistas a vivir a un pueblo Una residencia artística no es un ensayo con vistas bonitas. Es lo que hicimos en La Casona de Belmonte: dejar que la música se cocine despacio, en el sitio, hasta que huele al lugar donde nace. https://festivaladar.com/es/blog/equilibrium-residencia-la-casona/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-16",
+      "hasta": "2026-09-15",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/una-birbyne-en-leiguarda",
+     "lang": "es",
+     "slug": "una-birbyne-en-leiguarda",
+     "kind": "post",
+     "title": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana",
+     "excerpt": "Žilvinas Brazauskas tocó en Leiguarda un instrumento que empezó siendo un juguete de pastores lituanos hace cuatro siglos. La historia de la birbynė es también la historia de por qué el mundo cabe en una aldea.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.15_Iglesia%20de%20Leiguarda_Fotos/26.08.15_Iglesia%20de%20Leiguarda_WEB/26.08.15_Iglesia%20de%20Leiguarda_WEB_6.jpg",
+     "url": "https://festivaladar.com/es/blog/una-birbyne-en-leiguarda/",
+     "date": "2026-08-16",
+     "tags": [
+      "birbynė",
+      "instrumentos",
+      "Leiguarda",
+      "Lituania"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Un juguete de pastores del año 1625",
+       "body": "La birbynė no nació en un conservatorio. Nació en el campo. Es un instrumento de viento lituano, primo lejano del clarinete, hecho en origen con paja, corteza o cuerno de animal, con una lengüeta simple o doble."
+      },
+      {
+       "type": "text",
+       "title": "De una aldea lituana a otra asturiana",
+       "body": "Piénsalo un momento. Un instrumento que empezó siendo el entretenimiento de un chaval cuidando ovejas en Lituania acabó, cuatro siglos después, sonando bajo las bóvedas de una iglesia de Belmonte de Miranda, delante de vecinos de Leiguarda."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana\n\nŽilvinas Brazauskas tocó en Leiguarda un instrumento que empezó siendo un juguete de pastores lituanos hace cuatro siglos. La historia de la birbynė es también la historia de por qué el mundo cabe en una aldea.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #birbynė",
+       "asomo": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana Žilvinas Brazauskas tocó en Leig…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana\n\nŽilvinas Brazauskas tocó en Leiguarda un instrumento que empezó siendo un juguete de pastores lituanos hace cuatro siglos. La historia de la birbynė es también la historia de por qué el mundo cabe en una aldea.\n\nhttps://festivaladar.com/es/blog/una-birbyne-en-leiguarda/\n\n#FestivalADAR #Asturias",
+       "asomo": "Una birbynė en Leiguarda: cuando una flauta de pastor lituano suena en una iglesia asturiana Žilvinas Brazauskas tocó en Leiguarda un instrumento que empezó siendo un juguete de pastores lituanos hace cuatro siglos. La historia de la birbynė es también la historia de por qué el mundo cabe en una aldea. https://festivaladar.com/es/blog/una-birbyne-en-leiguarda/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-08-13",
+      "hasta": "2026-09-12",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "es/el-eclipse-que-apago-asturias",
+     "lang": "es",
+     "slug": "el-eclipse-que-apago-asturias",
+     "kind": "post",
+     "title": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse",
+     "excerpt": "El 12 de agosto de 2026 Asturias vivió el primer eclipse total de sol sobre la España peninsular en 121 años. Lo esperamos tocando, en un alto de Belmonte, con la música pensada para el instante exacto de la sombra.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_2.jpg",
+     "url": "https://festivaladar.com/es/blog/el-eclipse-que-apago-asturias/",
+     "date": "2026-08-13",
+     "tags": [
+      "eclipse",
+      "crónica",
+      "La Corredoria",
+      "2026"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Tocar contra el reloj del cielo",
+       "body": "Un eclipse no admite ensayo con público, ni segundo pase. La totalidad estaba prevista para las 20:27, con el sol a apenas diez grados sobre el horizonte, casi rozando el mar por el oeste."
+      },
+      {
+       "type": "text",
+       "title": "Música para la sombra",
+       "body": "La pregunta que nos hicimos al diseñar el programa fue sencilla y difícil: ¿qué se toca mientras el mundo se queda a oscuras? No quisimos ilustrar el eclipse ni \"acompañarlo\" como quien pone banda sonora."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse\n\nEl 12 de agosto de 2026 Asturias vivió el primer eclipse total de sol sobre la España peninsular en 121 años. Lo esperamos tocando, en un alto de Belmonte, con la música pensada para el instante exacto de la sombra.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #eclipse",
+       "asomo": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse El 12 de agosto de 2026 Asturias vivió el primer ec…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse\n\nEl 12 de agosto de 2026 Asturias vivió el primer eclipse total de sol sobre la España peninsular en 121 años. Lo esperamos tocando, en un alto de Belmonte, con la música pensada para el instante exacto de la sombra.\n\nhttps://festivaladar.com/es/blog/el-eclipse-que-apago-asturias/\n\n#FestivalADAR #Asturias",
+       "asomo": "El día que Asturias se quedó a oscuras: crónica del concierto del eclipse El 12 de agosto de 2026 Asturias vivió el primer eclipse total de sol sobre la España peninsular en 121 años. Lo esperamos tocando, en un alto de Belmonte, con la música pensada para el instante exacto de la sombra. https://festivaladar.com/es/blog/el-eclipse-que-apago-asturias/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    }
+   ]
+  },
   "creartbox": {
    "marca": {
     "id": "creartbox",
@@ -225,6 +2798,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": null,
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -305,6 +2879,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": null,
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -381,6 +2956,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": null,
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -452,6 +3028,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": null,
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -523,6 +3100,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": null,
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -594,6 +3172,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-10-27",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -665,6 +3244,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": null,
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -769,6 +3349,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": null,
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -842,6 +3423,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": null,
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -916,6 +3498,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": null,
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -983,6 +3566,7 @@
      ],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-10-19",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1043,6 +3627,7 @@
      "fotos": [],
      "kicker": "Did you know?",
      "formato": "historia",
+     "publicaEl": "2026-10-20",
      "pegatinas": [
       {
        "texto": "184 years later"
@@ -1111,6 +3696,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-10-21",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1171,6 +3757,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-10-22",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1235,6 +3822,7 @@
      "fotos": [],
      "kicker": "Did you know?",
      "formato": "historia",
+     "publicaEl": "2026-10-23",
      "pegatinas": [
       {
        "texto": "30 Oct · 7:30 pm"
@@ -1303,6 +3891,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-10-24",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1363,6 +3952,7 @@
      "fotos": [],
      "kicker": "Did you know?",
      "formato": "historia",
+     "publicaEl": "2026-10-25",
      "pegatinas": [
       {
        "texto": "30 Oct · The DiMenna Center"
@@ -1431,6 +4021,7 @@
      "fotos": [],
      "kicker": "Did you know?",
      "formato": "historia",
+     "publicaEl": "2026-10-26",
      "pegatinas": [
       {
        "texto": "30 Oct · 7:30 pm"
@@ -1499,6 +4090,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-10-28",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1559,6 +4151,7 @@
      "fotos": [],
      "kicker": "Tomorrow · Opening night",
      "formato": null,
+     "publicaEl": "2026-10-29",
      "pegatinas": null,
      "cartel": {
       "lineas": [
@@ -1631,6 +4224,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-10-30",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1691,6 +4285,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-11-01",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1751,6 +4346,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-11-03",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1815,6 +4411,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-11-06",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1875,6 +4472,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-11-08",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1935,6 +4533,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-11-10",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -1995,6 +4594,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-11-12",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -2055,6 +4655,7 @@
      "fotos": [],
      "kicker": null,
      "formato": null,
+     "publicaEl": "2026-11-14",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,

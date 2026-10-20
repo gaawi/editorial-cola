@@ -149,6 +149,21 @@ const marcas = soloMarca ? [soloMarca] : ['creartbox', 'adar'];
 const HISTORICO = await yaEnInstagram();
 const salida = { generado: new Date().toISOString(), origen: 'gaawi/adar', marcas: {} };
 
+// Una pasada con una sola marca no puede borrar la otra. Pasó: se regeneró
+// muchas veces con `creartbox` y cada una dejó el archivo sin ADAR, hasta que
+// el botón de cambiar de marca se rompió en la app. Lo que no se vuelve a
+// calcular se conserva tal cual estaba.
+if (soloMarca && existsSync(join(AQUI, 'datos', 'posts.json'))) {
+  try {
+    const previa = JSON.parse(await readFile(join(AQUI, 'datos', 'posts.json'), 'utf8'));
+    for (const [nombre, datos] of Object.entries(previa.marcas || {})) {
+      if (nombre !== soloMarca) salida.marcas[nombre] = datos;
+    }
+  } catch {
+    // Si el archivo anterior no se lee, se escribe solo lo nuevo, como antes.
+  }
+}
+
 for (const nombre of marcas) {
   const { brand, ideas } = await cargarIdeas(nombre, ADAR);
   const rev = await revisiones(nombre);
@@ -193,6 +208,10 @@ for (const nombre of marcas) {
         kicker: p.kicker || null,
         // «historia»: va a historias y no al muro. Por defecto, a los dos.
         formato: p.formato || null,
+        // El día en que sale, si la ficha lo trae. Solo lo tienen las escritas a
+        // mano, que llevan `pie`: en las demás `date` es la fecha del concierto
+        // y el día de publicar lo decide una ventana, no un día.
+        publicaEl: p.pie ? p.date : null,
         // Pegatinas de historia. `senal: true` la pinta en ámbar.
         pegatinas: p.pegatinas || null,
         // Las líneas de datos del cartel: fecha, hora, sitio, entradas.

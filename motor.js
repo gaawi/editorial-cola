@@ -176,7 +176,7 @@ export function crearMotor(B) {
     return foco;
   }
 
-  async function foto(ctx, src, x, y, w, h, fx, fy) {
+  async function foto(ctx, src, x, y, w, h, fx, fy, zoom = 1) {
     if (!src) return false;
     try {
       const img = await cargarFoto(src);
@@ -185,7 +185,9 @@ export function crearMotor(B) {
         if (fx === undefined) fx = f.x;
         if (fy === undefined) fy = f.y;
       }
-      const s = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+      // `zoom` mayor que 1 se acerca: hay planos generales en los que el
+      // grupo sale lejísimos y el recorte 4:5 no basta para arreglarlo.
+      const s = Math.max(w / img.naturalWidth, h / img.naturalHeight) * (zoom || 1);
       const dw = img.naturalWidth * s, dh = img.naturalHeight * s;
       const ox = Math.min(0, Math.max(w - dw, -(dw - w) * fx));
       const oy = Math.min(0, Math.max(h - dh, -(dh - h) * fy));
@@ -238,6 +240,10 @@ export function crearMotor(B) {
     const ctx = canvas.getContext('2d');
     await asegurarFuentes();
 
+    // El encuadre que pida la ficha. Sin nada, el foco automático y sin zoom.
+    const enc = post.encuadre || {};
+    const FX = enc.x, FY = enc.y, ZOOM = enc.zoom || 1;
+
     const pad = Math.round(W * 0.085);
     const rotSize = Math.max(13, Math.round(W * 0.019));
     // El 9:16 vale para Stories y para TikTok: el margen se calcula para la
@@ -280,7 +286,7 @@ export function crearMotor(B) {
 
       // La foto y nada más.
       if (estilo === 'limpia') {
-        await foto(ctx, post.image, 0, 0, W, H);
+        await foto(ctx, post.image, 0, 0, W, H, FX, FY, ZOOM);
         pegatinas();
         return;
       }
@@ -288,7 +294,7 @@ export function crearMotor(B) {
       // Foto arriba, banda sólida abajo. Para fotos con mucho ruido.
       if (estilo === 'bloque') {
         const bandH = Math.round(H * (fmt === 'story' ? 0.42 : 0.46));
-        await foto(ctx, post.image, 0, 0, W, H - bandH);
+        await foto(ctx, post.image, 0, 0, W, H - bandH, FX, FY, ZOOM);
         ctx.fillStyle = B.ink; ctx.fillRect(0, H - bandH, W, bandH);
         ctx.fillStyle = B.accent;
         ctx.fillRect(0, H - bandH, W, Math.max(5, Math.round(W * 0.009)));
@@ -310,7 +316,7 @@ export function crearMotor(B) {
 
       // Foto a sangre, velo y filete perimetral; el texto, centrado.
       if (estilo === 'marco') {
-        await foto(ctx, post.image, 0, 0, W, H);
+        await foto(ctx, post.image, 0, 0, W, H, FX, FY, ZOOM);
         ctx.fillStyle = rgba(B.ink, 0.52); ctx.fillRect(0, 0, W, H);
         const inset = Math.round(W * 0.05);
         ctx.strokeStyle = rgba(B.accent, 0.85);
@@ -337,7 +343,7 @@ export function crearMotor(B) {
       // La cifra es el post. El titular no se dibuja: el número y su pie ya
       // lo dicen, y a tamaño de miniatura se lee un número antes que nada.
       if (estilo === 'cifra' && post.cifra) {
-        await foto(ctx, post.image, 0, 0, W, H);
+        await foto(ctx, post.image, 0, 0, W, H, FX, FY, ZOOM);
         // Dónde va el bloque. Lo decide la foto: si lo que hay que ver está
         // abajo —el público de una sala llena—, el número se sube y le deja
         // el sitio. Por defecto va abajo, que es lo habitual.
@@ -398,7 +404,7 @@ export function crearMotor(B) {
         const filo = Math.max(5, Math.round(W * 0.009));
         const tira = conFoto ? Math.round(H * (fmt === 'fb' ? 0.26 : 0.20)) : 0;
         if (conFoto) {
-          await foto(ctx, post.image, 0, H - tira, W, tira);
+          await foto(ctx, post.image, 0, H - tira, W, tira, FX, FY, ZOOM);
           ctx.fillStyle = B.accent; ctx.fillRect(0, H - tira - filo, W, filo);
         }
 
@@ -452,7 +458,7 @@ export function crearMotor(B) {
       // señal de la pantalla es ese panel, así que la foto va sin color.
       if (estilo === 'duo') {
         ctx.fillStyle = B.ink; ctx.fillRect(0, 0, W, H);
-        await foto(ctx, post.image, 0, 0, W, H);
+        await foto(ctx, post.image, 0, 0, W, H, FX, FY, ZOOM);
         duotono(ctx, 0, 0, W, H, B.ink, B.paper);
 
         const panelW = Math.round(W * 0.86);
@@ -671,7 +677,7 @@ export function crearMotor(B) {
         return;
       }
 
-      await foto(ctx, post.image, 0, 0, W, H);
+      await foto(ctx, post.image, 0, 0, W, H, FX, FY, ZOOM);
       const gTop = fmt === 'story' ? H * 0.42 : H * 0.32;
       const g = ctx.createLinearGradient(0, gTop, 0, H);
       g.addColorStop(0, rgba(B.ink, 0));

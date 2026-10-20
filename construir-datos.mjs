@@ -199,6 +199,8 @@ for (const nombre of marcas) {
         cartel: p.cartel || null,
         // El trapecio ámbar de la portada del cuadernillo.
         trapecio: p.trapecio || null,
+        // Encuadre a mano: {x, y} mueve el centro y zoom se acerca.
+        encuadre: p.encuadre || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

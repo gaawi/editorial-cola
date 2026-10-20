@@ -32,7 +32,6 @@ let shaAprob = null;
 let actual = null;
 let filtro = 'ahora';
 let vista = 'ideas';
-let tipo = 'post';
 const HOY = new Date().toISOString().slice(0, 10);
 const DIA = 86400000;
 let HISTORICO = null;
@@ -117,12 +116,19 @@ function yaSalio(e) {
   return e.redes.every((r) => new Date(r.cuando) < new Date());
 }
 
-/** Las de un apartado, del tipo que toque, ordenadas por fecha. */
+/** Las de un apartado, ordenadas por fecha. */
 function fichasDe(grupo) {
   return DATOS.marcas[MARCA].posts
     .filter((p) => grupoDe(p) === grupo)
-    .filter((p) => (tipo === 'historia') === (p.formato === 'historia'))
     .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+/** Las historias van arriba, en círculos; los posts, debajo. */
+function reparte(fichas) {
+  return {
+    historias: fichas.filter((p) => p.formato === 'historia'),
+    posts: fichas.filter((p) => p.formato !== 'historia'),
+  };
 }
 
 function pintarLista() {
@@ -136,13 +142,10 @@ function pintarLista() {
   });
 
   $('#vacio').hidden = posts.length > 0;
-  if (tipo === 'historia') {
-    pintarHistorias(posts);
-    $('#historias').hidden = false;
-  } else {
-    $('#historias').hidden = true;
-    for (const p of posts) cont.appendChild(tarjeta(p));
-  }
+  const { historias, posts: muro } = reparte(posts);
+  $('#historias').hidden = !historias.length;
+  pintarHistorias(historias);
+  for (const p of muro) cont.appendChild(tarjeta(p));
   observarLienzos();
 }
 
@@ -178,7 +181,10 @@ function pintarPublicadas() {
   const cont = $('#fichas-pub');
   cont.innerHTML = '';
   const fichas = fichasDe('publicado').sort((a, b) => b.date.localeCompare(a.date));
-  for (const p of fichas) cont.appendChild(tarjeta(p, { sinDecidir: true }));
+  const { historias, posts: muro } = reparte(fichas);
+  $('#historias-pub').hidden = !historias.length;
+  pintarHistorias(historias, '#historias-pub');
+  for (const p of muro) cont.appendChild(tarjeta(p, { sinDecidir: true }));
   observarLienzos();
   return fichas.length;
 }
@@ -199,13 +205,10 @@ function pintarProgramado() {
        desde aquí no se para.`
     : 'Nada en cola.';
 
-  if (tipo === 'historia') {
-    $('#historias-prog').hidden = false;
-    pintarHistorias(fichas, '#historias-prog');
-  } else {
-    $('#historias-prog').hidden = true;
-    for (const p of fichas) cont.appendChild(tarjeta(p, { sinDecidir: true }));
-  }
+  const { historias, posts: muro } = reparte(fichas);
+  $('#historias-prog').hidden = !historias.length;
+  pintarHistorias(historias, '#historias-prog');
+  for (const p of muro) cont.appendChild(tarjeta(p, { sinDecidir: true }));
   observarLienzos();
 }
 
@@ -602,7 +605,7 @@ $('#redes').addEventListener('click', (e) => {
   document.querySelectorAll('.red').forEach((c) => c.classList.toggle('activo', c === b));
   pintarPrevia(b.dataset.red);
 });
-for (const donde of ['#historias', '#historias-prog']) {
+for (const donde of ['#historias', '#historias-prog', '#historias-pub']) {
   $(donde).addEventListener('click', (e) => {
     const b = e.target.closest('button[data-clave]');
     if (b) abrirHistoria(b.dataset.clave);
@@ -614,10 +617,6 @@ function mostrarVista() {
   $('#vista-ideas').hidden = vista !== 'ideas';
   $('#vista-programado').hidden = vista !== 'programado';
   $('#vista-publicado').hidden = vista !== 'publicado';
-  $('#tipos').hidden = false;
-  // La rejilla del perfil de Instagram solo tiene sentido con los posts:
-  // las historias no se quedan en el perfil.
-  $('#rejilla').hidden = vista === 'publicado' && tipo === 'historia';
   if (vista === 'ideas') pintarLista();
   else if (vista === 'programado') pintarProgramado();
   else { pintarPublicadas(); pintarPublicado(); }
@@ -628,13 +627,6 @@ $('#pestanas').addEventListener('click', (e) => {
   if (!b) return;
   document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x === b));
   vista = b.dataset.vista;
-  mostrarVista();
-});
-$('#tipos').addEventListener('click', (e) => {
-  const b = e.target.closest('.chip');
-  if (!b) return;
-  $('#tipos').querySelectorAll('.chip').forEach((c) => c.classList.toggle('activo', c === b));
-  tipo = b.dataset.tipo;
   mostrarVista();
 });
 $('#rejilla').addEventListener('click', (e) => {

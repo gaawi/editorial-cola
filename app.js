@@ -41,7 +41,9 @@ let APROB = { posts: {} };
 let PROGRAMADO = { posts: {} };
 let shaAprob = null;
 let actual = null;
-let filtro = 'pendientes';
+let filtro = 'ahora';
+let vista = 'ideas';
+let tipo = 'post';
 const HOY = new Date().toISOString().slice(0, 10);
 const DIA = 86400000;
 let HISTORICO = null;
@@ -111,8 +113,8 @@ function yaPublicado(p) {
  * lienzos de 1080×1920 para unos círculos de 62 px no lo justifica. La
  * historia entera se dibuja al tocarlos.
  */
-function pintarHistorias(posts) {
-  const cont = $('#historias');
+function pintarHistorias(posts, donde = '#historias') {
+  const cont = $(donde);
   cont.innerHTML = posts
     .map((p) => {
       const visto = estadoDe(p).estado === 'listo' || estadoDe(p).estado === 'descartado';
@@ -140,7 +142,7 @@ async function abrirHistoria(clave) {
     decidirEn(p, b.dataset.dec, null).then(() => {
       $('#visor-pie').querySelectorAll('.dec').forEach((x) =>
         x.classList.toggle('on', x.dataset.dec === estadoDe(p).estado));
-      pintarLista();
+      mostrarVista();
     });
   };
   v.hidden = false;
@@ -151,26 +153,51 @@ async function abrirHistoria(clave) {
   }
 }
 
+/**
+ * En qué apartado va cada ficha. Es un orden, no una etiqueta: lo publicado
+ * manda sobre lo programado, y lo programado sobre lo que sigue siendo una
+ * idea. Así una ficha no puede estar en dos sitios.
+ */
+function grupoDe(p) {
+  if (p.publicadoEn || Object.keys(estadoDe(p).publicado || {}).length) return 'publicado';
+  const e = (PROGRAMADO.posts || {})[p.clave];
+  // Una ficha en cola cuya hora ya pasó salió sola: Metricool no avisa a
+  // nadie, así que se deduce del reloj. Es deducción, no confirmación: si
+  // falló la publicación, esto diría que salió igual.
+  if (e) return yaSalio(e) ? 'publicado' : 'programado';
+  return 'idea';
+}
+
+/** ¿Ha pasado ya la última hora programada de esta ficha? */
+function yaSalio(e) {
+  return e.redes.every((r) => new Date(r.cuando) < new Date());
+}
+
+/** Las de un apartado, del tipo que toque, ordenadas por fecha. */
+function fichasDe(grupo) {
+  return DATOS.marcas[MARCA].posts
+    .filter((p) => grupoDe(p) === grupo)
+    .filter((p) => (tipo === 'historia') === (p.formato === 'historia'))
+    .sort((a, b) => a.date.localeCompare(b.date));
+}
+
 function pintarLista() {
   const cont = $('#fichas');
   cont.innerHTML = '';
-  const posts = DATOS.marcas[MARCA].posts.filter((p) => {
-    const e = estadoDe(p).estado;
-    if (filtro === 'listos') return e === 'listo';
+  // Ideas: lo que no está publicado ni en cola. «Ahora» deja además fuera lo
+  // descartado y lo que todavía no toca; «Todas» lo enseña entero.
+  const posts = fichasDe('idea').filter((p) => {
     if (filtro === 'todas') return true;
-    // «Ahora»: lo que tiene sentido esta semana y está sin resolver. Fuera lo
-    // publicado, lo descartado, lo ya aprobado y lo que duerme.
-    return e !== 'listo' && e !== 'descartado' && !p.publicadoEn && enVentana(p) && !dormido(p);
+    return estadoDe(p).estado !== 'descartado' && enVentana(p) && !dormido(p);
   });
 
   $('#vacio').hidden = posts.length > 0;
-  // Los circulitos de arriba los lleva todo; el muro, solo lo que es post.
-  // Hay cosas que son una historia y no un post: una curiosidad de treinta
-  // segundos no merece sitio en la rejilla del perfil, que es permanente.
-  pintarHistorias(posts);
-  for (const p of posts) {
-    if (p.formato === 'historia') continue;
-    cont.appendChild(tarjeta(p));
+  if (tipo === 'historia') {
+    pintarHistorias(posts);
+    $('#historias').hidden = false;
+  } else {
+    $('#historias').hidden = true;
+    for (const p of posts) cont.appendChild(tarjeta(p));
   }
   observarLienzos();
 }
@@ -188,14 +215,58 @@ function selloProgramado(p) {
   // En una línea y corto: esto va en la cabecera de la ficha, al lado del
   // concierto y de los días que quedan, y no puede comérselos.
   const redes = e.redes.map((r) => (r.red === 'ig' ? 'IG' : 'FB')).join('+');
-  const que = e.tipo === 'historia' ? 'historia' : 'en cola';
-  return `<a class="sello en-cola" href="${PROGRAMADO.calendario}" target="_blank" rel="noopener"
-    title="Programado en Metricool. Para cambiarlo o quitarlo hay que ir allí."
+  const salio = yaSalio(e);
+  const que = salio ? 'salió' : (e.tipo === 'historia' ? 'historia' : 'en cola');
+  return `<a class="sello en-cola${salio ? ' salido' : ''}" href="${PROGRAMADO.calendario}"
+    target="_blank" rel="noopener"
+    title="${salio
+      ? 'Le tocaba salir a esta hora. Deducido del calendario, no comprobado contra la red.'
+      : 'Programado en Metricool. Para cambiarlo o quitarlo hay que ir allí.'}"
     >${que} ${dia} ${hora} ${redes} ↗</a>`;
 }
 
+/**
+ * Lo que está en cola. Aquí no se decide nada: la ficha ya está mandada a
+ * Metricool y aprobarla o descartarla desde aquí no la pararía, solo daría
+ * una falsa sensación de control. Se ve, y para cambiarla se va a Metricool.
+ */
+function pintarPublicadas() {
+  const cont = $('#fichas-pub');
+  cont.innerHTML = '';
+  const fichas = fichasDe('publicado').sort((a, b) => b.date.localeCompare(a.date));
+  for (const p of fichas) cont.appendChild(tarjeta(p, { sinDecidir: true }));
+  observarLienzos();
+  return fichas.length;
+}
+
+function pintarProgramado() {
+  const cont = $('#fichas-prog');
+  cont.innerHTML = '';
+  const fichas = fichasDe('programado').sort((a, b) => {
+    const ca = PROGRAMADO.posts[a.clave].redes[0].cuando;
+    const cb = PROGRAMADO.posts[b.clave].redes[0].cuando;
+    return ca.localeCompare(cb);
+  });
+  const todas = DATOS.marcas[MARCA].posts.filter((p) => grupoDe(p) === 'programado');
+  const n = todas.reduce((t, p) => t + PROGRAMADO.posts[p.clave].redes.length, 0);
+  $('#resumen-programado').innerHTML = todas.length
+    ? `${n} publicaciones en cola, de ${todas.length} fichas. Para cambiar o quitar algo hay que ir
+       a <a href="${PROGRAMADO.calendario}" target="_blank" rel="noopener">Metricool</a>:
+       desde aquí no se para.`
+    : 'Nada en cola.';
+
+  if (tipo === 'historia') {
+    $('#historias-prog').hidden = false;
+    pintarHistorias(fichas, '#historias-prog');
+  } else {
+    $('#historias-prog').hidden = true;
+    for (const p of fichas) cont.appendChild(tarjeta(p, { sinDecidir: true }));
+  }
+  observarLienzos();
+}
+
 /** Un post del muro: como se verá, con la decisión debajo. */
-function tarjeta(p) {
+function tarjeta(p, opciones = {}) {
   const e = estadoDe(p);
   const c = p.concierto ? conciertoDe(p.concierto) : null;
   const pub = yaPublicado(p);
@@ -206,7 +277,8 @@ function tarjeta(p) {
   art.innerHTML = `
     <div class="cabecera-ficha">
       ${c ? `<span class="cuando-ficha">${escapar(c.nombre)}</span>` : ''}
-      ${cuandoTexto(p) ? `<span class="cuando-ficha tenue">${cuandoTexto(p)}</span>` : ''}
+      ${cuandoTexto(p) && grupoDe(p) === 'idea'
+        ? `<span class="cuando-ficha tenue">${cuandoTexto(p)}</span>` : ''}
       ${p.publicadoEn
         ? `<a class="sello publicado" href="${p.publicadoEn.url}" target="_blank" rel="noopener">publicado el ${p.publicadoEn.fecha} ↗</a>`
         : pub.length ? `<span class="sello publicado">ya en ${pub.join('+')}</span>` : ''}
@@ -216,15 +288,16 @@ function tarjeta(p) {
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
     ${p.falta ? `<p class="falta-material">Falta material: ${escapar(p.falta)}</p>` : ''}
     ${e.nota ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
-    <div class="decidir-fila">
+    ${opciones.sinDecidir ? '' : `<div class="decidir-fila">
       ${DECISIONES.map((d) => `
         <button class="dec ${d.estado}${e.estado === d.estado ? ' on' : ''}" data-dec="${d.estado}">
           <em>${d.icono}</em>${d.texto}
         </button>`).join('')}
-    </div>
+    </div>`}
     <button class="abrir">Ver en Facebook y como historia ·  Etiquetas ›</button>`;
 
   art.querySelector('.abrir').addEventListener('click', () => abrir(p));
+  if (opciones.sinDecidir) return art;
   art.querySelector('.decidir-fila').addEventListener('click', (ev) => {
     const b = ev.target.closest('.dec');
     if (b) decidirEn(p, b.dataset.dec, art);
@@ -274,7 +347,7 @@ async function decidirEn(p, estado, art) {
     const volver = cuandoVolver(p);
     await guardarDecision(p, 'espera', '', art, volver);
     aviso(volver ? `Vuelve el ${volver}` : 'Guardado: a este ya se le pasó el momento');
-    pintarLista();
+    mostrarVista();
     return;
   }
   return guardarDecision(p, estado, '', art);
@@ -562,7 +635,7 @@ function volver() {
   $('#atras').hidden = true;
   $('#marca').hidden = false;
   $('#titulo').textContent = 'Aprobar';
-  pintarLista();
+  mostrarVista();
 }
 
 function pintarEstadoActual() {
@@ -758,7 +831,7 @@ async function arrancar() {
   if (!APROB.posts) APROB.posts = {};
 
   cambiarMarca(MARCA);
-  pintarLista();
+  mostrarVista();
 }
 
 function cambiarMarca(m) {
@@ -771,12 +844,12 @@ function cambiarMarca(m) {
 $('#atras').addEventListener('click', volver);
 $('#marca').addEventListener('click', () => {
   cambiarMarca(MARCA === 'creartbox' ? 'adar' : 'creartbox');
-  pintarLista();
+  mostrarVista();
 });
 $('#filtros').addEventListener('click', (e) => {
   const b = e.target.closest('.chip');
   if (!b) return;
-  document.querySelectorAll('.chip').forEach((c) => c.classList.toggle('activo', c === b));
+  $('#filtros').querySelectorAll('.chip').forEach((c) => c.classList.toggle('activo', c === b));
   filtro = b.dataset.filtro;
   pintarLista();
 });
@@ -786,19 +859,40 @@ $('#redes').addEventListener('click', (e) => {
   document.querySelectorAll('.red').forEach((c) => c.classList.toggle('activo', c === b));
   pintarPrevia(b.dataset.red);
 });
-$('#historias').addEventListener('click', (e) => {
-  const b = e.target.closest('button[data-clave]');
-  if (b) abrirHistoria(b.dataset.clave);
-});
+for (const donde of ['#historias', '#historias-prog']) {
+  $(donde).addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-clave]');
+    if (b) abrirHistoria(b.dataset.clave);
+  });
+}
 $('#visor-cerrar').addEventListener('click', () => { $('#visor').hidden = true; });
+/** Enseña el apartado que toque y pinta solo ese. */
+function mostrarVista() {
+  $('#vista-ideas').hidden = vista !== 'ideas';
+  $('#vista-programado').hidden = vista !== 'programado';
+  $('#vista-publicado').hidden = vista !== 'publicado';
+  $('#tipos').hidden = false;
+  // La rejilla del perfil de Instagram solo tiene sentido con los posts:
+  // las historias no se quedan en el perfil.
+  $('#rejilla').hidden = vista === 'publicado' && tipo === 'historia';
+  if (vista === 'ideas') pintarLista();
+  else if (vista === 'programado') pintarProgramado();
+  else { pintarPublicadas(); pintarPublicado(); }
+}
+
 $('#pestanas').addEventListener('click', (e) => {
   const b = e.target.closest('.pest');
   if (!b) return;
   document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x === b));
-  const publicado = b.dataset.vista === 'publicado';
-  $('#vista-aprobar').hidden = publicado;
-  $('#vista-publicado').hidden = !publicado;
-  if (publicado) pintarPublicado();
+  vista = b.dataset.vista;
+  mostrarVista();
+});
+$('#tipos').addEventListener('click', (e) => {
+  const b = e.target.closest('.chip');
+  if (!b) return;
+  $('#tipos').querySelectorAll('.chip').forEach((c) => c.classList.toggle('activo', c === b));
+  tipo = b.dataset.tipo;
+  mostrarVista();
 });
 $('#rejilla').addEventListener('click', (e) => {
   const b = e.target.closest('button[data-url]');

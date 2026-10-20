@@ -22,14 +22,19 @@
 <!-- ── Lista ─────────────────────────────────────────────────────────── -->
 <main id="lista" class="pantalla activa">
   <nav class="pestanas" id="pestanas">
-    <button class="pest activo" data-vista="aprobar">Por aprobar</button>
+    <button class="pest activo" data-vista="ideas">Ideas</button>
+    <button class="pest" data-vista="programado">Programado</button>
     <button class="pest" data-vista="publicado">Publicado</button>
   </nav>
 
-  <div id="vista-aprobar">
+  <nav class="tipos" id="tipos">
+    <button class="chip activo" data-tipo="post">Posts</button>
+    <button class="chip" data-tipo="historia">Historias</button>
+  </nav>
+
+  <div id="vista-ideas">
     <nav class="filtros" id="filtros">
       <button class="chip activo" data-filtro="ahora">Ahora</button>
-      <button class="chip" data-filtro="listos">Listos</button>
       <button class="chip" data-filtro="todas">Todas</button>
     </nav>
     <nav class="historias" id="historias"></nav>
@@ -37,8 +42,15 @@
     <p id="vacio" class="vacio" hidden>Nada por aquí.</p>
   </div>
 
+  <div id="vista-programado" hidden>
+    <p class="aviso-suave" id="resumen-programado"></p>
+    <nav class="historias" id="historias-prog"></nav>
+    <div id="fichas-prog" class="muro"></div>
+  </div>
+
   <div id="vista-publicado" hidden>
     <p class="aviso-suave" id="resumen-publicado"></p>
+    <div id="fichas-pub" class="muro"></div>
     <div id="rejilla" class="rejilla"></div>
   </div>
 </main>

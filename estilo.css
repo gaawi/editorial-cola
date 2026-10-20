@@ -398,3 +398,13 @@ button { background: none; border: none; cursor: pointer; }
   text-transform: none; letter-spacing: 0; font-weight: 600;
   white-space: nowrap;
 }
+
+/* El interruptor de posts e historias, debajo de las pestañas. */
+.tipos {
+  display: flex; gap: 8px;
+  padding: 10px 16px 2px;
+  border-bottom: 1px solid var(--filete);
+}
+.aviso-suave a { color: inherit; }
+/* Ya le tocó salir: verde, no azul, para no confundirlo con lo que espera. */
+.sello.en-cola.salido { background: var(--si); }

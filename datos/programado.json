@@ -1,8 +1,21 @@
 {
  "_ayuda": "Lo que está en cola en Metricool, con su hora de Nueva York. Lo escribe quien programa; la app solo lo lee, para que al aprobar se vea lo que ya está mandado y no se descarte por error algo que va a salir solo.",
- "actualizado": "2026-10-19",
+ "actualizado": "2026-10-21",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
+  "en/call-for-scores-open": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-22T10:00:00-04:00"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-22T10:05:00-04:00"
+    }
+   ]
+  },
   "en/kuopio-residency": {
    "tipo": "post",
    "redes": [

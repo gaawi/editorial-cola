@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-20T23:06:52.247Z",
+ "generado": "2026-10-21T21:03:28.587Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -4507,6 +4507,78 @@
       "fb": {
        "texto": "A throwback to Tokyo, 2019.\n\nThis is AWAVE at the Ryogoku Concert Hall: flute, piano, and a stage built with Mizuko Kaji, the set and costume designer we had already worked with once before.\n\nIt was a big thing to put together and a very good one. Brown Leaves Moving, which opens our concert in New York this season, comes from that same suite.\n\nWe'd bring it back given half a chance.\n\nhttps://creartbox.nyc/concerts.html\n\n#CreArtBox #AWAVE #Tokyo",
        "asomo": "A throwback to Tokyo, 2019. This is AWAVE at the Ryogoku Concert Hall: flute, piano, and a stage built with Mizuko Kaji, the set and costume designer we had already worked with once before. It was a big thing to put together and a very good one. Brown Leaves Moving, which opens our concert in New York this season, comes from that same suite. We'd bring it back given half a chance. https://creartbox.nyc/concerts.html #CreArtBox #AWAVE #Tokyo",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-10-08",
+      "hasta": "2026-10-22",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "programa",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": "Open today",
+     "formato": null,
+     "publicaEl": "2026-10-22",
+     "pegatinas": null,
+     "cartel": {
+      "lineas": [
+       "For the 2027/28 season",
+       "CA1/2026 · Composers of any nationality",
+       "CA2/2026 · U.S. citizens and permanent residents"
+      ]
+     },
+     "trapecio": {
+      "rotulo": "Deadline",
+      "sub": "creartbox.nyc/opportunities",
+      "titulo": "15 December 2026",
+      "pie": "Two works · $20 fee"
+     },
+     "encuadre": null,
+     "clave": "en/call-for-scores-open",
+     "lang": "en",
+     "slug": "call-for-scores-open",
+     "kind": "social",
+     "title": "Calls for Scores",
+     "excerpt": "Two calls for the 2027/28 season, open from 22 October to 15 December 2026: one for composers of any nationality and one for U.S. citizens and permanent residents.",
+     "image": null,
+     "url": "https://creartbox.nyc/news/calls-for-scores-2027-28.html",
+     "date": "2026-10-22",
+     "tags": [
+      "CallForScores",
+      "NewMusic",
+      "Composers"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Calls for Scores",
+       "body": ""
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Our calls for scores for the 2027/28 season open today! 🎼\n\nThere are two: one for composers of any nationality, and one for U.S. citizens and permanent residents. Same jury, same season, same deadline: December 15.\n\nThe five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of ends up on the same programme as Brahms.\n\nSend us two works, for any instrumentation. Any age, any stage of your career, and pieces that have already been performed or recorded are welcome. Most of what we program runs five to fifteen minutes with no more than eight players, but that's a guideline, not a rule.\n\nEveryone who applies hears back from us by spring 2027, whatever the answer is. The $20 fee covers the selection process and nothing else.\n\nYou apply through a form, and we don't read emailed submissions.\n\nEverything is at the link in bio, or at creartbox.nyc/opportunities.\n\n#CreArtBox #CallForScores #NewMusic #Composers",
+       "asomo": "Our calls for scores for the 2027/28 season open today! 🎼 There are two: one for composers of any nationality, and one for U…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Our calls for scores for the 2027/28 season open today! 🎼\n\nThere are two: one for composers of any nationality, and one for U.S. citizens and permanent residents. Same jury, same season, same deadline: December 15.\n\nThe five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of ends up on the same programme as Brahms.\n\nSend us two works, for any instrumentation. Any age, any stage of your career, and pieces that have already been performed or recorded are welcome. Most of what we program runs five to fifteen minutes with no more than eight players, but that's a guideline, not a rule.\n\nEveryone who applies hears back from us by spring 2027, whatever the answer is. The $20 fee covers the selection process and nothing else.\n\nYou apply through a form, and we don't read emailed submissions.\n\nhttps://creartbox.nyc/news/calls-for-scores-2027-28.html\n\n#CreArtBox #CallForScores #NewMusic #Composers",
+       "asomo": "Our calls for scores for the 2027/28 season open today! 🎼 There are two: one for composers of any nationality, and one for U.S. citizens and permanent residents. Same jury, same season, same deadline: December 15. The five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room …",
        "limite": 63206
       }
      },

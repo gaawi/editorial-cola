@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-22T14:02:21.384Z",
+ "generado": "2026-10-22T15:18:09.812Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -4524,8 +4524,8 @@
     {
      "publicadoEn": null,
      "ventana": {
-      "desde": "2026-10-08",
-      "hasta": "2026-10-22",
+      "desde": "2026-10-09",
+      "hasta": "2026-10-23",
       "ancla": null,
       "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
      },
@@ -4536,22 +4536,22 @@
      "tabla": null,
      "falta": null,
      "fotos": [],
-     "kicker": "Open today",
+     "kicker": "Now open",
      "formato": null,
-     "publicaEl": "2026-10-22",
+     "publicaEl": "2026-10-23",
      "pegatinas": null,
      "cartel": {
       "lineas": [
        "For the 2027/28 season",
-       "CA1/2026 · Composers of any nationality",
-       "CA2/2026 · Composers based in the US"
+       "CA1/2026 · International composers",
+       "CA2/2026 · American composers"
       ]
      },
      "trapecio": {
       "rotulo": "Deadline",
       "sub": "creartbox.nyc/opportunities",
       "titulo": "15 December 2026",
-      "pie": "Two works · $20 fee"
+      "pie": "Two works · any instrumentation"
      },
      "encuadre": {
       "x": 0.84,
@@ -4563,10 +4563,10 @@
      "slug": "call-for-scores-open",
      "kind": "social",
      "title": "Calls for Scores",
-     "excerpt": "Two calls for the 2027/28 season, open from 22 October to 15 December 2026: one for composers of any nationality and one for composers based in the US.",
+     "excerpt": "Two calls for the 2027/28 season, open until 15 December 2026: CA1/2026 for composers of any nationality and CA2/2026 for American composers.",
      "image": "https://creartbox.nyc/assets/img/calls/ca2-2026.jpg",
      "url": "https://creartbox.nyc/news/calls-for-scores-2027-28.html",
-     "date": "2026-10-22",
+     "date": "2026-10-23",
      "tags": [
       "CallForScores",
       "NewMusic",
@@ -4581,13 +4581,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "Our calls for scores for the 2027/28 season open today! 🎼\n\nThere are two: one for composers of any nationality, and one for composers based in the US. Same jury, same season, same deadline: December 15.\n\nThe five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of ends up on the same programme as Brahms.\n\nSend us two works, for any instrumentation. Any age, any stage of your career, and pieces that have already been performed or recorded are welcome. Most of what we program runs five to fifteen minutes with no more than eight players, but that's a guideline, not a rule.\n\nEveryone who applies hears back from us by spring 2027, whatever the answer is.\n\nEverything is at the link in bio, or at creartbox.nyc/opportunities.\n\n#CreArtBox #CallForScores #NewMusic #Composers",
-       "asomo": "Our calls for scores for the 2027/28 season open today! 🎼 There are two: one for composers of any nationality, and one for c…",
+       "texto": "Our Calls for Scores for the 2027/28 season are open.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nDeadline: December 15, 2026.\nTwo works, any instrumentation, any career stage.\n\nGuidelines and application at the link in bio.\n\n#CreArtBox #CallForScores #NewMusic #Composers",
+       "asomo": "Our Calls for Scores for the 2027/28 season are open. CA1/2026, for composers of any nationality. CA2/2026, for American comp…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Our calls for scores for the 2027/28 season open today! 🎼\n\nThere are two: one for composers of any nationality, and one for composers based in the US. Same jury, same season, same deadline: December 15.\n\nThe five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of ends up on the same programme as Brahms.\n\nSend us two works, for any instrumentation. Any age, any stage of your career, and pieces that have already been performed or recorded are welcome. Most of what we program runs five to fifteen minutes with no more than eight players, but that's a guideline, not a rule.\n\nEveryone who applies hears back from us by spring 2027, whatever the answer is.\n\nhttps://creartbox.nyc/news/calls-for-scores-2027-28.html\n\n#CreArtBox #CallForScores #NewMusic #Composers",
-       "asomo": "Our calls for scores for the 2027/28 season open today! 🎼 There are two: one for composers of any nationality, and one for composers based in the US. Same jury, same season, same deadline: December 15. The five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of…",
+       "texto": "Our Calls for Scores for the 2027/28 season are open.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nDeadline: December 15, 2026.\nTwo works, any instrumentation, any career stage.\n\nhttps://creartbox.nyc/news/calls-for-scores-2027-28.html\n\n#CreArtBox #CallForScores #NewMusic #Composers",
+       "asomo": "Our Calls for Scores for the 2027/28 season are open. CA1/2026, for composers of any nationality. CA2/2026, for American composers. Deadline: December 15, 2026. Two works, any instrumentation, any career stage. https://creartbox.nyc/news/calls-for-scores-2027-28.html #CreArtBox #CallForScores #NewMusic #Composers",
        "limite": 63206
       }
      },

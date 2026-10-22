@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Render</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Alegreya+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Alegreya+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
 </head>
 <body style="margin:0;background:#111">
 <!--
@@ -26,10 +26,12 @@ window.cuantas = (marca, clave) => {
 };
 
 /** Dibuja una diapositiva y la devuelve como JPEG en base64. */
-window.dibujarSlide = async (marca, clave, idx, fmt, estilo) => {
+window.dibujarSlide = async (marca, clave, idx, fmt, estilo, cambios) => {
   const m = datos.marcas[marca];
-  const post = m.posts.find((x) => x.clave === clave);
-  if (!post) throw new Error('no existe la ficha ' + clave);
+  const base = m.posts.find((x) => x.clave === clave);
+  if (!base) throw new Error('no existe la ficha ' + clave);
+  // `cambios` pisa campos de la ficha solo para esta imagen (encuadres, pruebas).
+  const post = cambios ? { ...base, ...cambios } : base;
   motores[marca] = motores[marca] || crearMotor(m.marca);
   const c = document.createElement('canvas');
   await motores[marca].dibujar(

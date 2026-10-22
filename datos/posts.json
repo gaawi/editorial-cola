@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-21T21:03:28.587Z",
+ "generado": "2026-10-22T14:02:21.384Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -2597,19 +2597,24 @@
     "textTitle": "#F2EFE8",
     "textBody": "#C9C3B9",
     "textFoot": "#9C968C",
-    "display": "\"Literata\", Georgia, serif",
+    "display": "\"Literata Display\", \"Literata\", Georgia, serif",
     "ui": "\"Archivo\", Helvetica, Arial, sans-serif",
     "label": "\"Archivo\", Helvetica, Arial, sans-serif",
     "labelWeight": "600",
-    "titleWeight": "600",
-    "fontsHref": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap",
+    "titleWeight": "500",
+    "fontsHref": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400&display=swap",
     "fontLoads": [
-     "600 64px \"Literata\"",
+     "500 64px \"Literata\"",
      "italic 400 32px \"Literata\"",
      "400 32px \"Archivo\"",
      "600 32px \"Archivo\"",
      "700 32px \"Archivo\""
-    ]
+    ],
+    "displayPin": {
+     "family": "Literata Display",
+     "href": "https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,72,400;0,72,500;1,72,400;1,72,500&display=swap"
+    },
+    "displayTracking": -0.015
    },
    "cuentas": {
     "ig": "creartboxnyc",
@@ -4539,7 +4544,7 @@
       "lineas": [
        "For the 2027/28 season",
        "CA1/2026 · Composers of any nationality",
-       "CA2/2026 · U.S. citizens and permanent residents"
+       "CA2/2026 · Composers based in the US"
       ]
      },
      "trapecio": {
@@ -4548,14 +4553,18 @@
       "titulo": "15 December 2026",
       "pie": "Two works · $20 fee"
      },
-     "encuadre": null,
+     "encuadre": {
+      "x": 0.84,
+      "y": 0.5,
+      "zoom": 1
+     },
      "clave": "en/call-for-scores-open",
      "lang": "en",
      "slug": "call-for-scores-open",
      "kind": "social",
      "title": "Calls for Scores",
-     "excerpt": "Two calls for the 2027/28 season, open from 22 October to 15 December 2026: one for composers of any nationality and one for U.S. citizens and permanent residents.",
-     "image": null,
+     "excerpt": "Two calls for the 2027/28 season, open from 22 October to 15 December 2026: one for composers of any nationality and one for composers based in the US.",
+     "image": "https://creartbox.nyc/assets/img/calls/ca2-2026.jpg",
      "url": "https://creartbox.nyc/news/calls-for-scores-2027-28.html",
      "date": "2026-10-22",
      "tags": [
@@ -4572,13 +4581,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "Our calls for scores for the 2027/28 season open today! 🎼\n\nThere are two: one for composers of any nationality, and one for U.S. citizens and permanent residents. Same jury, same season, same deadline: December 15.\n\nThe five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of ends up on the same programme as Brahms.\n\nSend us two works, for any instrumentation. Any age, any stage of your career, and pieces that have already been performed or recorded are welcome. Most of what we program runs five to fifteen minutes with no more than eight players, but that's a guideline, not a rule.\n\nEveryone who applies hears back from us by spring 2027, whatever the answer is. The $20 fee covers the selection process and nothing else.\n\nYou apply through a form, and we don't read emailed submissions.\n\nEverything is at the link in bio, or at creartbox.nyc/opportunities.\n\n#CreArtBox #CallForScores #NewMusic #Composers",
-       "asomo": "Our calls for scores for the 2027/28 season open today! 🎼 There are two: one for composers of any nationality, and one for U…",
+       "texto": "Our calls for scores for the 2027/28 season open today! 🎼\n\nThere are two: one for composers of any nationality, and one for composers based in the US. Same jury, same season, same deadline: December 15.\n\nThe five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of ends up on the same programme as Brahms.\n\nSend us two works, for any instrumentation. Any age, any stage of your career, and pieces that have already been performed or recorded are welcome. Most of what we program runs five to fifteen minutes with no more than eight players, but that's a guideline, not a rule.\n\nEveryone who applies hears back from us by spring 2027, whatever the answer is.\n\nEverything is at the link in bio, or at creartbox.nyc/opportunities.\n\n#CreArtBox #CallForScores #NewMusic #Composers",
+       "asomo": "Our calls for scores for the 2027/28 season open today! 🎼 There are two: one for composers of any nationality, and one for c…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Our calls for scores for the 2027/28 season open today! 🎼\n\nThere are two: one for composers of any nationality, and one for U.S. citizens and permanent residents. Same jury, same season, same deadline: December 15.\n\nThe five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of ends up on the same programme as Brahms.\n\nSend us two works, for any instrumentation. Any age, any stage of your career, and pieces that have already been performed or recorded are welcome. Most of what we program runs five to fifteen minutes with no more than eight players, but that's a guideline, not a rule.\n\nEveryone who applies hears back from us by spring 2027, whatever the answer is. The $20 fee covers the selection process and nothing else.\n\nYou apply through a form, and we don't read emailed submissions.\n\nhttps://creartbox.nyc/news/calls-for-scores-2027-28.html\n\n#CreArtBox #CallForScores #NewMusic #Composers",
-       "asomo": "Our calls for scores for the 2027/28 season open today! 🎼 There are two: one for composers of any nationality, and one for U.S. citizens and permanent residents. Same jury, same season, same deadline: December 15. The five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room …",
+       "texto": "Our calls for scores for the 2027/28 season open today! 🎼\n\nThere are two: one for composers of any nationality, and one for composers based in the US. Same jury, same season, same deadline: December 15.\n\nThe five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of ends up on the same programme as Brahms.\n\nSend us two works, for any instrumentation. Any age, any stage of your career, and pieces that have already been performed or recorded are welcome. Most of what we program runs five to fifteen minutes with no more than eight players, but that's a guideline, not a rule.\n\nEveryone who applies hears back from us by spring 2027, whatever the answer is.\n\nhttps://creartbox.nyc/news/calls-for-scores-2027-28.html\n\n#CreArtBox #CallForScores #NewMusic #Composers",
+       "asomo": "Our calls for scores for the 2027/28 season open today! 🎼 There are two: one for composers of any nationality, and one for composers based in the US. Same jury, same season, same deadline: December 15. The five of us read every score that comes in, and we read everything twice. The first time, we don't know whose it is. Someone outside the jury prepares the material so that no name, biography, website or country reaches us. It's how a composer nobody in the room has heard of…",
        "limite": 63206
       }
      },

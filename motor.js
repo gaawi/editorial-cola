@@ -123,12 +123,39 @@ export function crearMotor(B) {
     return p;
   }
 
+  /**
+   * El titular con el corte de display de brand.html. En la web, Literata va a
+   * `opsz 72`; el canvas no aplica el tamaño óptico automático y dibuja el
+   * corte de texto, más ancho y de trazo grueso. No hay forma de pasarle un
+   * `font-variation-settings`, así que se piden a Google Fonts las instancias
+   * ya fijadas en 72 y se registran con otro nombre de familia para que no
+   * pisen a la variable.
+   */
+  async function registrarDisplayFijo() {
+    const pin = B.displayPin;
+    if (!pin || !pin.href || !pin.family || typeof document === 'undefined') return;
+    const id = 'display-fijo-' + pin.family.replace(/\W+/g, '-');
+    if (!document.getElementById(id)) {
+      try {
+        const css = await (await fetch(pin.href)).text();
+        const st = document.createElement('style');
+        st.id = id;
+        st.textContent = css.replace(/font-family:\s*[^;]+;/g, `font-family: '${pin.family}';`);
+        document.head.appendChild(st);
+      } catch { return; /* sin red: se queda la familia normal, que ya viene detrás */ }
+    }
+    try {
+      await Promise.all([`${TW} 64px "${pin.family}"`, `italic 400 32px "${pin.family}"`].map((f) => document.fonts.load(f)));
+    } catch {}
+  }
+
   let fuentesListas = null;
   function asegurarFuentes() {
     if (fuentesListas) return fuentesListas;
     fuentesListas = (async () => {
       if (!document.fonts || !document.fonts.load) return;
       try { await Promise.all((B.fontLoads || []).map((f) => document.fonts.load(f))); } catch {}
+      await registrarDisplayFijo();
     })();
     return fuentesListas;
   }
@@ -239,6 +266,25 @@ export function crearMotor(B) {
     canvas.width = W; canvas.height = H;
     const ctx = canvas.getContext('2d');
     await asegurarFuentes();
+
+    // El manual fija el tracking de los titulares (CreArtBox: -0.015em) y el
+    // canvas no lo hereda de ninguna hoja de estilo. Se aplica al asignar la
+    // fuente: cada vez que `ctx.font` lleva la familia de display, el
+    // espaciado baja con ella, y con cualquier otra vuelve a cero. Los rótulos
+    // fijan su espaciado después de la fuente, así que no se pisan.
+    if (B.displayTracking) {
+      const desc = Object.getOwnPropertyDescriptor(CanvasRenderingContext2D.prototype, 'font');
+      const familia = String(DISPLAY).split(',')[0].trim();
+      Object.defineProperty(ctx, 'font', {
+        configurable: true,
+        get() { return desc.get.call(this); },
+        set(v) {
+          desc.set.call(this, v);
+          const px = /(\d+(?:\.\d+)?)px/.exec(String(v));
+          try { this.letterSpacing = px && String(v).includes(familia) ? (B.displayTracking * parseFloat(px[1])) + 'px' : '0px'; } catch {}
+        },
+      });
+    }
 
     // El encuadre que pida la ficha. Sin nada, el foco automático y sin zoom.
     const enc = post.encuadre || {};
@@ -589,6 +635,18 @@ export function crearMotor(B) {
       if (estilo === 'programa') {
         ctx.fillStyle = B.ink; ctx.fillRect(0, 0, W, H);
         const tr = post.trapecio || {};
+        // Con foto es la misma portada puesta encima de ella. La foto pone el
+        // ánimo y un velo de tinta, no de alfa de papel, deja leer el texto.
+        const conFoto = post.image ? await foto(ctx, post.image, 0, 0, W, H, FX, FY, ZOOM) : false;
+        if (conFoto) {
+          const v = ctx.createLinearGradient(0, 0, 0, H);
+          v.addColorStop(0, rgba(B.ink, 0.5));
+          v.addColorStop(0.34, rgba(B.ink, 0.2));
+          v.addColorStop(0.56, rgba(B.ink, 0.4));
+          v.addColorStop(0.72, rgba(B.ink, 0.68));
+          v.addColorStop(1, rgba(B.ink, 0.88));
+          ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
+        }
         const util = W - pad * 2 - safeRight;
         const centro = (W - safeRight) / 2;
         ctx.textAlign = 'center';
@@ -626,7 +684,7 @@ export function crearMotor(B) {
 
         ctx.font = `400 ${lf}px ${UI}`;
         lineas.forEach((l, i) => {
-          ctx.fillStyle = i === 0 ? B.paper : TINTA_DIM;
+          ctx.fillStyle = i === 0 ? B.paper : (conFoto ? TINTA_MEDIA : TINTA_DIM);
           ctx.fillText(String(l), centro, suelo + lf * 0.9 + i * lf * 1.5);
         });
 

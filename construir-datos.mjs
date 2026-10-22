@@ -131,6 +131,8 @@ function marcaParaDibujar(b) {
     display: b.display, ui: b.ui, label: b.label,
     labelWeight: b.labelWeight, titleWeight: b.titleWeight,
     fontsHref: b.fontsHref, fontLoads: b.fontLoads,
+    // Titulares fijados al corte de display y con el tracking del manual.
+    displayPin: b.displayPin, displayTracking: b.displayTracking,
   };
 }
 

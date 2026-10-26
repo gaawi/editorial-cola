@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-22T15:37:44.991Z",
+ "generado": "2026-10-26T14:05:18.384Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -3300,6 +3300,67 @@
      },
      "heredado": {
       "estado": "idea",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-10-12",
+      "hasta": "2026-10-26",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": "2026-10-26",
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "en/currents-two-for-50",
+     "lang": "en",
+     "slug": "currents-two-for-50",
+     "kind": "social",
+     "title": "Coming with someone? Two tickets for $50",
+     "excerpt": "Two tickets for $50 for Currents, Friday 30 October at The DiMenna Center.",
+     "image": "https://creartbox.nyc/assets/img/archive/20251212__DSC0350.jpg",
+     "url": "https://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260",
+     "date": "2026-10-26",
+     "tags": [
+      "Currents",
+      "Tickets",
+      "DiMennaCenter"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Coming with someone? Two tickets for $50",
+       "body": ""
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Coming with someone? 🎟️\n\nFor Friday's concert we're offering two tickets for $50.\n\nCurrents opens our season at The DiMenna Center. About an hour of music, no intermission, and we're starting a little differently this time: the musicians walk into the hall while they play.\n\n📅 Friday, October 30 · 7:30 PM\n📍 The DiMenna Center, 450 W 37th St\n🎟️ Tickets in bio\n\nHope to see you on Friday!\n\n#CreArtBox #Currents #NYCConcerts #ChamberMusic",
+       "asomo": "Coming with someone? 🎟️ For Friday's concert we're offering two tickets for $50. Currents opens our season at The DiMenna Ce…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Coming with someone? 🎟️\n\nFor Friday's concert we're offering two tickets for $50.\n\nCurrents opens our season at The DiMenna Center. About an hour of music, no intermission, and we're starting a little differently this time: the musicians walk into the hall while they play.\n\n📅 Friday, October 30 · 7:30 PM\n📍 The DiMenna Center, 450 W 37th St\nhttps://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260\n\nHope to see you on Friday!\n\n#CreArtBox #Currents #NYCConcerts #ChamberMusic",
+       "asomo": "Coming with someone? 🎟️ For Friday's concert we're offering two tickets for $50. Currents opens our season at The DiMenna Center. About an hour of music, no intermission, and we're starting a little differently this time: the musicians walk into the hall while they play. 📅 Friday, October 30 · 7:30 PM 📍 The DiMenna Center, 450 W 37th St https://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260 Hope to see you on Friday!…",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
       "nota": "",
       "publicado": {}
      }

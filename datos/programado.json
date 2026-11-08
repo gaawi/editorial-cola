@@ -1,31 +1,24 @@
 {
- "_ayuda": "Lo que está en cola en Metricool, con su hora de Nueva York. Lo escribe quien programa; la app solo lo lee, para que al aprobar se vea lo que ya está mandado y no se descarte por error algo que va a salir solo.",
- "actualizado": "2026-10-22",
+ "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
+ "actualizado": "2026-11-08",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
-  "en/currents-two-for-50": {
+  "en/currents-programme-online": {
    "tipo": "post",
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-10-26T15:00:00-04:00"
+     "cuando": "2026-10-18T07:49:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/DeonR6gCCAx/",
+     "texto": "Read the program before the concert!\n\nThe printed booklet for Currents is on the site: all sixteen pages, the program with the timing of every work, and the notes. Turn the pages, zoom in, or download the PDF.\n\nFull program at the link in bio ↗\n\n#CreArtBox #ChamberMusic #NewYork #NewMusic #Currents"
     },
     {
      "red": "fb",
-     "cuando": "2026-10-26T15:00:00-04:00"
-    }
-   ]
-  },
-  "en/call-for-scores-open": {
-   "tipo": "post",
-   "redes": [
-    {
-     "red": "ig",
-     "cuando": "2026-10-22T11:45:00-04:00"
-    },
-    {
-     "red": "fb",
-     "cuando": "2026-10-22T11:45:00-04:00"
+     "cuando": "2026-10-18T07:49:00-04:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1842413647890901",
+     "texto": "Read the program before the concert!\n\nThe printed booklet for Currents is on the site: all sixteen pages, the program with the timing of every work, and the notes. Turn the pages, zoom in, or download the PDF.\n\nhttps://creartbox.nyc/programs/currents-2026.html\n\n#CreArtBox #ChamberMusic"
     }
    ]
   },
@@ -34,11 +27,17 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-10-19T15:00:00-04:00"
+     "cuando": "2026-10-19T15:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/Der9xpKFXfA/",
+     "texto": "Five days in Kuopio, Finland 🇫🇮\n\nWe were invited by Kuopio Conservatory to share something a little different. Not just a concert or masterclasses, but a look at how we work at CreArtBox, bringing music together with light, video, and other visual elements.\n\nGuillermo and Josefina performed at the Kuopio Music Centre, with music by Lili Boulanger, Messiaen, Janáček, Debussy, Clara Schumann, Falla, and Frank Martin. We also spent the week teaching flute and piano masterclasses and talking with students about everything that goes into making a performance.\n\nOne of our favorite moments was the workshop. We experimented with how light, movement, and video can change the way we experience music. We looped a few bars of Falla, moved around the space, played with different lighting ideas, and ended up with a cellist playing alone in a darkened hall, surrounded by lamps and projections responding to her music.\n\nIt was great to see how quickly the students started coming up with their own ideas.\n\nA big thank you to everyone at Kuopio Conservatory for inviting us and being so open to experimenting with us. We'd love to come back!\n\nWe wrote a little more about the experience (and shared some photos) on our website. Full story at the link in bio!\n\n#CreArtBox #Kuopio #ChamberMusic"
     },
     {
      "red": "fb",
-     "cuando": "2026-10-19T15:05:00-04:00"
+     "cuando": "2026-10-19T15:05:00-04:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1843861517746114",
+     "texto": "Five days in Kuopio, Finland 🇫🇮\n\nWe were invited by Kuopio Conservatory to share something a little different. Not just a concert or masterclasses, but a look at how we work at CreArtBox, bringing music together with light, video, and other visual elements.\n\nGuillermo and Josefina performed at the Kuopio Music Centre, with music by Lili Boulanger, Messiaen, Janáček, Debussy, Clara Schumann, Falla, and Frank Martin. We also spent the week teaching flute and piano masterclasses and talking with students about everything that goes into making a performance.\n\nOne of our favorite moments was the workshop. We experimented with how light, movement, and video can change the way we experience music. We looped a few bars of Falla, moved around the space, played with different lighting ideas, and ended up with a cellist playing alone in a darkened hall, surrounded by lamps and projections responding to her music.\n\nIt was great to see how quickly the students started coming up with their own ideas.\n\nA big thank you to everyone at Kuopio Conservatory for inviting us and being so open to experimenting with us. We'd love to come back!\n\nhttps://creartbox.nyc/news/five-days-in-kuopio.html\n\n#CreArtBox #Kuopio #ChamberMusic"
     }
    ]
   },
@@ -47,20 +46,28 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-10-20T11:00:00-04:00"
+     "cuando": "2026-10-20T11:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/stories/creartboxnyc/4012176509351022079"
     }
    ]
   },
-  "en/currents-getting-ready": {
+  "en/call-for-scores-open": {
    "tipo": "post",
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-10-29T11:00:00-04:00"
+     "cuando": "2026-10-22T11:45:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/DezVgw3FYIn/",
+     "texto": "Open call for composers, 2027/28 season.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nDeadline: December 15, 2026.\nTwo works, any instrumentation, any career stage.\n\nGuidelines and application at the link in bio.\n\n#CreArtBox #OpenCall #NewMusic #Composers"
     },
     {
      "red": "fb",
-     "cuando": "2026-10-29T11:05:00-04:00"
+     "cuando": "2026-10-22T11:45:00-04:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1846998434099089",
+     "texto": "Open call for composers, 2027/28 season.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nDeadline: December 15, 2026.\nTwo works, any instrumentation, any career stage.\n\nhttps://creartbox.nyc/news/calls-for-scores-2027-28.html\n\n#CreArtBox #OpenCall #NewMusic #Composers"
     }
    ]
   },
@@ -69,7 +76,9 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-10-23T11:00:00-04:00"
+     "cuando": "2026-10-23T11:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/stories/creartboxnyc/4014350243696497878"
     }
    ]
   },
@@ -78,11 +87,17 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-10-24T15:00:00-04:00"
+     "cuando": "2026-10-24T15:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/De41jawDE21/",
+     "texto": "We open with a piece that starts before anyone is on stage.\n\nBrown Leaves Moving is Guillermo's, from a suite first performed in Queens in 2018. The four players begin offstage and walk on while playing, over an electronic background, so the ensemble forms in front of the audience instead of sitting there waiting for it.\n\nIt's four minutes long. It's a strange way to begin a concert and we wouldn't start any other way.\n\n30 October, The DiMenna Center.\n\n#CreArtBox #ContemporaryMusic #Currents"
     },
     {
      "red": "fb",
-     "cuando": "2026-10-24T15:05:00-04:00"
+     "cuando": "2026-10-24T15:05:00-04:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1849380967194169",
+     "texto": "We open with a piece that starts before anyone is on stage.\n\nBrown Leaves Moving is Guillermo's, from a suite first performed in Queens in 2018. The four players begin offstage and walk on while playing, over an electronic background, so the ensemble forms in front of the audience instead of sitting there waiting for it.\n\nIt's four minutes long. It's a strange way to begin a concert and we wouldn't start any other way.\n\n30 October, The DiMenna Center.\n\nhttps://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260\n\n#CreArtBox #ContemporaryMusic #Currents"
     }
    ]
   },
@@ -91,7 +106,9 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-10-25T11:00:00-04:00"
+     "cuando": "2026-10-25T11:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/stories/creartboxnyc/4015800384316001043"
     }
    ]
   },
@@ -100,33 +117,28 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-10-26T11:00:00-04:00"
+     "cuando": "2026-10-26T11:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/stories/creartboxnyc/4016524059352766769"
     }
    ]
   },
-  "en/currents-two-days": {
+  "en/currents-two-for-50": {
    "tipo": "post",
    "redes": [
     {
-     "red": "ig",
-     "cuando": "2026-10-28T15:00:00-04:00"
+     "red": "fb",
+     "cuando": "2026-10-26T15:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1851596703639262",
+     "texto": "Coming with someone? 🎟️\n\nFor Friday's concert we're offering two tickets for $50.\n\nCurrents opens our season at The DiMenna Center. About an hour of music, no intermission, and we're starting a little differently this time: the musicians walk into the hall while they play.\n\n📅 Friday, October 30 · 7:30 PM\n📍 The DiMenna Center, 450 W 37th St\n🎟️ Tickets: https://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260\n\nHope to see you on Friday!\n\n#CreArtBox #Currents #NYCConcerts #ChamberMusic"
     },
     {
-     "red": "fb",
-     "cuando": "2026-10-28T15:05:00-04:00"
-    }
-   ]
-  },
-  "en/currents-tomorrow": {
-   "tipo": "post",
-   "redes": [
-    {
      "red": "ig",
-     "cuando": "2026-10-29T17:00:00-04:00"
-    },
-    {
-     "red": "fb",
-     "cuando": "2026-10-29T17:05:00-04:00"
+     "cuando": "2026-10-26T15:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/De9_XKviC1e/",
+     "texto": "Coming with someone? 🎟️\n\nFor Friday's concert we're offering two tickets for $50.\n\nCurrents opens our season at The DiMenna Center. About an hour of music, no intermission, and we're starting a little differently this time: the musicians walk into the hall while they play.\n\n📅 Friday, October 30 · 7:30 PM\n📍 The DiMenna Center, 450 W 37th St\n🎟️ Tickets in bio\n\nHope to see you on Friday!\n\n#CreArtBox #Currents #NYCConcerts #ChamberMusic"
     }
    ]
   },
@@ -135,11 +147,92 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-10-27T15:00:00-04:00"
+     "cuando": "2026-10-27T15:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/DfAkMkiCB4_/",
+     "texto": "Two of the works Emilie-Anne plays on the 30th run back to the same man, and he isn't on the programme.\n\nJoseph Joachim was twenty-two in 1853 when Clara Schumann dedicated her Three Romances to him. The two of them toured the pieces around Germany and Britain.\n\nNearly forty years later it was Joachim again, on viola this time, who read through the alternative scoring of Brahms's A minor Trio before Simrock printed it. That's the version we play: viola instead of clarinet.\n\nTwo pieces, nearly four decades apart, and the same violinist standing behind both of them.\n\n30 October at The DiMenna Center.\n\n#CreArtBox #Brahms #ClaraSchumann"
     },
     {
      "red": "fb",
-     "cuando": "2026-10-27T15:05:00-04:00"
+     "cuando": "2026-10-27T15:05:00-04:00",
+     "estado": "error",
+     "texto": "Two of the works Emilie-Anne plays on the 30th run back to the same man, and he isn't on the programme.\n\nJoseph Joachim was twenty-two in 1853 when Clara Schumann dedicated her Three Romances to him. The two of them toured the pieces around Germany and Britain.\n\nNearly forty years later it was Joachim again, on viola this time, who read through the alternative scoring of Brahms's A minor Trio before Simrock printed it. That's the version we play: viola instead of clarinet.\n\nTwo pieces, nearly four decades apart, and the same violinist standing behind both of them.\n\n30 October at The DiMenna Center.\n\nhttps://creartbox.nyc/concerts/currents-2026.html\n\n#CreArtBox #Brahms #ClaraSchumann"
+    }
+   ]
+  },
+  "en/currents-opening-week": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-27T16:15:00-04:00",
+     "estado": "error",
+     "url": "https://www.instagram.com/p/DfAsaAhiPrT/",
+     "texto": "It's opening week! 🎶\n\nOn Friday we start our 12th season at The DiMenna Center with Currents, and we can't wait to be back in that room with all of you.\n\n📅 Friday, October 30 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Currents #OpeningNight #NYCConcerts"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-27T16:15:00-04:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1852931370172462",
+     "texto": "It's opening week! 🎶\n\nOn Friday we start our 12th season at The DiMenna Center with Currents, and we can't wait to be back in that room with all of you.\n\n📅 Friday, October 30 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets: https://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260\n\n#CreArtBox #Currents #OpeningNight #NYCConcerts"
+    }
+   ]
+  },
+  "en/currents-two-days": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-28T15:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/DfDJDs9iEkc/",
+     "texto": "Two days to go.\n\nCurrents, this Friday at The DiMenna Center. Four players, five works, about an hour, straight through with no interval.\n\nBrahms, Clara and Robert Schumann, Eric Moe, Guillermo Laporta. Video running the whole way.\n\nThe hall holds 240 and every seat was taken last year, so if you've been meaning to get a ticket this is the moment.\n\nFriday 30 October, 7:30 pm. Tickets in bio.\n\n#CreArtBox #NYCConcerts #Currents"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-28T15:05:00-04:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1854219423376990",
+     "texto": "Two days to go.\n\nCurrents, this Friday at The DiMenna Center. Four players, five works, about an hour, straight through with no interval.\n\nBrahms, Clara and Robert Schumann, Eric Moe, Guillermo Laporta. Video running the whole way.\n\nThe hall holds 240 and every seat was taken last year, so if you've been meaning to get a ticket this is the moment.\n\nhttps://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260\n\n#CreArtBox #NYCConcerts #Currents"
+    }
+   ]
+  },
+  "en/currents-getting-ready": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-29T11:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/DfFSN26IX_b/",
+     "texto": "Putting the 30th together.\n\nBrahms, the Schumanns, a piece by Eric Moe that came in through the open call, and Guillermo's video running underneath all of it.\n\nThere's always more going on than the programme suggests. Rehearsals, yes, but also projection cues, lighting, and the little things that take three times as long as you planned for.\n\nTomorrow night. See you at DiMenna.\n\n#CreArtBox #Currents #ChamberMusic"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-29T11:05:00-04:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1855259626606303",
+     "texto": "Putting the 30th together.\n\nBrahms, the Schumanns, a piece by Eric Moe that came in through the open call, and Guillermo's video running underneath all of it.\n\nThere's always more going on than the programme suggests. Rehearsals, yes, but also projection cues, lighting, and the little things that take three times as long as you planned for.\n\nTomorrow night. See you at DiMenna.\n\nhttps://creartbox.nyc/concerts/currents-2026.html\n\n#CreArtBox #Currents #ChamberMusic"
+    }
+   ]
+  },
+  "en/currents-tomorrow": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-10-29T17:00:00-04:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/DfF7TDJlr8d/",
+     "texto": "Tomorrow.\n\nCurrents\nFriday 30 October · 7:30 pm\nThe DiMenna Center, 450 W 37th Street\n\nOur twelfth New York season starts here. Student tickets are $15, and the cheapest seats are still the same room as the expensive ones.\n\nIf you've been thinking about it, we'd love to see you.\n\nTickets in bio.\n\n#CreArtBox #Currents #NYC"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-10-29T17:05:00-04:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1855600719905527",
+     "texto": "Tomorrow.\n\nCurrents\nFriday 30 October · 7:30 pm\nThe DiMenna Center, 450 W 37th Street\n\nOur twelfth New York season starts here. Student tickets are $15, and the cheapest seats are still the same room as the expensive ones.\n\nIf you've been thinking about it, we'd love to see you.\n\nhttps://www.eventbrite.com/e/creartbox-nyc-season-schumann-brahms-clara-schumann-currents-tickets-2000173994260\n\n#CreArtBox #Currents #NYC"
     }
    ]
   },
@@ -148,11 +241,17 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-11-03T15:00:00-05:00"
+     "cuando": "2026-11-03T15:00:00-05:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/DfSsYWCDszv/",
+     "texto": "Next stop: Illinois.\n\nOn Friday Josefina, Emilie-Anne and guest cellist Ana Kim open the Engelbach-Hart Music Festival at Illinois College.\n\nThe programme is almost entirely early work. Lili Boulanger, Rachmaninoff and Shostakovich all wrote their pieces on it while they were still teenagers. Then Nadia Boulanger, Bloch, Kurtág, and Andrea Casarrubios's Silbo and 24 Mozas.\n\nThe festival was a gift from the Engelbach and Hart families to the town, so admission is free. You just reserve a seat.\n\n6 November, 7:30 pm. Rammelkamp Chapel, Jacksonville.\n\n#CreArtBox #IllinoisCollege #ChamberMusic"
     },
     {
      "red": "fb",
-     "cuando": "2026-11-03T15:05:00-05:00"
+     "cuando": "2026-11-03T15:05:00-05:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1861592985972967",
+     "texto": "Next stop: Illinois.\n\nOn Friday Josefina, Emilie-Anne and guest cellist Ana Kim open the Engelbach-Hart Music Festival at Illinois College.\n\nThe programme is almost entirely early work. Lili Boulanger, Rachmaninoff and Shostakovich all wrote their pieces on it while they were still teenagers. Then Nadia Boulanger, Bloch, Kurtág, and Andrea Casarrubios's Silbo and 24 Mozas.\n\nThe festival was a gift from the Engelbach and Hart families to the town, so admission is free. You just reserve a seat.\n\n6 November, 7:30 pm. Rammelkamp Chapel, Jacksonville.\n\nhttps://creartbox.nyc/concerts/illinois-college-piano-trio-2026.html\n\n#CreArtBox #IllinoisCollege #ChamberMusic"
     }
    ]
   },
@@ -161,11 +260,17 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-11-06T11:00:00-05:00"
+     "cuando": "2026-11-06T11:00:00-05:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/DfZ_WR7CMqo/",
+     "texto": "We're in Jacksonville, Illinois today.\n\nSomething we only noticed putting this programme together: most of it was written by people who were barely out of school.\n\nLili Boulanger was eighteen when she wrote her Nocturne, in two days, in 1911. Rachmaninoff was eighteen for the Trio élégiaque. Shostakovich was sixteen for his first piano trio. Hearing them in one sitting is a strange and rather moving thing.\n\nJosefina, Emilie-Anne and Ana play tonight at 7:30 at Rammelkamp Chapel. Admission is free.\n\n#CreArtBox #IllinoisCollege #LiliBoulanger"
     },
     {
      "red": "fb",
-     "cuando": "2026-11-06T11:05:00-05:00"
+     "cuando": "2026-11-06T11:05:00-05:00",
+     "estado": "publicado",
+     "url": "https://facebook.com/1841708931294706/posts/1864983548967244",
+     "texto": "We're in Jacksonville, Illinois today.\n\nSomething we only noticed putting this programme together: most of it was written by people who were barely out of school.\n\nLili Boulanger was eighteen when she wrote her Nocturne, in two days, in 1911. Rachmaninoff was eighteen for the Trio élégiaque. Shostakovich was sixteen for his first piano trio. Hearing them in one sitting is a strange and rather moving thing.\n\nJosefina, Emilie-Anne and Ana play tonight at 7:30 at Rammelkamp Chapel. Admission is free.\n\nhttps://creartbox.nyc/concerts/illinois-college-piano-trio-2026.html\n\n#CreArtBox #IllinoisCollege #LiliBoulanger"
     }
    ]
   },
@@ -174,24 +279,42 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-11-08T15:00:00-05:00"
+     "cuando": "2026-11-08T15:00:00-05:00",
+     "estado": "en cola",
+     "texto": "A throwback to Tokyo, 2019.\n\nThis is AWAVE at the Ryogoku Concert Hall: flute, piano, and a stage built with Mizuko Kaji, the set and costume designer we had already worked with once before.\n\nIt was a big thing to put together and a very good one. Brown Leaves Moving, which opens our concert in New York this season, comes from that same suite.\n\nWe'd bring it back given half a chance.\n\n#CreArtBox #AWAVE #Tokyo"
     },
     {
      "red": "fb",
-     "cuando": "2026-11-08T15:05:00-05:00"
+     "cuando": "2026-11-08T15:05:00-05:00",
+     "estado": "en cola",
+     "texto": "A throwback to Tokyo, 2019.\n\nThis is AWAVE at the Ryogoku Concert Hall: flute, piano, and a stage built with Mizuko Kaji, the set and costume designer we had already worked with once before.\n\nIt was a big thing to put together and a very good one. Brown Leaves Moving, which opens our concert in New York this season, comes from that same suite.\n\nWe'd bring it back given half a chance.\n\nhttps://creartbox.nyc/concerts.html\n\n#CreArtBox #AWAVE #Tokyo"
     }
    ]
   },
-  "en/call-for-scores-reading": {
+  "en/winterlight-story-tickets": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-09T11:00:00-05:00",
+     "estado": "en cola"
+    }
+   ]
+  },
+  "en/winterlight-tickets": {
    "tipo": "post",
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-11-10T15:00:00-05:00"
+     "cuando": "2026-11-09T15:00:00-05:00",
+     "estado": "en cola",
+     "texto": "Tickets are on sale for Winterlight, our December concert at The DiMenna Center. ❄️\n\nAt the center of the evening is Stravinsky's Petroushka, in a chamber arrangement for the five of us, with projections running alongside it. Before it: Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde, and the world premiere of Hannah Selin's Tectonic Lullaby.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts"
     },
     {
      "red": "fb",
-     "cuando": "2026-11-10T15:05:00-05:00"
+     "cuando": "2026-11-09T15:05:00-05:00",
+     "estado": "en cola",
+     "texto": "Tickets are on sale for Winterlight, our December concert at The DiMenna Center. ❄️\n\nAt the center of the evening is Stravinsky's Petroushka, in a chamber arrangement for the five of us, with projections running alongside it. Before it: Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde, and the world premiere of Hannah Selin's Tectonic Lullaby.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets: https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts"
     }
    ]
   },
@@ -200,11 +323,76 @@
    "redes": [
     {
      "red": "ig",
-     "cuando": "2026-11-14T15:00:00-05:00"
+     "cuando": "2026-11-14T15:00:00-05:00",
+     "estado": "en cola",
+     "texto": "Already on to the next one.\n\nWinterlight, 11 December at The DiMenna Center. It opens with the world premiere of Hannah Selin's Tectonic Lullaby for piano quintet, and finishes with Petroushka in a chamber arrangement.\n\nIn between: Ravel's Ma Mère l'Oye, and Oliver Caplan's Canciones de Monteverde for flute and string trio.\n\nPetroushka with five of us is going to take some preparing. Quite a lot to learn before December.\n\nMore soon.\n\n#CreArtBox #Winterlight #ChamberMusic"
     },
     {
      "red": "fb",
-     "cuando": "2026-11-14T15:05:00-05:00"
+     "cuando": "2026-11-14T15:05:00-05:00",
+     "estado": "en cola",
+     "texto": "Already on to the next one.\n\nWinterlight, 11 December at The DiMenna Center. It opens with the world premiere of Hannah Selin's Tectonic Lullaby for piano quintet, and finishes with Petroushka in a chamber arrangement.\n\nIn between: Ravel's Ma Mère l'Oye, and Oliver Caplan's Canciones de Monteverde for flute and string trio.\n\nPetroushka with five of us is going to take some preparing. Quite a lot to learn before December.\n\nMore soon.\n\nhttps://creartbox.nyc/concerts/tectonic-lullaby-2026.html\n\n#CreArtBox #Winterlight #ChamberMusic"
+    }
+   ]
+  },
+  "en/winterlight-ravel": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-19T15:00:00-05:00",
+     "estado": "en cola",
+     "texto": "Sleeping Beauty, Tom Thumb, Beauty and the Beast.\n\nRavel wrote Ma Mère l'Oye (Mother Goose) for piano four hands between 1908 and 1910, five little pieces built on old French fairy tales.\n\nWhen we play it at Winterlight, the projections behind us come from illustrations in historical editions of those same stories.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #Ravel #NYCConcerts"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-19T15:05:00-05:00",
+     "estado": "en cola",
+     "texto": "Sleeping Beauty, Tom Thumb, Beauty and the Beast.\n\nRavel wrote Ma Mère l'Oye (Mother Goose) for piano four hands between 1908 and 1910, five little pieces built on old French fairy tales.\n\nWhen we play it at Winterlight, the projections behind us come from illustrations in historical editions of those same stories.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets: https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #Ravel #NYCConcerts"
+    }
+   ]
+  },
+  "en/winterlight-selin": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-01T15:00:00-05:00",
+     "estado": "en cola",
+     "texto": "Winterlight opens with a piece nobody has heard yet.\n\nTectonic Lullaby is Hannah Selin's new work for piano quintet, about ten minutes long, and December 11 at The DiMenna Center will be its first performance.\n\nHannah is a composer, violist and vocalist, and it's not our first premiere together: we gave the first performance of her The Soft Moon at DiMenna in 2024.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #HannahSelin #WorldPremiere"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-01T15:05:00-05:00",
+     "estado": "en cola",
+     "texto": "Winterlight opens with a piece nobody has heard yet.\n\nTectonic Lullaby is Hannah Selin's new work for piano quintet, about ten minutes long, and December 11 at The DiMenna Center will be its first performance.\n\nHannah is a composer, violist and vocalist, and it's not our first premiere together: we gave the first performance of her The Soft Moon at DiMenna in 2024.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets: https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #HannahSelin #WorldPremiere"
+    }
+   ]
+  },
+  "en/winterlight-this-friday": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-07T15:00:00-05:00",
+     "estado": "en cola",
+     "texto": "This Friday: Winterlight. ❄️\n\nPetroushka for the five of us, Ravel's Mother Goose with fairy tale illustrations projected behind us, Oliver Caplan's Canciones de Monteverde, and the very first performance of Hannah Selin's Tectonic Lullaby.\n\nWe've been rehearsing Petroushka for weeks and we can't wait to finally play it for you.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-07T15:05:00-05:00",
+     "estado": "en cola",
+     "texto": "This Friday: Winterlight. ❄️\n\nPetroushka for the five of us, Ravel's Mother Goose with fairy tale illustrations projected behind us, Oliver Caplan's Canciones de Monteverde, and the very first performance of Hannah Selin's Tectonic Lullaby.\n\nWe've been rehearsing Petroushka for weeks and we can't wait to finally play it for you.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets: https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts"
+    }
+   ]
+  },
+  "en/winterlight-story-tomorrow": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-10T11:00:00-05:00",
+     "estado": "en cola"
     }
    ]
   }

@@ -111,9 +111,10 @@ function grupoDe(p) {
   return 'idea';
 }
 
-/** ¿Ha pasado ya la última hora programada de esta ficha? */
+/** ¿Ha salido ya? Si la copia de Metricool trae el estado, manda el estado;
+ *  si no, se deduce del reloj como antes. */
 function yaSalio(e) {
-  return e.redes.every((r) => new Date(r.cuando) < new Date());
+  return e.redes.every((r) => (r.estado ? r.estado !== 'en cola' : new Date(r.cuando) < new Date()));
 }
 
 /** Las de un apartado, ordenadas por fecha. */
@@ -161,7 +162,7 @@ function selloProgramado(p) {
   const hora = cuando.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
   // En una línea y corto: esto va en la cabecera de la ficha, al lado del
   // concierto y de los días que quedan, y no puede comérselos.
-  const redes = e.redes.map((r) => (r.red === 'ig' ? 'IG' : 'FB')).join('+');
+  const redes = e.redes.map((r) => (r.red === 'ig' ? 'IG' : 'FB') + (r.estado === 'error' ? ' falló' : '')).join('+');
   const salio = yaSalio(e);
   const que = salio ? 'salió' : (e.tipo === 'historia' ? 'historia' : 'en cola');
   return `<a class="sello en-cola${salio ? ' salido' : ''}" href="${PROGRAMADO.calendario}"
@@ -580,9 +581,22 @@ async function arrancar() {
     if (r.ok) APROB = await r.json();
   } catch {}
   if (!APROB.posts) APROB.posts = {};
+  textosDeMetricool();
 
   cambiarMarca(MARCA);
   mostrarVista();
+}
+
+/** El texto que cuenta es el que está en Metricool: si allí se cambió a mano,
+ *  la app enseña ese y no el de la ficha. */
+function textosDeMetricool() {
+  for (const m of Object.values(DATOS.marcas || {})) {
+    for (const p of m.posts || []) {
+      const e = (PROGRAMADO.posts || {})[p.clave];
+      if (!e || !p.pies) continue;
+      for (const r of e.redes) if (r.texto && p.pies[r.red]) p.pies[r.red].texto = r.texto;
+    }
+  }
 }
 
 function cambiarMarca(m) {

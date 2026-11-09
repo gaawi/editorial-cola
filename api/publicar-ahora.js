@@ -9,7 +9,7 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { conSesion, VERSION } from './_puerta.js';
-import { publicarInstagram, publicarFacebook } from '../lib/meta.mjs';
+import { publicarInstagram, publicarFacebook } from './_meta.js';
 
 const recorte = (t) => String(t || '').replace(/\s+/g, ' ').trim().slice(0, 120);
 
@@ -25,6 +25,11 @@ async function yaEsta(red, texto, token, igId, paginaId) {
 }
 
 export default async function handler(req, res) {
+  try { await publicar(req, res); }
+  catch (err) { res.status(500).send(JSON.stringify({ ok: false, error: err.message })); }
+}
+
+async function publicar(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
   if (!(await conSesion(req))) return res.status(401).send('{"ok":false,"error":"sin sesión"}');

@@ -468,3 +468,8 @@ button { background: none; border: none; cursor: pointer; }
 .programar .linea-red:first-of-type { border-top: 0; }
 .programar .linea-red a { color: inherit; }
 .programar .mal { color: #a12a1a; }
+
+/* ── Enlaces a lo publicado, en la tarjeta ─────────────────────────── */
+.enlaces-pub { display: flex; gap: 8px; padding: 0 12px 10px; flex-wrap: wrap; }
+.enlaces-pub a { font-size: 13px; font-weight: 600; color: var(--tinta); text-decoration: none;
+  border: 1px solid var(--filete); border-radius: 999px; padding: 6px 12px; background: #fff; }

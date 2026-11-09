@@ -219,6 +219,16 @@ function pintarProgramado() {
   observarLienzos();
 }
 
+/** Los enlaces a lo ya publicado, uno por red, encima del post. */
+function enlacesPublicados(p) {
+  const e = (PROGRAMADO.posts || {})[p.clave];
+  const urls = (e ? e.redes : []).filter((r) => r.url);
+  if (!urls.length && p.publicadoEn && p.publicadoEn.url) urls.push({ red: 'ig', url: p.publicadoEn.url });
+  if (!urls.length) return '';
+  return `<div class="enlaces-pub">${urls.map((r) =>
+    `<a href="${r.url}" target="_blank" rel="noopener">Ver en ${r.red === 'ig' ? 'Instagram' : 'Facebook'} ↗</a>`).join('')}</div>`;
+}
+
 /** Un post del muro: como se verá, con la decisión debajo. */
 function tarjeta(p, opciones = {}) {
   const e = estadoDe(p);
@@ -239,6 +249,7 @@ function tarjeta(p, opciones = {}) {
       ${selloProgramado(p)}
       <span class="crece"></span>
     </div>
+    ${enlacesPublicados(p)}
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
     ${p.falta ? `<p class="falta-material">Falta material: ${escapar(p.falta)}</p>` : ''}
     ${e.nota ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}

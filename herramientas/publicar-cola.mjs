@@ -29,6 +29,18 @@ const ENSAYO = process.argv.includes('--ensayo');
 // días tarde hace más daño que no publicarlo.
 const MARGEN_MS = 6 * 3600 * 1000;
 
+// --comprobar: solo mira que los secretos sirven (lee el nombre de la Página
+// y de su Instagram). No publica nada.
+if (process.argv.includes('--comprobar')) {
+  const { graph } = await import('../lib/meta.mjs');
+  const t = process.env.META_TOKEN;
+  if (!t || !process.env.FB_PAGE_ID || !process.env.IG_USER_ID) { console.log('Faltan secretos: META_TOKEN, FB_PAGE_ID o IG_USER_ID.'); process.exit(1); }
+  const pg = await graph(`/${process.env.FB_PAGE_ID}`, { params: { fields: 'name' }, token: t });
+  const ig = await graph(`/${process.env.IG_USER_ID}`, { params: { fields: 'username' }, token: t });
+  console.log(`Secretos correctos: Página «${pg.name}», Instagram @${ig.username}.`);
+  process.exit(0);
+}
+
 const ahora = Date.now();
 const cola = JSON.parse(await readFile(COLA, 'utf8'));
 

@@ -36,4 +36,6 @@ jobs:
         run: |
           git config user.name "editorial-cola"
           git config user.email "editorial-cola@users.noreply.github.com"
+          # Al lanzarlo a mano, primero comprueba que los secretos sirven.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then node herramientas/publicar-cola.mjs --comprobar; fi
           node herramientas/publicar-cola.mjs

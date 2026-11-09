@@ -23,8 +23,13 @@ export default async function handler(req, res) {
   url.searchParams.set('response_type', 'code');
   // Las apps de tipo Empresa usan «Facebook Login for Business», que pide una
   // configuración en vez de una lista de permisos. Si existe, manda ella.
-  if (CONFIG_ID) url.searchParams.set('config_id', CONFIG_ID);
+  // ?modo=permisos prueba sin la configuración, con la lista clásica de
+  // permisos; ?modo=codigo fuerza el código en la respuesta, que algunas
+  // configuraciones de Login for Business piden explícitamente.
+  const modo = (req.query && req.query.modo) || '';
+  if (CONFIG_ID && modo !== 'permisos') url.searchParams.set('config_id', CONFIG_ID);
   else url.searchParams.set('scope', PERMISOS);
+  if (modo === 'codigo') url.searchParams.set('override_default_response_type', 'true');
 
   res.setHeader('Set-Cookie', `meta_state=${state}; Path=/api; HttpOnly; Secure; SameSite=Lax; Max-Age=600`);
   res.redirect(302, url.toString());

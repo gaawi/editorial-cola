@@ -1,0 +1,39 @@
+# Publica en Instagram y Facebook lo que toca de datos/programado.json.
+# GitHub no garantiza el minuto exacto: un aviso de «cada 10 minutos» puede
+# llegar con unos minutos de retraso, así que un post sale entre la hora
+# programada y un cuarto de hora después.
+name: Publicar cola
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+# Nunca dos a la vez: dos ejecuciones solapadas podrían publicar lo mismo.
+concurrency:
+  group: publicar-cola
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Publicar lo que toca
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: |
+          git config user.name "editorial-cola"
+          git config user.email "editorial-cola@users.noreply.github.com"
+          node herramientas/publicar-cola.mjs

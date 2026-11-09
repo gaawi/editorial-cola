@@ -460,3 +460,11 @@ button { background: none; border: none; cursor: pointer; }
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .cal-falta { font-size: 11px; font-weight: 600; color: var(--espera); }
+
+/* ── Estado en la cola, en la ficha (solo lectura) ─────────────────── */
+.programar { border: 1px solid var(--filete); border-radius: 12px; padding: 12px; margin-bottom: 8px; background: #fff; }
+.programar h3 { font-size: 14px; margin: 0 0 8px; }
+.programar .linea-red { font-size: 13px; padding: 6px 0; border-top: 1px solid var(--filete); }
+.programar .linea-red:first-of-type { border-top: 0; }
+.programar .linea-red a { color: inherit; }
+.programar .mal { color: #a12a1a; }

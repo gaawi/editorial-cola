@@ -495,6 +495,7 @@ function abrir(p) {
   $('#marca').hidden = true;
   $('#titulo').textContent = p.title;
   pintarEstadoActual();
+  pintarProgramar();
   const red = document.querySelector('.red.activo').dataset.red;
   pintarPrevia(red);
   window.scrollTo(0, 0);
@@ -508,6 +509,29 @@ function volver() {
   $('#marca').hidden = false;
   $('#titulo').textContent = 'Aprobar';
   mostrarVista();
+}
+
+// ── Dónde está en la cola (solo lectura) ─────────────────────────────
+//
+// La app es para revisar: no programa ni quita nada. Se programa desde el
+// chat, que escribe en datos/programado.json; lo marcado «vía app» lo publica
+// GitHub Actions (herramientas/publicar-cola.mjs) directamente en Instagram y
+// Facebook, y lo «vía Metricool» sale por allí. Aquí solo se enseña el estado.
+const RED_LARGA = { ig: 'Instagram', fb: 'Facebook' };
+
+function pintarProgramar() {
+  const caja = $('#programar');
+  const e = (PROGRAMADO.posts || {})[actual.clave];
+  if (!e) { caja.hidden = true; caja.innerHTML = ''; return; }
+  caja.hidden = false;
+  caja.innerHTML = `<h3>${e.tipo === 'historia' ? 'Historia' : 'Post'} en la cola</h3>` + e.redes.map((r) => {
+    const cuando = new Date(r.cuando).toLocaleString('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
+    const est = r.estado || (new Date(r.cuando) < new Date() ? 'salió' : 'en cola');
+    const mal = est === 'error' || est === 'atrasado';
+    return `<div class="linea-red">${RED_LARGA[r.red]} · ${cuando} (NY) · <b class="${mal ? 'mal' : ''}">${est}</b> · ${r.via === 'meta' ? 'vía app' : 'vía Metricool'}`
+      + (r.url ? ` · <a href="${r.url}" target="_blank" rel="noopener">ver ↗</a>` : '')
+      + (r.error ? `<br><span class="mal">${escapar(r.error)}</span>` : '') + '</div>';
+  }).join('');
 }
 
 function pintarEstadoActual() {

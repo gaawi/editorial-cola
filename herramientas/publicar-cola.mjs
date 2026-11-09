@@ -51,8 +51,10 @@ const token = process.env.META_TOKEN;
 const paginaId = process.env.FB_PAGE_ID;
 const igId = process.env.IG_USER_ID;
 if (!ENSAYO && (!token || !paginaId || !igId)) {
-  console.error('Faltan META_TOKEN, FB_PAGE_ID o IG_USER_ID.');
-  process.exit(1);
+  // Sin los secretos en GitHub no se publica desde aquí (se hace con
+  // /api/publicar-ahora, que usa los de Vercel). No es un fallo: se avisa y ya.
+  console.log('Sin META_TOKEN, FB_PAGE_ID o IG_USER_ID en los secretos de GitHub: no publico desde Actions.');
+  process.exit(0);
 }
 
 async function guardar(mensaje) {

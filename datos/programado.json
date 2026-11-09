@@ -368,6 +368,34 @@
      "estado": "en cola"
     }
    ]
+  },
+  "en/winterlight-tickets": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-09T16:35:00-05:00",
+     "estado": "en cola",
+     "via": "meta",
+     "texto": "Tickets are on sale for Winterlight, our December concert at The DiMenna Center. ❄️\n\nAt the center of the evening is Stravinsky's Petroushka, in a chamber arrangement for the five of us, with projections running alongside it. Before it: Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde, and the world premiere of Hannah Selin's Tectonic Lullaby.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/winterlight-vertical.jpg"
+     ],
+     "colaboradores": [
+      "dimennacenter"
+     ]
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-09T16:35:00-05:00",
+     "estado": "en cola",
+     "via": "meta",
+     "texto": "Tickets are on sale for Winterlight, our December concert at The DiMenna Center. ❄️\n\nAt the center of the evening is Stravinsky's Petroushka, in a chamber arrangement for the five of us, with projections running alongside it. Before it: Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde, and the world premiere of Hannah Selin's Tectonic Lullaby.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets: https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/winterlight-apaisado.jpg"
+     ]
+    }
+   ]
   }
  }
 }

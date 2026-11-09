@@ -5,7 +5,18 @@
   "headers": [
     {
       "source": "/(.*)",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
-  ]
+  ],
+  "functions": {
+    "api/publicar-ahora.js": {
+      "includeFiles": "datos/programado.json",
+      "maxDuration": 60
+    }
+  }
 }

@@ -29,6 +29,9 @@ export async function conSesion(req) {
 export const VERSION = process.env.META_API_VERSION || 'v26.0';
 // El ID de la app de Meta no es secreto: va en la URL que ve el navegador.
 export const APP_ID = process.env.META_APP_ID || '2088120061814589';
+// La configuración de «Facebook Login for Business» («Editorial publicar»): diez
+// permisos de publicar, leer, estadísticas y comentarios. Tampoco es secreta.
+export const CONFIG_ID = process.env.META_CONFIG_ID || '1395133849081561';
 
 export function urlVuelta(req) {
   const host = req.headers['x-forwarded-host'] || req.headers.host;

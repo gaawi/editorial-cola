@@ -4,7 +4,7 @@
 //
 // Solo para quien ya ha entrado en la app (cookie cola_preview).
 
-import { conSesion, VERSION, APP_ID, urlVuelta } from './_puerta.js';
+import { conSesion, VERSION, APP_ID, CONFIG_ID, urlVuelta } from './_puerta.js';
 
 // Lo justo para publicar y leer resultados en la Página y en su Instagram.
 const PERMISOS = [
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
   url.searchParams.set('response_type', 'code');
   // Las apps de tipo Empresa usan «Facebook Login for Business», que pide una
   // configuración en vez de una lista de permisos. Si existe, manda ella.
-  if (process.env.META_CONFIG_ID) url.searchParams.set('config_id', process.env.META_CONFIG_ID);
+  if (CONFIG_ID) url.searchParams.set('config_id', CONFIG_ID);
   else url.searchParams.set('scope', PERMISOS);
 
   res.setHeader('Set-Cookie', `meta_state=${state}; Path=/api; HttpOnly; Secure; SameSite=Lax; Max-Age=600`);

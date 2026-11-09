@@ -303,6 +303,22 @@
      "url": "https://www.facebook.com/1868889481909984/posts/1868889541909978"
     }
    ]
+  },
+  "en/awave-tokyo": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-08T15:00:00-05:00",
+     "estado": "publicado",
+     "url": "https://www.instagram.com/p/DffkWB2CLXe/"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-08T15:05:00-05:00",
+     "estado": "publicado"
+    }
+   ]
   }
  }
 }

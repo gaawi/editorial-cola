@@ -26,8 +26,8 @@ export default async function handler(req, res) {
     const i = await g(ig, 'username,followers_count,media_count');
     res.send(JSON.stringify({
       ok: true,
-      pagina: { nombre: p.name, seguidores: p.fan_count },
-      instagram: { usuario: '@' + i.username, seguidores: i.followers_count, publicaciones: i.media_count },
+      pagina: { nombre: p.name, seguidores: p.fan_count, FB_PAGE_ID: pagina },
+      instagram: { usuario: '@' + i.username, IG_USER_ID: ig, seguidores: i.followers_count, publicaciones: i.media_count },
       coinciden: p.instagram_business_account ? p.instagram_business_account.id === ig : false,
     }, null, 1));
   } catch (e) {

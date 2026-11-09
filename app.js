@@ -165,12 +165,18 @@ function selloProgramado(p) {
   const redes = e.redes.map((r) => (r.red === 'ig' ? 'IG' : 'FB') + (r.estado === 'error' ? ' falló' : '')).join('+');
   const salio = yaSalio(e);
   const que = salio ? 'salió' : (e.tipo === 'historia' ? 'historia' : 'en cola');
-  return `<a class="sello en-cola${salio ? ' salido' : ''}" href="${PROGRAMADO.calendario}"
-    target="_blank" rel="noopener"
-    title="${salio
-      ? 'Le tocaba salir a esta hora. Deducido del calendario, no comprobado contra la red.'
-      : 'Programado en Metricool. Para cambiarlo o quitarlo hay que ir allí.'}"
-    >${que} ${dia} ${hora} ${redes} ↗</a>`;
+  // Si ya salió, el sello lleva al post (Instagram primero); si está en cola
+  // por Metricool, a su calendario; si va por la app, a ningún sitio de fuera.
+  const conUrl = e.redes.find((r) => r.red === 'ig' && r.url) || e.redes.find((r) => r.url);
+  const porMetricool = e.redes.some((r) => r.via !== 'meta');
+  const destino = conUrl ? conUrl.url : (porMetricool ? PROGRAMADO.calendario : '');
+  const titulo = conUrl ? 'Abre el post publicado.'
+    : porMetricool ? 'Programado en Metricool. Para cambiarlo o quitarlo hay que ir allí.'
+    : 'En la cola de la app: sale solo a su hora.';
+  const marca = `class="sello en-cola${salio ? ' salido' : ''}" title="${titulo}"`;
+  return destino
+    ? `<a ${marca} href="${destino}" target="_blank" rel="noopener">${que} ${dia} ${hora} ${redes} ↗</a>`
+    : `<span ${marca}>${que} ${dia} ${hora} ${redes}</span>`;
 }
 
 /**

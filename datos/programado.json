@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-08",
+ "actualizado": "2026-11-09",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -288,33 +288,6 @@
      "cuando": "2026-11-08T15:05:00-05:00",
      "estado": "en cola",
      "texto": "A throwback to Tokyo, 2019.\n\nThis is AWAVE at the Ryogoku Concert Hall: flute, piano, and a stage built with Mizuko Kaji, the set and costume designer we had already worked with once before.\n\nIt was a big thing to put together and a very good one. Brown Leaves Moving, which opens our concert in New York this season, comes from that same suite.\n\nWe'd bring it back given half a chance.\n\nhttps://creartbox.nyc/concerts.html\n\n#CreArtBox #AWAVE #Tokyo"
-    }
-   ]
-  },
-  "en/winterlight-story-tickets": {
-   "tipo": "historia",
-   "redes": [
-    {
-     "red": "ig",
-     "cuando": "2026-11-09T11:00:00-05:00",
-     "estado": "en cola"
-    }
-   ]
-  },
-  "en/winterlight-tickets": {
-   "tipo": "post",
-   "redes": [
-    {
-     "red": "ig",
-     "cuando": "2026-11-09T15:00:00-05:00",
-     "estado": "en cola",
-     "texto": "Tickets are on sale for Winterlight, our December concert at The DiMenna Center. ❄️\n\nAt the center of the evening is Stravinsky's Petroushka, in a chamber arrangement for the five of us, with projections running alongside it. Before it: Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde, and the world premiere of Hannah Selin's Tectonic Lullaby.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts"
-    },
-    {
-     "red": "fb",
-     "cuando": "2026-11-09T15:05:00-05:00",
-     "estado": "en cola",
-     "texto": "Tickets are on sale for Winterlight, our December concert at The DiMenna Center. ❄️\n\nAt the center of the evening is Stravinsky's Petroushka, in a chamber arrangement for the five of us, with projections running alongside it. Before it: Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde, and the world premiere of Hannah Selin's Tectonic Lullaby.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets: https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts"
     }
    ]
   },

@@ -60,8 +60,8 @@ if (!pendientes.length) {
 }
 
 const token = process.env.META_TOKEN;
-const paginaId = process.env.FB_PAGE_ID;
-const igId = process.env.IG_USER_ID;
+const paginaId = process.env.FB_PAGE_ID || '473145069546753';
+const igId = process.env.IG_USER_ID || '17841404259739766';
 if (!ENSAYO && (!token || !paginaId || !igId)) {
   // Sin los secretos en GitHub no se publica desde aquí (se hace con
   // /api/publicar-ahora, que usa los de Vercel). No es un fallo: se avisa y ya.

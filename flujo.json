@@ -507,6 +507,23 @@
      "hecha": false
     }
    ]
+  },
+  "en/open-call-last-week": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T20:11:07.608Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "Prefiero usar otra foto para no repetir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T20:11:07.608Z",
+     "hecha": false
+    }
+   ]
   }
  }
 }

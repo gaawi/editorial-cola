@@ -11,6 +11,8 @@
 //
 // Requires GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET (see api/auth.js).
 
+import { sellar } from './_gh.js';
+
 function parseCookies(header) {
   const out = {};
   (header || '').split(';').forEach((part) => {
@@ -149,9 +151,14 @@ export default async function handler(req, res) {
     // la app entera. La comprueba
     // middleware.js con el mismo secreto.
     const preview = await previewCookie(clientSecret, 30);
+    // Y el token, cifrado y HttpOnly, para que /api/flujo y /api/subir
+    // escriban en el repositorio en nombre de quien entró. Lo decidido vive
+    // en el repositorio, no en el navegador: se ve igual en cada aparato.
+    const gh = sellar({ token: data.access_token, login: permiso.login });
     res.setHeader('Set-Cookie', [
       'csm_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0',
       `cola_preview=${preview}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${30 * 24 * 3600}`,
+      `cola_gh=${gh}; Path=/api; HttpOnly; Secure; SameSite=Lax; Max-Age=${30 * 24 * 3600}`,
     ]);
 
     res.status(200).send(render('success', { token: data.access_token, provider: 'github' }));

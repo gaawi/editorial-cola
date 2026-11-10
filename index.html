@@ -21,8 +21,11 @@
 
 <!-- ── Lista ─────────────────────────────────────────────────────────── -->
 <main id="lista" class="pantalla activa">
+  <p class="entrar-aviso" id="entrar-aviso" hidden>Para aprobar, editar o confirmar desde aquí,
+    <a href="/entrar.html">entra otra vez con GitHub</a>. Hace falta una vez en cada aparato.</p>
   <nav class="pestanas" id="pestanas">
     <button class="pest activo" data-vista="ideas">Ideas</button>
+    <button class="pest" data-vista="confirmar">Confirmar<span class="cuenta-pest" id="cuenta-confirmar"></span></button>
     <button class="pest" data-vista="programado">Programado</button>
     <button class="pest" data-vista="publicado">Publicado</button>
     <button class="pest" data-vista="calendario">Calendario</button>
@@ -36,6 +39,12 @@
     <nav class="historias" id="historias"></nav>
     <div id="fichas" class="muro"></div>
     <p id="vacio" class="vacio" hidden>Nada por aquí.</p>
+  </div>
+
+  <div id="vista-confirmar" hidden>
+    <p class="aviso-suave" id="resumen-confirmar"></p>
+    <nav class="historias" id="historias-conf"></nav>
+    <div id="fichas-conf" class="muro"></div>
   </div>
 
   <div id="vista-programado" hidden>
@@ -83,6 +92,7 @@
 
   <section class="decidir">
     <div class="estado-actual" id="estado-actual"></div>
+    <div class="acciones-flujo" id="acciones-detalle"></div>
     <div class="programar" id="programar"></div>
     <p class="aviso-suave">Los comentarios van por el chat.</p>
   </section>
@@ -102,6 +112,32 @@
   <button class="visor-cerrar" id="visor-cerrar" aria-label="Cerrar">×</button>
   <div class="visor-hueco" id="visor-hueco"></div>
   <div class="visor-pie" id="visor-pie"></div>
+</div>
+
+<!-- Editar un post: textos, hora y fotos -->
+<div id="editor" class="pide" hidden>
+  <form class="pide-caja editor-caja" id="editor-form">
+    <h3 id="editor-titulo">Editar</h3>
+    <p id="editor-ayuda"></p>
+    <div id="editor-campos">
+      <label class="campo">Instagram<textarea id="ed-ig" rows="7"></textarea></label>
+      <label class="campo">Facebook<textarea id="ed-fb" rows="7"></textarea></label>
+      <label class="campo">Cuándo sale (hora de Nueva York)<input type="datetime-local" id="ed-cuando"></label>
+      <div class="campo">Fotos
+        <div class="ed-fotos" id="ed-fotos"></div>
+        <label class="btn btn-no ed-subir">Subir fotos<input type="file" id="ed-archivo" accept="image/*" multiple hidden></label>
+        <div class="ed-modo" id="ed-modo">
+          <label><input type="radio" name="modo" value="fondo" checked> De fondo del diseño</label>
+          <label><input type="radio" name="modo" value="fotos"> Tal cual, sin diseño</label>
+        </div>
+      </div>
+    </div>
+    <label class="campo" id="editor-nota-campo" hidden>Qué hay que cambiar<textarea id="ed-nota" rows="4"></textarea></label>
+    <div class="pide-botones">
+      <button type="button" class="btn btn-no" id="ed-cancelar">Cancelar</button>
+      <button type="submit" class="btn btn-si" id="ed-guardar">Guardar</button>
+    </div>
+  </form>
 </div>
 
 <div id="aviso" class="aviso" hidden></div>

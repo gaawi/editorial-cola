@@ -108,6 +108,8 @@ function grupoDe(p) {
   // nadie, así que se deduce del reloj. Es deducción, no confirmación: si
   // falló la publicación, esto diría que salió igual.
   if (e) return yaSalio(e) ? 'publicado' : 'programado';
+  const fase = faseDe(p);
+  if (fase === 'aprobado' || fase === 'preparado' || fase === 'confirmado') return 'confirmar';
   return 'idea';
 }
 
@@ -139,6 +141,8 @@ function pintarLista() {
   // descartado y lo que todavía no toca; «Todas» lo enseña entero.
   const posts = fichasDe('idea').filter((p) => {
     if (filtro === 'todas') return true;
+    if (faseDe(p) === 'descartado') return false;
+    if (faseDe(p) === 'cambios') return true;
     return estadoDe(p).estado !== 'descartado' && enVentana(p) && !dormido(p);
   });
 
@@ -207,9 +211,8 @@ function pintarProgramado() {
   const todas = DATOS.marcas[MARCA].posts.filter((p) => grupoDe(p) === 'programado');
   const n = todas.reduce((t, p) => t + PROGRAMADO.posts[p.clave].redes.length, 0);
   $('#resumen-programado').innerHTML = todas.length
-    ? `${n} publicaciones en cola, de ${todas.length} fichas. Para cambiar o quitar algo hay que ir
-       a <a href="${PROGRAMADO.calendario}" target="_blank" rel="noopener">Metricool</a>:
-       desde aquí no se para.`
+    ? `${n} publicaciones en cola, de ${todas.length} fichas. Salen solas a su hora; para pararlas,
+       «Quitar de la cola» en cada una.`
     : 'Nada en cola.';
 
   const { historias, posts: muro } = reparte(fichas);
@@ -252,7 +255,8 @@ function tarjeta(p, opciones = {}) {
     ${enlacesPublicados(p)}
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
     ${p.falta ? `<p class="falta-material">Falta material: ${escapar(p.falta)}</p>` : ''}
-    ${e.nota ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
+    ${e.nota && !faseDe(p) ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
+    <div class="acciones-flujo">${accionesFlujo(p)}</div>
     <button class="abrir">Ver en Facebook y como historia ·  Etiquetas ›</button>`;
 
   art.querySelector('.abrir').addEventListener('click', () => abrir(p));
@@ -648,9 +652,14 @@ function pintarProgramar() {
 function pintarEstadoActual() {
   const e = estadoDe(actual);
   const d = $('#estado-actual');
+  const FASES = { aprobado: 'Aprobado, en preparación', preparado: 'Preparado, falta confirmar', confirmado: 'Confirmado',
+    descartado: 'Descartado', cambios: 'Cambios pedidos' };
+  const fase = faseDe(actual);
+  if (fase) { d.innerHTML = `Ahora: <b>${FASES[fase]}</b>`; $('#acciones-detalle').innerHTML = accionesFlujo(actual); return; }
   d.innerHTML = `Ahora: <b>${ESTADOS[e.estado] || e.estado}</b>` +
     (e.nota ? ` · ${escapar(e.nota)}` : '') +
     (e.mio ? '' : ' <span style="color:var(--tenue)">(del panel viejo)</span>');
+  $('#acciones-detalle').innerHTML = accionesFlujo(actual);
 }
 
 // ── La rejilla de lo ya publicado ──────────────────────────────────────
@@ -700,6 +709,311 @@ function abrirPublicada(url) {
   $('#hoja').hidden = false;
 }
 
+// ── El circuito: aprobar → preparado → confirmar ──────────────────────
+// Lo decidido vive en el repositorio (flujo.json), no en el navegador: se
+// lee y se escribe por /api/flujo, y se ve igual en el iPhone y en el
+// ordenador. Hace falta haber entrado con GitHub una vez en cada aparato.
+let FLUJO = { posts: {} };
+let PUEDE_GUARDAR = false;
+
+async function cargarFlujo() {
+  try {
+    const r = await fetch('/api/flujo', { cache: 'no-store', credentials: 'same-origin' });
+    const j = await r.json().catch(() => ({}));
+    if (r.ok && j.flujo) { FLUJO = j.flujo; PUEDE_GUARDAR = true; }
+    else if (j.entrar) $('#entrar-aviso').hidden = false;
+  } catch {}
+  if (!FLUJO.posts) FLUJO.posts = {};
+  aplicarEdiciones();
+}
+
+function flujoDe(p) { return FLUJO.posts[p.clave] || {}; }
+function faseDe(p) { return flujoDe(p).fase || ''; }
+
+/** Lo preparado para la cola, la entrada del post (no la de la historia). */
+function preparadoDe(p) {
+  const f = flujoDe(p);
+  return f.preparado ? f.preparado[p.clave] || Object.values(f.preparado)[0] : null;
+}
+
+/**
+ * Lo editado manda sobre la ficha: textos, fotos y fondo. Y si ya está
+ * preparado, se enseña lo preparado, que es exactamente lo que saldrá.
+ */
+function aplicarEdiciones() {
+  for (const m of Object.values(DATOS.marcas || {})) {
+    for (const p of m.posts || []) {
+      if (!p._orig) p._orig = { ig: p.pies.ig.texto, fb: p.pies.fb.texto, image: p.image, fotos: p.fotos, fotosEnteras: p.fotosEnteras };
+      const o = p._orig;
+      p.pies.ig.texto = o.ig; p.pies.fb.texto = o.fb; p.image = o.image; p.fotos = o.fotos; p.fotosEnteras = o.fotosEnteras;
+      const f = FLUJO.posts[p.clave];
+      if (!f) continue;
+      const ed = f.edicion || {};
+      if (ed.ig != null) p.pies.ig.texto = ed.ig;
+      if (ed.fb != null) p.pies.fb.texto = ed.fb;
+      if (ed.fondo) p.image = ed.fondo;
+      if (ed.fotos && ed.fotos.length) { p.fotos = ed.fotos; p.fotosEnteras = true; }
+      const prep = f.fase === 'preparado' && preparadoDe(p);
+      if (prep) {
+        for (const r of prep.redes) if (r.texto != null) p.pies[r.red].texto = r.texto;
+        const ig = prep.redes.find((r) => r.red === 'ig');
+        if (ig && ig.imagenes && ig.imagenes.length) { p.fotos = ig.imagenes; p.fotosEnteras = true; }
+      }
+    }
+  }
+}
+
+function horaNY(iso, conDia = true) {
+  const d = new Date(iso);
+  const dia = d.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'America/New_York' });
+  const hora = d.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
+  return conDia ? `${dia}, ${hora}` : hora;
+}
+
+/** Los botones de cada fase. */
+function accionesFlujo(p) {
+  if (grupoDe(p) === 'publicado') return '';
+  if (!PUEDE_GUARDAR) return '';
+  const f = flujoDe(p);
+  const b = (accion, texto, clase = '') => `<button class="fl ${clase}" data-accion="${accion}" data-clave="${p.clave}">${texto}</button>`;
+  const enCola = (PROGRAMADO.posts || {})[p.clave];
+  if (enCola && enCola.redes.every((r) => r.estado === 'en cola')) {
+    return `<div class="fl-fila"><span class="fl-dice">Confirmado · sale ${horaNY(enCola.redes[0].cuando)}</span>${b('quitar', 'Quitar de la cola', 'fl-suave')}</div>`;
+  }
+  if (enCola) return '';
+  switch (f.fase) {
+    case 'aprobado':
+      return `<div class="fl-fila"><span class="fl-dice">✓ Aprobado · lo estoy preparando</span>${b('editar', 'Editar')}${b('recuperar', 'Deshacer', 'fl-suave')}</div>`;
+    case 'preparado': {
+      const prep = Object.values(f.preparado || {}).flatMap((e) => e.redes.map((r) => ({ ...r, tipo: e.tipo })));
+      const primera = prep.map((r) => r.cuando).sort()[0];
+      const donde = [...new Set(prep.map((r) => r.tipo === 'historia' ? 'historia' : r.red === 'ig' ? 'Instagram' : 'Facebook'))].join(' + ');
+      return `<div class="fl-prep">Sale <b>${primera ? horaNY(primera) : '—'}</b> · ${donde}</div>
+        <div class="fl-fila">${b('confirmar', 'Confirmar publicación', 'fl-si')}${b('editar', 'Editar')}${b('cambios', 'Cambios')}</div>`;
+    }
+    case 'descartado':
+      return `<div class="fl-fila"><span class="fl-dice">Descartado</span>${b('recuperar', 'Recuperar', 'fl-suave')}</div>`;
+    default:
+      return `${f.fase === 'cambios' && f.nota ? `<p class="fl-nota">Cambios pedidos: “${escapar(f.nota)}”</p>` : ''}
+        <div class="fl-fila">${b('aprobar', 'Aprobar', 'fl-si')}${b('editar', 'Editar')}${b('descartar', 'Descartar', 'fl-suave')}</div>`;
+  }
+}
+
+async function llamarFlujo(clave, accion, extra = {}) {
+  const r = await fetch('/api/flujo', {
+    method: 'POST', credentials: 'same-origin',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ clave, accion, ...extra }),
+  });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) {
+    if (j.entrar) $('#entrar-aviso').hidden = false;
+    throw new Error(j.error || `Error ${r.status}`);
+  }
+  FLUJO.posts[clave] = j.post;
+  if (j.cola) {
+    for (const k of Object.keys(PROGRAMADO.posts)) if (k === clave || k.startsWith(clave + '#')) delete PROGRAMADO.posts[k];
+    Object.assign(PROGRAMADO.posts, j.cola);
+  }
+  aplicarEdiciones();
+  return j;
+}
+
+const DICHO = {
+  aprobar: 'Aprobado. Lo preparo y te aviso para confirmar.',
+  descartar: 'Descartado.',
+  recuperar: 'Vuelve a ideas.',
+  cambios: 'Apuntado. Lo cambio y vuelve a confirmar.',
+  editar: 'Guardado.',
+  confirmar: 'Confirmado: sale solo a su hora.',
+  quitar: 'Fuera de la cola. Vuelve a «para confirmar».',
+};
+
+/** Repinta lo que se esté viendo, sin perder el sitio. */
+function repintar() {
+  const y = window.scrollY;
+  pintarCuentaConfirmar();
+  if (actual) { pintarEstadoActual(); pintarProgramar(); pintarPrevia(document.querySelector('.red.activo').dataset.red); }
+  else mostrarVista();
+  requestAnimationFrame(() => window.scrollTo(0, y));
+}
+
+async function hacer(clave, accion, extra) {
+  try {
+    await llamarFlujo(clave, accion, extra);
+    aviso(DICHO[accion]);
+    repintar();
+  } catch (e) {
+    aviso(e.message, true);
+  }
+}
+
+// «Confirmar» pide un segundo toque: es lo único que no tiene vuelta atrás
+// si llega la hora sin que nadie lo quite.
+let armado = null;
+document.addEventListener('click', (ev) => {
+  const b = ev.target.closest('.fl[data-accion]');
+  if (!b) return;
+  ev.preventDefault();
+  const { clave, accion } = b.dataset;
+  const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === clave);
+  if (accion === 'editar') return abrirEditor(p, 'editar');
+  if (accion === 'cambios') return abrirEditor(p, 'cambios');
+  if (accion === 'confirmar' && armado !== b) {
+    armado = b;
+    b.classList.add('armado');
+    b.textContent = '¿Seguro? Toca otra vez';
+    setTimeout(() => { if (armado === b) { armado = null; b.classList.remove('armado'); b.textContent = 'Confirmar publicación'; } }, 4000);
+    return;
+  }
+  armado = null;
+  b.disabled = true;
+  hacer(clave, accion);
+});
+
+function pintarCuentaConfirmar() {
+  const n = DATOS.marcas[MARCA].posts.filter((p) => faseDe(p) === 'preparado' && grupoDe(p) === 'confirmar').length;
+  $('#cuenta-confirmar').textContent = n ? String(n) : '';
+}
+
+function pintarConfirmar() {
+  const cont = $('#fichas-conf');
+  cont.innerHTML = '';
+  const fichas = fichasDe('confirmar').sort((a, b) => {
+    const pa = faseDe(a) === 'preparado' ? 0 : 1, pb = faseDe(b) === 'preparado' ? 0 : 1;
+    return pa - pb || a.date.localeCompare(b.date);
+  });
+  const listos = fichas.filter((p) => faseDe(p) === 'preparado').length;
+  $('#resumen-confirmar').textContent = fichas.length
+    ? `${listos === 1 ? '1 listo' : `${listos} listos`} para confirmar${fichas.length - listos ? ` · ${fichas.length - listos === 1 ? '1 aprobado' : `${fichas.length - listos} aprobados`} que estoy preparando` : ''}. Nada sale sin «Confirmar publicación».`
+    : 'Nada pendiente. Lo que apruebes en Ideas aparecerá aquí cuando esté preparado.';
+  const { historias, posts: muro } = reparte(fichas);
+  $('#historias-conf').hidden = !historias.length;
+  pintarHistorias(historias, '#historias-conf');
+  for (const p of muro) cont.appendChild(tarjeta(p));
+  observarLienzos();
+}
+
+// ── El editor ─────────────────────────────────────────────────────────
+let editando = null;
+let fotosEditor = [];
+
+function aLocalNY(iso) {
+  const d = new Date(iso);
+  const x = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hourCycle: 'h23',
+    year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).formatToParts(d).map((q) => [q.type, q.value]));
+  return `${x.year}-${x.month}-${x.day}T${x.hour}:${x.minute}`;
+}
+
+function pintarFotosEditor() {
+  $('#ed-fotos').innerHTML = fotosEditor.length
+    ? fotosEditor.map((u, i) => `<span class="ed-foto"><img src="${u}" alt=""><button type="button" data-quitar="${i}" aria-label="Quitar">×</button></span>`).join('')
+    : '<small>Sin fotos subidas: se usa la de la ficha.</small>';
+  $('#ed-modo').hidden = !fotosEditor.length;
+}
+
+function abrirEditor(p, modo) {
+  editando = { p, modo };
+  const f = flujoDe(p);
+  const ed = f.edicion || {};
+  const notaSolo = modo === 'cambios';
+  $('#editor-titulo').textContent = notaSolo ? 'Pedir cambios' : 'Editar';
+  $('#editor-ayuda').textContent = notaSolo
+    ? 'Dime qué cambiar. Lo arreglo y vuelve a «para confirmar».'
+    : f.fase === 'preparado'
+      ? 'Ya está preparado: el texto y la hora se cambian al momento. Una foto nueva hace que lo vuelva a montar.'
+      : 'Lo que cambies aquí manda sobre lo que propuse.';
+  $('#editor-campos').hidden = notaSolo;
+  $('#editor-nota-campo').hidden = !notaSolo;
+  $('#ed-nota').value = notaSolo ? (f.nota || '') : '';
+  $('#ed-ig').value = p.pies.ig.texto;
+  $('#ed-fb').value = p.pies.fb.texto;
+  const prep = preparadoDe(p);
+  const cuando = ed.cuando || (prep ? aLocalNY(prep.redes[0].cuando) : '');
+  $('#ed-cuando').value = cuando;
+  fotosEditor = ed.fotos && ed.fotos.length ? [...ed.fotos] : ed.fondo ? [ed.fondo] : [];
+  document.querySelector(`#ed-modo input[value="${ed.fotos && ed.fotos.length ? 'fotos' : 'fondo'}"]`).checked = true;
+  pintarFotosEditor();
+  $('#editor').hidden = false;
+  (notaSolo ? $('#ed-nota') : $('#ed-ig')).focus({ preventScroll: true });
+}
+
+function cerrarEditor() { $('#editor').hidden = true; editando = null; }
+$('#ed-cancelar').addEventListener('click', cerrarEditor);
+$('#editor').addEventListener('click', (e) => { if (e.target.id === 'editor') cerrarEditor(); });
+$('#ed-fotos').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-quitar]');
+  if (!b) return;
+  fotosEditor.splice(Number(b.dataset.quitar), 1);
+  pintarFotosEditor();
+});
+
+/** Reduce la foto a 2048 px y la pasa a JPEG antes de subirla. */
+async function aJPEG(archivo) {
+  const bmp = await createImageBitmap(archivo);
+  const k = Math.min(1, 2048 / Math.max(bmp.width, bmp.height));
+  const c = document.createElement('canvas');
+  c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+  c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+  const blob = await new Promise((r) => c.toBlob(r, 'image/jpeg', 0.88));
+  const buf = new Uint8Array(await blob.arrayBuffer());
+  let bin = '';
+  for (let i = 0; i < buf.length; i += 0x8000) bin += String.fromCharCode(...buf.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+
+$('#ed-archivo').addEventListener('change', async (e) => {
+  const archivos = [...e.target.files];
+  e.target.value = '';
+  for (const a of archivos) {
+    aviso(`Subiendo ${a.name}…`);
+    try {
+      const r = await fetch('/api/subir', { method: 'POST', credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ datos: await aJPEG(a) }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
+      fotosEditor.push(j.url);
+      pintarFotosEditor();
+    } catch (err) { aviso(`No se pudo subir: ${err.message}`, true); return; }
+  }
+  aviso('Fotos subidas. Falta darle a Guardar.');
+});
+
+$('#editor-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (!editando) return;
+  const { p, modo } = editando;
+  const boton = $('#ed-guardar');
+  boton.disabled = true;
+  try {
+    if (modo === 'cambios') {
+      await llamarFlujo(p.clave, 'cambios', { nota: $('#ed-nota').value.trim() });
+      aviso(DICHO.cambios);
+    } else {
+      const f = flujoDe(p), ed = f.edicion || {};
+      const edicion = {};
+      const ig = $('#ed-ig').value, fb = $('#ed-fb').value;
+      if (ig !== p.pies.ig.texto || ed.ig != null) edicion.ig = ig;
+      if (fb !== p.pies.fb.texto || ed.fb != null) edicion.fb = fb;
+      if ($('#ed-cuando').value) edicion.cuando = $('#ed-cuando').value;
+      const modoFoto = document.querySelector('#ed-modo input:checked').value;
+      const antes = JSON.stringify([ed.fotos || [], ed.fondo || null]);
+      const ahora = fotosEditor.length
+        ? (modoFoto === 'fotos' ? [fotosEditor, null] : [[], fotosEditor[0]])
+        : [[], null];
+      if (JSON.stringify(ahora) !== antes) { edicion.fotos = ahora[0]; edicion.fondo = ahora[1]; }
+      await llamarFlujo(p.clave, 'editar', { edicion });
+      aviso(DICHO.editar);
+    }
+    cerrarEditor();
+    repintar();
+  } catch (err) {
+    aviso(err.message, true);
+  } finally {
+    boton.disabled = false;
+  }
+});
+
 // ── Arranque ───────────────────────────────────────────────────────────
 async function arrancar() {
   DATOS = await (await fetch('datos/posts.json', { cache: 'no-store' })).json();
@@ -717,8 +1031,10 @@ async function arrancar() {
   } catch {}
   if (!APROB.posts) APROB.posts = {};
   textosDeMetricool();
+  await cargarFlujo();
 
   cambiarMarca(MARCA);
+  pintarCuentaConfirmar();
   mostrarVista();
 }
 
@@ -739,6 +1055,7 @@ function cambiarMarca(m) {
   MOTOR = crearMotor(DATOS.marcas[MARCA].marca);
   CUENTAS = DATOS.marcas[MARCA].cuentas;
   $('#marca').textContent = DATOS.marcas[MARCA].marca.org;
+  if (DATOS.marcas[MARCA].posts[0]?._orig) pintarCuentaConfirmar();
 }
 
 $('#atras').addEventListener('click', volver);
@@ -830,7 +1147,7 @@ function eventosCalendario() {
         falta: Boolean(p.falta) && !yaSalio(prog),
         redes: prog.redes.map((r) => r.red),
       });
-    } else if (grupoDe(p) === 'idea' && p.publicaEl && estadoDe(p).estado !== 'descartado') {
+    } else if (['idea', 'confirmar'].includes(grupoDe(p)) && p.publicaEl && estadoDe(p).estado !== 'descartado') {
       poner({ ...comun, fecha: p.publicaEl, estado: 'idea', falta: Boolean(p.falta) });
     }
   }
@@ -952,10 +1269,12 @@ $('#cal-dia').addEventListener('click', (e) => {
 function mostrarVista() {
   $('#vista-ideas').hidden = vista !== 'ideas';
   $('#vista-programado').hidden = vista !== 'programado';
+  $('#vista-confirmar').hidden = vista !== 'confirmar';
   $('#vista-publicado').hidden = vista !== 'publicado';
   $('#vista-calendario').hidden = vista !== 'calendario';
   if (vista === 'ideas') pintarLista();
   else if (vista === 'programado') pintarProgramado();
+  else if (vista === 'confirmar') pintarConfirmar();
   else if (vista === 'calendario') pintarCalendario();
   else { pintarPublicadas(); pintarPublicado(); }
 }

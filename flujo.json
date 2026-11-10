@@ -86,7 +86,8 @@
      "texto": "Hay que ajustar el punto central de la imagen en la historia",
      "quien": "gaawi",
      "fecha": "2026-11-10T20:14:28.345Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Hecho: en la historia los tres músicos quedan centrados y algo más cerca."
     }
    ],
    "preparado": {
@@ -513,9 +514,50 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-10T20:09:55.431Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-10T21:14:22.908711Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/thanksgiving-thanks": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-26T12:00:00-05:00",
+       "texto": "Happy Thanksgiving. 🍂\n\nThank you to everyone who came to a concert this year, sent us a score, shared a post, or simply listened. Our 12th season started at Currents in October, and it keeps going because of you.\n\nSee you at Winterlight on December 11.\n\n#CreArtBox #Thanksgiving #ChamberMusic #NYC",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-thanksgiving-thanks-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-11-26T12:02:00-05:00",
+       "texto": "Happy Thanksgiving. 🍂\n\nThank you to everyone who came to a concert this year, sent us a score, shared a post, or simply listened. Our 12th season started at Currents in October, and it keeps going because of you.\n\nSee you at Winterlight on December 11.\n\nhttps://creartbox.nyc/support.html\n\n#CreArtBox #Thanksgiving #ChamberMusic #NYC",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-thanksgiving-thanks-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "en/thanksgiving-thanks#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-26T12:10:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-thanksgiving-thanks-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/winterlight-this-friday": {
    "historial": [
@@ -530,7 +572,8 @@
      "texto": "Es texto de la imagen, tiene que poner This Friday habrá que generar una nueva imagen, y tendrás que eliminar los textos que hay en esta e edítala tú mismo",
      "quien": "gaawi",
      "fecha": "2026-11-10T20:10:55.176Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Hecho: he editado el cartel de la campaña; donde ponía «December 11, 2026 / 7:30 PM» ahora pone «This Friday / Dec 11 · 7:30 PM», con la misma letra. Va tal cual, sin texto encima."
     }
    ]
   },
@@ -547,7 +590,8 @@
      "texto": "Prefiero usar otra foto para no repetir",
      "quien": "gaawi",
      "fecha": "2026-11-10T20:11:07.608Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Hecho: ahora la foto es la de unas manos al piano en Currents, que no sale en ningún otro post; y la historia lleva pegatinas."
     }
    ]
   },
@@ -557,6 +601,12 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T20:11:52.145Z"
+    },
+    {
+     "accion": "descartar",
+     "quien": "claude",
+     "fecha": "2026-11-10T21:14:22.908711Z",
+     "nota": "Él dijo que no hace falta otro anuncio general."
     }
    ],
    "sugerencias": [
@@ -564,9 +614,11 @@
      "texto": "No hace falta otro anuncio, pero si hace falta uno para la pieza y la entrevista que haremos a Hannah",
      "quien": "gaawi",
      "fecha": "2026-11-10T20:11:52.145Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Hecho: el anuncio general va al archivo. Para la pieza de Hannah ya está «Tectonic Lullaby, a world premiere» (1 de diciembre); el post de la entrevista lo hago cuando la tengáis."
     }
-   ]
+   ],
+   "fase": "descartado"
   }
  },
  "ideas": [
@@ -574,7 +626,8 @@
    "texto": "Hay que hacer el post para decir que los early bird terminan mañana!",
    "quien": "gaawi",
    "fecha": "2026-11-10T20:15:30.100Z",
-   "hecha": false
+   "hecha": true,
+   "respuesta": "Hecha: el early bird que sale hoy a las 18:00 ahora empieza con «Last chance: early bird tickets end tomorrow», y la historia lleva «Ends tomorrow»."
   }
  ]
 }

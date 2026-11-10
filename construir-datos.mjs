@@ -229,6 +229,8 @@ for (const nombre of marcas) {
         trapecio: p.trapecio || null,
         // Encuadre a mano: {x, y} mueve el centro y zoom se acerca.
         encuadre: p.encuadre || null,
+        // Encuadre por formato: { story: { x, y } }.
+        encuadres: p.encuadres || null,
         clave: clave(p),
         lang: p.lang,
         slug: p.slug,

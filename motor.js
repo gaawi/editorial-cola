@@ -287,7 +287,8 @@ export function crearMotor(B) {
     }
 
     // El encuadre que pida la ficha. Sin nada, el foco automático y sin zoom.
-    const enc = post.encuadre || {};
+    // Y si un formato pide otro (la historia corta por los lados), el suyo.
+    const enc = (post.encuadres && post.encuadres[fmt]) || post.encuadre || {};
     const FX = enc.x, FY = enc.y, ZOOM = enc.zoom || 1;
 
     const pad = Math.round(W * 0.085);

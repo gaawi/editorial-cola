@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-10T17:59:47.056Z",
+ "actualizado": "2026-11-10T20:13:27.184Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -400,6 +400,59 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-petroushka-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/currents-thanks": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-12T18:00:00-05:00",
+     "texto": "Thank you to everyone who came to Currents! 🤍\n\nA few photos from the night at The DiMenna Center: the players walking on for Brown Leaves Moving, Eric Moe's Laminar Flow, Clara Schumann's Romances, Brahms, and the Schumann Piano Quartet to close, with Guillermo's video running behind the music the whole time.\n\nThank you to Josefina, Emilie-Anne, Matthew and Julia, and to all of you who came out to start our 12th season with us.\n\nNext up: Winterlight, December 11. ❄️\n\nThese wonderful photos are by Tao Ho (@toseiho), always so creative. Thank you, Tao! 📷\n\n#CreArtBox #Currents #ChamberMusic #DiMennaCenter",
+     "imagenes": [
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0589.jpg",
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0602.jpg",
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0635.jpg",
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0603.jpg",
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0634.jpg",
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0466.jpg",
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0534.jpg",
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0549.jpg",
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0550.jpg",
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0612.jpg"
+     ],
+     "colaboradores": [
+      "dimennacenter",
+      "toseiho"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-12T18:02:00-05:00",
+     "texto": "Thank you to everyone who came to Currents! 🤍\n\nA few photos from the night at The DiMenna Center: the players walking on for Brown Leaves Moving, Eric Moe's Laminar Flow, Clara Schumann's Romances, Brahms, and the Schumann Piano Quartet to close, with Guillermo's video running behind the music the whole time.\n\nThank you to Josefina, Emilie-Anne, Matthew and Julia, and to all of you who came out to start our 12th season with us.\n\nNext up: Winterlight, December 11. ❄️\n\nThese wonderful photos are by Tao Ho (@toseiho), always so creative. Thank you, Tao! 📷\n\nhttps://creartbox.nyc/archive/currents-2026-10.html\n\n#CreArtBox #Currents #ChamberMusic #DiMennaCenter",
+     "imagenes": [
+      "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0589.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/currents-thanks#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-12T18:10:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-currents-thanks-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

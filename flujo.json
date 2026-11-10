@@ -153,6 +153,16 @@
     }
    ],
    "fase": "aprobado"
+  },
+  "en/winterlight-ravel": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:40:02.360Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  }
 }

@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-09",
+ "actualizado": "2026-11-10T17:59:47.056Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -360,6 +360,49 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-early-bird-st-1.jpg"
      ]
+    }
+   ]
+  },
+  "en/winterlight-petroushka": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-17T18:00:00-05:00",
+     "texto": "Petroushka was written for a full orchestra and a ballet company. On December 11 we're playing it with five of us. 🎭\n\nStravinsky's ballet premiered in Paris in 1911 with the Ballets Russes. It's set at a Shrovetide fair in Russia, where three puppets come to life in a story of love, jealousy and tragedy.\n\nOur chamber arrangement runs about 40 minutes, with projections alongside it, and it closes the evening.\n\n(The image is the first page of the score Stravinsky published in 1911.)\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #Petroushka #Stravinsky",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-petroushka-ig-1.jpg"
+     ],
+     "colaboradores": [
+      "dimennacenter"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-17T18:02:00-05:00",
+     "texto": "Petroushka was written for a full orchestra and a ballet company. On December 11 we're playing it with five of us. 🎭\n\nStravinsky's ballet premiered in Paris in 1911 with the Ballets Russes. It's set at a Shrovetide fair in Russia, where three puppets come to life in a story of love, jealousy and tragedy.\n\nOur chamber arrangement runs about 40 minutes, with projections alongside it, and it closes the evening.\n\n(The image is the first page of the score Stravinsky published in 1911.)\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #Petroushka #Stravinsky",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-petroushka-fb-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-petroushka#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-17T18:10:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-petroushka-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
     }
    ]
   }

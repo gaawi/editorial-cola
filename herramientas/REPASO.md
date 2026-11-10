@@ -19,6 +19,32 @@ lo que hay entre medias.
     dibuja las imágenes finales.
 - `gaawi/adar`, `src/data/kit-creartbox.ts`: las fichas (ideas) de CreArtBox.
 
+## Lo que Guillermo ya ha dicho (no volver a preguntarlo)
+
+- La app es para revisar. Él decide con Aprobar y Confirmar; lo demás lo
+  hace esta tarea.
+- **No pedirle material.** Si falta una imagen, buscarla o generarla:
+  - archivo propio: `creartbox.nyc/archive/…` (fotos de cada concierto en
+    `creartbox-archive.b-cdn.net`), prensa en `creartbox.nyc/assets/press/`;
+  - dominio público: Internet Archive funciona (`archive.org/download/<id>/page/nN.jpg`);
+    Wikimedia bloquea las descargas desde estas máquinas;
+  - fotos de compositores: la de prensa de su web oficial;
+  - o un gráfico con el motor (`estilo: 'cartel'`, `cinta`, `limpia`).
+  - Nada de inventar datos. Lo que no esté publicado en ningún sitio, no se
+    afirma.
+- Las fotos que van tal cual van **enteras**, con su proporción
+  (`fotosEnteras: true`), y del mismo formato dentro de un carrusel.
+- Fuentes de la marca: Literata Display (titulares) y Archivo, como en
+  `creartbox.nyc/brand.html`. Ya están en `kit-brands.ts`.
+- Textos: frases cortas, que no suene a IA, **nunca la raya «—»**. La
+  convocatoria es «Open Call», nunca «Calls for Scores». La Open Call en
+  plan guía, sencilla.
+- En Instagram el enlace va «in bio»; en Facebook, el enlace entero.
+- Colaborador en Instagram para lo que pasa en la DiMenna: `dimennacenter`.
+- No repetir la misma imagen en posts seguidos (el cartel de Winterlight ya
+  salió el 9 de noviembre).
+- Cada idea lleva `porque`.
+
 ## Fases (flujo.json → posts[clave].fase)
 
 | fase | quién la pone | qué hace esta tarea |

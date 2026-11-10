@@ -235,9 +235,15 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-10T17:43:11.048751Z"
+    },
+    {
+     "accion": "cambios",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:54:10.494Z",
+     "nota": "falta los textos overlay para las stories.. y"
     }
    ],
-   "fase": "preparado",
+   "fase": "cambios",
    "preparado": {
     "en/winterlight-ravel": {
      "tipo": "post",
@@ -278,7 +284,8 @@
       }
      ]
     }
-   }
+   },
+   "nota": "falta los textos overlay para las stories.. y"
   },
   "en/winterlight-caplan": {
    "historial": [

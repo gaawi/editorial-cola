@@ -139,13 +139,18 @@ function pintarLista() {
   cont.innerHTML = '';
   // Ideas: lo que no está publicado ni en cola. «Ahora» deja además fuera lo
   // descartado y lo que todavía no toca; «Todas» lo enseña entero.
+  // Ahora: lo que toca. Más adelante: lo aparcado para otro momento.
+  // Archivo: lo descartado, que se guarda por si vuelve a servir.
   const posts = fichasDe('idea').filter((p) => {
-    if (filtro === 'todas') return true;
-    if (faseDe(p) === 'descartado') return false;
-    if (faseDe(p) === 'cambios') return true;
+    const fase = faseDe(p);
+    const pasado = p.ventana && HOY > p.ventana.hasta;
+    if (filtro === 'archivo') return fase === 'descartado' || (!fase && (estadoDe(p).estado === 'descartado' || pasado));
+    if (filtro === 'luego') return fase === 'luego' || (!fase && !pasado && (dormido(p) || !enVentana(p)) && estadoDe(p).estado !== 'descartado');
+    if (fase === 'descartado' || fase === 'luego') return false;
+    if (fase === 'cambios') return true;
     return estadoDe(p).estado !== 'descartado' && enVentana(p) && !dormido(p);
   });
-
+  $('#vacio').textContent = { archivo: 'El archivo está vacío.', luego: 'Nada aparcado para más adelante.' }[filtro] || 'Nada por aquí.';
   $('#vacio').hidden = posts.length > 0;
   const { historias, posts: muro } = reparte(posts);
   $('#historias').hidden = !historias.length;
@@ -256,10 +261,11 @@ function tarjeta(p, opciones = {}) {
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
     ${p.falta ? `<p class="falta-material">Falta material: ${escapar(p.falta)}</p>` : ''}
     ${e.nota && !faseDe(p) ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
+    ${p.porque && grupoDe(p) !== 'publicado' ? `<p class="porque"><b>Por qué:</b> ${escapar(p.porque)}</p>` : ''}
     <div class="acciones-flujo">${accionesFlujo(p)}</div>
-    <button class="abrir">Ver en Facebook y como historia ·  Etiquetas ›</button>`;
+    ${grupoDe(p) === 'idea' ? '' : '<button class="abrir">Ver en Facebook y como historia ›</button>'}`;
 
-  art.querySelector('.abrir').addEventListener('click', () => abrir(p));
+  art.querySelector('.abrir')?.addEventListener('click', () => abrir(p));
   return art;
 }
 
@@ -653,12 +659,13 @@ function pintarEstadoActual() {
   const e = estadoDe(actual);
   const d = $('#estado-actual');
   const FASES = { aprobado: 'Aprobado, en preparación', preparado: 'Preparado, falta confirmar', confirmado: 'Confirmado',
-    descartado: 'Descartado', cambios: 'Cambios pedidos' };
+    descartado: 'En el archivo', cambios: 'Cambios pedidos', luego: 'Para más adelante' };
   const fase = faseDe(actual);
-  if (fase) { d.innerHTML = `Ahora: <b>${FASES[fase]}</b>`; $('#acciones-detalle').innerHTML = accionesFlujo(actual); return; }
+  const porque = actual.porque ? `<p class="porque">${escapar(actual.porque)}</p>` : '';
+  if (fase) { d.innerHTML = `Ahora: <b>${FASES[fase]}</b>${porque}`; $('#acciones-detalle').innerHTML = accionesFlujo(actual); return; }
   d.innerHTML = `Ahora: <b>${ESTADOS[e.estado] || e.estado}</b>` +
     (e.nota ? ` · ${escapar(e.nota)}` : '') +
-    (e.mio ? '' : ' <span style="color:var(--tenue)">(del panel viejo)</span>');
+    (e.mio ? '' : ' <span style="color:var(--tenue)">(del panel viejo)</span>') + porque;
   $('#acciones-detalle').innerHTML = accionesFlujo(actual);
 }
 
@@ -773,7 +780,6 @@ function horaNY(iso, conDia = true) {
 /** Los botones de cada fase. */
 function accionesFlujo(p) {
   if (grupoDe(p) === 'publicado') return '';
-  if (!PUEDE_GUARDAR) return '';
   const f = flujoDe(p);
   const b = (accion, texto, clase = '') => `<button class="fl ${clase}" data-accion="${accion}" data-clave="${p.clave}">${texto}</button>`;
   const enCola = (PROGRAMADO.posts || {})[p.clave];
@@ -792,10 +798,13 @@ function accionesFlujo(p) {
         <div class="fl-fila">${b('confirmar', 'Confirmar publicación', 'fl-si')}${b('editar', 'Editar')}${b('cambios', 'Cambios')}</div>`;
     }
     case 'descartado':
-      return `<div class="fl-fila"><span class="fl-dice">Descartado</span>${b('recuperar', 'Recuperar', 'fl-suave')}</div>`;
+      return `<div class="fl-fila"><span class="fl-dice">En el archivo</span>${b('recuperar', 'Recuperar', 'fl-suave')}</div>`;
+    case 'luego':
+      return `<div class="fl-fila"><span class="fl-dice">Aparcado para más adelante${f.nota ? `: “${escapar(f.nota)}”` : ''}</span>${b('aprobar', 'Aprobar', 'fl-si')}${b('recuperar', 'Volver a ideas', 'fl-suave')}</div>`;
     default:
       return `${f.fase === 'cambios' && f.nota ? `<p class="fl-nota">Cambios pedidos: “${escapar(f.nota)}”</p>` : ''}
-        <div class="fl-fila">${b('aprobar', 'Aprobar', 'fl-si')}${b('editar', 'Editar')}${b('descartar', 'Descartar', 'fl-suave')}</div>`;
+        <div class="fl-fila">${b('aprobar', 'Aprobar', 'fl-si')}${b('editar', 'Editar')}</div>
+        <div class="fl-fila fl-segunda">${b('luego', 'Ahora no, más adelante', 'fl-suave')}${b('descartar', 'Descartar', 'fl-suave')}</div>`;
   }
 }
 
@@ -821,7 +830,8 @@ async function llamarFlujo(clave, accion, extra = {}) {
 
 const DICHO = {
   aprobar: 'Aprobado. Lo preparo y te aviso para confirmar.',
-  descartar: 'Descartado.',
+  descartar: 'Al archivo. Lo tienes en Ideas › Archivo.',
+  luego: 'Aparcado. Lo tienes en Ideas › Más adelante.',
   recuperar: 'Vuelve a ideas.',
   cambios: 'Apuntado. Lo cambio y vuelve a confirmar.',
   editar: 'Guardado.',
@@ -856,6 +866,11 @@ document.addEventListener('click', (ev) => {
   if (!b) return;
   ev.preventDefault();
   const { clave, accion } = b.dataset;
+  if (!PUEDE_GUARDAR) {
+    aviso('Primero entra con GitHub (una vez en este aparato).');
+    setTimeout(() => { location.href = '/entrar.html'; }, 900);
+    return;
+  }
   const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === clave);
   if (accion === 'editar') return abrirEditor(p, 'editar');
   if (accion === 'cambios') return abrirEditor(p, 'cambios');
@@ -1147,7 +1162,13 @@ function eventosCalendario() {
         falta: Boolean(p.falta) && !yaSalio(prog),
         redes: prog.redes.map((r) => r.red),
       });
-    } else if (['idea', 'confirmar'].includes(grupoDe(p)) && p.publicaEl && estadoDe(p).estado !== 'descartado') {
+    } else if (faseDe(p) === 'preparado' && preparadoDe(p)) {
+      // Lo preparado ya tiene día y hora, aunque falte confirmarlo.
+      const cuando = preparadoDe(p).redes[0].cuando;
+      poner({ ...comun, fecha: aLocalNY(cuando).slice(0, 10), hora: aLocalNY(cuando).slice(11, 16), iso: cuando,
+        estado: 'idea', falta: Boolean(p.falta) });
+    } else if (['idea', 'confirmar'].includes(grupoDe(p)) && p.publicaEl
+      && !['descartado', 'luego'].includes(faseDe(p)) && estadoDe(p).estado !== 'descartado') {
       poner({ ...comun, fecha: p.publicaEl, estado: 'idea', falta: Boolean(p.falta) });
     }
   }

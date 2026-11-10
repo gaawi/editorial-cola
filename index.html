@@ -21,8 +21,8 @@
 
 <!-- ── Lista ─────────────────────────────────────────────────────────── -->
 <main id="lista" class="pantalla activa">
-  <p class="entrar-aviso" id="entrar-aviso" hidden>Para aprobar, editar o confirmar desde aquí,
-    <a href="/entrar.html">entra otra vez con GitHub</a>. Hace falta una vez en cada aparato.</p>
+  <p class="entrar-aviso" id="entrar-aviso" hidden>Para que los botones guarden,
+    <a href="/entrar.html">entra otra vez con GitHub</a>. Solo una vez en cada aparato.</p>
   <nav class="pestanas" id="pestanas">
     <button class="pest activo" data-vista="ideas">Ideas</button>
     <button class="pest" data-vista="confirmar">Confirmar<span class="cuenta-pest" id="cuenta-confirmar"></span></button>
@@ -34,7 +34,8 @@
   <div id="vista-ideas">
     <nav class="filtros" id="filtros">
       <button class="chip activo" data-filtro="ahora">Ahora</button>
-      <button class="chip" data-filtro="todas">Todas</button>
+      <button class="chip" data-filtro="luego">Más adelante</button>
+      <button class="chip" data-filtro="archivo">Archivo</button>
     </nav>
     <nav class="historias" id="historias"></nav>
     <div id="fichas" class="muro"></div>

@@ -1,0 +1,16 @@
+{
+ "_ayuda": "Lo escribe la app (api/flujo.js). fase: aprobado · preparado · confirmado · luego (más adelante) · descartado (archivo) · cambios.",
+ "posts": {
+  "en/call-for-scores-reading": {
+   "fase": "descartado",
+   "historial": [
+    {
+     "accion": "descartar",
+     "quien": "claude",
+     "fecha": "2026-11-10T17:14:51.478554Z",
+     "nota": "Pidió eliminarlo en el chat."
+    }
+   ]
+  }
+ }
+}

@@ -12,9 +12,9 @@
 import { conSesion } from './_puerta.js';
 import { credencial, leerJSON, cambiarJSON } from './_gh.js';
 
-const VACIO = { _ayuda: 'Lo escribe la app (api/flujo.js). fase: aprobado · preparado · confirmado · descartado · cambios.', posts: {} };
+const VACIO = { _ayuda: 'Lo escribe la app (api/flujo.js). fase: aprobado · preparado · confirmado · luego (más adelante) · descartado (archivo) · cambios.', posts: {} };
 const VACIO_COLA = { posts: {} };
-const ACCIONES = ['aprobar', 'descartar', 'recuperar', 'cambios', 'editar', 'confirmar', 'quitar'];
+const ACCIONES = ['aprobar', 'descartar', 'luego', 'recuperar', 'cambios', 'editar', 'confirmar', 'quitar'];
 
 // La hora se escribe en hora de Nueva York («2026-11-17T18:00») y aquí se
 // pasa a un instante de verdad, con su cambio de horario.
@@ -102,6 +102,7 @@ export default async function handler(req, res) {
       if (g.fase === 'confirmado' && accion !== 'editar') throw Object.assign(new Error('Está confirmado: quítalo de la cola antes.'), { codigo: 409 });
       if (accion === 'aprobar') g.fase = 'aprobado';
       if (accion === 'descartar') g.fase = 'descartado';
+      if (accion === 'luego') g.fase = 'luego';
       if (accion === 'recuperar') delete g.fase;
       if (accion === 'cambios') { g.fase = 'cambios'; g.nota = nota; }
       if (accion === 'editar') {

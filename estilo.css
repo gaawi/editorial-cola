@@ -612,3 +612,8 @@ button { background: none; border: none; cursor: pointer; }
   .pest { font-size: 12.5px; }
   .cuenta-pest { min-width: 15px; margin-left: 3px; padding: 0 4px; font-size: 10px; line-height: 15px; vertical-align: 1px; }
 }
+.fl-segunda { margin-top: 6px; } .fl-segunda .fl { flex: 1; min-height: 36px; font-weight: 500; }
+.porque { margin: 0 12px 10px; padding: 9px 11px; font-size: 13px; line-height: 1.4; color: var(--tinta);
+  background: #f4f1ea; border-left: 3px solid #FFC403; }
+.porque b { font-weight: 600; }
+.estado-actual .porque { margin: 8px 0 0; }

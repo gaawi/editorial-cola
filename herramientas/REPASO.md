@@ -28,7 +28,8 @@ lo que hay entre medias.
 | `cambios` | Guillermo | leer `nota`, cambiar la ficha en adar, quitar la fase (vuelve a idea) |
 | `preparado` | esta tarea | nada; comprobar que la hora sigue en el futuro |
 | `confirmado` | Guillermo | nada: ya está en la cola |
-| `descartado` | Guillermo | nada |
+| `luego` | Guillermo | «ahora no, más adelante»: proponerlo otra vez cuando vuelva a tener sentido (quitando la fase) |
+| `descartado` | Guillermo | archivo: nada, salvo que vuelva a ser útil; entonces sugerirlo como idea nueva |
 
 `edicion` (ig, fb, cuando, fotos, fondo) es lo que él cambió a mano y
 **manda** sobre la ficha: usar su texto tal cual, sus fotos y su hora.
@@ -66,7 +67,7 @@ lo que hay entre medias.
 
 Una o dos ideas nuevas, como fichas en `kit-creartbox.ts`, según lo que venga
 (conciertos en `src/data`, campañas abiertas). Con `pie` escrito a mano, foto
-real del archivo y `date`. Nada de inventar datos: si falta un precio o una
+real del archivo, `date` y **`porque`**: una o dos frases de por qué este post y por qué ese día (queda un día para algo, es Black Friday, une dos campañas…). Se enseña en la app junto a los botones. Nada de inventar datos: si falta un precio o una
 fecha, `falta: '…'`. Estilo: frases cortas, nada que suene a IA, **nunca la
 raya «—»**, y en las convocatorias decir «Open Call», no «Calls for Scores».
 

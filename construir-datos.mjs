@@ -195,6 +195,8 @@ for (const nombre of marcas) {
         // ese manda: ocho fichas de «context» seguidas salían las ocho con
         // el mismo marco, y eso no es ritmo, es monotonía.
         estilo: p.estilo || (tipo ? tipo.estilo : 'cinta'),
+        // Estilo por formato, si uno no vale para todos: { story: 'marco' }.
+        estilos: p.estilos || null,
         // Lo que dibujan «cifra» y «tabla». Sin su dato, el estilo no
         // puede pintarse y el motor se cae al de por defecto.
         cifra: p.cifra || null,

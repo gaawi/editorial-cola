@@ -36,7 +36,7 @@ window.dibujarSlide = async (marca, clave, idx, fmt, estilo, cambios) => {
   const c = document.createElement('canvas');
   await motores[marca].dibujar(
     c, post, post.slides[idx], idx, post.slides.length,
-    fmt, estilo || post.estilo || 'cinta'
+    fmt, estilo || (post.estilos && post.estilos[fmt]) || post.estilo || 'cinta'
   );
   return c.toDataURL('image/jpeg', 0.92).split(',')[1];
 };

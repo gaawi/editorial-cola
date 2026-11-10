@@ -639,3 +639,8 @@ button { background: none; border: none; cursor: pointer; }
 .idea-nueva li.hecha { background: #f0fdf4; color: var(--suave); }
 .idea-nueva ul:empty { display: none; }
 @media (min-width: 1000px) { .idea-nueva { max-width: 640px; } }
+/* Colaboradores, al lado de la cuenta, como en Instagram pero con nombres */
+.ig-usuario { line-height: 1.25; }
+.ig-usuario .ig-y { font-weight: 400; }
+.ig-usuario .ig-colab { font-weight: 600; }
+.ig-cab .ig-av + .ig-usuario { min-width: 0; overflow-wrap: anywhere; }

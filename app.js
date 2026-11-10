@@ -436,7 +436,8 @@ const ICONOS = {
 // ── Vistas previas ─────────────────────────────────────────────────────
 async function lienzo(post, slide, idx, total, fmt) {
   const c = document.createElement('canvas');
-  await MOTOR.dibujar(c, post, slide, idx, total, fmt, post.estilo || 'cinta');
+  // Cada formato puede llevar su estilo: una historia a veces pide velo.
+  await MOTOR.dibujar(c, post, slide, idx, total, fmt, (post.estilos && post.estilos[fmt]) || post.estilo || 'cinta');
   return c;
 }
 
@@ -471,6 +472,27 @@ function piezasDe(p) {
   return { slides: esCarrusel ? p.slides : [p.slides[0]], n: esCarrusel ? p.slides.length : 1 };
 }
 
+/**
+ * Quién va de colaborador: lo que hay en la cola o lo preparado manda; si no,
+ * lo que trae la ficha. Instagram pone «y 2 más»; aquí van los nombres, que
+ * es lo que hay que comprobar antes de aprobar.
+ */
+function colaboradoresDe(p) {
+  const ig = (e) => e && e.redes.find((r) => r.red === 'ig');
+  const enCola = ig((PROGRAMADO.posts || {})[p.clave]);
+  if (enCola && enCola.colaboradores) return enCola.colaboradores;
+  const prep = ig(faseDe(p) === 'preparado' ? preparadoDe(p) : null);
+  if (prep && prep.colaboradores) return prep.colaboradores;
+  return p.colaboradores || [];
+}
+
+function conColaboradores(p) {
+  const c = colaboradoresDe(p);
+  if (!c.length) return CUENTAS.ig;
+  const todos = [CUENTAS.ig, ...c.map((x) => `<b class="ig-colab">${escapar(x)}</b>`)];
+  return todos.slice(0, -1).join(', ') + ' <span class="ig-y">y</span> ' + todos.at(-1);
+}
+
 async function pintarInstagram(p) {
   const piezas = piezasDe(p);
   const slides = piezas.slides || piezas.fotos;
@@ -479,7 +501,7 @@ async function pintarInstagram(p) {
   caja.innerHTML = `
     <div class="ig-cab">
       <img class="ig-av" src="${CUENTAS.avatar}" alt="">
-      <span class="ig-usuario">${CUENTAS.ig}</span>
+      <span class="ig-usuario">${conColaboradores(p)}</span>
       <span class="ig-mas">•••</span>
     </div>
     <div class="ig-carrete"><div class="tira"></div>${slides.length > 1 ? `

@@ -31,8 +31,11 @@ lo que hay entre medias.
 | `luego` | Guillermo | «ahora no, más adelante»: proponerlo otra vez cuando vuelva a tener sentido (quitando la fase) |
 | `descartado` | Guillermo | archivo: nada, salvo que vuelva a ser útil; entonces sugerirlo como idea nueva |
 
-`edicion` (ig, fb, cuando, fotos, fondo) es lo que él cambió a mano y
-**manda** sobre la ficha: usar su texto tal cual, sus fotos y su hora.
+`edicion` es lo que él cambió a mano y **manda** sobre la ficha. En la fase
+de idea solo edita `texto` (uno solo, la idea): al preparar, adaptarlo tú a
+cada red (Instagram con «link in bio», Facebook con el enlace, etc.) sin
+cambiarle el sentido. `ig`/`fb` solo aparecen si editó lo ya preparado, y
+entonces van tal cual. También `cuando`, `fotos`, `fondo`.
 
 ## Preparar un post aprobado
 

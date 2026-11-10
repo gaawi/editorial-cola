@@ -756,6 +756,9 @@ function aplicarEdiciones() {
       const f = FLUJO.posts[p.clave];
       if (!f) continue;
       const ed = f.edicion || {};
+      // En la fase de idea hay un solo texto: la idea. Lo adapto yo a cada red
+      // al prepararlo; mientras, se enseña igual en todas.
+      if (ed.texto != null) { p.pies.ig.texto = ed.texto; p.pies.fb.texto = ed.texto; }
       if (ed.ig != null) p.pies.ig.texto = ed.ig;
       if (ed.fb != null) p.pies.fb.texto = ed.fb;
       if (ed.fondo) p.image = ed.fondo;
@@ -932,15 +935,21 @@ function abrirEditor(p, modo) {
   const f = flujoDe(p);
   const ed = f.edicion || {};
   const notaSolo = modo === 'cambios';
-  $('#editor-titulo').textContent = notaSolo ? 'Pedir cambios' : 'Editar';
+  $('#editor-titulo').textContent = notaSolo ? 'Pedir cambios' : f.fase === 'preparado' ? 'Editar lo preparado' : 'Editar la idea';
   $('#editor-ayuda').textContent = notaSolo
     ? 'Dime qué cambiar. Lo arreglo y vuelve a «para confirmar».'
     : f.fase === 'preparado'
-      ? 'Ya está preparado: el texto y la hora se cambian al momento. Una foto nueva hace que lo vuelva a montar.'
-      : 'Lo que cambies aquí manda sobre lo que propuse.';
+      ? 'Ya está preparado: el texto de cada red y la hora se cambian al momento. Una foto nueva hace que lo vuelva a montar.'
+      : 'Es la idea: un solo texto. Cuando la apruebes, la adapto yo a Instagram, Facebook y lo que haga falta.';
   $('#editor-campos').hidden = notaSolo;
   $('#editor-nota-campo').hidden = !notaSolo;
   $('#ed-nota').value = notaSolo ? (f.nota || '') : '';
+  // Idea: un solo texto. Preparado: uno por red, que es lo que va a salir.
+  const porRed = f.fase === 'preparado';
+  $('#campo-texto').hidden = porRed;
+  $('#campo-ig').hidden = !porRed;
+  $('#campo-fb').hidden = !porRed;
+  $('#ed-texto').value = ed.texto != null ? ed.texto : p.pies.ig.texto;
   $('#ed-ig').value = p.pies.ig.texto;
   $('#ed-fb').value = p.pies.fb.texto;
   const prep = preparadoDe(p);
@@ -1007,9 +1016,14 @@ $('#editor-form').addEventListener('submit', async (e) => {
     } else {
       const f = flujoDe(p), ed = f.edicion || {};
       const edicion = {};
-      const ig = $('#ed-ig').value, fb = $('#ed-fb').value;
-      if (ig !== p.pies.ig.texto || ed.ig != null) edicion.ig = ig;
-      if (fb !== p.pies.fb.texto || ed.fb != null) edicion.fb = fb;
+      if (f.fase === 'preparado') {
+        const ig = $('#ed-ig').value, fb = $('#ed-fb').value;
+        if (ig !== p.pies.ig.texto || ed.ig != null) edicion.ig = ig;
+        if (fb !== p.pies.fb.texto || ed.fb != null) edicion.fb = fb;
+      } else {
+        const t = $('#ed-texto').value;
+        if (t !== p.pies.ig.texto || ed.texto != null) edicion.texto = t;
+      }
       if ($('#ed-cuando').value) edicion.cuando = $('#ed-cuando').value;
       const modoFoto = document.querySelector('#ed-modo input:checked').value;
       const antes = JSON.stringify([ed.fotos || [], ed.fondo || null]);

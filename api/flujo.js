@@ -30,7 +30,7 @@ function deNuevaYork(local) {
 
 function limpiaEdicion(e = {}) {
   const out = {};
-  for (const k of ['ig', 'fb']) if (typeof e[k] === 'string') out[k] = e[k].slice(0, 2200 * 30);
+  for (const k of ['texto', 'ig', 'fb']) if (typeof e[k] === 'string') out[k] = e[k].slice(0, 2200 * 30);
   if (typeof e.cuando === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(e.cuando)) out.cuando = e.cuando;
   if (e.cuando === null) out.cuando = null;
   const raw = (u) => typeof u === 'string' && /^https:\/\/(raw\.githubusercontent\.com|creartbox-archive\.b-cdn\.net|creartbox\.nyc)\//.test(u);

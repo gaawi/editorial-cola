@@ -48,9 +48,15 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-10T17:37:02.314149Z"
+    },
+    {
+     "accion": "cambios",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:54:40.998Z",
+     "nota": "la storie esta descuadrada, no se ve nada todo negro..."
     }
    ],
-   "fase": "preparado",
+   "fase": "cambios",
    "sugerencias": [
     {
      "texto": "el 2x1 esta activo en evenbrite",
@@ -98,7 +104,8 @@
       }
      ]
     }
-   }
+   },
+   "nota": "la storie esta descuadrada, no se ve nada todo negro..."
   },
   "en/feverdream": {
    "historial": [

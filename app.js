@@ -859,7 +859,7 @@ function accionesFlujo(p) {
 function cajaSugerir(p) {
   if (grupoDe(p) === 'publicado') return '';
   const sug = flujoDe(p).sugerencias || [];
-  const lista = sug.map((x) => `<li class="${x.hecha ? 'hecha' : ''}">${escapar(x.texto)}${x.hecha
+  const lista = sug.map((x) => `<li class="${x.hecha ? 'hecha' : ''}"><span class="tarea">${escapar(x.texto)}</span>${x.hecha
     ? `<small>Hecho${x.respuesta ? `: ${escapar(x.respuesta)}` : ''}</small>` : '<small>Pendiente: lo hago en el próximo repaso</small>'}</li>`).join('');
   return `<div class="sugerir">${lista ? `<ul>${lista}</ul>` : ''}
     <form class="sugerir-form" data-clave="${p.clave}">
@@ -873,7 +873,7 @@ function pintarIdeasPedidas() {
   const pend = (FLUJO.ideas || []).filter((x) => !x.hecha);
   const hechas = (FLUJO.ideas || []).filter((x) => x.hecha).slice(-2);
   $('#ideas-pedidas').innerHTML = [...pend.map((x) => `<li>${escapar(x.texto)}<small>Pendiente: la preparo en el próximo repaso</small></li>`),
-    ...hechas.map((x) => `<li class="hecha">${escapar(x.texto)}<small>Hecha${x.respuesta ? `: ${escapar(x.respuesta)}` : ''}</small></li>`)].join('');
+    ...hechas.map((x) => `<li class="hecha"><span class="tarea">${escapar(x.texto)}</span><small>Hecha${x.respuesta ? `: ${escapar(x.respuesta)}` : ''}</small></li>`)].join('');
 }
 
 $('#idea-form').addEventListener('submit', async (ev) => {

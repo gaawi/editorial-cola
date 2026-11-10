@@ -659,3 +659,14 @@ button { background: none; border: none; cursor: pointer; }
 .pide-caja input[type="radio"] { width: auto; margin: 0; padding: 0; border: 0; flex: 0 0 auto; accent-color: var(--tinta); }
 .pide-caja input[type="range"] { padding: 0; border: 0; margin: 0; background: none; accent-color: var(--tinta); }
 .ed-modo label { white-space: nowrap; }
+/* Lo hecho, como una tarea tachada con su marca */
+.sugerir li, .idea-nueva li { position: relative; padding-left: 32px; }
+.sugerir li::before, .idea-nueva li::before {
+  content: ''; position: absolute; left: 10px; top: 9px; width: 14px; height: 14px;
+  border: 1.5px solid var(--tenue); border-radius: 3px; background: #fff;
+}
+.sugerir li.hecha::before, .idea-nueva li.hecha::before {
+  content: '✓'; background: var(--si); border-color: var(--si); color: #fff;
+  font-size: 11px; font-weight: 700; line-height: 14px; text-align: center;
+}
+.sugerir li.hecha .tarea, .idea-nueva li.hecha .tarea { text-decoration: line-through; color: var(--tenue); }

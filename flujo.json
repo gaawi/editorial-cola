@@ -149,6 +149,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T18:13:58.061Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T18:14:26.441Z"
     }
    ],
    "sugerencias": [
@@ -163,6 +168,12 @@
      "texto": "All 95 photos sobra, algo tipo increíbles photos del artista Tao ho mejo…",
      "quien": "gaawi",
      "fecha": "2026-11-10T18:13:58.061Z",
+     "hecha": false
+    },
+    {
+     "texto": "Fantásticas fotos de tao.. siempre muy creativas…",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T18:14:26.441Z",
      "hecha": false
     }
    ],

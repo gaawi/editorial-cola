@@ -33,8 +33,7 @@
 
   <div id="vista-ideas">
     <nav class="filtros" id="filtros">
-      <button class="chip activo" data-filtro="ahora">Ahora</button>
-      <button class="chip" data-filtro="luego">Más adelante</button>
+      <button class="chip activo" data-filtro="ahora">Todas las ideas</button>
       <button class="chip" data-filtro="archivo">Archivo</button>
     </nav>
     <nav class="historias" id="historias"></nav>
@@ -124,10 +123,11 @@
       <label class="campo" id="campo-texto">Texto<textarea id="ed-texto" rows="9"></textarea></label>
       <label class="campo" id="campo-ig">Instagram<textarea id="ed-ig" rows="7"></textarea></label>
       <label class="campo" id="campo-fb">Facebook<textarea id="ed-fb" rows="7"></textarea></label>
-      <label class="campo">Cuándo sale (hora de Nueva York)<input type="datetime-local" id="ed-cuando"></label>
+      <label class="campo" id="campo-cuando">Cuándo sale (hora de Nueva York)<input type="datetime-local" id="ed-cuando"></label>
       <div class="campo">Fotos
         <div class="ed-fotos" id="ed-fotos"></div>
         <label class="btn btn-no ed-subir">Subir fotos<input type="file" id="ed-archivo" accept="image/*" multiple hidden></label>
+        <div class="ed-url"><input type="url" id="ed-url" placeholder="o pega la dirección de una foto (https://…)"><button type="button" class="btn btn-no" id="ed-url-ok">Añadir</button></div>
         <div class="ed-modo" id="ed-modo">
           <label><input type="radio" name="modo" value="fondo" checked> De fondo del diseño</label>
           <label><input type="radio" name="modo" value="fotos"> Tal cual, sin diseño</label>

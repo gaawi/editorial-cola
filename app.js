@@ -139,18 +139,14 @@ function pintarLista() {
   cont.innerHTML = '';
   // Ideas: lo que no está publicado ni en cola. «Ahora» deja además fuera lo
   // descartado y lo que todavía no toca; «Todas» lo enseña entero.
-  // Ahora: lo que toca. Más adelante: lo aparcado para otro momento.
-  // Archivo: lo descartado, que se guarda por si vuelve a servir.
+  // Ideas: todas juntas, por fecha. Archivo: lo descartado, que se guarda
+  // por si vuelve a servir.
   const posts = fichasDe('idea').filter((p) => {
     const fase = faseDe(p);
-    const pasado = p.ventana && HOY > p.ventana.hasta;
-    if (filtro === 'archivo') return fase === 'descartado' || (!fase && (estadoDe(p).estado === 'descartado' || pasado));
-    if (filtro === 'luego') return fase === 'luego' || (!fase && !pasado && (dormido(p) || !enVentana(p)) && estadoDe(p).estado !== 'descartado');
-    if (fase === 'descartado' || fase === 'luego') return false;
-    if (fase === 'cambios') return true;
-    return estadoDe(p).estado !== 'descartado' && enVentana(p) && !dormido(p);
+    const archivada = fase === 'descartado' || (!fase && estadoDe(p).estado === 'descartado');
+    return filtro === 'archivo' ? archivada : !archivada;
   });
-  $('#vacio').textContent = { archivo: 'El archivo está vacío.', luego: 'Nada aparcado para más adelante.' }[filtro] || 'Nada por aquí.';
+  $('#vacio').textContent = filtro === 'archivo' ? 'El archivo está vacío.' : 'Nada por aquí.';
   $('#vacio').hidden = posts.length > 0;
   const { historias, posts: muro } = reparte(posts);
   $('#historias').hidden = !historias.length;
@@ -802,12 +798,10 @@ function accionesFlujo(p) {
     }
     case 'descartado':
       return `<div class="fl-fila"><span class="fl-dice">En el archivo</span>${b('recuperar', 'Recuperar', 'fl-suave')}</div>`;
-    case 'luego':
-      return `<div class="fl-fila"><span class="fl-dice">Aparcado para más adelante${f.nota ? `: “${escapar(f.nota)}”` : ''}</span>${b('aprobar', 'Aprobar', 'fl-si')}${b('recuperar', 'Volver a ideas', 'fl-suave')}</div>`;
     default:
       return `${f.fase === 'cambios' && f.nota ? `<p class="fl-nota">Cambios pedidos: “${escapar(f.nota)}”</p>` : ''}
         <div class="fl-fila">${b('aprobar', 'Aprobar', 'fl-si')}${b('editar', 'Editar')}</div>
-        <div class="fl-fila fl-segunda">${b('luego', 'Ahora no, más adelante', 'fl-suave')}${b('descartar', 'Descartar', 'fl-suave')}</div>`;
+        <div class="fl-fila fl-segunda">${b('descartar', 'Descartar (al archivo)', 'fl-suave')}</div>`;
   }
 }
 
@@ -949,6 +943,8 @@ function abrirEditor(p, modo) {
   $('#campo-texto').hidden = porRed;
   $('#campo-ig').hidden = !porRed;
   $('#campo-fb').hidden = !porRed;
+  // La hora solo se toca en lo preparado: en una idea la decido yo al prepararla.
+  $('#campo-cuando').hidden = !porRed;
   $('#ed-texto').value = ed.texto != null ? ed.texto : p.pies.ig.texto;
   $('#ed-ig').value = p.pies.ig.texto;
   $('#ed-fb').value = p.pies.fb.texto;
@@ -985,6 +981,30 @@ async function aJPEG(archivo) {
   for (let i = 0; i < buf.length; i += 0x8000) bin += String.fromCharCode(...buf.subarray(i, i + 0x8000));
   return btoa(bin);
 }
+
+async function subirArchivo(a) {
+  const r = await fetch('/api/subir', { method: 'POST', credentials: 'same-origin',
+    headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ datos: await aJPEG(a) }) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
+  fotosEditor.push(j.url);
+  pintarFotosEditor();
+}
+
+// Una foto de la web: el servidor la trae (el navegador no puede, por CORS),
+// aquí se reduce y se pasa a JPEG, y se sube como cualquier otra.
+$('#ed-url-ok').addEventListener('click', async () => {
+  const url = $('#ed-url').value.trim();
+  if (!/^https:\/\//.test(url)) return aviso('Pega una dirección que empiece por https://', true);
+  aviso('Trayendo la foto…');
+  try {
+    const r = await fetch('/api/traer?url=' + encodeURIComponent(url), { credentials: 'same-origin' });
+    if (!r.ok) { const j = await r.json().catch(() => ({})); throw new Error(j.error || `Error ${r.status}`); }
+    await subirArchivo(await r.blob());
+    $('#ed-url').value = '';
+    aviso('Foto añadida. Falta darle a Guardar.');
+  } catch (err) { aviso(`No se pudo: ${err.message}`, true); }
+});
 
 $('#ed-archivo').addEventListener('change', async (e) => {
   const archivos = [...e.target.files];
@@ -1024,7 +1044,7 @@ $('#editor-form').addEventListener('submit', async (e) => {
         const t = $('#ed-texto').value;
         if (t !== p.pies.ig.texto || ed.texto != null) edicion.texto = t;
       }
-      if ($('#ed-cuando').value) edicion.cuando = $('#ed-cuando').value;
+      if (f.fase === 'preparado' && $('#ed-cuando').value) edicion.cuando = $('#ed-cuando').value;
       const modoFoto = document.querySelector('#ed-modo input:checked').value;
       const antes = JSON.stringify([ed.fotos || [], ed.fondo || null]);
       const ahora = fotosEditor.length
@@ -1182,7 +1202,7 @@ function eventosCalendario() {
       poner({ ...comun, fecha: aLocalNY(cuando).slice(0, 10), hora: aLocalNY(cuando).slice(11, 16), iso: cuando,
         estado: 'idea', falta: Boolean(p.falta) });
     } else if (['idea', 'confirmar'].includes(grupoDe(p)) && p.publicaEl
-      && !['descartado', 'luego'].includes(faseDe(p)) && estadoDe(p).estado !== 'descartado') {
+      && faseDe(p) !== 'descartado' && estadoDe(p).estado !== 'descartado') {
       poner({ ...comun, fecha: p.publicaEl, estado: 'idea', falta: Boolean(p.falta) });
     }
   }

@@ -1,9 +1,7 @@
-/* La app se usa desde un iPhone 16 Pro (402×874) con Brave o Chrome.
- * Se mide y se prueba a ese ancho. En un escritorio no se estira: se queda
- * en la misma columna, centrada, porque todo esto está pensado para ese
- * ancho y estirado no funcionaba. Las vistas previas pasaban a ocupar la
- * pantalla entera y las flechas del carrusel acababan a medio metro del
- * contenido, donde nadie las encuentra.
+/* La app se usa sobre todo desde un iPhone 16 Pro (402×874) con Brave o
+ * Chrome, y ese ancho manda. Entre 520 y 999 px se queda en la misma
+ * columna, centrada. Desde 1000 px es otra cosa: no se estira la columna,
+ * se reparte la pantalla (ver «Escritorio» al final).
  * El cromo es neutro para que no compita con las vistas previas, que son las
  * que tienen que parecerse a Instagram y a Facebook de verdad. */
 
@@ -377,8 +375,8 @@ button { background: none; border: none; cursor: pointer; }
 .ig-carrete .paso:disabled { opacity: 0; pointer-events: none; }
 @media (hover: hover) { .ig-carrete .paso:hover { background: rgba(0, 0, 0, .7); } }
 
-/* ── Escritorio: la misma columna, centrada ────────────────────────── */
-@media (min-width: 520px) {
+/* ── Tableta: la misma columna, centrada ───────────────────────────── */
+@media (min-width: 520px) and (max-width: 999px) {
   body { background: #e9e7e4; }
   .barra, .pantalla {
     max-width: 440px;
@@ -473,3 +471,91 @@ button { background: none; border: none; cursor: pointer; }
 .enlaces-pub { display: flex; gap: 8px; padding: 0 12px 10px; flex-wrap: wrap; }
 .enlaces-pub a { font-size: 13px; font-weight: 600; color: var(--tinta); text-decoration: none;
   border: 1px solid var(--filete); border-radius: 999px; padding: 6px 12px; background: #fff; }
+
+/* ── Escritorio ────────────────────────────────────────────────────── */
+/* No es el móvil estirado. Las tarjetas van en rejilla, a su tamaño de
+ * siempre; la ficha enseña Instagram, Facebook y la historia a la vez; el
+ * calendario lleva el día al lado y no debajo. */
+@media (min-width: 1000px) {
+  :root { --ancho: 1480px; --margen: 32px; }
+  .barra {
+    padding-left: max(var(--margen), calc((100vw - var(--ancho)) / 2 + var(--margen)));
+    padding-right: max(var(--margen), calc((100vw - var(--ancho)) / 2 + var(--margen)));
+  }
+  .barra h1 { font-size: 18px; }
+  .pantalla { max-width: var(--ancho); margin: 0 auto; padding: 0 var(--margen) 64px; }
+
+  /* Pestañas y filtros: a la izquierda, del tamaño de su texto */
+  .pestanas { margin: 0; padding: 0; gap: 28px; }
+  .pest { flex: 0 0 auto; padding: 18px 2px 13px; font-size: 15px; }
+  .pest:hover { color: var(--suave); }
+  .pest.activo:hover { color: var(--tinta); }
+  .filtros { padding: 18px 0 6px; }
+  .chip { flex: 0 0 auto; padding: 0 20px; }
+  .chip:hover:not(.activo) { border-color: var(--tenue); }
+  .aviso-suave { font-size: 13px; padding: 18px 0 8px; }
+  .historias { gap: 18px; padding: 16px 0 18px; flex-wrap: wrap; overflow: visible; }
+
+  /* El muro, en rejilla */
+  .muro {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px; margin: 0; align-items: start;
+  }
+  .tarjeta { border: 1px solid var(--filete); border-radius: 12px; overflow: hidden; }
+  .tarjeta .abrir:hover { color: var(--tinta); background: #f5f5f4; }
+  .dec:hover:not(.on) { border-color: var(--tenue); color: var(--tinta); }
+
+  /* Lo publicado: la rejilla, más menuda y con aire */
+  .rejilla { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 6px; margin: 28px 0 0; }
+  .rejilla button:hover img { opacity: .85; }
+
+  /* La ficha: el estado arriba y las tres vistas debajo, en fila */
+  #detalle.activa { display: flex; flex-direction: column; }
+  #detalle .redes { display: none; }
+  #detalle .decidir {
+    order: -1; margin: 0; padding: 20px 0 22px;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 12px 28px; align-items: start;
+  }
+  #detalle .decidir .estado-actual { margin: 0; font-size: 14px; }
+  #detalle .decidir .programar { margin: 0; grid-row: span 2; }
+  #detalle .decidir .aviso-suave { padding: 0; }
+  .escenario.triple {
+    display: grid; justify-content: stretch; align-items: start; gap: 32px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) minmax(0, .66fr);
+  }
+  .col-previa h4 {
+    font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--tenue); margin-bottom: 10px;
+  }
+  .col-previa .vacio { padding: 80px 0; }
+  .col-previa .story { max-width: 340px; }
+
+  /* El calendario a la izquierda, el día a la derecha y quieto */
+  #vista-calendario:not([hidden]) {
+    display: grid; grid-template-columns: minmax(0, 1fr) 380px; column-gap: 36px;
+    grid-template-rows: auto auto auto 1fr;
+  }
+  #vista-calendario > :not(.cal-dia) { grid-column: 1; }
+  #vista-calendario .cal-dia {
+    grid-column: 2; grid-row: 1 / span 4; align-self: start;
+    position: sticky; top: 72px; max-height: calc(100vh - 88px); overflow-y: auto;
+    padding: 18px 0 24px;
+  }
+  .cal-cab { padding: 16px 0 10px; }
+  .cal-cab h2 { text-align: left; font-size: 20px; order: -1; }
+  .cal-celda { min-height: 108px; padding: 8px 8px 10px; gap: 8px; }
+  .cal-celda:hover:not(.vacia) { background: #f5f5f4; }
+  .cal-num { font-size: 13px; }
+  .cal-marca { width: 12px; height: 12px; }
+  .cal-marcas { gap: 4px; }
+  .cal-semana span { font-size: 12px; padding: 4px 0 8px; }
+  .cal-item:hover { border-color: var(--tenue); }
+
+  /* Las hojas, como ventanas en medio, no subiendo desde abajo */
+  .hoja, .pide { align-items: center; justify-content: center; }
+  .hoja-caja { width: 520px; max-height: 90vh; border-radius: 18px; }
+  .pide-caja { width: 480px; border-radius: 18px; padding: 24px; }
+  .aviso { left: 50%; right: auto; transform: translateX(-50%); width: 420px; }
+  .visor-pie { display: flex; justify-content: center; }
+  .visor-pie > * { width: 480px; }
+}

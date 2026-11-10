@@ -491,8 +491,40 @@ async function pintarHistoria(p) {
 
 const PINTORES = { ig: pintarInstagram, fb: pintarFacebook, story: pintarHistoria };
 
-async function pintarPrevia(red) {
+// En el ordenador cabe todo a la vez: Instagram, Facebook y la historia,
+// una al lado de otra, sin pestañas que ir tocando.
+const ESCRITORIO = window.matchMedia('(min-width: 1000px)');
+ESCRITORIO.addEventListener('change', () => {
+  if (actual) pintarPrevia(document.querySelector('.red.activo').dataset.red);
+});
+
+async function pintarTodas() {
   const esc = $('#escenario');
+  esc.classList.add('triple');
+  const yo = actual;
+  const cols = [['ig', 'Instagram'], ['fb', 'Facebook'], ['story', 'Historia']].map(([red, nombre]) => {
+    const col = document.createElement('div');
+    col.className = `col-previa col-${red}`;
+    col.innerHTML = `<h4>${nombre}</h4><div class="hueco-previa"><p class="vacio">Dibujando…</p></div>`;
+    return [red, col];
+  });
+  esc.replaceChildren(...cols.map(([, c]) => c));
+  // Una detrás de otra: tres lienzos a la vez se pisan las fuentes.
+  for (const [red, col] of cols) {
+    if (actual !== yo) return;
+    const hueco = col.querySelector('.hueco-previa');
+    try {
+      hueco.replaceChildren(await PINTORES[red](yo));
+    } catch (e) {
+      hueco.innerHTML = `<p class="vacio">No se pudo dibujar: ${escapar(e.message)}</p>`;
+    }
+  }
+}
+
+async function pintarPrevia(red) {
+  if (ESCRITORIO.matches) return pintarTodas();
+  const esc = $('#escenario');
+  esc.classList.remove('triple');
   esc.innerHTML = '<p class="vacio">Dibujando…</p>';
   try {
     const nodo = await PINTORES[red](actual);

@@ -480,6 +480,16 @@
      "respuesta": "Apuntado: cuando me mandes la entrevista, la uso para este post."
     }
    ]
+  },
+  "en/thanksgiving-thanks": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T20:09:55.431Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  }
 }

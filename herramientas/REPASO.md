@@ -40,7 +40,9 @@ lo que hay entre medias.
   convocatoria es «Open Call», nunca «Calls for Scores». La Open Call en
   plan guía, sencilla.
 - En Instagram el enlace va «in bio»; en Facebook, el enlace entero.
-- Colaborador en Instagram para lo que pasa en la DiMenna: `dimennacenter`.
+- Colaboradores en Instagram: los de `colaboradores` de la ficha si los
+  trae (máximo 3); si no, `dimennacenter` para lo que pasa en la DiMenna.
+- Fotos de Currents (30 oct 2026): de Tao Ho, `@toseiho`. Darle crédito.
 - No repetir la misma imagen en posts seguidos (el cartel de Winterlight ya
   salió el 9 de noviembre).
 - Cada idea lleva `porque`.

@@ -31,6 +31,16 @@
     }
    ],
    "fase": "descartado"
+  },
+  "en/winterlight-gift": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:24:23.764Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  }
 }

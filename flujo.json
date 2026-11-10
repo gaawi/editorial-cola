@@ -266,6 +266,23 @@
      ]
     }
    }
+  },
+  "en/winterlight-caplan": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:49:55.863Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "te mandare una entrevista completa mas adelante",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:49:55.863Z",
+     "hecha": false
+    }
+   ]
   }
  }
 }

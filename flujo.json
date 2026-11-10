@@ -154,6 +154,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T18:14:26.441Z"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T20:13:27.184Z"
     }
    ],
    "sugerencias": [
@@ -179,7 +184,7 @@
      "respuesta": "Hecho: fuera lo de las 95 fotos; ahora dice «These wonderful photos are by Tao Ho (@toseiho), always so creative. Thank you, Tao!», y la historia anuncia Winterlight."
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "en/currents-thanks": {
      "tipo": "post",

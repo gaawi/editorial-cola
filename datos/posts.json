@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-10T16:49:51.126Z",
+ "generado": "2026-11-10T16:57:19.886Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -3435,8 +3435,8 @@
     {
      "publicadoEn": null,
      "ventana": {
-      "desde": "2026-11-07",
-      "hasta": "2026-11-21",
+      "desde": "2026-10-27",
+      "hasta": "2026-11-10",
       "ancla": null,
       "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
      },
@@ -3445,12 +3445,12 @@
      "estilo": "cinta",
      "cifra": null,
      "tabla": null,
-     "falta": "Faltan el precio early bird, el precio normal y hasta cuándo dura. En Eventbrite no se ve el detalle de las entradas desde fuera.",
+     "falta": null,
      "fotos": [],
      "fotosEnteras": false,
      "kicker": null,
      "formato": null,
-     "publicaEl": "2026-11-21",
+     "publicaEl": "2026-11-10",
      "pegatinas": null,
      "cartel": null,
      "trapecio": null,
@@ -3459,30 +3459,30 @@
      "lang": "en",
      "slug": "winterlight-early-bird",
      "kind": "social",
-     "title": "Early bird tickets for Winterlight",
+     "title": "Winterlight early bird: $19 until November 11",
      "excerpt": "Early bird tickets for Winterlight",
      "image": "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/hd/_DSC0606.jpg",
      "url": "https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263",
-     "date": "2026-11-21",
+     "date": "2026-11-10",
      "tags": [
       "Winterlight"
      ],
      "slides": [
       {
        "type": "cover",
-       "title": "Early bird tickets for Winterlight",
+       "title": "Winterlight early bird: $19 until November 11",
        "body": ""
       }
      ],
      "pies": {
       "ig": {
-       "texto": "Early bird tickets for Winterlight are on sale until [FECHA]. ❄️\n\n[PRECIO EARLY BIRD] instead of [PRECIO NORMAL] for an evening of Petroushka, Ravel's Mother Goose, a piece from our open call and a world premiere by Hannah Selin.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #NYCConcerts #ChamberMusic",
-       "asomo": "Early bird tickets for Winterlight are on sale until [FECHA]. ❄️ [PRECIO EARLY BIRD] instead of [PRECIO NORMAL] for an evenin…",
+       "texto": "Early bird tickets for Winterlight end Wednesday, November 11. ❄️\n\n$19 for an evening of Stravinsky's Petroushka, Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde and a world premiere by Hannah Selin.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #NYCConcerts #ChamberMusic",
+       "asomo": "Early bird tickets for Winterlight end Wednesday, November 11. ❄️ $19 for an evening of Stravinsky's Petroushka, Ravel's Moth…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Early bird tickets for Winterlight are on sale until [FECHA]. ❄️\n\n[PRECIO EARLY BIRD] instead of [PRECIO NORMAL] for an evening of Petroushka, Ravel's Mother Goose, a piece from our open call and a world premiere by Hannah Selin.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #NYCConcerts #ChamberMusic",
-       "asomo": "Early bird tickets for Winterlight are on sale until [FECHA]. ❄️ [PRECIO EARLY BIRD] instead of [PRECIO NORMAL] for an evening of Petroushka, Ravel's Mother Goose, a piece from our open call and a world premiere by Hannah Selin. 📅 Friday, December 11 · 7:30 PM 📍 The DiMenna Center, NYC https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263 #CreArtBox #Winterlight #NYCConcerts #ChamberMusic",
+       "texto": "Early bird tickets for Winterlight end Wednesday, November 11. ❄️\n\n$19 for an evening of Stravinsky's Petroushka, Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde and a world premiere by Hannah Selin.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #NYCConcerts #ChamberMusic",
+       "asomo": "Early bird tickets for Winterlight end Wednesday, November 11. ❄️ $19 for an evening of Stravinsky's Petroushka, Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde and a world premiere by Hannah Selin. 📅 Friday, December 11 · 7:30 PM 📍 The DiMenna Center, NYC https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263 #CreArtBox #Winterlight #NYCConcerts #ChamberMusic",
        "limite": 63206
       }
      },

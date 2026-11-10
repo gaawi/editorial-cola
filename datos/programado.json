@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-10T20:15:01.251Z",
+ "actualizado": "2026-11-10",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -326,7 +326,7 @@
     {
      "red": "ig",
      "cuando": "2026-11-10T18:00:00-05:00",
-     "estado": "en cola",
+     "estado": "error",
      "via": "meta",
      "texto": "Last chance: early bird tickets for Winterlight end tomorrow, Wednesday, November 11. ❄️\n\n$19 for an evening of Stravinsky's Petroushka, Ravel's Mother Goose, Oliver Caplan's Canciones de Monteverde and a world premiere by Hannah Selin.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #NYCConcerts #ChamberMusic",
      "imagenes": [
@@ -334,7 +334,8 @@
      ],
      "colaboradores": [
       "dimennacenter"
-     ]
+     ],
+     "error": "Meta 400: Invalid user id (código 110/2207018)"
     },
     {
      "red": "fb",

@@ -306,9 +306,14 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:53:03.062Z"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:59:47.056Z"
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "en/winterlight-petroushka": {
      "tipo": "post",

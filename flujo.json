@@ -109,6 +109,23 @@
     }
    ],
    "fase": "luego"
+  },
+  "en/currents-thanks": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:37:50.162Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "añade DiMennaCenter y toseiho como colaboradores, y anade los credito photos by Tao Ho",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:37:50.162Z",
+     "hecha": false
+    }
+   ]
   }
  }
 }

@@ -11,6 +11,16 @@
      "nota": "Pidió eliminarlo en el chat."
     }
    ]
+  },
+  "en/libraries-queens": {
+   "historial": [
+    {
+     "accion": "descartar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:21:59.676Z"
+    }
+   ],
+   "fase": "descartado"
   }
  }
 }

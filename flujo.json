@@ -123,6 +123,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:37:50.162Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:56:04.738Z"
     }
    ],
    "sugerencias": [
@@ -133,7 +138,8 @@
      "hecha": true,
      "respuesta": "Hecho: dimennacenter y toseiho van como colaboradores y el texto acaba con «📷 Photos by Tao Ho (@toseiho)»."
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "en/open-call-one-month": {
    "historial": [

@@ -620,3 +620,4 @@ button { background: none; border: none; cursor: pointer; }
 .ed-url { display: flex; gap: 6px; margin-bottom: 10px; }
 .ed-url input { flex: 1; min-width: 0; border: 1px solid var(--filete); border-radius: 10px; padding: 10px; font-size: 16px; background: #fff; font-weight: 400; }
 .ed-url .btn { min-height: 44px; padding: 0 14px; font-size: 14px; }
+.archivo-nota { background: #eeece8; border-left-color: var(--tenue); }

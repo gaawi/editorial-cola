@@ -143,7 +143,9 @@ function pintarLista() {
   // por si vuelve a servir.
   const posts = fichasDe('idea').filter((p) => {
     const fase = faseDe(p);
-    const archivada = fase === 'descartado' || (!fase && estadoDe(p).estado === 'descartado');
+    // Lo que ya pasó su fecha se archiva solo, con una nota que lo dice.
+    const caducada = !fase && p.ventana && HOY > p.ventana.hasta;
+    const archivada = fase === 'descartado' || caducada || (!fase && estadoDe(p).estado === 'descartado');
     return filtro === 'archivo' ? archivada : !archivada;
   });
   $('#vacio').textContent = filtro === 'archivo' ? 'El archivo está vacío.' : 'Nada por aquí.';
@@ -257,7 +259,9 @@ function tarjeta(p, opciones = {}) {
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
     ${p.falta ? `<p class="falta-material">Falta material: ${escapar(p.falta)}</p>` : ''}
     ${e.nota && !faseDe(p) ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
-    ${p.porque && grupoDe(p) !== 'publicado' ? `<p class="porque"><b>Por qué:</b> ${escapar(p.porque)}</p>` : ''}
+    ${!faseDe(p) && p.ventana && HOY > p.ventana.hasta && grupoDe(p) === 'idea'
+      ? `<p class="porque archivo-nota"><b>Archivada sola:</b> su momento era hasta el ${p.ventana.hasta.split('-').reverse().slice(0, 2).join('/')} y ya pasó.</p>`
+      : p.porque && grupoDe(p) !== 'publicado' ? `<p class="porque"><b>Por qué:</b> ${escapar(p.porque)}</p>` : ''}
     <div class="acciones-flujo">${accionesFlujo(p)}</div>
     ${grupoDe(p) === 'idea' ? '' : '<button class="abrir">Ver en Facebook y como historia ›</button>'}`;
 

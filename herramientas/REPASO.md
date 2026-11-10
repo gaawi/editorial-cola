@@ -66,6 +66,14 @@ entonces van tal cual. También `cuando`, `fotos`, `fondo`.
    Sin `estado` ni `via`: los pone la app al confirmar. Historia solo si
    aporta (y si `edicion.historia === false`, no).
 
+## Decisiones pequeñas: hacerlas, no preguntarlas
+
+Lo obvio se hace sin preguntar y se deja una nota de por qué (en la ficha, en
+`porque` o en el historial de `flujo.json`): archivar lo que ya pasó su fecha,
+corregir un dato que la web contradice, cambiar una foto repetida, etc. Solo
+se pregunta lo que de verdad es suyo de decidir. En el resumen final, una
+línea con lo que se ha hecho así.
+
 ## Sugerir
 
 Una o dos ideas nuevas, como fichas en `kit-creartbox.ts`, según lo que venga

@@ -168,6 +168,11 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-10T17:43:11.048751Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:53:03.062Z"
     }
    ],
    "fase": "preparado",
@@ -209,7 +214,15 @@
       }
      ]
     }
-   }
+   },
+   "sugerencias": [
+    {
+     "texto": "la storie no funciona hay que poner algun overlay",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:53:03.062Z",
+     "hecha": false
+    }
+   ]
   },
   "en/winterlight-ravel": {
    "historial": [

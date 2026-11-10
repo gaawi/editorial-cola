@@ -335,19 +335,71 @@ function escapar(s) {
  * sale en texto plano, que es justo el motivo de mandarlo a la bio.
  */
 
-function pintarPie(texto, corte, claseMas, etiqueta, enlaces) {
-  // Aquí se lee, no se publica: el texto sale entero y desplegado.
-  if (texto.length <= corte) return `<span class="pie-texto">${tintar(texto, enlaces)}</span>`;
-  // El corte se lleva al final de la palabra: partir «twenty-two» por la
-  // mitad para marcar el pliegue estropea más de lo que informa.
-  let fin = texto.lastIndexOf(' ', corte);
-  if (fin < corte * 0.6) fin = corte;
-  return '<span class="pie-texto">'
-    + tintar(texto.slice(0, fin), enlaces)
-    + `<span class="tras-pliegue">${tintar(texto.slice(fin), enlaces)}</span>`
-    + `<small class="aviso-pliegue">Hasta aquí se ve sin tocar «${etiqueta}»; lo gris queda debajo.</small>`
-    + '</span>';
+// El pie, plegado como en la red: Instagram enseña dos líneas (contando el
+// nombre de la cuenta) y Facebook cinco, con «… más» al final. Tocando el
+// texto se despliega. Se corta por líneas de verdad, midiendo, y no por
+// caracteres, porque es lo que hacen ellas: un salto de línea gasta una.
+const PIES = new WeakMap();
+
+function pintarPie(texto, lineas, claseMas, etiqueta, enlaces) {
+  return `<span class="pie-texto plegable" data-lineas="${lineas}" data-mas="${claseMas}" data-etiqueta="${escapar(etiqueta)}"${enlaces ? ' data-enlaces="1"' : ''} data-texto="${escapar(texto)}">${tintar(texto, enlaces)}</span>`;
 }
+
+// Por la altura del bloque: las líneas en blanco también gastan una y no
+// tienen rectángulo propio.
+function lineasDe(el) {
+  const caja = el.parentElement, cs = getComputedStyle(caja);
+  const alto = caja.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+  return Math.round(alto / parseFloat(cs.lineHeight));
+}
+
+function plegar(el) {
+  if (!el.isConnected || el.dataset.abierto || el.getClientRects().length === 0) return;
+  const texto = el.dataset.texto;
+  const max = Number(el.dataset.lineas);
+  const enlaces = !!el.dataset.enlaces;
+  const ancho = el.parentElement.clientWidth;
+  if (PIES.get(el) === ancho) return;
+  PIES.set(el, ancho);
+  const pon = (n) => {
+    el.innerHTML = n >= texto.length
+      ? tintar(texto, enlaces)
+      : tintar(texto.slice(0, n).replace(/\s+$/, ''), enlaces) + `<span class="${el.dataset.mas}">… ${el.dataset.etiqueta}</span>`;
+  };
+  pon(texto.length);
+  if (lineasDe(el) <= max) { el.classList.remove('cortado'); return; }
+  // La mayor parte que cabe con el «… más» detrás.
+  let lo = 0, hi = texto.length - 1;
+  while (lo < hi) {
+    const mid = Math.ceil((lo + hi) / 2);
+    pon(mid);
+    if (lineasDe(el) <= max) lo = mid; else hi = mid - 1;
+  }
+  // Al final de una palabra, como la red.
+  const esp = texto.slice(0, lo + 1).search(/\s\S*$/);
+  pon(esp > lo * 0.6 ? esp : lo);
+  el.classList.add('cortado');
+}
+
+const vigiaPies = new ResizeObserver((entradas) => {
+  for (const en of entradas) en.target.querySelectorAll(':scope > .plegable, :scope .plegable').forEach(plegar);
+});
+new MutationObserver((cambios) => {
+  for (const c of cambios) for (const n of c.addedNodes) {
+    if (n.nodeType !== 1) continue;
+    const pies = n.matches?.('.plegable') ? [n] : n.querySelectorAll('.plegable');
+    for (const pie of pies) { vigiaPies.observe(pie.parentElement); plegar(pie); }
+  }
+}).observe(document.body, { childList: true, subtree: true });
+
+// Tocar en cualquier parte del texto lo abre: «más» solo es un blanco de nada.
+document.addEventListener('click', (ev) => {
+  const el = ev.target.closest('.plegable.cortado');
+  if (!el) return;
+  el.dataset.abierto = '1';
+  el.classList.remove('cortado');
+  el.innerHTML = tintar(el.dataset.texto, !!el.dataset.enlaces);
+});
 
 /** Colorea etiquetas y enlaces, que es lo único que pinta cada red. */
 function tintar(texto, enlaces) {
@@ -423,7 +475,7 @@ async function pintarInstagram(p) {
       <button class="paso alante" aria-label="Siguiente">›</button>` : ''}</div>
     ${slides.length > 1 ? `<div class="ig-puntos">${slides.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}
     <div class="ig-acciones">${ICONOS.corazon}${ICONOS.comentar}${ICONOS.enviar}<span class="guardar">${ICONOS.guardar}</span></div>
-    <div class="ig-pie"><b>${CUENTAS.ig}</b>${pintarPie(p.pies.ig.texto, 125, 'mas', 'más', false)}</div>
+    <div class="ig-pie"><b>${CUENTAS.ig}</b>${pintarPie(p.pies.ig.texto, 2, 'mas', 'más', false)}</div>
     <div class="ig-hora">Hace un momento</div>`;
 
   const tira = caja.querySelector('.tira');
@@ -468,7 +520,7 @@ async function pintarFacebook(p) {
         <div class="fb-meta">Ahora · 🌐</div>
       </span>
     </div>
-    <div class="fb-texto">${pintarPie(p.pies.fb.texto, 480, 'mas', 'Ver más', true)}</div>
+    <div class="fb-texto">${pintarPie(p.pies.fb.texto, 5, 'mas', 'Ver más', true)}</div>
     <div class="fb-acciones">
       <span>${ICONOS.pulgar} Me gusta</span>
       <span>${ICONOS.comentar} Comentar</span>

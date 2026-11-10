@@ -563,3 +563,7 @@ button { background: none; border: none; cursor: pointer; }
 /* Fotos enteras: la proporción de la primera, sin recorte */
 .ig-carrete .foto-suelta.entera { aspect-ratio: var(--prop, 3 / 2); object-fit: contain; }
 .fb .foto-suelta.entera { aspect-ratio: auto; }
+
+/* El pie plegado: se abre tocando el texto */
+.plegable.cortado { cursor: pointer; }
+.plegable .mas { white-space: nowrap; }

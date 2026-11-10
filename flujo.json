@@ -38,9 +38,22 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:24:23.764Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:35:42.607Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "aprobado",
+   "sugerencias": [
+    {
+     "texto": "el 2x1 esta activo en evenbrite",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:35:42.607Z",
+     "hecha": false
+    }
+   ]
   },
   "en/feverdream": {
    "historial": [

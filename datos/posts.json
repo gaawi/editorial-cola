@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-10T17:25:01.863Z",
+ "generado": "2026-11-10T17:37:19.687Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -3572,6 +3572,67 @@
     {
      "publicadoEn": null,
      "ventana": {
+      "desde": "2026-11-12",
+      "hasta": "2026-11-26",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "porque": "El 26 es Acción de Gracias: dar las gracias ese día es natural y no vende nada. Hace de respiro entre posts de venta y prepara el Giving Tuesday del 1 de diciembre.",
+     "kicker": null,
+     "formato": null,
+     "publicaEl": "2026-11-26",
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "clave": "en/thanksgiving-thanks",
+     "lang": "en",
+     "slug": "thanksgiving-thanks",
+     "kind": "social",
+     "title": "Thank you",
+     "excerpt": "Thank you",
+     "image": "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_MG_0446.jpg",
+     "url": "https://creartbox.nyc/support.html",
+     "date": "2026-11-26",
+     "tags": [
+      "Thanksgiving"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Thank you",
+       "body": ""
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Happy Thanksgiving. 🍂\n\nThank you to everyone who came to a concert this year, sent us a score, shared a post, or simply listened. Our 12th season started at Currents in October, and it keeps going because of you.\n\nSee you at Winterlight on December 11.\n\n#CreArtBox #Thanksgiving #ChamberMusic #NYC",
+       "asomo": "Happy Thanksgiving. 🍂 Thank you to everyone who came to a concert this year, sent us a score, shared a post, or simply liste…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Happy Thanksgiving. 🍂\n\nThank you to everyone who came to a concert this year, sent us a score, shared a post, or simply listened. Our 12th season started at Currents in October, and it keeps going because of you.\n\nSee you at Winterlight on December 11.\n\nhttps://creartbox.nyc/support.html\n\n#CreArtBox #Thanksgiving #ChamberMusic #NYC",
+       "asomo": "Happy Thanksgiving. 🍂 Thank you to everyone who came to a concert this year, sent us a score, shared a post, or simply listened. Our 12th season started at Currents in October, and it keeps going because of you. See you at Winterlight on December 11. https://creartbox.nyc/support.html #CreArtBox #Thanksgiving #ChamberMusic #NYC",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
       "desde": "2026-11-13",
       "hasta": "2026-11-27",
       "ancla": null,
@@ -3597,9 +3658,9 @@
      "lang": "en",
      "slug": "winterlight-gift",
      "kind": "social",
-     "title": "A gift for two this Christmas",
+     "title": "2 for 1 tickets: a gift for two this Christmas",
      "excerpt": "A gift for two this Christmas",
-     "image": "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/hd/_MG_0661.jpg",
+     "image": "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0627_1.jpg",
      "url": "https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263",
      "date": "2026-11-27",
      "tags": [
@@ -3608,7 +3669,7 @@
      "slides": [
       {
        "type": "cover",
-       "title": "A gift for two this Christmas",
+       "title": "2 for 1 tickets: a gift for two this Christmas",
        "body": ""
       }
      ],

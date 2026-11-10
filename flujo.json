@@ -43,17 +43,62 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:35:42.607Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-10T17:37:02.314149Z"
     }
    ],
-   "fase": "aprobado",
+   "fase": "preparado",
    "sugerencias": [
     {
      "texto": "el 2x1 esta activo en evenbrite",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:35:42.607Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Confirmado: el texto anuncia el 2x1 tal cual y el titular de la imagen lo dice también."
     }
-   ]
+   ],
+   "preparado": {
+    "en/winterlight-gift": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-27T12:30:00-05:00",
+       "texto": "Looking for a gift for someone who loves music? 🎁\n\nFor Winterlight, tickets are 2 for 1: bring someone with you on December 11, or give them both.\n\nPetroushka, Ravel's Mother Goose and a world premiere, at The DiMenna Center in Midtown, a couple of weeks before Christmas.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #HolidayGift #NYCConcerts",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-gift-ig-1.jpg"
+       ],
+       "colaboradores": [
+        "dimennacenter"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-11-27T12:32:00-05:00",
+       "texto": "Looking for a gift for someone who loves music? 🎁\n\nFor Winterlight, tickets are 2 for 1: bring someone with you on December 11, or give them both.\n\nPetroushka, Ravel's Mother Goose and a world premiere, at The DiMenna Center in Midtown, a couple of weeks before Christmas.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #HolidayGift #NYCConcerts",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-gift-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "en/winterlight-gift#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-27T12:40:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-gift-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/feverdream": {
    "historial": [

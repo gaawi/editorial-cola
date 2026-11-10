@@ -490,6 +490,23 @@
     }
    ],
    "fase": "aprobado"
+  },
+  "en/winterlight-this-friday": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T20:10:55.176Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "Es texto de la imagen, tiene que poner This Friday habrá que generar una nueva imagen, y tendrás que eliminar los textos que hay en esta e edítala tú mismo",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T20:10:55.176Z",
+     "hecha": false
+    }
+   ]
   }
  }
 }

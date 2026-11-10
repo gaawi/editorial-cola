@@ -168,6 +168,11 @@
      "accion": "editar",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:47:55.791Z"
+    },
+    {
+     "accion": "editar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:56:43.579Z"
     }
    ],
    "sugerencias": [
@@ -179,7 +184,10 @@
      "respuesta": "Hecho: ahora el fondo es una foto de Currents, una violinista con la partitura delante."
     }
    ],
-   "edicion": {}
+   "edicion": {
+    "fotos": [],
+    "fondo": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/subidas/20261110T175638-ed77c5.jpg"
+   }
   },
   "en/winterlight-petroushka": {
    "historial": [

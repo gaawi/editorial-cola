@@ -850,7 +850,7 @@ $('#idea-form').addEventListener('submit', async (ev) => {
     FLUJO.ideas = j.ideas;
     t.value = ''; t.style.height = '';
     pintarIdeasPedidas();
-    aviso('Apuntada. La preparo en el próximo «repaso redes».');
+    aviso('Apuntada. La preparo en el próximo «check».');
   } catch (e) { aviso(e.message, true); }
   b.disabled = false;
 });
@@ -866,7 +866,7 @@ document.addEventListener('submit', async (ev) => {
   f.querySelector('button').disabled = true;
   try {
     await llamarFlujo(f.dataset.clave, 'sugerir', { nota: texto });
-    aviso('Apuntado. Lo cambio en el próximo «repaso redes».');
+    aviso('Apuntado. Lo cambio en el próximo «check».');
     repintar();
   } catch (e) { aviso(e.message, true); f.querySelector('button').disabled = false; }
 });

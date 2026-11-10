@@ -50,6 +50,7 @@ lo que hay entre medias.
   ejemplo fecha y hora, lugar y «Tickets in bio» en ámbar (`senal: true`).
   Si el fondo es claro (una partitura, papel), `estilos: { story: 'duo' }`.
 - Revisar las imágenes de las tres redes, no solo la de Instagram.
+- Carrusel de Instagram por API: **máximo 10** imágenes. Facebook: una.
 
 ## Fases (flujo.json → posts[clave].fase)
 

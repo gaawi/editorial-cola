@@ -227,6 +227,11 @@
      "accion": "editar",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:56:43.579Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:57:49.950Z"
     }
    ],
    "sugerencias": [
@@ -241,7 +246,8 @@
    "edicion": {
     "fotos": [],
     "fondo": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/subidas/20261110T175638-ed77c5.jpg"
-   }
+   },
+   "fase": "aprobado"
   },
   "en/winterlight-petroushka": {
    "historial": [

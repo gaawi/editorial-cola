@@ -266,6 +266,11 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-10T17:58:39.770562Z"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T20:13:47.213Z"
     }
    ],
    "sugerencias": [
@@ -281,7 +286,7 @@
     "fotos": [],
     "fondo": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/subidas/20261110T175638-ed77c5.jpg"
    },
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "en/open-call-one-month": {
      "tipo": "post",

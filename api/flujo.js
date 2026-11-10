@@ -14,7 +14,7 @@ import { credencial, leerJSON, cambiarJSON } from './_gh.js';
 
 const VACIO = { _ayuda: 'Lo escribe la app (api/flujo.js). fase: aprobado · preparado · confirmado · luego (más adelante) · descartado (archivo) · cambios.', posts: {} };
 const VACIO_COLA = { posts: {} };
-const ACCIONES = ['aprobar', 'descartar', 'luego', 'recuperar', 'cambios', 'editar', 'confirmar', 'quitar'];
+const ACCIONES = ['aprobar', 'descartar', 'luego', 'sugerir', 'recuperar', 'cambios', 'editar', 'confirmar', 'quitar'];
 
 // La hora se escribe en hora de Nueva York («2026-11-17T18:00») y aquí se
 // pasa a un instante de verdad, con su cambio de horario.
@@ -55,6 +55,15 @@ export default async function handler(req, res) {
 
     const b = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
     const { clave, accion } = b;
+    // Una idea nueva no tiene clave todavía: va a una lista aparte.
+    if (accion === 'idea') {
+      const texto = typeof b.nota === 'string' ? b.nota.trim().slice(0, 4000) : '';
+      if (!texto) return res.status(400).json({ error: 'Escribe la idea.' });
+      const nuevo = await cambiarJSON(yo.token, 'flujo.json', VACIO, (d) => {
+        (d.ideas ||= []).push({ texto, quien: yo.login, fecha: new Date().toISOString(), hecha: false });
+      }, 'App: idea nueva');
+      return res.status(200).json({ ok: true, ideas: nuevo.ideas });
+    }
     if (typeof clave !== 'string' || !/^[a-z]{2}\/[\w-]+$/.test(clave)) return res.status(400).json({ error: 'Clave no válida.' });
     if (!ACCIONES.includes(accion)) return res.status(400).json({ error: 'Acción no válida.' });
     const ahora = new Date().toISOString();
@@ -99,6 +108,12 @@ export default async function handler(req, res) {
 
     const nuevo = await cambiarJSON(yo.token, 'flujo.json', VACIO, (d) => {
       const g = d.posts[clave] || (d.posts[clave] = { historial: [] });
+      if (accion === 'sugerir') {
+        if (!nota.trim()) throw Object.assign(new Error('Escribe la sugerencia.'), { codigo: 400 });
+        (g.sugerencias ||= []).push({ texto: nota.trim(), quien: yo.login, fecha: ahora, hecha: false });
+        (g.historial ||= []).push({ accion, quien: yo.login, fecha: ahora });
+        return;
+      }
       if (g.fase === 'confirmado' && accion !== 'editar') throw Object.assign(new Error('Está confirmado: quítalo de la cola antes.'), { codigo: 409 });
       if (accion === 'aprobar') g.fase = 'aprobado';
       if (accion === 'descartar') g.fase = 'descartado';

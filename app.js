@@ -150,6 +150,8 @@ function pintarLista() {
   });
   $('#vacio').textContent = filtro === 'archivo' ? 'El archivo está vacío.' : 'Nada por aquí.';
   $('#vacio').hidden = posts.length > 0;
+  $('#idea-nueva').hidden = filtro === 'archivo';
+  pintarIdeasPedidas();
   const { historias, posts: muro } = reparte(posts);
   $('#historias').hidden = !historias.length;
   pintarHistorias(historias);
@@ -263,6 +265,7 @@ function tarjeta(p, opciones = {}) {
       ? `<p class="porque archivo-nota"><b>Archivada sola:</b> su momento era hasta el ${p.ventana.hasta.split('-').reverse().slice(0, 2).join('/')} y ya pasó.</p>`
       : p.porque && grupoDe(p) !== 'publicado' ? `<p class="porque"><b>Por qué:</b> ${escapar(p.porque)}</p>` : ''}
     <div class="acciones-flujo">${accionesFlujo(p)}</div>
+    ${cajaSugerir(p)}
     ${grupoDe(p) === 'idea' ? '' : '<button class="abrir">Ver en Facebook y como historia ›</button>'}`;
 
   art.querySelector('.abrir')?.addEventListener('click', () => abrir(p));
@@ -662,11 +665,11 @@ function pintarEstadoActual() {
     descartado: 'En el archivo', cambios: 'Cambios pedidos', luego: 'Para más adelante' };
   const fase = faseDe(actual);
   const porque = actual.porque ? `<p class="porque">${escapar(actual.porque)}</p>` : '';
-  if (fase) { d.innerHTML = `Ahora: <b>${FASES[fase]}</b>${porque}`; $('#acciones-detalle').innerHTML = accionesFlujo(actual); return; }
+  if (fase) { d.innerHTML = `Ahora: <b>${FASES[fase]}</b>${porque}`; $('#acciones-detalle').innerHTML = accionesFlujo(actual) + cajaSugerir(actual); return; }
   d.innerHTML = `Ahora: <b>${ESTADOS[e.estado] || e.estado}</b>` +
     (e.nota ? ` · ${escapar(e.nota)}` : '') +
     (e.mio ? '' : ' <span style="color:var(--tenue)">(del panel viejo)</span>') + porque;
-  $('#acciones-detalle').innerHTML = accionesFlujo(actual);
+  $('#acciones-detalle').innerHTML = accionesFlujo(actual) + cajaSugerir(actual);
 }
 
 // ── La rejilla de lo ya publicado ──────────────────────────────────────
@@ -808,6 +811,71 @@ function accionesFlujo(p) {
         <div class="fl-fila fl-segunda">${b('descartar', 'Descartar (al archivo)', 'fl-suave')}</div>`;
   }
 }
+
+/** El campo de sugerir cambios, con lo ya sugerido encima. */
+function cajaSugerir(p) {
+  if (grupoDe(p) === 'publicado') return '';
+  const sug = flujoDe(p).sugerencias || [];
+  const lista = sug.map((x) => `<li class="${x.hecha ? 'hecha' : ''}">${escapar(x.texto)}${x.hecha
+    ? `<small>Hecho${x.respuesta ? `: ${escapar(x.respuesta)}` : ''}</small>` : '<small>Pendiente: lo hago en el próximo repaso</small>'}</li>`).join('');
+  return `<div class="sugerir">${lista ? `<ul>${lista}</ul>` : ''}
+    <form class="sugerir-form" data-clave="${p.clave}">
+      <textarea rows="1" placeholder="Sugerir un cambio…"></textarea>
+      <button type="submit">Enviar</button>
+    </form></div>`;
+}
+
+/** Las ideas que él ha pedido y todavía no están hechas, encima del muro. */
+function pintarIdeasPedidas() {
+  const pend = (FLUJO.ideas || []).filter((x) => !x.hecha);
+  const hechas = (FLUJO.ideas || []).filter((x) => x.hecha).slice(-2);
+  $('#ideas-pedidas').innerHTML = [...pend.map((x) => `<li>${escapar(x.texto)}<small>Pendiente: la preparo en el próximo repaso</small></li>`),
+    ...hechas.map((x) => `<li class="hecha">${escapar(x.texto)}<small>Hecha${x.respuesta ? `: ${escapar(x.respuesta)}` : ''}</small></li>`)].join('');
+}
+
+$('#idea-form').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  ev.stopPropagation();
+  if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); setTimeout(() => { location.href = '/entrar.html'; }, 900); return; }
+  const t = ev.target.querySelector('textarea');
+  const texto = t.value.trim();
+  if (!texto) return;
+  const b = ev.target.querySelector('button');
+  b.disabled = true;
+  try {
+    const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accion: 'idea', nota: texto }) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
+    FLUJO.ideas = j.ideas;
+    t.value = ''; t.style.height = '';
+    pintarIdeasPedidas();
+    aviso('Apuntada. La preparo en el próximo «repaso redes».');
+  } catch (e) { aviso(e.message, true); }
+  b.disabled = false;
+});
+
+document.addEventListener('submit', async (ev) => {
+  const f = ev.target.closest('.sugerir-form[data-clave]');
+  if (!f) return;
+  ev.preventDefault();
+  if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); setTimeout(() => { location.href = '/entrar.html'; }, 900); return; }
+  const t = f.querySelector('textarea');
+  const texto = t.value.trim();
+  if (!texto) return;
+  f.querySelector('button').disabled = true;
+  try {
+    await llamarFlujo(f.dataset.clave, 'sugerir', { nota: texto });
+    aviso('Apuntado. Lo cambio en el próximo «repaso redes».');
+    repintar();
+  } catch (e) { aviso(e.message, true); f.querySelector('button').disabled = false; }
+});
+// El campo crece con lo que se escribe.
+document.addEventListener('input', (ev) => {
+  if (!ev.target.matches('.sugerir textarea')) return;
+  ev.target.style.height = 'auto';
+  ev.target.style.height = ev.target.scrollHeight + 'px';
+});
 
 async function llamarFlujo(clave, accion, extra = {}) {
   const r = await fetch('/api/flujo', {

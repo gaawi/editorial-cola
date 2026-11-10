@@ -63,6 +63,22 @@ cada red (Instagram con «link in bio», Facebook con el enlace, etc.) sin
 cambiarle el sentido. `ig`/`fb` solo aparecen si editó lo ya preparado, y
 entonces van tal cual. También `cuando`, `fotos`, `fondo`.
 
+## Sugerencias
+
+`posts[clave].sugerencias` son cambios que él escribe en el campo «Sugerir un
+cambio…» de cada post. En cada repaso, aplicar todas las pendientes (en la
+ficha de adar, en lo preparado o en `edicion`, donde toque) y marcarlas
+`"hecha": true` con una `"respuesta"` corta de qué se ha hecho. Si una pide
+algo que no se puede, `hecha: true` y la respuesta dice por qué. No cambian
+la fase.
+
+## Ideas que pide él
+
+`flujo.json → ideas` son ideas que escribe en «Sugerir una idea nueva…». En
+cada repaso, convertir cada pendiente en una ficha de verdad (con foto,
+`pie`, `date` y `porque`), y marcarla `"hecha": true` con una `"respuesta"`
+que diga el título de la ficha nueva. Queda como idea normal: él la aprueba.
+
 ## Preparar un post aprobado
 
 1. Fecha y hora: `edicion.cuando` si la hay (hora de Nueva York); si no, la

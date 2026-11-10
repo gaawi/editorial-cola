@@ -305,7 +305,7 @@ export function crearMotor(B) {
       const alto = Math.round(W * 0.075);
       const cuerpo = Math.round(alto * 0.42);
       let y = safeTop + Math.round(H * 0.055);
-      for (const peg of post.pegatinas.slice(0, 2)) {
+      for (const peg of post.pegatinas.slice(0, 3)) {
         const texto = String(peg.texto || peg).toUpperCase();
         const senal = peg.senal === true;
         rotulo(ctx, cuerpo, senal ? (B.onAccent || B.ink) : B.ink, Math.round(cuerpo * 0.16));

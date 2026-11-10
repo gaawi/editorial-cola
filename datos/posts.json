@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-10T17:53:50.945Z",
+ "generado": "2026-11-10T17:56:39.451Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -3420,7 +3420,18 @@
      "kicker": null,
      "formato": null,
      "publicaEl": "2026-11-17",
-     "pegatinas": null,
+     "pegatinas": [
+      {
+       "texto": "Dec 11 · 7:30 pm"
+      },
+      {
+       "texto": "The DiMenna Center"
+      },
+      {
+       "texto": "Tickets in bio",
+       "senal": true
+      }
+     ],
      "cartel": null,
      "trapecio": null,
      "encuadre": null,
@@ -3678,7 +3689,18 @@
      "kicker": null,
      "formato": null,
      "publicaEl": "2026-11-27",
-     "pegatinas": null,
+     "pegatinas": [
+      {
+       "texto": "Dec 11 · 7:30 pm"
+      },
+      {
+       "texto": "The DiMenna Center"
+      },
+      {
+       "texto": "Tickets in bio",
+       "senal": true
+      }
+     ],
      "cartel": null,
      "trapecio": null,
      "encuadre": null,
@@ -3935,7 +3957,18 @@
      "kicker": null,
      "formato": null,
      "publicaEl": "2026-11-19",
-     "pegatinas": null,
+     "pegatinas": [
+      {
+       "texto": "Dec 11 · 7:30 pm"
+      },
+      {
+       "texto": "The DiMenna Center"
+      },
+      {
+       "texto": "Tickets in bio",
+       "senal": true
+      }
+     ],
      "cartel": null,
      "trapecio": null,
      "encuadre": null,

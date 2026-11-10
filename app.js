@@ -544,6 +544,21 @@ async function pintarInstagram(p) {
   return caja;
 }
 
+/**
+ * La imagen ya hecha para una red, si el post está preparado o en la cola.
+ * Es lo que va a salir, así que manda sobre cualquier otra cosa: antes la
+ * historia y Facebook enseñaban la de Instagram recortada.
+ */
+function imagenHecha(p, red) {
+  const fuentes = [PROGRAMADO.posts || {}, faseDe(p) === 'preparado' ? flujoDe(p).preparado || {} : {}];
+  for (const f of fuentes) {
+    const e = red === 'story' ? f[p.clave + '#historia'] : f[p.clave];
+    const r = e && e.redes.find((x) => x.red === (red === 'story' ? 'ig' : red));
+    if (r && r.imagenes && r.imagenes.length) return r.imagenes[0];
+  }
+  return null;
+}
+
 async function pintarFacebook(p) {
   const caja = document.createElement('div');
   caja.className = 'fb';
@@ -561,8 +576,10 @@ async function pintarFacebook(p) {
       <span>${ICONOS.comentar} Comentar</span>
       <span>${ICONOS.compartir} Compartir</span>
     </div>`;
+  const hechaFb = imagenHecha(p, 'fb');
   caja.insertBefore(
-    p.fotos && p.fotos.length ? fotoSuelta(p.fotos[0], p.fotosEnteras) : await lienzo(p, p.slides[0], 0, 1, 'fb'),
+    hechaFb ? fotoSuelta(hechaFb, true)
+      : p.fotos && p.fotos.length ? fotoSuelta(p.fotos[0], p.fotosEnteras) : await lienzo(p, p.slides[0], 0, 1, 'fb'),
     caja.querySelector('.fb-acciones')
   );
   return caja;
@@ -579,8 +596,10 @@ async function pintarHistoria(p) {
       <small>ahora</small>
     </div>
     <div class="responder"><span>Enviar mensaje</span>${ICONOS.corazon}${ICONOS.enviar}</div>`;
+  const hechaSt = imagenHecha(p, 'story');
   caja.insertBefore(
-    p.fotos && p.fotos.length ? fotoSuelta(p.fotos[0]) : await lienzo(p, p.slides[0], 0, 1, 'story'),
+    hechaSt ? fotoSuelta(hechaSt)
+      : p.fotos && p.fotos.length && !p.fotosEnteras ? fotoSuelta(p.fotos[0]) : await lienzo(p, p.slides[0], 0, 1, 'story'),
     caja.firstElementChild
   );
   return caja;

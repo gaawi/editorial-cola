@@ -54,9 +54,14 @@
      "quien": "gaawi",
      "fecha": "2026-11-10T17:54:40.998Z",
      "nota": "la storie esta descuadrada, no se ve nada todo negro..."
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-10T17:56:42.033077Z"
     }
    ],
-   "fase": "cambios",
+   "fase": "preparado",
    "sugerencias": [
     {
      "texto": "el 2x1 esta activo en evenbrite",
@@ -64,6 +69,13 @@
      "fecha": "2026-11-10T17:35:42.607Z",
      "hecha": true,
      "respuesta": "Confirmado: el texto anuncia el 2x1 tal cual y el titular de la imagen lo dice también."
+    },
+    {
+     "texto": "la storie esta descuadrada, no se ve nada todo negro...",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:56:42.033077Z",
+     "hecha": true,
+     "respuesta": "Hecho: la vista previa enseñaba la imagen de Instagram recortada; ahora enseña la historia de verdad, con titular y pegatinas de fecha, lugar y Tickets in bio."
     }
    ],
    "preparado": {
@@ -104,8 +116,7 @@
       }
      ]
     }
-   },
-   "nota": "la storie esta descuadrada, no se ve nada todo negro..."
+   }
   },
   "en/feverdream": {
    "historial": [
@@ -233,7 +244,8 @@
      "texto": "la storie no funciona hay que poner algun overlay",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:53:03.062Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Hecho: la historia va con la partitura en blanco y negro, el titular en un panel ámbar y pegatinas de fecha, lugar y Tickets in bio."
     }
    ]
   },
@@ -254,9 +266,14 @@
      "quien": "gaawi",
      "fecha": "2026-11-10T17:54:10.494Z",
      "nota": "falta los textos overlay para las stories.. y"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-10T17:56:42.033077Z"
     }
    ],
-   "fase": "cambios",
+   "fase": "preparado",
    "preparado": {
     "en/winterlight-ravel": {
      "tipo": "post",
@@ -298,7 +315,15 @@
      ]
     }
    },
-   "nota": "falta los textos overlay para las stories.. y"
+   "sugerencias": [
+    {
+     "texto": "falta los textos overlay para las stories.. y",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:56:42.033077Z",
+     "hecha": true,
+     "respuesta": "Hecho: la vista previa enseñaba la imagen de Instagram recortada; ahora enseña la historia de verdad, con titular y pegatinas de fecha, lugar y Tickets in bio."
+    }
+   ]
   },
   "en/winterlight-caplan": {
    "historial": [
@@ -313,7 +338,8 @@
      "texto": "te mandare una entrevista completa mas adelante",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:49:55.863Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Apuntado: cuando me mandes la entrevista, la uso para este post."
     }
    ]
   }

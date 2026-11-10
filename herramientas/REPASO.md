@@ -46,6 +46,10 @@ lo que hay entre medias.
 - No repetir la misma imagen en posts seguidos (el cartel de Winterlight ya
   salió el 9 de noviembre).
 - Cada idea lleva `porque`.
+- Las historias no tienen texto: siempre con `pegatinas` (hasta 3), por
+  ejemplo fecha y hora, lugar y «Tickets in bio» en ámbar (`senal: true`).
+  Si el fondo es claro (una partitura, papel), `estilos: { story: 'duo' }`.
+- Revisar las imágenes de las tres redes, no solo la de Instagram.
 
 ## Fases (flujo.json → posts[clave].fase)
 

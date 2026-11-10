@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-10T17:56:39.451Z",
+ "generado": "2026-11-10T17:57:11.637Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -5362,7 +5362,9 @@
      "tipo": null,
      "concierto": null,
      "estilo": "limpia",
-     "estilos": null,
+     "estilos": {
+      "story": "cinta"
+     },
      "cifra": null,
      "tabla": null,
      "falta": null,
@@ -5392,7 +5394,18 @@
      "kicker": null,
      "formato": null,
      "publicaEl": "2026-11-12",
-     "pegatinas": null,
+     "pegatinas": [
+      {
+       "texto": "Currents · Oct 30"
+      },
+      {
+       "texto": "Photos by Tao Ho"
+      },
+      {
+       "texto": "All 95 photos: link in bio",
+       "senal": true
+      }
+     ],
      "cartel": null,
      "trapecio": null,
      "encuadre": null,

@@ -358,12 +358,15 @@
     {
      "red": "ig",
      "cuando": "2026-11-10T18:10:00-05:00",
-     "estado": "en cola",
+     "estado": "publicado",
      "via": "meta",
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-early-bird-st-1.jpg"
-     ]
+     ],
+     "url": "https://www.instagram.com/stories/creartboxnyc/4027665452544837177",
+     "id": "18342397312287027",
+     "publicadoEl": "2026-11-10T23:59:27.847Z"
     }
    ]
   },

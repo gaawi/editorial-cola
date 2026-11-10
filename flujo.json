@@ -59,6 +59,11 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-10T17:56:42.033077Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T20:14:28.345Z"
     }
    ],
    "fase": "preparado",
@@ -76,6 +81,12 @@
      "fecha": "2026-11-10T17:56:42.033077Z",
      "hecha": true,
      "respuesta": "Hecho: la vista previa enseñaba la imagen de Instagram recortada; ahora enseña la historia de verdad, con titular y pegatinas de fecha, lugar y Tickets in bio."
+    },
+    {
+     "texto": "Hay que ajustar el punto central de la imagen en la historia",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T20:14:28.345Z",
+     "hecha": false
     }
    ],
    "preparado": {

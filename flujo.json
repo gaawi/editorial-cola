@@ -126,6 +126,23 @@
      "hecha": false
     }
    ]
+  },
+  "en/open-call-one-month": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:38:04.402Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "usa otra foto de fondo",
+     "quien": "gaawi",
+     "fecha": "2026-11-10T17:38:04.402Z",
+     "hecha": false
+    }
+   ]
   }
  }
 }

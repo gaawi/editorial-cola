@@ -568,5 +568,13 @@
     }
    ]
   }
- }
+ },
+ "ideas": [
+  {
+   "texto": "Hay que hacer el post para decir que los early bird terminan mañana!",
+   "quien": "gaawi",
+   "fecha": "2026-11-10T20:15:30.100Z",
+   "hecha": false
+  }
+ ]
 }

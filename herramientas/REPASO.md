@@ -68,7 +68,10 @@ lo que hay entre medias.
 de idea solo edita `texto` (uno solo, la idea): al preparar, adaptarlo tú a
 cada red (Instagram con «link in bio», Facebook con el enlace, etc.) sin
 cambiarle el sentido. `ig`/`fb` solo aparecen si editó lo ya preparado, y
-entonces van tal cual. También `cuando`, `fotos`, `fondo`.
+entonces van tal cual. También `cuando`, `fotos`, `fondo`, `encuadre` ({x, y, zoom}, de 0 a 1:
+qué parte de la foto se ve; en el motor es `encuadre` de la ficha) y
+`recorte` para las fotos tal cual: `entera` (con su proporción, entre 4:5 y
+1,91:1) o `cortar` (recortar a 4:5 con ese encuadre y subir el recorte).
 
 ## Sugerencias
 

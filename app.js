@@ -446,9 +446,10 @@ async function lienzo(post, slide, idx, total, fmt) {
  * quieren diseño: las cinco de Kuopio son las de la web y lo que cuentan lo
  * cuentan ellas. Se recorta a 4:5 con CSS, que es lo que hace Instagram.
  */
-function fotoSuelta(url, entera = false) {
+function fotoSuelta(url, entera = false, enc = null) {
   const img = new Image();
   img.className = 'foto-suelta';
+  if (enc && !entera) img.style.objectPosition = `${(enc.x ?? 0.5) * 100}% ${(enc.y ?? 0.5) * 100}%`;
   // Entera: el carrusel toma la proporción de la primera, como Instagram.
   if (entera) {
     img.classList.add('entera');
@@ -516,7 +517,7 @@ async function pintarInstagram(p) {
   const tira = caja.querySelector('.tira');
   for (let i = 0; i < slides.length; i++) {
     tira.appendChild(piezas.fotos
-      ? fotoSuelta(piezas.fotos[i], p.fotosEnteras)
+      ? fotoSuelta(piezas.fotos[i], p.fotosEnteras, p.encuadre)
       : await lienzo(p, slides[i], i, slides.length, 'ig'));
   }
 
@@ -794,9 +795,9 @@ function preparadoDe(p) {
 function aplicarEdiciones() {
   for (const m of Object.values(DATOS.marcas || {})) {
     for (const p of m.posts || []) {
-      if (!p._orig) p._orig = { ig: p.pies.ig.texto, fb: p.pies.fb.texto, image: p.image, fotos: p.fotos, fotosEnteras: p.fotosEnteras };
+      if (!p._orig) p._orig = { ig: p.pies.ig.texto, fb: p.pies.fb.texto, image: p.image, fotos: p.fotos, fotosEnteras: p.fotosEnteras, encuadre: p.encuadre };
       const o = p._orig;
-      p.pies.ig.texto = o.ig; p.pies.fb.texto = o.fb; p.image = o.image; p.fotos = o.fotos; p.fotosEnteras = o.fotosEnteras;
+      p.pies.ig.texto = o.ig; p.pies.fb.texto = o.fb; p.image = o.image; p.fotos = o.fotos; p.fotosEnteras = o.fotosEnteras; p.encuadre = o.encuadre;
       const f = FLUJO.posts[p.clave];
       if (!f) continue;
       const ed = f.edicion || {};
@@ -806,7 +807,8 @@ function aplicarEdiciones() {
       if (ed.ig != null) p.pies.ig.texto = ed.ig;
       if (ed.fb != null) p.pies.fb.texto = ed.fb;
       if (ed.fondo) p.image = ed.fondo;
-      if (ed.fotos && ed.fotos.length) { p.fotos = ed.fotos; p.fotosEnteras = true; }
+      if (ed.fotos && ed.fotos.length) { p.fotos = ed.fotos; p.fotosEnteras = ed.recorte !== 'cortar'; }
+      if (ed.encuadre) p.encuadre = ed.encuadre;
       const prep = f.fase === 'preparado' && preparadoDe(p);
       if (prep) {
         for (const r of prep.redes) if (r.texto != null) p.pies[r.red].texto = r.texto;
@@ -1035,7 +1037,55 @@ function pintarFotosEditor() {
     ? fotosEditor.map((u, i) => `<span class="ed-foto"><img src="${u}" alt=""><button type="button" data-quitar="${i}" aria-label="Quitar">×</button></span>`).join('')
     : '<small>Sin fotos subidas: se usa la de la ficha.</small>';
   $('#ed-modo').hidden = !fotosEditor.length;
+  pintarEncuadre();
 }
+
+// ── El encuadre: qué parte de la foto se ve ───────────────────────────
+// Se arrastra la foto dentro de un marco 4:5, como en Instagram. «x» e «y»
+// van de 0 a 1 (el motor los usa igual); «zoom» solo en el fondo del diseño.
+let encuadre = { x: 0.5, y: 0.5, zoom: 1 };
+
+function pintarEncuadre() {
+  const modo = document.querySelector('#ed-modo input:checked').value;
+  const recorte = document.querySelector('#ed-recorte input:checked').value;
+  $('#ed-recorte').hidden = !fotosEditor.length || modo !== 'fotos';
+  const ve = fotosEditor.length && (modo === 'fondo' || recorte === 'cortar');
+  $('#ed-encuadre').hidden = !ve;
+  $('#ed-zoom-campo').hidden = modo !== 'fondo';
+  if (!ve) return;
+  const img = $('#ed-marco-img');
+  if (img.getAttribute('src') !== fotosEditor[0]) img.src = fotosEditor[0];
+  const z = modo === 'fondo' ? encuadre.zoom : 1;
+  img.style.objectPosition = `${encuadre.x * 100}% ${encuadre.y * 100}%`;
+  img.style.transformOrigin = `${encuadre.x * 100}% ${encuadre.y * 100}%`;
+  img.style.transform = `scale(${z})`;
+  $('#ed-zoom').value = encuadre.zoom;
+}
+
+document.querySelectorAll('#ed-modo input, #ed-recorte input').forEach((i) => i.addEventListener('change', pintarEncuadre));
+$('#ed-zoom').addEventListener('input', (e) => { encuadre.zoom = Number(e.target.value); pintarEncuadre(); });
+$('#ed-centrar').addEventListener('click', () => { encuadre = { x: 0.5, y: 0.5, zoom: 1 }; pintarEncuadre(); });
+(() => {
+  const marco = $('#ed-marco');
+  let ini = null;
+  const lim = (v) => Math.min(1, Math.max(0, v));
+  marco.addEventListener('pointerdown', (e) => {
+    ini = { px: e.clientX, py: e.clientY, x: encuadre.x, y: encuadre.y };
+    marco.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  marco.addEventListener('pointermove', (e) => {
+    if (!ini) return;
+    const r = marco.getBoundingClientRect();
+    // Arrastrar a la derecha enseña lo que hay a la izquierda, como con el dedo.
+    encuadre.x = lim(ini.x - (e.clientX - ini.px) / r.width);
+    encuadre.y = lim(ini.y - (e.clientY - ini.py) / r.height);
+    pintarEncuadre();
+  });
+  const fin = () => { ini = null; };
+  marco.addEventListener('pointerup', fin);
+  marco.addEventListener('pointercancel', fin);
+})();
 
 function abrirEditor(p, modo) {
   editando = { p, modo };
@@ -1066,6 +1116,8 @@ function abrirEditor(p, modo) {
   $('#ed-cuando').value = cuando;
   fotosEditor = ed.fotos && ed.fotos.length ? [...ed.fotos] : ed.fondo ? [ed.fondo] : [];
   document.querySelector(`#ed-modo input[value="${ed.fotos && ed.fotos.length ? 'fotos' : 'fondo'}"]`).checked = true;
+  document.querySelector(`#ed-recorte input[value="${ed.recorte === 'cortar' ? 'cortar' : 'entera'}"]`).checked = true;
+  encuadre = { x: 0.5, y: 0.5, zoom: 1, ...(ed.encuadre || {}) };
   pintarFotosEditor();
   $('#editor').hidden = false;
   (notaSolo ? $('#ed-nota') : $('#ed-ig')).focus({ preventScroll: true });
@@ -1164,6 +1216,13 @@ $('#editor-form').addEventListener('submit', async (e) => {
         ? (modoFoto === 'fotos' ? [fotosEditor, null] : [[], fotosEditor[0]])
         : [[], null];
       if (JSON.stringify(ahora) !== antes) { edicion.fotos = ahora[0]; edicion.fondo = ahora[1]; }
+      if (fotosEditor.length) {
+        const recorte = modoFoto === 'fotos' ? document.querySelector('#ed-recorte input:checked').value : null;
+        if (recorte !== (ed.recorte || null)) edicion.recorte = recorte;
+        const enc = { x: +encuadre.x.toFixed(3), y: +encuadre.y.toFixed(3), zoom: modoFoto === 'fondo' ? +encuadre.zoom.toFixed(2) : 1 };
+        const neutro = enc.x === 0.5 && enc.y === 0.5 && enc.zoom === 1;
+        if (JSON.stringify(neutro ? null : enc) !== JSON.stringify(ed.encuadre || null)) edicion.encuadre = neutro ? null : enc;
+      }
       await llamarFlujo(p.clave, 'editar', { edicion });
       aviso(DICHO.editar);
     }

@@ -139,6 +139,18 @@
           <label><input type="radio" name="modo" value="fondo" checked> De fondo del diseño</label>
           <label><input type="radio" name="modo" value="fotos"> Tal cual, sin diseño</label>
         </div>
+        <div class="ed-modo" id="ed-recorte">
+          <label><input type="radio" name="recorte" value="entera" checked> Mantener proporción</label>
+          <label><input type="radio" name="recorte" value="cortar"> Recortar a 4:5</label>
+        </div>
+        <div class="ed-encuadre" id="ed-encuadre">
+          <div class="ed-marco" id="ed-marco"><img id="ed-marco-img" alt="" draggable="false"></div>
+          <div class="ed-encuadre-mandos">
+            <small>Arrastra la foto para elegir qué parte se ve.</small>
+            <label class="ed-zoom" id="ed-zoom-campo">Acercar <input type="range" id="ed-zoom" min="1" max="2.5" step="0.05" value="1"></label>
+            <button type="button" class="btn btn-no" id="ed-centrar">Centrar</button>
+          </div>
+        </div>
       </div>
     </div>
     <label class="campo" id="editor-nota-campo" hidden>Qué hay que cambiar<textarea id="ed-nota" rows="4"></textarea></label>

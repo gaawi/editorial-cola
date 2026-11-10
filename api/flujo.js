@@ -37,6 +37,12 @@ function limpiaEdicion(e = {}) {
   if (Array.isArray(e.fotos)) out.fotos = e.fotos.filter(raw).slice(0, 10);
   if (e.fondo === null || raw(e.fondo)) out.fondo = e.fondo;
   if (typeof e.historia === 'boolean') out.historia = e.historia;
+  if (e.recorte === 'cortar' || e.recorte === 'entera' || e.recorte === null) out.recorte = e.recorte;
+  if (e.encuadre === null) out.encuadre = null;
+  else if (e.encuadre && typeof e.encuadre === 'object') {
+    const n = (v, a, b, d) => (Number.isFinite(+v) ? Math.min(b, Math.max(a, +v)) : d);
+    out.encuadre = { x: n(e.encuadre.x, 0, 1, 0.5), y: n(e.encuadre.y, 0, 1, 0.5), zoom: n(e.encuadre.zoom, 1, 3, 1) };
+  }
   return out;
 }
 
@@ -128,7 +134,7 @@ export default async function handler(req, res) {
         // Si ya estaba preparado: el texto y la hora se cambian ahí mismo;
         // una foto nueva obliga a volver a montarlo, y vuelve a «aprobado».
         if (g.fase === 'preparado' && g.preparado) {
-          if (ed.fotos || 'fondo' in ed) { g.fase = 'aprobado'; delete g.preparado; }
+          if (ed.fotos || 'fondo' in ed || 'encuadre' in ed || 'recorte' in ed) { g.fase = 'aprobado'; delete g.preparado; }
           else {
             for (const e of Object.values(g.preparado)) for (const r of e.redes) {
               if (e.tipo !== 'historia' && ed[r.red] !== undefined) r.texto = ed[r.red];

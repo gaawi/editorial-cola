@@ -232,6 +232,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:57:49.950Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-10T17:58:39.770562Z"
     }
    ],
    "sugerencias": [
@@ -247,7 +252,43 @@
     "fotos": [],
     "fondo": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/subidas/20261110T175638-ed77c5.jpg"
    },
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/open-call-one-month": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-15T12:00:00-05:00",
+       "texto": "One month left to apply to our open call for composers.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nDeadline: December 15, 2026.\nTwo works, any instrumentation, any career stage.\n\nGuidelines and application at the link in bio.\n\n#CreArtBox #OpenCall #NewMusic #Composers",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-one-month-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-11-15T12:02:00-05:00",
+       "texto": "One month left to apply to our open call for composers.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nDeadline: December 15, 2026.\nTwo works, any instrumentation, any career stage.\n\nhttps://creartbox.nyc/opportunities.html\n\n#CreArtBox #OpenCall #NewMusic #Composers",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-one-month-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "en/open-call-one-month#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-15T12:10:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-one-month-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/winterlight-petroushka": {
    "historial": [

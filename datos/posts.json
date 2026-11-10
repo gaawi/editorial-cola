@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-10T17:57:11.637Z",
+ "generado": "2026-11-10T17:58:27.327Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -3354,7 +3354,18 @@
      "kicker": null,
      "formato": null,
      "publicaEl": "2026-11-15",
-     "pegatinas": null,
+     "pegatinas": [
+      {
+       "texto": "Deadline · Dec 15"
+      },
+      {
+       "texto": "CA1 & CA2 / 2026"
+      },
+      {
+       "texto": "Apply: link in bio",
+       "senal": true
+      }
+     ],
      "cartel": null,
      "trapecio": null,
      "encuadre": null,
@@ -3364,7 +3375,7 @@
      "kind": "social",
      "title": "Open Call: one month left",
      "excerpt": "Open Call: one month left",
-     "image": "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0465.jpg",
+     "image": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/subidas/20261110T175638-ed77c5.jpg",
      "url": "https://creartbox.nyc/opportunities.html",
      "date": "2026-11-15",
      "tags": [

@@ -559,3 +559,7 @@ button { background: none; border: none; cursor: pointer; }
   .visor-pie { display: flex; justify-content: center; }
   .visor-pie > * { width: 480px; }
 }
+
+/* Fotos enteras: la proporción de la primera, sin recorte */
+.ig-carrete .foto-suelta.entera { aspect-ratio: var(--prop, 3 / 2); object-fit: contain; }
+.fb .foto-suelta.entera { aspect-ratio: auto; }

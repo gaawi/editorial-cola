@@ -380,9 +380,19 @@ async function lienzo(post, slide, idx, total, fmt) {
  * quieren diseño: las cinco de Kuopio son las de la web y lo que cuentan lo
  * cuentan ellas. Se recorta a 4:5 con CSS, que es lo que hace Instagram.
  */
-function fotoSuelta(url) {
+function fotoSuelta(url, entera = false) {
   const img = new Image();
   img.className = 'foto-suelta';
+  // Entera: el carrusel toma la proporción de la primera, como Instagram.
+  if (entera) {
+    img.classList.add('entera');
+    img.addEventListener('load', () => {
+      const carrete = img.closest('.ig-carrete');
+      if (carrete && !carrete.style.getPropertyValue('--prop')) {
+        carrete.style.setProperty('--prop', `${img.naturalWidth} / ${img.naturalHeight}`);
+      }
+    }, { once: true });
+  }
   img.loading = 'lazy';
   img.src = url;
   img.alt = '';
@@ -419,7 +429,7 @@ async function pintarInstagram(p) {
   const tira = caja.querySelector('.tira');
   for (let i = 0; i < slides.length; i++) {
     tira.appendChild(piezas.fotos
-      ? fotoSuelta(piezas.fotos[i])
+      ? fotoSuelta(piezas.fotos[i], p.fotosEnteras)
       : await lienzo(p, slides[i], i, slides.length, 'ig'));
   }
 
@@ -465,7 +475,7 @@ async function pintarFacebook(p) {
       <span>${ICONOS.compartir} Compartir</span>
     </div>`;
   caja.insertBefore(
-    p.fotos && p.fotos.length ? fotoSuelta(p.fotos[0]) : await lienzo(p, p.slides[0], 0, 1, 'fb'),
+    p.fotos && p.fotos.length ? fotoSuelta(p.fotos[0], p.fotosEnteras) : await lienzo(p, p.slides[0], 0, 1, 'fb'),
     caja.querySelector('.fb-acciones')
   );
   return caja;

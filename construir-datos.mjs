@@ -206,6 +206,8 @@ for (const nombre of marcas) {
         // Las fotos que se publican tal cual, sin pasar por el motor. Cuando
         // una ficha las trae, el carrusel son ellas y no hay nada dibujado.
         fotos: (p.fotos || []).map(urlImagen),
+        // Enteras: con su proporción, sin el recorte a 4:5.
+        fotosEnteras: !!p.fotosEnteras,
         // El antetítulo del panel ámbar: «Did you know?» y poco más.
         kicker: p.kicker || null,
         // «historia»: va a historias y no al muro. Por defecto, a los dos.

@@ -509,6 +509,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:49:55.863Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:27:45.766Z"
     }
    ],
    "sugerencias": [
@@ -518,6 +523,12 @@
      "fecha": "2026-11-10T17:49:55.863Z",
      "hecha": true,
      "respuesta": "Apuntado: cuando me mandes la entrevista, la uso para este post."
+    },
+    {
+     "texto": "Hay alguna foto menos corporativa de este compositor?",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:27:45.766Z",
+     "hecha": false
     }
    ]
   },

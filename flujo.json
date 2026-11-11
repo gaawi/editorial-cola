@@ -136,9 +136,22 @@
      "accion": "luego",
      "quien": "gaawi",
      "fecha": "2026-11-10T17:33:12.741Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:26:20.995Z"
     }
    ],
-   "fase": "luego"
+   "fase": "luego",
+   "sugerencias": [
+    {
+     "texto": "Esta foto no es para esto",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:26:20.995Z",
+     "hecha": false
+    }
+   ]
   },
   "en/currents-thanks": {
    "historial": [

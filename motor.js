@@ -302,7 +302,11 @@ export function crearMotor(B) {
     // Las pegatinas van encima de todo y solo en historias. En el muro no
     // pintan nada: una pegatina es de las que duran un día.
     function pegatinas() {
-      if (fmt !== 'story' || !post.pegatinas || !post.pegatinas.length) return;
+      // En el muro solo si la ficha lo pide (`pegatinasMuro`): hay posts que
+      // quieren el titular y los datos pegados a la foto, como la historia.
+      // Solo en la portada; en Facebook nunca, que es apaisado y no cabe.
+      const enMuro = post.pegatinasMuro && fmt === 'ig' && idx === 0;
+      if ((fmt !== 'story' && !enMuro) || !post.pegatinas || !post.pegatinas.length) return;
       const alto = Math.round(W * 0.075);
       const cuerpo = Math.round(alto * 0.42);
       let y = safeTop + Math.round(H * 0.055);

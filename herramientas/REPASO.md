@@ -50,6 +50,9 @@ lo que hay entre medias.
   ejemplo fecha y hora, lugar y «Tickets in bio» en ámbar (`senal: true`).
   Si el fondo es claro (una partitura, papel), `estilos: { story: 'duo' }`.
 - Revisar las imágenes de las tres redes, no solo la de Instagram.
+- Le gusta que el título y los datos formen parte de la imagen, como en las
+  historias: en posts de venta o de convocatoria, `pegatinasMuro: true` pone
+  las pegatinas también en la portada del post.
 - Historia hecha con un cartel que ya trae texto: meterlo en la zona segura
   (unos 250 px libres arriba y 360 abajo en 1080×1920), que Instagram pone
   ahí la cuenta y «Enviar mensaje» y se montan.

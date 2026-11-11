@@ -212,6 +212,7 @@ for (const nombre of marcas) {
         fotosEnteras: !!p.fotosEnteras,
         // Por qué este post y ese día, en una o dos frases.
         porque: p.porque || null,
+        pegatinasMuro: !!p.pegatinasMuro,
         colaboradores: p.colaboradores || null,
         // El antetítulo del panel ámbar: «Did you know?» y poco más.
         kicker: p.kicker || null,

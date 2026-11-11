@@ -33,9 +33,9 @@ const TOPE_SLIDES = Number(process.env.TOPE_SLIDES || 3);
  * mira es el que menos se puede desperdiciar. Lo que queda es la portada y
  * lo que de verdad se cuenta.
  */
-function recortar(slides) {
+function recortar(slides, tope = TOPE_SLIDES) {
   const sinPrensa = slides.filter((s) => s.type !== 'cta');
-  return sinPrensa.slice(0, TOPE_SLIDES);
+  return sinPrensa.slice(0, tope);
 }
 
 /**
@@ -241,7 +241,8 @@ for (const nombre of marcas) {
         url: p.url,
         date: p.date,
         tags: p.tags,
-        slides: recortar(p.slides),
+        // `diapositivas` en la ficha sube o baja el tope para ese post.
+        slides: recortar(p.slides, p.diapositivas || TOPE_SLIDES),
         // El pie de cada red, ya compuesto, con lo que se ve antes del «más».
         pies: {
           ig: { texto: pie(p, brand, 'ig'), asomo: asomo(pie(p, brand, 'ig'), 'ig'), limite: REDES.ig.limite },

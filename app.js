@@ -152,10 +152,10 @@ function pintarLista() {
   $('#vacio').hidden = posts.length > 0;
   $('#idea-nueva').hidden = filtro === 'archivo';
   pintarIdeasPedidas();
-  const { historias, posts: muro } = reparte(posts);
-  $('#historias').hidden = !historias.length;
-  pintarHistorias(historias);
-  for (const p of muro) cont.appendChild(tarjeta(p));
+  // En Ideas no hay fila de circulitos: todo va al muro, también lo que es
+  // solo una historia, que lleva su sello y se ve en 9:16. Se decide igual.
+  $('#historias').hidden = true;
+  for (const p of posts) cont.appendChild(tarjeta(p));
   observarLienzos();
 }
 
@@ -244,10 +244,11 @@ function tarjeta(p, opciones = {}) {
   const pub = yaPublicado(p);
 
   const art = document.createElement('article');
-  art.className = 'tarjeta';
+  art.className = 'tarjeta' + (p.formato === 'historia' ? ' solo-historia' : '');
   art.dataset.clave = p.clave;
   art.innerHTML = `
     <div class="cabecera-ficha">
+      ${p.formato === 'historia' ? '<span class="sello solo-hist">Solo historia</span>' : ''}
       ${c ? `<span class="cuando-ficha">${escapar(c.nombre)}</span>` : ''}
       ${cuandoTexto(p) && grupoDe(p) === 'idea'
         ? `<span class="cuando-ficha tenue">${cuandoTexto(p)}</span>` : ''}
@@ -287,7 +288,7 @@ function observarLienzos() {
       const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === clave);
       const hueco = en.target.querySelector('.hueco-ig');
       try {
-        hueco.replaceChildren(await pintarInstagram(p));
+        hueco.replaceChildren(await (p.formato === 'historia' ? pintarHistoria(p) : pintarInstagram(p)));
       } catch (err) {
         hueco.innerHTML = `<div class="espera-lienzo">No se pudo dibujar</div>`;
       }
@@ -1014,10 +1015,8 @@ function pintarConfirmar() {
   $('#resumen-confirmar').textContent = fichas.length
     ? `${listos === 1 ? '1 listo' : `${listos} listos`} para confirmar${fichas.length - listos ? ` · ${fichas.length - listos === 1 ? '1 aprobado' : `${fichas.length - listos} aprobados`} que estoy preparando` : ''}. Nada sale sin «Confirmar publicación».`
     : 'Nada pendiente. Lo que apruebes en Ideas aparecerá aquí cuando esté preparado.';
-  const { historias, posts: muro } = reparte(fichas);
-  $('#historias-conf').hidden = !historias.length;
-  pintarHistorias(historias, '#historias-conf');
-  for (const p of muro) cont.appendChild(tarjeta(p));
+  $('#historias-conf').hidden = true;
+  for (const p of fichas) cont.appendChild(tarjeta(p));
   observarLienzos();
 }
 

@@ -64,9 +64,14 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T20:14:28.345Z"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:29:07.563Z"
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "sugerencias": [
     {
      "texto": "el 2x1 esta activo en evenbrite",

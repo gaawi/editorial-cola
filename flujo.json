@@ -583,6 +583,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T20:11:07.608Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:26:02.263Z"
     }
    ],
    "sugerencias": [
@@ -592,6 +597,12 @@
      "fecha": "2026-11-10T20:11:07.608Z",
      "hecha": true,
      "respuesta": "Hecho: ahora la foto es la de unas manos al piano en Currents, que no sale en ningún otro post; y la historia lleva pegatinas."
+    },
+    {
+     "texto": "Esto tiene que ser más gráfico más texto varios slides creados…",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:26:02.263Z",
+     "hecha": false
     }
    ]
   },

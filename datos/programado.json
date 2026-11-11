@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-11T21:28:13.285Z",
+ "actualizado": "2026-11-11T21:29:07.563Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -588,6 +588,49 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-thanksgiving-thanks-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-gift": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-27T12:30:00-05:00",
+     "texto": "Looking for a gift for someone who loves music? 🎁\n\nFor Winterlight, tickets are 2 for 1: bring someone with you on December 11, or give them both.\n\nPetroushka, Ravel's Mother Goose and a world premiere, at The DiMenna Center in Midtown, a couple of weeks before Christmas.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #HolidayGift #NYCConcerts",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-gift-ig-1.jpg"
+     ],
+     "colaboradores": [
+      "thedimennacenter"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-27T12:32:00-05:00",
+     "texto": "Looking for a gift for someone who loves music? 🎁\n\nFor Winterlight, tickets are 2 for 1: bring someone with you on December 11, or give them both.\n\nPetroushka, Ravel's Mother Goose and a world premiere, at The DiMenna Center in Midtown, a couple of weeks before Christmas.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #HolidayGift #NYCConcerts",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-gift-fb-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-gift#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-27T12:40:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-gift-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

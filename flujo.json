@@ -661,6 +661,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:23:10.040Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T23:31:58.360Z"
     }
    ],
    "sugerencias": [
@@ -685,7 +690,8 @@
      "hecha": true,
      "respuesta": "Hecho: estilo nuevo «cielo»: la foto entera sin oscurecer a los músicos, «This Friday» grande arriba sobre la pared, y las pegatinas abajo sobre el público."
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "en/open-call-last-week": {
    "historial": [

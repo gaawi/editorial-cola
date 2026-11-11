@@ -708,6 +708,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-11T21:25:33.719Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T23:23:52.610Z"
     }
    ],
    "sugerencias": [
@@ -718,7 +723,8 @@
      "hecha": true,
      "respuesta": "Hecho: retrato de Hannah de su web (Alice and Chris Photography), con el crédito en el texto. No he encontrado fotos de ella en concierto que se puedan usar."
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "en/winterlight-story-tickets": {
    "historial": [

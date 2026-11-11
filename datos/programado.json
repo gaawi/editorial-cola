@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-11",
+ "actualizado": "2026-11-11T21:28:13.285Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -548,6 +548,46 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-ravel-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/thanksgiving-thanks": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-26T12:00:00-05:00",
+     "texto": "Happy Thanksgiving. 🍂\n\nThank you to everyone who came to a concert this year, sent us a score, shared a post, or simply listened. Our 12th season started at Currents in October, and it keeps going because of you.\n\nSee you at Winterlight on December 11.\n\n#CreArtBox #Thanksgiving #ChamberMusic #NYC",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-thanksgiving-thanks-ig-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-26T12:02:00-05:00",
+     "texto": "Happy Thanksgiving. 🍂\n\nThank you to everyone who came to a concert this year, sent us a score, shared a post, or simply listened. Our 12th season started at Currents in October, and it keeps going because of you.\n\nSee you at Winterlight on December 11.\n\nhttps://creartbox.nyc/support.html\n\n#CreArtBox #Thanksgiving #ChamberMusic #NYC",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-thanksgiving-thanks-fb-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/thanksgiving-thanks#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-26T12:10:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-thanksgiving-thanks-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

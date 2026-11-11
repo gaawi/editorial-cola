@@ -48,7 +48,7 @@ export const TAMANOS = {
  *   · Se apaga con tinta, no con alfa. Nada de rgba(papel, 0.6).
  *   · Los títulos van a 0,94 de interlineado. Es su firma tipográfica.
  */
-export const ESTILOS = ['cinta', 'bloque', 'marco', 'limpia', 'cifra', 'cartel', 'duo', 'tabla', 'programa'];
+export const ESTILOS = ['cinta', 'bloque', 'marco', 'limpia', 'cifra', 'cartel', 'duo', 'tabla', 'programa', 'ambar', 'cielo'];
 
 /** El interlineado de los titulares, que el manual fija en 0,94. */
 const PLOMO = 0.94;
@@ -301,7 +301,7 @@ export function crearMotor(B) {
 
     // Las pegatinas van encima de todo y solo en historias. En el muro no
     // pintan nada: una pegatina es de las que duran un día.
-    function pegatinas() {
+    function pegatinas(yInicio) {
       // En el muro solo si la ficha lo pide (`pegatinasMuro`): hay posts que
       // quieren el titular y los datos pegados a la foto, como la historia.
       // Solo en la portada; en Facebook nunca, que es apaisado y no cabe.
@@ -309,20 +309,24 @@ export function crearMotor(B) {
       if ((fmt !== 'story' && !enMuro) || !post.pegatinas || !post.pegatinas.length) return;
       const alto = Math.round(W * 0.075);
       const cuerpo = Math.round(alto * 0.42);
-      let y = safeTop + Math.round(H * 0.055);
+      let y = yInicio ?? safeTop + Math.round(H * 0.055);
+      // Sobre fondo ámbar, la pegatina de señal no se vería: va en negro.
+      const sobreAmbar = estilo === 'ambar';
       for (const peg of post.pegatinas.slice(0, 3)) {
         const texto = String(peg.texto || peg).toUpperCase();
         const senal = peg.senal === true;
-        rotulo(ctx, cuerpo, senal ? (B.onAccent || B.ink) : B.ink, Math.round(cuerpo * 0.16));
+        const fondoPeg = senal ? (sobreAmbar ? B.ink : B.accent) : B.paper;
+        const tintaPeg = senal ? (sobreAmbar ? B.paper : (B.onAccent || B.ink)) : B.ink;
+        rotulo(ctx, cuerpo, tintaPeg, Math.round(cuerpo * 0.16));
         const ancho = Math.round(ctx.measureText(texto).width + alto * 1.1);
         ctx.save();
         // Tres grados: lo justo para que se lea como algo pegado encima y no
         // como parte de la maqueta. Los bordes siguen rectos, que es la casa.
         ctx.translate(pad + ancho / 2, y + alto / 2);
         ctx.rotate((-3 * Math.PI) / 180);
-        ctx.fillStyle = senal ? B.accent : B.paper;
+        ctx.fillStyle = fondoPeg;
         ctx.fillRect(-ancho / 2, -alto / 2, ancho, alto);
-        ctx.fillStyle = senal ? (B.onAccent || B.ink) : B.ink;
+        ctx.fillStyle = tintaPeg;
         ctx.textBaseline = 'middle';
         ctx.fillText(texto, -ancho / 2 + alto * 0.55, 1);
         ctx.textBaseline = 'alphabetic';
@@ -334,6 +338,54 @@ export function crearMotor(B) {
 
     if (slide.type === 'cover') {
       ctx.fillStyle = B.ink; ctx.fillRect(0, 0, W, H);
+
+      // Ámbar: el fondo entero del color de señal, el titular grande en negro
+      // y las pegatinas. Sin foto. Para avisos que tienen que saltar a la vista.
+      if (estilo === 'ambar') {
+        const tinta = B.onAccent || B.ink;
+        ctx.fillStyle = B.accent; ctx.fillRect(0, 0, W, H);
+        const conPeg = (fmt === 'story' || (post.pegatinasMuro && fmt === 'ig')) && post.pegatinas && post.pegatinas.length;
+        const arriba = pad + safeTop;
+        if (!conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(B.stamp, pad, arriba + rotSize); sinEspaciado(ctx); }
+        const techo = conPeg ? safeTop + Math.round(H * 0.055) + Math.round(W * 0.075 * 1.35) * Math.min(3, post.pegatinas.length) + pad * 0.6 : arriba + rotSize * 2.4;
+        const suelo = H - safeBottom - Math.round(pad * 1.4);
+        const af = encajar(ctx, slide.title, W - pad * 2 - safeRight, suelo - techo, TW, DISPLAY, Math.round(W * 0.16), Math.round(W * 0.05), PLOMO);
+        ctx.font = `${TW} ${af.size}px ${DISPLAY}`; ctx.fillStyle = tinta;
+        const ay = suelo - af.lines.length * af.size * PLOMO + af.size * 0.82;
+        ctx.fillRect(pad, ay - af.size * 1.15, Math.round(W * 0.16), Math.max(5, Math.round(W * 0.008)));
+        af.lines.forEach((l, i) => ctx.fillText(l, pad, ay + i * af.size * PLOMO));
+        if (conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(B.stamp, pad, H - safeBottom - Math.round(pad * 0.55)); sinEspaciado(ctx); }
+        pegatinas();
+        return;
+      }
+
+      // Cielo: la foto entera, sin velo sobre lo que importa, y el titular
+      // grande arriba, donde la foto tiene aire (pared, techo). Las pegatinas,
+      // si las hay, debajo del titular.
+      if (estilo === 'cielo') {
+        await foto(ctx, post.image, 0, 0, W, H, FX, FY, ZOOM);
+        const g = ctx.createLinearGradient(0, 0, 0, H * 0.45);
+        g.addColorStop(0, rgba(B.ink, 0.55)); g.addColorStop(1, rgba(B.ink, 0));
+        ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.45);
+        const arriba = pad + safeTop;
+        rotulo(ctx, rotSize, B.overPhotoInk, Math.round(rotSize * 0.16));
+        ctx.fillText(B.stamp, pad, arriba + rotSize);
+        sinEspaciado(ctx);
+        const cf = encajar(ctx, slide.title, W - pad * 2 - safeRight, H * 0.24, TW, DISPLAY, Math.round(W * 0.15), Math.round(W * 0.06), PLOMO);
+        ctx.font = `${TW} ${cf.size}px ${DISPLAY}`; ctx.fillStyle = B.overPhotoInk;
+        const cy = arriba + rotSize * 2.2 + cf.size * 0.86;
+        cf.lines.forEach((l, i) => ctx.fillText(l, pad, cy + i * cf.size * PLOMO));
+        ctx.fillStyle = B.accent;
+        const finTitulo = cy + (cf.lines.length - 1) * cf.size * PLOMO + cf.size * 0.32;
+        ctx.fillRect(pad, finTitulo, Math.round(W * 0.16), Math.max(5, Math.round(W * 0.008)));
+        // Las pegatinas, abajo, sobre el público: arriba tapaban lo que se ve.
+        const nPeg = Math.min(3, (post.pegatinas || []).length);
+        // En la historia el escenario cae más abajo: se apuran hasta encima de
+        // la barra de responder de Instagram (≈10 % de abajo).
+        const baseY = fmt === 'story' ? Math.round(H * 0.885) : H - safeBottom - Math.round(pad * 0.9);
+        pegatinas(baseY - nPeg * Math.round(W * 0.075 * 1.35));
+        return;
+      }
 
       // La foto y nada más.
       if (estilo === 'limpia') {
@@ -826,10 +878,13 @@ export function crearMotor(B) {
     }
 
     // type === 'text'
-    const tBg = estilo === 'bloque' ? B.ink : B.textBg;
-    const tTitulo = estilo === 'bloque' ? B.paper : B.textTitle;
-    const tCuerpo = estilo === 'bloque' ? TINTA_MEDIA : B.textBody;
-    const tPie = estilo === 'bloque' ? TINTA_MUDA : B.textFoot;
+    // `fondoAmbar` en la ficha: las diapositivas de texto en el color de señal,
+    // en negro y con el titular más grande. Más cartel, menos página.
+    const ambar = !!post.fondoAmbar;
+    const tBg = ambar ? B.accent : estilo === 'bloque' ? B.ink : B.textBg;
+    const tTitulo = ambar ? (B.onAccent || B.ink) : estilo === 'bloque' ? B.paper : B.textTitle;
+    const tCuerpo = ambar ? (B.onAccent || B.ink) : estilo === 'bloque' ? TINTA_MEDIA : B.textBody;
+    const tPie = ambar ? (B.onAccent || B.ink) : estilo === 'bloque' ? TINTA_MUDA : B.textFoot;
     ctx.fillStyle = tBg; ctx.fillRect(0, 0, W, H);
     if (estilo === 'marco') {
       const tInset = Math.round(W * 0.05);
@@ -837,13 +892,13 @@ export function crearMotor(B) {
       ctx.lineWidth = Math.max(2, Math.round(W * 0.0035));
       ctx.strokeRect(tInset, tInset + safeTop, W - tInset * 2, H - tInset * 2 - safeTop - safeBottom);
     }
-    const tf = encajar(ctx, slide.title, maxW, areaH * 0.34, TW, DISPLAY, Math.round(W * 0.066), Math.round(W * 0.036));
+    const tf = encajar(ctx, slide.title, maxW, areaH * (ambar ? 0.42 : 0.34), TW, DISPLAY, Math.round(W * (ambar ? 0.12 : 0.066)), Math.round(W * 0.036));
     const tTitleH = tf.lines.length * tf.size * 1.12;
     const bf = encajar(ctx, slide.body, maxW, areaH - tTitleH - ruleH - gapRule - gapBody, '400', UI, Math.round(W * 0.042), Math.round(W * 0.024));
     const tBodyH = bf.lines.length * bf.size * 1.42;
     const tTop = areaTop + Math.max(0, (areaH - (ruleH + gapRule + tTitleH + gapBody + tBodyH)) / 2);
 
-    ctx.fillStyle = B.accent;
+    ctx.fillStyle = ambar ? tTitulo : B.accent;
     ctx.fillRect(pad, tTop, Math.round(W * 0.12), ruleH);
     ctx.font = `${TW} ${tf.size}px ${DISPLAY}`; ctx.fillStyle = tTitulo;
     const ty = tTop + ruleH + gapRule + tf.size * 0.86;

@@ -50,6 +50,11 @@ lo que hay entre medias.
   ejemplo fecha y hora, lugar y «Tickets in bio» en ámbar (`senal: true`).
   Si el fondo es claro (una partitura, papel), `estilos: { story: 'duo' }`.
 - Revisar las imágenes de las tres redes, no solo la de Instagram.
+- Estilos que le gustan: `cielo` (foto entera, titular grande arriba,
+  pegatinas abajo; para fotos con aire arriba), `ambar` (fondo amarillo
+  entero, titular grande, pegatinas; para avisos) y `fondoAmbar: true` en
+  carruseles de texto. Fotos verticales de una persona: en Facebook va la
+  misma imagen de Instagram, que el apaisado corta la cara.
 - Le gusta que el título y los datos formen parte de la imagen, como en las
   historias: en posts de venta o de convocatoria, `pegatinasMuro: true` pone
   las pegatinas también en la portada del post.

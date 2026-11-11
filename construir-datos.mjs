@@ -213,6 +213,7 @@ for (const nombre of marcas) {
         // Por qué este post y ese día, en una o dos frases.
         porque: p.porque || null,
         pegatinasMuro: !!p.pegatinasMuro,
+        fondoAmbar: !!p.fondoAmbar,
         colaboradores: p.colaboradores || null,
         // El antetítulo del panel ámbar: «Did you know?» y poco más.
         kicker: p.kicker || null,

@@ -525,6 +525,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:23:55.393Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-11T23:29:27.911065Z"
     }
    ],
    "sugerencias": [
@@ -543,7 +548,46 @@
      "respuesta": "Hecho: la de su kit de prensa apoyado en un árbol, en el bosque. Mucho menos de despacho."
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/winterlight-caplan": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-24T18:00:00-05:00",
+       "texto": "One of the pieces at Winterlight came to us through our Open Call.\n\nOliver Caplan's Canciones de Monteverde is for flute, violin, viola and cello, about 12 minutes long, and we play it on December 11 at The DiMenna Center.\n\nMonteverde is the cloud forest in Costa Rica, and Caplan's music often starts from the natural world.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #OpenCall #NewMusic",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-caplan-ig-1.jpg"
+       ],
+       "colaboradores": [
+        "thedimennacenter"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-11-24T18:02:00-05:00",
+       "texto": "One of the pieces at Winterlight came to us through our Open Call.\n\nOliver Caplan's Canciones de Monteverde is for flute, violin, viola and cello, about 12 minutes long, and we play it on December 11 at The DiMenna Center.\n\nMonteverde is the cloud forest in Costa Rica, and Caplan's music often starts from the natural world.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #OpenCall #NewMusic",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-caplan-ig-1.jpg"
+       ]
+      }
+     ]
+    },
+    "en/winterlight-caplan#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-24T18:10:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-caplan-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/thanksgiving-thanks": {
    "historial": [
@@ -638,7 +682,8 @@
      "texto": "Más grande this Friday, se oscurece demasiado a los musicos",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:23:10.040Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Hecho: estilo nuevo «cielo»: la foto entera sin oscurecer a los músicos, «This Friday» grande arriba sobre la pared, y las pegatinas abajo sobre el público."
     }
    ]
   },
@@ -679,7 +724,8 @@
      "texto": "Quizá fondo amarillo más etiquetas?",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:23:35.141Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Hecho: las diapositivas de texto van con fondo amarillo y titular grande, y la portada lleva pegatinas (Deadline · Dec 15, CA1 & CA2 / 2026, Apply: link in bio)."
     }
    ]
   },
@@ -719,6 +765,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:23:52.610Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-11T23:29:27.911065Z"
     }
    ],
    "sugerencias": [
@@ -730,7 +781,46 @@
      "respuesta": "Hecho: retrato de Hannah de su web (Alice and Chris Photography), con el crédito en el texto. No he encontrado fotos de ella en concierto que se puedan usar."
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/winterlight-selin": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-01T18:00:00-05:00",
+       "texto": "Winterlight opens with a piece nobody has heard yet.\n\nTectonic Lullaby is Hannah Selin's new work for piano quintet, about ten minutes long, and December 11 at The DiMenna Center will be its first performance.\n\nHannah is a composer, violist and vocalist, and it's not our first premiere together: we gave the first performance of her The Soft Moon at DiMenna in 2024.\n\n📷 Hannah Selin by Alice and Chris Photography\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #HannahSelin #WorldPremiere",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-selin-ig-1.jpg"
+       ],
+       "colaboradores": [
+        "thedimennacenter"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-12-01T18:02:00-05:00",
+       "texto": "Winterlight opens with a piece nobody has heard yet.\n\nTectonic Lullaby is Hannah Selin's new work for piano quintet, about ten minutes long, and December 11 at The DiMenna Center will be its first performance.\n\nHannah is a composer, violist and vocalist, and it's not our first premiere together: we gave the first performance of her The Soft Moon at DiMenna in 2024.\n\n📷 Hannah Selin by Alice and Chris Photography\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #HannahSelin #WorldPremiere",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-selin-ig-1.jpg"
+       ]
+      }
+     ]
+    },
+    "en/winterlight-selin#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-01T18:10:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-selin-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/winterlight-story-tickets": {
    "historial": [
@@ -743,6 +833,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:10:22.401Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-11T23:29:27.911065Z"
     }
    ],
    "sugerencias": [
@@ -754,7 +849,22 @@
      "respuesta": "Hecho: el cartel va dentro de la zona segura de la historia (arriba la cuenta, abajo «Enviar mensaje» ya no lo tapan) y lleva la pegatina «Tickets in bio». La del día 10 lleva «Tomorrow · Tickets in bio»."
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/winterlight-story-tickets": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-21T12:00:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-story-tickets-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/winterlight-lottery": {
    "historial": [
@@ -762,9 +872,56 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:10:32.122Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-11T23:29:27.911065Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/winterlight-lottery": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-13T12:00:00-05:00",
+       "texto": "Our holiday gift to you: ten pairs of tickets to Winterlight, free. 🎁❄️\n\nThis season we want to celebrate with as many of you as possible, so we're giving away twenty seats for December 11 at The DiMenna Center.\n\nTo enter, email info@creartbox.nyc with WINTERLIGHT LOTTERY in the subject line and one sentence on why you'd like to come. That's all. The draw is random.\n\nEntries close at midnight on December 3. The draw is on December 4, and everyone who entered hears back the same day.\n\nBring someone you love, and come celebrate the holidays with Petroushka, Ravel's fairy tales and a world premiere. ✨\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nDetails at the link in bio.\n\n#CreArtBox #Winterlight #HolidayGiveaway #FreeTickets #NYCConcerts",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-ig-1.jpg",
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-ig-2.jpg",
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-ig-3.jpg",
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-ig-4.jpg"
+       ],
+       "colaboradores": [
+        "thedimennacenter"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-11-13T12:02:00-05:00",
+       "texto": "Our holiday gift to you: ten pairs of tickets to Winterlight, free. 🎁❄️\n\nThis season we want to celebrate with as many of you as possible, so we're giving away twenty seats for December 11 at The DiMenna Center.\n\nTo enter, email info@creartbox.nyc with WINTERLIGHT LOTTERY in the subject line and one sentence on why you'd like to come. That's all. The draw is random.\n\nEntries close at midnight on December 3. The draw is on December 4, and everyone who entered hears back the same day.\n\nBring someone you love, and come celebrate the holidays with Petroushka, Ravel's fairy tales and a world premiere. ✨\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://creartbox.nyc/news/winterlight-ticket-lottery.html\n\n#CreArtBox #Winterlight #HolidayGiveaway #FreeTickets #NYCConcerts",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "en/winterlight-lottery#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-13T12:10:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/winterlight-lottery-last-call": {
    "historial": [
@@ -779,7 +936,8 @@
      "texto": "Quizá otra foto para no repetir tanto y más texto en medio como otros post del pasado o un fondo todo amarillo por ejemplo!",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:22:36.401Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Hecho: ahora es todo amarillo, sin foto, con «Last call for our holiday giveaway» grande en medio y las pegatinas del asunto y el email."
     }
    ]
   },
@@ -789,9 +947,29 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:23:17.124Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-11T23:29:27.911065Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/winterlight-story-tomorrow": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-10T18:00:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-story-tomorrow-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   }
  },
  "ideas": [

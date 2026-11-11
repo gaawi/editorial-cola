@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-11T21:36:12.100Z",
+ "generado": "2026-11-11T22:16:44.418Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -3700,6 +3700,173 @@
       "fb": {
        "texto": "Happy Thanksgiving. 🍂\n\nThank you to everyone who came to a concert this year, sent us a score, shared a post, or simply listened. Our 12th season started at Currents in October, and it keeps going because of you.\n\nSee you at Winterlight on December 11.\n\nhttps://creartbox.nyc/support.html\n\n#CreArtBox #Thanksgiving #ChamberMusic #NYC",
        "asomo": "Happy Thanksgiving. 🍂 Thank you to everyone who came to a concert this year, sent us a score, shared a post, or simply listened. Our 12th season started at Currents in October, and it keeps going because of you. See you at Winterlight on December 11. https://creartbox.nyc/support.html #CreArtBox #Thanksgiving #ChamberMusic #NYC",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-10-30",
+      "hasta": "2026-11-13",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "porque": "La web lo anunció el 11 de noviembre: cuanto antes se cuente, más gente entra. Y lleva a la sala a quien nunca ha venido a un concierto nuestro.",
+     "colaboradores": [
+      "thedimennacenter"
+     ],
+     "kicker": null,
+     "formato": null,
+     "publicaEl": "2026-11-13",
+     "pegatinas": [
+      {
+       "texto": "Free tickets"
+      },
+      {
+       "texto": "Closes Dec 3"
+      },
+      {
+       "texto": "How to enter: link in bio",
+       "senal": true
+      }
+     ],
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "en/winterlight-lottery",
+     "lang": "en",
+     "slug": "winterlight-lottery",
+     "kind": "social",
+     "title": "Ten pairs of tickets to Winterlight, free",
+     "excerpt": "Ten pairs of tickets to Winterlight, free",
+     "image": "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0605.jpg",
+     "url": "https://creartbox.nyc/news/winterlight-ticket-lottery.html",
+     "date": "2026-11-13",
+     "tags": [
+      "Winterlight"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Ten pairs of tickets to Winterlight, free",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "How to enter",
+       "body": "Email info@creartbox.nyc with WINTERLIGHT LOTTERY in the subject and one sentence on why you would like to come."
+      },
+      {
+       "type": "text",
+       "title": "No catch",
+       "body": "The draw is random. Your email is only used to tell you the result."
+      },
+      {
+       "type": "text",
+       "title": "December 3",
+       "body": "Entries close at midnight. The draw is on December 4."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Ten pairs of tickets to Winterlight, free. 🎟️\n\nOn December 11 we're giving away twenty seats at The DiMenna Center, by lottery.\n\nTo enter, email info@creartbox.nyc with WINTERLIGHT LOTTERY in the subject line and one sentence on why you'd like to come. That's all. It isn't a competition: the draw is random.\n\nEntries close at midnight on December 3. The draw is on December 4, and everyone who entered hears back the same day.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nDetails at the link in bio.\n\n#CreArtBox #Winterlight #FreeTickets #NYCConcerts",
+       "asomo": "Ten pairs of tickets to Winterlight, free. 🎟️ On December 11 we're giving away twenty seats at The DiMenna Center, by lotter…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Ten pairs of tickets to Winterlight, free. 🎟️\n\nOn December 11 we're giving away twenty seats at The DiMenna Center, by lottery.\n\nTo enter, email info@creartbox.nyc with WINTERLIGHT LOTTERY in the subject line and one sentence on why you'd like to come. That's all. It isn't a competition: the draw is random.\n\nEntries close at midnight on December 3. The draw is on December 4, and everyone who entered hears back the same day.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://creartbox.nyc/news/winterlight-ticket-lottery.html\n\n#CreArtBox #Winterlight #FreeTickets #NYCConcerts",
+       "asomo": "Ten pairs of tickets to Winterlight, free. 🎟️ On December 11 we're giving away twenty seats at The DiMenna Center, by lottery. To enter, email info@creartbox.nyc with WINTERLIGHT LOTTERY in the subject line and one sentence on why you'd like to come. That's all. It isn't a competition: the draw is random. Entries close at midnight on December 3. The draw is on December 4, and everyone who entered hears back the same day. 📅 Friday, December 11 · 7:30 PM 📍 The DiMenna Center…",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-18",
+      "hasta": "2026-12-02",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "porque": "El sorteo cierra el 3 a medianoche: la víspera es el último empujón. Da para una historia, no para un post.",
+     "colaboradores": null,
+     "kicker": null,
+     "formato": "historia",
+     "publicaEl": "2026-12-02",
+     "pegatinas": [
+      {
+       "texto": "Closes tomorrow"
+      },
+      {
+       "texto": "Subject: WINTERLIGHT LOTTERY"
+      },
+      {
+       "texto": "info@creartbox.nyc",
+       "senal": true
+      }
+     ],
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "en/winterlight-lottery-last-call",
+     "lang": "en",
+     "slug": "winterlight-lottery-last-call",
+     "kind": "social",
+     "title": "Last call: free tickets to Winterlight",
+     "excerpt": "Last call: free tickets to Winterlight",
+     "image": "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0605.jpg",
+     "url": "https://creartbox.nyc/news/winterlight-ticket-lottery.html",
+     "date": "2026-12-02",
+     "tags": [
+      "Winterlight"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Last call: free tickets to Winterlight",
+       "body": ""
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Last call: free tickets to Winterlight.",
+       "asomo": "Last call: free tickets to Winterlight.",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Last call: free tickets to Winterlight.\n\nhttps://creartbox.nyc/news/winterlight-ticket-lottery.html",
+       "asomo": "Last call: free tickets to Winterlight. https://creartbox.nyc/news/winterlight-ticket-lottery.html",
        "limite": 63206
       }
      },

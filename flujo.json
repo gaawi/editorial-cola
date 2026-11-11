@@ -704,6 +704,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-11T21:30:10.556Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T23:10:22.401Z"
     }
    ],
    "sugerencias": [
@@ -714,7 +719,8 @@
      "hecha": true,
      "respuesta": "Hecho: el cartel va dentro de la zona segura de la historia (arriba la cuenta, abajo «Enviar mensaje» ya no lo tapan) y lleva la pegatina «Tickets in bio». La del día 10 lleva «Tomorrow · Tickets in bio»."
     }
-   ]
+   ],
+   "fase": "aprobado"
   }
  },
  "ideas": [

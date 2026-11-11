@@ -46,6 +46,10 @@ lo que hay entre medias.
 - No repetir la misma imagen en posts seguidos (el cartel de Winterlight ya
   salió el 9 de noviembre).
 - Cada idea lleva `porque`.
+- Los conciertos en bibliotecas de Queens (The Queens Musical Passport,
+  The Queens Mother Goose) son de Guillermo y Josefina a título personal:
+  nunca «presentado por CreArtBox». Llevan sus créditos de financiación en
+  el texto, y lo del Passport, el logo de Flushing Town Hall (`logo`).
 - Las historias no tienen texto: siempre con `pegatinas` (hasta 3), por
   ejemplo fecha y hora, lugar y «Tickets in bio» en ámbar (`senal: true`).
   Si el fondo es claro (una partitura, papel), `estilos: { story: 'duo' }`.

@@ -214,6 +214,7 @@ for (const nombre of marcas) {
         porque: p.porque || null,
         pegatinasMuro: !!p.pegatinasMuro,
         fondoAmbar: !!p.fondoAmbar,
+        logo: p.logo || null,
         colaboradores: p.colaboradores || null,
         // El antetítulo del panel ámbar: «Did you know?» y poco más.
         kicker: p.kicker || null,

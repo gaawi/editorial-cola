@@ -301,6 +301,22 @@ export function crearMotor(B) {
 
     // Las pegatinas van encima de todo y solo en historias. En el muro no
     // pintan nada: una pegatina es de las que duran un día.
+    // Logo de quien financia o apoya, cuando la ficha lo pide (`logo`):
+    // { src, diapositivas: [1], historia: true }. Abajo a la derecha, sobre
+    // una placa blanca para que se lea en cualquier fondo.
+    async function logo(enEsta) {
+      const L = post.logo;
+      if (!L || !L.src || !enEsta) return;
+      try {
+        const img = await cargarFoto(L.src);
+        const ancho = Math.round(W * (fmt === 'story' ? 0.20 : 0.16));
+        const alto = Math.round(ancho * img.naturalHeight / img.naturalWidth);
+        const x = W - pad - ancho - (fmt === 'story' ? safeRight * 0 : 0);
+        const y = (fmt === 'story' ? H - safeBottom : H - Math.round(pad * 1.35)) - alto;
+        ctx.drawImage(img, x, y, ancho, alto);
+      } catch { /* sin logo antes que sin imagen */ }
+    }
+
     function pegatinas(yInicio) {
       // En el muro solo si la ficha lo pide (`pegatinasMuro`): hay posts que
       // quieren el titular y los datos pegados a la foto, como la historia.
@@ -348,7 +364,10 @@ export function crearMotor(B) {
         const arriba = pad + safeTop;
         if (!conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(B.stamp, pad, arriba + rotSize); sinEspaciado(ctx); }
         const techo = conPeg ? safeTop + Math.round(H * 0.055) + Math.round(W * 0.075 * 1.35) * Math.min(3, post.pegatinas.length) + pad * 0.6 : arriba + rotSize * 2.4;
-        const suelo = H - safeBottom - Math.round(pad * 1.4);
+        // Si lleva logo, el titular le deja su hueco debajo.
+        const conLogo = post.logo && post.logo.src && (fmt === 'story' ? post.logo.historia : (post.logo.diapositivas || []).includes(idx));
+        const altoLogo = conLogo ? Math.round(W * (fmt === 'story' ? 0.20 : 0.16) * 1.15) + Math.round(pad * 0.5) : 0;
+        const suelo = H - safeBottom - Math.round(pad * 1.4) - altoLogo;
         const af = encajar(ctx, slide.title, W - pad * 2 - safeRight, suelo - techo, TW, DISPLAY, Math.round(W * 0.16), Math.round(W * 0.05), PLOMO);
         ctx.font = `${TW} ${af.size}px ${DISPLAY}`; ctx.fillStyle = tinta;
         const ay = suelo - af.lines.length * af.size * PLOMO + af.size * 0.82;
@@ -356,6 +375,7 @@ export function crearMotor(B) {
         af.lines.forEach((l, i) => ctx.fillText(l, pad, ay + i * af.size * PLOMO));
         if (conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(B.stamp, pad, H - safeBottom - Math.round(pad * 0.55)); sinEspaciado(ctx); }
         pegatinas();
+        await logo(post.logo && (fmt === 'story' ? post.logo.historia : (post.logo.diapositivas || []).includes(idx)));
         return;
       }
 
@@ -913,6 +933,7 @@ export function crearMotor(B) {
     ctx.fillText(B.stamp, W - pad, footY);
     ctx.textAlign = 'left';
     sinEspaciado(ctx);
+    await logo(post.logo && (post.logo.diapositivas || []).includes(idx));
   }
 
   return { dibujar, asegurarFuentes, TAMANOS, ESTILOS };

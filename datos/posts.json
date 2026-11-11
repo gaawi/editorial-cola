@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-11T23:32:26.861Z",
+ "generado": "2026-11-11T23:35:32.156Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -2806,6 +2806,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -2894,6 +2895,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -2978,6 +2980,7 @@
      "porque": "Es el anuncio general de Winterlight: sirve de base para todo lo demás del concierto hasta el 4 de diciembre.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3057,6 +3060,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3136,6 +3140,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3215,6 +3220,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3294,6 +3300,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3373,6 +3380,7 @@
      "porque": "El 15 queda justo un mes para que cierre la Open Call. La cuenta atrás empuja a quien lo iba dejando para más tarde.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3453,6 +3461,7 @@
      "porque": "Petroushka es la pieza que vende el concierto. A tres semanas y media toca contar por qué merece la pena venir.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3530,6 +3539,7 @@
      "porque": "Queda un día de early bird a $19. Que se acabe mañana es la mejor razón para comprar hoy.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3607,6 +3617,7 @@
      "porque": "Junta las dos cosas que estamos promocionando: el concierto y la Open Call. Enseña que de la convocatoria sale música que se toca de verdad.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": "From our open call",
      "formato": null,
@@ -3695,6 +3706,7 @@
      "porque": "El 26 es Acción de Gracias: dar las gracias ese día es natural y no vende nada. Hace de respiro entre posts de venta y prepara el Giving Tuesday del 1 de diciembre.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3769,6 +3781,7 @@
      "porque": "La web lo anunció el 11 de noviembre: cuanto antes se cuente, más gente entra. Y lleva a la sala a quien nunca ha venido a un concierto nuestro.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": [
       "thedimennacenter"
      ],
@@ -3863,6 +3876,7 @@
      "porque": "El sorteo cierra el 3 a medianoche: la víspera es el último empujón. Da para una historia, no para un post.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": "historia",
@@ -3940,6 +3954,12 @@
      "porque": "Dos conciertos de Guillermo y Josefina en bibliotecas de Queens el 19 y el 21. El lunes 16 da tiempo a que la gente lo apunte, y no choca con Petroushka (17) ni con Ravel (19).",
      "pegatinasMuro": true,
      "fondoAmbar": true,
+     "logo": {
+      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logo-flushing-town-hall.png",
+      "diapositivas": [
+       1
+      ]
+     },
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -3952,7 +3972,7 @@
        "texto": "Nov 21 · Flushing"
       },
       {
-       "texto": "With Ravel's Mother Goose",
+       "texto": "Free · for families",
        "senal": true
       }
      ],
@@ -3964,8 +3984,8 @@
      "lang": "en",
      "slug": "queens-library-concerts",
      "kind": "social",
-     "title": "Two concerts at Queens libraries",
-     "excerpt": "Two concerts at Queens libraries",
+     "title": "Two family concerts at Queens libraries",
+     "excerpt": "Two family concerts at Queens libraries",
      "image": null,
      "url": "https://www.queenslibrary.org/",
      "date": "2026-11-16",
@@ -3975,29 +3995,29 @@
      "slides": [
       {
        "type": "cover",
-       "title": "Two concerts at Queens libraries",
+       "title": "Two family concerts at Queens libraries",
        "body": ""
       },
       {
        "type": "text",
-       "title": "Queens Musical Passport",
-       "body": "Thursday, November 19, 6 PM. Hunters Point Library, Long Island City. Guillermo Laporta with the Ivalas Quartet."
+       "title": "The Queens Musical Passport",
+       "body": "Thursday, November 19, 6 to 7 PM. Hunters Point Library. Guillermo Laporta and the Ivalas Quartet, with children conducting guided improvisations."
       },
       {
        "type": "text",
-       "title": "Queens Mother Goose",
-       "body": "Saturday, November 21, 12 PM. Flushing Library. Pianists Josefina Urraca and Yalin Chi."
+       "title": "The Queens Mother Goose",
+       "body": "Saturday, November 21, 12 to 1 PM. Flushing Library. Ravel's Mother Goose reimagined by pianist Josefina Urraca, with Yalin Chi. Ages 2 to 12."
       }
      ],
      "pies": {
       "ig": {
-       "texto": "Two concerts at Queens libraries this month, put together by our directors Guillermo Laporta and Josefina Urraca. 📚🎶\n\nQueens Musical Passport\nThursday, November 19 · 6 PM\nHunters Point Library, 47-40 Center Blvd, Long Island City\nGuillermo Laporta with the Ivalas Quartet\n\nQueens Mother Goose\nSaturday, November 21 · 12 PM\nFlushing Library, 41-17 Main St, Flushing\nPianists Josefina Urraca and Yalin Chi\n\nBoth include Ravel's Mother Goose, and both end with a conversation about music, art and the city we share.\n\n#QueensPublicLibrary #ChamberMusic #Ravel #LongIslandCity #Flushing",
-       "asomo": "Two concerts at Queens libraries this month, put together by our directors Guillermo Laporta and Josefina Urraca. 📚🎶 Queens…",
+       "texto": "Two free concerts for children and families at Queens libraries, by our co-founders Guillermo Laporta and Josefina Urraca. 📚🎶\n\n🎟️ The Queens Musical Passport\nThursday, November 19 · 6–7 PM\nHunters Point Library, 47-40 Center Blvd, Long Island City\nGuillermo Laporta and the Ivalas Quartet play classical repertoire and new pieces inspired by the sounds of the neighborhood, and the children help shape the music by conducting guided improvisations. Families get a passport to stamp and a bilingual English–Spanish activity book.\n\n🎹 The Queens Mother Goose\nSaturday, November 21 · 12–1 PM\nFlushing Library, 41-17 Main St, Flushing\nPianist Josefina Urraca reimagines Ravel's Mother Goose through the eyes of an immigrant mother raising her child in Queens, with bilingual storytelling and projections inspired by everyday family life. With pianist Yalin Chi. For children ages 2–12 and their families.\n\nFree, no registration needed.\n\nThe Queens Musical Passport is made possible with funds from the Statewide Community Regrant program, a program of the New York State Council on the Arts with the support of Governor Kathy Hochul and the New York State Legislature and administered by Flushing Town Hall.\n\nThe Queens Mother Goose is made possible (in part) with public funds from the Queens Arts Fund, a re-grant program supported by the New York City Department of Cultural Affairs in partnership with the City Council and administered by New York Foundation for the Arts.\n\n#QueensPublicLibrary #FamilyConcert #Ravel #LongIslandCity #Flushing",
+       "asomo": "Two free concerts for children and families at Queens libraries, by our co-founders Guillermo Laporta and Josefina Urraca. 📚…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Two concerts at Queens libraries this month, put together by our directors Guillermo Laporta and Josefina Urraca. 📚🎶\n\nQueens Musical Passport\nThursday, November 19 · 6 PM\nHunters Point Library, 47-40 Center Blvd, Long Island City\nGuillermo Laporta with the Ivalas Quartet\n\nQueens Mother Goose\nSaturday, November 21 · 12 PM\nFlushing Library, 41-17 Main St, Flushing\nPianists Josefina Urraca and Yalin Chi\n\nBoth include Ravel's Mother Goose, and both end with a conversation about music, art and the city we share.\n\nhttps://www.queenslibrary.org/\n\n#QueensPublicLibrary #ChamberMusic #Ravel #LongIslandCity #Flushing",
-       "asomo": "Two concerts at Queens libraries this month, put together by our directors Guillermo Laporta and Josefina Urraca. 📚🎶 Queens Musical Passport Thursday, November 19 · 6 PM Hunters Point Library, 47-40 Center Blvd, Long Island City Guillermo Laporta with the Ivalas Quartet Queens Mother Goose Saturday, November 21 · 12 PM Flushing Library, 41-17 Main St, Flushing Pianists Josefina Urraca and Yalin Chi Both include Ravel's Mother Goose, and both end with a conversation about mu…",
+       "texto": "Two free concerts for children and families at Queens libraries, by our co-founders Guillermo Laporta and Josefina Urraca. 📚🎶\n\n🎟️ The Queens Musical Passport\nThursday, November 19 · 6–7 PM\nHunters Point Library, 47-40 Center Blvd, Long Island City\nGuillermo Laporta and the Ivalas Quartet play classical repertoire and new pieces inspired by the sounds of the neighborhood, and the children help shape the music by conducting guided improvisations. Families get a passport to stamp and a bilingual English–Spanish activity book.\n\n🎹 The Queens Mother Goose\nSaturday, November 21 · 12–1 PM\nFlushing Library, 41-17 Main St, Flushing\nPianist Josefina Urraca reimagines Ravel's Mother Goose through the eyes of an immigrant mother raising her child in Queens, with bilingual storytelling and projections inspired by everyday family life. With pianist Yalin Chi. For children ages 2–12 and their families.\n\nFree, no registration needed.\n\nThe Queens Musical Passport is made possible with funds from the Statewide Community Regrant program, a program of the New York State Council on the Arts with the support of Governor Kathy Hochul and the New York State Legislature and administered by Flushing Town Hall.\n\nThe Queens Mother Goose is made possible (in part) with public funds from the Queens Arts Fund, a re-grant program supported by the New York City Department of Cultural Affairs in partnership with the City Council and administered by New York Foundation for the Arts.\n\nhttps://www.queenslibrary.org/\n\n#QueensPublicLibrary #FamilyConcert #Ravel #LongIslandCity #Flushing",
+       "asomo": "Two free concerts for children and families at Queens libraries, by our co-founders Guillermo Laporta and Josefina Urraca. 📚🎶 🎟️ The Queens Musical Passport Thursday, November 19 · 6–7 PM Hunters Point Library, 47-40 Center Blvd, Long Island City Guillermo Laporta and the Ivalas Quartet play classical repertoire and new pieces inspired by the sounds of the neighborhood, and the children help shape the music by conducting guided improvisations. Families get a passport to st…",
        "limite": 63206
       }
      },
@@ -4027,6 +4047,10 @@
      "porque": "El mismo día del concierto de Hunters Point: una historia para quien pasa cerca. No da para post.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": {
+      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logo-flushing-town-hall.png",
+      "historia": true
+     },
      "colaboradores": null,
      "kicker": null,
      "formato": "historia",
@@ -4036,7 +4060,7 @@
        "texto": "6 PM · Hunters Point Library"
       },
       {
-       "texto": "47-40 Center Blvd, LIC"
+       "texto": "Free · for families"
       },
       {
        "texto": "With the Ivalas Quartet",
@@ -4051,8 +4075,8 @@
      "lang": "en",
      "slug": "queens-passport-today",
      "kind": "social",
-     "title": "Tonight: Queens Musical Passport",
-     "excerpt": "Tonight: Queens Musical Passport",
+     "title": "Tonight: The Queens Musical Passport",
+     "excerpt": "Tonight: The Queens Musical Passport",
      "image": null,
      "url": "https://www.queenslibrary.org/",
      "date": "2026-11-19",
@@ -4062,19 +4086,19 @@
      "slides": [
       {
        "type": "cover",
-       "title": "Tonight: Queens Musical Passport",
+       "title": "Tonight: The Queens Musical Passport",
        "body": ""
       }
      ],
      "pies": {
       "ig": {
-       "texto": "Tonight: Queens Musical Passport.",
-       "asomo": "Tonight: Queens Musical Passport.",
+       "texto": "Tonight: The Queens Musical Passport.",
+       "asomo": "Tonight: The Queens Musical Passport.",
        "limite": 2200
       },
       "fb": {
-       "texto": "Tonight: Queens Musical Passport.\n\nhttps://www.queenslibrary.org/",
-       "asomo": "Tonight: Queens Musical Passport. https://www.queenslibrary.org/",
+       "texto": "Tonight: The Queens Musical Passport.\n\nhttps://www.queenslibrary.org/",
+       "asomo": "Tonight: The Queens Musical Passport. https://www.queenslibrary.org/",
        "limite": 63206
       }
      },
@@ -4104,6 +4128,7 @@
      "porque": "El mismo día del concierto de Flushing, a primera hora: es a mediodía. Una historia basta.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": "historia",
@@ -4113,7 +4138,7 @@
        "texto": "12 PM · Flushing Library"
       },
       {
-       "texto": "41-17 Main St"
+       "texto": "Free · ages 2 to 12"
       },
       {
        "texto": "Josefina Urraca & Yalin Chi",
@@ -4128,8 +4153,8 @@
      "lang": "en",
      "slug": "queens-mother-goose-today",
      "kind": "social",
-     "title": "Today: Queens Mother Goose",
-     "excerpt": "Today: Queens Mother Goose",
+     "title": "Today: The Queens Mother Goose",
+     "excerpt": "Today: The Queens Mother Goose",
      "image": null,
      "url": "https://www.queenslibrary.org/",
      "date": "2026-11-21",
@@ -4139,19 +4164,19 @@
      "slides": [
       {
        "type": "cover",
-       "title": "Today: Queens Mother Goose",
+       "title": "Today: The Queens Mother Goose",
        "body": ""
       }
      ],
      "pies": {
       "ig": {
-       "texto": "Today: Queens Mother Goose.",
-       "asomo": "Today: Queens Mother Goose.",
+       "texto": "Today: The Queens Mother Goose.",
+       "asomo": "Today: The Queens Mother Goose.",
        "limite": 2200
       },
       "fb": {
-       "texto": "Today: Queens Mother Goose.\n\nhttps://www.queenslibrary.org/",
-       "asomo": "Today: Queens Mother Goose. https://www.queenslibrary.org/",
+       "texto": "Today: The Queens Mother Goose.\n\nhttps://www.queenslibrary.org/",
+       "asomo": "Today: The Queens Mother Goose. https://www.queenslibrary.org/",
        "limite": 63206
       }
      },
@@ -4181,6 +4206,7 @@
      "porque": "El 27 es Black Friday y la gente está buscando regalos. Dos entradas para Navidad encajan justo ahí.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -4264,6 +4290,7 @@
      "porque": "Queda una semana para que cierre la Open Call. El último aviso suele ser el que más envíos trae.",
      "pegatinasMuro": true,
      "fondoAmbar": true,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -4357,6 +4384,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -4423,6 +4451,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -4493,6 +4522,7 @@
      "porque": "Las proyecciones con ilustraciones antiguas de los cuentos son lo más visual de la noche, y eso en Instagram funciona.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -4570,6 +4600,7 @@
      "porque": "Un estreno mundial es noticia por sí solo, y a diez días del concierto empuja la venta final. Además el 1 es Giving Tuesday.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -4652,6 +4683,7 @@
      "porque": "Es la semana del concierto: recordatorio para quien todavía no tiene entrada.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -4729,6 +4761,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": "historia",
@@ -4795,6 +4828,7 @@
      "porque": "Víspera del concierto. Una historia dura un día, igual que el aviso.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": "historia",
@@ -4861,6 +4895,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -4962,6 +4997,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -5043,6 +5079,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -5125,6 +5162,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -5200,6 +5238,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -5268,6 +5307,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": "Did you know?",
      "formato": "historia",
@@ -5344,6 +5384,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -5412,6 +5453,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -5484,6 +5526,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": "Did you know?",
      "formato": "historia",
@@ -5560,6 +5603,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -5628,6 +5672,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": "Did you know?",
      "formato": "historia",
@@ -5704,6 +5749,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": "Did you know?",
      "formato": "historia",
@@ -5780,6 +5826,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -5848,6 +5895,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": "Tomorrow · Opening night",
      "formato": null,
@@ -5928,6 +5976,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -6012,6 +6061,7 @@
      "porque": "Cierra Currents dando las gracias y enseña cómo es un concierto nuestro a quien no vino, justo mientras vendemos Winterlight.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": [
       "thedimennacenter",
       "toseiho"
@@ -6094,6 +6144,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -6166,6 +6217,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -6234,6 +6286,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -6302,6 +6355,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": "For composers",
      "formato": null,
@@ -6385,6 +6439,7 @@
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,
@@ -6453,6 +6508,7 @@
      "porque": "Enseña lo que hacemos fuera de la sala, sin entrada. Equilibra tanto post de venta.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": "Culture Pass",
      "formato": null,
@@ -6527,6 +6583,7 @@
      "porque": "Recuerda que Winterlight es el siguiente concierto. Hace de puente entre el early bird y Petroushka.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
+     "logo": null,
      "colaboradores": null,
      "kicker": null,
      "formato": null,

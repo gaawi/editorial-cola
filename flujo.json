@@ -619,6 +619,23 @@
     }
    ],
    "fase": "descartado"
+  },
+  "en/winterlight-selin": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:25:33.719Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "Debería ser una foto o algo de Hanna de otros conciertos",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:25:33.719Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

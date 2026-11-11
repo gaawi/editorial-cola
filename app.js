@@ -883,9 +883,10 @@ $('#idea-form').addEventListener('submit', async (ev) => {
   if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); setTimeout(() => { location.href = '/entrar.html'; }, 900); return; }
   const t = ev.target.querySelector('textarea');
   const texto = t.value.trim();
-  if (!texto) return;
+  if (!texto) { aviso('Escribe primero la idea.'); t.focus(); return; }
   const b = ev.target.querySelector('button');
-  b.disabled = true;
+  if (b.disabled) return;
+  b.disabled = true; b.textContent = 'Enviando…';
   try {
     const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin',
       headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accion: 'idea', nota: texto }) });
@@ -894,25 +895,42 @@ $('#idea-form').addEventListener('submit', async (ev) => {
     FLUJO.ideas = j.ideas;
     t.value = ''; t.style.height = '';
     pintarIdeasPedidas();
+    t.blur();
     aviso('Apuntada. La preparo en el próximo «check».');
   } catch (e) { aviso(e.message, true); }
-  b.disabled = false;
+  b.disabled = false; b.textContent = 'Enviar';
+});
+
+// En el iPhone, tocar «Enviar» con el teclado abierto cierra primero el
+// teclado, la página se mueve y el toque cae fuera del botón: no pasaba nada.
+// Se envía al apoyar el dedo, sin dejar que el campo pierda el foco.
+document.addEventListener('pointerdown', (ev) => {
+  const b = ev.target.closest('.sugerir-form button[type="submit"]');
+  if (!b || b.disabled) return;
+  ev.preventDefault();
+  b.form.requestSubmit(b);
 });
 
 document.addEventListener('submit', async (ev) => {
   const f = ev.target.closest('.sugerir-form[data-clave]');
   if (!f) return;
   ev.preventDefault();
+  if (f.dataset.enviando) return;
   if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); setTimeout(() => { location.href = '/entrar.html'; }, 900); return; }
   const t = f.querySelector('textarea');
   const texto = t.value.trim();
-  if (!texto) return;
-  f.querySelector('button').disabled = true;
+  if (!texto) { aviso('Escribe primero qué cambiar.'); t.focus(); return; }
+  const b = f.querySelector('button');
+  f.dataset.enviando = '1'; b.disabled = true; b.textContent = 'Enviando…';
   try {
     await llamarFlujo(f.dataset.clave, 'sugerir', { nota: texto });
+    t.blur();
     aviso('Apuntado. Lo cambio en el próximo «check».');
     repintar();
-  } catch (e) { aviso(e.message, true); f.querySelector('button').disabled = false; }
+  } catch (e) {
+    aviso(e.message, true);
+    delete f.dataset.enviando; b.disabled = false; b.textContent = 'Enviar';
+  }
 });
 // El campo crece con lo que se escribe.
 document.addEventListener('input', (ev) => {

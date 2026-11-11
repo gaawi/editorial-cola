@@ -721,6 +721,16 @@
     }
    ],
    "fase": "aprobado"
+  },
+  "en/winterlight-lottery": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T23:10:32.122Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  },
  "ideas": [

@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-11T23:29:08.288Z",
+ "generado": "2026-11-11T23:32:26.861Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -3911,6 +3911,247 @@
       "fb": {
        "texto": "Last call for our holiday giveaway.\n\nhttps://creartbox.nyc/news/winterlight-ticket-lottery.html",
        "asomo": "Last call for our holiday giveaway. https://creartbox.nyc/news/winterlight-ticket-lottery.html",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-02",
+      "hasta": "2026-11-16",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "ambar",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "porque": "Dos conciertos de Guillermo y Josefina en bibliotecas de Queens el 19 y el 21. El lunes 16 da tiempo a que la gente lo apunte, y no choca con Petroushka (17) ni con Ravel (19).",
+     "pegatinasMuro": true,
+     "fondoAmbar": true,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": null,
+     "publicaEl": "2026-11-16",
+     "pegatinas": [
+      {
+       "texto": "Nov 19 · Hunters Point"
+      },
+      {
+       "texto": "Nov 21 · Flushing"
+      },
+      {
+       "texto": "With Ravel's Mother Goose",
+       "senal": true
+      }
+     ],
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "en/queens-library-concerts",
+     "lang": "en",
+     "slug": "queens-library-concerts",
+     "kind": "social",
+     "title": "Two concerts at Queens libraries",
+     "excerpt": "Two concerts at Queens libraries",
+     "image": null,
+     "url": "https://www.queenslibrary.org/",
+     "date": "2026-11-16",
+     "tags": [
+      "QueensPublicLibrary"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Two concerts at Queens libraries",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Queens Musical Passport",
+       "body": "Thursday, November 19, 6 PM. Hunters Point Library, Long Island City. Guillermo Laporta with the Ivalas Quartet."
+      },
+      {
+       "type": "text",
+       "title": "Queens Mother Goose",
+       "body": "Saturday, November 21, 12 PM. Flushing Library. Pianists Josefina Urraca and Yalin Chi."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Two concerts at Queens libraries this month, put together by our directors Guillermo Laporta and Josefina Urraca. 📚🎶\n\nQueens Musical Passport\nThursday, November 19 · 6 PM\nHunters Point Library, 47-40 Center Blvd, Long Island City\nGuillermo Laporta with the Ivalas Quartet\n\nQueens Mother Goose\nSaturday, November 21 · 12 PM\nFlushing Library, 41-17 Main St, Flushing\nPianists Josefina Urraca and Yalin Chi\n\nBoth include Ravel's Mother Goose, and both end with a conversation about music, art and the city we share.\n\n#QueensPublicLibrary #ChamberMusic #Ravel #LongIslandCity #Flushing",
+       "asomo": "Two concerts at Queens libraries this month, put together by our directors Guillermo Laporta and Josefina Urraca. 📚🎶 Queens…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Two concerts at Queens libraries this month, put together by our directors Guillermo Laporta and Josefina Urraca. 📚🎶\n\nQueens Musical Passport\nThursday, November 19 · 6 PM\nHunters Point Library, 47-40 Center Blvd, Long Island City\nGuillermo Laporta with the Ivalas Quartet\n\nQueens Mother Goose\nSaturday, November 21 · 12 PM\nFlushing Library, 41-17 Main St, Flushing\nPianists Josefina Urraca and Yalin Chi\n\nBoth include Ravel's Mother Goose, and both end with a conversation about music, art and the city we share.\n\nhttps://www.queenslibrary.org/\n\n#QueensPublicLibrary #ChamberMusic #Ravel #LongIslandCity #Flushing",
+       "asomo": "Two concerts at Queens libraries this month, put together by our directors Guillermo Laporta and Josefina Urraca. 📚🎶 Queens Musical Passport Thursday, November 19 · 6 PM Hunters Point Library, 47-40 Center Blvd, Long Island City Guillermo Laporta with the Ivalas Quartet Queens Mother Goose Saturday, November 21 · 12 PM Flushing Library, 41-17 Main St, Flushing Pianists Josefina Urraca and Yalin Chi Both include Ravel's Mother Goose, and both end with a conversation about mu…",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-05",
+      "hasta": "2026-11-19",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "ambar",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "porque": "El mismo día del concierto de Hunters Point: una historia para quien pasa cerca. No da para post.",
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": "historia",
+     "publicaEl": "2026-11-19",
+     "pegatinas": [
+      {
+       "texto": "6 PM · Hunters Point Library"
+      },
+      {
+       "texto": "47-40 Center Blvd, LIC"
+      },
+      {
+       "texto": "With the Ivalas Quartet",
+       "senal": true
+      }
+     ],
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "en/queens-passport-today",
+     "lang": "en",
+     "slug": "queens-passport-today",
+     "kind": "social",
+     "title": "Tonight: Queens Musical Passport",
+     "excerpt": "Tonight: Queens Musical Passport",
+     "image": null,
+     "url": "https://www.queenslibrary.org/",
+     "date": "2026-11-19",
+     "tags": [
+      "QueensPublicLibrary"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Tonight: Queens Musical Passport",
+       "body": ""
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Tonight: Queens Musical Passport.",
+       "asomo": "Tonight: Queens Musical Passport.",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Tonight: Queens Musical Passport.\n\nhttps://www.queenslibrary.org/",
+       "asomo": "Tonight: Queens Musical Passport. https://www.queenslibrary.org/",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-07",
+      "hasta": "2026-11-21",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "ambar",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "porque": "El mismo día del concierto de Flushing, a primera hora: es a mediodía. Una historia basta.",
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": "historia",
+     "publicaEl": "2026-11-21",
+     "pegatinas": [
+      {
+       "texto": "12 PM · Flushing Library"
+      },
+      {
+       "texto": "41-17 Main St"
+      },
+      {
+       "texto": "Josefina Urraca & Yalin Chi",
+       "senal": true
+      }
+     ],
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "en/queens-mother-goose-today",
+     "lang": "en",
+     "slug": "queens-mother-goose-today",
+     "kind": "social",
+     "title": "Today: Queens Mother Goose",
+     "excerpt": "Today: Queens Mother Goose",
+     "image": null,
+     "url": "https://www.queenslibrary.org/",
+     "date": "2026-11-21",
+     "tags": [
+      "QueensPublicLibrary"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Today: Queens Mother Goose",
+       "body": ""
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Today: Queens Mother Goose.",
+       "asomo": "Today: Queens Mother Goose.",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Today: Queens Mother Goose.\n\nhttps://www.queenslibrary.org/",
+       "asomo": "Today: Queens Mother Goose. https://www.queenslibrary.org/",
        "limite": 63206
       }
      },

@@ -50,6 +50,9 @@ lo que hay entre medias.
   ejemplo fecha y hora, lugar y «Tickets in bio» en ámbar (`senal: true`).
   Si el fondo es claro (una partitura, papel), `estilos: { story: 'duo' }`.
 - Revisar las imágenes de las tres redes, no solo la de Instagram.
+- Historia hecha con un cartel que ya trae texto: meterlo en la zona segura
+  (unos 250 px libres arriba y 360 abajo en 1080×1920), que Instagram pone
+  ahí la cuenta y «Enviar mensaje» y se montan.
 - Carrusel de Instagram por API: **máximo 10** imágenes. Facebook: una.
 
 ## Fases (flujo.json → posts[clave].fase)

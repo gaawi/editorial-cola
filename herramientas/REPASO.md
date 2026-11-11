@@ -41,7 +41,7 @@ lo que hay entre medias.
   plan guía, sencilla.
 - En Instagram el enlace va «in bio»; en Facebook, el enlace entero.
 - Colaboradores en Instagram: los de `colaboradores` de la ficha si los
-  trae (máximo 3); si no, `dimennacenter` para lo que pasa en la DiMenna.
+  trae (máximo 3); si no, `thedimennacenter` para lo que pasa en la DiMenna.
 - Fotos de Currents (30 oct 2026): de Tao Ho, `@toseiho`. Darle crédito.
 - No repetir la misma imagen en posts seguidos (el cartel de Winterlight ya
   salió el 9 de noviembre).

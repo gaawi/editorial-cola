@@ -103,6 +103,7 @@ for (const { clave, e, r } of pendientes) {
     r.url = hecho.enlace;
     r.id = hecho.id;
     r.publicadoEl = new Date().toISOString();
+    if (hecho.sinColaboradores) r.avisoColaboradores = 'Instagram rechazó a los colaboradores: salió sin ellos. Revisar el nombre de la cuenta.';
     if (r.comentario) {
       try { await comentar({ red: r.red, id: hecho.id, token, texto: r.comentario }); }
       catch (err) { r.avisoComentario = err.message; }

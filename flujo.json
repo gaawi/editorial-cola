@@ -578,6 +578,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-10T20:10:55.176Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:27:24.126Z"
     }
    ],
    "sugerencias": [
@@ -587,6 +592,12 @@
      "fecha": "2026-11-10T20:10:55.176Z",
      "hecha": true,
      "respuesta": "Hecho: he editado el cartel de la campaña; donde ponía «December 11, 2026 / 7:30 PM» ahora pone «This Friday / Dec 11 · 7:30 PM», con la misma letra. Va tal cual, sin texto encima."
+    },
+    {
+     "texto": "En la propia fotos debería poner this Friday, la fotos es perfecta pero la tienes que limpiar para poner otros textos encimoa",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:27:24.126Z",
+     "hecha": false
     }
    ]
   },

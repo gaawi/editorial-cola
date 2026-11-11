@@ -1,7 +1,11 @@
 # Publica en Instagram y Facebook lo que toca de datos/programado.json.
-# GitHub no garantiza el minuto exacto: un aviso de «cada 10 minutos» puede
-# llegar con unos minutos de retraso, así que un post sale entre la hora
-# programada y un cuarto de hora después.
+#
+# GitHub no cumple el «cada 10 minutos»: en un repositorio con poco
+# movimiento lo arranca cada cuatro o seis horas (el 10-11 nov, siete veces en
+# día y medio). Por eso cada arranque se queda despierto casi seis horas
+# mirando la cola cada minuto: el siguiente arranque llega antes de que este
+# acabe y espera en fila, así que siempre hay uno vigilando. El repositorio es
+# público, así que estos minutos no cuestan.
 name: Publicar cola
 
 on:
@@ -20,7 +24,7 @@ permissions:
 jobs:
   publicar:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,4 +42,10 @@ jobs:
           git config user.email "editorial-cola@users.noreply.github.com"
           # Al lanzarlo a mano, primero comprueba que los secretos sirven.
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then node herramientas/publicar-cola.mjs --comprobar; fi
-          node herramientas/publicar-cola.mjs
+          fin=$(( $(date +%s) + 345*60 ))
+          while :; do
+            git pull -q --rebase origin main || true
+            node herramientas/publicar-cola.mjs || echo "Esta vuelta falló; sigue la siguiente."
+            [ "$(date +%s)" -ge "$fin" ] && break
+            sleep 60
+          done

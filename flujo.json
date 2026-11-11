@@ -543,9 +543,14 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-10T21:14:22.908711Z"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T21:28:13.285Z"
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "en/thanksgiving-thanks": {
      "tipo": "post",

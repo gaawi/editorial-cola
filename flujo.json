@@ -647,6 +647,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-11T21:26:02.263Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T23:23:35.141Z"
     }
    ],
    "sugerencias": [
@@ -663,6 +668,12 @@
      "fecha": "2026-11-11T21:26:02.263Z",
      "hecha": true,
      "respuesta": "Hecho: carrusel de 4: portada, CA1/2026, CA2/2026 y December 15, cada uno con su dato grande."
+    },
+    {
+     "texto": "Quizá fondo amarillo más etiquetas?",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T23:23:35.141Z",
+     "hecha": false
     }
    ]
   },

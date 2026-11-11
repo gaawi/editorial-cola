@@ -606,6 +606,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-11T21:27:24.126Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T23:23:10.040Z"
     }
    ],
    "sugerencias": [
@@ -622,6 +627,12 @@
      "fecha": "2026-11-11T21:27:24.126Z",
      "hecha": true,
      "respuesta": "Hecho: el cartel limpio de todos sus textos (repintado el fondo) y encima nuestro titular «This Friday: Winterlight»; la historia lleva fecha, sala y Tickets in bio."
+    },
+    {
+     "texto": "Más grande this Friday, se oscurece demasiado a los musicos",
+     "quien": "gaawi",
+     "fecha": "2026-11-11T23:23:10.040Z",
+     "hecha": false
     }
    ]
   },

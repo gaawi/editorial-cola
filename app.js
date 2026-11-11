@@ -810,6 +810,10 @@ function aplicarEdiciones() {
       if (ed.fondo) p.image = ed.fondo;
       if (ed.fotos && ed.fotos.length) { p.fotos = ed.fotos; p.fotosEnteras = ed.recorte !== 'cortar'; }
       if (ed.encuadre) p.encuadre = ed.encuadre;
+      // Si ya está en la cola, el carrusel que se enseña es el que va a salir.
+      const cola = (PROGRAMADO.posts || {})[p.clave];
+      const igCola = cola && cola.redes.find((r) => r.red === 'ig' && r.estado === 'en cola');
+      if (igCola && igCola.imagenes && igCola.imagenes.length) { p.fotos = igCola.imagenes; p.fotosEnteras = true; }
       const prep = f.fase === 'preparado' && preparadoDe(p);
       if (prep) {
         for (const r of prep.redes) if (r.texto != null) p.pies[r.red].texto = r.texto;

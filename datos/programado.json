@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-12T19:32:54.968Z",
+ "actualizado": "2026-11-12T19:33:20.899Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -704,6 +704,49 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-story-tomorrow-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-selin": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-01T18:00:00-05:00",
+     "texto": "Winterlight opens with a piece nobody has heard yet.\n\nTectonic Lullaby is Hannah Selin's new work for piano quintet, about ten minutes long, and December 11 at The DiMenna Center will be its first performance.\n\nHannah is a composer, violist and vocalist, and it's not our first premiere together: we gave the first performance of her The Soft Moon at DiMenna in 2024.\n\n📷 Hannah Selin by Alice and Chris Photography\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #HannahSelin #WorldPremiere",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-selin-ig-1.jpg"
+     ],
+     "colaboradores": [
+      "thedimennacenter"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-01T18:02:00-05:00",
+     "texto": "Winterlight opens with a piece nobody has heard yet.\n\nTectonic Lullaby is Hannah Selin's new work for piano quintet, about ten minutes long, and December 11 at The DiMenna Center will be its first performance.\n\nHannah is a composer, violist and vocalist, and it's not our first premiere together: we gave the first performance of her The Soft Moon at DiMenna in 2024.\n\n📷 Hannah Selin by Alice and Chris Photography\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #HannahSelin #WorldPremiere",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-selin-ig-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-selin#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-01T18:10:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-selin-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

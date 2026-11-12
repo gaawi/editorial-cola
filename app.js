@@ -116,7 +116,8 @@ function grupoDe(p) {
 /** ¿Ha salido ya? Si la copia de Metricool trae el estado, manda el estado;
  *  si no, se deduce del reloj como antes. */
 function yaSalio(e) {
-  return e.redes.every((r) => (r.estado ? r.estado !== 'en cola' : new Date(r.cuando) < new Date()));
+  // «pausado»: lo paré yo en el repaso; no ha salido y está esperando.
+  return e.redes.every((r) => (r.estado ? !['en cola', 'pausado'].includes(r.estado) : new Date(r.cuando) < new Date()));
 }
 
 /** Las de un apartado, ordenadas por fecha. */
@@ -171,7 +172,7 @@ function selloProgramado(p) {
   const hora = cuando.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
   // En una línea y corto: esto va en la cabecera de la ficha, al lado del
   // concierto y de los días que quedan, y no puede comérselos.
-  const redes = e.redes.map((r) => (r.red === 'ig' ? 'IG' : 'FB') + (r.estado === 'error' ? ' falló' : '')).join('+');
+  const redes = e.redes.map((r) => (r.red === 'ig' ? 'IG' : 'FB') + (r.estado === 'error' ? ' falló' : r.estado === 'pausado' ? ' en pausa' : '')).join('+');
   const salio = yaSalio(e);
   const que = salio ? 'salió' : (e.tipo === 'historia' ? 'historia' : 'en cola');
   // Si ya salió, el sello lleva al post (Instagram primero); si está en cola
@@ -649,6 +650,7 @@ function aprobarRed(p, red) {
     .flatMap(([k, e]) => e.redes.filter((r) => esDeRed(k, r)));
   if (enCola.length) {
     const r = enCola[0];
+    if (r.estado === 'pausado') return `<p class="fl-red-pausa">⏸ En pausa: ${escapar(r.pausa || 'lo paré en el repaso, te lo pregunto en el chat')}</p>`;
     const txt = r.estado === 'publicado' ? '✓ Publicado' : `✓ Aprobado · sale ${horaNY(r.cuando)}`;
     return `<p class="fl-red-ok">${txt}</p>`;
   }

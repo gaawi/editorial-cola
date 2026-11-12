@@ -159,11 +159,24 @@ raya «—»**, y en las convocatorias decir «Open Call», no «Calls for Score
 
 ## Repaso final (en cada check)
 
-Antes de dar el check por hecho, revisar a ojo todo lo que sale en las
-próximas 48 horas: abrir cada imagen (post, Facebook e historia), leer el
-texto entero, comprobar fechas, horas, nombres, enlaces, colaboradores, que no
-se repitan fotos y que nada quede tapado en las historias. Si algo está mal,
-arreglarlo y decirlo. Además, el publicador hace su propio repaso automático
+Con ojo de responsable de marketing de verdad, no de corrector: ¿esto lo
+publicaría yo con el nombre de la casa? Antes de dar el check por hecho,
+revisar todo lo que sale en las próximas 48 horas:
+
+- cada imagen (post, Facebook e historia): que se lea, que no quede nada
+  tapado, que la foto sea buena y no se repita con lo de días cercanos;
+- el texto entero: datos (fechas, horas, sitios, precios, nombres y su
+  ortografía), tono de la casa, gancho en la primera línea, que no suene a IA,
+  sin «—», sin «link in bio»;
+- colaboradores, créditos obligatorios y que el día y la hora tengan sentido
+  (que no choque con otro post, que no salga tarde para lo que anuncia).
+
+Si algo no debe salir así: **pararlo** (en `datos/programado.json`, `estado:
+"pausado"` y en `pausa` el motivo; el publicador no toca lo pausado) y
+**preguntárselo** en el mismo mensaje del check. Nunca dejar salir algo con
+dudas. Para reanudar, volver a `estado: "en cola"`.
+
+Además, el publicador hace su propio repaso automático
 (lib/repaso-previo.mjs) y no publica nada que Instagram rechazaría.
 
 ## Al terminar

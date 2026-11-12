@@ -689,3 +689,4 @@ button { background: none; border: none; cursor: pointer; }
 @media (min-width: 1000px) {
   .escenario.triple { display: grid; flex-direction: initial; }
 }
+.fl-red-pausa { margin-top: 12px; padding: 9px 11px; font-size: 13px; background: #fff4d6; border-left: 3px solid #b45309; color: #6b4e00; }

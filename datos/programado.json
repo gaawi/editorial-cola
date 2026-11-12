@@ -452,8 +452,11 @@
      "imagenes": [
       "https://creartbox-archive.b-cdn.net/archive-creartbox/2026-10-30-currents-photos/web/_DSC0589.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.facebook.com/473145069546753_1872839968181602",
+     "id": "473145069546753_1872839968181602",
+     "publicadoEl": "2026-11-12T23:03:23.331Z"
     }
    ]
   },

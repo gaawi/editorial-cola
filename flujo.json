@@ -671,6 +671,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:31:58.360Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-12T19:34:44.965954Z"
     }
    ],
    "sugerencias": [
@@ -696,7 +701,46 @@
      "respuesta": "Hecho: estilo nuevo «cielo»: la foto entera sin oscurecer a los músicos, «This Friday» grande arriba sobre la pared, y las pegatinas abajo sobre el público."
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/winterlight-this-friday": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-07T18:00:00-05:00",
+       "texto": "This Friday: Winterlight. ❄️\n\nPetroushka for the five of us, Ravel's Mother Goose with fairy tale illustrations projected behind us, Oliver Caplan's Canciones de Monteverde, and the very first performance of Hannah Selin's Tectonic Lullaby.\n\nWe've been rehearsing Petroushka for weeks and we can't wait to finally play it for you.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-this-friday-ig-1.jpg"
+       ],
+       "colaboradores": [
+        "thedimennacenter"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-12-07T18:02:00-05:00",
+       "texto": "This Friday: Winterlight. ❄️\n\nPetroushka for the five of us, Ravel's Mother Goose with fairy tale illustrations projected behind us, Oliver Caplan's Canciones de Monteverde, and the very first performance of Hannah Selin's Tectonic Lullaby.\n\nWe've been rehearsing Petroushka for weeks and we can't wait to finally play it for you.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-this-friday-ig-1.jpg"
+       ]
+      }
+     ]
+    },
+    "en/winterlight-this-friday#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-07T18:10:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-this-friday-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/open-call-last-week": {
    "historial": [
@@ -719,6 +763,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:31:51.750Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-12T19:34:44.965954Z"
     }
    ],
    "sugerencias": [
@@ -744,7 +793,46 @@
      "respuesta": "Hecho: las diapositivas de texto van con fondo amarillo y titular grande, y la portada lleva pegatinas (Deadline · Dec 15, CA1 & CA2 / 2026, Apply: link in bio)."
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/open-call-last-week": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-08T12:00:00-05:00",
+       "texto": "One week left. Our open call for composers closes on December 15.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nTwo works, any instrumentation, any career stage.\n\nGuidelines and application at the link in bio.\n\n#CreArtBox #OpenCall #NewMusic #Composers",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-ig-1.jpg",
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-ig-2.jpg",
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-ig-3.jpg",
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-ig-4.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-12-08T12:02:00-05:00",
+       "texto": "One week left. Our open call for composers closes on December 15.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nTwo works, any instrumentation, any career stage.\n\nhttps://creartbox.nyc/opportunities.html\n\n#CreArtBox #OpenCall #NewMusic #Composers",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "en/open-call-last-week#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-08T12:10:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/winterlight": {
    "historial": [
@@ -961,6 +1049,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-11T23:31:42.671Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-12T19:34:44.965954Z"
     }
    ],
    "sugerencias": [
@@ -972,7 +1065,22 @@
      "respuesta": "Hecho: ahora es todo amarillo, sin foto, con «Last call for our holiday giveaway» grande en medio y las pegatinas del asunto y el email."
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/winterlight-lottery-last-call": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-02T12:00:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-last-call-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/winterlight-story-tomorrow": {
    "historial": [

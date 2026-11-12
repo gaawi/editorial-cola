@@ -1008,6 +1008,16 @@
     }
    ],
    "fase": "descartado"
+  },
+  "en/queens-mother-goose-today": {
+   "historial": [
+    {
+     "accion": "descartar",
+     "quien": "gaawi",
+     "fecha": "2026-11-12T19:32:24.285Z"
+    }
+   ],
+   "fase": "descartado"
   }
  },
  "ideas": [

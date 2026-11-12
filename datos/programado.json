@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-12T19:41:36.405Z",
+ "actualizado": "2026-11-12T19:42:55.239Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -808,6 +808,49 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-last-call-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-this-friday": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-07T18:00:00-05:00",
+     "texto": "This Friday: Winterlight. ❄️\n\nPetroushka for the five of us, Ravel's Mother Goose with fairy tale illustrations projected behind us, Oliver Caplan's Canciones de Monteverde, and the very first performance of Hannah Selin's Tectonic Lullaby.\n\nWe've been rehearsing Petroushka for weeks and we can't wait to finally play it for you.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-this-friday-ig-1.jpg"
+     ],
+     "colaboradores": [
+      "thedimennacenter"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-07T18:02:00-05:00",
+     "texto": "This Friday: Winterlight. ❄️\n\nPetroushka for the five of us, Ravel's Mother Goose with fairy tale illustrations projected behind us, Oliver Caplan's Canciones de Monteverde, and the very first performance of Hannah Selin's Tectonic Lullaby.\n\nWe've been rehearsing Petroushka for weeks and we can't wait to finally play it for you.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #Petroushka #NYCConcerts",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-this-friday-ig-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-this-friday#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-07T18:10:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-this-friday-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

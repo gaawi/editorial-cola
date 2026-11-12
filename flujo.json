@@ -773,6 +773,11 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-12T19:34:44.965954Z"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-12T19:43:11.433Z"
     }
    ],
    "sugerencias": [
@@ -798,7 +803,7 @@
      "respuesta": "Hecho: las diapositivas de texto van con fondo amarillo y titular grande, y la portada lleva pegatinas (Deadline · Dec 15, CA1 & CA2 / 2026, Apply: link in bio)."
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "en/open-call-last-week": {
      "tipo": "post",

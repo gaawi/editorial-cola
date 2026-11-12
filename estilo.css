@@ -732,3 +732,8 @@ button { background: none; border: none; cursor: pointer; }
 .mes-mini small { position: absolute; left: 2px; bottom: 2px; font-size: 9px; font-weight: 700; line-height: 1; color: #fff; background: rgba(0,0,0,.55); padding: 2px 3px; border-radius: 3px; }
 .mes-mas { align-self: center; font-size: 12px; color: var(--suave); padding: 0 4px; }
 .mes-vacio { font-size: 13px; color: var(--tenue); font-style: italic; margin-top: 8px; }
+.meses-archivo { margin-top: 6px; }
+.meses-archivo summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--suave); padding: 12px 0; list-style: none; }
+.meses-archivo summary::before { content: '›'; display: inline-block; margin-right: 8px; transition: transform .15s; }
+.meses-archivo[open] summary::before { transform: rotate(90deg); }
+.meses-archivo .mes-tarjeta { opacity: .85; }

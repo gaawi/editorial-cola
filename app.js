@@ -1607,7 +1607,7 @@ async function pintarMeses() {
   // Más allá, solo los meses que ya tengan algo preparado.
   for (const m of [...resumen.keys()].sort()) if (m > sumaMes(hoy, 2) && !meses.includes(m) && resumen.get(m).cosas.length) meses.push(m);
   const cerrados = FLUJO.meses || {};
-  $('#meses-lista').innerHTML = meses.map((m) => {
+  const tarjeta = (m) => {
     const r = resumen.get(m) || { cosas: [] };
     const cosas = r.cosas.sort((a, b) => (a.fecha + (a.hora || '')).localeCompare(b.fecha + (b.hora || '')));
     const MAX = 40;
@@ -1627,7 +1627,13 @@ async function pintarMeses() {
       <p class="mes-estado">${pct}% resuelto · ${r.publicado || 0} publicados · ${r.programado || 0} en cola · ${r.idea || 0} por confirmar o ideas</p>
       <label class="mes-check"><input type="checkbox" data-mes="${m}" ${terminado ? 'checked' : ''}> Mes terminado${pasado ? '' : ', todo programado'}</label>
     </article>`;
-  }).join('');
+  };
+  // Los meses que ya pasaron, al archivo: plegados al final.
+  const vivos = meses.filter((m) => m >= hoy);
+  const pasados = meses.filter((m) => m < hoy).reverse();
+  $('#meses-lista').innerHTML = vivos.map(tarjeta).join('')
+    + (pasados.length ? `<details class="meses-archivo"><summary>Meses pasados (${pasados.length})</summary>
+        <div class="meses-lista">${pasados.map(tarjeta).join('')}</div></details>` : '');
 }
 
 $('#meses-lista').addEventListener('click', async (e) => {

@@ -1309,5 +1309,12 @@
    "hecha": true,
    "respuesta": "Hecha: el early bird que sale hoy a las 18:00 ahora empieza con «Last chance: early bird tickets end tomorrow», y la historia lleva «Ends tomorrow»."
   }
- ]
+ ],
+ "meses": {
+  "2026-10": {
+   "terminado": true,
+   "quien": "gaawi",
+   "fecha": "2026-11-12T20:16:22.371Z"
+  }
+ }
 }

@@ -46,12 +46,14 @@ lo que hay entre medias.
 - No repetir la misma imagen en posts seguidos (el cartel de Winterlight ya
   salió el 9 de noviembre).
 - Cada idea lleva `porque`.
-- Los conciertos en bibliotecas de Queens (The Queens Musical Passport,
-  The Queens Mother Goose) son de Guillermo y Josefina a título personal:
-  nunca «presentado por CreArtBox» ni nada que los asocie: «a project of
-  their own» de «our directors», `sinMarca: true` (sin CREARTBOX en la imagen)
-  y sin hashtag #CreArtBox. Llevan sus créditos de financiación en
-  el texto, y lo del Passport, el logo de Flushing Town Hall (`logo`).
+- Los conciertos en bibliotecas de Queens (The Queens Passport, The Queens
+  Mother Goose) son proyectos de Guillermo y de Josefina, no de CreArtBox.
+  CreArtBox ya recibe fondos del Estado de NY y no es elegible para esos
+  regrants: nombrar CreArtBox no pasa nada, pero nunca debe parecer que
+  Flushing Town Hall o el Queens Arts Fund financian a CreArtBox. Créditos
+  siempre atribuidos («a project by Guillermo Laporta…»), sin
+  «presented by CreArtBox», imagen sin marca (`sinMarca`) y, lo del Passport,
+  con el logo de Flushing Town Hall.
 - Las historias no tienen texto: siempre con `pegatinas` (hasta 3), por
   ejemplo fecha y hora, lugar y «Tickets in bio» en ámbar (`senal: true`).
   Si el fondo es claro (una partitura, papel), `estilos: { story: 'duo' }`.

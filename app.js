@@ -1395,7 +1395,7 @@ function eventosCalendario() {
     if (prog) {
       const cuando = prog.redes[0].cuando;
       poner({
-        ...comun, fecha: cuando.slice(0, 10), hora: cuando.slice(11, 16), iso: cuando,
+        ...comun, fecha: aLocalNY(cuando).slice(0, 10), hora: aLocalNY(cuando).slice(11, 16), iso: cuando,
         estado: yaSalio(prog) ? 'publicado' : 'programado', salio: yaSalio(prog),
         // Lo que está en cola y todavía espera material saldrá igualmente: por
         // eso es donde más conviene que el calendario lo diga.
@@ -1410,6 +1410,28 @@ function eventosCalendario() {
     } else if (['idea', 'confirmar'].includes(grupoDe(p)) && p.publicaEl
       && faseDe(p) !== 'descartado' && estadoDe(p).estado !== 'descartado') {
       poner({ ...comun, fecha: p.publicaEl, estado: 'idea', falta: Boolean(p.falta) });
+    }
+  }
+
+  // Las historias que salen en otro día que su post (cobertura diaria):
+  // cada una en su día, con su color.
+  for (const p of DATOS.marcas[MARCA].posts) {
+    const fuentes = [
+      ...Object.entries(PROGRAMADO.posts || {}).map(([k, e]) => [k, e, 'cola']),
+      ...(faseDe(p) === 'preparado' ? Object.entries(flujoDe(p).preparado || {}).map(([k, e]) => [k, e, 'prep']) : []),
+    ];
+    const vistas = new Set();
+    for (const [k, e, de] of fuentes) {
+      if (!k.startsWith(p.clave + '#') || vistas.has(k)) continue;
+      vistas.add(k);
+      const r = e.redes[0];
+      const salio = de === 'cola' && yaSalio(e);
+      poner({
+        forma: 'historia', titulo: p.title, clave: p.clave, subclave: k,
+        miniatura: (r.imagenes && r.imagenes[0]) || p.image || '',
+        fecha: aLocalNY(r.cuando).slice(0, 10), hora: aLocalNY(r.cuando).slice(11, 16), iso: r.cuando,
+        estado: de === 'prep' ? 'idea' : salio ? 'publicado' : 'programado', salio, redes: ['ig'],
+      });
     }
   }
 
@@ -1460,7 +1482,7 @@ async function pintarCalendario() {
 }
 
 function filaCalendario(e) {
-  const sello = e.estado === 'idea' ? 'idea' : e.estado === 'programado' ? 'en cola' : (e.salio ? 'salió' : 'publicado');
+  const sello = e.estado === 'idea' ? 'idea o por confirmar' : e.estado === 'programado' ? 'en cola' : (e.salio ? 'salió' : 'publicado');
   const redes = (e.redes || []).map((r) => NOMBRE_RED[r] || r).join('+');
   const cuando = e.hora ? `${e.hora} NY · ${horaMadrid(e.iso)} Madrid` : '';
   const meta = [sello, cuando, redes].filter(Boolean).join(' · ');
@@ -1471,7 +1493,7 @@ function filaCalendario(e) {
   return `<button class="cal-item" ${e.url ? `data-url="${e.url}"` : `data-clave="${e.clave}"`}>
     ${mini}
     <span class="cal-texto">
-      <span class="cal-meta"><i class="cal-marca ${e.forma} ${e.estado}"></i>${escapar(meta)}</span>
+      <span class="cal-meta"><span class="cal-tipo ${e.forma}">${e.forma === 'historia' ? 'Historia' : 'Post'}</span><i class="cal-marca ${e.forma} ${e.estado}"></i>${escapar(meta)}</span>
       <b>${escapar(e.titulo)}</b>
       ${e.falta ? '<span class="cal-falta">falta material</span>' : ''}
     </span>

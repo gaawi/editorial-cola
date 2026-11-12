@@ -988,6 +988,16 @@
      ]
     }
    }
+  },
+  "en/queens-library-concerts": {
+   "historial": [
+    {
+     "accion": "descartar",
+     "quien": "gaawi",
+     "fecha": "2026-11-12T19:31:52.980Z"
+    }
+   ],
+   "fase": "descartado"
   }
  },
  "ideas": [

@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-11T21:29:07.563Z",
+ "actualizado": "2026-11-12T19:32:30.576Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -631,6 +631,21 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-gift-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-story-tickets": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-21T12:00:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-story-tickets-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

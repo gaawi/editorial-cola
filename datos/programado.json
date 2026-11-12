@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-12T19:32:30.576Z",
+ "actualizado": "2026-11-12T19:32:48.476Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -646,6 +646,49 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-story-tickets-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-caplan": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-24T18:00:00-05:00",
+     "texto": "One of the pieces at Winterlight came to us through our Open Call.\n\nOliver Caplan's Canciones de Monteverde is for flute, violin, viola and cello, about 12 minutes long, and we play it on December 11 at The DiMenna Center.\n\nMonteverde is the cloud forest in Costa Rica, and Caplan's music often starts from the natural world.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\n🎟️ Tickets in bio\n\n#CreArtBox #Winterlight #OpenCall #NewMusic",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-caplan-ig-1.jpg"
+     ],
+     "colaboradores": [
+      "thedimennacenter"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-24T18:02:00-05:00",
+     "texto": "One of the pieces at Winterlight came to us through our Open Call.\n\nOliver Caplan's Canciones de Monteverde is for flute, violin, viola and cello, about 12 minutes long, and we play it on December 11 at The DiMenna Center.\n\nMonteverde is the cloud forest in Costa Rica, and Caplan's music often starts from the natural world.\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263\n\n#CreArtBox #Winterlight #OpenCall #NewMusic",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-caplan-ig-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-caplan#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-24T18:10:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-caplan-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

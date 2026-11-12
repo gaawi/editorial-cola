@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-12T19:46:27.473206Z",
+ "actualizado": "2026-11-12T19:53:58.665Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -894,6 +894,46 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/queens-passport": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-16T18:00:00-05:00",
+     "texto": "A separate project by our director Guillermo Laporta: The Queens Passport comes to Hunters Point Library, with the Ivalas Quartet. 🎟️🎶\n\nA free concert for kids and families: classical repertoire and new pieces inspired by the sounds of the neighborhood, with the children conducting guided improvisations. Kids get a passport to stamp and a bilingual English–Spanish activity book.\n\n📅 Thursday, November 19 · 6–7 PM\n📍 Hunters Point Library, 47-40 Center Blvd, Long Island City\nFree, no registration needed.\n\nThe Queens Passport, a project by Guillermo Laporta, is made possible with funds from the Statewide Community Regrant program, a program of the New York State Council on the Arts with the support of Governor Kathy Hochul and the New York State Legislature and administered by Flushing Town Hall.\n\n#QueensPublicLibrary #FamilyConcert #LongIslandCity #ChamberMusic",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/queens-passport-cartel.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-16T18:02:00-05:00",
+     "texto": "A separate project by our director Guillermo Laporta: The Queens Passport comes to Hunters Point Library, with the Ivalas Quartet. 🎟️🎶\n\nA free concert for kids and families: classical repertoire and new pieces inspired by the sounds of the neighborhood, with the children conducting guided improvisations. Kids get a passport to stamp and a bilingual English–Spanish activity book.\n\n📅 Thursday, November 19 · 6–7 PM\n📍 Hunters Point Library, 47-40 Center Blvd, Long Island City\nFree, no registration needed.\n\nThe Queens Passport, a project by Guillermo Laporta, is made possible with funds from the Statewide Community Regrant program, a program of the New York State Council on the Arts with the support of Governor Kathy Hochul and the New York State Legislature and administered by Flushing Town Hall.\n\nhttps://www.queenslibrary.org/\n\n#QueensPublicLibrary #FamilyConcert #LongIslandCity #ChamberMusic",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/queens-passport-cartel.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/queens-passport#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-19T10:00:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/queens-passport-historia.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

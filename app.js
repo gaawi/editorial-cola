@@ -1405,8 +1405,9 @@ function eventosCalendario() {
     };
     if (prog) {
       const cuando = prog.redes[0].cuando;
+      const hecha = prog.redes[0].imagenes && prog.redes[0].imagenes[0];
       poner({
-        ...comun, fecha: aLocalNY(cuando).slice(0, 10), hora: aLocalNY(cuando).slice(11, 16), iso: cuando,
+        ...comun, ...(hecha ? { miniatura: hecha } : {}), fecha: aLocalNY(cuando).slice(0, 10), hora: aLocalNY(cuando).slice(11, 16), iso: cuando,
         estado: yaSalio(prog) ? 'publicado' : 'programado', salio: yaSalio(prog),
         // Lo que está en cola y todavía espera material saldrá igualmente: por
         // eso es donde más conviene que el calendario lo diga.
@@ -1416,7 +1417,8 @@ function eventosCalendario() {
     } else if (faseDe(p) === 'preparado' && preparadoDe(p)) {
       // Lo preparado ya tiene día y hora, aunque falte confirmarlo.
       const cuando = preparadoDe(p).redes[0].cuando;
-      poner({ ...comun, fecha: aLocalNY(cuando).slice(0, 10), hora: aLocalNY(cuando).slice(11, 16), iso: cuando,
+      const hecha = preparadoDe(p).redes[0].imagenes && preparadoDe(p).redes[0].imagenes[0];
+      poner({ ...comun, ...(hecha ? { miniatura: hecha } : {}), fecha: aLocalNY(cuando).slice(0, 10), hora: aLocalNY(cuando).slice(11, 16), iso: cuando,
         estado: 'idea', falta: Boolean(p.falta) });
     } else if (['idea', 'confirmar'].includes(grupoDe(p)) && p.publicaEl
       && faseDe(p) !== 'descartado' && estadoDe(p).estado !== 'descartado') {
@@ -1591,20 +1593,27 @@ async function pintarMeses() {
   for (const [fecha, lista] of por) {
     const m = fecha.slice(0, 7);
     for (const e of lista) {
-      if (e.forma === 'concierto') { (resumen.get(m) || resumen.set(m, { conciertos: [] }).get(m)).conciertos ||= []; resumen.get(m).conciertos.push(e.titulo); continue; }
-      const r = resumen.get(m) || resumen.set(m, { conciertos: [] }).get(m);
+      if (e.forma === 'concierto') continue;
+      const r = resumen.get(m) || resumen.set(m, { cosas: [] }).get(m);
       r[e.forma] = (r[e.forma] || 0) + 1;
       r[e.estado] = (r[e.estado] || 0) + 1;
+      r.cosas.push({ ...e, fecha });
     }
   }
   const hoy = hoyISO().slice(0, 7);
   // De octubre de 2026 a dos meses vista, y los meses más lejanos que ya tengan algo.
   const meses = [];
   for (let m = '2026-10'; m <= sumaMes(hoy, 2); m = sumaMes(m, 1)) meses.push(m);
-  for (const m of [...resumen.keys()].sort()) if (m > sumaMes(hoy, 2) && !meses.includes(m)) meses.push(m);
+  // Más allá, solo los meses que ya tengan algo preparado.
+  for (const m of [...resumen.keys()].sort()) if (m > sumaMes(hoy, 2) && !meses.includes(m) && resumen.get(m).cosas.length) meses.push(m);
   const cerrados = FLUJO.meses || {};
   $('#meses-lista').innerHTML = meses.map((m) => {
-    const r = resumen.get(m) || { conciertos: [] };
+    const r = resumen.get(m) || { cosas: [] };
+    const cosas = r.cosas.sort((a, b) => (a.fecha + (a.hora || '')).localeCompare(b.fecha + (b.hora || '')));
+    const MAX = 40;
+    const minis = cosas.slice(0, MAX).map((e) => `<span class="mes-mini ${e.forma} ${e.estado}" title="${escapar(e.titulo)}">${e.miniatura
+      ? `<img src="${e.miniatura}" alt="" loading="lazy" onerror="this.remove()">` : ''}<small>${Number(e.fecha.slice(8))}</small></span>`).join('')
+      + (cosas.length > MAX ? `<span class="mes-mas">+${cosas.length - MAX}</span>` : '');
     const total = (r.post || 0) + (r.historia || 0);
     const hechos = (r.publicado || 0) + (r.programado || 0);
     const pct = total ? Math.round((hechos / total) * 100) : 0;
@@ -1612,7 +1621,7 @@ async function pintarMeses() {
     const pasado = m < hoy;
     return `<article class="mes-tarjeta${m === hoy ? ' actual' : ''}${terminado ? ' terminado' : ''}" data-mes="${m}">
       <div class="mes-cab"><h3>${nombreMes(m)}</h3>${m === hoy ? '<span class="mes-hoy">este mes</span>' : ''}</div>
-      ${r.conciertos.length ? `<p class="mes-conciertos">🎻 ${r.conciertos.map(escapar).join(' · ')}</p>` : ''}
+      ${minis ? `<div class="mes-minis">${minis}</div>` : '<p class="mes-vacio">Nada todavía.</p>'}
       <p class="mes-cifras"><b>${r.post || 0}</b> posts · <b>${r.historia || 0}</b> historias</p>
       <div class="mes-barra-pct"><i style="width:${pct}%"></i></div>
       <p class="mes-estado">${pct}% resuelto · ${r.publicado || 0} publicados · ${r.programado || 0} en cola · ${r.idea || 0} por confirmar o ideas</p>

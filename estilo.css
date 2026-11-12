@@ -722,3 +722,13 @@ button { background: none; border: none; cursor: pointer; }
 @media (min-width: 1000px) {
   .meses-lista { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
 }
+/* Miniaturas de lo que sale en el mes: posts en 4:5, historias en 9:16 con aro */
+.mes-minis { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.mes-mini { position: relative; width: 38px; height: 48px; border-radius: 6px; overflow: hidden; background: #e7e5e4; flex: 0 0 auto; }
+.mes-mini.historia { width: 27px; height: 48px; border-radius: 6px; box-shadow: 0 0 0 2px #db2777; }
+.mes-mini img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mes-mini.publicado img { opacity: .55; filter: grayscale(.3); }
+.mes-mini.idea { outline: 2px dashed var(--tenue); outline-offset: -2px; }
+.mes-mini small { position: absolute; left: 2px; bottom: 2px; font-size: 9px; font-weight: 700; line-height: 1; color: #fff; background: rgba(0,0,0,.55); padding: 2px 3px; border-radius: 3px; }
+.mes-mas { align-self: center; font-size: 12px; color: var(--suave); padding: 0 4px; }
+.mes-vacio { font-size: 13px; color: var(--tenue); font-style: italic; margin-top: 8px; }

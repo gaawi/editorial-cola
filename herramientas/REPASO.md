@@ -39,7 +39,11 @@ lo que hay entre medias.
 - Textos: frases cortas, que no suene a IA, **nunca la raya «—»**. La
   convocatoria es «Open Call», nunca «Calls for Scores». La Open Call en
   plan guía, sencilla.
-- En Instagram el enlace va «in bio»; en Facebook, el enlace entero.
+- Nunca «link in bio»: siempre a la web, «Tickets at creartbox.nyc», «Apply:
+  creartbox.nyc», también en las pegatinas. En Facebook, esa línea se cambia
+  sola por el enlace entero.
+- Feverdream y Pressure and Release: archivados hasta enero de 2027.
+  Recuperarlos en el primer check de enero.
 - Colaboradores en Instagram: los de `colaboradores` de la ficha si los
   trae (máximo 3); si no, `thedimennacenter` para lo que pasa en la DiMenna.
 - Fotos de Currents (30 oct 2026): de Tao Ho, `@toseiho`. Darle crédito.

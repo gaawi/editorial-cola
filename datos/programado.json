@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-12T19:57:28.419338+00:00",
+ "actualizado": "2026-11-12",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -439,8 +439,11 @@
       "thedimennacenter",
       "toseiho"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.instagram.com/p/DfqMI3vDabp/",
+     "id": "17905153611372148",
+     "publicadoEl": "2026-11-12T23:02:17.230Z"
     },
     {
      "red": "fb",

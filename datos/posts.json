@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-12T19:45:42.878Z",
+ "generado": "2026-11-12T19:57:49.199Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -4330,6 +4330,164 @@
       "fb": {
        "texto": "Today: The Queens Mother Goose.\n\nhttps://www.queenslibrary.org/",
        "asomo": "Today: The Queens Mother Goose. https://www.queenslibrary.org/",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-19",
+      "hasta": "2026-12-03",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "ambar",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "porque": "El 3 de diciembre cierra el sorteo a medianoche y ese día no hay nada: el empujón final, sin repetir el «last call» del día 2.",
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "logo": null,
+     "sinMarca": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": "historia",
+     "publicaEl": "2026-12-03",
+     "pegatinas": [
+      {
+       "texto": "Midnight · Dec 3"
+      },
+      {
+       "texto": "Subject: WINTERLIGHT LOTTERY"
+      },
+      {
+       "texto": "info@creartbox.nyc",
+       "senal": true
+      }
+     ],
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "en/winterlight-lottery-tonight",
+     "lang": "en",
+     "slug": "winterlight-lottery-tonight",
+     "kind": "social",
+     "title": "The giveaway closes tonight",
+     "excerpt": "The giveaway closes tonight",
+     "image": null,
+     "url": "https://creartbox.nyc/news/winterlight-ticket-lottery.html",
+     "date": "2026-12-03",
+     "tags": [
+      "Winterlight"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "The giveaway closes tonight",
+       "body": ""
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "The giveaway closes tonight.",
+       "asomo": "The giveaway closes tonight.",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "The giveaway closes tonight.\n\nhttps://creartbox.nyc/news/winterlight-ticket-lottery.html",
+       "asomo": "The giveaway closes tonight. https://creartbox.nyc/news/winterlight-ticket-lottery.html",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-27",
+      "hasta": "2026-12-11",
+      "ancla": null,
+      "porque": "Lleva fecha propia: se aprueba antes y se publica ese día."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cielo",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "porque": "El día del concierto: la última llamada para quien aún no tiene entrada, y para que se vea que es hoy.",
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "logo": null,
+     "sinMarca": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": "historia",
+     "publicaEl": "2026-12-11",
+     "pegatinas": [
+      {
+       "texto": "Winterlight · 7:30 pm"
+      },
+      {
+       "texto": "The DiMenna Center"
+      },
+      {
+       "texto": "Tickets: creartbox.nyc",
+       "senal": true
+      }
+     ],
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "en/winterlight-tonight",
+     "lang": "en",
+     "slug": "winterlight-tonight",
+     "kind": "social",
+     "title": "Tonight",
+     "excerpt": "Tonight",
+     "image": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/winterlight-limpia.jpg",
+     "url": "https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263",
+     "date": "2026-12-11",
+     "tags": [
+      "Winterlight"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Tonight",
+       "body": ""
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Tonight: Winterlight.",
+       "asomo": "Tonight: Winterlight.",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Tonight: Winterlight.\n\nhttps://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263",
+       "asomo": "Tonight: Winterlight. https://www.eventbrite.com/e/winterlight-ravel-ma-mere-loye-stravinsky-petroushka-tickets-2004163929263",
        "limite": 63206
       }
      },

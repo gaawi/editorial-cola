@@ -48,7 +48,9 @@ lo que hay entre medias.
 - Cada idea lleva `porque`.
 - Los conciertos en bibliotecas de Queens (The Queens Musical Passport,
   The Queens Mother Goose) son de Guillermo y Josefina a título personal:
-  nunca «presentado por CreArtBox». Llevan sus créditos de financiación en
+  nunca «presentado por CreArtBox» ni nada que los asocie: «a project of
+  their own» de «our directors», `sinMarca: true` (sin CREARTBOX en la imagen)
+  y sin hashtag #CreArtBox. Llevan sus créditos de financiación en
   el texto, y lo del Passport, el logo de Flushing Town Hall (`logo`).
 - Las historias no tienen texto: siempre con `pegatinas` (hasta 3), por
   ejemplo fecha y hora, lugar y «Tickets in bio» en ámbar (`senal: true`).

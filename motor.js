@@ -262,6 +262,9 @@ export function crearMotor(B) {
    * `fmt` es 'ig', 'story' o 'fb'; `post` trae la foto y `slide` el texto.
    */
   async function dibujar(canvas, post, slide, idx, total, fmt, estilo = 'cinta') {
+    // `sinMarca`: posts que no pueden llevar la marca (proyectos aparte).
+    const SELLO = post.sinMarca ? '' : B.stamp;
+    const SITIO = post.sinMarca ? '' : B.site;
     const [W, H] = TAMANOS[fmt];
     canvas.width = W; canvas.height = H;
     const ctx = canvas.getContext('2d');
@@ -362,7 +365,7 @@ export function crearMotor(B) {
         ctx.fillStyle = B.accent; ctx.fillRect(0, 0, W, H);
         const conPeg = (fmt === 'story' || (post.pegatinasMuro && fmt === 'ig')) && post.pegatinas && post.pegatinas.length;
         const arriba = pad + safeTop;
-        if (!conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(B.stamp, pad, arriba + rotSize); sinEspaciado(ctx); }
+        if (!conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(SELLO, pad, arriba + rotSize); sinEspaciado(ctx); }
         const techo = conPeg ? safeTop + Math.round(H * 0.055) + Math.round(W * 0.075 * 1.35) * Math.min(3, post.pegatinas.length) + pad * 0.6 : arriba + rotSize * 2.4;
         // Si lleva logo, el titular le deja su hueco debajo.
         const conLogo = post.logo && post.logo.src && (fmt === 'story' ? post.logo.historia : (post.logo.diapositivas || []).includes(idx));
@@ -373,7 +376,7 @@ export function crearMotor(B) {
         const ay = suelo - af.lines.length * af.size * PLOMO + af.size * 0.82;
         ctx.fillRect(pad, ay - af.size * 1.15, Math.round(W * 0.16), Math.max(5, Math.round(W * 0.008)));
         af.lines.forEach((l, i) => ctx.fillText(l, pad, ay + i * af.size * PLOMO));
-        if (conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(B.stamp, pad, H - safeBottom - Math.round(pad * 0.55)); sinEspaciado(ctx); }
+        if (conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(SELLO, pad, H - safeBottom - Math.round(pad * 0.55)); sinEspaciado(ctx); }
         pegatinas();
         await logo(post.logo && (fmt === 'story' ? post.logo.historia : (post.logo.diapositivas || []).includes(idx)));
         return;
@@ -389,7 +392,7 @@ export function crearMotor(B) {
         ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.45);
         const arriba = pad + safeTop;
         rotulo(ctx, rotSize, B.overPhotoInk, Math.round(rotSize * 0.16));
-        ctx.fillText(B.stamp, pad, arriba + rotSize);
+        ctx.fillText(SELLO, pad, arriba + rotSize);
         sinEspaciado(ctx);
         const cf = encajar(ctx, slide.title, W - pad * 2 - safeRight, H * 0.24, TW, DISPLAY, Math.round(W * 0.15), Math.round(W * 0.06), PLOMO);
         ctx.font = `${TW} ${cf.size}px ${DISPLAY}`; ctx.fillStyle = B.overPhotoInk;
@@ -424,7 +427,7 @@ export function crearMotor(B) {
 
         const bTop = H - bandH + Math.round(pad * 0.75);
         rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
-        ctx.fillText(B.stamp, pad, bTop + rotSize);
+        ctx.fillText(SELLO, pad, bTop + rotSize);
         sinEspaciado(ctx);
         const bAvail = bandH - Math.round(pad * 0.75) - rotSize * 3.4 - safeBottom;
         const bfit = encajar(ctx, slide.title, W - pad * 2 - safeRight, bAvail, TW, DISPLAY, Math.round(W * 0.070), Math.round(W * 0.032), PLOMO);
@@ -432,7 +435,7 @@ export function crearMotor(B) {
         const byy = bTop + rotSize * 2.6 + bfit.size * 0.86;
         bfit.lines.forEach((l, i) => ctx.fillText(l, pad, byy + i * bfit.size * PLOMO));
         rotulo(ctx, rotSize, TINTA_MUDA, 0);
-        ctx.fillText(B.site, pad, H - Math.round(pad * 0.4) - safeBottom);
+        ctx.fillText(SITIO, pad, H - Math.round(pad * 0.4) - safeBottom);
         sinEspaciado(ctx);
         return;
       }
@@ -533,7 +536,7 @@ export function crearMotor(B) {
 
         const arriba = pad + safeTop;
         rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
-        ctx.fillText(B.stamp, pad, arriba + rotSize);
+        ctx.fillText(SELLO, pad, arriba + rotSize);
         sinEspaciado(ctx);
 
         // Las líneas de abajo (fecha, hora, sitio) se reservan su sitio antes
@@ -700,7 +703,7 @@ export function crearMotor(B) {
         }
 
         rotulo(ctx, rotSize, TINTA_MUDA, 0);
-        ctx.fillText(B.site, pad, H - Math.round(pad * 0.5) - safeBottom);
+        ctx.fillText(SITIO, pad, H - Math.round(pad * 0.5) - safeBottom);
         sinEspaciado(ctx);
         return;
       }
@@ -733,7 +736,7 @@ export function crearMotor(B) {
 
         let y = pad + safeTop + rotSize;
         rotulo(ctx, rotSize, B.paper, Math.round(rotSize * 0.2));
-        ctx.fillText(B.stamp, centro, y);
+        ctx.fillText(SELLO, centro, y);
         sinEspaciado(ctx);
 
         if (post.kicker) {
@@ -830,7 +833,7 @@ export function crearMotor(B) {
       ctx.fillRect(pad, startY - lineH * 0.8 - Math.round(rotSize * 2.2), Math.round(W * 0.09), Math.max(3, Math.round(W * 0.005)));
       // Una señal por pantalla: la lleva el filete. El sello baja a dim.
       rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
-      ctx.fillText(B.stamp, pad, startY - lineH * 0.8 - Math.round(rotSize * 0.75));
+      ctx.fillText(SELLO, pad, startY - lineH * 0.8 - Math.round(rotSize * 0.75));
       sinEspaciado(ctx);
 
       ctx.font = `${TW} ${fit.size}px ${DISPLAY}`;
@@ -838,7 +841,7 @@ export function crearMotor(B) {
       fit.lines.forEach((l, i) => ctx.fillText(l, pad, startY + i * lineH));
 
       rotulo(ctx, rotSize, TINTA_MUDA, 0);
-      ctx.fillText(B.site, pad, H - Math.round(pad * 0.4) - safeBottom);
+      ctx.fillText(SITIO, pad, H - Math.round(pad * 0.4) - safeBottom);
       sinEspaciado(ctx);
       pegatinas();
       return;
@@ -871,7 +874,7 @@ export function crearMotor(B) {
       cbf.lines.forEach((l, i) => ctx.fillText(l, pad, by + i * cbf.size * 1.42));
 
       rotulo(ctx, rotSize, TINTA_MUDA, 0);
-      ctx.fillText(B.site, pad, footY);
+      ctx.fillText(SITIO, pad, footY);
       sinEspaciado(ctx);
       return;
     }
@@ -930,7 +933,7 @@ export function crearMotor(B) {
     rotulo(ctx, rotSize, tPie, Math.round(rotSize * 0.12));
     ctx.fillText(`${String(idx + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`, pad, footY);
     ctx.textAlign = 'right';
-    ctx.fillText(B.stamp, W - pad, footY);
+    ctx.fillText(SELLO, W - pad, footY);
     ctx.textAlign = 'left';
     sinEspaciado(ctx);
     await logo(post.logo && (post.logo.diapositivas || []).includes(idx));

@@ -215,6 +215,7 @@ for (const nombre of marcas) {
         pegatinasMuro: !!p.pegatinasMuro,
         fondoAmbar: !!p.fondoAmbar,
         logo: p.logo || null,
+        sinMarca: !!p.sinMarca,
         colaboradores: p.colaboradores || null,
         // El antetítulo del panel ámbar: «Did you know?» y poco más.
         kicker: p.kicker || null,

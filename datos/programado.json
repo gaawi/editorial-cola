@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-12T19:33:20.899Z",
+ "actualizado": "2026-11-12T19:41:28.916Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -747,6 +747,52 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-selin-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-lottery": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-13T12:00:00-05:00",
+     "texto": "Our holiday gift to you: ten pairs of tickets to Winterlight, free. 🎁❄️\n\nThis season we want to celebrate with as many of you as possible, so we're giving away twenty seats for December 11 at The DiMenna Center.\n\nTo enter, email info@creartbox.nyc with WINTERLIGHT LOTTERY in the subject line and one sentence on why you'd like to come. That's all. The draw is random.\n\nEntries close at midnight on December 3. The draw is on December 4, and everyone who entered hears back the same day.\n\nBring someone you love, and come celebrate the holidays with Petroushka, Ravel's fairy tales and a world premiere. ✨\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nDetails at the link in bio.\n\n#CreArtBox #Winterlight #HolidayGiveaway #FreeTickets #NYCConcerts",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-ig-1.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-ig-2.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-ig-3.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-ig-4.jpg"
+     ],
+     "colaboradores": [
+      "thedimennacenter"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-13T12:02:00-05:00",
+     "texto": "Our holiday gift to you: ten pairs of tickets to Winterlight, free. 🎁❄️\n\nThis season we want to celebrate with as many of you as possible, so we're giving away twenty seats for December 11 at The DiMenna Center.\n\nTo enter, email info@creartbox.nyc with WINTERLIGHT LOTTERY in the subject line and one sentence on why you'd like to come. That's all. The draw is random.\n\nEntries close at midnight on December 3. The draw is on December 4, and everyone who entered hears back the same day.\n\nBring someone you love, and come celebrate the holidays with Petroushka, Ravel's fairy tales and a world premiere. ✨\n\n📅 Friday, December 11 · 7:30 PM\n📍 The DiMenna Center, NYC\nhttps://creartbox.nyc/news/winterlight-ticket-lottery.html\n\n#CreArtBox #Winterlight #HolidayGiveaway #FreeTickets #NYCConcerts",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-fb-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/winterlight-lottery#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-13T12:10:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

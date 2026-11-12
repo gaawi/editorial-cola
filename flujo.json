@@ -998,6 +998,16 @@
     }
    ],
    "fase": "descartado"
+  },
+  "en/queens-passport-today": {
+   "historial": [
+    {
+     "accion": "descartar",
+     "quien": "gaawi",
+     "fecha": "2026-11-12T19:32:22.675Z"
+    }
+   ],
+   "fase": "descartado"
   }
  },
  "ideas": [

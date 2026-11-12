@@ -1299,6 +1299,16 @@
     }
    ],
    "fase": "descartado"
+  },
+  "en/winterlight-lottery-tonight": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-12T20:22:18.984Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  },
  "ideas": [

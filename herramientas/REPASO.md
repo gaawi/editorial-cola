@@ -157,6 +157,15 @@ real del archivo, `date` y **`porque`**: una o dos frases de por qué este post 
 fecha, `falta: '…'`. Estilo: frases cortas, nada que suene a IA, **nunca la
 raya «—»**, y en las convocatorias decir «Open Call», no «Calls for Scores».
 
+## Repaso final (en cada check)
+
+Antes de dar el check por hecho, revisar a ojo todo lo que sale en las
+próximas 48 horas: abrir cada imagen (post, Facebook e historia), leer el
+texto entero, comprobar fechas, horas, nombres, enlaces, colaboradores, que no
+se repitan fotos y que nada quede tapado en las historias. Si algo está mal,
+arreglarlo y decirlo. Además, el publicador hace su propio repaso automático
+(lib/repaso-previo.mjs) y no publica nada que Instagram rechazaría.
+
 ## Al terminar
 
 Regenerar `datos/posts.json`, commit en las dos ramas y a `main`. La app escribe `flujo.json` y la cola escribe `programado.json` mientras tanto: `git pull --rebase origin main` justo antes de subir, y si `flujo.json` choca, quedarse con lo de él y volver a aplicar lo tuyo. Último

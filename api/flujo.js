@@ -82,14 +82,25 @@ export default async function handler(req, res) {
       let cola;
       if (accion === 'confirmar') {
         if (!f || f.fase !== 'preparado' || !f.preparado) return res.status(409).json({ error: 'Todavía no está preparado: no se puede confirmar.' });
-        const pasado = Object.values(f.preparado).flatMap((e) => e.redes).find((r) => new Date(r.cuando) < new Date());
+        // `red`: se puede aprobar por partes (ig, fb, story). Sin `red`, todo.
+        const red = ['ig', 'fb', 'story'].includes(b.red) ? b.red : null;
+        const toca = (k, r) => !red || (red === 'story' ? k.includes('#') : !k.includes('#') && r.red === red);
+        const elegidas = Object.entries(f.preparado).flatMap(([k, e]) => e.redes.filter((r) => toca(k, r)));
+        if (!elegidas.length) return res.status(409).json({ error: 'No hay nada preparado para esa red.' });
+        const pasado = elegidas.find((r) => new Date(r.cuando) < new Date());
         if (pasado) return res.status(409).json({ error: 'La hora preparada ya pasó. Cambia la fecha y vuelve a confirmar.' });
         cola = await cambiarJSON(yo.token, 'datos/programado.json', VACIO_COLA, (d) => {
           for (const [k, e] of Object.entries(f.preparado)) {
-            d.posts[k] = { ...e, redes: e.redes.map((r) => ({ ...r, estado: 'en cola', via: 'meta' })) };
+            const nuevas = e.redes.filter((r) => toca(k, r)).map((r) => ({ ...r, estado: 'en cola', via: 'meta' }));
+            if (!nuevas.length) continue;
+            const ya = d.posts[k] ? d.posts[k].redes.filter((r) => !nuevas.some((n) => n.red === r.red)) : [];
+            d.posts[k] = { ...e, redes: [...ya, ...nuevas] };
           }
           d.actualizado = ahora;
-        }, `Confirmado desde la app: ${clave}`);
+        }, `Confirmado desde la app: ${clave}${red ? ` (${red})` : ''}`);
+        // ¿Queda algo sin aprobar? Entonces sigue en «preparado».
+        const todas = Object.entries(f.preparado).flatMap(([k, e]) => e.redes.map((r) => [k, r]));
+        f._completo = todas.every(([k, r]) => (cola.posts[k]?.redes || []).some((x) => x.red === r.red && x.estado));
       } else {
         let bloqueo = '';
         cola = await cambiarJSON(yo.token, 'datos/programado.json', VACIO_COLA, (d) => {
@@ -105,8 +116,8 @@ export default async function handler(req, res) {
       }
       const nuevo = await cambiarJSON(yo.token, 'flujo.json', VACIO, (d) => {
         const g = d.posts[clave] || (d.posts[clave] = { historial: [] });
-        g.fase = accion === 'confirmar' ? 'confirmado' : 'preparado';
-        (g.historial ||= []).push({ accion, quien: yo.login, fecha: ahora });
+        g.fase = accion === 'confirmar' ? (f._completo ? 'confirmado' : 'preparado') : 'preparado';
+        (g.historial ||= []).push({ accion, quien: yo.login, fecha: ahora, ...(b.red ? { red: b.red } : {}) });
       }, `${accion === 'confirmar' ? 'Confirmado' : 'Vuelve a preparado'}: ${clave}`);
       const propias = Object.fromEntries(Object.entries(cola.posts).filter(([k]) => k === clave || k.startsWith(clave + '#')));
       return res.status(200).json({ ok: true, post: nuevo.posts[clave], cola: propias });

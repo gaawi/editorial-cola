@@ -15,6 +15,7 @@
 //   node herramientas/publicar-cola.mjs            publica lo que toque
 //   node herramientas/publicar-cola.mjs --ensayo   dice qué publicaría, sin tocar nada
 
+import { repasoPrevio } from '../lib/repaso-previo.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
@@ -94,6 +95,13 @@ for (const { clave, e, r } of pendientes) {
   }
   const historia = e.tipo === 'historia';
   console.log(`${ENSAYO ? '[ensayo] ' : ''}Publico ${nombre}${historia ? ' (historia)' : ''}`);
+  // El último repaso: si algo está mal, no sale y queda escrito por qué.
+  const problemas = await repasoPrevio({ red: r.red, historia, texto: r.texto, imagenes: r.imagenes });
+  if (problemas.length) {
+    console.error(`  ✗ Repaso previo: ${problemas.join('; ')}`);
+    if (!ENSAYO) { fallos++; r.estado = 'error'; r.error = `Repaso previo: ${problemas.join('; ')}`; await guardar(`No sale: ${clave} (${r.red}), ${problemas[0]}`); }
+    continue;
+  }
   if (ENSAYO) continue;
   try {
     const hecho = r.red === 'ig'

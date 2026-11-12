@@ -636,11 +636,32 @@ async function pintarTodas() {
     } catch (e) {
       hueco.innerHTML = `<p class="vacio">No se pudo dibujar: ${escapar(e.message)}</p>`;
     }
+    col.insertAdjacentHTML('beforeend', aprobarRed(yo, red));
   }
 }
 
+/** Debajo de cada vista: aprobar esa red, o cuándo sale si ya está aprobada. */
+function aprobarRed(p, red) {
+  const NOMBRE = { ig: 'Instagram', fb: 'Facebook', story: 'la historia' };
+  const esDeRed = (k, r) => (red === 'story' ? k.includes('#') || p.formato === 'historia' : !k.includes('#') && r.red === red);
+  const enCola = Object.entries(PROGRAMADO.posts || {})
+    .filter(([k]) => k === p.clave || k.startsWith(p.clave + '#'))
+    .flatMap(([k, e]) => e.redes.filter((r) => esDeRed(k, r)));
+  if (enCola.length) {
+    const r = enCola[0];
+    const txt = r.estado === 'publicado' ? '✓ Publicado' : `✓ Aprobado · sale ${horaNY(r.cuando)}`;
+    return `<p class="fl-red-ok">${txt}</p>`;
+  }
+  if (faseDe(p) !== 'preparado') return '';
+  const prep = Object.entries(flujoDe(p).preparado || {}).flatMap(([k, e]) => e.redes.filter((r) => esDeRed(k, r)));
+  if (!prep.length) return '<p class="fl-red-no">No se publica aquí.</p>';
+  return `<div class="fl-red"><span>Sale ${horaNY(prep[0].cuando)}</span>
+    <button class="fl fl-si" data-accion="confirmar" data-red="${red}" data-clave="${p.clave}">Aprobar ${NOMBRE[red]}</button></div>`;
+}
+
 async function pintarPrevia(red) {
-  if (ESCRITORIO.matches) return pintarTodas();
+  // Siempre las tres vistas, en scroll: sin pestañas (lo pidió así).
+  return pintarTodas();
   const esc = $('#escenario');
   esc.classList.remove('triple');
   esc.innerHTML = '<p class="vacio">Dibujando…</p>';
@@ -849,7 +870,7 @@ function accionesFlujo(p) {
       const primera = prep.map((r) => r.cuando).sort()[0];
       const donde = [...new Set(prep.map((r) => r.tipo === 'historia' ? 'historia' : r.red === 'ig' ? 'Instagram' : 'Facebook'))].join(' + ');
       return `<div class="fl-prep">Sale <b>${primera ? horaNY(primera) : '—'}</b> · ${donde}</div>
-        <div class="fl-fila">${b('confirmar', 'Confirmar publicación', 'fl-si')}${b('editar', 'Editar')}${b('cambios', 'Cambios')}</div>`;
+        <div class="fl-fila">${b('confirmar', 'Aprobar todo', 'fl-si')}${b('editar', 'Editar')}${b('cambios', 'Cambios')}</div>`;
     }
     case 'descartado':
       return `<div class="fl-fila"><span class="fl-dice">En el archivo</span>${b('recuperar', 'Recuperar', 'fl-suave')}</div>`;
@@ -970,7 +991,7 @@ const DICHO = {
   recuperar: 'Vuelve a ideas.',
   cambios: 'Apuntado. Lo cambio y vuelve a confirmar.',
   editar: 'Guardado.',
-  confirmar: 'Confirmado: sale solo a su hora.',
+  confirmar: 'Aprobado: sale solo a su hora.',
   quitar: 'Fuera de la cola. Vuelve a «para confirmar».',
 };
 
@@ -993,14 +1014,12 @@ async function hacer(clave, accion, extra) {
   }
 }
 
-// «Confirmar» pide un segundo toque: es lo único que no tiene vuelta atrás
-// si llega la hora sin que nadie lo quite.
-let armado = null;
+// Un solo toque: lo pidió así. Con `data-red` se aprueba solo esa red.
 document.addEventListener('click', (ev) => {
   const b = ev.target.closest('.fl[data-accion]');
   if (!b) return;
   ev.preventDefault();
-  const { clave, accion } = b.dataset;
+  const { clave, accion, red } = b.dataset;
   if (!PUEDE_GUARDAR) {
     aviso('Primero entra con GitHub (una vez en este aparato).');
     setTimeout(() => { location.href = '/entrar.html'; }, 900);
@@ -1009,16 +1028,8 @@ document.addEventListener('click', (ev) => {
   const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === clave);
   if (accion === 'editar') return abrirEditor(p, 'editar');
   if (accion === 'cambios') return abrirEditor(p, 'cambios');
-  if (accion === 'confirmar' && armado !== b) {
-    armado = b;
-    b.classList.add('armado');
-    b.textContent = '¿Seguro? Toca otra vez';
-    setTimeout(() => { if (armado === b) { armado = null; b.classList.remove('armado'); b.textContent = 'Confirmar publicación'; } }, 4000);
-    return;
-  }
-  armado = null;
   b.disabled = true;
-  hacer(clave, accion);
+  hacer(clave, accion, red ? { red } : undefined);
 });
 
 function pintarCuentaConfirmar() {

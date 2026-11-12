@@ -50,6 +50,9 @@ lo que hay entre medias.
 - No repetir la misma imagen en posts seguidos (el cartel de Winterlight ya
   salió el 9 de noviembre).
 - Cada idea lleva `porque`.
+- Las historias, en días sin post (cobertura diaria), no diez minutos
+  después de su post. Solo van el mismo día las que son de ese día
+  (Acción de Gracias, «tonight», «tomorrow», últimos avisos).
 - Los conciertos en bibliotecas de Queens (The Queens Passport, The Queens
   Mother Goose) son proyectos de Guillermo y de Josefina, no de CreArtBox.
   CreArtBox ya recibe fondos del Estado de NY y no es elegible para esos

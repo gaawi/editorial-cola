@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-12T19:53:58.665Z",
+ "actualizado": "2026-11-12T19:54:14.312Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -934,6 +934,46 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/queens-passport-historia.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/queens-mother-goose": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-18T18:00:00-05:00",
+     "texto": "A separate project by our director Josefina Urraca: The Queens Mother Goose comes to Flushing Library. 🎹✨\n\nRavel's Mother Goose, reimagined through the eyes of an immigrant mother raising her child in Queens, with bilingual storytelling and projections inspired by everyday family life. With pianist Yalin Chi and dancer Taylor Hennings.\n\n📅 Saturday, November 21 · 12–1 PM\n📍 Flushing Library, 41-17 Main St, Flushing\nFor children ages 2–12 and their families. Free, no registration needed.\n\nThe Queens Mother Goose, a project by Josefina Urraca, is made possible (in part) with public funds from the Queens Arts Fund, a re-grant program supported by the New York City Department of Cultural Affairs in partnership with the City Council and administered by New York Foundation for the Arts.\n\n#QueensPublicLibrary #FamilyConcert #Ravel #Flushing",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/queens-mother-goose-cartel.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-11-18T18:02:00-05:00",
+     "texto": "A separate project by our director Josefina Urraca: The Queens Mother Goose comes to Flushing Library. 🎹✨\n\nRavel's Mother Goose, reimagined through the eyes of an immigrant mother raising her child in Queens, with bilingual storytelling and projections inspired by everyday family life. With pianist Yalin Chi and dancer Taylor Hennings.\n\n📅 Saturday, November 21 · 12–1 PM\n📍 Flushing Library, 41-17 Main St, Flushing\nFor children ages 2–12 and their families. Free, no registration needed.\n\nThe Queens Mother Goose, a project by Josefina Urraca, is made possible (in part) with public funds from the Queens Arts Fund, a re-grant program supported by the New York City Department of Cultural Affairs in partnership with the City Council and administered by New York Foundation for the Arts.\n\nhttps://www.queenslibrary.org/\n\n#QueensPublicLibrary #FamilyConcert #Ravel #Flushing",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/queens-mother-goose-cartel.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/queens-mother-goose#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-21T09:00:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/queens-mother-goose-historia.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

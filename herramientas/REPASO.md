@@ -52,8 +52,8 @@ lo que hay entre medias.
   regrants: nombrar CreArtBox no pasa nada, pero nunca debe parecer que
   Flushing Town Hall o el Queens Arts Fund financian a CreArtBox. Créditos
   siempre atribuidos («a project by Guillermo Laporta…»), sin
-  «presented by CreArtBox», imagen sin marca (`sinMarca`) y, lo del Passport,
-  con el logo de Flushing Town Hall.
+  «presented by CreArtBox» e imagen sin marca (`sinMarca`). Sin el logo de
+  Flushing Town Hall: lo pidió quitar el 12 de noviembre.
 - Las historias no tienen texto: siempre con `pegatinas` (hasta 3), por
   ejemplo fecha y hora, lugar y «Tickets in bio» en ámbar (`senal: true`).
   Si el fondo es claro (una partitura, papel), `estilos: { story: 'duo' }`.

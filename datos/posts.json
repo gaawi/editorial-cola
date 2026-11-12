@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-12T19:39:33.789Z",
+ "generado": "2026-11-12T19:40:59.182Z",
  "origen": "gaawi/adar",
  "marcas": {
   "adar": {
@@ -3972,12 +3972,7 @@
      "porque": "Dos conciertos de Guillermo y Josefina en bibliotecas de Queens el 19 y el 21. El lunes 16 da tiempo a que la gente lo apunte, y no choca con Petroushka (17) ni con Ravel (19).",
      "pegatinasMuro": true,
      "fondoAmbar": true,
-     "logo": {
-      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logo-flushing-town-hall.png",
-      "diapositivas": [
-       1
-      ]
-     },
+     "logo": null,
      "sinMarca": true,
      "colaboradores": null,
      "kicker": null,
@@ -4066,10 +4061,7 @@
      "porque": "El mismo día del concierto de Hunters Point: una historia para quien pasa cerca. No da para post.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
-     "logo": {
-      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logo-flushing-town-hall.png",
-      "historia": true
-     },
+     "logo": null,
      "sinMarca": true,
      "colaboradores": null,
      "kicker": null,

@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-12T19:42:55.239Z",
+ "actualizado": "2026-11-12T19:43:11.433Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -851,6 +851,49 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-this-friday-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/open-call-last-week": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-08T12:00:00-05:00",
+     "texto": "One week left. Our open call for composers closes on December 15.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nTwo works, any instrumentation, any career stage.\n\nGuidelines and application at the link in bio.\n\n#CreArtBox #OpenCall #NewMusic #Composers",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-ig-1.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-ig-2.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-ig-3.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-ig-4.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-08T12:02:00-05:00",
+     "texto": "One week left. Our open call for composers closes on December 15.\n\nCA1/2026, for composers of any nationality.\nCA2/2026, for American composers.\n\nTwo works, any instrumentation, any career stage.\n\nhttps://creartbox.nyc/opportunities.html\n\n#CreArtBox #OpenCall #NewMusic #Composers",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-fb-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ]
+  },
+  "en/open-call-last-week#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-08T12:10:00-05:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-last-week-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

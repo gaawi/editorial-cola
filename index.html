@@ -23,6 +23,16 @@
 <main id="lista" class="pantalla activa">
   <p class="entrar-aviso" id="entrar-aviso" hidden>Para que los botones guarden,
     <a href="/entrar.html">entra otra vez con GitHub</a>. Solo una vez en cada aparato.</p>
+  <!-- La entrada: los meses, con su resumen -->
+  <section id="vista-meses" class="meses">
+    <h2 class="meses-titulo">Meses</h2>
+    <p class="aviso-suave">Toca un mes para trabajar en él. Marca «Mes terminado» cuando esté todo programado.</p>
+    <div id="meses-lista" class="meses-lista"></div>
+  </section>
+  <div class="mes-barra" id="mes-barra" hidden>
+    <button id="mes-volver" class="mes-volver">‹ Meses</button>
+    <b id="mes-nombre"></b>
+  </div>
   <nav class="pestanas" id="pestanas">
     <button class="pest activo" data-vista="ideas">Ideas</button>
     <button class="pest" data-vista="confirmar">Confirmar<span class="cuenta-pest" id="cuenta-confirmar"></span></button>

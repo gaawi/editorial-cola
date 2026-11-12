@@ -696,3 +696,29 @@ button { background: none; border: none; cursor: pointer; }
   .escenario.triple { display: grid; flex-direction: initial; }
 }
 .fl-red-pausa { margin-top: 12px; padding: 9px 11px; font-size: 13px; background: #fff4d6; border-left: 3px solid #b45309; color: #6b4e00; }
+
+/* ── Los meses, a la entrada ───────────────────────────────────────── */
+.meses-titulo { font-family: Literata, Georgia, serif; font-size: 24px; font-weight: 600; padding: 20px 0 2px; }
+.meses-lista { display: grid; gap: 12px; padding-bottom: 20px; }
+.mes-tarjeta { background: #fff; border: 1px solid var(--filete); border-radius: 14px; padding: 14px 16px; cursor: pointer; }
+.mes-tarjeta:active { background: #f5f5f4; }
+.mes-tarjeta.actual { border-color: var(--tinta); box-shadow: 0 0 0 1px var(--tinta); }
+.mes-tarjeta.terminado { background: #f0fdf4; border-color: #bbf7d0; }
+.mes-cab { display: flex; align-items: center; gap: 8px; }
+.mes-cab h3 { font-family: Literata, Georgia, serif; font-size: 20px; font-weight: 600; flex: 1; }
+.mes-cab h3::first-letter { text-transform: uppercase; }
+.mes-hoy { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--tinta); color: #fff; padding: 3px 7px; border-radius: 4px; }
+.mes-conciertos { font-size: 13px; color: var(--suave); margin-top: 6px; }
+.mes-cifras { font-size: 14px; margin-top: 8px; }
+.mes-barra-pct { height: 8px; background: #f0efed; border-radius: 99px; overflow: hidden; margin: 10px 0 6px; }
+.mes-barra-pct i { display: block; height: 100%; background: var(--si); border-radius: 99px; }
+.mes-estado { font-size: 12px; color: var(--suave); line-height: 1.4; }
+.mes-check { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--filete); font-size: 14px; font-weight: 600; }
+.mes-check input { width: 20px; height: 20px; accent-color: var(--si); }
+.mes-barra { display: flex; align-items: center; gap: 12px; padding: 12px 0 0; }
+.mes-volver { font-size: 14px; color: var(--suave); border: 1px solid var(--filete); border-radius: 999px; padding: 6px 12px; background: #fff; }
+.mes-barra b { font-family: Literata, Georgia, serif; font-size: 18px; }
+.mes-barra b::first-letter { text-transform: uppercase; }
+@media (min-width: 1000px) {
+  .meses-lista { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+}

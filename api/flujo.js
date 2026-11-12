@@ -61,6 +61,15 @@ export default async function handler(req, res) {
 
     const b = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
     const { clave, accion } = b;
+    // Marcar un mes como terminado (todo programado), o desmarcarlo.
+    if (accion === 'mes') {
+      const mes = String(b.mes || '');
+      if (!/^\d{4}-\d{2}$/.test(mes)) return res.status(400).json({ error: 'Mes no válido.' });
+      const nuevo = await cambiarJSON(yo.token, 'flujo.json', VACIO, (d) => {
+        (d.meses ||= {})[mes] = { terminado: !!b.terminado, quien: yo.login, fecha: new Date().toISOString() };
+      }, `App: ${b.terminado ? 'mes terminado' : 'mes abierto'} ${mes}`);
+      return res.status(200).json({ ok: true, meses: nuevo.meses });
+    }
     // Una idea nueva no tiene clave todavía: va a una lista aparte.
     if (accion === 'idea') {
       const texto = typeof b.nota === 'string' ? b.nota.trim().slice(0, 4000) : '';

@@ -31,7 +31,8 @@ let PROGRAMADO = { posts: {} };
 let shaAprob = null;
 let actual = null;
 let filtro = 'ahora';
-let vista = 'ideas';
+let vista = 'meses';
+let MES = null; // 'AAAA-MM' cuando se trabaja en un mes
 const HOY = new Date().toISOString().slice(0, 10);
 const DIA = 86400000;
 let HISTORICO = null;
@@ -121,9 +122,19 @@ function yaSalio(e) {
 }
 
 /** Las de un apartado, ordenadas por fecha. */
+/** El mes en que sale (o saldría) una ficha: cola, preparado o su fecha. */
+function mesDe(p) {
+  const cola = (PROGRAMADO.posts || {})[p.clave];
+  if (cola && cola.redes[0]) return aLocalNY(cola.redes[0].cuando).slice(0, 7);
+  const prep = faseDe(p) === 'preparado' && preparadoDe(p);
+  if (prep && prep.redes[0]) return aLocalNY(prep.redes[0].cuando).slice(0, 7);
+  return String(p.publicaEl || p.date || '').slice(0, 7);
+}
+
 function fichasDe(grupo) {
   return DATOS.marcas[MARCA].posts
     .filter((p) => grupoDe(p) === grupo)
+    .filter((p) => !MES || mesDe(p) === MES)
     .sort((a, b) => a.date.localeCompare(b.date));
 }
 
@@ -888,7 +899,7 @@ function cajaSugerir(p) {
   if (grupoDe(p) === 'publicado') return '';
   const sug = flujoDe(p).sugerencias || [];
   const lista = sug.map((x) => `<li class="${x.hecha ? 'hecha' : ''}"><span class="tarea">${escapar(x.texto)}</span>${x.hecha
-    ? `<small>Hecho${x.respuesta ? `: ${escapar(x.respuesta)}` : ''}</small>` : '<small>Pendiente: lo hago en el próximo repaso</small>'}</li>`).join('');
+    ? `<small>${x.respuesta ? escapar(/^hech/i.test(x.respuesta) ? x.respuesta : 'Hecho: ' + x.respuesta) : 'Hecho'}</small>` : '<small>Pendiente: lo hago en el próximo repaso</small>'}</li>`).join('');
   return `<div class="sugerir">${lista ? `<ul>${lista}</ul>` : ''}
     <form class="sugerir-form" data-clave="${p.clave}">
       <textarea rows="1" placeholder="Sugerir un cambio…"></textarea>
@@ -901,7 +912,7 @@ function pintarIdeasPedidas() {
   const pend = (FLUJO.ideas || []).filter((x) => !x.hecha);
   const hechas = (FLUJO.ideas || []).filter((x) => x.hecha).slice(-2);
   $('#ideas-pedidas').innerHTML = [...pend.map((x) => `<li>${escapar(x.texto)}<small>Pendiente: la preparo en el próximo repaso</small></li>`),
-    ...hechas.map((x) => `<li class="hecha"><span class="tarea">${escapar(x.texto)}</span><small>Hecha${x.respuesta ? `: ${escapar(x.respuesta)}` : ''}</small></li>`)].join('');
+    ...hechas.map((x) => `<li class="hecha"><span class="tarea">${escapar(x.texto)}</span><small>${x.respuesta ? escapar(/^hech/i.test(x.respuesta) ? x.respuesta : 'Hecha: ' + x.respuesta) : 'Hecha'}</small></li>`)].join('');
 }
 
 $('#idea-form').addEventListener('submit', async (ev) => {
@@ -1550,17 +1561,96 @@ $('#cal-dia').addEventListener('click', (e) => {
 
 /** Enseña el apartado que toque y pinta solo ese. */
 function mostrarVista() {
+  const enMeses = vista === 'meses';
+  $('#vista-meses').hidden = !enMeses;
+  $('#pestanas').hidden = enMeses;
+  $('#mes-barra').hidden = enMeses || !MES;
+  if (MES) $('#mes-nombre').textContent = nombreMes(MES);
   $('#vista-ideas').hidden = vista !== 'ideas';
   $('#vista-programado').hidden = vista !== 'programado';
   $('#vista-confirmar').hidden = vista !== 'confirmar';
   $('#vista-publicado').hidden = vista !== 'publicado';
   $('#vista-calendario').hidden = vista !== 'calendario';
-  if (vista === 'ideas') pintarLista();
+  if (enMeses) pintarMeses();
+  else if (vista === 'ideas') pintarLista();
   else if (vista === 'programado') pintarProgramado();
   else if (vista === 'confirmar') pintarConfirmar();
   else if (vista === 'calendario') pintarCalendario();
   else { pintarPublicadas(); pintarPublicado(); }
 }
+
+// ── Los meses: la entrada ──────────────────────────────────────────────
+const MESES_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+function nombreMes(m) { const [a, n] = m.split('-').map(Number); const t = `${MESES_ES[n - 1]} ${a}`; return t[0].toUpperCase() + t.slice(1); }
+function sumaMes(m, d) { const [a, n] = m.split('-').map(Number); const f = new Date(Date.UTC(a, n - 1 + d, 1)); return f.toISOString().slice(0, 7); }
+
+async function pintarMeses() {
+  await cargarHistorico();
+  const por = eventosCalendario();
+  const resumen = new Map();
+  for (const [fecha, lista] of por) {
+    const m = fecha.slice(0, 7);
+    for (const e of lista) {
+      if (e.forma === 'concierto') { (resumen.get(m) || resumen.set(m, { conciertos: [] }).get(m)).conciertos ||= []; resumen.get(m).conciertos.push(e.titulo); continue; }
+      const r = resumen.get(m) || resumen.set(m, { conciertos: [] }).get(m);
+      r[e.forma] = (r[e.forma] || 0) + 1;
+      r[e.estado] = (r[e.estado] || 0) + 1;
+    }
+  }
+  const hoy = hoyISO().slice(0, 7);
+  // De octubre de 2026 a dos meses vista, y los meses más lejanos que ya tengan algo.
+  const meses = [];
+  for (let m = '2026-10'; m <= sumaMes(hoy, 2); m = sumaMes(m, 1)) meses.push(m);
+  for (const m of [...resumen.keys()].sort()) if (m > sumaMes(hoy, 2) && !meses.includes(m)) meses.push(m);
+  const cerrados = FLUJO.meses || {};
+  $('#meses-lista').innerHTML = meses.map((m) => {
+    const r = resumen.get(m) || { conciertos: [] };
+    const total = (r.post || 0) + (r.historia || 0);
+    const hechos = (r.publicado || 0) + (r.programado || 0);
+    const pct = total ? Math.round((hechos / total) * 100) : 0;
+    const terminado = cerrados[m] && cerrados[m].terminado;
+    const pasado = m < hoy;
+    return `<article class="mes-tarjeta${m === hoy ? ' actual' : ''}${terminado ? ' terminado' : ''}" data-mes="${m}">
+      <div class="mes-cab"><h3>${nombreMes(m)}</h3>${m === hoy ? '<span class="mes-hoy">este mes</span>' : ''}</div>
+      ${r.conciertos.length ? `<p class="mes-conciertos">🎻 ${r.conciertos.map(escapar).join(' · ')}</p>` : ''}
+      <p class="mes-cifras"><b>${r.post || 0}</b> posts · <b>${r.historia || 0}</b> historias</p>
+      <div class="mes-barra-pct"><i style="width:${pct}%"></i></div>
+      <p class="mes-estado">${pct}% resuelto · ${r.publicado || 0} publicados · ${r.programado || 0} en cola · ${r.idea || 0} por confirmar o ideas</p>
+      <label class="mes-check"><input type="checkbox" data-mes="${m}" ${terminado ? 'checked' : ''}> Mes terminado${pasado ? '' : ', todo programado'}</label>
+    </article>`;
+  }).join('');
+}
+
+$('#meses-lista').addEventListener('click', async (e) => {
+  const cb = e.target.closest('input[type="checkbox"][data-mes]');
+  if (cb) {
+    e.stopPropagation();
+    if (!PUEDE_GUARDAR) { cb.checked = !cb.checked; aviso('Primero entra con GitHub (una vez en este aparato).'); return; }
+    try {
+      const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ accion: 'mes', mes: cb.dataset.mes, terminado: cb.checked }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
+      FLUJO.meses = j.meses;
+      aviso(cb.checked ? `${nombreMes(cb.dataset.mes)}: terminado.` : `${nombreMes(cb.dataset.mes)}: abierto otra vez.`);
+      pintarMeses();
+    } catch (err) { cb.checked = !cb.checked; aviso(err.message, true); }
+    return;
+  }
+  if (e.target.closest('.mes-check')) return;
+  const t = e.target.closest('.mes-tarjeta');
+  if (!t) return;
+  MES = t.dataset.mes;
+  calMes = MES; calDia = hoyISO().startsWith(MES) ? hoyISO() : `${MES}-01`;
+  // Si hay algo por confirmar ese mes, se entra por ahí; si no, por las ideas.
+  const porConfirmar = DATOS.marcas[MARCA].posts.some((p) => faseDe(p) === 'preparado' && mesDe(p) === MES);
+  const ideas = DATOS.marcas[MARCA].posts.some((p) => grupoDe(p) === 'idea' && !faseDe(p) && mesDe(p) === MES && !(p.ventana && hoyISO() > p.ventana.hasta));
+  vista = porConfirmar ? 'confirmar' : ideas ? 'ideas' : 'calendario';
+  document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x.dataset.vista === vista));
+  mostrarVista();
+  window.scrollTo(0, 0);
+});
+$('#mes-volver').addEventListener('click', () => { MES = null; vista = 'meses'; mostrarVista(); window.scrollTo(0, 0); });
 
 $('#pestanas').addEventListener('click', (e) => {
   const b = e.target.closest('.pest');

@@ -788,8 +788,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-fb-1.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.facebook.com/473145069546753_1873929231406009",
+     "id": "473145069546753_1873929231406009",
+     "publicadoEl": "2026-11-13T17:56:05.905Z"
     }
    ]
   },

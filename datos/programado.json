@@ -501,8 +501,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-open-call-one-month-fb-1.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.facebook.com/473145069546753_1876452507820348",
+     "id": "473145069546753_1876452507820348",
+     "publicadoEl": "2026-11-15T17:02:30.003Z"
     }
    ]
   },

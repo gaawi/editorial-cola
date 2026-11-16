@@ -944,8 +944,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/queens-passport-cartel.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.facebook.com/473145069546753_1878327590966173",
+     "id": "473145069546753_1878327590966173",
+     "publicadoEl": "2026-11-16T23:02:18.720Z"
     }
    ]
   },

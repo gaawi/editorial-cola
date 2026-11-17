@@ -399,8 +399,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-petroushka-fb-1.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.facebook.com/473145069546753_1879544917511107",
+     "id": "473145069546753_1879544917511107",
+     "publicadoEl": "2026-11-17T23:02:06.038Z"
     }
    ]
   },

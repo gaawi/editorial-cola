@@ -996,8 +996,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/queens-mother-goose-cartel.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.facebook.com/473145069546753_1880694977396101",
+     "id": "473145069546753_1880694977396101",
+     "publicadoEl": "2026-11-18T23:02:41.392Z"
     }
    ]
   },

@@ -558,8 +558,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-ravel-fb-1.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.facebook.com/473145069546753_1882229840575948",
+     "id": "473145069546753_1882229840575948",
+     "publicadoEl": "2026-11-19T23:02:09.259Z"
     }
    ]
   },

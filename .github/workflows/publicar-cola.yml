@@ -37,11 +37,14 @@ jobs:
           META_TOKEN: ${{ secrets.META_TOKEN }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_TOKEN_ADAR: ${{ secrets.META_TOKEN_ADAR }}
+          FB_PAGE_ID_ADAR: ${{ secrets.FB_PAGE_ID_ADAR }}
+          IG_USER_ID_ADAR: ${{ secrets.IG_USER_ID_ADAR }}
         run: |
           git config user.name "editorial-cola"
           git config user.email "editorial-cola@users.noreply.github.com"
           # Al lanzarlo a mano, primero comprueba que los secretos sirven.
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then node herramientas/publicar-cola.mjs --comprobar; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then node herramientas/publicar-cola.mjs --comprobar || true; fi
           fin=$(( $(date +%s) + 345*60 ))
           while :; do
             git pull -q --rebase origin main || true

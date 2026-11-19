@@ -10,6 +10,7 @@ import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { conSesion, VERSION } from './_puerta.js';
 import { publicarInstagram, publicarFacebook } from './_meta.js';
+import { credenciales, marcaDe } from './_cuentas.js';
 
 const recorte = (t) => String(t || '').replace(/\s+/g, ' ').trim().slice(0, 120);
 
@@ -34,14 +35,16 @@ async function publicar(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   if (!(await conSesion(req))) return res.status(401).send('{"ok":false,"error":"sin sesión"}');
 
-  const token = process.env.META_TOKEN, paginaId = process.env.FB_PAGE_ID, igId = process.env.IG_USER_ID;
   const cola = JSON.parse(await readFile(join(process.cwd(), 'datos', 'programado.json'), 'utf8'));
   const ahora = Date.now();
   const hecho = [];
   for (const [clave, e] of Object.entries(cola.posts || {})) {
+    // Cada post sale por la cuenta de su marca (CreArtBox o Festival ADAR).
+    const { marca, token, paginaId, igId } = credenciales(marcaDe(clave, e));
     for (const r of e.redes || []) {
       if (r.via !== 'meta' || r.estado !== 'en cola' || new Date(r.cuando).getTime() > ahora) continue;
-      const fila = { clave, red: r.red };
+      const fila = { clave, marca, red: r.red };
+      if (!token || !paginaId || !igId) { fila.estado = 'espera'; fila.aviso = 'Faltan las variables de esta marca en Vercel.'; hecho.push(fila); continue; }
       try {
         const previo = e.tipo === 'historia' ? null : await yaEsta(r.red, r.texto, token, igId, paginaId);
         if (previo) { fila.estado = 'ya estaba'; fila.url = previo; hecho.push(fila); continue; }
@@ -67,5 +70,5 @@ async function publicar(req, res) {
       hecho.push(fila);
     }
   }
-  res.send(JSON.stringify({ ok: hecho.every((f) => f.estado !== 'error'), publicados: hecho.length ? hecho : 'nada que toque ahora' }, null, 1));
+  res.send(JSON.stringify({ ok: hecho.every((f) => f.estado !== 'error' && f.estado !== 'espera'), publicados: hecho.length ? hecho : 'nada que toque ahora' }, null, 1));
 }

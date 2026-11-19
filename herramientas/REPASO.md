@@ -1,4 +1,4 @@
-# Repaso diario de redes (CreArtBox)
+# Repaso diario de redes (CreArtBox y Festival ADAR)
 
 Lo hace una tarea programada cada mañana, en una sesión nueva. Guillermo
 revisa desde la app (https://editorial-cola.vercel.app) y decide con dos
@@ -17,7 +17,19 @@ lo que hay entre medias.
     (necesita `../adar` al lado).
   - `lib/render.mjs`: `imagenesDe({ marca, clave, formatos, carrusel })`
     dibuja las imágenes finales.
-- `gaawi/adar`, `src/data/kit-creartbox.ts`: las fichas (ideas) de CreArtBox.
+- `gaawi/adar`, `src/data/kit-creartbox.ts`: las fichas (ideas) de CreArtBox;
+  `src/data/kit-adar.ts`: las de Festival ADAR (claves `es/…`).
+
+## Dos cuentas
+
+La app empieza eligiendo cuenta (CreArtBox o Festival ADAR) y todo lo de
+dentro es de esa cuenta. Cada post sale por la cuenta de su marca
+(`lib/cuentas.mjs`): CreArtBox con `META_TOKEN`, `FB_PAGE_ID`, `IG_USER_ID`;
+ADAR con los mismos y `_ADAR` al final, en los secretos de GitHub y en
+Vercel. La cola apunta `marca` en cada entrada; si falta, `es/…` es ADAR. Lo de
+una marca sin secretos espera en la cola. Las ideas que pide él llevan
+`marca`; los meses de ADAR se cierran como `adar:AAAA-MM`. En cada check,
+repasar las dos cuentas.
 
 ## Lo que Guillermo ya ha dicho (no volver a preguntarlo)
 

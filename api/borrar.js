@@ -4,12 +4,14 @@
 // Dos pasos, porque no se puede deshacer:
 //   /api/borrar?q=A throwback to Tokyo            → enseña qué borraría
 //   /api/borrar?q=A throwback to Tokyo&confirmar=si → lo borra
+//   &marca=adar para buscar en las cuentas de Festival ADAR (sin ella, CreArtBox)
 //
 // Facebook deja borrar por la API los posts de la Página. Instagram puede no
 // dejarlo (depende de la versión de la API y del tipo de post): si se niega,
 // se dice y hay que borrarlo a mano desde la app de Instagram.
 
 import { conSesion, VERSION } from './_puerta.js';
+import { credenciales, variables, MARCAS } from './_cuentas.js';
 
 const norm = (t) => String(t || '').replace(/\s+/g, ' ').trim().toLowerCase();
 
@@ -21,7 +23,9 @@ export default async function handler(req, res) {
     const q = norm(req.query && req.query.q);
     if (q.length < 12) return res.status(400).send('{"ok":false,"error":"pon en ?q= al menos 12 letras del principio del texto"}');
     const confirmar = req.query.confirmar === 'si';
-    const token = process.env.META_TOKEN, paginaId = process.env.FB_PAGE_ID, igId = process.env.IG_USER_ID;
+    const marca = MARCAS[req.query.marca] ? req.query.marca : 'creartbox';
+    const { token, paginaId, igId } = credenciales(marca);
+    if (!token) return res.status(400).send(JSON.stringify({ ok: false, error: `faltan las variables de ${MARCAS[marca].nombre} en Vercel` }));
     const api = (ruta, metodo = 'GET') => fetch(`https://graph.facebook.com/${VERSION}/${ruta}${ruta.includes('?') ? '&' : '?'}access_token=${encodeURIComponent(token)}`, { method: metodo })
       .then((r) => r.json()).then((d) => { if (d.error) throw new Error(d.error.message); return d; });
 

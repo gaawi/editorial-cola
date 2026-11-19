@@ -8,7 +8,10 @@
 // resueltos, para que el publicador no tenga que dibujar nada.
 //
 // Lo ejecuta GitHub Actions cada pocos minutos (.github/workflows/publicar-cola.yml)
-// con META_TOKEN, FB_PAGE_ID e IG_USER_ID como secretos. Después de cada
+// con los secretos de cada cuenta: META_TOKEN, FB_PAGE_ID e IG_USER_ID para
+// CreArtBox y los mismos con _ADAR para Festival ADAR (lib/cuentas.mjs). Cada
+// post sale por la cuenta de su marca; si a una marca le faltan los secretos,
+// lo suyo espera en la cola y lo de la otra sale igual. Después de cada
 // publicación se guarda el resultado y se sube al repositorio en el momento:
 // si algo se cae a mitad, lo ya publicado no se vuelve a publicar.
 //
@@ -21,6 +24,7 @@ import { execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { publicarInstagram, publicarFacebook, comentar } from '../lib/meta.mjs';
+import { MARCAS, credenciales, variables, marcaDe } from '../lib/cuentas.mjs';
 
 const AQUI = join(dirname(fileURLToPath(import.meta.url)), '..');
 const COLA = join(AQUI, 'datos', 'programado.json');
@@ -30,16 +34,30 @@ const ENSAYO = process.argv.includes('--ensayo');
 // días tarde hace más daño que no publicarlo.
 const MARGEN_MS = 6 * 3600 * 1000;
 
+// CreArtBox tenía sus identificadores puestos a mano antes de usar secretos:
+// se mantienen por si falta alguno. ADAR no tiene ninguno de reserva.
+const RESERVA = { creartbox: { paginaId: '473145069546753', igId: '17841404259739766' } };
+function cuenta(marca) {
+  const c = credenciales(marca);
+  return { ...c, paginaId: c.paginaId || RESERVA[marca]?.paginaId || '', igId: c.igId || RESERVA[marca]?.igId || '' };
+}
+
 // --comprobar: solo mira que los secretos sirven (lee el nombre de la Página
-// y de su Instagram). No publica nada.
+// y de su Instagram de cada marca). No publica nada.
 if (process.argv.includes('--comprobar')) {
   const { graph } = await import('../lib/meta.mjs');
-  const t = process.env.META_TOKEN;
-  if (!t || !process.env.FB_PAGE_ID || !process.env.IG_USER_ID) { console.log('Faltan secretos: META_TOKEN, FB_PAGE_ID o IG_USER_ID.'); process.exit(1); }
-  const pg = await graph(`/${process.env.FB_PAGE_ID}`, { params: { fields: 'name' }, token: t });
-  const ig = await graph(`/${process.env.IG_USER_ID}`, { params: { fields: 'username' }, token: t });
-  console.log(`Secretos correctos: Página «${pg.name}», Instagram @${ig.username}.`);
-  process.exit(0);
+  let mal = 0;
+  for (const marca of Object.keys(MARCAS)) {
+    const c = cuenta(marca);
+    const v = variables(marca);
+    if (!c.token || !c.paginaId || !c.igId) { console.log(`${MARCAS[marca].nombre}: sin secretos (${Object.values(v).join(', ')}).`); if (marca === 'creartbox') mal++; continue; }
+    try {
+      const pg = await graph(`/${c.paginaId}`, { params: { fields: 'name' }, token: c.token });
+      const ig = await graph(`/${c.igId}`, { params: { fields: 'username' }, token: c.token });
+      console.log(`${MARCAS[marca].nombre}: secretos correctos, Página «${pg.name}», Instagram @${ig.username}.`);
+    } catch (e) { mal++; console.log(`${MARCAS[marca].nombre}: los secretos no sirven: ${e.message}`); }
+  }
+  process.exit(mal ? 1 : 0);
 }
 
 const ahora = Date.now();
@@ -60,15 +78,9 @@ if (!pendientes.length) {
   process.exit(0);
 }
 
-const token = process.env.META_TOKEN;
-const paginaId = process.env.FB_PAGE_ID || '473145069546753';
-const igId = process.env.IG_USER_ID || '17841404259739766';
-if (!ENSAYO && (!token || !paginaId || !igId)) {
-  // Sin los secretos en GitHub no se publica desde aquí (se hace con
-  // /api/publicar-ahora, que usa los de Vercel). No es un fallo: se avisa y ya.
-  console.log('Sin META_TOKEN, FB_PAGE_ID o IG_USER_ID en los secretos de GitHub: no publico desde Actions.');
-  process.exit(0);
-}
+// Sin los secretos de una marca no se publica lo suyo desde aquí: se queda
+// en la cola, se avisa una vez y ya. No es un fallo.
+const sinCuenta = new Set();
 
 async function guardar(mensaje) {
   cola.actualizado = new Date().toISOString().slice(0, 10);
@@ -103,6 +115,13 @@ for (const { clave, e, r } of pendientes) {
     continue;
   }
   if (ENSAYO) continue;
+  const marca = marcaDe(clave, e);
+  const { token, paginaId, igId } = cuenta(marca);
+  if (!token || !paginaId || !igId) {
+    if (!sinCuenta.has(marca)) console.log(`  Sin los secretos de ${MARCAS[marca].nombre} (${Object.values(variables(marca)).join(', ')}): espera en la cola.`);
+    sinCuenta.add(marca);
+    continue;
+  }
   try {
     const hecho = r.red === 'ig'
       ? await publicarInstagram({ igId, token, texto: r.texto, imagen: r.imagenes, historia, colaboradores: r.colaboradores || [] })

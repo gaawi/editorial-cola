@@ -11,6 +11,7 @@
 // Nada sale sin «confirmar», y «confirmar» solo vale sobre algo preparado.
 import { conSesion } from './_puerta.js';
 import { credencial, leerJSON, cambiarJSON } from './_gh.js';
+import { marcaDe } from './_cuentas.js';
 
 const VACIO = { _ayuda: 'Lo escribe la app (api/flujo.js). fase: aprobado · preparado · confirmado · luego (más adelante) · descartado (archivo) · cambios.', posts: {} };
 const VACIO_COLA = { posts: {} };
@@ -63,8 +64,9 @@ export default async function handler(req, res) {
     const { clave, accion } = b;
     // Marcar un mes como terminado (todo programado), o desmarcarlo.
     if (accion === 'mes') {
+      // Cada marca cierra sus meses: los de ADAR van como «adar:AAAA-MM».
       const mes = String(b.mes || '');
-      if (!/^\d{4}-\d{2}$/.test(mes)) return res.status(400).json({ error: 'Mes no válido.' });
+      if (!/^(adar:)?\d{4}-\d{2}$/.test(mes)) return res.status(400).json({ error: 'Mes no válido.' });
       const nuevo = await cambiarJSON(yo.token, 'flujo.json', VACIO, (d) => {
         (d.meses ||= {})[mes] = { terminado: !!b.terminado, quien: yo.login, fecha: new Date().toISOString() };
       }, `App: ${b.terminado ? 'mes terminado' : 'mes abierto'} ${mes}`);
@@ -75,7 +77,8 @@ export default async function handler(req, res) {
       const texto = typeof b.nota === 'string' ? b.nota.trim().slice(0, 4000) : '';
       if (!texto) return res.status(400).json({ error: 'Escribe la idea.' });
       const nuevo = await cambiarJSON(yo.token, 'flujo.json', VACIO, (d) => {
-        (d.ideas ||= []).push({ texto, quien: yo.login, fecha: new Date().toISOString(), hecha: false });
+        const marca = b.marca === 'adar' ? 'adar' : 'creartbox';
+        (d.ideas ||= []).push({ texto, marca, quien: yo.login, fecha: new Date().toISOString(), hecha: false });
       }, 'App: idea nueva');
       return res.status(200).json({ ok: true, ideas: nuevo.ideas });
     }
@@ -103,7 +106,8 @@ export default async function handler(req, res) {
             const nuevas = e.redes.filter((r) => toca(k, r)).map((r) => ({ ...r, estado: 'en cola', via: 'meta' }));
             if (!nuevas.length) continue;
             const ya = d.posts[k] ? d.posts[k].redes.filter((r) => !nuevas.some((n) => n.red === r.red)) : [];
-            d.posts[k] = { ...e, redes: [...ya, ...nuevas] };
+            // La marca dice por qué cuenta sale (lib/cuentas.mjs).
+            d.posts[k] = { ...e, marca: marcaDe(clave, e.marca ? e : { marca: b.marca }), redes: [...ya, ...nuevas] };
           }
           d.actualizado = ahora;
         }, `Confirmado desde la app: ${clave}${red ? ` (${red})` : ''}`);

@@ -16,14 +16,19 @@
 <header class="barra">
   <button id="atras" class="atras" hidden aria-label="Volver">‹</button>
   <h1 id="titulo">Aprobar</h1>
-  <button id="marca" class="marca">CreArtBox</button>
+  <button id="marca" class="marca" hidden aria-label="Cambiar de cuenta"><img id="marca-avatar" alt=""><span id="marca-nombre">CreArtBox</span></button>
 </header>
 
 <!-- ── Lista ─────────────────────────────────────────────────────────── -->
 <main id="lista" class="pantalla activa">
   <p class="entrar-aviso" id="entrar-aviso" hidden>Para que los botones guarden,
     <a href="/entrar.html">entra otra vez con GitHub</a>. Solo una vez en cada aparato.</p>
-  <!-- La entrada: los meses, con su resumen -->
+  <!-- La entrada: de qué cuenta se va a hablar -->
+  <section id="vista-cuentas" class="cuentas">
+    <h2 class="meses-titulo">¿Qué cuenta?</h2>
+    <div id="cuentas-lista" class="cuentas-lista"></div>
+  </section>
+  <!-- Dentro de una cuenta: los meses, con su resumen -->
   <section id="vista-meses" class="meses">
     <h2 class="meses-titulo">Meses</h2>
     <p class="aviso-suave">Toca un mes para trabajar en él. Marca «Mes terminado» cuando esté todo programado.</p>

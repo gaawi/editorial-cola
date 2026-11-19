@@ -31,7 +31,7 @@ let PROGRAMADO = { posts: {} };
 let shaAprob = null;
 let actual = null;
 let filtro = 'ahora';
-let vista = 'meses';
+let vista = 'cuentas'; // la entrada: elegir la cuenta
 let MES = null; // 'AAAA-MM' cuando se trabaja en un mes
 const HOY = new Date().toISOString().slice(0, 10);
 const DIA = 86400000;
@@ -707,7 +707,7 @@ function volver() {
   $('#detalle').classList.remove('activa');
   $('#lista').classList.add('activa');
   $('#atras').hidden = true;
-  $('#marca').hidden = false;
+  $('#marca').hidden = vista === 'cuentas';
   $('#titulo').textContent = 'Aprobar';
   mostrarVista();
 }
@@ -909,8 +909,9 @@ function cajaSugerir(p) {
 
 /** Las ideas que él ha pedido y todavía no están hechas, encima del muro. */
 function pintarIdeasPedidas() {
-  const pend = (FLUJO.ideas || []).filter((x) => !x.hecha);
-  const hechas = (FLUJO.ideas || []).filter((x) => x.hecha).slice(-2);
+  const deEsta = (FLUJO.ideas || []).filter((x) => (x.marca || 'creartbox') === MARCA);
+  const pend = deEsta.filter((x) => !x.hecha);
+  const hechas = deEsta.filter((x) => x.hecha).slice(-2);
   $('#ideas-pedidas').innerHTML = [...pend.map((x) => `<li>${escapar(x.texto)}<small>Pendiente: la preparo en el próximo repaso</small></li>`),
     ...hechas.map((x) => `<li class="hecha"><span class="tarea">${escapar(x.texto)}</span><small>${x.respuesta ? escapar(/^hech/i.test(x.respuesta) ? x.respuesta : 'Hecha: ' + x.respuesta) : 'Hecha'}</small></li>`)].join('');
 }
@@ -927,7 +928,7 @@ $('#idea-form').addEventListener('submit', async (ev) => {
   b.disabled = true; b.textContent = 'Enviando…';
   try {
     const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accion: 'idea', nota: texto }) });
+      headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accion: 'idea', nota: texto, marca: MARCA }) });
     const j = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
     FLUJO.ideas = j.ideas;
@@ -981,7 +982,7 @@ async function llamarFlujo(clave, accion, extra = {}) {
   const r = await fetch('/api/flujo', {
     method: 'POST', credentials: 'same-origin',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ clave, accion, ...extra }),
+    body: JSON.stringify({ clave, accion, marca: MARCA, ...extra }),
   });
   const j = await r.json().catch(() => ({}));
   if (!r.ok) {
@@ -1299,7 +1300,9 @@ async function arrancar() {
   textosDeMetricool();
   await cargarFlujo();
 
-  cambiarMarca(MARCA);
+  const pedida = location.hash.slice(1);
+  cambiarMarca(DATOS.marcas[pedida] ? pedida : MARCA);
+  if (DATOS.marcas[pedida]) vista = 'meses';
   pintarCuentaConfirmar();
   mostrarVista();
 }
@@ -1320,16 +1323,80 @@ function cambiarMarca(m) {
   MARCA = m;
   MOTOR = crearMotor(DATOS.marcas[MARCA].marca);
   CUENTAS = DATOS.marcas[MARCA].cuentas;
-  $('#marca').textContent = DATOS.marcas[MARCA].marca.org;
+  $('#marca-nombre').textContent = DATOS.marcas[MARCA].marca.org;
+  $('#marca-avatar').src = CUENTAS.avatar;
+  document.body.dataset.marca = MARCA;
   if (DATOS.marcas[MARCA].posts[0]?._orig) pintarCuentaConfirmar();
 }
 
+// ── La entrada: elegir la cuenta ──────────────────────────────────────
+// Lo primero es decir de qué cuenta se habla, para no aprobar lo de una
+// pensando en la otra. Arriba queda siempre la cuenta elegida; tocándola se
+// vuelve aquí. #adar o #creartbox en la dirección entran directos.
+let CONECTADAS = null; // { creartbox: true, adar: false }: si publica sola
+
+async function pintarCuentas() {
+  if (!CONECTADAS) {
+    try {
+      const r = await fetch('/api/meta-estado?resumen=1', { credentials: 'same-origin', cache: 'no-store' });
+      CONECTADAS = r.ok ? await r.json() : {};
+    } catch { CONECTADAS = {}; }
+  }
+  const antes = MARCA;
+  const tarjetas = Object.keys(DATOS.marcas).sort((a, b) => (a === 'creartbox' ? -1 : b === 'creartbox' ? 1 : 0)).map((m) => {
+    MARCA = m; // fichasDe, faseDe y grupoDe miran la marca de ahora
+    const d = DATOS.marcas[m];
+    const posts = d.posts;
+    const porConfirmar = posts.filter((p) => faseDe(p) === 'preparado').length;
+    const ideas = posts.filter((p) => grupoDe(p) === 'idea' && !faseDe(p) && !(p.ventana && hoyISO() > p.ventana.hasta)).length;
+    const enCola = Object.entries(PROGRAMADO.posts || {}).filter(([k]) => posts.some((p) => k === p.clave || k.startsWith(p.clave + '#')))
+      .flatMap(([, e]) => e.redes).filter((r) => r.estado === 'en cola' && new Date(r.cuando) > new Date());
+    const proxima = enCola.map((r) => r.cuando).sort()[0];
+    const conectada = CONECTADAS[m];
+    const estado = conectada === true
+      ? '<span class="cuenta-ok">Publica sola</span>'
+      : conectada === false
+        ? '<span class="cuenta-falta">Falta conectar con Meta para publicar</span>'
+        : '';
+    return `<button class="cuenta-tarjeta" data-marca="${m}">
+      <img class="cuenta-avatar" src="${d.cuentas.avatar}" alt="">
+      <span class="cuenta-texto">
+        <b>${escapar(d.marca.org)}</b>
+        <small>@${escapar(d.cuentas.ig)} · ${escapar(d.cuentas.fb)}</small>
+        <span class="cuenta-cifras">${porConfirmar ? `<em>${porConfirmar} por confirmar</em> · ` : ''}${ideas} ${ideas === 1 ? 'idea' : 'ideas'} · ${enCola.length} en cola${proxima ? ` · próxima ${new Date(proxima).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'America/New_York' })}` : ''}</span>
+        ${estado}
+      </span>
+      <span class="cuenta-flecha">›</span>
+    </button>`;
+  });
+  MARCA = antes;
+  const falta = Object.values(CONECTADAS).some((v) => v === false);
+  $('#cuentas-lista').innerHTML = tarjetas.join('')
+    + (falta ? '<p class="aviso-suave">Para conectar una cuenta: <a href="/api/meta-conectar">Conectar con Meta</a> y marca en Facebook las dos Páginas. Puedes trabajar ya en las dos; lo que confirmes de una cuenta sin conectar espera en la cola.</p>' : '');
+}
+
+function entrarEnCuenta(m) {
+  if (!DATOS.marcas[m]) return;
+  cambiarMarca(m);
+  // El calendario de una marca no tiene por qué dejar a la otra en el mismo día.
+  calMes = null; calDia = null; MES = null;
+  vista = 'meses';
+  history.replaceState(null, '', '#' + m);
+  mostrarVista();
+  window.scrollTo(0, 0);
+}
+
+$('#cuentas-lista').addEventListener('click', (e) => {
+  const b = e.target.closest('.cuenta-tarjeta');
+  if (b) entrarEnCuenta(b.dataset.marca);
+});
+
 $('#atras').addEventListener('click', volver);
 $('#marca').addEventListener('click', () => {
-  cambiarMarca(MARCA === 'creartbox' ? 'adar' : 'creartbox');
-  // El calendario de una marca no tiene por qué dejar a la otra en el mismo día.
-  calMes = null; calDia = null;
+  MES = null; vista = 'cuentas';
+  history.replaceState(null, '', location.pathname + location.search);
   mostrarVista();
+  window.scrollTo(0, 0);
 });
 $('#filtros').addEventListener('click', (e) => {
   const b = e.target.closest('.chip');
@@ -1563,17 +1630,22 @@ $('#cal-dia').addEventListener('click', (e) => {
 
 /** Enseña el apartado que toque y pinta solo ese. */
 function mostrarVista() {
+  const enCuentas = vista === 'cuentas';
+  document.body.dataset.marca = enCuentas ? '' : MARCA;
   const enMeses = vista === 'meses';
+  $('#vista-cuentas').hidden = !enCuentas;
+  $('#marca').hidden = enCuentas || !!actual;
   $('#vista-meses').hidden = !enMeses;
-  $('#pestanas').hidden = enMeses;
-  $('#mes-barra').hidden = enMeses || !MES;
+  $('#pestanas').hidden = enMeses || enCuentas;
+  $('#mes-barra').hidden = enMeses || enCuentas || !MES;
   if (MES) $('#mes-nombre').textContent = nombreMes(MES);
   $('#vista-ideas').hidden = vista !== 'ideas';
   $('#vista-programado').hidden = vista !== 'programado';
   $('#vista-confirmar').hidden = vista !== 'confirmar';
   $('#vista-publicado').hidden = vista !== 'publicado';
   $('#vista-calendario').hidden = vista !== 'calendario';
-  if (enMeses) pintarMeses();
+  if (enCuentas) pintarCuentas();
+  else if (enMeses) pintarMeses();
   else if (vista === 'ideas') pintarLista();
   else if (vista === 'programado') pintarProgramado();
   else if (vista === 'confirmar') pintarConfirmar();
@@ -1584,6 +1656,8 @@ function mostrarVista() {
 // ── Los meses: la entrada ──────────────────────────────────────────────
 const MESES_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 function nombreMes(m) { const [a, n] = m.split('-').map(Number); const t = `${MESES_ES[n - 1]} ${a}`; return t[0].toUpperCase() + t.slice(1); }
+/** Cada cuenta cierra sus meses: los de ADAR se guardan como «adar:AAAA-MM». */
+const claveMes = (m) => (MARCA === 'creartbox' ? m : `${MARCA}:${m}`);
 function sumaMes(m, d) { const [a, n] = m.split('-').map(Number); const f = new Date(Date.UTC(a, n - 1 + d, 1)); return f.toISOString().slice(0, 7); }
 
 async function pintarMeses() {
@@ -1617,7 +1691,7 @@ async function pintarMeses() {
     const total = (r.post || 0) + (r.historia || 0);
     const hechos = (r.publicado || 0) + (r.programado || 0);
     const pct = total ? Math.round((hechos / total) * 100) : 0;
-    const terminado = cerrados[m] && cerrados[m].terminado;
+    const terminado = cerrados[claveMes(m)] && cerrados[claveMes(m)].terminado;
     const pasado = m < hoy;
     return `<article class="mes-tarjeta${m === hoy ? ' actual' : ''}${terminado ? ' terminado' : ''}" data-mes="${m}">
       <div class="mes-cab"><h3>${nombreMes(m)}</h3>${m === hoy ? '<span class="mes-hoy">este mes</span>' : ''}</div>
@@ -1643,7 +1717,7 @@ $('#meses-lista').addEventListener('click', async (e) => {
     if (!PUEDE_GUARDAR) { cb.checked = !cb.checked; aviso('Primero entra con GitHub (una vez en este aparato).'); return; }
     try {
       const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ accion: 'mes', mes: cb.dataset.mes, terminado: cb.checked }) });
+        body: JSON.stringify({ accion: 'mes', mes: claveMes(cb.dataset.mes), terminado: cb.checked }) });
       const j = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
       FLUJO.meses = j.meses;

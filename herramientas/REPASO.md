@@ -31,6 +31,15 @@ una marca sin secretos espera en la cola. Las ideas que pide él llevan
 `marca`; los meses de ADAR se cierran como `adar:AAAA-MM`. En cada check,
 repasar las dos cuentas.
 
+ADAR: las fichas a mano van en `adar/src/data/kit-adar.ts` (mismo formato
+que las de CreArtBox, en castellano, cierre «Más en festivaladar.com», que en
+Facebook pasa a enlace). Historial en `datos/historico-adar.json` (Action
+«Historial»). Si una ficha anuncia un artículo del blog que está en borrador,
+al prepararla se publica también el artículo (`status: publish`). Braña
+Sonora lleva el logotipo del Ministerio de Cultura en todo lo que se difunda
+(obligatorio por las bases). Correo de contacto: leiguardamusic@gmail.com.
+Amigos del Festival: 10, 30 y 50 € al año, se puede regalar.
+
 ## Lo que Guillermo ya ha dicho (no volver a preguntarlo)
 
 - La app es para revisar. Él decide con Aprobar y Confirmar; lo demás lo

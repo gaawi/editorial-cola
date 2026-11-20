@@ -483,7 +483,8 @@ button { background: none; border: none; cursor: pointer; }
  * siempre; la ficha enseña Instagram, Facebook y la historia a la vez; el
  * calendario lleva el día al lado y no debajo. */
 @media (min-width: 1000px) {
-  :root { --ancho: 1480px; --margen: 32px; }
+  /* De lado a lado: en un monitor grande caben más posts a la vez. */
+  :root { --ancho: 100vw; --margen: 32px; }
   .barra {
     padding-left: max(var(--margen), calc((100vw - var(--ancho)) / 2 + var(--margen)));
     padding-right: max(var(--margen), calc((100vw - var(--ancho)) / 2 + var(--margen)));
@@ -766,3 +767,21 @@ body[data-marca="creartbox"] .barra { box-shadow: inset 0 -3px 0 #1c1917; }
 @media (min-width: 1000px) {
   .cuentas-lista { grid-template-columns: 1fr 1fr; max-width: 900px; }
 }
+
+/* Todos los meses seguidos: un rótulo por mes y, arriba, saltos a cada uno. */
+.mes-separador {
+  font-family: Literata, Georgia, serif; font-size: 22px; font-weight: 600;
+  margin: 28px 0 10px; padding-top: 14px; border-top: 1px solid var(--filete);
+}
+.mes-separador:first-child { margin-top: 8px; border-top: 0; padding-top: 0; }
+.mes-saltos { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
+.mes-saltos::-webkit-scrollbar { display: none; }
+.mes-saltos button {
+  flex: none; font-size: 13px; font-weight: 600; color: var(--tinta);
+  border: 1px solid var(--filete); border-radius: 999px; padding: 6px 12px; background: #fff;
+}
+.mes-saltos[hidden] { display: none; }
+
+/* El rótulo del mes ocupa la fila entera de la rejilla. */
+.muro .mes-separador { grid-column: 1 / -1; }
+@media (max-width: 999px) { .mes-separador { padding-left: 16px; padding-right: 16px; } }

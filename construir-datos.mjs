@@ -168,6 +168,13 @@ if (soloMarca && existsSync(join(AQUI, 'datos', 'posts.json'))) {
 
 for (const nombre of marcas) {
   const { brand, ideas } = await cargarIdeas(nombre, ADAR);
+  // Dos fichas con la misma clave se pisan en la app (pasó con dos de
+  // kit-adar.ts que se llamaban como dos artículos del blog).
+  const vistas = new Set();
+  for (const i of ideas) {
+    if (vistas.has(clave(i))) throw new Error(`Clave repetida en ${nombre}: ${clave(i)}. Cambia el slug de la ficha.`);
+    vistas.add(clave(i));
+  }
   const rev = await revisiones(nombre);
 
   salida.marcas[nombre] = {

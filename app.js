@@ -146,6 +146,26 @@ function reparte(fichas) {
   };
 }
 
+/**
+ * Las tarjetas, una detrás de otra y con un rótulo cada vez que cambia el
+ * mes: se ven todos los meses seguidos, sin tener que salir y entrar en otro.
+ */
+function pintarPorMeses(cont, fichas) {
+  let ultimo = null;
+  for (const p of fichas) {
+    const m = mesDe(p);
+    if (!MES && m && m !== ultimo) {
+      const h = document.createElement('h3');
+      h.className = 'mes-separador';
+      h.id = `sep-${vista}-${m}`;
+      h.textContent = nombreMes(m);
+      cont.appendChild(h);
+      ultimo = m;
+    }
+    cont.appendChild(tarjeta(p));
+  }
+}
+
 function pintarLista() {
   const cont = $('#fichas');
   cont.innerHTML = '';
@@ -167,7 +187,7 @@ function pintarLista() {
   // En Ideas no hay fila de circulitos: todo va al muro, también lo que es
   // solo una historia, que lleva su sello y se ve en 9:16. Se decide igual.
   $('#historias').hidden = true;
-  for (const p of posts) cont.appendChild(tarjeta(p));
+  pintarPorMeses(cont, posts.sort((a, b) => (mesDe(a) || '').localeCompare(mesDe(b) || '') || a.date.localeCompare(b.date)));
   observarLienzos();
 }
 
@@ -379,7 +399,12 @@ function lineasDe(el) {
   return Math.round(alto / parseFloat(cs.lineHeight));
 }
 
+// El 20 de noviembre pidió leer el texto entero de golpe, sin «… más». El
+// plegado queda aquí por si un día lo quiere otra vez: basta con ponerlo a true.
+const PLEGAR = false;
+
 function plegar(el) {
+  if (!PLEGAR) return;
   if (!el.isConnected || el.dataset.abierto || el.getClientRects().length === 0) return;
   const texto = el.dataset.texto;
   const max = Number(el.dataset.lineas);
@@ -1063,14 +1088,14 @@ function pintarConfirmar() {
   cont.innerHTML = '';
   const fichas = fichasDe('confirmar').sort((a, b) => {
     const pa = faseDe(a) === 'preparado' ? 0 : 1, pb = faseDe(b) === 'preparado' ? 0 : 1;
-    return pa - pb || a.date.localeCompare(b.date);
+    return (mesDe(a) || '').localeCompare(mesDe(b) || '') || pa - pb || a.date.localeCompare(b.date);
   });
   const listos = fichas.filter((p) => faseDe(p) === 'preparado').length;
   $('#resumen-confirmar').textContent = fichas.length
     ? `${listos === 1 ? '1 listo' : `${listos} listos`} para confirmar${fichas.length - listos ? ` · ${fichas.length - listos === 1 ? '1 aprobado' : `${fichas.length - listos} aprobados`} que estoy preparando` : ''}. Nada sale sin «Confirmar publicación».`
     : 'Nada pendiente. Lo que apruebes en Ideas aparecerá aquí cuando esté preparado.';
   $('#historias-conf').hidden = true;
-  for (const p of fichas) cont.appendChild(tarjeta(p));
+  pintarPorMeses(cont, fichas);
   observarLienzos();
 }
 
@@ -1646,8 +1671,8 @@ function mostrarVista() {
   $('#marca').hidden = enCuentas || !!actual;
   $('#vista-meses').hidden = !enMeses;
   $('#pestanas').hidden = enMeses || enCuentas;
-  $('#mes-barra').hidden = enMeses || enCuentas || !MES;
-  if (MES) $('#mes-nombre').textContent = nombreMes(MES);
+  $('#mes-barra').hidden = enMeses || enCuentas;
+  pintarSaltos();
   $('#vista-ideas').hidden = vista !== 'ideas';
   $('#vista-programado').hidden = vista !== 'programado';
   $('#vista-confirmar').hidden = vista !== 'confirmar';
@@ -1745,9 +1770,41 @@ $('#meses-lista').addEventListener('click', async (e) => {
   const ideas = DATOS.marcas[MARCA].posts.some((p) => grupoDe(p) === 'idea' && !faseDe(p) && mesDe(p) === MES && !(p.ventana && hoyISO() > p.ventana.hasta));
   vista = porConfirmar ? 'confirmar' : ideas ? 'ideas' : 'calendario';
   document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x.dataset.vista === vista));
-  mostrarVista();
+  // Las listas enseñan todos los meses seguidos: se entra en el elegido y
+  // se sigue bajando a los siguientes sin salir.
+  const elegido = MES;
+  MES = null;
   window.scrollTo(0, 0);
+  mostrarVista();
+  requestAnimationFrame(() => irAMes(elegido));
 });
+/** Los meses de arriba: saltan a ese mes dentro de la lista, que los tiene todos. */
+function pintarSaltos() {
+  const conLista = vista === 'ideas' || vista === 'confirmar';
+  $('#mes-saltos').hidden = !conLista;
+  if (!conLista) return;
+  const grupo = vista === 'ideas' ? 'idea' : 'confirmar';
+  const meses = [...new Set(DATOS.marcas[MARCA].posts
+    .filter((p) => grupoDe(p) === grupo && !(grupo === 'idea' && (faseDe(p) === 'descartado' || (!faseDe(p) && p.ventana && HOY > p.ventana.hasta))))
+    .map(mesDe).filter(Boolean))].sort();
+  const corto = (m) => { const [a, n] = m.split('-').map(Number); const t = MESES_ES[n - 1].slice(0, 3); return t[0].toUpperCase() + t.slice(1) + (a !== new Date().getFullYear() ? ` ${String(a).slice(2)}` : ''); };
+  $('#mes-saltos').innerHTML = meses.map((m) => `<button data-mes="${m}">${corto(m)}</button>`).join('');
+}
+$('#mes-saltos').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-mes]');
+  if (!b) return;
+  irAMes(b.dataset.mes);
+});
+function irAMes(m) {
+  const h = document.getElementById(`sep-${vista}-${m}`);
+  if (!h) return;
+  const arriba = ($('.barra')?.offsetHeight || 0) + 8;
+  const ve = () => window.scrollTo(0, h.getBoundingClientRect().top + window.scrollY - arriba);
+  // Las imágenes de arriba se dibujan después y empujan la lista: se vuelve
+  // a colocar cuando han tenido tiempo de asentarse.
+  ve(); setTimeout(ve, 350); setTimeout(ve, 900);
+}
+
 $('#mes-volver').addEventListener('click', () => { MES = null; vista = 'meses'; mostrarVista(); window.scrollTo(0, 0); });
 
 $('#pestanas').addEventListener('click', (e) => {

@@ -750,11 +750,18 @@ function pintarEstadoActual() {
 }
 
 // ── La rejilla de lo ya publicado ──────────────────────────────────────
+// Cada cuenta tiene el suyo: CreArtBox en historico-ig.json (de Metricool) y
+// ADAR en historico-adar.json (de la Graph API, herramientas/historico.mjs).
+const HISTORICOS = {};
+const ARCHIVO_HISTORICO = { creartbox: 'datos/historico-ig.json', adar: 'datos/historico-adar.json' };
 async function cargarHistorico() {
-  if (!HISTORICO) {
-    try { HISTORICO = await (await fetch('datos/historico-ig.json', { cache: 'no-store' })).json(); }
-    catch { HISTORICO = { posts: [] }; }
+  if (!HISTORICOS[MARCA]) {
+    try {
+      const r = await fetch(ARCHIVO_HISTORICO[MARCA], { cache: 'no-store' });
+      HISTORICOS[MARCA] = r.ok ? await r.json() : { posts: [] };
+    } catch { HISTORICOS[MARCA] = { posts: [] }; }
   }
+  HISTORICO = HISTORICOS[MARCA];
   return HISTORICO;
 }
 
@@ -1444,8 +1451,8 @@ function eventosCalendario() {
     por.get(e.fecha).push(e);
   };
 
-  // El histórico es de la cuenta de CreArtBox: en la otra marca no pinta nada.
-  if (MARCA === 'creartbox') {
+  // Lo ya publicado en el Instagram de la cuenta en la que se está.
+  if (HISTORICO === HISTORICOS[MARCA]) {
     for (const [fecha, url, tipo, , , , tema] of (HISTORICO?.posts || [])) {
       const code = url.replace(/\/$/, '').split('/').pop();
       poner({
@@ -1454,6 +1461,8 @@ function eventosCalendario() {
         redes: ['ig'],
       });
     }
+  }
+  if (MARCA === 'creartbox') {
     for (const c of DATOS.marcas[MARCA].etiquetas.conciertos) {
       poner({ fecha: c.fecha, forma: 'concierto', estado: 'concierto', titulo: c.nombre, sitio: c.sitio });
     }

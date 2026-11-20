@@ -1,0 +1,44 @@
+# Trae el historial de una cuenta (todo lo publicado en Instagram y Facebook)
+# a datos/historico-<marca>.json, con miniaturas. Se lanza a mano.
+name: Historial
+
+on:
+  workflow_dispatch:
+    inputs:
+      marca:
+        description: 'adar o creartbox'
+        default: 'adar'
+
+permissions:
+  contents: write
+
+jobs:
+  historial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Traer y guardar
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_TOKEN_ADAR: ${{ secrets.META_TOKEN_ADAR }}
+          FB_PAGE_ID_ADAR: ${{ secrets.FB_PAGE_ID_ADAR }}
+          IG_USER_ID_ADAR: ${{ secrets.IG_USER_ID_ADAR }}
+          MARCA: ${{ inputs.marca }}
+        run: |
+          case "$MARCA" in adar|creartbox) ;; *) echo "Marca no válida"; exit 1;; esac
+          command -v convert || (sudo apt-get update -q && sudo apt-get install -y -q imagemagick)
+          node herramientas/historico.mjs "$MARCA"
+          git config user.name "editorial-cola"
+          git config user.email "editorial-cola@users.noreply.github.com"
+          git add datos/historico-$MARCA.json datos/miniaturas
+          git commit -m "Historial de $MARCA" || exit 0
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep $((i*3)); done
+          exit 1

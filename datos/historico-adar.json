@@ -1,0 +1,1418 @@
+{
+ "_ayuda": "Lo ya publicado, sacado de la Graph API con herramientas/historico.mjs. posts: Instagram (columnas abajo); textos: el pie entero de cada uno; facebook: los posts de la Página; historias: solo las vivas al sacarlo.",
+ "cuenta": "festivaladar",
+ "seguidores": {
+  "instagram": 1528,
+  "facebook": 279
+ },
+ "pagina": "Festival para el Desarollo de las Artes en el Medio Rural",
+ "obtenido": "2026-11-20",
+ "columnas": [
+  "fecha",
+  "url",
+  "tipo",
+  "likes",
+  "alcance",
+  "vistas",
+  "tema"
+ ],
+ "posts": [
+  [
+   "2026-09-26",
+   "https://www.instagram.com/p/DdwUSJNTnrr/",
+   "imagen",
+   44,
+   757,
+   1546,
+   "🌿 OPEN CALL · RESIDENCIAS ADAR 2026–27 ¿Sois un grupo de artistas y os gustaría pasar entre 21 y 30 días creando en la Asturias rural? ADAR"
+  ],
+  [
+   "2026-09-22",
+   "https://www.instagram.com/p/DdlFwr0iEvu/",
+   "carrusel",
+   67,
+   870,
+   1729,
+   "La España que no se vacía cuando hay música Se habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motiv"
+  ],
+  [
+   "2026-08-18",
+   "https://www.instagram.com/p/DcKE8UAiPu7/",
+   "carrusel",
+   24,
+   634,
+   1188,
+   "🎶 Ayer cerramos la VI edición de ADAR en Leiguarda. El quinteto formado por Natania Hoffman, Žilvinas Brazauskas, Frederieke Saeijs, Guille"
+  ],
+  [
+   "2026-08-16",
+   "https://www.instagram.com/reel/DcGvGn4g9e_/",
+   "reel",
+   38,
+   1073,
+   1514,
+   "¡Más Momentos ADAR! Esta vez, un fragmento del concierto que vivimos en el Monasterio de Villanueva de Oscos junto a @the_rest_project 🎻"
+  ],
+  [
+   "2026-08-16",
+   "https://www.instagram.com/p/DcGcFYKiDlP/",
+   "carrusel",
+   24,
+   395,
+   800,
+   "🎶 Ayer vivimos el penúltimo concierto de ADAR en la Iglesia de Leiguarda. Un paseo sonoro por el interior de este espacio, con los músicos "
+  ],
+  [
+   "2026-08-15",
+   "https://www.instagram.com/reel/DcENqDkgK5Y/",
+   "reel",
+   43,
+   809,
+   1208,
+   "🍂 Otro de nuestro Momentos ADAR, un concierto increíble de @the_rest_project en el Auditorio As Quintas de El Franco. Gracias Lara, María y"
+  ],
+  [
+   "2026-08-15",
+   "https://www.instagram.com/p/DcDdszUCFvc/",
+   "carrusel",
+   49,
+   958,
+   2520,
+   "🌿 Ayer vivimos Equilibrium en La Casona de Belmonte, Oviñana. @the_rest_project compartió el trabajo desarrollado durante su residencia art"
+  ],
+  [
+   "2026-08-15",
+   "https://www.instagram.com/reel/DcDkiD9AdWB/",
+   "reel",
+   47,
+   826,
+   1319,
+   "Otro momento ADAR de uno de los ensayos con @the_rest_project ❤️"
+  ],
+  [
+   "2026-08-14",
+   "https://www.instagram.com/p/DcB8N3RlmkQ/",
+   "carrusel",
+   39,
+   1024,
+   2796,
+   "🎶 Ayer vivimos una noche muy especial en el Monasterio de Villanueva de Oscos. Bajo las bóvedas de este monasterio del siglo XII, María Flo"
+  ],
+  [
+   "2026-08-13",
+   "https://www.instagram.com/p/Db_Hl0LiNys/",
+   "carrusel",
+   45,
+   1049,
+   2601,
+   "🌘 Ayer vivimos uno de los momentos más especiales de esta edición de ADAR: un microconcierto durante el eclipse en el Alto de La Corredoria"
+  ],
+  [
+   "2026-08-13",
+   "https://www.instagram.com/p/Db-8FQ4CEEc/",
+   "carrusel",
+   23,
+   461,
+   1265,
+   "🎶 Después de los ensayos, ya estamos listos para el concierto de hoy. Nos vemos hoy a las 20:30 h en el Monasterio de Santa María de Villan"
+  ],
+  [
+   "2026-08-13",
+   "https://www.instagram.com/p/Db-mXZZiGOT/",
+   "carrusel",
+   43,
+   875,
+   2094,
+   "🎻 Así fue The Rest is Silence en el Auditorio As Quintas de A Caridá. Maria Florea, Lara Fernández y Daniel Claret, @the_rest_project, nos "
+  ],
+  [
+   "2026-08-11",
+   "https://www.instagram.com/reel/Db5aMLQIQC0/",
+   "reel",
+   40,
+   727,
+   1134,
+   "🎻 Últimos ensayos antes del concierto de esta noche. Hoy @the_rest_project llega al Auditorio As Quintas de A Caridá (El Franco) con The Re"
+  ],
+  [
+   "2026-08-09",
+   "https://www.instagram.com/reel/Db1MZirthR9/",
+   "reel",
+   25,
+   368,
+   546,
+   "Momento ADAR del concierto en el Aula del Oro de Belmonte de Miranda. 📽️ ¡Con ganas de más! Seguimos ❤️"
+  ],
+  [
+   "2026-08-09",
+   "https://www.instagram.com/reel/Db0UULTjPqi/",
+   "reel",
+   63,
+   921,
+   1364,
+   "Qué bien suena The Rest Project en la tele 📺! Gracias a RTPA por acercarse al Festival ADAR. Nuestra próxima parada: THE REST IS SILENCE · "
+  ],
+  [
+   "2026-08-08",
+   "https://www.instagram.com/p/DbxxHtwiCQq/",
+   "carrusel",
+   27,
+   499,
+   1125,
+   "🎹 Ayer vivimos Umbral Zero en el Aula del Oro de Belmonte de Miranda. Guillermo Laporta y Josefina Urraca presentaron un programa de música"
+  ],
+  [
+   "2026-08-07",
+   "https://www.instagram.com/reel/DbvDkAEoQrP/",
+   "reel",
+   27,
+   772,
+   1219,
+   "Otro Momento ADAR de nuestro concierto en el Parador de Corias 🎻 Nos vemos hoy en el Aula del oro, en Belmonte de Miranda, para el conciert"
+  ],
+  [
+   "2026-08-06",
+   "https://www.instagram.com/p/DbtNXcmCKBS/",
+   "carrusel",
+   25,
+   469,
+   1116,
+   "🎻 Ayer vivimos una nueva jornada de ADAR en la Biblioteca del Parador de Corias. Con La forma de la memoria, María Martínez, Frederieke Sae"
+  ],
+  [
+   "2026-08-06",
+   "https://www.instagram.com/reel/Dbsb6HUIVE-/",
+   "reel",
+   42,
+   571,
+   964,
+   "Momentos ADAR como este nos dejan con ganas de más conciertos ❤️ Entra en nuestra web para conocer el programa de este año y reserva tu entr"
+  ],
+  [
+   "2026-08-05",
+   "https://www.instagram.com/p/DbqhiBqiCXE/",
+   "carrusel",
+   41,
+   710,
+   1709,
+   "🎶 Ayer inauguramos una nueva edición de ADAR en La Figal de Xugabolos (Casazorrina, Salas). El microconcierto De danzas y sonatas, un recit"
+  ],
+  [
+   "2026-08-01",
+   "https://www.instagram.com/p/DbfJAMpo8We/",
+   "imagen",
+   46,
+   1305,
+   2604,
+   "Ya tenemos hórreos ganadores. El jurado del Concurso de Hórreos y Paneras 2026 ha seleccionado dos espacios que acogerán sendos conciertos d"
+  ],
+  [
+   "2026-07-14",
+   "https://www.instagram.com/p/Daw9xK9FmcT/",
+   "imagen",
+   18,
+   642,
+   1290,
+   "CONVOCATORIA ABIERTA!! Concurso de Hórreos y Paneras ¿Tienes un hórreo o una panera en Asturias? Queremos convertirlo en escenario. Buscamos"
+  ],
+  [
+   "2026-07-07",
+   "https://www.instagram.com/p/Dafx3nhCG1l/",
+   "imagen",
+   69,
+   1418,
+   3267,
+   "Volvemos!! Y volvemos con programa. Después de un tiempo en silencio (preparando esto) ###festivaladar.com ###, ya podemos enseñaros el cart"
+  ],
+  [
+   "2025-09-30",
+   "https://www.instagram.com/p/DPOZ2H8DoU5/",
+   "imagen",
+   82,
+   738,
+   1905,
+   "Este sábado, MÚSICA DE CRISTAL transforma la Plaza de Porlier en la Noche Blanca de Oviedo, en colaboración con el Festival ADAR. La instala"
+  ],
+  [
+   "2025-08-15",
+   "https://www.instagram.com/p/DNYwKOnSb4L/",
+   "carrusel",
+   35,
+   717,
+   2041,
+   "Terminado el paseo sonoro en el claustro del parador de Corias. ¡Gracias a todos los asistentes! ❤️"
+  ],
+  [
+   "2025-08-11",
+   "https://www.instagram.com/p/DNNxQ_PsHWK/",
+   "carrusel",
+   62,
+   591,
+   3217,
+   "Unas fotos del concierto de @ballarte.ensemble en la iglesia de San Antolín de Bedón, Llanes. Hoy nos vemos en la Casería de Paz Mesa y Xand"
+  ],
+  [
+   "2025-08-10",
+   "https://www.instagram.com/p/DNL6KOosnFz/",
+   "carrusel",
+   28,
+   398,
+   2354,
+   "Hoy nos hemos despertado con la sorpresa de este texto de hombresuperfluo.com que recoge lo que vivimos ayer en el paseo sonoro de Leiguarda"
+  ],
+  [
+   "2025-08-09",
+   "https://www.instagram.com/p/DNI7trEMuzW/",
+   "carrusel",
+   24,
+   518,
+   2052,
+   "🚶‍♂️ PASEO SONORO EN LEIGUARDA 📍 Hórreo Casantos y alrededores, Leiguarda (Belmonte de Miranda) 🗓️ Sábado 9 de agosto, 21:30 Un paseo de "
+  ],
+  [
+   "2025-08-08",
+   "https://www.instagram.com/p/DNGhwqYMk3v/",
+   "carrusel",
+   16,
+   326,
+   1639,
+   "📽️ CONCIERTO VISUAL 📍 Monasterio de San Antolín de Bedón (Llanes) 🗓️ Viernes 8 de agosto, 20:00 🎟️ Entradas agotadas Por una noche, el m"
+  ],
+  [
+   "2025-08-07",
+   "https://www.instagram.com/p/DNDEtAmsI4x/",
+   "carrusel",
+   37,
+   740,
+   3082,
+   "🐋 THE WHALE (La Ballena) por @ballarte.ensemble 📍 Monasterio de San Antolín de Bedón (Llanes) 🗓️ Jueves 7 de agosto, 20:00 🎟️ Entradas a"
+  ],
+  [
+   "2025-08-05",
+   "https://www.instagram.com/p/DM-nUWFtuol/",
+   "carrusel",
+   36,
+   572,
+   2120,
+   "🎶 Comienza el Festival ADAR 2025 Este martes 5 de agosto a las 20:00, inauguramos el festival con un micro-concierto muy especial en Susaca"
+  ],
+  [
+   "2025-08-01",
+   "https://www.instagram.com/p/DMzk_V3IJ5c/",
+   "carrusel",
+   27,
+   396,
+   1840,
+   "Últimos días para reservar entradas para el Festival ADAR. La mayoría de los conciertos ya están completos, pero aún quedan plazas en alguna"
+  ],
+  [
+   "2025-07-29",
+   "https://www.instagram.com/p/DMsi55NIMLZ/",
+   "imagen",
+   69,
+   1716,
+   5084,
+   "Este año tenemos el lujo de contar con un concierto muy especial en el Festival ADAR. Andrea Casarrubios, violonchelista y compositora nomin"
+  ],
+  [
+   "2025-07-26",
+   "https://www.instagram.com/p/DMk7QOFonMA/",
+   "imagen",
+   74,
+   2022,
+   5151,
+   "Reserva tus entradas para el Festival ADAR 2025!! Se están agotando rápido! Del 5 al 17 de agosto, volvemos a recorrer el occidente asturian"
+  ],
+  [
+   "2025-07-26",
+   "https://www.instagram.com/p/DMkO_s5IADl/",
+   "imagen",
+   24,
+   841,
+   2913,
+   "Este año, por primera vez, los conciertos del Festival ADAR en Leiguarda se celebrarán dentro de la Iglesia. Un espacio íntimo y con una acú"
+  ],
+  [
+   "2025-07-23",
+   "https://www.instagram.com/p/DMdKDpCI55F/",
+   "carrusel",
+   261,
+   2807,
+   11999,
+   "¡Ya tenemos ganadores del I Concurso de Hórreos del Festival ADAR! El primer premio ha sido concedido ex aequo a dos proyectos que destacan "
+  ],
+  [
+   "2025-07-21",
+   "https://www.instagram.com/p/DMXpfRbIqB1/",
+   "carrusel",
+   79,
+   1501,
+   5160,
+   "Hoy hemos estado visitando el Monasterio de Obona y no podemos estar más emocionados. ¡Qué sitio tan impresionante! Historia, naturaleza y s"
+  ],
+  [
+   "2025-07-09",
+   "https://www.instagram.com/reel/DL4YEbcofQ5/",
+   "reel",
+   54,
+   1398,
+   2520,
+   "Ayer visitamos el Parador de Corias Cangas del Narcea para preparar el paseo sonoro que haremos el día 15 de agosto el aforo limitado así qu"
+  ],
+  [
+   "2025-07-06",
+   "https://www.instagram.com/p/DLxLfx0IBSg/",
+   "imagen",
+   69,
+   2055,
+   5408,
+   "Ya está listo el póster oficial del Festival ADAR 2025. Del 4 al 17 de agosto, el festival recorrerá distintos espacios del medio rural astu"
+  ],
+  [
+   "2025-05-20",
+   "https://www.instagram.com/p/DJ33Aa_uot6/",
+   "imagen",
+   37,
+   716,
+   2165,
+   "El festival Adar busca los mejores hórreos para música de cámara El certamen, con sede principal en Leiguarda y que se desarrolla del 4 al 1"
+  ],
+  [
+   "2025-04-21",
+   "https://www.instagram.com/p/DIti2FnofKE/",
+   "imagen",
+   60,
+   995,
+   3035,
+   "La escultura de Sarah K. Williams, creada especialmente para el Festival ADAR 2024, continúa su diálogo silencioso con el paisaje asturiano…"
+  ],
+  [
+   "2025-04-10",
+   "https://www.instagram.com/reel/DIRuCTFPOfO/",
+   "reel",
+   69,
+   1141,
+   1992,
+   "#ADARsincortes 003 A cielo abierto, en plena montaña asturiana, la música se funde con el paisaje. Un piano, un chelo, y el silencio de Pola"
+  ],
+  [
+   "2025-04-10",
+   "https://www.instagram.com/reel/DIRTZOluL6t/",
+   "reel",
+   30,
+   697,
+   979,
+   "#ADARsincortes 004 Debussy en el corazón de una aldea asturiana. Dentro, el piano y las cuerdas. Fuera, el silencio. Solo Leiguarda escuchan"
+  ],
+  [
+   "2025-04-07",
+   "https://www.instagram.com/reel/DIJoc9iuw-G/",
+   "reel",
+   36,
+   747,
+   1060,
+   "ADAR sin cortes. Un monasterio abandonado, donde el silencio pesa más que las palabras, la música encontró refugio. Monasterio de Bedón. Afi"
+  ],
+  [
+   "2025-03-31",
+   "https://www.instagram.com/reel/DH3ZvkXOXmL/",
+   "reel",
+   23,
+   860,
+   1388,
+   "Leiguarda, 2024: Entre los prados de Leiguarda y el murmullo del agua, el violín y el violonchelo tejieron paisajes sonoros efímeros. Así fu"
+  ],
+  [
+   "2025-03-27",
+   "https://www.instagram.com/p/DHtClk9umRC/",
+   "imagen",
+   37,
+   995,
+   2576,
+   "¡El Festival ADAR 2025 ya está en marcha! Este verano, Asturias se convierte en un espacio de creación, exploración y conexión entre la músi"
+  ],
+  [
+   "2024-08-18",
+   "https://www.instagram.com/p/C-z-_hgMEnc/",
+   "imagen",
+   36,
+   190,
+   1312,
+   "Hoy, a las 19:30, celebramos el concierto de clausura del festival Adar 2024 en Leiguarda. Llueva o no llueva, ahí estaremos. ❤️ P.D: ¡Traed"
+  ],
+  [
+   "2024-08-16",
+   "https://www.instagram.com/p/C-vwREps2eD/",
+   "carrusel",
+   32,
+   175,
+   1249,
+   "Gracias a todas la personas que, de una forma o de otra, estáis participando en el festival. ❤️"
+  ],
+  [
+   "2024-08-13",
+   "https://www.instagram.com/reel/C-n6bWoscnG/",
+   "reel",
+   93,
+   837,
+   3524,
+   "Un pequeño resumen del primer concierto del Festival ADAR 2024. Gracias al público por un estreno tan acogedor en el Monasterio de San Antol"
+  ],
+  [
+   "2024-08-08",
+   "https://www.instagram.com/p/C-aQ5o_iNPP/",
+   "imagen",
+   54,
+   171,
+   1353,
+   "Esta iniciativa cultural busca revitalizar el mundo rural a través de las artes y la música, especialmente las vinculadas a nuevas tecnologí"
+  ],
+  [
+   "2024-07-31",
+   "https://www.instagram.com/p/C-GVgsvPY-X/",
+   "imagen",
+   158,
+   179,
+   3245,
+   "Del 8 al 18 de agosto de 2024, el Festival ADAR celebrará su cuarta edición, ofreciendo una experiencia cultural única que fusiona la bellez"
+  ],
+  [
+   "2024-06-10",
+   "https://www.instagram.com/reel/C8A211iszgc/",
+   "reel",
+   43,
+   196,
+   1596,
+   "En el verano de 2023, durante el Festival ADAR, se presentó una instalación artística diseñada por la artista japonesa, Mizuko Kaji. El teat"
+  ],
+  [
+   "2024-06-01",
+   "https://www.instagram.com/reel/C7pkT9UPuZk/",
+   "reel",
+   76,
+   349,
+   2384,
+   "En este video, te invitamos a vivir una experiencia única: un concierto de música clásica en un auténtico hórreo asturiano. Ubicado en el en"
+  ],
+  [
+   "2024-05-23",
+   "https://www.instagram.com/reel/C7UNMDLuhVV/",
+   "reel",
+   61,
+   168,
+   1677,
+   "En este video, te llevamos a la Capilla de los Dolores en Grado, Asturias, para experimentar una instalación artística única que combina mús"
+  ],
+  [
+   "2024-05-20",
+   "https://www.instagram.com/reel/C7NDDwzvvdg/",
+   "reel",
+   127,
+   381,
+   4836,
+   "¡Qué emoción presentar ya la cuarta edición del Festival ADAR! Del 8 al 18 de Agosto! Este año, celebraremos el desarrollo de las artes en e"
+  ],
+  [
+   "2024-04-13",
+   "https://www.instagram.com/p/C5tRM4ysdZT/",
+   "imagen",
+   24,
+   85,
+   0,
+   "Ya podéis anotar las fechas del Festival ADAR 2024. Del 8 al 18 de agosto, os prometemos la mejor música clásica, arte visual, nuevas instal"
+  ],
+  [
+   "2023-10-24",
+   "https://www.instagram.com/reel/Cyyngcfum_1/",
+   "reel",
+   274,
+   466,
+   6747,
+   "Encantados de publicar esta pieza de Guillermo Ordas y Natania Hoffman, grabada en Leiguarda, Asturias dentro del marco del Festival Adar 20"
+  ],
+  [
+   "2023-08-13",
+   "https://www.instagram.com/reel/Cv3N-IttlWW/",
+   "reel",
+   30,
+   77,
+   760,
+   ""
+  ],
+  [
+   "2023-08-11",
+   "https://www.instagram.com/reel/Cv0XjRfokms/",
+   "reel",
+   48,
+   112,
+   1299,
+   "Estamos encantados de poder enseñaros un adelanto de lo que estamos viviendo estos días en Asturias con el Festival internacional ADAR, @fes"
+  ],
+  [
+   "2023-08-07",
+   "https://www.instagram.com/p/CvovEf3o7jd/",
+   "carrusel",
+   20,
+   60,
+   0,
+   "Abrimos la primera instalación artística en la Capilla de los Dolores de Grado!"
+  ],
+  [
+   "2023-08-05",
+   "https://www.instagram.com/p/CvkIKOhxZwn/",
+   "imagen",
+   31,
+   57,
+   0,
+   "Estos días tenemos la suerte de contar con el talento de @guillermordas , videógrafo graduado con honores en Comunicación Audiovisual por la"
+  ],
+  [
+   "2023-08-02",
+   "https://www.instagram.com/p/CvdKSc5owzp/",
+   "carrusel",
+   23,
+   61,
+   0,
+   "Comenzamos a preparar el escenario en Leiguarda! Gracias por toda la ayuda!"
+  ],
+  [
+   "2023-08-02",
+   "https://www.instagram.com/p/Cvb7eFDNcHd/",
+   "imagen",
+   17,
+   57,
+   0,
+   "Buscamos voluntarios para ayudar con el Festival Adar los días 12 y 13 en Leiguarda. Entre otras cosas necesitamos ayuda con: Gestión de púb"
+  ],
+  [
+   "2023-07-29",
+   "https://www.instagram.com/p/CvSbNhBP1k4/",
+   "imagen",
+   10,
+   66,
+   0,
+   "Este año vuelve Laude Martínez @laudemaritnez al Festival ADAR 2023. Su simpatía y carisma nos acompañará durante los paseos sonoros en El F"
+  ],
+  [
+   "2023-07-28",
+   "https://www.instagram.com/p/CvPSeuXNJbB/",
+   "imagen",
+   10,
+   116,
+   0,
+   "Desde Berlín vendrá la violonchelista Italo-Americana Natania Hoffman @nataniahoffman al Festival ADAR 2023 Como solista, Natania ha actuado"
+  ],
+  [
+   "2023-07-27",
+   "https://www.instagram.com/p/CvNYhe_ou4E/",
+   "imagen",
+   28,
+   102,
+   0,
+   "Nos os perdáis el paseo sonoro que haremos en las Ayalgas de Silviella el día 12 de agosto a las 19.00, después iremos a Leiguarda para un m"
+  ],
+  [
+   "2023-07-27",
+   "https://www.instagram.com/p/CvMtO15gdAX/",
+   "imagen",
+   28,
+   61,
+   0,
+   "Os presentamos a la violinista Jone de la Fuente @jonefg Jone de la Fuente Gorostiza comenzó sus estudios a la edad de cinco años con profes"
+  ],
+  [
+   "2023-07-26",
+   "https://www.instagram.com/p/CvK81X_MWuX/",
+   "imagen",
+   11,
+   53,
+   0,
+   "¡Felices a contar con la violista Almudena Arribas para el Festival ADAR 2023! Cursa estudios de Viola en Holanda y Bélgica. Realiza una Aca"
+  ],
+  [
+   "2023-07-26",
+   "https://www.instagram.com/p/CvKFqA_MSiD/",
+   "imagen",
+   11,
+   50,
+   0,
+   "¿Que son los conciertos visuales? El tipo de actuación que más define al Festival ADAR se puede denominar \"concierto visual\". En estos conci"
+  ],
+  [
+   "2023-07-25",
+   "https://www.instagram.com/p/CvIUJmdMFny/",
+   "imagen",
+   10,
+   46,
+   0,
+   "Desde el 2012, Josefina y Guillermo desarrollan parte de su actividad profesional en NY donde crean la compañía CreArtBox. Con ella, han via"
+  ],
+  [
+   "2023-07-22",
+   "https://www.instagram.com/p/CvAP6ubsV6E/",
+   "imagen",
+   10,
+   51,
+   0,
+   "El arte, la música, el entorno y la naturaleza son intrínsecos a la experiencia humana, y cada uno hace que los demás sean más poderosos. Ba"
+  ],
+  [
+   "2023-07-06",
+   "https://www.instagram.com/p/CuXlYwHshOj/",
+   "imagen",
+   11,
+   51,
+   0,
+   "Presentamos el Festival ADAR 2023! Múltiples conciertos, instalaciones visuales, charlas, paseos sonoros y residencias artísticas en Leiguar"
+  ]
+ ],
+ "textos": {
+  "https://www.instagram.com/p/DdwUSJNTnrr/": {
+   "texto": "🌿 OPEN CALL · RESIDENCIAS ADAR 2026–27\n\n¿Sois un grupo de artistas y os gustaría pasar entre 21 y 30 días creando en la Asturias rural?\n\nADAR abre una convocatoria de residencias para grupos de 4–5 artistas y profesionales de la cultura, con el apoyo de Culture Moves Europe.\n\n📍 Leiguarda · Belmonte de Miranda · Asturias\n📅 Entre finales de octubre de 2026 y el 7 de junio de 2027\n🏡 Alojamiento incluido\n💶 30 € / día / persona\n✈️ 400–800 € de ayuda de viaje / persona\n➕ Complementos adicionales cuando correspondan\n\nMúsica, artes escénicas, artes visuales, arquitectura, patrimonio cultural, diseño, literatura… Buscamos proyectos para investigar, crear, experimentar, ensayar y desarrollar nuevas ideas.\n\nNo hace falta presentar una memoria larga ni un proyecto terminado. La primera solicitud se hace simplemente por email.\n\n⚠️ PLAZO: 28 DE SEPTIEMBRE DE 2026\n\n👉 Toda la información:\nfestivaladar.com/es/convocatoria-residencias-2026-27/\n\n📩 leiguardamusic@gmail.com\n\nComparte con artistas y colectivos a quienes pueda interesar.\n\n#FestivalADAR #ArtistResidency #OpenCall #ResidenciaArtística #CultureMovesEurope CreativeEurope Asturias RuralArts ContemporaryArt PerformingArts MusicResidency",
+   "comentarios": 0,
+   "hora": "2026-09-26T15:05:59+0000"
+  },
+  "https://www.instagram.com/p/DdlFwr0iEvu/": {
+   "texto": "La España que no se vacía cuando hay música\n\nSe habla mucho de la España vaciada. Pero un pueblo no se vacía solo de gente: se vacía de motivos para quedarse. Un festival no arregla eso, pero puede ser uno de esos motivos.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #Españavaciada #culturarural #manifiesto #accesocultural",
+   "comentarios": 4,
+   "hora": "2026-09-22T06:27:22+0000"
+  },
+  "https://www.instagram.com/p/DcKE8UAiPu7/": {
+   "texto": "🎶 Ayer cerramos la VI edición de ADAR en Leiguarda.\n\nEl quinteto formado por Natania Hoffman, Žilvinas Brazauskas, Frederieke Saeijs, Guillermo Laporta y Josefina Urraca puso el broche final con un programa que pasó por Vivaldi, Mendelssohn, Ligeti, Brahms, Ravel y David Lang, además de una pieza de Zygmund de Somogyi, compositor residente de esta edición.\n\nY después de la música, llegó la espicha para celebrar juntos el final del festival.\n\nGracias a todos los músicos, artistas, espacios, colaboradores, amigos y, sobre todo, a todas las personas que nos acompañasteis durante estos días.\n\nNos vemos en la próxima. 🤍",
+   "comentarios": 0,
+   "hora": "2026-08-17T22:09:19+0000"
+  },
+  "https://www.instagram.com/reel/DcGvGn4g9e_/": {
+   "texto": "¡Más Momentos ADAR! Esta vez, un fragmento del concierto que vivimos en el Monasterio de Villanueva de Oscos junto a @the_rest_project 🎻",
+   "comentarios": 0,
+   "hora": "2026-08-16T15:00:06+0000"
+  },
+  "https://www.instagram.com/p/DcGcFYKiDlP/": {
+   "texto": "🎶 Ayer vivimos el penúltimo concierto de ADAR en la Iglesia de Leiguarda.\n\nUn paseo sonoro por el interior de este espacio, con los músicos repartidos por distintos puntos del recorrido y un programa que reunió a Bach, Ysaÿe, Rameau, Germanavičius y Mendelssohn, acompañado de videoarte y diseño de luz.\n\nGracias a todos los que nos acompañasteis en esta penúltima jornada. 🤍\n\n📍 Y hoy ponemos el broche final a esta edición de ADAR. Nos vemos a las 21:30 h en Leiguarda para el concierto de clausura y, después, celebraremos juntos el final del festival con una espicha.",
+   "comentarios": 0,
+   "hora": "2026-08-16T12:14:35+0000"
+  },
+  "https://www.instagram.com/reel/DcENqDkgK5Y/": {
+   "texto": "🍂 Otro de nuestro Momentos ADAR, un concierto increíble de @the_rest_project en el Auditorio As Quintas de El Franco.\n\nGracias Lara, María y Dani por estos días tan especiales 🫂",
+   "comentarios": 0,
+   "hora": "2026-08-15T15:30:05+0000"
+  },
+  "https://www.instagram.com/p/DcDdszUCFvc/": {
+   "texto": "🌿 Ayer vivimos Equilibrium en La Casona de Belmonte, Oviñana.\n\n@the_rest_project compartió el trabajo desarrollado durante su residencia artística, con tres músicos y tres compositores alrededor de la idea del equilibrio, y con la poesía de Joan Margarit presente durante el concierto.\n\nGracias a todos los que nos acompañasteis en esta nueva parada de ADAR. 🤍\n\n📍 Y hoy seguimos. Nos vemos en Leiguarda a las 21:30 horas para una nueva intervención site-specific, con música, paisaje y el trabajo del Colectivo Menhir.",
+   "comentarios": 1,
+   "hora": "2026-08-15T12:30:01+0000"
+  },
+  "https://www.instagram.com/reel/DcDkiD9AdWB/": {
+   "texto": "Otro momento ADAR de uno de los ensayos con @the_rest_project ❤️",
+   "comentarios": 1,
+   "hora": "2026-08-15T09:30:05+0000"
+  },
+  "https://www.instagram.com/p/DcB8N3RlmkQ/": {
+   "texto": "🎶 Ayer vivimos una noche muy especial en el Monasterio de Villanueva de Oscos.\n\nBajo las bóvedas de este monasterio del siglo XII, María Florea, Lara Fernández, Daniel Claret, Guillermo Laporta y Josefina Urraca compartieron un programa que reunió a Schubert, Magrané, Brahms, Dvořák y Devin Cholodenko.\n\nUna noche en la que la música y el espacio volvieron a encontrarse.\n\nGracias a todos los que nos acompañasteis. ✨\n\n📍 Nos vemos ahora en La Casona de Belmonte, Oviñana, con Equilibrium, la muestra del trabajo desarrollado por The Rest Project durante su residencia artística en el hórreo: tres músicos y tres compositores en torno a la idea del equilibrio.",
+   "comentarios": 1,
+   "hora": "2026-08-14T18:19:09+0000"
+  },
+  "https://www.instagram.com/p/Db_Hl0LiNys/": {
+   "texto": "🌘 Ayer vivimos uno de los momentos más especiales de esta edición de ADAR: un microconcierto durante el eclipse en el Alto de La Corredoria.\n\nLa niebla no nos dejó verlo, pero sí nos dejó sentir cómo la luz cambiaba hasta hacerse de noche durante unos minutos. Guillermo Laporta, Maria Florea, Lara Fernández y Daniel Claret pusieron música a ese momento con Twilight at Dawn, de Devin Cholodenko.\n\nNo vimos el eclipse, pero la tarde fue difícil de olvidar. ✨",
+   "comentarios": 1,
+   "hora": "2026-08-13T16:00:02+0000"
+  },
+  "https://www.instagram.com/p/Db-8FQ4CEEc/": {
+   "texto": "🎶 Después de los ensayos, ya estamos listos para el concierto de hoy.\n\nNos vemos hoy a las 20:30 h en el Monasterio de Santa María de Villanueva de Oscos para una nueva cita de ADAR.\n\n¡Os esperamos! ✨",
+   "comentarios": 0,
+   "hora": "2026-08-13T14:20:15+0000"
+  },
+  "https://www.instagram.com/p/Db-mXZZiGOT/": {
+   "texto": "🎻 Así fue The Rest is Silence en el Auditorio As Quintas de A Caridá.\n\nMaria Florea, Lara Fernández y Daniel Claret, @the_rest_project, nos acompañaron en una noche de música de cámara con un programa que reunió obras de Ligeti, Gubaidúlina, Kurtág, Webern, Penderecki, Stravinsky, Gerhard, Cage y Bach.\n\nUna noche especial en El Franco. Gracias a todos los que vinisteis a compartirla con nosotros. 🤍\n\n📍 Seguimos con ADAR por Asturias.",
+   "comentarios": 0,
+   "hora": "2026-08-13T11:10:30+0000"
+  },
+  "https://www.instagram.com/reel/Db5aMLQIQC0/": {
+   "texto": "🎻 Últimos ensayos antes del concierto de esta noche.\n\nHoy @the_rest_project llega al Auditorio As Quintas de A Caridá (El Franco) con The Rest is Silence, un concierto de música de cámara y arte visual que reúne obras de Ligeti, Gubaidúlina, Kurtág, Webern, Penderecki, Stravinsky, Cage y Bach.\n\n📍 Nos vemos hoy a las 20:30 h en el Auditorio As Quintas, A Caridá (El Franco).\n\n¡Os esperamos!",
+   "comentarios": 0,
+   "hora": "2026-08-11T10:52:08+0000"
+  },
+  "https://www.instagram.com/reel/Db1MZirthR9/": {
+   "texto": "Momento ADAR del concierto en el Aula del Oro de Belmonte de Miranda. 📽️\n\n¡Con ganas de más!\n\nSeguimos ❤️",
+   "comentarios": 0,
+   "hora": "2026-08-09T19:32:39+0000"
+  },
+  "https://www.instagram.com/reel/Db0UULTjPqi/": {
+   "texto": "Qué bien suena The Rest Project en la tele 📺!\n\nGracias a RTPA por acercarse al Festival ADAR.\n\nNuestra próxima parada:\n\nTHE REST IS SILENCE · ADAR en ruta\nAuditorio As Quintas · El Franco\nMartes 11 de agosto · 20:30 h\n\nToda la información y programación en festivaladar.com\n\n#FestivalADAR #ADAR2026 #Asturias #ElFranco #MúsicaClásica #CulturaRural #ArteContemporáneo #CulturaEnAsturias #culturaenasturias #culturaenasturias",
+   "comentarios": 1,
+   "hora": "2026-08-09T11:20:46+0000"
+  },
+  "https://www.instagram.com/p/DbxxHtwiCQq/": {
+   "texto": "🎹 Ayer vivimos Umbral Zero en el Aula del Oro de Belmonte de Miranda.\n\nGuillermo Laporta y Josefina Urraca presentaron un programa de música minimalista que reunió obras de Max Richter, Lili Boulanger, Satie, Bach, Scriabin, Meredith Monk y Zygmund de Somogyi, acompañado de arte visual y electrónica.\n\nUna noche íntima en la que música e imagen se encontraron en un mismo espacio.\n\nGracias a todas las personas que nos acompañasteis. ✨\n\n📍 Próxima parada: Palomar de Leiguarda (Belmonte de Miranda), los días 8 y 9 de agosto, con una intervención site-specific del Colectivo Menhir.",
+   "comentarios": 1,
+   "hora": "2026-08-08T11:34:21+0000"
+  },
+  "https://www.instagram.com/reel/DbvDkAEoQrP/": {
+   "texto": "Otro Momento ADAR de nuestro concierto en el Parador de Corias 🎻\n\nNos vemos hoy en el Aula del oro, en Belmonte de Miranda, para el concierto de música minimalista y arte visual Umbral Zero.",
+   "comentarios": 0,
+   "hora": "2026-08-07T10:22:16+0000"
+  },
+  "https://www.instagram.com/p/DbtNXcmCKBS/": {
+   "texto": "🎻 Ayer vivimos una nueva jornada de ADAR en la Biblioteca del Parador de Corias.\n\nCon La forma de la memoria, María Martínez, Frederieke Saeijs y Josefina Urraca nos ofrecieron un concierto de trío con piano en el que sonaron obras de Haydn, Lili Boulanger, Rajmáninov, Messiaen, Shostakóvich y Brittney Benton, en un escenario tan especial como el antiguo monasterio de Corias.\n\nGracias a todas las personas que nos acompañasteis una noche más.\n\n📍 Os esperamos mañana a las 20:30 en el Aula del Oro de Belmonte de Miranda para la próxima cita de ADAR.",
+   "comentarios": 0,
+   "hora": "2026-08-06T17:04:57+0000"
+  },
+  "https://www.instagram.com/reel/Dbsb6HUIVE-/": {
+   "texto": "Momentos ADAR como este nos dejan con ganas de más conciertos ❤️\n\nEntra en nuestra web para conocer el programa de este año y reserva tu entrada. ¡Vuelan! 🚀\n\nhttps://festivaladar.com/es/programa-2026/",
+   "comentarios": 0,
+   "hora": "2026-08-06T09:55:26+0000"
+  },
+  "https://www.instagram.com/p/DbqhiBqiCXE/": {
+   "texto": "🎶 Ayer inauguramos una nueva edición de ADAR en La Figal de Xugabolos (Casazorrina, Salas).\n\nEl microconcierto De danzas y sonatas, un recital de clave a cargo de Ignacio Prego, nos llevó por la música para teclado de los siglos XVI al XVIII, con obras de Antonio de Cabezón, Purcell, Scarlatti y Bach.\n\nGracias a todas las personas que nos acompañasteis en esta primera jornada.\n\n✨ Os esperamos hoy a las 20:30 en la Biblioteca del Parador de Corias para seguir disfrutando de ADAR.",
+   "comentarios": 1,
+   "hora": "2026-08-05T16:03:27+0000"
+  },
+  "https://www.instagram.com/p/DbfJAMpo8We/": {
+   "texto": "Ya tenemos hórreos ganadores. El jurado del Concurso de Hórreos y Paneras 2026 ha seleccionado dos espacios que acogerán sendos conciertos de la 6ª edición.\n\nLa Figal de Xugabolos, en Casazorrina (Salas): el 4 de agosto, recital de clave de Ignacio Prego. La Casona de Belmonte, en Belmonte de Miranda, con su panera de 1893: el 14 de agosto, muestra de residencia de The Rest Project.\n\nGracias a todas las candidaturas presentadas. Entrada gratuita con reserva previa, aforo muy limitado. Link en bio.\n\n#FestivalADAR #Asturias #Hórreos #Paneras #PatrimonioAsturiano MúsicaClásica",
+   "comentarios": 3,
+   "hora": "2026-08-01T05:58:48+0000"
+  },
+  "https://www.instagram.com/p/Daw9xK9FmcT/": {
+   "texto": "CONVOCATORIA ABIERTA!! Concurso de Hórreos y Paneras\n\n¿Tienes un hórreo o una panera en Asturias? Queremos convertirlo en escenario. Buscamos dos hórreos o paneras para acoger dos conciertos del Festival ADAR en agosto de 2026.\n\nPremio: 300 € por hórreo + concierto gratuito producido por ADAR \n\nPlazo: hasta el 25 de julio · ganadores el 1 de agosto\n\nPueden presentarse propietarios, ayuntamientos y asociaciones\n\nEnvía tu candidatura a leiguardamusic@gmail.com Bases completas en festivaladar.com (link en bio)\n\n#FestivalADAR #Asturias #Hórreos #Paneras #MúsicaEnDirecto #PatrimonioAsturiano #CulturaAsturiana #Concurso",
+   "comentarios": 1,
+   "hora": "2026-07-14T07:34:14+0000"
+  },
+  "https://www.instagram.com/p/Dafx3nhCG1l/": {
+   "texto": "Volvemos!! Y volvemos con programa.\n\nDespués de un tiempo en silencio (preparando esto) ###festivaladar.com ###, ya podemos enseñaros el cartel de la VI edición del Festival ADAR.\n\nDel 4 al 16 de agosto de 2026, once conciertos de música de cámara, arte visual e intervenciones sonoras recorren el medio rural asturiano: hórreos, monasterios, palomares e iglesias convertidos en salas de concierto.\n\nEntrada libre con reserva. Programa completo y reservas en la web (link en bio).\n\nNos vemos este verano en Asturias. 🖤\n\nPronto más novedades!\n\nHashtags (en primer comentario o al final):\n#FestivalADAR #ADAR2026 #músicadecámara #Asturias #medioruralvivo #patrimonio #músicaclásica #chambermusic #hórreos #Leiguarda #BelmonteDeMiranda #culturaenelmediorural #veranoenAsturias",
+   "comentarios": 5,
+   "hora": "2026-07-07T15:23:10+0000"
+  },
+  "https://www.instagram.com/p/DPOZ2H8DoU5/": {
+   "texto": "Este sábado, MÚSICA DE CRISTAL transforma la Plaza de Porlier en la Noche Blanca de Oviedo, en colaboración con el Festival ADAR.\n\nLa instalación nació en Leiguarda el año pasado, durante las residencias artísticas del festival, con la idea de situar músicos de cámara y un piano de cola dentro de un invernadero, para que el propio escenario se convirtiera en una obra artística. Ahora será emocionante ver un pedazo del mundo rural en medio de la capital.\n\nPlaza de Porlier, Oviedo\nSábado 4 de octubre\n20:00 a 01:00\nConciertos en directo: 21:30 y 23:00\n\n• Guillermo Laporta (flauta y diseño visual)\n• Josefina Urraca (piano)\n\n#NocheBlancaOviedo #FestivalADAR #Oviedo #Oviedo2031 #CulturaOviedo #MúsicaClásica\n #musicaclasica",
+   "comentarios": 1,
+   "hora": "2025-09-30T11:40:49+0000"
+  },
+  "https://www.instagram.com/p/DNYwKOnSb4L/": {
+   "texto": "Terminado el paseo sonoro en el claustro del parador de Corias.\n\n¡Gracias a todos los asistentes!\n\n❤️",
+   "comentarios": 0,
+   "hora": "2025-08-15T19:05:25+0000"
+  },
+  "https://www.instagram.com/p/DNNxQ_PsHWK/": {
+   "texto": "Unas fotos del concierto de @ballarte.ensemble en la iglesia de San Antolín de Bedón, Llanes.\n\nHoy nos vemos en la Casería de Paz Mesa y Xandru González (Puerma, Las Regueras) para un micro concierto en el que tocaremos Antonín Dvořák — Cuarteto de cuerda en fa mayor, Op. 96 “Americano” (1893).",
+   "comentarios": 0,
+   "hora": "2025-08-11T12:43:26+0000"
+  },
+  "https://www.instagram.com/p/DNL6KOosnFz/": {
+   "texto": "Hoy nos hemos despertado con la sorpresa de este texto de hombresuperfluo.com que recoge lo que vivimos ayer en el paseo sonoro de Leiguarda.\n\nMuchas gracias a todo el que vino…¡ y gracias a Pablo por este relato! 🥹\n\n¡Nos vemos mañana en Obona!",
+   "comentarios": 1,
+   "hora": "2025-08-10T19:22:40+0000"
+  },
+  "https://www.instagram.com/p/DNI7trEMuzW/": {
+   "texto": "🚶‍♂️ PASEO SONORO EN LEIGUARDA\n📍 Hórreo Casantos y alrededores, Leiguarda (Belmonte de Miranda)\n🗓️ Sábado 9 de agosto, 21:30\n\nUn paseo de noche desde el hórreo de ADAR hasta la iglesia de Leiguarda, con música en vivo como banda sonora. Allí nos espera la instalación Piensa que las vueltas no son circulares de Diego Arribas: rocas y mineral de las minas de hierro de Sierra Menera (Teruel), dispuestas en espiral sobre un lecho de mineral. Un símbolo de cambio y movimiento que conecta con la música y el momento.\n\nEl concierto sucederá alrededor de esta obra, mezclando arte, paisaje y sonido en una experiencia única.\n\n🎵 Con:\nNacho Laguna (tiorba)\nJone de la Fuente (violín)\nAlmudena Arribas (viola)\nGuillermo Laporta (flauta)\nDiego Arribas (artista visual)\n\n#FestivalADAR #PaseoSonoro #ArteYNaturaleza #BelmonteDeMiranda #MúsicaEnAsturias",
+   "comentarios": 0,
+   "hora": "2025-08-09T15:38:32+0000"
+  },
+  "https://www.instagram.com/p/DNGhwqYMk3v/": {
+   "texto": "📽️ CONCIERTO VISUAL\n📍 Monasterio de San Antolín de Bedón (Llanes)\n🗓️ Viernes 8 de agosto, 20:00\n🎟️ Entradas agotadas\n\nPor una noche, el monasterio románico del siglo XIII se llena de música y luz. Un diseño lumínico especial acompaña su arquitectura, y el público se sienta en círculo para vivir una experiencia cercana, con la música fluyendo desde el centro hacia todos los rincones.\n\n🎻 Con:\nJosefina Urraca (piano)\nGuillermo Laporta (flauta)\nJone de la Fuente (violín)\nAlmudena Arribas (viola)\n\nEl programa incluye obras de Debussy, Telemann, Arvo Pärt y Guillermo Laporta.\n\n#FestivalADAR #ConciertoVisual #MúsicaYArquitectura #Llanes #SanAntolínDeBedón #MúsicaEnAsturias",
+   "comentarios": 0,
+   "hora": "2025-08-08T17:13:16+0000"
+  },
+  "https://www.instagram.com/p/DNDEtAmsI4x/": {
+   "texto": "🐋 THE WHALE (La Ballena) por @ballarte.ensemble \n📍 Monasterio de San Antolín de Bedón (Llanes)\n🗓️ Jueves 7 de agosto, 20:00\n🎟️ Entradas agotadas\n\n«Era el 2 de abril cuando apareció la ballena. Increíblemente, el valle se despertó para ver al enorme cetáceo varado casi en la cima de la colina».\n\nEn esta propuesta de Ballarte Ensemble, instrumentos barrocos del siglo XVII y sintetizadores digitales se funden para dar vida a una historia que atraviesa siglos y océanos.\n\n🎻 Con:\nBerta Ares (violín)\nMaría del Buey (visuales y voz)\nNacho Laguna (tiorba, guitarras, electrónica)\nGiulio Tanasini (viola da gamba y texto original)\n\nUn concierto escénico que es también una fábula sonora.\n\n#FestivalADAR #TheWhale #BallarteEnsemble #MúsicaContemporánea #MúsicaBarroca #Llanes #SanAntolínDeBedón",
+   "comentarios": 0,
+   "hora": "2025-08-07T09:01:38+0000"
+  },
+  "https://www.instagram.com/p/DM-nUWFtuol/": {
+   "texto": "🎶 Comienza el Festival ADAR 2025\nEste martes 5 de agosto a las 20:00, inauguramos el festival con un micro-concierto muy especial en Susacasa Agrocultural (Gozón).\n\n🎵 Nacho Laguna (tiorba) y María del Buey (voz) interpretarán una selección de Ferrarese [2023], con música que une barroco ibérico e improvisación contemporánea.\n\n🌾 Un concierto íntimo en una panera tradicional, ganadora del concurso de hórreos y paneras del festival.\n\n🎟️ Entradas agotadas\n\n#FestivalADAR #MúsicaYTerritorio #ConciertoIntimo #AsturiasCultural",
+   "comentarios": 0,
+   "hora": "2025-08-05T15:27:54+0000"
+  },
+  "https://www.instagram.com/p/DMzk_V3IJ5c/": {
+   "texto": "Últimos días para reservar entradas para el Festival ADAR.\nLa mayoría de los conciertos ya están completos, pero aún quedan plazas en algunas localidades.\nSi no encuentras entradas en tu zona, te animamos a descubrir otros rincones de Asturias y disfrutar del festival en nuevos entornos rurales únicos. #FestivalADAR #MúsicaEnElMedioRural #Asturias #CulturaRural #ConciertosDeVerano #ArteYSonido #TurismoCultural #ViajaPorAsturias #FestivalDeMúsica",
+   "comentarios": 3,
+   "hora": "2025-08-01T08:35:55+0000"
+  },
+  "https://www.instagram.com/p/DMsi55NIMLZ/": {
+   "texto": "Este año tenemos el lujo de contar con un concierto muy especial en el Festival ADAR.\n\nAndrea Casarrubios, violonchelista y compositora nominada a los Grammy® 2025 por su álbum SEVEN, protagonizará una velada única en la iglesia de Leiguarda. Reconocida por The New York Times por la belleza de su sonido y su intensidad emocional, Casarrubios ha actuado como solista y en música de cámara en escenarios de referencia mundial como Carnegie Hall, el Centro Nacional de las Artes de Pekín, el Auditorio Nacional de Madrid, y festivales como Verbier y Ravinia.\n\nSu música —programada por instituciones como la Orquesta Sinfónica de Chicago, Carnegie Hall, la Philadelphia Orchestra o la Sphinx Organization— refleja un compromiso profundo con lo humano, lo poético y lo contemporáneo.\n\nEn este concierto interpretará su obra SEVEN, junto a piezas de Boccherini, Debussy y Dvořák, acompañada por Josefina Urraca (piano) y Guillermo Laporta (flauta).\n\nUna oportunidad irrepetible para escuchar en Leiguarda a una de las voces más importantes de la nueva generación de compositoras y de la música de cámara actual.\n\n¡Aforo limitado! Reserva tu entrada en festivaladar.com\nEntrada gratuita con empanada y sidra para todos.\n\n#FestivalADAR #AndreaCasarrubios #SEVEN #GrammyNominee #CarnegieHall #MúsicaContemporánea #Asturias #CulturaRural #BelmonteDeMiranda",
+   "comentarios": 11,
+   "hora": "2025-07-29T15:03:00+0000"
+  },
+  "https://www.instagram.com/p/DMk7QOFonMA/": {
+   "texto": "Reserva tus entradas para el Festival ADAR 2025!! Se están agotando rápido!\n\nDel 5 al 17 de agosto, volvemos a recorrer el occidente asturiano con conciertos en lugares únicos como Leiguarda, Taramundi, Bedón, Obona, Corias y muchos más.\n\nTodos los eventos son gratuitos, pero el aforo es limitado y algunos conciertos ya están totalmente llenos.\nReserva tu entrada en festivaladar.com\n\nNo te pierdas esta edición con artistas increíbles como Andrea Casarrubios, Nacho Laguna, CreArtBox, Ballarte Ensemble, y muchas sorpresas más.\n\nNos vemos en los caminos, los monasterios, los hórreos, claustros… \n#FestivalADAR2025 #ReservaTuEntrada #MúsicaEnElRural #AsturiasCultural #ArteYTerritorio #AgostoEnAsturias #AndreaCasarrubios #NachoLaguna #CreArtBox #BellarteEnsemble #FestivalRural",
+   "comentarios": 4,
+   "hora": "2025-07-26T16:01:51+0000"
+  },
+  "https://www.instagram.com/p/DMkO_s5IADl/": {
+   "texto": "Este año, por primera vez, los conciertos del Festival ADAR en Leiguarda se celebrarán dentro de la Iglesia.\nUn espacio íntimo y con una acústica excepcional, que acogerá dos citas muy especiales los días 16 y 17 de agosto.\n\nEl 16 de agosto, la protagonista será la violonchelista y compositora @andrea_casarrubios , nominada al Grammy, con un recital que forma parte de su regreso a ADAR. Tendremos empanada gratis para todos! \nEl 17 de agosto celebraremos el concierto de clausura, con música, esculturas de @arribas_art, @companeras_pandereteras , y una espicha final.",
+   "comentarios": 0,
+   "hora": "2025-07-26T09:35:07+0000"
+  },
+  "https://www.instagram.com/p/DMdKDpCI55F/": {
+   "texto": "¡Ya tenemos ganadores del I Concurso de Hórreos del Festival ADAR!\n\nEl primer premio ha sido concedido ex aequo a dos proyectos que destacan por su compromiso con la vida cultural y la puesta en valor del patrimonio rural asturiano:\n\nCasería de Paz Mesa y Xandru González (Puerma, Las Regueras)\nXandru González Fernández y Paz González Mesa se dedican activamente a la conservación de la cultura tradicional asturiana. Han presentado un conjunto patrimonial compuesto por tres hórreos que forman parte de una quintana tradicional, junto con la casa, el llagar y la cuadra. Entre ellos destaca un hórreo del siglo XVI, decorado en el denominado estilo Villaviciosa, también conocido como decoración medieval.\n\nSusacasa agrocultural – Keko Marcos y Sandra Murillo (Susacasa, Gozón)\nUn espacio de permacultura donde se integran actividades ecológicas y culturales. Su propuesta visibiliza el territorio como un espacio vivo, con una gran panera activada para usos comunitarios, educativos y artísticos.\n\nDotación: Cada proyecto premiado recibirá una dotación de 300 €.\nSegundo y tercer premio: Declarados desiertos.\n\nConciertos incluidos:\n• 5 de agosto en Susacasa (Gozón)\n• 11 de agosto en Puerma (Las Regueras)\n\nEste reconocimiento celebra la capacidad de ambos proyectos para mantener vivos y útiles nuestros hórreos como lugares de encuentro, tradición, aprendizaje y cultura.\n\n#FestivalADAR #HórreosVivos #ArteYTerritorio #AsturiasRural #CulturaViva #Permacultura #LasRegueras #Gozón #HórreosAsturianos #ArquitecturaTradicional #CulturaContemporánea #ADAR2025",
+   "comentarios": 27,
+   "hora": "2025-07-23T15:37:17+0000"
+  },
+  "https://www.instagram.com/p/DMXpfRbIqB1/": {
+   "texto": "Hoy hemos estado visitando el Monasterio de Obona y no podemos estar más emocionados. ¡Qué sitio tan impresionante! Historia, naturaleza y silencio… todo preparado para nuestro concierto del martes 12 de agosto a las 20:00, dentro del Festival ADAR.\n\nVamos a llevar allí un programa precioso de música de cámara con una instalación visual de Diego Arribas. Nos encantaría veros por allí. La entrada es gratuita (pero hay que reservar).\n\nReserva ya en www.festivaladar.com Monasterio de Santa María la Real de Obona, Tineo\n\n#FestivalADAR2025 #Obona #Tineo #MúsicaEnAsturias #FestivalRural #CulturaViva #AsturiasEsCultura",
+   "comentarios": 1,
+   "hora": "2025-07-21T12:16:29+0000"
+  },
+  "https://www.instagram.com/reel/DL4YEbcofQ5/": {
+   "texto": "Ayer visitamos el Parador de Corias Cangas del Narcea para preparar el paseo sonoro que haremos el día 15 de agosto el aforo limitado así que os recomendamos reservar las entradas cuando con antelación. #paradordecorias #corias",
+   "comentarios": 1,
+   "hora": "2025-07-09T08:51:33+0000"
+  },
+  "https://www.instagram.com/p/DLxLfx0IBSg/": {
+   "texto": "Ya está listo el póster oficial del Festival ADAR 2025.\n\nDel 4 al 17 de agosto, el festival recorrerá distintos espacios del medio rural asturiano con una programación que une música de cámara, instalaciones visuales y patrimonio.\n\nFalta menos de un mes para volver a compartir esta experiencia en monasterios, hórreos, iglesias y paisajes que se convierten en escenario.\n\nConsulta toda la programación en www.festivaladar.com\n\n#FestivalADAR2025 #MúsicaYTerritorio #AsturiasRural #ArteEnMovimiento #PatrimonioVivo",
+   "comentarios": 2,
+   "hora": "2025-07-06T13:43:16+0000"
+  },
+  "https://www.instagram.com/p/DJ33Aa_uot6/": {
+   "texto": "El festival Adar busca los mejores hórreos para música de cámara\n\nEl certamen, con sede principal en Leiguarda y que se desarrolla del 4 al 17 de agosto, lanza un concurso para premiar las paneras más singulares y mejor conservadas\n\nEntre Nueva York y Belmonte de Miranda –los dos polos entre los que gravitan Guillermo Laporta y Josefina Urraca– el festival Adar para el desarrollo del arte en la zona rural ideado por estos dos músicos encontró en la necesidad de buscar espacios donde sonara la música ante un grupo de espectadores la virtud de colonizar con conciertpos pequeños recintos tradicionales. “Es difícil encontrar teatros en la zona rural”, admite Laporta. Y por eso han ido probando cada año nuevas fórmulas: paisajes sonoros en los que el público recorre un jardín y va encontrándose con pequeños conciertos, un recital en un invernadero o sesiones de aforo reducidísimo en hórreos y paneras. Esta última fórmula, en la que la falta de plazas suficientes se suplió multiplicando los pases, les permitió comprobar el año pasado que estas construcciones, con un repertorio bien elegido para formaciones de cámara pueden convertirse en experiencias “maravillosas”. Convencidos de ese potencial, el festival lanza ahora un concurso para premiar tres hórreos y paneras e incorporarlos al circuito de sus conciertos.",
+   "comentarios": 1,
+   "hora": "2025-05-20T10:56:08+0000"
+  },
+  "https://www.instagram.com/p/DIti2FnofKE/": {
+   "texto": "La escultura de Sarah K. Williams, creada especialmente para el Festival ADAR 2024, continúa su diálogo silencioso con el paisaje asturiano… ahora con nuevas compañeras: unas curiosas ovejas que parecen haberla adoptado como parte del rebaño.\nNaturaleza, arte contemporáneo y vida rural se entrelazan en una escena que solo podría ocurrir aquí.",
+   "comentarios": 1,
+   "hora": "2025-04-21T14:16:09+0000"
+  },
+  "https://www.instagram.com/reel/DIRuCTFPOfO/": {
+   "texto": "#ADARsincortes 003 \nA cielo abierto, en plena montaña asturiana, la música se funde con el paisaje.\n\nUn piano, un chelo, y el silencio de Pola de Somiedo como única sala de conciertos.\nSin edición. Solo lo que fue.\n\nEsta es la belleza cruda del momento, como se vivió en ADAR.\n\n#ADARsinCortes #FestivalADAR #MúsicaAlAireLibre #Somiedo #MúsicaRural #AsturiasSuena #CelloAndPiano #SinFiltros #ArteVivo",
+   "comentarios": 0,
+   "hora": "2025-04-10T18:55:00+0000"
+  },
+  "https://www.instagram.com/reel/DIRTZOluL6t/": {
+   "texto": "#ADARsincortes 004\nDebussy en el corazón de una aldea asturiana.\nDentro, el piano y las cuerdas. Fuera, el silencio. Solo Leiguarda escuchando.\nEn este fragmento de la Petite Suite de Debussy, la música se expande más allá de las paredes de la sede de ADAR, envolviendo el aire, el monte, las casas.\nUn instante suspendido en el tiempo.\n#MomentosADAR #FestivalADAR #Leiguarda #PetiteSuite #Debussy #AsturiasSuena #MúsicaRural #ADAR2025 #SilencioYMúsica",
+   "comentarios": 1,
+   "hora": "2025-04-10T15:03:27+0000"
+  },
+  "https://www.instagram.com/reel/DIJoc9iuw-G/": {
+   "texto": "ADAR sin cortes. Un monasterio abandonado, donde el silencio pesa más que las palabras, la música encontró refugio. Monasterio de Bedón. Afilador #festivalADAR2024\n\nEn este segundo episodio sin filtros ni edición, compartimos un fragmento de Afilador, de Andrea Casarrubios, interpretado dentro del Monasterio de Bedón, un templo abandonado del siglo XIII en Llanes, Asturias. El público rodeó a los músicos en silencio absoluto, bajo una atmósfera que no necesitó escenario.\n\nLa luz, la piedra, el eco… y la música, simplemente ocurrieron.\n\n#ADARsinCortes #FestivalADAR #Afilador #AndreaCasarrubios #MonasterioDeBedón #AsturiasSuena #MúsicaRural #SinFiltros #ArteVivo",
+   "comentarios": 2,
+   "hora": "2025-04-07T15:32:51+0000"
+  },
+  "https://www.instagram.com/reel/DH3ZvkXOXmL/": {
+   "texto": "Leiguarda, 2024: Entre los prados de Leiguarda y el murmullo del agua, el violín y el violonchelo tejieron paisajes sonoros efímeros.\nAsí fue uno de los paseos sonoros dentro del Festival ADAR 2024.\nMúsica en movimiento, naturaleza viva, arte compartido.\n\n#FestivalADAR #MúsicaDeCristal #Leiguarda #PaseoSonoro #ArteYRuralidad #Asturias #ADARsincortes",
+   "comentarios": 0,
+   "hora": "2025-03-31T13:37:53+0000"
+  },
+  "https://www.instagram.com/p/DHtClk9umRC/": {
+   "texto": "¡El Festival ADAR 2025 ya está en marcha! \n\nEste verano, Asturias se convierte en un espacio de creación, exploración y conexión entre la música clásica, las artes visuales y la tecnología..Un proyecto único que lleva la música clásica, las artes visuales y la tecnología a los rincones más inspiradores del medio rural. \n\nPronto anunciaremos la programación completa. Sigue nuestras redes para descubrir todas las novedades.\n\n¿Nos acompañas en esta aventura? Sigue nuestras redes para descubrir los artistas, conciertos y actividades que harán de #FestivalADAR2025 una experiencia inolvidable.",
+   "comentarios": 1,
+   "hora": "2025-03-27T13:02:53+0000"
+  },
+  "https://www.instagram.com/p/C-z-_hgMEnc/": {
+   "texto": "Hoy, a las 19:30, celebramos el concierto de clausura del festival Adar 2024 en Leiguarda.\n\nLlueva o no llueva, ahí estaremos.\n\n❤️\n\nP.D: ¡Traed paraguas! ☔️",
+   "comentarios": 0,
+   "hora": "2024-08-18T13:03:37+0000"
+  },
+  "https://www.instagram.com/p/C-vwREps2eD/": {
+   "texto": "Gracias a todas la personas que, de una forma o de otra, estáis participando en el festival.\n\n❤️",
+   "comentarios": 2,
+   "hora": "2024-08-16T21:37:58+0000"
+  },
+  "https://www.instagram.com/reel/C-n6bWoscnG/": {
+   "texto": "Un pequeño resumen del primer concierto del Festival ADAR 2024.\n\nGracias al público por un estreno tan acogedor en el Monasterio de San Antolín de Bedón, Llanes.\n\n¡Seguimos!\n\nP.D: La pieza que suena es «Afilador», una composición de @andrea_casarrubios cuyo estreno nacional ha tenido lugar en el festival.\n\n❤️\n\nVideo realizado por @guillermordas",
+   "comentarios": 2,
+   "hora": "2024-08-13T20:37:05+0000"
+  },
+  "https://www.instagram.com/p/C-aQ5o_iNPP/": {
+   "texto": "Esta iniciativa cultural busca revitalizar el mundo rural a través de las artes y la música, especialmente las vinculadas a nuevas tecnologías y creación contemporánea. Las actividades se desarrollarán hasta el domingo 18 de agosto en diversas localizaciones de los concejos de Belmonte de Miranda, Salas, Grado, Pola de Somiedo y Llanes. El festival concluirá con una fiesta popular con sidra y empanada en Leiguarda, el lugar donde surgió esta propuesta y sede de la Asociación para el Desarrollo de las Artes en el Medio Rural.\n\nEl músico y compositor Guillermo Laporta, junto a Josefina Urraca, creó el proyecto hace cuatro años durante la pandemia, cuando ambos se instalaron en una aldea de Belmonte de Miranda. Laporta explica: «Percibimos la necesidad de conectar el mundo rural con las artes actuales y utilizarlas como medio para revitalizarlo. Conocíamos a muchos artistas que estarían encantados de venir a sitios así y con esa idea montamos la primera edición». El festival ha crecido y forjado su propia identidad, basado en dos vertientes: residencias artísticas en Leiguarda y Adar en Ruta, que lleva música y artes visuales a comunidades rurales de Asturias.\n\nLaporta subraya que el objetivo del festival es «llevar las artes y música clásica o contemporánea a zonas donde no se espera», distinguiéndose de otros eventos similares. No buscan atraer a gente de todos sitios, sino revitalizar el territorio rural e implicar a la población local. Agradecen el apoyo de Caja Rural y la Consejería de Cultura. El horizonte del festival es seguir creciendo con nuevas ideas y espacios en el futuro.",
+   "comentarios": 0,
+   "hora": "2024-08-08T13:19:52+0000"
+  },
+  "https://www.instagram.com/p/C-GVgsvPY-X/": {
+   "texto": "Del 8 al 18 de agosto de 2024, el Festival ADAR celebrará su cuarta edición, ofreciendo una experiencia cultural única que fusiona la belleza del medio rural asturiano con expresiones artísticas contemporáneas. \n\nJueves 8: GRADO\nApertura de las instalaciones artísticas\n\nLunes 12: LLANES\n19:30 h - Concierto en el Monasterio de San Antolín de Bedón\n\nMartes 13: SALAS\n20:00 h - Concierto en el Monasterio de San Salvador\n\nMiércoles 14: POLA DE SOMIEDO\n20:00 h - Concierto en el Mercado de Pola\n\nViernes 16: LEIGUARDA\n21:30 h - Micro Concierto en la Sede de ADAR\n22:00 h - Micro Concierto en el Horreo Casantos\n23:00 h - Paseo Sonoro (y sidra)\n\nSábado 17: GRADO\n19:30 h - Concierto en el Palacio de Miranda-Valdecarzana\n21:00 h - Micro concierto en la Capilla de los Dolores con escenografía de Sarah K. Williams\n22:00 h - Instalación artística de Sarah K. Williams y paseo sonoro en el exterior del Palacio de Fontela\n\nDomingo 18: LEIGUARDA\n19:30 h - Concierto de clausura en los alrededores de la Iglesia de Leiguarda\n22:00 h - Sidra y empanada para todos",
+   "comentarios": 4,
+   "hora": "2024-07-31T19:35:19+0000"
+  },
+  "https://www.instagram.com/reel/C8A211iszgc/": {
+   "texto": "En el verano de 2023, durante el Festival ADAR, se presentó una instalación artística diseñada por la artista japonesa, Mizuko Kaji. El teatro de A Caridad se transformó con telas semitransparentes en las que se proyectaban figuras geométricas, creando un ambiente envolvente y mágico.\n\nDurante toda la semana del Festival, los visitantes pudieron pasear entre las telas, envueltos en un diseño de luz y proyecciones que ofrecía una experiencia sensorial única.\n\nAdemás, esa misma semana, el Festival ofreció un concierto con músicos de talla internacional, interpretando obras de Pärt, Granados, Turina, Kowalski y Telemann. Una combinación perfecta de arte visual y música clásica.\n\n#FestivalADAR #MizukoKaji #InstalaciónArtística #TeatroDeACaridad #Proyecciones#ArteVisual #DiseñoDeLuz #ExperienciaSensorial #MúsicaClásica #ConciertoInternacional #Pärt #Granados #Turina #Kowalski #Telemann #ArteYMusica #Verano2023 #CulturaYArte #InnovaciónArtística #FestivalDeArte\n\nLink: https://youtu.be/AvtBZ7iWfKk",
+   "comentarios": 0,
+   "hora": "2024-06-09T23:32:56+0000"
+  },
+  "https://www.instagram.com/reel/C7pkT9UPuZk/": {
+   "texto": "En este video, te invitamos a vivir una experiencia única: un concierto de música clásica en un auténtico hórreo asturiano. Ubicado en el encantador municipio de Leiguarda, en Belmonte de Miranda, Asturias, este evento combina la riqueza de la tradición asturiana con la belleza de la música clásica.\n\nEste concierto formó parte del Paseo Sonoro que tuvo lugar en esta pequeña aldea asturiana. La audiencia pudo escuchar música de Bach y Turina así como disfrutar de una instalación de video-mapping en la fachada de la iglesia.\n\nLa Asociación ADAR, con sede en Leiguarda, ha creado un espacio singular para la promoción de proyectos artísticos en entornos rurales. Este hórreo, una construcción tradicional de Asturias, se convierte en un escenario mágico para la música, resaltando la conexión entre el patrimonio cultural y la innovación artística.\n\n#ConciertoEnElHórreo #Leiguarda #BelmontedeMiranda #Asturias #MúsicaClásica #TradiciónAsturiana #PaseoSonoro #Bach #Turina #VideoMapping #ArteEnEntornosRurales #PatrimonioCultural #InnovaciónArtística #HórreoAsturiano #MúsicaYArte #CulturaRural #EventoCultural #ExperienciaÚnica\n\nLink: https://youtu.be/i78-jP-Xed0",
+   "comentarios": 0,
+   "hora": "2024-05-31T22:24:57+0000"
+  },
+  "https://www.instagram.com/reel/C7UNMDLuhVV/": {
+   "texto": "En este video, te llevamos a la Capilla de los Dolores en Grado, Asturias, para experimentar una instalación artística única que combina música para flauta y electrónica de Michel van der Aa, Rekindle, con la creación artística de Guillermo Laporta. Este evento especial transforma la histórica capilla en un espacio inmersivo donde la tradición y la innovación se encuentran.\n\nLa Capilla de los Dolores se construyó en 1713. Es conocida por su arquitectura y su valor histórico, siendo el escenario perfecto para esta instalación multidisciplinar. La combinación de música acústica y electrónica crea una atmósfera mágica y envolvente que invita a la reflexión y la apreciación artística.\n\n#vidarural #desarrollorural #FestivalADAR #ConciertoEnElHórreo #Leiguarda #BelmontedeMiranda #Asturias #MúsicaClásica #TradiciónAsturiana #PaseoSonoro #Bach #Turina #VideoMapping #ArteEnEntornosRurales #PatrimonioCultural #InnovaciónArtística #MúsicaYArte #CulturaRural #ExperienciaÚnica #MúsicaEnAsturias\n\nLink: https://youtu.be/nFziarjucPQ",
+   "comentarios": 1,
+   "hora": "2024-05-23T15:19:49+0000"
+  },
+  "https://www.instagram.com/reel/C7NDDwzvvdg/": {
+   "texto": "¡Qué emoción presentar ya la cuarta edición del Festival ADAR! Del 8 al 18 de Agosto! Este año, celebraremos el desarrollo de las artes en el medio rural con conciertos de música clásica, artistas internacionales y asturianos, instalaciones visuales sorprendentes y paseos sonoros únicos. No te pierdas esta oportunidad de vivir experiencias inolvidables y sumergirte en un ambiente vibrante. ¡Únete a nosotros y sé parte de esta celebración especial!\n\n🌟 #FestivalADAR #artevisual #MúsicaClásica #vidarural #desarrollorural \n\n👉 festivaladar.com",
+   "comentarios": 4,
+   "hora": "2024-05-20T20:48:29+0000"
+  },
+  "https://www.instagram.com/p/C5tRM4ysdZT/": {
+   "texto": "Ya podéis anotar las fechas del Festival ADAR 2024. Del 8 al 18 de agosto, os prometemos la mejor música clásica, arte visual, nuevas instalaciones artísticas, nuevos espacios y sobretodo: revitalización rural. https://festivaladar.com/inicio\n #DesarrolloRural #desarrollorural #turismoasturias",
+   "comentarios": 1,
+   "hora": "2024-04-13T15:51:04+0000"
+  },
+  "https://www.instagram.com/reel/Cyyngcfum_1/": {
+   "texto": "Encantados de publicar esta pieza de Guillermo Ordas y Natania Hoffman, grabada en Leiguarda, Asturias dentro del marco del Festival Adar 2023\n\nConcept, cinematography and editing: Guillermo Ordas\nCellist: Natania Hoffman\nAssistant editor: Žilvinas Brazauskas\nRecorded at Festival ADAR 2023\nLeiguarda, Asturias, Spain August 2023",
+   "comentarios": 31,
+   "hora": "2023-10-24T18:06:17+0000"
+  },
+  "https://www.instagram.com/reel/Cv3N-IttlWW/": {
+   "texto": "",
+   "comentarios": 1,
+   "hora": "2023-08-12T23:21:38+0000"
+  },
+  "https://www.instagram.com/reel/Cv0XjRfokms/": {
+   "texto": "Estamos encantados de poder enseñaros un adelanto de lo que estamos viviendo estos días en Asturias con el Festival internacional ADAR, @festivaladar !\n#festivaladar #asturias #colunga #elfranco #grado #belmontedemiranda #leiguarda #musica #chambermusicfestival #lifemusic #art #artinstalation",
+   "comentarios": 1,
+   "hora": "2023-08-11T20:48:32+0000"
+  },
+  "https://www.instagram.com/p/CvovEf3o7jd/": {
+   "texto": "Abrimos la primera instalación artística en la Capilla de los Dolores de Grado!",
+   "comentarios": 1,
+   "hora": "2023-08-07T08:21:55+0000"
+  },
+  "https://www.instagram.com/p/CvkIKOhxZwn/": {
+   "texto": "Estos días tenemos la suerte de contar con el talento de @guillermordas , videógrafo graduado con honores en Comunicación Audiovisual por la Universidad del País Vasco (Premio Extraordinario fin de carrera), actualmente continúa su formación artística en la ECAM (Escuela de Cine y del Audiovisual de la Comunidad de Madrid).\nSus proyectos audiovisuales han sido galardonados en diferentes festivales e instituciones como el NotodoFilmFest, el ZinebiExpress, el Euskal Zine Bilera o el Museo de Arte Contemporáneo de Alicante.\n\n@guillermordas",
+   "comentarios": 1,
+   "hora": "2023-08-05T13:24:58+0000"
+  },
+  "https://www.instagram.com/p/CvdKSc5owzp/": {
+   "texto": "Comenzamos a preparar el escenario en Leiguarda! Gracias por toda la ayuda!",
+   "comentarios": 1,
+   "hora": "2023-08-02T20:28:52+0000"
+  },
+  "https://www.instagram.com/p/Cvb7eFDNcHd/": {
+   "texto": "Buscamos voluntarios para ayudar con el Festival Adar los días 12 y 13 en Leiguarda.\n\nEntre otras cosas necesitamos ayuda con:\n\nGestión de público\nPreparación de espacios\nCoordinación de actividades \n \nPrometemos un buen rato y también empanada y bocadillos para los ayudantes!",
+   "comentarios": 0,
+   "hora": "2023-08-02T09:00:09+0000"
+  },
+  "https://www.instagram.com/p/CvSbNhBP1k4/": {
+   "texto": "Este año vuelve Laude Martínez @laudemaritnez  al Festival ADAR 2023. Su simpatía y carisma nos acompañará durante los paseos sonoros en El Franco y los eventos en Leiguarda! \n\nLaude Martínez lleva más de 20 años, polifacético, lleva desde el 2011 siendo una cara muy familiar para los asturianos gracias a su trabajo como presentador y productor de la TPA. \n\n¡Gracias Laude por volver a ser parte del festival ADAR!",
+   "comentarios": 0,
+   "hora": "2023-07-29T16:25:06+0000"
+  },
+  "https://www.instagram.com/p/CvPSeuXNJbB/": {
+   "texto": "Desde Berlín vendrá la violonchelista Italo-Americana Natania Hoffman @nataniahoffman  al Festival ADAR 2023 \n\nComo solista, Natania ha actuado con la Orquesta Real de Cámara de Wallonie, Namur Chamber Orchestra, Cincinnati Symphony Orchestra, Cincinnati Symphony Youth Orchestra, Terre Haute Symphony Orchestra, and Lakeland Civic Orchestra, entre otras. Completó un Diploma de Artista en la Chapelle Musicale Reine Elisabeth bajo la dirección de Gary Hoffman.\n\nÁvida música de cámara, Natania ha realizado giras por Europa, Estados Unidos, China, Nueva Zelanda y la India.",
+   "comentarios": 0,
+   "hora": "2023-07-28T11:11:05+0000"
+  },
+  "https://www.instagram.com/p/CvNYhe_ou4E/": {
+   "texto": "Nos os perdáis el paseo sonoro que haremos en las Ayalgas de Silviella el día 12 de agosto a las 19.00, después iremos a Leiguarda para un micro concierto en la sede de ADAR y video mapping nocturno. Debido al aforo limitado por favor, reserven su entrada por WhatsApp al 663604030.",
+   "comentarios": 0,
+   "hora": "2023-07-27T17:25:24+0000"
+  },
+  "https://www.instagram.com/p/CvMtO15gdAX/": {
+   "texto": "Os presentamos a la violinista Jone de la Fuente  @jonefg \n\nJone de la Fuente Gorostiza comenzó sus estudios a la edad de cinco años con profesores de la Orquesta Sinfónica de Castilla y León. Estudió en el Conservatorio Superior de Música de Salamanca donde se graduó con matrícula de honor. Más tarde estudia un Postgrado en la Universidad del Sur de California y un Master en Música en la Universidad de Tel Aviv. También estudió un máster de cuarteto en Basilea, Suiza.\n\nHa sido primer violín del Gertler Quartet, cuarteto representante de la Buchmann - Mehta School of Music, tocando en la radio israelí y en giras por Portugal y EEUU. Actualmente ocupa el cargo de ayuda de solista de segundos violines en la Orquesta Nacional de España.",
+   "comentarios": 0,
+   "hora": "2023-07-27T11:07:08+0000"
+  },
+  "https://www.instagram.com/p/CvK81X_MWuX/": {
+   "texto": "¡Felices a contar con la violista Almudena Arribas para el Festival ADAR 2023!\n\nCursa estudios de Viola en Holanda y Bélgica. Realiza una Academia de Orquesta en Alemania donde gana un contrato profesional en la Sinfonieorchester Aachen. Actualmente colabora regularmente con la Orquesta Nacional de España y la orquesta de RTVE. Compagina esta labor con conciertos de cámara y como solista, habiendo interpretado en México el concierto de Bartok para Viola y orquesta y realizado diversos recitales con el Dúo Artea, el Victoria Ensemble o colaboraciones regulares en festivales de cámara internacionales. Ganadora del 2o premio del Concurso Nacional de jóvenes intérpretes \"Ciudad de Xàtiva\" y del 1er premio del Concurso de Música de Cámara del Liceu de Barcelona.",
+   "comentarios": 0,
+   "hora": "2023-07-26T18:44:59+0000"
+  },
+  "https://www.instagram.com/p/CvKFqA_MSiD/": {
+   "texto": "¿Que son los conciertos visuales? El tipo de actuación que más define al Festival ADAR se puede denominar \"concierto visual\". En estos conciertos se utilizan técnicas de arte visual y diseño teatral para enriquecer la experiencia auditiva de música clásica y contemporánea en vivo, respetando la composición musical original, descritos en el BroadwayWorld como \"una experiencia totalmente auténtica, visual y auditivamente convincente\"\n\nTrabajamos con artistas visuales, diseñadores, y otras mentes creativas para crear actuaciones de múltiples capas centradas en la música clásica, contando con músicos clásicos de reconocimiento internacional.\n\nNo os lo perdáis en el Festival ADAR 2023! https://festivaladar.com/\n\n@belmonteturismo @ayto.grau.grado @cultura.grado @turismocolunga @culturacolunga @jonefg @almu_alarco5 @laudemaritnez @nataniahoffman @creartboxnyc \n@quesadaopticalia @cajaruraldeasturias @escuelareinasofia",
+   "comentarios": 0,
+   "hora": "2023-07-26T10:42:50+0000"
+  },
+  "https://www.instagram.com/p/CvIUJmdMFny/": {
+   "texto": "Desde el 2012, Josefina y Guillermo desarrollan parte de su actividad profesional en NY donde crean la compañía CreArtBox. Con ella, han viajado a diferentes lugares del Mundo pero su lugar favorito en el planeta sigue siendo Asturias, en concreto Leiguarda, donde tiene la sede de la Asociación para el Desarrollo de las Artes para el Medio Rural. En Leiguarda han encontrado un remanso de paz e inspiración.\n\nLeiguarda se situa en Belmonte de Miranda. Una pequeña aldea sin muchos habitantes pero donde Josefina y Guillermo están rodeados de paisajes y vecinos inmejorables.\n\nA través de la Asociación y de su Festival, tienen como objetivo desarrollar proyectos musicales en el medio rural contando con el uso de nuevas tecnologías para revitalizar el medio rural y acercar las artes vivas a nuevas audiencias.\n\nhttps://youtu.be/k-Rzi9Q62mg\n\nGracias a todos los colaboradores, artistas, y patrocinadores del festival ADAR 2023\n@belmonteturismo @ayto.grau.grado @cultura.grado @turismocolunga @culturacolunga @jonefg @nataniahoffman  @laudemaritnez  @almu_alarco5 @creartboxnyc @quesadaopticalia @cajaruraldeasturias  @escuelareinasofia",
+   "comentarios": 0,
+   "hora": "2023-07-25T18:11:00+0000"
+  },
+  "https://www.instagram.com/p/CvAP6ubsV6E/": {
+   "texto": "El arte, la música, el entorno y la naturaleza son intrínsecos a la experiencia humana, y cada uno hace que los demás sean más poderosos. Basados en este pensamiento, el Festival ADAR crea los paseos sonoros.\n\nLos paseos sonoros son una serie de micro conciertos y conversaciones donde se invita al diálogo en lugares específicos, en esta edición en el Parque María Cristina y Plaza del Ayuntamiento de El Franco, en el Palacio de Fontela de Grado, y en el Campo de la Iglesia y el hórreo y sede de la Asociación en Leiguarda.\n\nGuiadas por Laude Martínez y los artistas del Festival ADAR, comprometidos con la divulgación del cuidado de nuestros entornos naturales así como tradiciones del medio rural cerca de la desaparición, esta plataforma invita a entablar una conversación sobre la historia, y la relevancia del lugar donde se desarrolla cada Paseo Sonoro. Estas conversaciones exploran el \"lugar\" como un concepto global, local y personal, un sitio que reúne \"arte, música, tierra, cielo y poesía\" creando un \"algoritmo que es más grande que la suma de sus partes\". \n\nEn entrevistas individuales y diálogos grupales, cada invitado ofrece historias y puntos de vista personales de los problemas y posibles soluciones medioambientales. Juntos, reflexionamos sobre el pasado histórico y el futuro sostenible de nuestro entorno, como un sitio comprometido con el medio ambiente, así como un espacio de reunión creativa.\n\n@laudemaritnez,@belmonteturismo,@ayto.grau.grad,@nataniahoffman,@cultura.grado,#auditorioasquintas,@turismocolunga,@culturacolunga,@jonefg,@almu_alarco5,@creartboxnyc,@quesadaopticalia,@cajaruraldeasturias\n\n#asturias, #asturiasparaisonatural, #CanalPrestosu, #belmontedemiranda, #desarrollorural #nuevamusica \n\n #asturiasparaisonatural #belmontedemiranda #asturias #auditorioasquintas #nuevamusica #naturalezaycultura #musicaclassica #verano2023 #naturaleza #musicaenvivo #turismorural",
+   "comentarios": 1,
+   "hora": "2023-07-22T15:00:05+0000"
+  },
+  "https://www.instagram.com/p/CuXlYwHshOj/": {
+   "texto": "Presentamos el Festival ADAR 2023! Múltiples conciertos, instalaciones visuales, charlas, paseos sonoros  y residencias artísticas en Leiguarda, Belmonte de Miranda, Grado, El Franco y Colunga.\n\n(Si, le quitamos la M a ADAMR para que se lea mejor)",
+   "comentarios": 0,
+   "hora": "2023-07-06T19:58:50+0000"
+  }
+ },
+ "historias": [],
+ "facebook": [
+  {
+   "fecha": "2026-09-26",
+   "url": "https://www.facebook.com/1431068359090159/posts/1379413780922284",
+   "texto": "🌿 OPEN CALL · RESIDENCIAS ADAR 2026–27\n\n¿Sois un grupo de artistas y os gustaría pasar entre 21 y 30 días creando en la Asturias rural?\n\nADAR abre una convocatoria de residencias para grupos de 4–5 artistas y profesionales de la cultura, con el apoyo de Culture Moves Europe.\n\n📍 Leiguarda · Belmonte de Miranda · Asturias\n📅 Entre finales de octubre de 2026 y el 7 de junio de 2027\n🏡 Alojamiento incluido\n💶 30 € / día / persona\n✈️ 400–800 € de ayuda de viaje / persona\n➕ Complementos adicionales cuando correspondan\n\nMúsica, artes escénicas, artes visuales, arquitectura, patrimonio cultural, diseño, literatura… Buscamos proyectos para investigar, crear, experimentar, ensayar y desarrollar nuevas ideas.\n\nNo hace falta presentar una memoria larga ni un proyecto terminado. La primera solicitud se hace simplemente por email.\n\n⚠️ PLAZO: 28 DE SEPTIEMBRE DE 2026\n\n👉 Toda la información:\nfestivaladar.com/es/convocatoria-residencias-2026-27/\n\n📩 leiguardamusic@gmail.com\n\nComparte con artistas y colectivos a quienes pueda interesar.\n\n#FestivalADAR #ArtistResidency #OpenCall #ResidenciaArtística #CultureMovesEurope CreativeEurope Asturias RuralArts ContemporaryArt PerformingArts MusicResidency",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-15/825276978_17989866015021858_3381356184845064733_n.webp?stp=dst-jpg_s720x720_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=wvk3ufQbAxMQ7kNvwE-JmIH&_nc_oc=Ado_eruU1gclAJLyplZ54nqyE1RhWKKrIG90WQuyCBYy4rXpDIerwUtVsOmMvZH2vkg&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKZ5n0_2CxAKa5kIvOTNR23x7wZ3KKnyPLnkEUdGhgVivDjEuapMLxUgeU_xr9N4h1AEMBK77x-qQ&oh=00_AQQnFvK-YqdS2grozqeZKYNg1GPZDVBv6oQOUuprUXvO6Q&oe=6B06106F"
+  },
+  {
+   "fecha": "2026-08-09",
+   "url": "https://www.facebook.com/reel/973636555733272/",
+   "texto": "Qué bien suena The Rest Project en la tele 📺!\n\nGracias a RTPA por acercarse al Festival ADAR.\n\nNuestra próxima parada:\n\nTHE REST IS SILENCE · ADAR en ruta\nAuditorio As Quintas · El Franco\nMartes 11 de agosto · 20:30 h\n\nToda la información y programación en festivaladar.com\n\n#FestivalADAR #ADAR2026 #Asturias #ElFranco #MúsicaClásica #CulturaRural #ArteContemporáneo #CulturaEnAsturias #culturaenasturias #culturaenasturias",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/769345508_1973998813284284_4160432876812265893_n.jpg?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=HodoAY16gOYQ7kNvwGzi00m&_nc_oc=AdpQ-N1Uh4WAdoFlUZsS9POjwwjAknQAnT19OGqrKzS3QwTM9qpM2E5NHQRkMD1Ids8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJ65s_4umGSNqJ_EQmzNTHYUyO8TPworDct6bjhobFj0Is7EVcfTNz_0qpX-SDqK0V59Qd3kjsFWQ&oh=00_AQTjbDWxuLoC7Xf5dt2oMgKH1Y-Ci6xvbFFij9a5gN4mwg&oe=6B063CA1"
+  },
+  {
+   "fecha": "2026-08-06",
+   "url": "https://www.facebook.com/reel/1053169897296371/",
+   "texto": "Momentos ADAR como este nos dejan con ganas de más conciertos ❤️\n\nEntra en nuestra web para conocer el programa de este año y reserva tu entrada. ¡Vuelan! 🚀\n\nhttps://festivaladar.com/es/programa-2026/",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-10/762883305_17982778071021858_8733407662405523636_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=MkbzuX4tmB4Q7kNvwGeT1eu&_nc_oc=AdqNgzmSVHiUZf0JHAZ7MEQLB-JK4ebEfq_DJeMt6HV-l8C8MGs3p1nmsMgUFMGq178&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJ4CzLhbKgqvmQjY8XfMnDfqKfCE0qJFPWxC6rqpMz5I5YDWJRHUttHKJfSBo0OitoKDSguEbfwzQ&oh=00_AQQ-ji6NVmH1ArrkEuNCzPTLJmBmZLICmLBi2Qx8E3Nfqw&oe=6B061B60"
+  },
+  {
+   "fecha": "2025-09-30",
+   "url": "https://www.facebook.com/1431068359090159/posts/1095711252625873",
+   "texto": "Este sábado, MÚSICA DE CRISTAL transforma la Plaza de Porlier en la Noche Blanca de Oviedo, en colaboración con el Festival ADAR.\n\nLa instalación nació en Leiguarda el año pasado, durante las residencias artísticas del festival, con la idea de situar músicos de cámara y un gran piano dentro de un invernadero, para que el propio escenario se convirtiera en una obra artística. Ahora será emocionante ver un pedazo del mundo rural en medio de la capital.\n\nPlaza de Porlier, Oviedo\nSábado 4 de octubre\n20:00 a 01:00\nConciertos en directo: 21:30 y 23:00\n\n• Guillermo Laporta (flauta y diseño visual)\n• Josefina Urraca (piano)\n\n#NocheBlancaOviedo #FestivalADAR #Oviedo #Oviedo2031 #CulturaOviedo #MúsicaClásica\n #musicaclasica",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/557630255_1095711222625876_1853853739850491146_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=439iKmwCS6cQ7kNvwFsZdJD&_nc_oc=AdpnQh0DiJM1-c3ABy5tXsRbsjpIiw4JQo1Y92xLt1YopbCJPv2chX2YOXuP3FfmL30&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQIe5NqAenakXD4KSp7Nj45DRS3-jG9XFW2K3AABaOttf1i2yo5IJZAff9JoVOorcbgh7eEbR0ItcQ&oh=00_AQSvQlkks3GxuOMm0DEC3VD17TUP09yAfGp-v7c5Jn46kw&oe=6B063F6E"
+  },
+  {
+   "fecha": "2025-08-14",
+   "url": "https://www.facebook.com/1431068359090159/posts/1059841119546220",
+   "texto": "Hoy a las 8! No os lo perdáis!",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t51.82787-15/531264191_17941259349021858_6264504683321260000_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=RkOfsV9UGvMQ7kNvwFjXyhV&_nc_oc=AdpaYZQBz4SQ7eKVai8Lb2Jp3Yh_3lBTgTCliecZbkwN6Jc_zkIoOBfXHxGxsximWn0&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKY2Gyc7OWlg2cm6e9jKr3NOOYnkOwAsIUrNZSPGd5MogVaqriEzpwTIrUl7P5g5uvpRupSuuDmoA&oh=00_AQTlFligyYtUUI0-GFBKA5vlStBDtQMgpecBZk9M7u4FlA&oe=6B06115F"
+  },
+  {
+   "fecha": "2025-08-11",
+   "url": "https://www.facebook.com/1431068359090159/posts/1057364669793865",
+   "texto": "Unas fotos del concierto de @ballarte.ensemble en la iglesia de San Antolín de Bedón, Llanes.\n\nHoy nos vemos en la Casería de Paz Mesa y Xandru González (Puerma, Las Regueras) para un micro concierto en el que tocaremos Antonín Dvořák — Cuarteto de cuerda en fa mayor, Op. 96 “Americano” (1893).",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t51.82787-15/531717481_17940908415021858_1998479986400883062_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=OoWPpW9GCSkQ7kNvwGzTagS&_nc_oc=Adpc8Vm402FF2-46XzgQcgAF9Kq5DQGJ_aXMwtuo0HkixaxiXWkb4C0mzugg5BGXqAY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQISGWXt5K_cBH0FkvR77gIY0M4h_245Jvy0lSGnYCJTVh9jzUaNwJQR0fq7JG-BAqsRt20PXqN8RQ&oh=00_AQRh18mSP_teAFCQUgolup8Wmwrnfs2IJvUx58MgPeG9iw&oe=6B062E7C"
+  },
+  {
+   "fecha": "2025-08-10",
+   "url": "https://www.facebook.com/1431068359090159/posts/1056918599838472",
+   "texto": "Hemos ampliado el aforo para los conciertos en Leiguarda Añadimos 20 entradas extra para que más personas puedan disfrutar de esta experiencia única en un entorno mágico. ¡Reserva la tuya antes de que vuelvan a agotarse!",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-15/529774008_17940844236021858_5726013787905432473_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kePcpqfOLF0Q7kNvwG8MudK&_nc_oc=Adqc0v7y0rpXmGnjY3sm4XVSZp2sCHx4gYxlJhXnNpPLVRXNfs2ivawIYkrkS1Go404&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKlqDWcQPtyTc8RB9NHnd6mrHgs9G1AafueygrqbzYXZnoWUqFcF5pWuG06j1uSo2ueN4UvJvBJ0A&oh=00_AQQ8_BHpg43lwU_0rPsXNKBwjajk52AG_n92iJsJgMxN9g&oe=6B062564"
+  },
+  {
+   "fecha": "2025-08-09",
+   "url": "https://www.facebook.com/1431068359090159/posts/1055956046601394",
+   "texto": "🚶‍♂️ PASEO SONORO EN LEIGUARDA\n📍 Hórreo Casantos y alrededores, Leiguarda (Belmonte de Miranda)\n🗓️ Sábado 9 de agosto, 21:30\n\nUn paseo de noche desde el hórreo de ADAR hasta la iglesia de Leiguarda, con música en vivo como banda sonora. Allí nos espera la instalación Piensa que las vueltas no son circulares de Diego Arribas: rocas y mineral de las minas de hierro de Sierra Menera (Teruel), dispuestas en espiral sobre un lecho de mineral. Un símbolo de cambio y movimiento que conecta con la música y el momento.\n\nEl concierto sucederá alrededor de esta obra, mezclando arte, paisaje y sonido en una experiencia única.\n\n🎵 Con:\nNacho Laguna (tiorba)\nJone de la Fuente (violín)\nAlmudena Arribas (viola)\nGuillermo Laporta (flauta)\nDiego Arribas (artista visual)\n\n#FestivalADAR #PaseoSonoro #ArteYNaturaleza #BelmonteDeMiranda #MúsicaEnAsturias",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-15/528321399_17940696114021858_8614186292217284337_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=UKK6j_oXKcgQ7kNvwGnMfFI&_nc_oc=AdpWB9VzV3znncTc6t09lKg2gFRFoLUQBWDakhlpdBIc-jLPR7tBJzzejkDSp8GfXyI&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQIwgX0-g8YuZAIBwCJwf_2n-7wwINnDpfSNWUQ-s6Vs1kEgDQ_m6JrzYtSSw82qVfoXL4-n4KzLtg&oh=00_AQSKAl_UusayMYBbmbfjjdFBo-rP97GZFoc7OowO66sssw&oe=6B060EEA"
+  },
+  {
+   "fecha": "2025-08-08",
+   "url": "https://www.facebook.com/1431068359090159/posts/1055217830008549",
+   "texto": "📽️ CONCIERTO VISUAL\n📍 Monasterio de San Antolín de Bedón (Llanes)\n🗓️ Viernes 8 de agosto, 20:00\n🎟️ Entradas agotadas\n\nPor una noche, el monasterio románico del siglo XIII se llena de música y luz. Un diseño lumínico especial acompaña su arquitectura, y el público se sienta en círculo para vivir una experiencia cercana, con la música fluyendo desde el centro hacia todos los rincones.\n\n🎻 Con:\nJosefina Urraca (piano)\nGuillermo Laporta (flauta)\nJone de la Fuente (violín)\nAlmudena Arribas (viola)\n\nEl programa incluye obras de Debussy, Telemann, Arvo Pärt y Guillermo Laporta.\n\n#FestivalADAR #ConciertoVisual #MúsicaYArquitectura #Llanes #SanAntolínDeBedón #MúsicaEnAsturias",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-15/528653179_17940576090021858_612410965555241015_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Ncn74tzIwq4Q7kNvwF5bvw3&_nc_oc=AdqXHBxMIMXbiiTIE2OJZeTL5Fa3towFc0T2IyEizDLM2ZhQKWuxhVzY4icnX7wM7T0&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJ7JpD48EoZpjfTaFTx2dvYnbWRUUFIrde9xaXOP-vifUBVB70cq1c4mLaCaQFvDnz3TSDuk6iTww&oh=00_AQRFwgUR7FZyxNwfhi2yaZpEjRaF8OZxO2k5hPmOgrNySg&oe=6B063C42"
+  },
+  {
+   "fecha": "2025-08-07",
+   "url": "https://www.facebook.com/1431068359090159/posts/1054178166779182",
+   "texto": "🐋 THE WHALE (La Ballena)\n📍 Monasterio de San Antolín de Bedón (Llanes)\n🗓️ Jueves 7 de agosto, 20:00\n🎟️ Entradas agotadas\n\n«Era el 2 de abril cuando apareció la ballena. Increíblemente, el valle se despertó para ver al enorme cetáceo varado casi en la cima de la colina».\n\nEn esta propuesta de Ballarte Ensemble, instrumentos barrocos del siglo XVII y sintetizadores digitales se funden para dar vida a una historia que atraviesa siglos y océanos.\n\n🎻 Con:\nBerta Ares (violín)\nMaría del Buey (visuales y voz)\nNacho Laguna (tiorba, guitarras, electrónica)\nGiulio Tanasini (viola da gamba y texto original)\n\nUn concierto escénico que es también una fábula sonora.\n\n#FestivalADAR #TheWhale #BallarteEnsemble #MúsicaContemporánea #MúsicaBarroca #Llanes #SanAntolínDeBedón",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t51.82787-15/528884801_17940427308021858_7850320031410822334_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BfjUPPbltrQQ7kNvwFMgCqq&_nc_oc=AdpjbQTBKLm7uyiXmCw70hTY0gLtDfZjdh3WXevK57vBe8ytD8kvWxmyBH-vD9uuRvY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQIF9qD8N-9EaddW8w1nHKppOSJY5Ptey2HIJYdoRSwnsZRCtbXqx_wvoDmcwGgUmEza_tVvR3-u6Q&oh=00_AQSwaPkGZKEUElAJKnDXHiZhds7U3SNyX14bxkSqFdnTRA&oe=6B0617B9"
+  },
+  {
+   "fecha": "2025-08-05",
+   "url": "https://www.facebook.com/1431068359090159/posts/1052873596909639",
+   "texto": "🎶 Comienza el Festival ADAR 2025\nEste martes 5 de agosto a las 20:00, inauguramos el festival con un micro-concierto muy especial en Susacasa Agrocultural (Gozón).\n\n🎵 Nacho Laguna (tiorba) y María del Buey (voz) interpretarán una selección de Ferrarese [2023], con música que une barroco ibérico e improvisación contemporánea.\n\n🌾 Un concierto íntimo en una panera tradicional, ganadora del concurso de hórreos y paneras del festival.\n\n🎟️ Entradas agotadas\n\n#FestivalADAR #MúsicaYTerritorio #ConciertoIntimo #AsturiasCultural",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-15/528692467_17940252483021858_3934351664281588248_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Z78z3fBnGlgQ7kNvwHOdvYJ&_nc_oc=Adqd7tPQeqfwOc4HaxQfTGxhUp2exGsoPdWdHGqk4X4WMN93LQJCuY5ugRspRZdhZNE&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKG_1htBUYVYRmYTLA5VdutI2sAa536QoBkj2boNuOix0L0MF-1yfHuRbIl_4lN3P5-2pR6Dx2Fow&oh=00_AQQ6-F_tIAtN8cgq2JFTE4wXIIYR4B3GKNma85BYdOXr0A&oe=6B06432B"
+  },
+  {
+   "fecha": "2025-07-29",
+   "url": "https://www.facebook.com/1431068359090159/posts/1047495957447403",
+   "texto": "Este año tenemos el lujo de contar con un concierto muy especial en el Festival ADAR.\n\nAndrea Casarrubios, violonchelista y compositora nominada a los Grammy® 2025 por su álbum SEVEN, protagonizará una velada única en la iglesia de Leiguarda. Reconocida por The New York Times por la belleza de su sonido y su intensidad emocional, Casarrubios ha actuado como solista y en música de cámara en escenarios de referencia mundial como Carnegie Hall, el Centro Nacional de las Artes de Pekín, el Auditorio Nacional de Madrid, y festivales como Verbier y Ravinia.\n\nSu música —programada por instituciones como la Orquesta Sinfónica de Chicago, Carnegie Hall, la Philadelphia Orchestra o la Sphinx Organization— refleja un compromiso profundo con lo humano, lo poético y lo contemporáneo.\n\nEn este concierto interpretará su obra SEVEN, junto a piezas de Boccherini, Debussy y Dvořák, acompañada por Josefina Urraca (piano) y Guillermo Laporta (flauta).\n\nUna oportunidad irrepetible para escuchar en Leiguarda a una de las voces más importantes de la nueva generación de compositoras y de la música de cámara actual.\n\n¡Aforo limitado! Reserva tu entrada en festivaladar.com\nEntrada gratuita con empanada y sidra para todos.\n\n#FestivalADAR #AndreaCasarrubios #SEVEN #GrammyNominee #CarnegieHall #MúsicaContemporánea #Asturias #CulturaRural #BelmonteDeMiranda",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-15/523919262_17939502696021858_6874741368630492511_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=FOi4qDDbHwIQ7kNvwFEzOiC&_nc_oc=AdpunXoYZzorkN2_3CHMEIh9q48IrZPG6GyWRMenqC0IyfVjdyDKJJI3clgLAbmAiZ4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKz23j-MaLwn97702_zwEE6p1ME4glxso3vFp0sHes7XROJPO4RItR3aeusBQ9cn4QKi8fji5Cxig&oh=00_AQTldxWpUENvHSB1IMOEgqIp3PgdS2fN_j81q6rwLK4YkA&oe=6B062103"
+  },
+  {
+   "fecha": "2025-07-26",
+   "url": "https://www.facebook.com/1431068359090159/posts/1045314974332168",
+   "texto": "Reserva tus entradas para el Festival ADAR 2025!! Se están agotando rápido!\n\nDel 5 al 17 de agosto, volvemos a recorrer el occidente asturiano con conciertos en lugares únicos como Leiguarda, Taramundi, Bedón, Obona, Corias y muchos más.\n\nTodos los eventos son gratuitos, pero el aforo es limitado y algunos conciertos ya están totalmente llenos.\nReserva tu entrada en festivaladar.com\n\nNo te pierdas esta edición con artistas increíbles como Andrea Casarrubios, Nacho Laguna, CreArtBox, Ballarte Ensemble, y muchas sorpresas más.\n\nNos vemos en los caminos, los monasterios, los hórreos, claustros…  \n#FestivalADAR2025 #ReservaTuEntrada #MúsicaEnElRural #AsturiasCultural #ArteYTerritorio #AgostoEnAsturias #AndreaCasarrubios #NachoLaguna #CreArtBox #BellarteEnsemble #FestivalRural",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-15/523019295_17939182245021858_4836905579183743790_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=2qs5cuunyZIQ7kNvwFKsg2s&_nc_oc=Adq9VSGeLRSLgr_2CUm510UBSVo4g_mOquiNzFPs2w0O1zWNZI3HMKRGHD5oHcHImH4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKgiDEji02dF80EwNZdn3pj28aTYn0V5TYJ-EqBkTJQ5j8gl9Yx728qOWQl87TZToRk01pdRvR3mQ&oh=00_AQTJfgpKvdjHZEISIVoW7XW84bI3Vrl63e5Ju5mKbMtXpw&oe=6B0619C2"
+  },
+  {
+   "fecha": "2025-07-26",
+   "url": "https://www.facebook.com/1431068359090159/posts/1045091397687859",
+   "texto": "Este año, por primera vez, los conciertos del Festival ADAR en Leiguarda se celebrarán dentro de la Iglesia.\nUn espacio íntimo y con una acústica excepcional, que acogerá dos citas muy especiales los días 16 y 17 de agosto.\n\nEl 16 de agosto, la protagonista será la violonchelista y compositora @andrea_casarrubios , nominada al Grammy, con un recital que forma parte de su regreso a ADAR. Tendremos empanada gratis para todos! \nEl 17 de agosto celebraremos el concierto de clausura, con música, esculturas de @arribas_art, @companeras_pandereteras , y una espicha final.",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-15/524167736_17939142759021858_6897393799504391117_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=UySr1MKq4BkQ7kNvwHkxJOQ&_nc_oc=AdphirCLsNVY7O0OF42oKrnNLqoO7Zs1xoCFF6UQ7zureb_FBgIgKcZZOnTXAJ_9VWc&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKIDwjtnpEFEcobe3JRcyJlvKBUyoq9Jk46Y6ciI5YCFJLohSWUs0X-m-BYmwQ85fakmcQpDJS5zw&oh=00_AQTWy1stM32ojD8B4jDeAGS3COoqctnJZz2CN3puWkP9sg&oe=6B06109C"
+  },
+  {
+   "fecha": "2025-07-23",
+   "url": "https://www.facebook.com/1431068359090159/posts/1043105401219792",
+   "texto": "https://festivaladar.com/en/social-media/ya-tenemos-ganadores-del-i-concurso-de-hrreos-del-festival-adar",
+   "imagen": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/8361286969786782378?url=http%3A%2F%2Fstatic1.squarespace.com%2Fstatic%2F63c4788ca0121b1f39ebd01d%2F67f3d7ea1fb151172fc72061%2F6881029e19b22918f167733c%2F1753285364566%2FIMG_4598.jpeg%3Fformat%3D1500w&fb_obo=1&utld=squarespace.com&_nc_ht=external-ord5-2.xx.fbcdn.net&ccb=18-1&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQIw0hUkwF4jFcv2sEVW_bwwE9bH3ZoNzQjHDoVXOcqzsvqaIBx79CXzx1ZLSnBju1DWWA358g0qwA&stp=dst-emg0_fr_q75_tt6&ur=50234c&_nc_sid=64c8fc&oh=06_Q3_FASZEs8tXw4Cff7E6wZzM8Ozi5TfsEaeC2vZhiPFnf0Ib&oe=6B022C61"
+  },
+  {
+   "fecha": "2025-07-23",
+   "url": "https://www.facebook.com/1431068359090159/posts/1043099054553760",
+   "texto": "¡Ya tenemos ganadores del I Concurso de Hórreos del Festival ADAR!\n\nEl primer premio ha sido concedido ex aequo a dos proyectos que destacan por su compromiso con la vida cultural y la puesta en valor del patrimonio rural asturiano:\n\nCasería de Paz Mesa y Xandru González (Puerma, Las Regueras)\nXandru González Fernández y Paz González Mesa se dedican activamente a la conservación de la cultura tradicional asturiana. Han presentado un conjunto patrimonial compuesto por tres hórreos que forman parte de una quintana tradicional, junto con la casa, el llagar y la cuadra. Entre ellos destaca un hórreo del siglo XVI, decorado en el denominado estilo Villaviciosa, también conocido como decoración medieval.\n\nSusacasa agrocultural – Keko Marcos y Sandra Murillo (Susacasa, Gozón)\nUn espacio de permacultura donde se integran actividades ecológicas y culturales. Su propuesta visibiliza el territorio como un espacio vivo, con una gran panera activada para usos comunitarios, educativos y artísticos.\n\nDotación: Cada proyecto premiado recibirá una dotación de 300 €.\nSegundo y tercer premio: Declarados desiertos.\n\nConciertos incluidos:\n• 5 de agosto en Susacasa (Gozón)\n• 11 de agosto en Puerma (Las Regueras)\n\nEste reconocimiento celebra la capacidad de ambos proyectos para mantener vivos y útiles nuestros hórreos como lugares de encuentro, tradición, aprendizaje y cultura.\n\n#FestivalADAR #HórreosVivos #ArteYTerritorio #AsturiasRural #CulturaViva #Permacultura #LasRegueras #Gozón #HórreosAsturianos #ArquitecturaTradicional #CulturaContemporánea #ADAR2025",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t51.82787-15/522683012_17938856130021858_7006843466752762553_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kZupbcLi79YQ7kNvwFllE9H&_nc_oc=AdpUr9zGQFbPHihffmhvuw3gjIV58DXonyk8b3TDhQbEnpU4wKTZwpw00Z8MokZbYrM&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQI-eW8jHBaja7tU46Expjn4UyoCf9uEz09IfN_a_qXL_P5dy2AaM30I2IwqfUwg1FpIP18JL6CBXQ&oh=00_AQQEy_npBo5tQ1J1uhDmqQZ1WJF6qfLf_ghyl0RISuJ4uA&oe=6B063CC0"
+  },
+  {
+   "fecha": "2025-07-21",
+   "url": "https://www.facebook.com/1431068359090159/posts/1041437508053248",
+   "texto": "Hoy hemos estado visitando el Monasterio de Obona y no podemos estar más emocionados. ¡Qué sitio tan impresionante! Historia, naturaleza y silencio… todo preparado para nuestro concierto del martes 12 de agosto a las 20:00, dentro del Festival ADAR.\n\nVamos a llevar allí un programa precioso de música de cámara con una instalación visual de Diego Arribas. Nos encantaría veros por allí. La entrada es gratuita (pero hay que reservar).\n\nReserva ya en www.festivaladar.com Monasterio de Santa María la Real de Obona, Tineo\n\n#FestivalADAR2025 #Obona #Tineo #MúsicaEnAsturias #FestivalRural #CulturaViva #AsturiasEsCultura",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.82787-15/522597853_17938623663021858_7241235021009808377_n.jpg?stp=dst-jpegr_s720x720_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=LrSidXixI34Q7kNvwFywW7C&_nc_oc=AdpkpCI3eXZEGByq_ymNfm4OhXXrAFWkgITayWlrjbxDrPUV-87VDy1yliE4Ne_NdKQ&_nc_zt=23&se=-1&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQIAHwwC9Gjz8-ekpVcfKnReYw43Q2hsQg31y1dubWKfMJmtlLHxzdTIcY0b3bcxHhBEsHPtddlNhw&oh=00_AQSYOF0ed9XfzfAOLjJAlwDVYB4LrhKEt8Z9nanTkTPLwQ&oe=6B063501"
+  },
+  {
+   "fecha": "2025-07-09",
+   "url": "https://www.facebook.com/reel/1232183425255706/",
+   "texto": "Ayer visitamos el Parador de Corias Cangas del Narcea para preparar el paseo sonoro que haremos el día 15 de agosto el aforo limitado así que os recomendamos reservar las entradas cuando con antelación. #paradordecorias #corias",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t51.71878-10/517935381_739276515678682_2427301439377038554_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=OZJh1WGah50Q7kNvwFasxR_&_nc_oc=AdpYquyOFbEiW5x5kHPhpBxDgwcbuHrddk8Nx3sOV8iG0BJsvQWOfHXIoFg56sCISI0&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKPp-zs9NnHbntyIbrpXihzzAs0TIEyVXNFpTLcbD91Z_tEqXewBUxEGb7aZuvaODm_5dso-PVMUw&oh=00_AQSawAbLraErbnYhMaGGZgXHU_v9bg71f6MaJ1pyewBXGw&oe=6B06347C"
+  },
+  {
+   "fecha": "2025-05-20",
+   "url": "https://www.facebook.com/1431068359090159/posts/996488519214814",
+   "texto": "El festival Adar busca los mejores hórreos para música de cámara\n\nEl certamen, con sede principal en Leiguarda y que se desarrolla del 4 al 17 de agosto, lanza un concurso para premiar las paneras más singulares y mejor conservadas\n\nEntre Nueva York y Belmonte de Miranda –los dos polos entre los que gravitan Guillermo Laporta y Josefina Urraca– el festival Adar para el desarrollo del arte en la zona rural ideado por estos dos músicos encontró en la necesidad de buscar espacios donde sonara la música ante un grupo de espectadores la virtud de colonizar con conciertpos pequeños recintos tradicionales. “Es difícil encontrar teatros en la zona rural”, admite Laporta. Y por eso han ido probando cada año nuevas fórmulas: paisajes sonoros en los que el público recorre un jardín y va encontrándose con pequeños conciertos, un recital en un invernadero o sesiones de aforo reducidísimo en hórreos y paneras. Esta última fórmula, en la que la falta de plazas suficientes se suplió multiplicando los pases, les permitió comprobar el año pasado que estas construcciones, con un repertorio bien elegido para formaciones de cámara pueden convertirse en experiencias “maravillosas”. Convencidos de ese potencial, el festival lanza ahora un concurso para premiar tres hórreos y paneras e incorporarlos al circuito de sus conciertos.",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t51.75761-15/498293952_17931802935021858_8534963557966126739_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5zMSwB6MMCYQ7kNvwHg929k&_nc_oc=AdrhTgghDy-CUTjF2Uyot8OyCN_6ONS1L5LUG904ApL_NLCt_XCUd4CHDE1YTi6pOuw&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJoXLU5YiNMrSoqvZcnbNh2ZdnxQ-td6zyw0_IhX_P8Th0JpaP_xGIVm7mZ8_tPKJxU5GBNJeAFMQ&oh=00_AQRlIR3h9bjnkj9-cXEuDbVLK3eg57uB2C7gyPeo0gNvXg&oe=6B063AFD"
+  },
+  {
+   "fecha": "2025-04-22",
+   "url": "https://www.facebook.com/1431068359090159/posts/977154151148251",
+   "texto": "¿Tienes un hórreo o una panera con historia?\nEl Festival ADAR 2025 lanza el primer Concurso de Hórreos y Paneras como escenarios de música de cámara.\n\nBuscamos tres estructuras tradicionales asturianas donde celebrar conciertos únicos durante la próxima edición del festival, que tendrá lugar del 4 al 17 de agosto de 2025. El primer premio recibirá además 500 euros.\n\nParticipar es muy fácil:\nSolo tienes que enviarnos varias fotos del hórreo o panera, su ubicación y una pequeña descripción a\n📧 leiguardamusic@gmail.com\no por WhatsApp al 663 604 030.\n\nQueremos dar vida a estos espacios rurales cargados de memoria y convertirlos en escenarios culturales. Si conoces un hórreo especial o tienes una panera que merezca ser escenario de un concierto, cuéntanoslo.\n\nPlazo para participar: hasta el 30 de junio de 2025.\n\nMás información en www.festivaladar.com\n\nhttps://festivaladar.com/concurso-de-horreos-y-paneras",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/895364094_1418042267059435_5749604617905553653_n.avif?stp=dst-jpg_s960x960_tt6&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4pfv-9SFEnUQ7kNvwEd_RGy&_nc_oc=Adp2hsq9uek7ISEhHyh8M5-VzToRlZyTp9q4XmaRSC69yJR4iW4Q7CGai0rEdLalaas&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQLP4_WVfR8iKOYiHOu01gScBXbL_cV6l58YsEUKHAlTKtK4ARcz7ZU_TVcb_MDukBpcgwLRqXyMyQ&oh=00_AQRMWLDfkX3sNFbUQ0HNjElByUJf7mhB5BwMSbKfskgLiw&oe=6B06427C"
+  },
+  {
+   "fecha": "2025-04-21",
+   "url": "https://www.facebook.com/1431068359090159/posts/976532811210385",
+   "texto": "La escultura de Sarah K. Williams, creada especialmente para el Festival ADAR 2024, continúa su diálogo silencioso con el paisaje asturiano… ahora con nuevas compañeras: unas curiosas ovejas que parecen haberla adoptado como parte del rebaño.\nNaturaleza, arte contemporáneo y vida rural se entrelazan en una escena que solo podría ocurrir aquí.",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t51.75761-15/491446146_17928743487021858_5256070616402551026_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=31T9w7WI5KoQ7kNvwGPAAEj&_nc_oc=AdrZ15m-H9_IQxrnbFdo5j2XCSDmhXXLpyoqArWMTdXEcdgZptGds-yMg7MpkiE2P0c&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKPYr0oNRRr4fp5_8HQCt1I0fVeZW-cbkuKLesM50YCVKby9gfhwy48P03qvcrwkTqKV6TShFl3KA&oh=00_AQSmz2Tu7pkaliWkxAyxhDpvSDACTmYyZnkZjASaGDQVBQ&oe=6B0615C7"
+  },
+  {
+   "fecha": "2024-08-12",
+   "url": "https://www.facebook.com/1431068359090159/posts/807320411464960",
+   "texto": "https://www.lne.es/occidente/2024/08/12/festival-adar-despliega-belmonte-edicion-106906827.html",
+   "imagen": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/9855915234665091787?url=https%3A%2F%2Festaticos-cdn.prensaiberica.es%2Fclip%2F016560e2-cace-4a79-8c51-806167df6732_16-9-discover-aspect-ratio_default_0.jpg&fb_obo=1&utld=prensaiberica.es&_nc_ht=external-ord5-2.xx.fbcdn.net&ccb=18-1&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQIMGzNdvCB05PJgZvGdGa3lapbZkb7NlkrlycgQjBvL_nndU-dZzulKlGAq_F3LZQ8Qsp9LsSxabg&_nc_enc=Uqzp5WdNe0k5eox3FsW50BXrsgARhETbEryDubsjgr6gHdKGJfVl6YjoJAZSGcQK6_Tw_xzS5NgDwMRDEhiLe5vsDS_tfdoM7RepGqUdYlMebdo&stp=dst-emg0_fr_q75_tt6&ur=50234c&_nc_sid=64c8fc&oh=06_Q3_FAabYWSnkN9xvy-tqSxVhwyvjgK8qKkm-Ogd64MnwKi1t&oe=6B024B12"
+  },
+  {
+   "fecha": "2024-08-08",
+   "url": "https://www.facebook.com/1431068359090159/posts/805065591690442",
+   "texto": "https://www.elcomercio.es/culturas/arte/adar-festival-distinto-revitalizar-mundo-rural-20240807222849-nt.html",
+   "imagen": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/3821415172142712218?url=https%3A%2F%2Fs2.ppllstatics.com%2Felcomercio%2Fwww%2Fmultimedia%2F2024%2F08%2F07%2F96924285-U190777758566LGF--1920x1080%40El%2520Comercio.jpg&fb_obo=1&utld=ppllstatics.com&_nc_ht=external-ord5-1.xx.fbcdn.net&ccb=18-1&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQLqJBi_PvWAO85iS-ty-dHgqRSO0Lo4zjkGAO0pMlto05rcXdJG0YJIunHMJHIiGoJseTcomYjorg&stp=dst-emg0_fr_q75_tt6&ur=50234c&_nc_sid=64c8fc&oh=06_Q3_FAYpJumty1oxijxL2qX61DWvIOtwEVLO8wj4u6nFF4Seo&oe=6B02238F"
+  },
+  {
+   "fecha": "2024-07-31",
+   "url": "https://www.facebook.com/1431068359090159/posts/1548014539432247?substory_index=1548014539432247",
+   "texto": "",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/902044282_1164034429313869_1227933819851376776_n.avif?stp=dst-jpg_p720x720_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=L9huSOPHIA4Q7kNvwG7DAda&_nc_oc=AdrS_0JmU0T7wB6vKvVPaJ-zSHRtUOAWANRbqcxpzxXIAmsMU4CPmVtpRH9-qQk8x0s&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQK6eZ91buj5N6sw2v6IirqELdpGywFPgWhFXNE45QhTnB4vfEMBilEczII5EA9MX0JCSUIAudOXBQ&oh=00_AQQhq2vZ-fnW4t9MfTE7AhJrfJGXwKBcfbh4OWTCjrHZIw&oe=6B0628D1"
+  },
+  {
+   "fecha": "2024-07-31",
+   "url": "https://www.facebook.com/1431068359090159/posts/800594432137558",
+   "texto": "Que suerte poder disfrutar de este maravilloso entorno!",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/893715849_29214311291532576_8521806130335469581_n.avif?stp=dst-jpg_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=i5rgSAi3zhQQ7kNvwG0E1eD&_nc_oc=AdpyidyacGcQ4_xwxVqk51KNXDgrEF8HrHhTJ6Kkur3wk76PuNbZIjqUZ7ysbpmbGk8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJvu0GcG9ymXdGGVPtQTVQ5YlYB7iqL25Hi0RzIC7yGyCVHCWaHAxsdM91vyiJkb9-6f2-NaIkFnw&oh=00_AQRITsm6-j3sUxBzE0_yltPEZmIKkoG5bF-5mHdgSCKKtA&oe=6B0617C5"
+  },
+  {
+   "fecha": "2024-05-23",
+   "url": "https://www.facebook.com/1431068359090159/videos/344120855047991",
+   "texto": "Ya no queda nada para el Festival ADAR 2024!　https://festivaladar.com/ Música clásica, arte visual, instalaciones, paseo sonoros en Llanes, Cornellana, Pola de Somiedo, Grado y Leiguarda.",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/892796148_1787162065902776_918283861445660570_n.avif?stp=dst-jpg_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=o1YkftRct5wQ7kNvwFqhXKE&_nc_oc=Adp2MDeMTnDm6LcxDkpyqQSoB0RVDR56X2bnF77XH7zdAW5DwkmuXgbiey0vXAoHkeM&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKdHDpOXFX15gUQRi9PFTiE-EkMtTXcCRifiMkLFkjuucfwqESWXUnSW3vgZhdXl_CLQydYRku3mg&oh=00_AQQOk2Iv0uLcu0lQSL1Mua0BTQGBtwTHAHX9JNFSR56mjQ&oe=6B061D10"
+  },
+  {
+   "fecha": "2024-05-23",
+   "url": "https://www.facebook.com/1431068359090159/posts/761717986025203",
+   "texto": "En este video, te llevamos a la Capilla de los Dolores en Grado, Asturias, para experimentar una instalación artística única que combina música para flauta y electrónica de Michel van der Aa, Rekindle, con la creación artística de Guillermo Laporta. Este evento especial transforma la histórica capilla en un espacio inmersivo donde la tradición y la innovación se encuentran.\n\nLa Capilla de los Dolores se construyó en 1713. Es conocida por su arquitectura y su valor histórico, siendo el escenario perfecto para esta instalación multidisciplinar. La combinación de música acústica y electrónica crea una atmósfera mágica y envolvente que invita a la reflexión y la apreciación artística.\n\n#vidarural #desarrollorural #FestivalADAR #ConciertoEnElHórreo #Leiguarda #BelmontedeMiranda #Asturias #MúsicaClásica #TradiciónAsturiana #PaseoSonoro #Bach #Turina #VideoMapping #ArteEnEntornosRurales #PatrimonioCultural #InnovaciónArtística #MúsicaYArte #CulturaRural #ExperienciaÚnica #MúsicaEnAsturias\n\nLink: ",
+   "imagen": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/3376615330747601655?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FnFziarjucPQ%2Fmaxresdefault.jpg&fb_obo=1&utld=ytimg.com&_nc_sid=50234c&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=dst-emg0_q75_s1280x720_tt6&ccb=18-1&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQJi23lozbD9ZpL7LJRAkr5IM_bl8FuLlo5jSTNzZ9poiR2VM2qaEwWtHZyVt2fdHhMJhz5rtltyfQ&oh=06_Q3_FAXY0ZPD9cvZyacdzKtCVu5rDF-dKMheftLYwBsNOsfdn&oe=6B0241DC"
+  },
+  {
+   "fecha": "2024-04-13",
+   "url": "https://www.facebook.com/1431068359090159/posts/738413058355696",
+   "texto": "Ya podéis anotar las fechas del Festival ADAR 2024. Del 8 al 18 de agosto, os prometemos la mejor música clásica, arte visual, nuevas instalaciones artísticas, nuevos espacios y sobretodo: revitalización rural. https://festivaladar.com/inicio\n #DesarrolloRural #desarrollorural #turismoasturias",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/478350427_928517359345264_3924498461443842435_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=gRtjXhUCqUcQ7kNvwFX3yPi&_nc_oc=AdrhCCfAg5zz_umd_s3kl5jk9fo5gpFBLbbkO38A24551zeUGCctUusM9onZ4H7ZLxc&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJfb3RZaMDfOsdKlGfSz8ELC1IeTCVBOvLtO7QVllsZRp-rYIQQATCFD7y-nHVBV0eFTRwIZAYsKQ&oh=00_AQTF178q3kIdE6ne8zqrGKUliBcXwKCtgYUPwE295sU16A&oe=6B0644FD"
+  },
+  {
+   "fecha": "2024-04-13",
+   "url": "https://www.facebook.com/1431068359090159/posts/948725483504354?substory_index=948725483504354",
+   "texto": "",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/474671188_914922987371368_9108126225339969090_n.jpg?stp=cp1_dst-jpg_s720x720_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=Mg4rygb1QCIQ7kNvwErkazH&_nc_oc=AdpzVc7wYFc2_oX0wstM4ouG7ZhDV0kUtmTD74JUJQrjtvvwi8hHkAyVc-Fzk71-e9E&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKXXh4TWfz3OEEsvdXU3H007J3Huc_J9KwDAPd_n2UlX8KiNbpTRqLk46UL1_k4ki25BiHaliav7w&oh=00_AQSxbSe7JVXKSEDJmFL82kJEpGrQzwEpMPuTr-xuSw76vw&oe=6B0615EE"
+  },
+  {
+   "fecha": "2023-10-24",
+   "url": "https://www.facebook.com/1431068359090159/videos/2053481395003599",
+   "texto": "Encantados de publicar esta pieza de Guillermo Ordas y Natania Hoffman, grabada en Leiguarda, Asturias dentro del marco del Festival Adar 2023\n\nConcept, cinematography and editing: Guillermo Ordas\nCellist: Natania Hoffman\nAssistant editor: Zilvinas Brazauskas\nRecorded at Festival ADAR 2023\nLeiguarda, Asturias, Spain August\n\nTurismo Belmonte de Miranda\nCreArtBox",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/894949215_1187613530272311_1328386533348216153_n.avif?stp=dst-jpg_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=jqOulna4BfIQ7kNvwGm0bQQ&_nc_oc=Adrnh4z9rkEPC0kdISC4tsO0ZQN9Dsz6FxjjOMD1w-U044JFiteU2M7M7-oEfAMguvY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJKVHRx0p2s6vfcSIhXbcF9-6WQHbwQE3OROBljX0sDxrBqjpK_nvJOiXQpcFXgUO3kqzxPHB30Nw&oh=00_AQTGK_LxPw_uJA32lmNvU8pYDNeN8j2r0MBg-fUZiFx6uw&oe=6B0627EA"
+  },
+  {
+   "fecha": "2023-08-07",
+   "url": "https://www.facebook.com/1431068359090159/posts/606172324913104",
+   "texto": "Abrimos la primera instalación artística en la Capilla de los Dolores de Grado!",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/474889092_914925177371149_8122261000285394428_n.jpg?stp=cp1_dst-jpg_p720x720_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qFmt36-L7SgQ7kNvwFtqFuf&_nc_oc=Adq4nx27__RwCkTslMm6J2JdTZzfYNcaD5dacWDGk9ZvNMeyKiYdMniPQM0xDAvW3wc&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJw81NgNs6oM1r3o5Cefoyym7tsWLuo6XUD0Mrh41Lr6XFqGD5yjjlMQ8MdbmR1lHKP9TI6QPea5w&oh=00_AQRj62wAbZqYF6Nhmj2gWplgd8dvXHwpSa2utXXiZuSsyQ&oe=6B0642B2"
+  },
+  {
+   "fecha": "2023-08-05",
+   "url": "https://www.facebook.com/1431068359090159/posts/605293231667680",
+   "texto": "Estos días tenemos la suerte de contar con el talento de @guillermordas , videógrafo graduado con honores en Comunicación Audiovisual por la Universidad del País Vasco (Premio Extraordinario fin de carrera), actualmente continúa su formación artística en la ECAM (Escuela de Cine y del Audiovisual de la Comunidad de Madrid).\nSus proyectos audiovisuales han sido galardonados en diferentes festivales e instituciones como el NotodoFilmFest, el ZinebiExpress, el Euskal Zine Bilera o el Museo de Arte Contemporáneo de Alicante.\n\n@guillermordas",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/474649192_914924027371264_970322671012141767_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1cXJxR8G1vsQ7kNvwHy0KN0&_nc_oc=AdrFDins74cLJLjWOI9eG5wQdnWPqXkSeNWkNkjnhTVXpVFkrykRMlHoouwMKbKnanQ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQIm9XeksV3lEobBVJ_Nitz6T8qH83F7dOW0isfbNpBVNylEXGLbQMleOx2OTnKrwhEIX0r0yVEV6g&oh=00_AQR7Y9Tx3ZCgo8r7fFS7hWQYSKCI-zkyT2n7EpqOmSAvgA&oe=6B061714"
+  },
+  {
+   "fecha": "2023-08-03",
+   "url": "https://www.facebook.com/1431068359090159/posts/604208998442770",
+   "texto": "Hoy en el diario La Nueva España! El Festival para el Desarrollo de las Artes en el medio rural (Festival Adar) que mañana levanta el vuelo en Leiguarda, una parroquia de Belmonte de Miranda, que pivota sobre un festival itinerante de artes para ser desarrollado sobre todo «en aldeas, pueblos y parroquias que sufren despoblación y no superan los 100 habitantes. El festival incluye conciertos de música clásica, charlas, entrevistas, conferencias, encargos a compositores y artistas visuales...», explican sus promotores, Guillermo Laporta y Josefina Urraca, muy agradecidos al patrocinio de la Caja Rural de Asturias y Opticalia Quesada Quesada Opticas.",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/474875842_914922594038074_5767647990982155626_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Xw63A7uWnJUQ7kNvwHptyZh&_nc_oc=AdpsueZMAKIjKM77yRsL-FlQJi4Z0mQdgPF3PeSEw673avhwNY5cEwac1tcGxG0O_MA&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKoXDM64XVpxQMsMS7DTNCDj7YYmX3Lfuv0eDMqXiO-xAiaWSy3xNJdRnddFmK6pxEr6_MBRNryzg&oh=00_AQQC-AkzUOu7I5w2MzXRqMXy461HJVF_1PeCwZHSWTt55g&oe=6B064381"
+  },
+  {
+   "fecha": "2023-08-02",
+   "url": "https://www.facebook.com/1431068359090159/posts/603779398485730",
+   "texto": "Buscamos voluntarios para ayudar con el Festival Adar los días 12 y 13 en Leiguarda.\n\nEntre otras cosas necesitamos ayuda con:\n\nGestión de público\nPreparación de espacios\nCoordinación de actividades \n \nPrometemos un buen rato y también empanada y bocadillos para los ayudantes!",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/474671188_914922987371368_9108126225339969090_n.jpg?stp=cp1_dst-jpg_s720x720_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Mg4rygb1QCIQ7kNvwErkazH&_nc_oc=AdpzVc7wYFc2_oX0wstM4ouG7ZhDV0kUtmTD74JUJQrjtvvwi8hHkAyVc-Fzk71-e9E&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJBKspd_bvbX_drj_SFYGiTt_wxo5sTfcfjk7GHz1xtomsEjBiypcm9AodKAWAelzWrX7ryr8_ylQ&oh=00_AQRN-u5O4v4zGDZfw9c4iW0j2vgww7e4plwK356f3egQyA&oe=6B0615EE"
+  },
+  {
+   "fecha": "2023-07-30",
+   "url": "https://www.facebook.com/1431068359090159/posts/602565038607166",
+   "texto": "Publicado hoy en La Nueva España por A. Rubiera Oviedo  | 30·07·23  \n\nUna pareja de músicos españoles se afinca en Belmonte de Miranda, desde donde continúa con sus proyectos internacionales y donde ha puesto en marcha un festival para llevar las artes al medio rural\n\nLa pandemia dejó en Leiguarda, una aldea de poco más de una veintena de habitantes del concejo de Belmonte de Miranda, dos nuevos vecinos. Dos músicos de profesión que en la maleta se trajeron todo un proyecto de arte para la zona rural asturiana. Tras once años viviendo y trabajando en Nueva York –una residencia que mantienen la mitad del año–, la pianista palentina Josefina Urraca y el oscense Guillermo Laporta se convencieron de que era el momento de buscar inspiración en entornos más naturales y devolver esa ganancia acercando las artes vivas y todo lo que traen con ellas a audiencias del medio rural.\n\nCon esa idea bullendo en su cabeza, y sin desmantelar su empresa de proyectos artísticos que tiene sede en la Gran Manzana, Laporta y Urraca se dejaron llevar por la llamada de Asturias. \"Una zona que yo conocía bien porque estuve algunos años vinculado a proyectos musicales de orquestas como la OSPA y Oviedo Filarmonía\", explica este flautista y artista visual.\nNo le costó mucho convencer a su pareja y se plantaron en la región con su piano, sus instrumentos, sus ideas y con todas las ganas de buscarse una casa en alguna zona rural en la que afincarse casi la mitad del año. De su búsqueda por Asturias acabaron con un pack completo de \"finca, casa, cuadra, pajar, hórreo...\" de los muchos que hay por rehabilitar en la región y que poco a poco han ido adecuando a sus necesidades. La vieja cuadra ya es una sala de ensayos, algo que era indispensable.\n\nY sin dejar pasar mucho tiempo también echaron a andar su sueño, que tiene nombre y registro: Asociación para el Desarrollo de las Artes en el Medio Rural (ADAR). Una fundación desde la que poner en marcha proyectos musicales en entornos de esa \"Asturias vaciada\", contando con el uso de nuevas tecnologías para revitalizar la vida en los pueblos y con ellas acercar las artes vivas a espectadores poco o nada habituados. Colgada de esa idea hay muchas más, todas alineadas: incentivar el turismo rural a través de la cultura; conectar y dar a conocer zonas de Asturias a audiencias de todo el mundo; atraer artistas de corrientes culturales internacionales a paisajes nuevos, hasta ofrecer residencias musicales en su hórreo...\n\nLa expresión más tangible de todo eso es el Festival Adar, que se desarrollará del 4 al 13 de agosto y tendrá programación en Leiguarda, en Grado, en El Franco y en Colunga. \"No es un típico festival; nunca lo pensamos así. La idea es programar conciertos y actividades que sean una palanca de desarrollo rural, vinculando distintas propuestas artísticas a estas zonas y a la belleza de la región\", explican. \n\nEl festival, detallan, incluye conciertos de música clásica, charlas, entrevistas, conferencias, encargos a compositores y artistas visuales. Así que habrá música, conciertos visuales, videomapping, teatro multidisciplinar, street art y diseño escenográfico. Y desplegarán sus propuestas por el auditorio de As Quintas (El Franco), por el Museo de las Ayalgas de Silviella (Belmonte); por la capilla de los Dolores, el palacio de Fontela y el de Miranda en Valdecarzana (en Grado), por la Sala Loreto (Colunga) y hasta por el Campo de la Iglesia de Leiguarda, la casa de los promotores y la Panera Casantos. \"La música es universal y sabemos que con una buena conexión entre Leiguarda y Nueva York los proyectos no tiene por qué diferir tanto\", apunta con ilusión Josefina Urraca.\n\n",
+   "imagen": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/13478845600416001707?url=https%3A%2F%2Festaticos-cdn.prensaiberica.es%2Fclip%2F447e8bc1-0da2-43ff-9255-07c99ba5022b_16-9-aspect-ratio_default_0.jpg&fb_obo=1&utld=prensaiberica.es&_nc_ht=external-ord5-2.xx.fbcdn.net&ccb=18-1&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQLnGoaNpTlS_3e8_-lT5RrU4mkCXgRvN1UN_LWArtUt9owxh9-uwmwJ2SwZtk1Sff1ELn1e9wodvg&_nc_enc=Ui7U5Z42l01NYcaXHYqAc994vj1OsXjb3KeMl53_UXRXur_X-F7Z4siWipKXYs-eiHN_uDqa6NfYdKWfhQtl9iyt8Bm8Mt-4qd9GwyYfPYiznKc&stp=dst-emg0_fr_q75_tt6&ur=50234c&_nc_sid=64c8fc&oh=06_Q3_FAbZflm4CSHsVJuyRZiClXZAuo-hlfxNwrAarxivzsbIa&oe=6B021EEE"
+  },
+  {
+   "fecha": "2023-07-29",
+   "url": "https://www.facebook.com/1431068359090159/posts/602017745328562",
+   "texto": "Este año vuelve Laude Martínez Laude Martínez Fernández al Festival ADAR 2023. Su simpatía y carisma nos acompañará durante los paseos sonoros en El Franco y los eventos en Leiguarda! \n\nLaude Martínez lleva más de 20 años, polifacético, lleva desde el 2011 siendo una cara muy familiar para los asturianos gracias a su trabajo como presentador y productor de la TPA. \n\n¡Gracias Laude por volver a ser parte del festival ADAR!\n\nAyuntamiento de Belmonte de Miranda   Turismo Belmonte de Miranda Auditorio As Quintas, La Caridad (El Franco). Eventos Ayuntamiento de El Franco Las Ayalgas de Silviella",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/474975431_914920230704977_5342142852180891688_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=bOlKpFO1xDcQ7kNvwFuy5ig&_nc_oc=AdqsIx0oavUq4DikE78Kx4xAcoi9hqIvZkWz9GNPMpO5J3CAwcFk0ABtBZ97WJ0jJ08&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQIqLYN6Rk0ldXtT6lFnX8IG-S6lmaZ4BrqB5tljFiLTgFoyD7Ty1cF_XJaXTsVRsXhHUpsQY1Si_g&oh=00_AQQE7ZtGbkWN_2bE3xX2mgnxVd5SBeo5VJ2E_iwj66P3BQ&oe=6B06251B"
+  },
+  {
+   "fecha": "2023-07-28",
+   "url": "https://www.facebook.com/1431068359090159/posts/601296332067370",
+   "texto": "Desde Berlín vendrá la violonchelista Italo-Americana Natania Hoffman Natania Hoffman  al Festival ADAR 2023 Festival para el Desarollo de las Artes en el Medio Rural \n\nComo solista, Natania ha actuado con la Orquesta Real de Cámara de Wallonie, Namur Chamber Orchestra, Cincinnati Symphony Orchestra, Cincinnati Symphony Youth Orchestra, Terre Haute Symphony Orchestra, and Lakeland Civic Orchestra, entre otras. Completó un Diploma de Artista en la Chapelle Musicale Reine Elisabeth bajo la dirección de Gary Hoffman.\n\nÁvida música de cámara, Natania ha realizado giras por Europa, Estados Unidos, China, Nueva Zelanda y la India.",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/474673777_914920410704959_4067015350220326423_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6qA-pFwZmXkQ7kNvwEeKlYJ&_nc_oc=Adr6g_HzuLv-y7eqMOHKM-ShPVUi4bXKdPH_uBkwVQ326g1yxlX4ddHKDO30aXomp3Y&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJdfBw06Lo4do3WVaYACRq-sULEJvfK6D3PN5UXMLx_tO2aZhl9eb_Rb5jcc3QcavwEC6_4gGp1FA&oh=00_AQTpbY-u678LhJiivle4Xnc9Dd9b5BouDmWn2oU742SjzQ&oe=6B062AC8"
+  },
+  {
+   "fecha": "2023-07-27",
+   "url": "https://www.facebook.com/1431068359090159/posts/907613153989281?substory_index=907613153989281",
+   "texto": "",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/895544499_1419227676940894_2238724198133879135_n.avif?stp=cp1_dst-jpg_s960x960_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=oVuazmPSD_IQ7kNvwEZDopB&_nc_oc=Ado-UYOty2pFUVCLQz--0WRSEQe1CoTCNYWnxAnnK8j44S0krdZ55Yp1f3loGkIl-CY&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQKfdgIJ_P1k3VwWDdW3bKaSpHLPAjV3yXTJwsp61Baq3yyAk4yICidwgWSxYOSEsPzUQ7pOcXEeOg&oh=00_AQRIW_t_amx4odgHfLj_faMBSC4i0jobERUouvajVbMCNg&oe=6B064227"
+  },
+  {
+   "fecha": "2023-07-27",
+   "url": "https://www.facebook.com/1431068359090159/posts/600716182125385",
+   "texto": "Os presentamos a la violinista Jone de la Fuente \n\nJone de la Fuente Gorostiza comenzó sus estudios a la edad de cinco años con profesores de la Orquesta Sinfónica de Castilla y León. Estudió en el Conservatorio Superior de Música de Salamanca donde se graduó con matrícula de honor. Más tarde estudia un Postgrado en la Universidad del Sur de California y un Master en Música en la Universidad de Tel Aviv. También estudió un máster de cuarteto en Basilea, Suiza.\n\nHa sido primer violín del Gertler Quartet, cuarteto representante de la Buchmann - Mehta School of Music, tocando en la radio israelí y en giras por Portugal y EEUU. Actualmente ocupa el cargo de ayuda de solista de segundos violines en la Orquesta Nacional de España.",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/474508634_914920237371643_5546900583025846897_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Cwe68uYIjYoQ7kNvwHPLWxx&_nc_oc=AdrRd8H7zQxK_N-aOrrOH7avnhL1j9VVN9soGUuw3JCbNGewZH-u89SEtpW40Y3ZZwM&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQLyodTJg18OoUptjXZcli1SwU9XuRXDSSN82MBoruUEPWcWrE5TocRZBaglKUOm37H25zQsKIohOg&oh=00_AQTMg3ZDaS8C33GdNq2asPuAxvalMRqN9emNb3dH3MgH5A&oe=6B064137"
+  },
+  {
+   "fecha": "2023-07-26",
+   "url": "https://www.facebook.com/1431068359090159/posts/600382645492072",
+   "texto": "¡Felices de contar con la violista Almudena Arribas para el Festival ADAR 2023!\n\nCursa estudios de Viola en Holanda y Bélgica. Realiza una Academia de Orquesta en Alemania donde gana un contrato profesional en la Sinfonieorchester Aachen. Actualmente colabora regularmente con la Orquesta Nacional de España y la orquesta de RTVE. Compagina esta labor con conciertos de cámara y como solista, habiendo interpretado en México el concierto de Bartok para Viola y orquesta y realizado diversos recitales con el Dúo Artea, el Victoria Ensemble o colaboraciones regulares en festivales de cámara internacionales. Ganadora del 2o premio del Concurso Nacional de jóvenes intérpretes \"Ciudad de Xàtiva\" y del 1er premio del Concurso de Música de Cámara del Liceu de Barcelona.",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/474699394_914919987371668_3743708414806051732_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=STBhkZAr3vIQ7kNvwHPbvCn&_nc_oc=Adqxre9zpKlb4Nw9UVfCRetr7vqZ35e4ceSkjOplBJnaJfQDpzqgqDw98VJyksaDcR8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQIGOqPeNTJMDyXFbJTvVJtNLl49hPc1_fC3YUsYJYahb1pfEi3LbigomipT-FtDI4EHDFeb88Gy7Q&oh=00_AQSs4d511xY01yZ0RO07pXoqoMtyVCa8egrCY22vbVzxQg&oe=6B0614F4"
+  },
+  {
+   "fecha": "2023-07-26",
+   "url": "https://www.facebook.com/1431068359090159/posts/600159348847735",
+   "texto": "¿Que son los conciertos visuales? El tipo de actuación que más define al Festival ADAR se puede denominar \"concierto visual\". En estos conciertos se utilizan técnicas de arte visual y diseño teatral para enriquecer la experiencia auditiva de música clásica y contemporánea en vivo, respetando la composición musical original, descritos en el BroadwayWorld como \"una experiencia totalmente auténtica, visual y auditivamente convincente\"\n\nTrabajamos con artistas visuales, diseñadores, y otras mentes creativas para crear actuaciones de múltiples capas centradas en la música clásica, contando con músicos clásicos de reconocimiento internacional.\n\nNo os lo perdáis en el Festival ADAR 2023! https://festivaladar.com/\n\nAyuntamiento de Belmonte de Miranda Turismo Belmonte de Miranda Ayuntamiento de Grado Cultura Grado Auditorio As Quintas, La Caridad (El Franco). Eventos Ayuntamiento de El Franco Las Ayalgas de Silviella Ayuntamiento de Colunga @Área de Cultura - Ayuntamiento de Colunga- Asturias \nLaude Martínez Fernández Natania Hoffman CreArtBox \nQuesada Opticas Caja Rural de Asturias Escuela Superior de Música Reina Sofía",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/562332408_24435009452851077_923846532708262515_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_ohc=8awhAco0JBMQ7kNvwH_uGxQ&_nc_oc=AdqCcFP89b-rFpIXkVNuIbmvQ_jRcNp9bTfG2TSmzre41rDGUqZfBPK6IehKneNzXT8&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQK72ftZyZAGOuYLPwmWfDzavAceiDPG7wNcwdRVkE05VFFxoT51Pr3idCkt94ba2nM90AyPQDoDng&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQSwiTV24MjvRF1ZzLkwodZEtf1bpLyHQpgFYC6VJBrlUQ&oe=6B064073"
+  },
+  {
+   "fecha": "2023-07-25",
+   "url": "https://www.facebook.com/events/1246295782742270/",
+   "texto": "",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/474687230_914919230705077_3234072527156104448_n.jpg?stp=c448.0.1152.1152a_dst-jpg_s720x720_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=1abd25&_nc_ohc=o8670Vxim34Q7kNvwGmseSr&_nc_oc=AdrUpPBpTI0bNrqWIcOB4FPS-UKKaOD5kvusm9CfGBU-u5kAJhO33pdqnbrXasSdDB4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQImk-1ev3DA-8Io6rwYIuKEFixBfar3KWW-iWRv_zLe_xaxopk6X0BGK_r-QZ63N-fldlLBzDMtQA&oh=00_AQTasSkCvlQO1AM380v9OYFeoN0reJm3mT3jrkSWYrjlUA&oe=6B062410"
+  },
+  {
+   "fecha": "2023-07-25",
+   "url": "https://www.facebook.com/events/241910388792215/",
+   "texto": "",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/474600508_914919040705096_8860841116191244574_n.jpg?stp=c227.0.1595.1595a_dst-jpg_s720x720_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=1abd25&_nc_ohc=pUEIms8iY1MQ7kNvwH-vHVr&_nc_oc=AdrfsASHQtFLH9Wxf9fImD0smnnTmaOr2ZBfbIaSPtOM9U3A-P0v41NPtWZ9_oS8-9M&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJkcWxL4ewPzTyGqjIVTYKL33pgHogFxCYZRJP2bP_D9yIB4BMX9k8Qw4HVy133LdZBDQsMo4LxPw&oh=00_AQQmg_Ly7v_fd6FlZNPVjEwnIj4G3ZbgcujxLMnbB1sE1g&oe=6B064376"
+  },
+  {
+   "fecha": "2023-07-25",
+   "url": "https://www.facebook.com/events/244989611763229/",
+   "texto": "",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/474569014_914919287371738_6128571855737402327_n.jpg?stp=c300.0.1448.1448a_dst-jpg_s720x720_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=1abd25&_nc_ohc=CbG-m0lvFYcQ7kNvwF7BBHh&_nc_oc=Adr3j5urkAWyg7p0TBs3YcRgEqvmg7ZXh-AYFwYb8c_pCJn_6lmMDsd0wwF-M_4ICHs&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQLP4RBR9L9-849cArOQwkVAt5iSNpKfFk1gGuOPWKDpav3JI89RcEADDfaq4Ef8VhAUaEiqw_uWUg&oh=00_AQRwktbPgMEpZr8L_yCLxVkO9P-60hRbbtwZN7smLyZbUw&oe=6B061CE3"
+  },
+  {
+   "fecha": "2023-07-25",
+   "url": "https://www.facebook.com/1431068359090159/posts/599803092216694",
+   "texto": "Desde el 2012, Josefina y Guillermo desarrollan parte de su actividad profesional en NY donde crean la compañía CreArtBox. Con ella, han viajado a diferentes lugares del Mundo pero su lugar favorito en el planeta sigue siendo Asturias, en concreto Leiguarda, donde tiene la sede de la Asociación para el Desarrollo de las Artes para el Medio Rural. En Leiguarda han encontrado un remanso de paz e inspiración.\n\nLeiguarda se situa en Belmonte de Miranda. Una pequeña aldea sin muchos habitantes pero donde Josefina y Guillermo están rodeados de paisajes y vecinos inmejorables.\n\nA través de la Asociación y de su Festival, tienen como objetivo desarrollar proyectos musicales en el medio rural contando con el uso de nuevas tecnologías para revitalizar el medio rural y acercar las artes vivas a nuevas audiencias.\n\nGracias a todos los colaboradores, artistas, y patrocinadores del festival ADAR 2023\nAyuntamiento de Belmonte de Miranda , Turismo Belmonte de Miranda , Ayuntamiento de Grado , Cultura Grado , Auditorio As Quintas, La Caridad (El Franco)., Eventos Ayuntamiento de El Franco , Las Ayalgas de Silviella , Ayuntamiento de Colunga , Área de Cultura - Ayuntamiento de Colunga- Asturias  Laude Martínez Fernández , Natania Hoffman , Quesada Opticas , Caja Rural de Asturias, Escuela Superior de Música Reina Sofía",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/474875704_914919007371766_1282839290172782166_n.jpg?stp=cp1_dst-jpg_s960x960_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=nA_GfYheiZsQ7kNvwG6hFOZ&_nc_oc=AdrgZwNHyObowQqX0f-ptYgEq3ZZ7Fq_0fJgvIk9b9ZNmgkeiV3lNRGY_8sU7kwruOo&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJgjtalw3XgSnDBdLTnMwof8iSw0FOt76kZmngWqWXcn4pkfFFgLqmbNUrsqZCE5H9gBltJSuFc8Q&oh=00_AQR7xv1FGm3sspCKufEOf1OHT5V6pZUACQAsFLwf7Mw7Ew&oe=6B061313"
+  },
+  {
+   "fecha": "2023-07-22",
+   "url": "https://www.facebook.com/1431068359090159/posts/597990189064651",
+   "texto": "El arte, la música, el entorno y la naturaleza son intrínsecos a la experiencia humana, y cada uno hace que los demás sean más poderosos. Basados en este pensamiento, el Festival ADAR crea los paseos sonoros.\n\nLos paseos sonoros son una serie de micro conciertos y conversaciones donde se invita al diálogo en lugares específicos, en esta edición en el Parque María Cristina y Plaza del Ayuntamiento de El Franco, en el Palacio de Fontela de Grado, y en el Campo de la Iglesia y el hórreo y sede de la Asociación en Leiguarda.\n\nGuiadas por Laude Martínez y los artistas del Festival ADAR, comprometidos con la divulgación del cuidado de nuestros entornos naturales así como tradiciones del medio rural cerca de la desaparición, esta plataforma invita a entablar una conversación sobre la historia, y la relevancia del lugar donde se desarrolla cada Paseo Sonoro. Estas conversaciones exploran el \"lugar\" como un concepto global, local y personal, un sitio que reúne \"arte, música, tierra, cielo y poesía\" creando un \"algoritmo que es más grande que la suma de sus partes\". \n\nEn entrevistas individuales y diálogos grupales, cada invitado ofrece historias y puntos de vista personales de los problemas y posibles soluciones medioambientales. Juntos, reflexionamos sobre el pasado histórico y el futuro sostenible de nuestro entorno, como un sitio comprometido con el medio ambiente, así como un espacio de reunión creativa.\n\nCultura Colunga , Ayuntamiento de Belmonte de Miranda , Belmonte de Miranda, @belmonteturismo, Cultura Grado, Eventos Ayuntamiento de El Franco , Las Ayalgas de Silviella, Laude Martínez Fernández , Natania Hoffman,  Quesada Opticas,  Caja Rural de Asturias \n\n#asturias, #asturiasparaisonatural, #CanalPrestosu, #belmontedemiranda, #desarrollorural #nuevamusica   #asturiasparaisonatural #belmontedemiranda #asturias #auditorioasquintas #nuevamusica #naturalezaycultura #musicaclassica #verano2023 #naturaleza #musicaenvivo #turismorural",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/474587411_914918310705169_931799165958545072_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=0xrpE6SuaDQQ7kNvwFL3tYb&_nc_oc=AdpoFlMm42kN1K-TlgMoREgw3z292cIun1ixO16evg17ZOu2mG_gZ-nJnqwE6A0bVGE&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJP_iOAglwTXCAmkzpmf6DhWLC1bPfnizPSQiOJgKfnoHUv7XGBDUAG8f7ZRdLoww16qy92sOzpjQ&oh=00_AQRju5LocOQZ_-wEEzr_7WalXJsiMxGOwEVJaeOkL7muBQ&oe=6B061BE4"
+  },
+  {
+   "fecha": "2023-07-21",
+   "url": "https://www.facebook.com/1431068359090159/posts/597495305780806",
+   "texto": "Ya tenemos toda la programación publicada en la página web del Festival Adar 2023, https://festivaladar.com/ (Festival para el Desarollo de las Artes en el Medio Rural) que tendra lugar en Leiguarda, Belmonte, Grado, El Franco y Colunga.\nEste año ampliamos el concepto con instalaciones artísticas en lugares inesperados, paseos sonoros, charlas y más sorpresas.\n\nContaremos con los músicos Almudena Ribas, Natania Hofman, Jone de la Fuente, Josefina Urraca y Guillermo Laporta\n\nEl presentado Laude Martinez nos acompañará en los paseos sonoros de El Franco y el concierto visual de Leiguarda \n\nOs esperamos!\n\n@museolasayalgasdesilviella  , Ayuntamiento de Belmonte de Miranda , Belmonte de Miranda , Cultura Grado , Auditorio As Quintas, La Caridad (El Franco). , Eventos Ayuntamiento de El Franco ,  Laude Martínez Fernández , Ayuntamiento de Colunga , Área de Cultura - Ayuntamiento de Colunga- Asturias,  Caja Rural de Asturias , Quesada Opticas @ayto.grau.grado \n\n#belmontedemiranda, #asturias, #asturiasparaisonatural,",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/564296498_31660794946898035_8404560865349527475_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_ohc=V3SIJ2XBiC8Q7kNvwH_N0Hp&_nc_oc=Adozy0J2ekf8kIZQ83pzT1BdaICpvAVyphBZTigCcbwMLJkAtMu636zFTcHebR--xTI&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQJKOn3h50O8yQN-zV-XkkbsFFBzAetosklDUHb-3jAhdmrBIJLlXGQZj9_aW5HFQidjb4dC-zfAAg&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQQ0CfeS0uPz2GJFqmO18I4JK71bSAAk7zEjjLmIN47B0A&oe=6B063FE4"
+  },
+  {
+   "fecha": "2023-07-06",
+   "url": "https://www.facebook.com/1431068359090159/posts/588548940008776",
+   "texto": "Presentamos el Festival ADAR 2023! Múltiples conciertos, instalaciones visuales, charlas, paseos sonoros  y residencias artísticas en Leiguarda, Belmonte de Miranda, Grado, El Franco y Colunga.\n\n(Si, le quitamos la M a ADAMR para que se lea mejor)",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/557930258_24963044349957692_5536777280995756249_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_ohc=3IpJQrUJfasQ7kNvwFC9Lhm&_nc_oc=AdoTtba9z5ZpEmBIw8kkbQuNGOyFVuLSDm8auhW35vAM-mkKP3CDi8xST8KD2VKr24Y&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQIbEUhO4hV9n3KixXlLlMltbdNFnJl4aWG0WIXnOp-D0O7sY0baZexluNdCrPHJOD-CpTF5NXt1SQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQQ8KRQqyawYsNzHnNVHUkolVd-mmVzOjYxdrDVkMV0vFA&oe=6B062803"
+  },
+  {
+   "fecha": "2023-07-04",
+   "url": "https://www.facebook.com/1431068359090159/posts/587348840128786?substory_index=1237035783842689",
+   "texto": "",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/893108405_1419417956921866_6074205431323195638_n.avif?stp=dst-jpg_s720x720_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xmNyUOEGybQQ7kNvwE5szNg&_nc_oc=AdpSMWDEV3ylIjKz_OgkxIFfqEwriDBTau1mOXf9GPGVHinlV50YwMrp7i1pdYwynH8&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&_nc_tpa=Q5bMBQLTJ_uO3oepwXcMGG6zn17VWUKMEK9lwTEecHfqzu37RR7smbM3SDOGUP-xPRTXl37jMGKnIFij2Q&oh=00_AQRqZqPpPxfTu1DeeNYx1ZW8bx3TGMDWnjMISd0QgzBboA&oe=6B06342F"
+  },
+  {
+   "fecha": "2022-09-14",
+   "url": "https://www.facebook.com/1431068359090159/posts/406608591536146",
+   "texto": "",
+   "imagen": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/588713725558024794?url=https%3A%2F%2Fwww.fundacioncajaruraldeasturias.com%2Fwp-content%2Fuploads%2F2022%2F09%2FADAMR-2022-scaled.jpg&fb_obo=1&utld=fundacioncajaruraldeasturias.com&_nc_ht=external-ord5-2.xx.fbcdn.net&ccb=18-1&_nc_gid=isgwpaEOZrBwE8Z3dErm7A&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQLfdFdllzC3CuEUXD7vdqD6Cnjyb1Q4X5sJEg4MwePMZ_YLIWWikyrumT3_S8wAtWefLO_GW7_oRA&stp=dst-emg0_fr_q75_tt6&ur=50234c&_nc_sid=64c8fc&oh=06_Q3_FAYhfXGwwIedHfsiRbQ-OzwOLtg8jcft3cfUwDF7GjySM&oe=6B0225D5"
+  },
+  {
+   "fecha": "2022-08-18",
+   "url": "https://www.facebook.com/1431068359090159/posts/200378729012782",
+   "texto": "Más fotos del festival! Gracias al Belmonte de Miranda Caja Rural de Asturias CreArtBox Turismo Belmonte de Miranda Cultura Grado Ayuntamiento de Llanes Turismo SOTO DEL BARCO Eventos Ayuntamiento de El Franco Área de Cultura - Ayuntamiento de Colunga- Asturias",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/904564476_1167294658987846_5771979814357025471_n.avif?stp=dst-jpg_p720x720_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YbVYLqrDEHcQ7kNvwGm8Unc&_nc_oc=Ados2EX7hWoE_PE7B8yfH9eLMz8Qj5PwTxuhprxHLQdwwVTCwjA0fH1BfE4M24nvLMI&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&_nc_tpa=Q5bMBQIa4De3N16zM-EkuuUMwXcNf8hF6jgaL5m8GjJndBjFRhT9BWzAEZ6znR7Yp0qI6RBgNhqIL2la5Q&oh=00_AQTUC7lvwSIvhbW-PAQxQ9Z0e1xbhXRdCDAqU4yngOWpvw&oe=6B063810"
+  },
+  {
+   "fecha": "2022-08-09",
+   "url": "https://www.facebook.com/1431068359090159/posts/198759499174705",
+   "texto": "Ya ha comenzado el festival! Fantástico concierto ayer en el auditorio As Quintas. No os perdáis las demás actuaciones!!",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/904704408_1167299748987337_2235977158536900548_n.avif?stp=dst-jpg_tt6&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=0spgBETavxkQ7kNvwFRIO3p&_nc_oc=AdqVap-zla_1bc4DqrSZkeRTfHVYADIpsfeKluqx-qypI6ASPmIeT79jKQ98jVTaU5A&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&_nc_tpa=Q5bMBQIcEunX5drCFk6WIKUiSq9bfg5AZqRTzQxaVhN1__3Zh9_MGALXjzffudNDak8H77LrFrQznVWkyA&oh=00_AQSR6iKn17ivC0R2milqlq_OAKG_A1V9JOOynmdEc2cezg&oe=6B062EBD"
+  },
+  {
+   "fecha": "2022-07-18",
+   "url": "https://www.facebook.com/1431068359090159/posts/194525229598132",
+   "texto": "Presentada la segunda edición del Festival de música para el Desarrollo del Artes en el Medio Rural en los concejos de El franco, Soto del Barco, Colunga, Llanes Grado y Belmonte de Miranda.",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/905942721_1167398512310794_9031123935853786427_n.avif?stp=dst-jpg_p720x720_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=jTpPhCUofBcQ7kNvwH8lhz1&_nc_oc=AdoRgVfNiIpDGV8ezWkfzQtYLg6ROKItZHjxKwJSJSBnPpRiuZkVOQZ2AJGqjDq5GW4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&_nc_tpa=Q5bMBQKebOJdCtI26rNuyu2hfN1zmbtO6xtNVWobFuyaiahuJjqoo1FjvD-zkN7GzBuJ9ZUzMRmWNC_eQg&oh=00_AQTdhV69LBSZmf3jA8moMYnSoNxUgMcfjSDLqciXlSTIlQ&oe=6B0621A7"
+  },
+  {
+   "fecha": "2021-11-11",
+   "url": "https://www.facebook.com/1431068359090159/posts/137988458585143",
+   "texto": "Estamos encantados de compartir una buena noticia.\nEl Festival de Leiguarda y nuestra asociación han sido subvencionados por Gobierno del Principado de Asturias! Muchísimas gracias por todo vuestro apoyo. Con este empujón sin duda, el proyecto continúa adelante para seguir creciendo en el futuro.",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/905457172_1168082298909082_3168649624559264308_n.avif?stp=dst-jpg_p720x720_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=e2QkdN0Uau8Q7kNvwF8Pg0W&_nc_oc=Ado5qbuVH4DBqZv2cYb1kVTSVVP5UNxQ2mCFYq08fz4JqT2vFYuP7p3_XbGyMkr_L3M&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&_nc_tpa=Q5bMBQKgLH1Ohz1g7POYsSLANVf5Bg1k4LhrDkyoFkDshAsSkIzjequvSP_oBJ73qIndJzlWJPh5ciw5ZA&oh=00_AQQMdALvq6DyP_QZp2w9v5FQtbhVmfPx_8X9A_7tc7V0Fw&oe=6B0630F5"
+  },
+  {
+   "fecha": "2021-08-31",
+   "url": "https://www.facebook.com/1431068359090159/posts/121390450244944",
+   "texto": "https://www.youtube.com/watch?v=8QMjOJ0_Zgw&t=4s",
+   "imagen": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/537286841836314678?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F8QMjOJ0_Zgw%2Fmaxresdefault.jpg&fb_obo=1&utld=ytimg.com&_nc_sid=50234c&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=dst-emg0_q75_s1280x720_tt6&ccb=18-1&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQIyEjy6JQ2-VUZxTZD0T973k2WxbMzoGnCdBwRr5oXSAukOMl25OqPwDwqSan42Ffg0EHLvSpFGnA&oh=06_Q3_FAYjIQJRMHQG0pJHqMWdRlBynnpVtbJKjDAD-bcONH5ri&oe=6B024686"
+  },
+  {
+   "fecha": "2021-08-26",
+   "url": "https://www.facebook.com/1431068359090159/videos/289351366296825",
+   "texto": "Video mapping en la iglesia de Leiguarda, por Guillermo Laporta\n\nMuy practico encontrar una iglesia blanca en medio de Asturias. ¿En qué otros edificios podríamos hacer algo así?\n\nTurismo Belmonte de Miranda Ayuntamiento de Belmonte de Miranda, CreArtBox Caja Rural de Asturias.\n\n#mapping, #classicalmusic",
+   "imagen": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/897649141_1581553687076580_4494880933901557021_n.avif?stp=dst-jpg_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=hgc9ZQLJGuYQ7kNvwGz3Ncq&_nc_oc=AdoP8o5sYBucOuln2wgQhh1N1eMKQebOL38mxWxu_djdXUESXxT5xtZsMWL5z9XiQ94&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AKIiGfEEAAAA&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&_nc_tpa=Q5bMBQLDZAiiPbTE-mMG-yp6PHmNmj7gLlGp27rTLmCfZ532P2uyUGLmBviqqIhamxON5WtcNiBqEfxgCA&oh=00_AQRO3TvVnFiZwcb5NC_ofutBif54taTZerJzxJd0zls9nA&oe=6B0632E5"
+  },
+  {
+   "fecha": "2021-08-25",
+   "url": "https://www.facebook.com/1431068359090159/posts/119702720413717",
+   "texto": "No olvidéis subscribiros a nuestro canal de YouTube, publicaremos video regularmente!  De momento podéis ver algunas de nuestras últimas entrevistas en Leiguarda.  \n",
+   "imagen": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/1992653605635874296?url=https%3A%2F%2Fyt3.ggpht.com%2FGE_cesRFzGfBG8Bm4kKdW2xYwPF-A-THlcftbpKfMgSt6zsJCGPyKbzzEst7wvDo94x7dIqLsA%3Ds900-c-k-c0x00ffffff-no-rj&fb_obo=1&utld=ggpht.com&_nc_ht=external-ord5-1.xx.fbcdn.net&ccb=18-1&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQLJ1LaUPKGSS6QKJFg9DV8cyAbRbHUHG-znY4RyUf-Ft0GMTDRnAUo3D62Wat7oVvrhhVpUZ3uM0Q&stp=dst-emg0_fr_q75_tt6&ur=50234c&_nc_sid=64c8fc&oh=06_Q3_FAcjy5rupYh_93_ytRLW2KQ5lU_jFQEsJp3awAhCY9ZHu&oe=6B02456D"
+  },
+  {
+   "fecha": "2021-08-24",
+   "url": "https://www.facebook.com/1431068359090159/posts/119392100444779",
+   "texto": "Vamos recopilando fotos del concierto.📷🎥🌃🌄",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/907484233_1168474228869889_6491996054279665976_n.avif?stp=dst-jpg_s720x720_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Bjl0Z8s_qCkQ7kNvwHZ5VY_&_nc_oc=AdoqAlqnnYYhLethu7rAekHc-Pmwj9H4aeRWTgN-RkDB-UVDOuh-wW_EQ7kNkTKE4_E&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&_nc_tpa=Q5bMBQLzWWKaYMqjT4nVj_8Lynn2PaZ5sXgAKi1uA9jgK6t-Vr1X-AzXp9rhgZwZZYSjHn9yzK4LAKXgyQ&oh=00_AQTP1xUXfmwq-mEmTCbLL-4CwMrYMwPFYgfGLHY28_0ojQ&oe=6B061B59"
+  },
+  {
+   "fecha": "2021-08-22",
+   "url": "https://www.facebook.com/1431068359090159/posts/118923043825018",
+   "texto": "https://www.fundacioncajaruraldeasturias.com/i-festival-musica-clasica-leiguarda-belmonte-miranda/",
+   "imagen": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/18246858282005115554?url=https%3A%2F%2Fwww.fundacioncajaruraldeasturias.com%2Fwp-content%2Fuploads%2F2021%2F08%2FIFestival-Musica-Clasica-Leiguarda.jpeg&fb_obo=1&utld=fundacioncajaruraldeasturias.com&_nc_ht=external-ord5-1.xx.fbcdn.net&ccb=18-1&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQILmsRxDX-LryZYU91xfs6OLQTTREKa7wCb8fznZAwB2F55F1205kVarM-vOCENjjkZtpApWt2_cA&stp=dst-emg0_fr_q75_tt6&ur=50234c&_nc_sid=64c8fc&oh=06_Q3_FAX1IyY3jL_u73t5p3W4fq8z_RcIlRQm8tsKxTmQdSuZV&oe=6B0232F9"
+  },
+  {
+   "fecha": "2021-08-21",
+   "url": "https://www.facebook.com/1431068359090159/posts/118677117182944",
+   "texto": "Gracias a TODO el pueblo de #Leiguarda. Gracias a todos los asistentes y a todos lo que por falta de aforo no pudieron venir. Gracias a los artistas Bea Blanco, Nathaniel Sullivan, Laude Martínez Fernández, Marcos Fernández, Josefina Urraca y Guillermo Laporta. Gracias a los patrocinadores Caja Rural de Asturias, Ayuntamiento de Belmonte de Miranda, Turismo Belmonte de Miranda.",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/910227093_1168476145536364_8697238949432869129_n.avif?stp=dst-jpg_s720x720_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CvjNWQ2cd-QQ7kNvwEnSz4F&_nc_oc=AdrwzQYYWlTujs32X-682wFIdjWOXIQTA1cKjoocqePY5ymDVa5Av6HCoCukWkxTb-g&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&_nc_tpa=Q5bMBQKwrqkBuwfJPzyBxtx4AsTtCG64zruuH6xGAFAqDv4-Yo7uiBv-olWkk80IRK4Rs31xpeWkscE6kw&oh=00_AQQY-D4XWA3SE4sOzmXGA3gKssOxhRmYKSdvd3b0RdOGHQ&oe=6B060D96"
+  },
+  {
+   "fecha": "2021-08-03",
+   "url": "https://www.facebook.com/1431068359090159/posts/111709344546388",
+   "texto": "https://lavozdeltrubia.es/2021/08/03/de-nueva-york-al-festival-de-musica-clasica-de-leiguarda-en-belmonte/",
+   "imagen": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/9421376147577356719?url=https%3A%2F%2Flavozdeltrubia.es%2Fwp-content%2Fuploads%2F2021%2F08%2FLeiguarda.jpeg&fb_obo=1&utld=lavozdeltrubia.es&_nc_ht=external-ord5-1.xx.fbcdn.net&ccb=18-1&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQLRVDrtkzbfrztO0_6HZoe8Yf5_0wayUe6VLxOoMKLmmkPQQcOsCu5jwR4_0UN6xDBVKswMQwug-Q&stp=dst-emg0_fr_q75_tt6&ur=50234c&_nc_sid=64c8fc&oh=06_Q3_FAdoRI2e8qRKQg5w8339jgauMmm00gXykIrh_qUHy-F8N&oe=6B022AE4"
+  },
+  {
+   "fecha": "2021-08-02",
+   "url": "https://www.facebook.com/1431068359090159/posts/111151781268811",
+   "texto": "Aforo completo!\n\nAñade tu nombre a la lista de espera. \n\nQuizá alguien que ya ha reservado no pueda venir por algún motivo.\n\nEn caso de lluvia el concierto se trasladará al polideportivo de Belmonte, por lo que el aforo puede incrementar.\nAsí mismo, mostrando tu interés en el proyecto ayudará a que en futuras ediciones podamos llegar a más público y a más zonas rurales.\n\nAyuntamiento de Belmonte de Miranda Turismo Belmonte de Miranda",
+   "imagen": "https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/908482647_1168628922187753_4950021535407259863_n.avif?stp=dst-jpg_p720x720_tt6&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=XPF0PvXTl5QQ7kNvwFiPPKs&_nc_oc=AdqSgvlLX_gqdGed2cPHhcxIjiphQeCbkH-2Jb2Ttk5tH-Equh8dAZEHbsp5EZ3LFmI&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AKIiGfEEAAAA&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&_nc_tpa=Q5bMBQKTgcD4boa8XHVEzWppoJPjSDfq3ICLFVvVvAEcVYRlNvdOIb5IKfXEMa4naKnkAVfnQRmh79C5Cw&oh=00_AQSrCVDWEYL4lRnqGwbx4kPw7KhWQIxhvuBLRYF9rJX3Mw&oe=6B0632EA"
+  },
+  {
+   "fecha": "2021-07-31",
+   "url": "https://www.facebook.com/1431068359090159/posts/109360624781260",
+   "texto": "Solamente quedan 10 entradas para el día 14. Reserva tu entrada! \nhttps://leiguardafestival.com\n\nAyuntamiento de Belmonte de Miranda, Laude Martínez Fernández, CreArtBox , Caja Rural  #desarrollorural #asturias_mola #BelmontedeMiranda Turismo Belmonte de Miranda Guillermo Laporta Red Asturiana De Desarrollo Rural Reader",
+   "imagen": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/14965130487978971540?url=https%3A%2F%2Fleiguardafestival.com%2Fcover.jpg&fb_obo=1&utld=leiguardafestival.com&_nc_ht=external-ord5-1.xx.fbcdn.net&ccb=18-1&_nc_gid=0Vkv8_9u7mcOr3iYKsxfdQ&edm=AKIiGfEEAAAA&_nc_map=urlgen_bucketless&_nc_zt=3&_nc_tpa=Q5bMBQJXuFoX7IdRmJemkuojkhxzTD0_7xR0muViTx_4hsxnz7kEruC7M2-PIED6JPr42lF5fmmkK4fyeg&stp=dst-emg0_fr_q75_tt6&ur=50234c&_nc_sid=64c8fc&oh=06_Q3_FAWiwsZg3nUuwj0kfGPLY2GNfZjIWaFvQ9qm_1Ser_msR&oe=6B024615"
+  },
+  {
+   "fecha": "2021-07-31",
+   "url": "https://www.facebook.com/1431068359090159/posts/109125074804815",
+   "texto": "",
+   "imagen": ""
+  }
+ ]
+}

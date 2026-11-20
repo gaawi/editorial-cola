@@ -1,0 +1,29 @@
+# Comprueba que los secretos de Meta de cada cuenta (CreArtBox y Festival
+# ADAR) sirven: lee el nombre de la Página y del Instagram. No publica nada.
+# Va aparte del publicador, que se queda horas despierto y haría esperar.
+name: Comprobar cuentas
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Comprobar
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_TOKEN_ADAR: ${{ secrets.META_TOKEN_ADAR }}
+          FB_PAGE_ID_ADAR: ${{ secrets.FB_PAGE_ID_ADAR }}
+          IG_USER_ID_ADAR: ${{ secrets.IG_USER_ID_ADAR }}
+        run: node herramientas/publicar-cola.mjs --comprobar

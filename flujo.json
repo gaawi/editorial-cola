@@ -1369,6 +1369,16 @@
     }
    ],
    "fase": "aprobado"
+  },
+  "es/video-bach-en-leiguarda": {
+   "historial": [
+    {
+     "accion": "descartar",
+     "quien": "gaawi",
+     "fecha": "2026-11-21T18:41:53.629Z"
+    }
+   ],
+   "fase": "descartado"
   }
  },
  "ideas": [

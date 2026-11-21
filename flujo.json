@@ -1319,6 +1319,16 @@
     }
    ],
    "fase": "aprobado"
+  },
+  "es/santa-cecilia-2026": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-21T18:41:13.599Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  },
  "ideas": [

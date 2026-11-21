@@ -1329,6 +1329,16 @@
     }
    ],
    "fase": "aprobado"
+  },
+  "es/propuestas-artisticas-2027": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-21T18:41:21.889Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  },
  "ideas": [

@@ -1339,6 +1339,16 @@
     }
    ],
    "fase": "aprobado"
+  },
+  "es/ayuntamientos-y-espacios-2027": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-21T18:41:30.023Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  },
  "ideas": [

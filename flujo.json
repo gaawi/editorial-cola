@@ -1349,6 +1349,16 @@
     }
    ],
    "fase": "aprobado"
+  },
+  "es/recuerdo-2021-primer-concierto": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-21T18:41:40.994Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  },
  "ideas": [

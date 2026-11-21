@@ -1359,6 +1359,16 @@
     }
    ],
    "fase": "aprobado"
+  },
+  "es/amigos-giving-tuesday": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-21T18:41:47.690Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  },
  "ideas": [

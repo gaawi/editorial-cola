@@ -1950,6 +1950,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:34:21.452Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:34:37.038Z"
     }
    ],
    "sugerencias": [
@@ -1957,6 +1962,12 @@
      "texto": "Un de los formatos favoritos de lanaudiencia",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:34:21.452Z",
+     "hecha": false
+    },
+    {
+     "texto": "Pon muchas más fotos",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:34:37.038Z",
      "hecha": false
     }
    ]

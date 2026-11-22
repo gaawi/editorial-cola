@@ -13,7 +13,7 @@
   /* Los estilos van aquí dentro: estilo.css está detrás de la puerta y la
      puerta no puede depender de lo que hay al otro lado. */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  :root { --papel: #faf9f8; --tinta: #1c1917; --suave: #57534e; --filete: #e7e5e4; --no: #b91c1c; }
+  :root { --papel: #faf8f3; --tinta: #1c1917; --suave: #57534e; --filete: #e7e5e4; --no: #b91c1c; }
   html, body { background: var(--papel); color: var(--tinta);
     font-family: Archivo, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
   .btn { min-height: 48px; border-radius: 12px; font: inherit; font-size: 15px; font-weight: 600;
@@ -22,6 +22,7 @@
   .puerta { text-align: center; max-width: 320px; }
   .puerta h1 { font-family: Literata, Georgia, serif; font-size: 24px; margin-bottom: 8px; }
   .puerta p { color: var(--suave); font-size: 14px; line-height: 1.5; margin-bottom: 24px; }
+  .puerta .lema { font-size: 15px; margin: -2px 0 18px; }
   .puerta .btn { width: 100%; background: #1c1917; border-color: #1c1917; color: #fff; }
   .puerta .mal { color: var(--no); font-size: 13px; margin-top: 14px; }
 </style>
@@ -30,6 +31,7 @@
 <div class="puerta">
   <img src="/iconos/icono-192.png" alt="" width="88" height="88" style="border-radius:20px;margin-bottom:16px">
   <h1>Marble</h1>
+  <p class="lema">De la idea a la publicación.</p>
   <p>Los borradores no son públicos. Entra con la cuenta de GitHub que puede escribir en el repositorio.</p>
   <button id="entrar" class="btn">Entrar con GitHub</button>
   <p class="mal" id="mal" hidden></p>

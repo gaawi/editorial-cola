@@ -822,3 +822,72 @@ body[data-marca="creartbox"] .barra { box-shadow: inset 0 -3px 0 #1c1917; }
 .sesion { font-size: 12px; font-weight: 600; color: var(--suave); text-decoration: none; padding: 6px 10px; border-radius: 999px; margin-right: 6px; white-space: nowrap; }
 .sesion.sin { background: var(--si); color: #fff; padding: 7px 14px; }
 .sesion[hidden] { display: none; }
+
+/* ══ Marble: identidad ═══════════════════════════════════════════════
+ * Una canica amarilla que baja por una rampa: la idea que rueda hasta
+ * publicarse. Dos colores de marca, carbón y canica, sobre papel cálido.
+ * La tipografía de titulares es Literata; la de uso, Archivo. El amarillo
+ * es para lo que avanza (la acción principal, la pestaña activa, el
+ * progreso); el resto se queda neutro para no competir con las vistas
+ * previas, que tienen que parecerse a Instagram y a Facebook.
+ * Guía corta en herramientas/MARCA.md. */
+:root {
+  --papel: #faf8f3;
+  --filete: #ebe7df;
+  --carbon: #1c1917;
+  --canica: #F5D72F;
+  --canica-hondo: #C08F00;
+  --canica-luz: #FFF6C2;
+  --canica-esfera: radial-gradient(circle at 36% 32%, var(--canica-luz) 0, var(--canica) 30%, var(--canica-hondo) 100%);
+}
+html, body { background: var(--papel); }
+.barra { background: rgba(250, 248, 243, 0.92); }
+
+/* Cabecera: el sello de la app y el nombre */
+.logo-marca { width: 28px; height: 28px; border-radius: 7px; flex: none; }
+.barra h1 { font-family: Literata, Georgia, serif; font-weight: 700; font-size: 19px; letter-spacing: -0.02em; }
+.atras:not([hidden]) + .logo-marca { display: none; }
+
+/* La acción principal: carbón con su canica */
+.fl.fl-si, .btn-si {
+  background: var(--carbon); border-color: var(--carbon); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+}
+.fl.fl-si::before, .btn-si::before {
+  content: ''; width: 10px; height: 10px; border-radius: 50%; flex: none;
+  background: var(--canica-esfera); box-shadow: 0 0 0 1px rgba(255,255,255,.15);
+}
+.fl.fl-si:active, .btn-si:active { transform: translateY(1px); }
+.sesion.sin { background: var(--carbon); }
+
+/* Pestañas y filtros */
+.pest.activo { border-bottom: 3px solid var(--canica); padding-bottom: 10px; }
+.chip.activo { background: var(--carbon); border-color: var(--carbon); }
+.mes-saltos button:active, .mes-volver:active { background: var(--canica); border-color: var(--canica); }
+
+/* Progreso y «este mes» */
+.mes-barra-pct i { background: linear-gradient(90deg, var(--canica-hondo), var(--canica)); }
+.mes-hoy { background: var(--canica); color: var(--carbon); }
+.mes-tarjeta.actual { border-color: var(--carbon); box-shadow: 0 0 0 1px var(--carbon); }
+
+/* Rótulos de mes: con su canica delante */
+.mes-separador { display: flex; align-items: center; gap: 10px; }
+.mes-separador::before { content: ''; width: 14px; height: 14px; border-radius: 50%; background: var(--canica-esfera); flex: none; }
+
+/* El «por qué» de cada idea, con el filete de la marca */
+.porque { border-left-color: var(--canica) !important; }
+
+/* Avisos de la app (abajo) */
+.aviso { background: var(--carbon); display: flex; align-items: center; justify-content: center; gap: 10px; }
+.aviso::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--canica-esfera); flex: none; }
+.aviso.mal::before { background: #fff; }
+
+/* Portada (elegir cuenta) */
+.portada { display: flex; align-items: center; gap: 16px; padding: 28px 0 8px; }
+.portada img { width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 6px 18px rgba(28,25,23,.18); }
+.portada-nombre { font-family: Literata, Georgia, serif; font-weight: 700; font-size: 34px; letter-spacing: -0.03em; line-height: 1; }
+.portada-lema { color: var(--suave); font-size: 15px; margin-top: 6px; }
+.cuenta-tarjeta { border-radius: 20px; }
+.cuenta-tarjeta:active { background: #f3efe6; }
+.cuenta-ok { background: #fdf3c4; color: #6b5200; }
+.avisos .fl.fl-si { width: 100%; }

@@ -1,0 +1,39 @@
+# Manda un aviso a los móviles con la app instalada. Lo lanza Claude al
+# terminar un check («tienes N para confirmar»); también se puede a mano.
+name: Avisar
+
+on:
+  workflow_dispatch:
+    inputs:
+      titulo:
+        description: 'Título del aviso'
+        required: true
+      texto:
+        description: 'Texto'
+        default: ''
+      url:
+        description: 'Dónde abre al tocarlo'
+        default: '/'
+
+permissions:
+  contents: read
+
+jobs:
+  avisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --no-audit --no-fund
+      - name: Avisar
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          TITULO: ${{ inputs.titulo }}
+          TEXTO: ${{ inputs.texto }}
+          URL: ${{ inputs.url }}
+        run: node herramientas/avisar.mjs "$TITULO" "$TEXTO" "$URL"

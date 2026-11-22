@@ -17,7 +17,8 @@ export const config = {
   // archivo: quedaron abiertos registro.jsonl, que lleva el texto de todo lo
   // publicado, etiquetas.json y el código de la herramienta. Mejor al revés:
   // cerrado por defecto y se nombra lo que puede pasar.
-  matcher: ['/((?!api/|entrar|_vercel|favicon).*)'],
+  // El icono y el manifiesto también, para que el móvil pueda instalar la app.
+  matcher: ['/((?!api/|entrar|_vercel|favicon|iconos/|manifest\\.webmanifest|apple-touch-icon).*)'],
 };
 
 function hexToBytes(hex) {

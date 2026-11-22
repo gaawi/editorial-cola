@@ -1,0 +1,16 @@
+{
+  "name": "Aprobar · redes de CreArtBox y Festival ADAR",
+  "short_name": "Aprobar",
+  "description": "Ideas, aprobación y publicación de las redes de CreArtBox y Festival ADAR.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf9f8",
+  "theme_color": "#1c1917",
+  "icons": [
+    { "src": "/iconos/icono-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/iconos/icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/iconos/icono-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

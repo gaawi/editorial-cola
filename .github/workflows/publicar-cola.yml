@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # web-push, para los avisos al móvil.
+      - run: npm ci --no-audit --no-fund
       - name: Publicar lo que toca
         env:
           META_TOKEN: ${{ secrets.META_TOKEN }}

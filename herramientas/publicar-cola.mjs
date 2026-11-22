@@ -25,6 +25,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { publicarInstagram, publicarFacebook, comentar } from '../lib/meta.mjs';
 import { MARCAS, credenciales, variables, marcaDe } from '../lib/cuentas.mjs';
+import { avisar } from '../lib/avisos.mjs';
 
 const AQUI = join(dirname(fileURLToPath(import.meta.url)), '..');
 const COLA = join(AQUI, 'datos', 'programado.json');
@@ -82,6 +83,17 @@ if (!pendientes.length) {
 // en la cola, se avisa una vez y ya. No es un fallo.
 const sinCuenta = new Set();
 
+// Un aviso al móvil (si hay aparatos suscritos). Nunca para la publicación.
+async function aviso(titulo, texto, url) {
+  if (ENSAYO) return;
+  try {
+    const datos = JSON.parse(await readFile(join(AQUI, 'datos', 'avisos.json'), 'utf8'));
+    await avisar(datos.suscripciones || [], { titulo, texto, url });
+  } catch { /* sin avisos.json o sin red: no pasa nada */ }
+}
+const primeraLinea = (t) => String(t || '').split('\n').find((l) => l.trim()) || '';
+const queEs = (e, r) => e.tipo === 'historia' ? 'Historia' : r.red === 'ig' ? 'Instagram' : 'Facebook';
+
 async function guardar(mensaje) {
   cola.actualizado = new Date().toISOString().slice(0, 10);
   await writeFile(COLA, JSON.stringify(cola, null, 1) + '\n');
@@ -102,7 +114,10 @@ for (const { clave, e, r } of pendientes) {
   const nombre = `${clave} · ${r.red.toUpperCase()} · ${r.cuando}`;
   if (ahora - new Date(r.cuando).getTime() > MARGEN_MS) {
     console.log(`Atrasado, no sale solo: ${nombre}`);
-    if (!ENSAYO) { r.estado = 'atrasado'; await guardar(`Cola: ${clave} (${r.red}) atrasado, se deja para decidir`); }
+    if (!ENSAYO) {
+      r.estado = 'atrasado'; await guardar(`Cola: ${clave} (${r.red}) atrasado, se deja para decidir`);
+      await aviso(`⏸ No salió a su hora (${MARCAS[marcaDe(clave, e)].nombre})`, `${queEs(e, r)}: ${primeraLinea(r.texto) || clave}. Lo dejo para que decidas.`, '/');
+    }
     continue;
   }
   const historia = e.tipo === 'historia';
@@ -111,7 +126,10 @@ for (const { clave, e, r } of pendientes) {
   const problemas = await repasoPrevio({ red: r.red, historia, texto: r.texto, imagenes: r.imagenes });
   if (problemas.length) {
     console.error(`  ✗ Repaso previo: ${problemas.join('; ')}`);
-    if (!ENSAYO) { fallos++; r.estado = 'error'; r.error = `Repaso previo: ${problemas.join('; ')}`; await guardar(`No sale: ${clave} (${r.red}), ${problemas[0]}`); }
+    if (!ENSAYO) {
+      fallos++; r.estado = 'error'; r.error = `Repaso previo: ${problemas.join('; ')}`; await guardar(`No sale: ${clave} (${r.red}), ${problemas[0]}`);
+      await aviso(`✗ No sale (${MARCAS[marcaDe(clave, e)].nombre})`, `${queEs(e, r)}: ${problemas[0]}`, '/');
+    }
     continue;
   }
   if (ENSAYO) continue;
@@ -137,12 +155,14 @@ for (const { clave, e, r } of pendientes) {
     }
     console.log(`  ✓ ${hecho.enlace}`);
     await guardar(`Publicado: ${clave} en ${r.red === 'ig' ? 'Instagram' : 'Facebook'}`);
+    await aviso(`✓ Publicado en ${queEs(e, r)} · ${MARCAS[marca].nombre}`, primeraLinea(r.texto) || clave, hecho.enlace || '/');
   } catch (err) {
     fallos++;
     r.estado = 'error';
     r.error = err.message;
     console.error(`  ✗ ${err.message}`);
     await guardar(`Falló: ${clave} en ${r.red === 'ig' ? 'Instagram' : 'Facebook'}`);
+    await aviso(`✗ Falló en ${queEs(e, r)} · ${MARCAS[marca].nombre}`, err.message.slice(0, 140), '/');
   }
 }
 process.exit(fallos ? 1 : 0);

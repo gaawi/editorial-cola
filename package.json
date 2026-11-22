@@ -1,0 +1,9 @@
+{
+  "name": "editorial-cola",
+  "private": true,
+  "type": "module",
+  "description": "La app de aprobar posts de CreArtBox y Festival ADAR, y su publicador.",
+  "dependencies": {
+    "web-push": "3.6.7"
+  }
+}

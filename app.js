@@ -1979,4 +1979,73 @@ $('#hoja').addEventListener('click', (e) => {
   if (e.target.id === 'hoja' || e.target.id === 'hoja-cerrar') $('#hoja').hidden = true;
 });
 
+// ── Avisos en el móvil ─────────────────────────────────────────────────
+// La app instalada (en la pantalla de inicio) puede recibir notificaciones.
+// En el iPhone solo funciona abierta desde el icono, no desde el navegador.
+const iOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+const instalada = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const conPush = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+
+const b64uABytes = (t) => { const s = atob(t.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((t.length + 3) % 4)); return Uint8Array.from(s, (c) => c.charCodeAt(0)); };
+const bytesAB64u = (b) => btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+
+async function estadoAvisos() {
+  const texto = $('#avisos-texto'), activar = $('#avisos-activar'), probar = $('#avisos-probar');
+  if (!conPush) {
+    activar.hidden = true;
+    texto.textContent = iOS && !instalada
+      ? 'Para recibir avisos, instala la app: en el navegador, Compartir › «Añadir a pantalla de inicio», y ábrela desde el icono.'
+      : 'Este navegador no puede recibir avisos.';
+    return;
+  }
+  const reg = await navigator.serviceWorker.ready;
+  const sub = await reg.pushManager.getSubscription();
+  let publica = null;
+  try { publica = (await (await fetch('/api/avisos', { credentials: 'same-origin' })).json()).publica; } catch {}
+  // Si la clave del servidor cambió, la suscripción vieja ya no sirve.
+  const vale = sub && publica && bytesAB64u(sub.options.applicationServerKey || new ArrayBuffer(0)) === publica;
+  if (sub && !vale) await sub.unsubscribe();
+  const activos = vale && Notification.permission === 'granted';
+  activar.hidden = !!activos || Notification.permission === 'denied';
+  probar.hidden = !activos;
+  texto.textContent = activos
+    ? '🔔 Avisos activados en este aparato.'
+    : Notification.permission === 'denied'
+      ? 'Los avisos están bloqueados para esta app. Actívalos en los ajustes del móvil (Notificaciones › Aprobar).'
+      : 'Avisos en el móvil: cuando haya algo para confirmar y cuando salga cada publicación.';
+}
+
+$('#avisos-activar').addEventListener('click', async () => {
+  const b = $('#avisos-activar');
+  if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); return; }
+  b.disabled = true; b.textContent = 'Activando…';
+  try {
+    if ((await Notification.requestPermission()) !== 'granted') throw new Error('Sin permiso para avisar.');
+    const { publica } = await (await fetch('/api/avisos', { credentials: 'same-origin' })).json();
+    if (!publica) throw new Error('Los avisos no están listos en el servidor.');
+    const reg = await navigator.serviceWorker.ready;
+    const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64uABytes(publica) });
+    const dispositivo = /iPhone/.test(navigator.userAgent) ? 'iPhone' : /iPad/.test(navigator.userAgent) ? 'iPad' : /Android/.test(navigator.userAgent) ? 'Android' : /Mac/.test(navigator.userAgent) ? 'Mac' : 'Ordenador';
+    const r = await fetch('/api/avisos', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ accion: 'alta', sub: sub.toJSON(), dispositivo }) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
+    aviso('Avisos activados. Te ha llegado uno de prueba.');
+  } catch (e) { aviso(e.message, true); }
+  b.disabled = false; b.textContent = '🔔 Activar avisos';
+  estadoAvisos();
+});
+$('#avisos-probar').addEventListener('click', async () => {
+  try {
+    const r = await fetch('/api/avisos', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accion: 'prueba' }) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
+    aviso(j.enviados ? `Enviado a ${j.enviados} aparato(s).` : 'No hay aparatos con avisos.');
+  } catch (e) { aviso(e.message, true); }
+});
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(() => estadoAvisos()).catch(() => estadoAvisos());
+} else estadoAvisos();
+
 arrancar().catch((e) => aviso('No se pudieron cargar los datos: ' + e.message, true));

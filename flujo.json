@@ -1640,7 +1640,9 @@
      "texto": "Añade una estancia en la casa 2 noches",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:36:53.143Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Añadida en el texto: «dos noches en la casa de ADAR en Leiguarda». Falta saber precio, fechas en que se puede usar y si incluye algo más: lo dejo apuntado en la ficha.",
+     "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
   },
@@ -1657,7 +1659,9 @@
      "texto": "Hay Que sacarlo como alguna fotos más que no publicamos…",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:37:39.934Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Cambiadas por 10 fotos del archivo de 2026 que no salieron como portada en Instagram (las comparé con todo lo publicado).",
+     "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
   },
@@ -1674,7 +1678,9 @@
      "texto": "Hay Que anadir logos y hablar de la grant y del proyecto en slides",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:38:18.521Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Ahora es un carrusel de 4: portada, qué hacemos, transmisión y creación, y la ayuda del Ministerio (salvaguarda del Patrimonio Cultural Inmaterial, julio 2026 a diciembre 2027). Logos del Ministerio y de ADAR en la portada, la última y la historia. También en el resto de posts de Braña Sonora.",
+     "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
   },
@@ -1691,7 +1697,9 @@
      "texto": "Foto de ellos",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:38:33.022Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Puesta una foto suya, de su propio dossier (tiene poca resolución; si tienen una mejor la cambio). Con el logo de la UE y el Goethe.",
+     "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
   },
@@ -1706,6 +1714,16 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-22T12:44:55.887Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:51:26.352Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:52:55.397Z"
     }
    ],
    "fase": "preparado",
@@ -1759,7 +1777,9 @@
      "texto": "Más fotos",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:39:14.405Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Ahora es un carrusel con 3 fotos del paseo del Museo de las Ayalgas (2023).",
+     "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
   },
@@ -1776,7 +1796,9 @@
      "texto": "Foto de fondo",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:39:36.976Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Foto de fondo: el grupo tocando en círculo, de su dossier. Con el logo de la UE y el Goethe-Institut (obligatorio en Culture Moves Europe).",
+     "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
   },
@@ -1793,7 +1815,9 @@
      "texto": "Bus a fotos online",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:40:10.895Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "En internet no encuentro fotos de vaqueiros o tonada que podamos usar sin derechos (Wikimedia no deja descargar desde aquí). He puesto una foto nuestra de vecinos en un concierto al aire libre. Si tenéis fotos del trabajo de campo de Braña Sonora, la cambio.",
+     "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
   },
@@ -1810,7 +1834,9 @@
      "texto": "Hay Que escribir el post bus a fotos online",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:40:48.531Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Carrusel con las fotos de prensa de Andrea Casarrubios, Caroline Shaw y Jessie Montgomery (de sus webs), con el crédito en el pie. El artículo del blog ya está escrito (en borrador): sale en la web el mismo día.",
+     "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
   },
@@ -1827,7 +1853,9 @@
      "texto": "No hizimos uno ya con. El post?",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:41:26.773Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "No hay ninguno igual. En redes salieron los ganadores del concurso (2025 y 2026) y un vídeo del concierto en un hórreo (junio 2024), pero no uno sobre cómo suena por dentro. Ojo: en la web está «Por qué tocar Bach en un hórreo» (25 ago), que no salió en redes; si prefieres ese, lo cambio.",
+     "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
   }

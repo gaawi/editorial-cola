@@ -49,8 +49,10 @@ for (const f of plan) {
   const prep = {};
   if (!soloHistoria) {
     // Las fotos tal cual: el carrusel son ellas (hasta 10), Facebook la primera.
-    const ig = p.fotos && p.fotos.length ? p.fotos.slice(0, 10) : await copia(hechas.ig, 'ig', 10);
-    const fb = p.fotos && p.fotos.length ? [p.fotos[0]] : await copia(hechas.fb, 'fb', 1);
+    // Las fotos de la ficha se publican tal cual (ya recortadas si hacía falta).
+    const enteras = p.fotos && p.fotos.length;
+    const ig = enteras ? p.fotos.slice(0, 10) : await copia(hechas.ig, 'ig', 10);
+    const fb = enteras ? [p.fotos[0]] : await copia(hechas.fb, 'fb', 1);
     const colab = f.colaboradores || p.colaboradores || [];
     prep[f.clave] = { tipo: 'post', redes: [
       { red: 'ig', cuando: f.cuando, texto: p.pies.ig.texto, imagenes: ig, ...(colab.length ? { colaboradores: colab } : {}) },

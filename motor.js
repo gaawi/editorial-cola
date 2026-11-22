@@ -307,15 +307,19 @@ export function crearMotor(B) {
     // Logo de quien financia o apoya, cuando la ficha lo pide (`logo`):
     // { src, diapositivas: [1], historia: true }. Abajo a la derecha, sobre
     // una placa blanca para que se lea en cualquier fondo.
-    async function logo(enEsta) {
+    async function logo(enEsta, fondo) {
       const L = post.logo;
       if (!L || !L.src || !enEsta) return;
       try {
         const img = await cargarFoto(L.src);
-        const ancho = Math.round(W * (fmt === 'story' ? 0.20 : 0.16));
+        // Los logos institucionales son tiras anchas (escudo + nombre): a un
+        // 16 % del ancho no se leían. Las tiras, más grandes que un logo cuadrado.
+        const tira = img.naturalWidth / img.naturalHeight > 2.5;
+        const ancho = Math.round(W * (fmt === 'story' ? (tira ? 0.40 : 0.20) : (tira ? 0.34 : 0.16)));
         const alto = Math.round(ancho * img.naturalHeight / img.naturalWidth);
         const x = W - pad - ancho - (fmt === 'story' ? safeRight * 0 : 0);
-        const y = (fmt === 'story' ? H - safeBottom : H - Math.round(pad * 1.35)) - alto;
+        // `fondo`: dónde acaba por abajo, si hay pegatinas que no debe tapar.
+        const y = (fondo ?? (fmt === 'story' ? H - safeBottom : H - Math.round(pad * 1.35))) - alto;
         ctx.drawImage(img, x, y, ancho, alto);
       } catch { /* sin logo antes que sin imagen */ }
     }
@@ -406,7 +410,11 @@ export function crearMotor(B) {
         // En la historia el escenario cae más abajo: se apuran hasta encima de
         // la barra de responder de Instagram (≈10 % de abajo).
         const baseY = fmt === 'story' ? Math.round(H * 0.885) : H - safeBottom - Math.round(pad * 0.9);
-        pegatinas(baseY - nPeg * Math.round(W * 0.075 * 1.35));
+        const inicioPeg = baseY - nPeg * Math.round(W * 0.075 * 1.35);
+        pegatinas(inicioPeg);
+        // En la historia, el logo encima de las pegatinas para no taparlas.
+        await logo(post.logo && (fmt === 'story' ? post.logo.historia : (post.logo.diapositivas || []).includes(idx)),
+          fmt === 'story' && nPeg ? inicioPeg - Math.round(W * 0.05) : undefined);
         return;
       }
 

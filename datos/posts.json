@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-20T15:59:07.281Z",
+ "generado": "2026-11-22T12:53:17.798Z",
  "origen": "gaawi/adar",
  "marcas": {
   "creartbox": {
@@ -7878,7 +7878,7 @@
      "estilos": null,
      "cifra": null,
      "tabla": null,
-     "falta": null,
+     "falta": "La estancia de dos noches en la casa: precio, fechas en las que se puede usar y si incluye algo más (sugerencia del 22 de noviembre).",
      "fotos": [],
      "fotosEnteras": false,
      "porque": "A diez días de Nochebuena. La web dice que la membresía se puede regalar: es un regalo sin envío, que llega a tiempo. Segunda ola de la campaña de Amigos.",
@@ -7929,13 +7929,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "¿Buscas un regalo que no haya que envolver? 🎁\n\nRegala ser Amigo del Festival ADAR: una plaza asegurada en los conciertos de agosto de 2027, en iglesias, monasterios y hórreos de Asturias.\n\nAmigo · 30 € al año: reserva anticipada en todos los conciertos.\nAmigo VIP · 50 € al año: asientos VIP, celebración privada con los artistas, grabaciones inéditas y la camiseta del festival.\n\nEscríbenos a leiguardamusic@gmail.com y te contamos cómo regalarlo.\n\nTodo sobre los Amigos en festivaladar.com\n\n#FestivalADAR #AmigosDelFestival #RegalosDeNavidad #Asturias #MúsicaEnDirecto",
+       "texto": "¿Buscas un regalo que no haya que envolver? 🎁\n\nRegala ser Amigo del Festival ADAR: una plaza asegurada en los conciertos de agosto de 2027, en iglesias, monasterios y hórreos de Asturias.\n\nAmigo · 30 € al año: reserva anticipada en todos los conciertos.\nAmigo VIP · 50 € al año: asientos VIP, celebración privada con los artistas, grabaciones inéditas y la camiseta del festival.\n\nY un regalo especial: dos noches en la casa de ADAR en Leiguarda, una aldea de diez casas en la montaña asturiana. 🏡\n\nEscríbenos a leiguardamusic@gmail.com y te contamos cómo regalarlo.\n\nTodo sobre los Amigos en festivaladar.com\n\n#FestivalADAR #AmigosDelFestival #RegalosDeNavidad #Asturias #MúsicaEnDirecto",
        "asomo": "¿Buscas un regalo que no haya que envolver? 🎁 Regala ser Amigo del Festival ADAR: una plaza asegurada en los conciertos de a…",
        "limite": 2200
       },
       "fb": {
-       "texto": "¿Buscas un regalo que no haya que envolver? 🎁\n\nRegala ser Amigo del Festival ADAR: una plaza asegurada en los conciertos de agosto de 2027, en iglesias, monasterios y hórreos de Asturias.\n\nAmigo · 30 € al año: reserva anticipada en todos los conciertos.\nAmigo VIP · 50 € al año: asientos VIP, celebración privada con los artistas, grabaciones inéditas y la camiseta del festival.\n\nEscríbenos a leiguardamusic@gmail.com y te contamos cómo regalarlo.\n\nhttps://festivaladar.com/es/amigos-del-festival/\n\n#FestivalADAR #AmigosDelFestival #RegalosDeNavidad #Asturias #MúsicaEnDirecto",
-       "asomo": "¿Buscas un regalo que no haya que envolver? 🎁 Regala ser Amigo del Festival ADAR: una plaza asegurada en los conciertos de agosto de 2027, en iglesias, monasterios y hórreos de Asturias. Amigo · 30 € al año: reserva anticipada en todos los conciertos. Amigo VIP · 50 € al año: asientos VIP, celebración privada con los artistas, grabaciones inéditas y la camiseta del festival. Escríbenos a leiguardamusic@gmail.com y te contamos cómo regalarlo. https://festivaladar.com/es/amigo…",
+       "texto": "¿Buscas un regalo que no haya que envolver? 🎁\n\nRegala ser Amigo del Festival ADAR: una plaza asegurada en los conciertos de agosto de 2027, en iglesias, monasterios y hórreos de Asturias.\n\nAmigo · 30 € al año: reserva anticipada en todos los conciertos.\nAmigo VIP · 50 € al año: asientos VIP, celebración privada con los artistas, grabaciones inéditas y la camiseta del festival.\n\nY un regalo especial: dos noches en la casa de ADAR en Leiguarda, una aldea de diez casas en la montaña asturiana. 🏡\n\nEscríbenos a leiguardamusic@gmail.com y te contamos cómo regalarlo.\n\nhttps://festivaladar.com/es/amigos-del-festival/\n\n#FestivalADAR #AmigosDelFestival #RegalosDeNavidad #Asturias #MúsicaEnDirecto",
+       "asomo": "¿Buscas un regalo que no haya que envolver? 🎁 Regala ser Amigo del Festival ADAR: una plaza asegurada en los conciertos de agosto de 2027, en iglesias, monasterios y hórreos de Asturias. Amigo · 30 € al año: reserva anticipada en todos los conciertos. Amigo VIP · 50 € al año: asientos VIP, celebración privada con los artistas, grabaciones inéditas y la camiseta del festival. Y un regalo especial: dos noches en la casa de ADAR en Leiguarda, una aldea de diez casas en la monta…",
        "limite": 63206
       }
      },
@@ -8035,8 +8035,12 @@
      "cifra": null,
      "tabla": null,
      "falta": null,
-     "fotos": [],
-     "fotosEnteras": false,
+     "fotos": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-andrea-casarrubios-45.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-caroline-shaw-45.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-jessie-montgomery-45.jpg"
+     ],
+     "fotosEnteras": true,
      "porque": "Un post de ideas, no de fechas, para la semana tranquila antes de Navidad. Su artículo está en borrador: al aprobarlo, lo publico.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -8073,13 +8077,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nCuando programamos mujeres, alguien pregunta si es una cuota. No lo es: la música de hoy está llena de compositoras excelentes. Lo que hace falta es no dejar que la inercia elija por ti.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
+       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nCuando programamos mujeres, alguien pregunta si es una cuota. No lo es: la música de hoy está llena de compositoras excelentes. Lo que hace falta es no dejar que la inercia elija por ti.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
        "asomo": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼 Andrea Casarrubios, Caroline Shaw…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nCuando programamos mujeres, alguien pregunta si es una cuota. No lo es: la música de hoy está llena de compositoras excelentes. Lo que hace falta es no dejar que la inercia elija por ti.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
-       "asomo": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼 Andrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji… Cuando programamos mujeres, alguien pregunta si es una cuota. No lo es: la música de hoy está llena de compositoras excelentes. Lo que hace falta es no dejar que la inercia elija por ti. https://festivaladar.com/es/blog/las-compositoras-que-programamos/ #FestivalADAR #Compositoras #MujeresEnLaMúsica #Músic…",
+       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nCuando programamos mujeres, alguien pregunta si es una cuota. No lo es: la música de hoy está llena de compositoras excelentes. Lo que hace falta es no dejar que la inercia elija por ti.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
+       "asomo": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼 Andrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji… Cuando programamos mujeres, alguien pregunta si es una cuota. No lo es: la música de hoy está llena de compositoras excelentes. Lo que hace falta es no dejar que la inercia elija por ti. Fotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web. http…",
        "limite": 63206
       }
      },
@@ -8172,15 +8176,18 @@
      "estilos": null,
      "cifra": null,
      "tabla": null,
-     "falta": "Revisar el orden y que las 7 fotos se vean bien enteras (son del archivo de 2026).",
+     "falta": null,
      "fotos": [
-      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_1.jpg",
-      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/05.08.26_Parador%20de%20Corias_Fotos/05.08.26_Parador%20de%20Corias_WEB/05.08.26_Parador%20de%20Corias_WEB_1.jpg",
-      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_1.jpg",
-      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_1.jpg",
-      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_5.jpg",
-      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.15_Iglesia%20de%20Leiguarda_Fotos/26.08.15_Iglesia%20de%20Leiguarda_WEB/26.08.15_Iglesia%20de%20Leiguarda_WEB_6.jpg",
-      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_2.jpg"
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_3.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_4.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/05.08.26_Parador%20de%20Corias_Fotos/05.08.26_Parador%20de%20Corias_WEB/05.08.26_Parador%20de%20Corias_WEB_4.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/11.08.26_El%20Franco_Fotos/11.08.26_El%20Franco_WEB/11.08.26_El%20Franco_WEB_3.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_2.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_3.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_3.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_4.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.15_Iglesia%20de%20Leiguarda_Fotos/26.08.15_Iglesia%20de%20Leiguarda_WEB/26.08.15_Iglesia%20de%20Leiguarda_WEB_5.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_8.jpg"
      ],
      "fotosEnteras": true,
      "porque": "Resumen del año la última semana de diciembre, cuando todo el mundo mira atrás. Él pidió fotos de este año y de otros.",
@@ -8203,7 +8210,7 @@
      "kind": "social",
      "title": "ADAR 2026 en fotos",
      "excerpt": "ADAR 2026 en fotos",
-     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_1.jpg",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_3.jpg",
      "url": "https://festivaladar.com/es/",
      "date": "2026-12-29",
      "tags": [
@@ -8219,13 +8226,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "ADAR 2026, en fotos. 📸\n\nLa VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda.\n\nGracias a los músicos, a los vecinos y a quienes vinieron.\n\n¿Cuál fue tu noche?\n\n#FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
-       "asomo": "ADAR 2026, en fotos. 📸 La VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva…",
+       "texto": "ADAR 2026, en fotos que todavía no habíamos enseñado. 📸\n\nLa VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda.\n\nGracias a los músicos, a los vecinos y a quienes vinieron.\n\n¿Cuál fue tu noche?\n\n#FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
+       "asomo": "ADAR 2026, en fotos que todavía no habíamos enseñado. 📸 La VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador…",
        "limite": 2200
       },
       "fb": {
-       "texto": "ADAR 2026, en fotos. 📸\n\nLa VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda.\n\nGracias a los músicos, a los vecinos y a quienes vinieron.\n\n¿Cuál fue tu noche?\n\nhttps://festivaladar.com/es/\n\n#FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
-       "asomo": "ADAR 2026, en fotos. 📸 La VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda. Gracias a los músicos, a los vecinos y a quienes vinieron. ¿Cuál fue tu noche? https://festivaladar.com/es/ #FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
+       "texto": "ADAR 2026, en fotos que todavía no habíamos enseñado. 📸\n\nLa VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda.\n\nGracias a los músicos, a los vecinos y a quienes vinieron.\n\n¿Cuál fue tu noche?\n\nhttps://festivaladar.com/es/\n\n#FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
+       "asomo": "ADAR 2026, en fotos que todavía no habíamos enseñado. 📸 La VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda. Gracias a los músicos, a los vecinos y a quienes vinieron. ¿Cuál fue tu noche? https://festivaladar.com/es/ #FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
        "limite": 63206
       }
      },
@@ -8249,13 +8256,20 @@
      "estilos": null,
      "cifra": null,
      "tabla": null,
-     "falta": "El logotipo del Ministerio de Cultura: las bases obligan a ponerlo en todo lo que se difunda del proyecto. ¿Lo tienes, y hay ya página de Braña Sonora en la web?",
+     "falta": "¿Hay ya página de Braña Sonora en la web? Si no, el enlace va a la portada.",
      "fotos": [],
      "fotosEnteras": false,
      "porque": "En enero empieza Braña Sonora, el proyecto paralelo al festival con el apoyo del Ministerio de Cultura. Es la noticia más importante del invierno.",
      "pegatinasMuro": false,
-     "fondoAmbar": false,
-     "logo": null,
+     "fondoAmbar": true,
+     "logo": {
+      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logos-brana-sonora.png",
+      "diapositivas": [
+       0,
+       3
+      ],
+      "historia": true
+     },
      "sinMarca": false,
      "colaboradores": null,
      "kicker": "Nuevo proyecto",
@@ -8284,16 +8298,31 @@
        "type": "cover",
        "title": "Braña Sonora",
        "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Escuchar y guardar",
+       "body": "Grabamos el paisaje sonoro de las brañas, los hórreos y los oficios, y la memoria de la tonada, con quienes la guardan."
+      },
+      {
+       "type": "text",
+       "title": "Transmitir y crear",
+       "body": "Materiales para escuelas rurales y tres residencias de composición. Las obras nuevas se estrenan en el Festival ADAR de agosto de 2027."
+      },
+      {
+       "type": "text",
+       "title": "Con el apoyo del Ministerio de Cultura",
+       "body": "Ayudas para proyectos de salvaguarda del Patrimonio Cultural Inmaterial. De julio de 2026 a diciembre de 2027."
       }
      ],
      "pies": {
       "ig": {
-       "texto": "Empezamos Braña Sonora. 🌿\n\nUn proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano:\n\n🐄 la cultura vaqueira de alzada y sus brañas,\n🌾 el paisaje sonoro de los hórreos, las paneras y los oficios,\n🎙️ la memoria oral musical, con la tonada asturiana.\n\nVamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027. También habrá materiales para escuelas rurales.\n\nCon el apoyo del Ministerio de Cultura.\n\nMás en festivaladar.com\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #Asturias #CulturaVaqueira #Tonada",
+       "texto": "Empezamos Braña Sonora. 🌿\n\nUn proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano:\n\n🐄 la cultura vaqueira de alzada y sus brañas,\n🌾 el paisaje sonoro de los hórreos, las paneras y los oficios,\n🎙️ la memoria oral musical, con la tonada asturiana.\n\nVamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027. También habrá materiales para escuelas rurales.\n\nBraña Sonora cuenta con una ayuda del Ministerio de Cultura para proyectos de salvaguarda del Patrimonio Cultural Inmaterial, y dura de julio de 2026 a diciembre de 2027.\n\nDesliza para saber más. 👉\n\nMás en festivaladar.com\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #Asturias #CulturaVaqueira #Tonada #MinisterioDeCultura",
        "asomo": "Empezamos Braña Sonora. 🌿 Un proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio ru…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Empezamos Braña Sonora. 🌿\n\nUn proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano:\n\n🐄 la cultura vaqueira de alzada y sus brañas,\n🌾 el paisaje sonoro de los hórreos, las paneras y los oficios,\n🎙️ la memoria oral musical, con la tonada asturiana.\n\nVamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027. También habrá materiales para escuelas rurales.\n\nCon el apoyo del Ministerio de Cultura.\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #Asturias #CulturaVaqueira #Tonada",
+       "texto": "Empezamos Braña Sonora. 🌿\n\nUn proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano:\n\n🐄 la cultura vaqueira de alzada y sus brañas,\n🌾 el paisaje sonoro de los hórreos, las paneras y los oficios,\n🎙️ la memoria oral musical, con la tonada asturiana.\n\nVamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027. También habrá materiales para escuelas rurales.\n\nBraña Sonora cuenta con una ayuda del Ministerio de Cultura para proyectos de salvaguarda del Patrimonio Cultural Inmaterial, y dura de julio de 2026 a diciembre de 2027.\n\nDesliza para saber más. 👉\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #Asturias #CulturaVaqueira #Tonada #MinisterioDeCultura",
        "asomo": "Empezamos Braña Sonora. 🌿 Un proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano: 🐄 la cultura vaqueira de alzada y sus brañas, 🌾 el paisaje sonoro de los hórreos, las paneras y los oficios, 🎙️ la memoria oral musical, con la tonada asturiana. Vamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las o…",
        "limite": 63206
       }
@@ -8318,13 +8347,19 @@
      "estilos": null,
      "cifra": null,
      "tabla": null,
-     "falta": "El logotipo del Ministerio de Cultura (obligatorio en la difusión de Braña Sonora).",
+     "falta": null,
      "fotos": [],
      "fotosEnteras": false,
      "porque": "Segundo post de Braña Sonora: explica en un carrusel de texto qué es la cultura vaqueira de alzada, para quien no la conoce.",
      "pegatinasMuro": false,
      "fondoAmbar": true,
-     "logo": null,
+     "logo": {
+      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logos-brana-sonora.png",
+      "diapositivas": [
+       3
+      ],
+      "historia": true
+     },
      "sinMarca": false,
      "colaboradores": null,
      "kicker": null,
@@ -8398,17 +8433,23 @@
      },
      "tipo": null,
      "concierto": null,
-     "estilo": "ambar",
+     "estilo": "cielo",
      "estilos": null,
      "cifra": null,
      "tabla": null,
-     "falta": "Confirmar que leiguardamusic@gmail.com es el correo para Braña Sonora, y el logotipo del Ministerio.",
+     "falta": "Confirmar que leiguardamusic@gmail.com es el correo para Braña Sonora. Si tenéis fotos del trabajo de campo (brañas, vaqueiros, tonada), mejor que esta.",
      "fotos": [],
      "fotosEnteras": false,
      "porque": "El 17 es San Antón, patrón de los animales, con bendiciones de ganado por toda Asturias. Buen día para pedir que nos presenten a vaqueiros, cantadores y artesanos.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
-     "logo": null,
+     "logo": {
+      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logos-brana-sonora.png",
+      "diapositivas": [
+       0
+      ],
+      "historia": true
+     },
      "sinMarca": false,
      "colaboradores": null,
      "kicker": "Braña Sonora",
@@ -8478,17 +8519,23 @@
      },
      "tipo": null,
      "concierto": null,
-     "estilo": "ambar",
+     "estilo": "cielo",
      "estilos": null,
      "cifra": null,
      "tabla": null,
-     "falta": "Fechas de la residencia, si habrá actividad abierta (taller, ensayo abierto, concierto), su cuenta de Instagram y una foto del grupo.",
+     "falta": "Fechas de la residencia, si habrá actividad abierta (taller, ensayo abierto, concierto) y su cuenta de Instagram. La foto es de su dossier y tiene poca resolución: si tienen una mejor, la cambio.",
      "fotos": [],
      "fotosEnteras": false,
      "porque": "Anuncia la llegada de Orchestra Improvvisata a Leiguarda con Culture Moves Europe. Es la residencia que financia Culture Moves Europe (Unión Europea).",
      "pegatinasMuro": false,
      "fondoAmbar": false,
-     "logo": null,
+     "logo": {
+      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logos-ue-goethe.png",
+      "diapositivas": [
+       0
+      ],
+      "historia": true
+     },
      "sinMarca": false,
      "colaboradores": null,
      "kicker": "Residencia",
@@ -8505,7 +8552,7 @@
      "kind": "social",
      "title": "Llega Orchestra Improvvisata",
      "excerpt": "Una orquesta donde todos improvisan juntos.",
-     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/residency/IMG_0284.jpeg",
+     "image": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/orchestra-improvvisata-ritmo.jpg",
      "url": "https://festivaladar.com/es/financiacion-europea/",
      "date": "2027-01-20",
      "tags": [
@@ -8552,13 +8599,19 @@
      "estilos": null,
      "cifra": null,
      "tabla": null,
-     "falta": "Confirmar que en enero se puede invitar ya a los colegios (el plan dice portal en beta de enero a marzo) y el logotipo del Ministerio.",
+     "falta": "Confirmar que en enero se puede invitar ya a los colegios (el plan dice portal en beta de enero a marzo).",
      "fotos": [],
      "fotosEnteras": false,
      "porque": "El 24 de enero es el Día Internacional de la Educación. Braña Sonora tiene una parte para escuelas rurales y este es el día para pedir que se apunten.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
-     "logo": null,
+     "logo": {
+      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logos-brana-sonora.png",
+      "diapositivas": [
+       0
+      ],
+      "historia": true
+     },
      "sinMarca": false,
      "colaboradores": null,
      "kicker": null,
@@ -8638,7 +8691,13 @@
      "porque": "Explica el Ritmo con Señas en un carrusel antes de que llegue Orchestra Improvvisata: es lo que más curiosidad va a dar.",
      "pegatinasMuro": false,
      "fondoAmbar": true,
-     "logo": null,
+     "logo": {
+      "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logos-ue-goethe.png",
+      "diapositivas": [
+       3
+      ],
+      "historia": true
+     },
      "sinMarca": false,
      "colaboradores": null,
      "kicker": null,
@@ -8655,7 +8714,7 @@
      "kind": "social",
      "title": "¿Se puede dirigir una orquesta con señas?",
      "excerpt": "El Ritmo con Señas, explicado.",
-     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/residency/IMG_0680.jpeg",
+     "image": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/orchestra-improvvisata-collage.jpg",
      "url": "https://festivaladar.com/es/financiacion-europea/",
      "date": "2027-01-27",
      "tags": [
@@ -8717,8 +8776,12 @@
      "cifra": null,
      "tabla": null,
      "falta": null,
-     "fotos": [],
-     "fotosEnteras": false,
+     "fotos": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/paseo-ayalgas-06-45.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/paseo-ayalgas-10-45.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/paseo-ayalgas-14-45.jpg"
+     ],
+     "fotosEnteras": true,
      "porque": "Enlaza con Braña Sonora (escuchar el paisaje) y explica nuestro formato más querido. Su artículo está en borrador: al aprobarlo, lo publico.",
      "pegatinasMuro": false,
      "fondoAmbar": false,

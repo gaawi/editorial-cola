@@ -51,6 +51,13 @@ proponerle uno. La app entra directamente en Ideas; los meses, con «‹ Meses»
 
 ## Lo que Guillermo ya ha dicho (no volver a preguntarlo)
 
+- **Language (from 22 Nov 2026): everything in US English**, even when he
+  writes in Spanish: chat replies, the check summary, the Marble interface,
+  and the text Claude writes into the app (`porque`, `falta`, answers to
+  suggestions and ideas, notifications). Social post captions and blog
+  articles stay in each brand's language: Festival ADAR in Spanish,
+  CreArtBox in English.
+
 - La app es para revisar. Él decide con Aprobar y Confirmar; lo demás lo
   hace esta tarea.
 - **No pedirle material.** Si falta una imagen, buscarla o generarla:

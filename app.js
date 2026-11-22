@@ -1735,6 +1735,22 @@ $('#cuentas-lista').addEventListener('click', (e) => {
 });
 
 $('#atras').addEventListener('click', volver);
+// The logo (header and side bar) goes back to the home page: choosing the account.
+function irAInicio() {
+  if (actual) volver();
+  if (!$('#revision').hidden) cerrarRevision();
+  MES = null; vista = 'cuentas';
+  history.replaceState(null, '', location.pathname + location.search);
+  mostrarVista();
+  window.scrollTo(0, 0);
+}
+for (const el of document.querySelectorAll('.barra .logo-marca, .barra .marca-palabra, .lateral-marca')) {
+  el.setAttribute('role', 'link');
+  el.setAttribute('tabindex', '0');
+  el.setAttribute('aria-label', 'Marble home');
+  el.addEventListener('click', irAInicio);
+  el.addEventListener('keydown', (e) => { if (e.key === 'Enter') irAInicio(); });
+}
 $('#marca').addEventListener('click', () => {
   MES = null; vista = 'cuentas';
   history.replaceState(null, '', location.pathname + location.search);

@@ -1312,3 +1312,5 @@ body.en-revision .aviso { z-index: 450; bottom: calc(80px + env(safe-area-inset-
 .rv-es-blog .rv-linea li.hecho::before { background: rgba(43,29,7,.5); }
 .rv-es-blog .rv-linea li.aqui { color: #2b1d07; }
 .rv-es-blog .rv-linea li.aqui::before { background: #E59A1D; }
+
+.barra .logo-marca, .barra .marca-palabra, .lateral-marca { cursor: pointer; }

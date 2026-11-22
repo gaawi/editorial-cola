@@ -10,7 +10,7 @@
 //
 // Nada sale sin «confirmar», y «confirmar» solo vale sobre algo preparado.
 import { conSesion } from './_puerta.js';
-import { credencial, leerJSON, cambiarJSON } from './_gh.js';
+import { credencial, leerJSON, cambiarJSON, cambiarTexto } from './_gh.js';
 import { marcaDe } from './_cuentas.js';
 
 const VACIO = { _ayuda: 'Lo escribe la app (api/flujo.js). fase: aprobado · preparado · confirmado · luego (más adelante) · descartado (archivo) · cambios.', posts: {} };
@@ -71,6 +71,24 @@ export default async function handler(req, res) {
         (d.meses ||= {})[mes] = { terminado: !!b.terminado, quien: yo.login, fecha: new Date().toISOString() };
       }, `App: ${b.terminado ? 'mes terminado' : 'mes abierto'} ${mes}`);
       return res.status(200).json({ ok: true, meses: nuevo.meses });
+    }
+    // Publicar en festivaladar.com un artículo del blog que estaba en
+    // borrador: status publish y la fecha de hoy, en gaawi/adar (main es la
+    // web). Va aquí y no en su propio archivo porque Vercel Hobby admite
+    // 12 funciones. Solo publica; despublicar se hace a mano.
+    if (accion === 'blogPublicar') {
+      const slug = String(b.slug || '');
+      if (!/^[a-z0-9-]+$/.test(slug)) return res.status(400).json({ error: 'Artículo no válido.' });
+      const hoy = new Date().toISOString();
+      let estaba = '';
+      await cambiarTexto(yo.token, 'gaawi/adar', `src/content/blog/es/${slug}.md`, (t) => {
+        const m = t.match(/^---\n([\s\S]*?)\n---/);
+        if (!m) throw new Error('El artículo no tiene cabecera.');
+        estaba = (m[1].match(/^status:\s*"?(\w+)"?/m) || [])[1] || '';
+        if (estaba === 'publish') return false;
+        return t.replace(m[1], m[1].replace(/^status:.*$/m, 'status: publish').replace(/^date:.*$/m, `date: "${hoy}"`));
+      }, `Blog: publicado «${slug}» desde la app (${yo.login})`);
+      return res.status(200).json({ ok: true, slug, yaEstaba: estaba === 'publish', url: `https://festivaladar.com/es/blog/${slug}/` });
     }
     // Una idea nueva no tiene clave todavía: va a una lista aparte.
     if (accion === 'idea') {

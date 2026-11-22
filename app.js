@@ -1503,8 +1503,8 @@ for (const donde of ['#lista-blog', '#fichas']) $(donde).addEventListener('click
   if (!confirm(`¿Publicar «${a.title}» en festivaladar.com ahora?`)) return;
   btn.disabled = true; btn.textContent = 'Publicando…';
   try {
-    const r = await fetch('/api/blog', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slug: a.slug, accion: 'publicar' }) });
+    const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug: a.slug, accion: 'blogPublicar' }) });
     const j = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
     a.estadoWeb = 'publish';

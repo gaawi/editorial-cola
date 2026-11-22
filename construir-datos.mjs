@@ -217,6 +217,8 @@ for (const nombre of marcas) {
         fotos: (p.fotos || []).map(urlImagen),
         // Enteras: con su proporción, sin el recorte a 4:5.
         fotosEnteras: !!p.fotosEnteras,
+        // Detrás de la portada dibujada: fotos tal cual, ya recortadas.
+        fotosExtra: (p.fotosExtra || []).map(urlImagen),
         // Por qué este post y ese día, en una o dos frases.
         porque: p.porque || null,
         pegatinasMuro: !!p.pegatinasMuro,

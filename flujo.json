@@ -1524,6 +1524,11 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-22T12:44:54.535Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T16:43:44.399Z"
     }
    ],
    "fase": "preparado",
@@ -1534,7 +1539,7 @@
       {
        "red": "ig",
        "cuando": "2026-12-04T19:30:00+01:00",
-       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana. Esa noche empezó a orbayar y no se pudo tocar el programa entero. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nLa historia completa, en el blog de festivaladar.com\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nLa historia completa, en el blog de festivaladar.com\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
        "imagenes": [
         "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg",
         "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image72.jpg",
@@ -1544,7 +1549,7 @@
       {
        "red": "fb",
        "cuando": "2026-12-04T19:32:00+01:00",
-       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana. Esa noche empezó a orbayar y no se pudo tocar el programa entero. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
        "imagenes": [
         "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg"
        ]
@@ -1657,6 +1662,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:37:50.073Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T16:43:41.325Z"
     }
    ],
    "sugerencias": [
@@ -1669,7 +1679,52 @@
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/adar-2026-en-fotos": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-29T19:30:00+01:00",
+       "texto": "ADAR 2026, en fotos que todavía no habíamos enseñado. 📸\n\nLa VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda.\n\nGracias a los músicos, a los vecinos y a quienes vinieron.\n\n¿Cuál fue tu noche?\n\n#FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
+       "imagenes": [
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_3.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_4.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/05.08.26_Parador%20de%20Corias_Fotos/05.08.26_Parador%20de%20Corias_WEB/05.08.26_Parador%20de%20Corias_WEB_4.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/11.08.26_El%20Franco_Fotos/11.08.26_El%20Franco_WEB/11.08.26_El%20Franco_WEB_3.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_2.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_3.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_3.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_4.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.15_Iglesia%20de%20Leiguarda_Fotos/26.08.15_Iglesia%20de%20Leiguarda_WEB/26.08.15_Iglesia%20de%20Leiguarda_WEB_5.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_8.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-12-29T19:32:00+01:00",
+       "texto": "ADAR 2026, en fotos que todavía no habíamos enseñado. 📸\n\nLa VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda.\n\nGracias a los músicos, a los vecinos y a quienes vinieron.\n\n¿Cuál fue tu noche?\n\nhttps://festivaladar.com/es/\n\n#FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
+       "imagenes": [
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_3.jpg"
+       ]
+      }
+     ]
+    },
+    "es/adar-2026-en-fotos#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-30T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-adar-2026-en-fotos-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/brana-sonora-anuncio": {
    "historial": [
@@ -1701,6 +1756,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:38:52.083Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T16:43:42.906Z"
     }
    ],
    "sugerencias": [
@@ -1713,7 +1773,46 @@
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/ritmo-con-senas": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-27T19:30:00+01:00",
+       "texto": "¿Se puede dirigir una orquesta solo con señas? 👋\n\nSí. Es el Ritmo con Señas, creado por el argentino Santiago Vázquez. Él lo define así: «es un lenguaje, un juego y un sistema pedagógico».\n\nUna persona dirige con las manos, los brazos y el cuerpo. Las demás improvisan, se escuchan y se contestan. No hace falta saber leer música: hace falta escuchar.\n\nEs lo que trae a Leiguarda Orchestra Improvvisata.\n\nDesliza. 👉\n\n#FestivalADAR #OrchestraImprovvisata #RitmoConSeñas #Improvisación #CultureMovesEurope",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-ig-1.jpg",
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-ig-2.jpg",
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-ig-3.jpg",
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-ig-4.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2027-01-27T19:32:00+01:00",
+       "texto": "¿Se puede dirigir una orquesta solo con señas? 👋\n\nSí. Es el Ritmo con Señas, creado por el argentino Santiago Vázquez. Él lo define así: «es un lenguaje, un juego y un sistema pedagógico».\n\nUna persona dirige con las manos, los brazos y el cuerpo. Las demás improvisan, se escuchan y se contestan. No hace falta saber leer música: hace falta escuchar.\n\nEs lo que trae a Leiguarda Orchestra Improvvisata.\n\nDesliza. 👉\n\nhttps://festivaladar.com/es/financiacion-europea/\n\n#FestivalADAR #OrchestraImprovvisata #RitmoConSeñas #Improvisación #CultureMovesEurope",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/ritmo-con-senas#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-28T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/dia-educacion-escuelas-rurales": {
    "historial": [
@@ -1859,7 +1958,9 @@
      "texto": "No me gusta lo de la cuota",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:37:38.190Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Quitado. Ahora dice: «Sus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.» (El artículo del blog sigue llevando «cuota» en el título; si quieres, también lo cambio.)",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -1889,7 +1990,9 @@
      "texto": "Encuadra mejor la foto y pon más fotos",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:36:40.324Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Portada nueva: el hórreo de La Figal encendido al anochecer, con el título en el cielo. Detrás, 4 fotos del concierto dentro (Ignacio Prego al clave, el teclado, él de cerca y el público).",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -1906,7 +2009,9 @@
      "texto": "Haz uno separado para lo de y si Adar suena en ti pueblo?",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:30:25.692Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Separado: el artículo de propuestas ya solo habla de propuestas, y hay uno nuevo, «¿Y si ADAR suena en tu pueblo?», que acompaña al post de ayuntamientos del 26.",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -1923,7 +2028,9 @@
      "texto": "No me gusta lode Es un problema. No se pudo interpretar el programa entero",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:31:38.186Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Quitado del artículo y de la entradilla. Ahora: «el orballo obliga a decidir sobre la marcha y a cuidar los instrumentos. Y eso hicimos.» También lo he quitado del post del 4 de diciembre (ya preparado otra vez).",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -1940,7 +2047,9 @@
      "texto": "Habla del nombre Centro ADAR y de los vecinos!, y pon más fotos de las web hay muchas",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:33:08.915Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Dos apartados nuevos: «La llamamos Centro ADAR» y «Los vecinos, lo primero» (el primer concierto de 2021, la espicha de clausura). Y una galería con 6 fotos de la casa.",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -1957,7 +2066,9 @@
      "texto": "La foto no funciona , más tipo póster con los logos y yal",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:33:39.285Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Cambiada la foto por un cartel: «Braña Sonora» en grande sobre amarillo, el lema, los tres temas, el hórreo y los logos del Ministerio y de ADAR. Los logos van también al final del artículo.",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -1974,7 +2085,9 @@
      "texto": "Pon logos de Europa goether …",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:33:53.640Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Añadidos al final los logos de la Unión Europea y del Goethe-Institut.",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -1996,13 +2109,17 @@
      "texto": "Un de los formatos favoritos de lanaudiencia",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:34:21.452Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Cambiado a «uno de los favoritos del público», también en el título. Y una galería con 6 fotos (Museo de las Ayalgas 2023 y Leiguarda 2025).",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     },
     {
      "texto": "Pon muchas más fotos",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:34:37.038Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Cambiado a «uno de los favoritos del público», también en el título. Y una galería con 6 fotos (Museo de las Ayalgas 2023 y Leiguarda 2025).",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -2019,7 +2136,9 @@
      "texto": "Las fotos no cuadran",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:34:49.617Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Tenía razón: la foto era de un monasterio. Ahora la portada es el hórreo de La Figal, y al final van los ganadores: La Figal, Susacasa y Puerma.",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -2036,7 +2155,9 @@
      "texto": "La foto no es de zilvinas",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:35:17.730Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Cambiada por la foto de Žilvinas Brazauskas de su página de artista en la web.",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -2063,7 +2184,9 @@
      "texto": "Más fotos",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:36:58.699Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Ahora son 7 fotos de The Whale.",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   },
@@ -2080,7 +2203,9 @@
      "texto": "No me convence no sé porque",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:38:12.352Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Creo que era porque explicaba qué es una braña, y en Asturias eso se sabe. Le he dado la vuelta: «¿Tú también subías a la braña?», una sola foto del valle y un pie que pide a la gente que cuente quién subía en su familia y qué se cantaba. Da conversación y nos trae gente para el archivo.",
+     "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
   }

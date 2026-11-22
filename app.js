@@ -535,7 +535,10 @@ function fotoSuelta(url, entera = false, enc = null) {
 function piezasDe(p) {
   if (p.fotos && p.fotos.length) return { fotos: p.fotos, n: p.fotos.length };
   const esCarrusel = p.slides.length > 1 && p.kind !== 'entrevista';
-  return { slides: esCarrusel ? p.slides : [p.slides[0]], n: esCarrusel ? p.slides.length : 1 };
+  const base = esCarrusel ? p.slides : [p.slides[0]];
+  // `fotosExtra`: la portada dibujada y, detrás, fotos tal cual (ya en 4:5).
+  const extra = p.fotosExtra || [];
+  return { slides: base, extra, n: base.length + extra.length };
 }
 
 /**
@@ -561,7 +564,7 @@ function conColaboradores(p) {
 
 async function pintarInstagram(p) {
   const piezas = piezasDe(p);
-  const slides = piezas.slides || piezas.fotos;
+  const slides = piezas.fotos || [...piezas.slides, ...(piezas.extra || [])];
   const caja = document.createElement('div');
   caja.className = 'ig';
   caja.innerHTML = `
@@ -583,7 +586,9 @@ async function pintarInstagram(p) {
   for (let i = 0; i < slides.length; i++) {
     tira.appendChild(piezas.fotos
       ? fotoSuelta(piezas.fotos[i], p.fotosEnteras, p.encuadre)
-      : await lienzo(p, slides[i], i, slides.length, 'ig'));
+      : i >= piezas.slides.length
+        ? fotoSuelta(slides[i], true)
+        : await lienzo(p, slides[i], i, slides.length, 'ig'));
   }
 
   // Los puntos y el contador siguen al dedo, como en la app.

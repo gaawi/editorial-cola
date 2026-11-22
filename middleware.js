@@ -18,7 +18,7 @@ export const config = {
   // publicado, etiquetas.json y el código de la herramienta. Mejor al revés:
   // cerrado por defecto y se nombra lo que puede pasar.
   // El icono y el manifiesto también, para que el móvil pueda instalar la app.
-  matcher: ['/((?!api/|entrar|_vercel|favicon|iconos/|manifest\\.webmanifest|apple-touch-icon).*)'],
+  matcher: ['/((?!api/|entrar|_vercel|favicon|iconos/|manifest|apple-touch-icon).*)'],
 };
 
 function hexToBytes(hex) {

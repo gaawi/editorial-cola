@@ -1447,6 +1447,16 @@
      "hecha": false
     }
    ]
+  },
+  "es/dia-educacion-escuelas-rurales": {
+   "historial": [
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T12:39:00.683Z"
+    }
+   ],
+   "fase": "aprobado"
   }
  },
  "ideas": [

@@ -27,7 +27,7 @@ function render(status, payload) {
   const message = `authorization:github:${status}:${JSON.stringify(payload)}`;
   return `<!doctype html>
 <html><head><meta charset="utf-8" /></head><body>
-<p>${status === 'success' ? 'Autenticado. Puedes cerrar esta ventana.' : 'Error de autenticación.'}</p>
+<p>${status === 'success' ? 'Signed in. You can close this window.' : 'Sign-in error.'}</p>
 <script>
 (function () {
   var message = ${JSON.stringify(message)};
@@ -68,10 +68,10 @@ async function autorizado(token) {
   let login = '';
   try {
     const meRes = await gh('/user');
-    if (!meRes.ok) return { ok: false, motivo: 'GitHub no devolvió la identidad de la cuenta.' };
+    if (!meRes.ok) return { ok: false, motivo: 'GitHub did not return the account identity.' };
     login = String((await meRes.json()).login || '');
   } catch (e) {
-    return { ok: false, motivo: 'No se pudo comprobar la cuenta con GitHub.' };
+    return { ok: false, motivo: 'Could not verify the account with GitHub.' };
   }
 
   const permitidos = (process.env.COLA_LOGINS || '')
@@ -88,11 +88,11 @@ async function autorizado(token) {
       if (info && info.permissions && info.permissions.push) return { ok: true, login };
     }
   } catch (e) {
-    return { ok: false, motivo: 'No se pudo comprobar el acceso al repositorio.' };
+    return { ok: false, motivo: 'Could not verify access to the repository.' };
   }
   return {
     ok: false,
-    motivo: `La cuenta ${login} no tiene acceso a este panel. Pide que te añadan al repositorio.`,
+    motivo: `The account ${login} does not have access to this panel. Ask to be added to the repository.`,
   };
 }
 
@@ -109,7 +109,7 @@ export default async function handler(req, res) {
   const clientId = process.env.GITHUB_CLIENT_ID;
   const clientSecret = process.env.GITHUB_CLIENT_SECRET;
   if (!clientId || !clientSecret) {
-    res.status(500).send('Faltan GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET en las variables de entorno.');
+    res.status(500).send('GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET are missing from the environment variables.');
     return;
   }
 
@@ -123,7 +123,7 @@ export default async function handler(req, res) {
   res.setHeader('Set-Cookie', 'csm_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0');
 
   if (!code || !state || !cookies.csm_state || state !== cookies.csm_state) {
-    res.status(400).send(render('error', { error: 'Estado OAuth no válido. Inténtalo de nuevo.' }));
+    res.status(400).send(render('error', { error: 'Invalid OAuth state. Please try again.' }));
     return;
   }
 
@@ -139,7 +139,7 @@ export default async function handler(req, res) {
     });
     const data = await tokenRes.json();
     if (data.error || !data.access_token) {
-      res.status(401).send(render('error', { error: data.error_description || data.error || 'Sin token.' }));
+      res.status(401).send(render('error', { error: data.error_description || data.error || 'No token.' }));
       return;
     }
 
@@ -166,6 +166,6 @@ export default async function handler(req, res) {
 
     res.status(200).send(render('success', { token: data.access_token, provider: 'github' }));
   } catch (err) {
-    res.status(500).send(render('error', { error: 'Fallo al contactar con GitHub.' }));
+    res.status(500).send(render('error', { error: 'Could not reach GitHub.' }));
   }
 }

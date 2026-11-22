@@ -49,16 +49,16 @@ function limpiaEdicion(e = {}) {
 
 export default async function handler(req, res) {
   try {
-    if (!(await conSesion(req))) return res.status(401).json({ error: 'Sin sesión.', entrar: true });
+    if (!(await conSesion(req))) return res.status(401).json({ error: 'Not signed in.', entrar: true });
     const yo = credencial(req);
-    if (!yo) return res.status(401).json({ error: 'Entra otra vez para poder guardar desde aquí.', entrar: true });
+    if (!yo) return res.status(401).json({ error: 'Sign in again to save from here.', entrar: true });
 
     if (req.method === 'GET') {
       const { datos } = await leerJSON(yo.token, 'flujo.json', VACIO);
       res.setHeader('Cache-Control', 'no-store');
       return res.status(200).json({ flujo: datos, login: yo.login });
     }
-    if (req.method !== 'POST') return res.status(405).json({ error: 'Solo GET o POST.' });
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Only GET or POST.' });
 
     const b = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
     const { clave, accion } = b;
@@ -66,7 +66,7 @@ export default async function handler(req, res) {
     if (accion === 'mes') {
       // Cada marca cierra sus meses: los de ADAR van como «adar:AAAA-MM».
       const mes = String(b.mes || '');
-      if (!/^(adar:)?\d{4}-\d{2}$/.test(mes)) return res.status(400).json({ error: 'Mes no válido.' });
+      if (!/^(adar:)?\d{4}-\d{2}$/.test(mes)) return res.status(400).json({ error: 'Invalid month.' });
       const nuevo = await cambiarJSON(yo.token, 'flujo.json', VACIO, (d) => {
         (d.meses ||= {})[mes] = { terminado: !!b.terminado, quien: yo.login, fecha: new Date().toISOString() };
       }, `App: ${b.terminado ? 'mes terminado' : 'mes abierto'} ${mes}`);
@@ -78,12 +78,12 @@ export default async function handler(req, res) {
     // 12 funciones. Solo publica; despublicar se hace a mano.
     if (accion === 'blogPublicar') {
       const slug = String(b.slug || '');
-      if (!/^[a-z0-9-]+$/.test(slug)) return res.status(400).json({ error: 'Artículo no válido.' });
+      if (!/^[a-z0-9-]+$/.test(slug)) return res.status(400).json({ error: 'Invalid article.' });
       const hoy = new Date().toISOString();
       let estaba = '';
       await cambiarTexto(yo.token, 'gaawi/adar', `src/content/blog/es/${slug}.md`, (t) => {
         const m = t.match(/^---\n([\s\S]*?)\n---/);
-        if (!m) throw new Error('El artículo no tiene cabecera.');
+        if (!m) throw new Error('The article has no front matter.');
         estaba = (m[1].match(/^status:\s*"?(\w+)"?/m) || [])[1] || '';
         if (estaba === 'publish') return false;
         return t.replace(m[1], m[1].replace(/^status:.*$/m, 'status: publish').replace(/^date:.*$/m, `date: "${hoy}"`));
@@ -93,15 +93,15 @@ export default async function handler(req, res) {
     // Una idea nueva no tiene clave todavía: va a una lista aparte.
     if (accion === 'idea') {
       const texto = typeof b.nota === 'string' ? b.nota.trim().slice(0, 4000) : '';
-      if (!texto) return res.status(400).json({ error: 'Escribe la idea.' });
+      if (!texto) return res.status(400).json({ error: 'Write the idea.' });
       const nuevo = await cambiarJSON(yo.token, 'flujo.json', VACIO, (d) => {
         const marca = b.marca === 'adar' ? 'adar' : 'creartbox';
         (d.ideas ||= []).push({ texto, marca, quien: yo.login, fecha: new Date().toISOString(), hecha: false });
       }, 'App: idea nueva');
       return res.status(200).json({ ok: true, ideas: nuevo.ideas });
     }
-    if (typeof clave !== 'string' || !/^[a-z]{2}\/[\w-]+$/.test(clave)) return res.status(400).json({ error: 'Clave no válida.' });
-    if (!ACCIONES.includes(accion)) return res.status(400).json({ error: 'Acción no válida.' });
+    if (typeof clave !== 'string' || !/^[a-z]{2}\/[\w-]+$/.test(clave)) return res.status(400).json({ error: 'Invalid key.' });
+    if (!ACCIONES.includes(accion)) return res.status(400).json({ error: 'Invalid action.' });
     const ahora = new Date().toISOString();
     const nota = typeof b.nota === 'string' ? b.nota.slice(0, 2000) : '';
 
@@ -111,14 +111,14 @@ export default async function handler(req, res) {
       const f = flujo.posts[clave];
       let cola;
       if (accion === 'confirmar') {
-        if (!f || f.fase !== 'preparado' || !f.preparado) return res.status(409).json({ error: 'Todavía no está preparado: no se puede confirmar.' });
+        if (!f || f.fase !== 'preparado' || !f.preparado) return res.status(409).json({ error: 'Not ready yet: it cannot be confirmed.' });
         // `red`: se puede aprobar por partes (ig, fb, story). Sin `red`, todo.
         const red = ['ig', 'fb', 'story'].includes(b.red) ? b.red : null;
         const toca = (k, r) => !red || (red === 'story' ? k.includes('#') : !k.includes('#') && r.red === red);
         const elegidas = Object.entries(f.preparado).flatMap(([k, e]) => e.redes.filter((r) => toca(k, r)));
-        if (!elegidas.length) return res.status(409).json({ error: 'No hay nada preparado para esa red.' });
+        if (!elegidas.length) return res.status(409).json({ error: 'Nothing is ready for that network.' });
         const pasado = elegidas.find((r) => new Date(r.cuando) < new Date());
-        if (pasado) return res.status(409).json({ error: 'La hora preparada ya pasó. Cambia la fecha y vuelve a confirmar.' });
+        if (pasado) return res.status(409).json({ error: 'The scheduled time has passed. Change the date and confirm again.' });
         cola = await cambiarJSON(yo.token, 'datos/programado.json', VACIO_COLA, (d) => {
           for (const [k, e] of Object.entries(f.preparado)) {
             const nuevas = e.redes.filter((r) => toca(k, r)).map((r) => ({ ...r, estado: 'en cola', via: 'meta' }));
@@ -136,9 +136,9 @@ export default async function handler(req, res) {
         let bloqueo = '';
         cola = await cambiarJSON(yo.token, 'datos/programado.json', VACIO_COLA, (d) => {
           const claves = Object.keys(d.posts).filter((k) => k === clave || k.startsWith(clave + '#'));
-          if (!claves.length) { bloqueo = 'No está en la cola.'; return false; }
+          if (!claves.length) { bloqueo = 'It is not in the queue.'; return false; }
           if (claves.some((k) => d.posts[k].redes.some((r) => r.estado !== 'en cola'))) {
-            bloqueo = 'Ya ha salido (o está saliendo) en alguna red: desde aquí no se quita.'; return false;
+            bloqueo = 'It already went out (or is going out) on a network: it cannot be removed from here.'; return false;
           }
           for (const k of claves) delete d.posts[k];
           d.actualizado = ahora;
@@ -157,7 +157,7 @@ export default async function handler(req, res) {
     const nuevo = await cambiarJSON(yo.token, 'flujo.json', VACIO, (d) => {
       const g = d.posts[clave] || (d.posts[clave] = { historial: [] });
       if (accion === 'sugerir') {
-        if (!nota.trim()) throw Object.assign(new Error('Escribe la sugerencia.'), { codigo: 400 });
+        if (!nota.trim()) throw Object.assign(new Error('Write the suggestion.'), { codigo: 400 });
         (g.sugerencias ||= []).push({ texto: nota.trim(), quien: yo.login, fecha: ahora, hecha: false });
         (g.historial ||= []).push({ accion, quien: yo.login, fecha: ahora });
         return;
@@ -172,14 +172,14 @@ export default async function handler(req, res) {
         (g.historial ||= []).push({ accion, quien: yo.login, fecha: ahora });
         return;
       }
-      if (g.fase === 'confirmado' && accion !== 'editar') throw Object.assign(new Error('Está confirmado: quítalo de la cola antes.'), { codigo: 409 });
+      if (g.fase === 'confirmado' && accion !== 'editar') throw Object.assign(new Error('It is confirmed: remove it from the queue first.'), { codigo: 409 });
       if (accion === 'aprobar') g.fase = 'aprobado';
       if (accion === 'descartar') g.fase = 'descartado';
       if (accion === 'luego') g.fase = 'luego';
       if (accion === 'recuperar') delete g.fase;
       if (accion === 'cambios') { g.fase = 'cambios'; g.nota = nota; }
       if (accion === 'editar') {
-        if (g.fase === 'confirmado') throw Object.assign(new Error('Está confirmado: quítalo de la cola para editarlo.'), { codigo: 409 });
+        if (g.fase === 'confirmado') throw Object.assign(new Error('It is confirmed: remove it from the queue to edit it.'), { codigo: 409 });
         const ed = limpiaEdicion(b.edicion);
         g.edicion = { ...(g.edicion || {}), ...ed };
         for (const k of Object.keys(g.edicion)) if (g.edicion[k] === null) delete g.edicion[k];
@@ -206,6 +206,6 @@ export default async function handler(req, res) {
     }, `App: ${accion} ${clave}`);
     return res.status(200).json({ ok: true, post: nuevo.posts[clave] });
   } catch (e) {
-    return res.status(e.codigo || 500).json({ error: e.message || 'Error al guardar.' });
+    return res.status(e.codigo || 500).json({ error: e.message || 'Error saving.' });
   }
 }

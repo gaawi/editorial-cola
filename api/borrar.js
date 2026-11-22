@@ -19,13 +19,13 @@ export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
   try {
-    if (!(await conSesion(req))) return res.status(401).send('{"ok":false,"error":"sin sesión"}');
+    if (!(await conSesion(req))) return res.status(401).send('{"ok":false,"error":"not signed in"}');
     const q = norm(req.query && req.query.q);
-    if (q.length < 12) return res.status(400).send('{"ok":false,"error":"pon en ?q= al menos 12 letras del principio del texto"}');
+    if (q.length < 12) return res.status(400).send('{"ok":false,"error":"put at least the first 12 characters of the text in ?q="}');
     const confirmar = req.query.confirmar === 'si';
     const marca = MARCAS[req.query.marca] ? req.query.marca : 'creartbox';
     const { token, paginaId, igId } = credenciales(marca);
-    if (!token) return res.status(400).send(JSON.stringify({ ok: false, error: `faltan las variables de ${MARCAS[marca].nombre} en Vercel` }));
+    if (!token) return res.status(400).send(JSON.stringify({ ok: false, error: `the ${MARCAS[marca].nombre} variables are missing in Vercel` }));
     const api = (ruta, metodo = 'GET') => fetch(`https://graph.facebook.com/${VERSION}/${ruta}${ruta.includes('?') ? '&' : '?'}access_token=${encodeURIComponent(token)}`, { method: metodo })
       .then((r) => r.json()).then((d) => { if (d.error) throw new Error(d.error.message); return d; });
 
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
       ...ig.filter((m) => norm(m.caption).startsWith(q)).map((m) => ({ red: 'ig', id: m.id, url: m.permalink, fecha: m.timestamp, texto: String(m.caption).slice(0, 80) })),
       ...fb.filter((m) => norm(m.message).startsWith(q)).map((m) => ({ red: 'fb', id: m.id, url: m.permalink_url, fecha: m.created_time, texto: String(m.message).slice(0, 80) })),
     ];
-    if (!confirmar) return res.send(JSON.stringify({ ok: true, borraria: encontrados, siguiente: encontrados.length ? 'añade &confirmar=si a la dirección para borrarlo' : 'no encuentro nada con ese texto' }, null, 1));
+    if (!confirmar) return res.send(JSON.stringify({ ok: true, borraria: encontrados, siguiente: encontrados.length ? 'add &confirmar=si to the URL to delete it' : 'nothing found with that text' }, null, 1));
 
     for (const e of encontrados) {
       try { await api(e.id, 'DELETE'); e.estado = 'borrado'; }

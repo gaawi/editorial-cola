@@ -1,8 +1,8 @@
 {
-  "name": "Marble · redes de CreArtBox y Festival ADAR",
+  "name": "Marble · CreArtBox and Festival ADAR social media",
   "short_name": "Marble",
-  "description": "De la idea a la publicación: ideas, aprobación y publicación de las redes de CreArtBox y Festival ADAR.",
-  "lang": "es",
+  "description": "From idea to published: ideas, approval and publishing for CreArtBox and Festival ADAR social media.",
+  "lang": "en",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

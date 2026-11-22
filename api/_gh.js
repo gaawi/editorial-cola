@@ -54,7 +54,7 @@ async function gh(token, ruta, opciones = {}, repo = REPO) {
 export async function leerJSON(token, ruta, vacio) {
   const r = await gh(token, `/contents/${ruta}?ref=${RAMA}`);
   if (r.status === 404) return { datos: vacio, sha: null };
-  if (!r.ok) throw new Error(`GitHub ${r.status} al leer ${ruta}`);
+  if (!r.ok) throw new Error(`GitHub ${r.status} reading ${ruta}`);
   const j = await r.json();
   return { datos: JSON.parse(Buffer.from(j.content, 'base64').toString('utf8')), sha: j.sha };
 }
@@ -67,7 +67,7 @@ export async function escribir(token, ruta, contenido, sha, mensaje) {
     body: JSON.stringify({ message: mensaje, content: b64, branch: RAMA, ...(sha ? { sha } : {}) }),
   });
   if (r.status === 409 || r.status === 422) return 'choque';
-  if (!r.ok) throw new Error(`GitHub ${r.status} al escribir ${ruta}`);
+  if (!r.ok) throw new Error(`GitHub ${r.status} writing ${ruta}`);
   return true;
 }
 
@@ -84,7 +84,7 @@ export async function cambiarJSON(token, ruta, vacio, cambiar, mensaje) {
     const hecho = await escribir(token, ruta, JSON.stringify(datos, null, 1) + '\n', sha, mensaje);
     if (hecho === true) return datos;
   }
-  throw new Error('Otro guardado se cruzó cuatro veces seguidas. Inténtalo otra vez.');
+  throw new Error('Another save got in the way four times in a row. Please try again.');
 }
 
 export const RAW = `https://raw.githubusercontent.com/${REPO}/${RAMA}/`;
@@ -97,8 +97,8 @@ export const RAW = `https://raw.githubusercontent.com/${REPO}/${RAMA}/`;
 export async function cambiarTexto(token, repo, ruta, cambiar, mensaje) {
   for (let i = 0; i < 4; i++) {
     const r = await gh(token, `/contents/${ruta}?ref=${RAMA}`, {}, repo);
-    if (r.status === 404) throw Object.assign(new Error('No existe ' + ruta), { codigo: 404 });
-    if (!r.ok) throw new Error(`GitHub ${r.status} al leer ${ruta}`);
+    if (r.status === 404) throw Object.assign(new Error('Does not exist: ' + ruta), { codigo: 404 });
+    if (!r.ok) throw new Error(`GitHub ${r.status} reading ${ruta}`);
     const j = await r.json();
     const texto = Buffer.from(j.content, 'base64').toString('utf8');
     const nuevo = cambiar(texto);
@@ -108,7 +108,7 @@ export async function cambiarTexto(token, repo, ruta, cambiar, mensaje) {
       body: JSON.stringify({ message: mensaje, content: Buffer.from(nuevo, 'utf8').toString('base64'), branch: RAMA, sha: j.sha }),
     }, repo);
     if (w.ok) return nuevo;
-    if (w.status !== 409 && w.status !== 422) throw new Error(`GitHub ${w.status} al escribir ${ruta}`);
+    if (w.status !== 409 && w.status !== 422) throw new Error(`GitHub ${w.status} writing ${ruta}`);
   }
-  throw new Error('Otro guardado se cruzó cuatro veces seguidas. Inténtalo otra vez.');
+  throw new Error('Another save got in the way four times in a row. Please try again.');
 }

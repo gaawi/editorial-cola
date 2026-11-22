@@ -33,7 +33,7 @@ export default async function handler(req, res) {
 async function publicar(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
-  if (!(await conSesion(req))) return res.status(401).send('{"ok":false,"error":"sin sesión"}');
+  if (!(await conSesion(req))) return res.status(401).send('{"ok":false,"error":"not signed in"}');
 
   const cola = JSON.parse(await readFile(join(process.cwd(), 'datos', 'programado.json'), 'utf8'));
   const ahora = Date.now();
@@ -44,7 +44,7 @@ async function publicar(req, res) {
     for (const r of e.redes || []) {
       if (r.via !== 'meta' || r.estado !== 'en cola' || new Date(r.cuando).getTime() > ahora) continue;
       const fila = { clave, marca, red: r.red };
-      if (!token || !paginaId || !igId) { fila.estado = 'espera'; fila.aviso = 'Faltan las variables de esta marca en Vercel.'; hecho.push(fila); continue; }
+      if (!token || !paginaId || !igId) { fila.estado = 'espera'; fila.aviso = 'This brand is missing its variables in Vercel.'; hecho.push(fila); continue; }
       try {
         const previo = e.tipo === 'historia' ? null : await yaEsta(r.red, r.texto, token, igId, paginaId);
         if (previo) { fila.estado = 'ya estaba'; fila.url = previo; hecho.push(fila); continue; }
@@ -56,7 +56,7 @@ async function publicar(req, res) {
             // Si lo que falla es la invitación al colaborador, sale sin ella.
             if (!(r.colaboradores || []).length) throw err;
             res2 = await publicarInstagram({ igId, token, texto: r.texto, imagen: r.imagenes, historia: e.tipo === 'historia' });
-            fila.aviso = 'Sin colaborador: ' + err.message;
+            fila.aviso = 'Without collaborator: ' + err.message;
           }
         } else {
           res2 = await publicarFacebook({ paginaId, token, texto: r.texto, imagen: r.imagenes });
@@ -70,5 +70,5 @@ async function publicar(req, res) {
       hecho.push(fila);
     }
   }
-  res.send(JSON.stringify({ ok: hecho.every((f) => f.estado !== 'error' && f.estado !== 'espera'), publicados: hecho.length ? hecho : 'nada que toque ahora' }, null, 1));
+  res.send(JSON.stringify({ ok: hecho.every((f) => f.estado !== 'error' && f.estado !== 'espera'), publicados: hecho.length ? hecho : 'nothing due right now' }, null, 1));
 }

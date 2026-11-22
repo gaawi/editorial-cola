@@ -30,7 +30,7 @@ export default function handler(req, res) {
   }
   const clientId = process.env.GITHUB_CLIENT_ID;
   if (!clientId) {
-    res.status(500).send('Falta GITHUB_CLIENT_ID en las variables de entorno.');
+    res.status(500).send('GITHUB_CLIENT_ID is missing from the environment variables.');
     return;
   }
 

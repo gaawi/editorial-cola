@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -20,31 +20,31 @@
 <body>
 
 <!-- Deslizar hacia abajo para actualizar: la canica que rueda -->
-<div class="tirar" id="tirar" aria-hidden="true"><i></i><span>Desliza para actualizar</span></div>
+<div class="tirar" id="tirar" aria-hidden="true"><i></i><span>Pull to refresh</span></div>
 
 <header class="barra">
-  <button id="atras" class="atras" hidden aria-label="Volver">‹</button>
+  <button id="atras" class="atras" hidden aria-label="Back">‹</button>
   <img class="logo-marca" src="/iconos/icono-192.png" alt="" width="28" height="28">
   <span class="marca-palabra" aria-label="Marble">marble<i>.</i></span>
   <h1 id="titulo">Marble</h1>
-  <a id="sesion" class="sesion" href="/entrar.html" hidden>Entrar</a>
-  <button id="marca" class="marca" hidden aria-label="Cambiar de cuenta"><img id="marca-avatar" alt=""><span id="marca-nombre">CreArtBox</span></button>
+  <a id="sesion" class="sesion" href="/entrar.html" hidden>Sign in</a>
+  <button id="marca" class="marca" hidden aria-label="Switch account"><img id="marca-avatar" alt=""><span id="marca-nombre">CreArtBox</span></button>
 </header>
 
 <!-- ── Lista ─────────────────────────────────────────────────────────── -->
 <main id="lista" class="pantalla activa">
-  <p class="entrar-aviso" id="entrar-aviso" hidden>Para que los botones guarden,
-    <a href="/entrar.html">entra otra vez con GitHub</a>. Solo una vez en cada aparato.</p>
+  <p class="entrar-aviso" id="entrar-aviso" hidden>To make the buttons save,
+    <a href="/entrar.html">sign in with GitHub again</a>. Just once on each device.</p>
   <!-- La entrada: de qué cuenta se va a hablar -->
   <section id="vista-cuentas" class="cuentas">
     <div class="portada">
       <img src="/iconos/icono-512.png" alt="" width="72" height="72">
       <div>
         <p class="portada-nombre marca-palabra">marble<i>.</i></p>
-        <p class="portada-lema">De la idea a la publicación.</p>
+        <p class="portada-lema">From idea to published.</p>
       </div>
     </div>
-    <h2 class="meses-titulo">¿Qué cuenta?</h2>
+    <h2 class="meses-titulo">Which account?</h2>
     <div id="cuentas-lista" class="cuentas-lista"></div>
   </section>
   <div class="cabeza-vista" id="cabeza-vista" hidden>
@@ -54,63 +54,63 @@
   <!-- Más: lo que no cabe en la barra de abajo, como en Ajustes del iPhone -->
   <section id="vista-mas" class="mas" hidden>
     <div class="grupo">
-      <p class="grupo-titulo">Ver</p>
-      <button class="fila" data-ir="meses"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Meses</span><em>›</em></button>
-      <button class="fila" data-ir="programado"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Programado</span><em>›</em></button>
-      <button class="fila" data-ir="publicado"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Publicado</span><em>›</em></button>
+      <p class="grupo-titulo">View</p>
+      <button class="fila" data-ir="meses"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Months</span><em>›</em></button>
+      <button class="fila" data-ir="programado"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Scheduled</span><em>›</em></button>
+      <button class="fila" data-ir="publicado"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Published</span><em>›</em></button>
     </div>
     <div class="grupo">
-      <p class="grupo-titulo">Cuenta</p>
-      <button class="fila" data-ir="cuentas"><img id="mas-avatar" alt=""><span>Cambiar de cuenta</span><small id="mas-cuenta"></small><em>›</em></button>
-      <button class="fila" data-ir="actualizar"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/></svg><span>Actualizar ahora</span><small>o desliza hacia abajo</small></button>
+      <p class="grupo-titulo">Account</p>
+      <button class="fila" data-ir="cuentas"><img id="mas-avatar" alt=""><span>Switch account</span><small id="mas-cuenta"></small><em>›</em></button>
+      <button class="fila" data-ir="actualizar"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/></svg><span>Refresh now</span><small>or pull down</small></button>
     </div>
     <div class="grupo avisos" id="avisos">
-      <p class="grupo-titulo">Avisos</p>
-      <p class="avisos-texto" id="avisos-texto">Avisos en el móvil: cuando haya algo para confirmar y cuando salga cada publicación.</p>
-      <div class="avisos-botones"><button class="fl fl-si" id="avisos-activar">🔔 Activar avisos</button><button class="fl" id="avisos-probar" hidden>Probar</button></div>
+      <p class="grupo-titulo">Notifications</p>
+      <p class="avisos-texto" id="avisos-texto">Notifications on your phone: when something needs confirming and when each post goes out.</p>
+      <div class="avisos-botones"><button class="fl fl-si" id="avisos-activar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>Turn on notifications</button><button class="fl" id="avisos-probar" hidden>Test</button></div>
     </div>
     <div class="grupo">
-      <a class="fila fila-salir" id="mas-sesion" href="/entrar.html"><span>Entrar con GitHub</span></a>
+      <a class="fila fila-salir" id="mas-sesion" href="/entrar.html"><span>Sign in with GitHub</span></a>
     </div>
-    <p class="mas-pie">Marble · De la idea a la publicación.</p>
+    <p class="mas-pie">Marble · From idea to published.</p>
   </section>
   <!-- Dentro de una cuenta: los meses, con su resumen -->
   <section id="vista-meses" class="meses">
-    <p class="aviso-suave">Toca un mes para trabajar en él. Marca «Mes terminado» cuando esté todo programado.</p>
+    <p class="aviso-suave">Tap a month to work on it. Mark it "Month done" when everything is scheduled.</p>
     <div id="meses-lista" class="meses-lista"></div>
   </section>
   <div class="mes-barra" id="mes-barra" hidden>
-    <button id="mes-volver" class="mes-volver">‹ Meses</button>
-    <nav id="mes-saltos" class="mes-saltos" aria-label="Ir a un mes"></nav>
+    <button id="mes-volver" class="mes-volver">‹ Months</button>
+    <nav id="mes-saltos" class="mes-saltos" aria-label="Go to a month"></nav>
   </div>
   <!-- Las pestañas: abajo en el móvil (como una app), a la izquierda en el ordenador -->
   <nav class="pestanas" id="pestanas">
     <div class="lateral-marca"><img src="/iconos/icono-192.png" alt="" width="34" height="34"><b class="marca-palabra">marble<i>.</i></b></div>
     <button class="pest activo" data-vista="ideas"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg><span>Ideas</span></button>
-    <button class="pest" data-vista="confirmar"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></svg><span>Confirmar</span><i class="cuenta-pest" id="cuenta-confirmar"></i></button>
-    <button class="pest solo-lateral" data-vista="programado"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Programado</span></button>
-    <button class="pest solo-lateral" data-vista="publicado"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Publicado</span></button>
-    <button class="pest" data-vista="calendario"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Calendario</span></button>
+    <button class="pest" data-vista="confirmar"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></svg><span>Confirm</span><i class="cuenta-pest" id="cuenta-confirmar"></i></button>
+    <button class="pest solo-lateral" data-vista="programado"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Scheduled</span></button>
+    <button class="pest solo-lateral" data-vista="publicado"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Published</span></button>
+    <button class="pest" data-vista="calendario"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Calendar</span></button>
     <button class="pest" data-vista="blog" id="pest-blog" hidden><svg viewBox="0 0 24 24"><path d="M6 3.5h8l4 4V20a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 20z"/><path d="M14 3.5V8h4M9 12h6M9 15.5h6"/></svg><span>Blog</span></button>
-    <button class="pest solo-lateral" data-vista="meses"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Meses</span></button>
-    <button class="pest solo-movil" data-vista="mas"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18.5" cy="12" r="1.6"/></svg><span>Más</span></button>
+    <button class="pest solo-lateral" data-vista="meses"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Months</span></button>
+    <button class="pest solo-movil" data-vista="mas"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18.5" cy="12" r="1.6"/></svg><span>More</span></button>
   </nav>
 
   <div id="vista-ideas">
     <nav class="filtros" id="filtros">
-      <button class="chip activo" data-filtro="ahora">Todas las ideas</button>
-      <button class="chip" data-filtro="archivo">Archivo</button>
+      <button class="chip activo" data-filtro="ahora">All ideas</button>
+      <button class="chip" data-filtro="archivo">Archive</button>
     </nav>
     <div class="idea-nueva" id="idea-nueva">
       <form class="sugerir-form" id="idea-form">
-        <textarea rows="1" placeholder="Sugerir una idea nueva…"></textarea>
-        <button type="submit">Enviar</button>
+        <textarea rows="1" placeholder="Suggest a new idea…"></textarea>
+        <button type="submit">Send</button>
       </form>
       <ul id="ideas-pedidas"></ul>
     </div>
     <nav class="historias" id="historias"></nav>
     <div id="fichas" class="muro"></div>
-    <p id="vacio" class="vacio" hidden>Nada por aquí.</p>
+    <p id="vacio" class="vacio" hidden>Nothing here.</p>
   </div>
 
   <div id="vista-confirmar" hidden>
@@ -127,20 +127,20 @@
 
   <div id="vista-calendario" hidden>
     <div class="cal-cab">
-      <button id="cal-ant" aria-label="Mes anterior">‹</button>
+      <button id="cal-ant" aria-label="Previous month">‹</button>
       <h2 id="cal-titulo"></h2>
-      <button id="cal-sig" aria-label="Mes siguiente">›</button>
-      <button id="cal-hoy" class="cal-hoy">Hoy</button>
+      <button id="cal-sig" aria-label="Next month">›</button>
+      <button id="cal-hoy" class="cal-hoy">Today</button>
     </div>
-    <div class="cal-semana"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+    <div class="cal-semana"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
     <div id="cal-rejilla" class="cal-rejilla"></div>
     <p class="cal-leyenda">
       <span><i class="cal-marca post programado"></i>post</span>
-      <span><i class="cal-marca historia programado"></i>historia</span>
-      <span><i class="cal-marca post programado"></i>en cola</span>
-      <span><i class="cal-marca post publicado"></i>publicado</span>
-      <span><i class="cal-marca post idea"></i>idea o por confirmar</span>
-      <span><i class="cal-barra"></i>concierto</span>
+      <span><i class="cal-marca historia programado"></i>story</span>
+      <span><i class="cal-marca post programado"></i>queued</span>
+      <span><i class="cal-marca post publicado"></i>published</span>
+      <span><i class="cal-marca post idea"></i>idea or to confirm</span>
+      <span><i class="cal-barra"></i>concert</span>
     </p>
     <section id="cal-dia" class="cal-dia"></section>
   </div>
@@ -149,8 +149,8 @@
   <div id="vista-blog" hidden>
     <p class="aviso-suave" id="resumen-blog"></p>
     <nav class="filtros" id="filtros-blog">
-      <button class="chip activo" data-filtro="draft">Borradores</button>
-      <button class="chip" data-filtro="publish">Publicados</button>
+      <button class="chip activo" data-filtro="draft">Drafts</button>
+      <button class="chip" data-filtro="publish">Published</button>
     </nav>
     <div id="lista-blog" class="blog-lista"></div>
   </div>
@@ -168,7 +168,7 @@
   <nav class="redes" id="redes">
     <button class="red activo" data-red="ig">Instagram</button>
     <button class="red" data-red="fb">Facebook</button>
-    <button class="red" data-red="story">Historia</button>
+    <button class="red" data-red="story">Story</button>
   </nav>
 
   <div id="escenario" class="escenario"></div>
@@ -177,14 +177,14 @@
     <div class="estado-actual" id="estado-actual"></div>
     <div class="acciones-flujo" id="acciones-detalle"></div>
     <div class="programar" id="programar"></div>
-    <p class="aviso-suave">Los comentarios van por el chat.</p>
+    <p class="aviso-suave">Comments go through the chat.</p>
   </section>
 </main>
 
 <!-- Ficha publicada, al tocar la rejilla -->
 <div id="hoja" class="hoja" hidden>
   <div class="hoja-caja">
-    <button class="hoja-cerrar" id="hoja-cerrar" aria-label="Cerrar">×</button>
+    <button class="hoja-cerrar" id="hoja-cerrar" aria-label="Close">×</button>
     <img id="hoja-img" alt="">
     <div class="hoja-datos" id="hoja-datos"></div>
   </div>
@@ -192,7 +192,7 @@
 
 <!-- Una historia a pantalla completa, al tocar un circulito -->
 <div id="visor" class="visor" hidden>
-  <button class="visor-cerrar" id="visor-cerrar" aria-label="Cerrar">×</button>
+  <button class="visor-cerrar" id="visor-cerrar" aria-label="Close">×</button>
   <div class="visor-hueco" id="visor-hueco"></div>
   <div class="visor-pie" id="visor-pie"></div>
 </div>
@@ -200,39 +200,39 @@
 <!-- Editar un post: textos, hora y fotos -->
 <div id="editor" class="pide" hidden>
   <form class="pide-caja editor-caja" id="editor-form">
-    <h3 id="editor-titulo">Editar</h3>
+    <h3 id="editor-titulo">Edit</h3>
     <p id="editor-ayuda"></p>
     <div id="editor-campos">
-      <label class="campo" id="campo-texto">Texto<textarea id="ed-texto" rows="9"></textarea></label>
+      <label class="campo" id="campo-texto">Text<textarea id="ed-texto" rows="9"></textarea></label>
       <label class="campo" id="campo-ig">Instagram<textarea id="ed-ig" rows="7"></textarea></label>
       <label class="campo" id="campo-fb">Facebook<textarea id="ed-fb" rows="7"></textarea></label>
-      <label class="campo" id="campo-cuando">Cuándo sale (hora de Nueva York)<input type="datetime-local" id="ed-cuando"></label>
-      <div class="campo">Fotos
+      <label class="campo" id="campo-cuando">When it goes out (New York time)<input type="datetime-local" id="ed-cuando"></label>
+      <div class="campo">Photos
         <div class="ed-fotos" id="ed-fotos"></div>
-        <label class="btn btn-no ed-subir">Subir fotos<input type="file" id="ed-archivo" accept="image/*" multiple hidden></label>
-        <div class="ed-url"><input type="url" id="ed-url" placeholder="o pega la dirección de una foto (https://…)"><button type="button" class="btn btn-no" id="ed-url-ok">Añadir</button></div>
+        <label class="btn btn-no ed-subir">Upload photos<input type="file" id="ed-archivo" accept="image/*" multiple hidden></label>
+        <div class="ed-url"><input type="url" id="ed-url" placeholder="or paste a photo URL (https://…)"><button type="button" class="btn btn-no" id="ed-url-ok">Add</button></div>
         <div class="ed-modo" id="ed-modo">
-          <label><input type="radio" name="modo" value="fondo" checked> De fondo del diseño</label>
-          <label><input type="radio" name="modo" value="fotos"> Tal cual, sin diseño</label>
+          <label><input type="radio" name="modo" value="fondo" checked> As design background</label>
+          <label><input type="radio" name="modo" value="fotos"> As is, no design</label>
         </div>
         <div class="ed-modo" id="ed-recorte">
-          <label><input type="radio" name="recorte" value="entera" checked> Mantener proporción</label>
-          <label><input type="radio" name="recorte" value="cortar"> Recortar a 4:5</label>
+          <label><input type="radio" name="recorte" value="entera" checked> Keep proportions</label>
+          <label><input type="radio" name="recorte" value="cortar"> Crop to 4:5</label>
         </div>
         <div class="ed-encuadre" id="ed-encuadre">
           <div class="ed-marco" id="ed-marco"><img id="ed-marco-img" alt="" draggable="false"></div>
           <div class="ed-encuadre-mandos">
-            <small>Arrastra la foto para elegir qué parte se ve.</small>
-            <label class="ed-zoom" id="ed-zoom-campo">Acercar <input type="range" id="ed-zoom" min="1" max="2.5" step="0.05" value="1"></label>
-            <button type="button" class="btn btn-no" id="ed-centrar">Centrar</button>
+            <small>Drag the photo to choose which part shows.</small>
+            <label class="ed-zoom" id="ed-zoom-campo">Zoom <input type="range" id="ed-zoom" min="1" max="2.5" step="0.05" value="1"></label>
+            <button type="button" class="btn btn-no" id="ed-centrar">Center</button>
           </div>
         </div>
       </div>
     </div>
-    <label class="campo" id="editor-nota-campo" hidden>Qué hay que cambiar<textarea id="ed-nota" rows="4"></textarea></label>
+    <label class="campo" id="editor-nota-campo" hidden>What needs changing<textarea id="ed-nota" rows="4"></textarea></label>
     <div class="pide-botones">
-      <button type="button" class="btn btn-no" id="ed-cancelar">Cancelar</button>
-      <button type="submit" class="btn btn-si" id="ed-guardar">Guardar</button>
+      <button type="button" class="btn btn-no" id="ed-cancelar">Cancel</button>
+      <button type="submit" class="btn btn-si" id="ed-guardar">Save</button>
     </div>
   </form>
 </div>

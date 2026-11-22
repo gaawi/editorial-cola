@@ -8,18 +8,31 @@
  */
 import { crearMotor, TAMANOS } from './motor.js';
 
+// Line icons (Flaticon "uicons" style), drawn inline so they stay sharp and
+// take the text color. No emoji in the interface.
+const ICO = {
+  campana: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>',
+  doc: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h8l4 4V20a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 20z"/><path d="M14 3.5V8h4M9 12h6M9 15.5h6"/></svg>',
+  check: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  pausa: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>',
+  globo: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+  corazon: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>',
+};
+// Queue states are stored in Spanish in datos/programado.json; shown in English.
+const ESTADO_COLA = { 'en cola': 'queued', publicado: 'published', pausado: 'paused', atrasado: 'late', error: 'error' };
+
 const $ = (s) => document.querySelector(s);
 const RAMA = 'main';
 const ARCHIVO = 'aprobaciones.json';
 
 const ESTADOS = {
-  listo: 'Listo para publicar',
-  cambios: 'Hay que cambiar algo',
-  espera: 'En espera',
-  borrador: 'Borrador',
+  listo: 'Ready to publish',
+  cambios: 'Needs changes',
+  espera: 'On hold',
+  borrador: 'Draft',
   idea: 'Idea',
-  descartado: 'Descartado',
-  sin: 'Sin marcar',
+  descartado: 'Archived',
+  sin: 'Unmarked',
 };
 
 let DATOS = null;
@@ -87,13 +100,13 @@ async function abrirHistoria(clave) {
   const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === clave);
   if (!p) return;
   const v = $('#visor');
-  $('#visor-hueco').innerHTML = '<p class="vacio" style="color:#777">Dibujando…</p>';
-  $('#visor-pie').innerHTML = '<p class="aviso-suave">Los comentarios van por el chat.</p>';
+  $('#visor-hueco').innerHTML = '<p class="vacio" style="color:#777">Rendering…</p>';
+  $('#visor-pie').innerHTML = '<p class="aviso-suave">Comments go through the chat.</p>';
   v.hidden = false;
   try {
     $('#visor-hueco').replaceChildren(await pintarHistoria(p));
   } catch (e) {
-    $('#visor-hueco').innerHTML = `<p class="vacio" style="color:#777">No se pudo dibujar</p>`;
+    $('#visor-hueco').innerHTML = `<p class="vacio" style="color:#777">Couldn't render</p>`;
   }
 }
 
@@ -180,7 +193,7 @@ function pintarLista() {
     const archivada = fase === 'descartado' || caducada || (!fase && estadoDe(p).estado === 'descartado');
     return filtro === 'archivo' ? archivada : !archivada;
   });
-  $('#vacio').textContent = filtro === 'archivo' ? 'El archivo está vacío.' : 'Nada por aquí.';
+  $('#vacio').textContent = filtro === 'archivo' ? 'The archive is empty.' : 'Nothing here.';
   $('#vacio').hidden = posts.length > 0;
   $('#idea-nueva').hidden = filtro === 'archivo';
   pintarIdeasPedidas();
@@ -194,7 +207,7 @@ function pintarLista() {
     const h = document.createElement('h3');
     h.className = 'mes-separador';
     h.id = `sep-${vista}-blog`;
-    h.textContent = filtro === 'archivo' ? 'Blog descartado' : 'Ideas para el blog';
+    h.textContent = filtro === 'archivo' ? 'Archived blog posts' : 'Blog ideas';
     cont.appendChild(h);
     const caja = document.createElement('div');
     caja.className = 'blog-lista en-ideas';
@@ -225,21 +238,21 @@ function selloProgramado(p) {
   const e = (PROGRAMADO.posts || {})[p.clave];
   if (!e) return '';
   const cuando = new Date(e.redes[0].cuando);
-  const dia = cuando.toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'America/New_York' });
-  const hora = cuando.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
+  const dia = cuando.toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'America/New_York' });
+  const hora = cuando.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
   // En una línea y corto: esto va en la cabecera de la ficha, al lado del
   // concierto y de los días que quedan, y no puede comérselos.
-  const redes = e.redes.map((r) => (r.red === 'ig' ? 'IG' : 'FB') + (r.estado === 'error' ? ' falló' : r.estado === 'pausado' ? ' en pausa' : '')).join('+');
+  const redes = e.redes.map((r) => (r.red === 'ig' ? 'IG' : 'FB') + (r.estado === 'error' ? ' failed' : r.estado === 'pausado' ? ' paused' : '')).join('+');
   const salio = yaSalio(e);
-  const que = salio ? 'salió' : (e.tipo === 'historia' ? 'historia' : 'en cola');
+  const que = salio ? 'out' : (e.tipo === 'historia' ? 'story' : 'queued');
   // Si ya salió, el sello lleva al post (Instagram primero); si está en cola
   // por Metricool, a su calendario; si va por la app, a ningún sitio de fuera.
   const conUrl = e.redes.find((r) => r.red === 'ig' && r.url) || e.redes.find((r) => r.url);
   const porMetricool = e.redes.some((r) => r.via !== 'meta');
   const destino = conUrl ? conUrl.url : (porMetricool ? PROGRAMADO.calendario : '');
-  const titulo = conUrl ? 'Abre el post publicado.'
-    : porMetricool ? 'Programado en Metricool. Para cambiarlo o quitarlo hay que ir allí.'
-    : 'En la cola de la app: sale solo a su hora.';
+  const titulo = conUrl ? 'Opens the published post.'
+    : porMetricool ? 'Scheduled in Metricool. To change or remove it, go there.'
+    : 'In the app queue: goes out automatically on time.';
   const marca = `class="sello en-cola${salio ? ' salido' : ''}" title="${titulo}"`;
   return destino
     ? `<a ${marca} href="${destino}" target="_blank" rel="noopener">${que} ${dia} ${hora} ${redes} ↗</a>`
@@ -274,9 +287,9 @@ function pintarProgramado() {
   const todas = DATOS.marcas[MARCA].posts.filter((p) => grupoDe(p) === 'programado');
   const n = todas.reduce((t, p) => t + PROGRAMADO.posts[p.clave].redes.length, 0);
   $('#resumen-programado').innerHTML = todas.length
-    ? `${n} publicaciones en cola, de ${todas.length} fichas. Salen solas a su hora; para pararlas,
-       «Quitar de la cola» en cada una.`
-    : 'Nada en cola.';
+    ? `${n} posts queued, from ${todas.length} cards. They go out automatically on time; to stop one,
+       use "Remove from queue" on it.`
+    : 'Nothing in queue.';
 
   const { historias, posts: muro } = reparte(fichas);
   $('#historias-prog').hidden = !historias.length;
@@ -292,7 +305,7 @@ function enlacesPublicados(p) {
   if (!urls.length && p.publicadoEn && p.publicadoEn.url) urls.push({ red: 'ig', url: p.publicadoEn.url });
   if (!urls.length) return '';
   return `<div class="enlaces-pub">${urls.map((r) =>
-    `<a href="${r.url}" target="_blank" rel="noopener">Ver en ${r.red === 'ig' ? 'Instagram' : 'Facebook'} ↗</a>`).join('')}</div>`;
+    `<a href="${r.url}" target="_blank" rel="noopener">View on ${r.red === 'ig' ? 'Instagram' : 'Facebook'} ↗</a>`).join('')}</div>`;
 }
 
 /** Un post del muro: como se verá, con la decisión debajo. */
@@ -306,27 +319,27 @@ function tarjeta(p, opciones = {}) {
   art.dataset.clave = p.clave;
   art.innerHTML = `
     <div class="cabecera-ficha">
-      ${p.formato === 'historia' ? '<span class="sello solo-hist">Solo historia</span>' : ''}
+      ${p.formato === 'historia' ? '<span class="sello solo-hist">Story only</span>' : ''}
       ${c ? `<span class="cuando-ficha">${escapar(c.nombre)}</span>` : ''}
       ${cuandoTexto(p) && grupoDe(p) === 'idea'
         ? `<span class="cuando-ficha tenue">${cuandoTexto(p)}</span>` : ''}
       ${p.publicadoEn
-        ? `<a class="sello publicado" href="${p.publicadoEn.url}" target="_blank" rel="noopener">publicado el ${p.publicadoEn.fecha} ↗</a>`
-        : pub.length ? `<span class="sello publicado">ya en ${pub.join('+')}</span>` : ''}
+        ? `<a class="sello publicado" href="${p.publicadoEn.url}" target="_blank" rel="noopener">published ${p.publicadoEn.fecha} ↗</a>`
+        : pub.length ? `<span class="sello publicado">already on ${pub.join('+')}</span>` : ''}
       ${selloProgramado(p)}
       <span class="crece"></span>
     </div>
     ${enlacesPublicados(p)}
     <div class="hueco-ig"><div class="espera-lienzo">…</div></div>
-    ${p.falta ? `<p class="falta-material">Falta material: ${escapar(p.falta)}</p>` : ''}
+    ${p.falta ? `<p class="falta-material">Missing: ${escapar(p.falta)}</p>` : ''}
     ${e.nota && !faseDe(p) ? `<p class="nota-puesta">“${escapar(e.nota)}”</p>` : ''}
     ${!faseDe(p) && p.ventana && HOY > p.ventana.hasta && grupoDe(p) === 'idea'
-      ? `<p class="porque archivo-nota"><b>Archivada sola:</b> su momento era hasta el ${p.ventana.hasta.split('-').reverse().slice(0, 2).join('/')} y ya pasó.</p>`
-      : p.porque && grupoDe(p) !== 'publicado' ? `<p class="porque"><b>Por qué:</b> ${escapar(p.porque)}</p>` : ''}
+      ? `<p class="porque archivo-nota"><b>Archived automatically:</b> its window ran until ${p.ventana.hasta.split('-').slice(1).join('/')} and has passed.</p>`
+      : p.porque && grupoDe(p) !== 'publicado' ? `<p class="porque"><b>Why:</b> ${escapar(p.porque)}</p>` : ''}
     ${articuloDe(p)}
     <div class="acciones-flujo">${accionesFlujo(p)}</div>
     ${cajaSugerir(p)}
-    ${grupoDe(p) === 'idea' ? '' : '<button class="abrir">Ver en Facebook y como historia ›</button>'}`;
+    ${grupoDe(p) === 'idea' ? '' : '<button class="abrir">See on Facebook and as a story ›</button>'}`;
 
   art.querySelector('.abrir')?.addEventListener('click', () => abrir(p));
   return art;
@@ -349,7 +362,7 @@ function observarLienzos() {
       try {
         hueco.replaceChildren(await (p.formato === 'historia' ? pintarHistoria(p) : pintarInstagram(p)));
       } catch (err) {
-        hueco.innerHTML = `<div class="espera-lienzo">No se pudo dibujar</div>`;
+        hueco.innerHTML = `<div class="espera-lienzo">Couldn't render</div>`;
       }
     }
   }, { rootMargin: '600px 0px' });
@@ -388,10 +401,10 @@ function dormido(p) {
 function cuandoTexto(p) {
   const v = p.ventana;
   if (!v) return '';
-  if (HOY < v.desde) return `su momento empieza el ${v.desde}`;
-  if (HOY > v.hasta) return `se pasó su momento el ${v.hasta}`;
+  if (HOY < v.desde) return `its window opens ${v.desde}`;
+  if (HOY > v.hasta) return `its window closed ${v.hasta}`;
   const quedan = Math.round((new Date(v.hasta + 'T12:00:00Z') - new Date(HOY + 'T12:00:00Z')) / DIA);
-  return quedan <= 0 ? 'último día' : `quedan ${quedan} día${quedan === 1 ? '' : 's'}`;
+  return quedan <= 0 ? 'last day' : `${quedan} day${quedan === 1 ? '' : 's'} left`;
 }
 
 function conciertoDe(id) {
@@ -559,7 +572,7 @@ function conColaboradores(p) {
   const c = colaboradoresDe(p);
   if (!c.length) return CUENTAS.ig;
   const todos = [CUENTAS.ig, ...c.map((x) => `<b class="ig-colab">${escapar(x)}</b>`)];
-  return todos.slice(0, -1).join(', ') + ' <span class="ig-y">y</span> ' + todos.at(-1);
+  return todos.slice(0, -1).join(', ') + ' <span class="ig-y">and</span> ' + todos.at(-1);
 }
 
 async function pintarInstagram(p) {
@@ -575,12 +588,12 @@ async function pintarInstagram(p) {
     </div>
     <div class="ig-carrete"><div class="tira"></div>${slides.length > 1 ? `
       <span class="ig-cuenta">1/${slides.length}</span>
-      <button class="paso atras" aria-label="Anterior">‹</button>
-      <button class="paso alante" aria-label="Siguiente">›</button>` : ''}</div>
+      <button class="paso atras" aria-label="Previous">‹</button>
+      <button class="paso alante" aria-label="Next">›</button>` : ''}</div>
     ${slides.length > 1 ? `<div class="ig-puntos">${slides.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}
     <div class="ig-acciones">${ICONOS.corazon}${ICONOS.comentar}${ICONOS.enviar}<span class="guardar">${ICONOS.guardar}</span></div>
-    <div class="ig-pie"><b>${CUENTAS.ig}</b>${pintarPie(p.pies.ig.texto, 2, 'mas', 'más', false)}</div>
-    <div class="ig-hora">Hace un momento</div>`;
+    <div class="ig-pie"><b>${CUENTAS.ig}</b>${pintarPie(p.pies.ig.texto, 2, 'mas', 'more', false)}</div>
+    <div class="ig-hora">Just now</div>`;
 
   const tira = caja.querySelector('.tira');
   for (let i = 0; i < slides.length; i++) {
@@ -638,14 +651,14 @@ async function pintarFacebook(p) {
       <img class="fb-av" src="${CUENTAS.avatar}" alt="">
       <span>
         <div class="fb-nombre">${CUENTAS.fb}</div>
-        <div class="fb-meta">Ahora · 🌐</div>
+        <div class="fb-meta">Just now · ${ICO.globo}</div>
       </span>
     </div>
-    <div class="fb-texto">${pintarPie(p.pies.fb.texto, 5, 'mas', 'Ver más', true)}</div>
+    <div class="fb-texto">${pintarPie(p.pies.fb.texto, 5, 'mas', 'See more', true)}</div>
     <div class="fb-acciones">
-      <span>${ICONOS.pulgar} Me gusta</span>
-      <span>${ICONOS.comentar} Comentar</span>
-      <span>${ICONOS.compartir} Compartir</span>
+      <span>${ICONOS.pulgar} Like</span>
+      <span>${ICONOS.comentar} Comment</span>
+      <span>${ICONOS.compartir} Share</span>
     </div>`;
   const hechaFb = imagenHecha(p, 'fb');
   caja.insertBefore(
@@ -664,9 +677,9 @@ async function pintarHistoria(p) {
     <div class="quien">
       <img src="${CUENTAS.avatar}" alt="">
       <span>${CUENTAS.ig}</span>
-      <small>ahora</small>
+      <small>now</small>
     </div>
-    <div class="responder"><span>Enviar mensaje</span>${ICONOS.corazon}${ICONOS.enviar}</div>`;
+    <div class="responder"><span>Send message</span>${ICONOS.corazon}${ICONOS.enviar}</div>`;
   const hechaSt = imagenHecha(p, 'story');
   caja.insertBefore(
     hechaSt ? fotoSuelta(hechaSt)
@@ -689,10 +702,10 @@ async function pintarTodas() {
   const esc = $('#escenario');
   esc.classList.add('triple');
   const yo = actual;
-  const cols = [['ig', 'Instagram'], ['fb', 'Facebook'], ['story', 'Historia']].map(([red, nombre]) => {
+  const cols = [['ig', 'Instagram'], ['fb', 'Facebook'], ['story', 'Story']].map(([red, nombre]) => {
     const col = document.createElement('div');
     col.className = `col-previa col-${red}`;
-    col.innerHTML = `<h4>${nombre}</h4><div class="hueco-previa"><p class="vacio">Dibujando…</p></div>`;
+    col.innerHTML = `<h4>${nombre}</h4><div class="hueco-previa"><p class="vacio">Rendering…</p></div>`;
     return [red, col];
   });
   esc.replaceChildren(...cols.map(([, c]) => c));
@@ -703,7 +716,7 @@ async function pintarTodas() {
     try {
       hueco.replaceChildren(await PINTORES[red](yo));
     } catch (e) {
-      hueco.innerHTML = `<p class="vacio">No se pudo dibujar: ${escapar(e.message)}</p>`;
+      hueco.innerHTML = `<p class="vacio">Couldn't render: ${escapar(e.message)}</p>`;
     }
     col.insertAdjacentHTML('beforeend', aprobarRed(yo, red));
   }
@@ -711,22 +724,22 @@ async function pintarTodas() {
 
 /** Debajo de cada vista: aprobar esa red, o cuándo sale si ya está aprobada. */
 function aprobarRed(p, red) {
-  const NOMBRE = { ig: 'Instagram', fb: 'Facebook', story: 'la historia' };
+  const NOMBRE = { ig: 'Instagram', fb: 'Facebook', story: 'the story' };
   const esDeRed = (k, r) => (red === 'story' ? k.includes('#') || p.formato === 'historia' : !k.includes('#') && r.red === red);
   const enCola = Object.entries(PROGRAMADO.posts || {})
     .filter(([k]) => k === p.clave || k.startsWith(p.clave + '#'))
     .flatMap(([k, e]) => e.redes.filter((r) => esDeRed(k, r)));
   if (enCola.length) {
     const r = enCola[0];
-    if (r.estado === 'pausado') return `<p class="fl-red-pausa">⏸ En pausa: ${escapar(r.pausa || 'lo paré en el repaso, te lo pregunto en el chat')}</p>`;
-    const txt = r.estado === 'publicado' ? '✓ Publicado' : `✓ Aprobado · sale ${horaNY(r.cuando)}`;
+    if (r.estado === 'pausado') return `<p class="fl-red-pausa">${ICO.pausa}Paused: ${escapar(r.pausa || 'I paused it during the check, I will ask you in the chat')}</p>`;
+    const txt = r.estado === 'publicado' ? `${ICO.check}Published` : `${ICO.check}Approved · goes out ${horaNY(r.cuando)}`;
     return `<p class="fl-red-ok">${txt}</p>`;
   }
   if (faseDe(p) !== 'preparado') return '';
   const prep = Object.entries(flujoDe(p).preparado || {}).flatMap(([k, e]) => e.redes.filter((r) => esDeRed(k, r)));
-  if (!prep.length) return '<p class="fl-red-no">No se publica aquí.</p>';
-  return `<div class="fl-red"><span>Sale ${horaNY(prep[0].cuando)}</span>
-    <button class="fl fl-si" data-accion="confirmar" data-red="${red}" data-clave="${p.clave}">Aprobar ${NOMBRE[red]}</button></div>`;
+  if (!prep.length) return '<p class="fl-red-no">Not posting here.</p>';
+  return `<div class="fl-red"><span>Goes out ${horaNY(prep[0].cuando)}</span>
+    <button class="fl fl-si" data-accion="confirmar" data-red="${red}" data-clave="${p.clave}">Approve ${NOMBRE[red]}</button></div>`;
 }
 
 async function pintarPrevia(red) {
@@ -734,13 +747,13 @@ async function pintarPrevia(red) {
   return pintarTodas();
   const esc = $('#escenario');
   esc.classList.remove('triple');
-  esc.innerHTML = '<p class="vacio">Dibujando…</p>';
+  esc.innerHTML = '<p class="vacio">Rendering…</p>';
   try {
     const nodo = await PINTORES[red](actual);
     esc.innerHTML = '';
     esc.appendChild(nodo);
   } catch (e) {
-    esc.innerHTML = `<p class="vacio">No se pudo dibujar: ${escapar(e.message)}</p>`;
+    esc.innerHTML = `<p class="vacio">Couldn't render: ${escapar(e.message)}</p>`;
   }
 }
 
@@ -784,12 +797,12 @@ function pintarProgramar() {
   const e = (PROGRAMADO.posts || {})[actual.clave];
   if (!e) { caja.hidden = true; caja.innerHTML = ''; return; }
   caja.hidden = false;
-  caja.innerHTML = `<h3>${e.tipo === 'historia' ? 'Historia' : 'Post'} en la cola</h3>` + e.redes.map((r) => {
-    const cuando = new Date(r.cuando).toLocaleString('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
-    const est = r.estado || (new Date(r.cuando) < new Date() ? 'salió' : 'en cola');
-    const mal = est === 'error' || est === 'atrasado';
-    return `<div class="linea-red">${RED_LARGA[r.red]} · ${cuando} (NY) · <b class="${mal ? 'mal' : ''}">${est}</b> · ${r.via === 'meta' ? 'vía app' : 'vía Metricool'}`
-      + (r.url ? ` · <a href="${r.url}" target="_blank" rel="noopener">ver ↗</a>` : '')
+  caja.innerHTML = `<h3>${e.tipo === 'historia' ? 'Story' : 'Post'} in queue</h3>` + e.redes.map((r) => {
+    const cuando = new Date(r.cuando).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
+    const est = ESTADO_COLA[r.estado] || r.estado || (new Date(r.cuando) < new Date() ? 'out' : 'queued');
+    const mal = r.estado === 'error' || r.estado === 'atrasado';
+    return `<div class="linea-red">${RED_LARGA[r.red]} · ${cuando} (NY) · <b class="${mal ? 'mal' : ''}">${est}</b> · ${r.via === 'meta' ? 'via app' : 'via Metricool'}`
+      + (r.url ? ` · <a href="${r.url}" target="_blank" rel="noopener">view ↗</a>` : '')
       + (r.error ? `<br><span class="mal">${escapar(r.error)}</span>` : '') + '</div>';
   }).join('');
 }
@@ -797,14 +810,14 @@ function pintarProgramar() {
 function pintarEstadoActual() {
   const e = estadoDe(actual);
   const d = $('#estado-actual');
-  const FASES = { aprobado: 'Aprobado, en preparación', preparado: 'Preparado, falta confirmar', confirmado: 'Confirmado',
-    descartado: 'En el archivo', cambios: 'Cambios pedidos', luego: 'Para más adelante' };
+  const FASES = { aprobado: 'Approved, being prepared', preparado: 'Ready, needs confirming', confirmado: 'Confirmed',
+    descartado: 'In the archive', cambios: 'Changes requested', luego: 'For later' };
   const fase = faseDe(actual);
   const porque = actual.porque ? `<p class="porque">${escapar(actual.porque)}</p>` : '';
-  if (fase) { d.innerHTML = `Ahora: <b>${FASES[fase]}</b>${porque}`; $('#acciones-detalle').innerHTML = accionesFlujo(actual) + cajaSugerir(actual); return; }
-  d.innerHTML = `Ahora: <b>${ESTADOS[e.estado] || e.estado}</b>` +
+  if (fase) { d.innerHTML = `Status: <b>${FASES[fase]}</b>${porque}`; $('#acciones-detalle').innerHTML = accionesFlujo(actual) + cajaSugerir(actual); return; }
+  d.innerHTML = `Status: <b>${ESTADOS[e.estado] || e.estado}</b>` +
     (e.nota ? ` · ${escapar(e.nota)}` : '') +
-    (e.mio ? '' : ' <span style="color:var(--tenue)">(del panel viejo)</span>') + porque;
+    (e.mio ? '' : ' <span style="color:var(--tenue)">(from the old panel)</span>') + porque;
   $('#acciones-detalle').innerHTML = accionesFlujo(actual) + cajaSugerir(actual);
 }
 
@@ -829,8 +842,8 @@ async function pintarPublicado() {
   const p = HISTORICO.posts || [];
   const conFoto = p.filter((r) => r[1]);
   $('#resumen-publicado').textContent =
-    `${p.length} publicaciones en @${HISTORICO.cuenta || ''}, de ${p[p.length - 1]?.[0] || ''} a ${p[0]?.[0] || ''}. ` +
-    'Para no repetirse: toca una y verás el texto, los números y el enlace.';
+    `${p.length} posts on @${HISTORICO.cuenta || ''}, from ${p[p.length - 1]?.[0] || ''} to ${p[0]?.[0] || ''}. ` +
+    'To avoid repeating yourself: tap one to see the text, the numbers and the link.';
   $('#rejilla').innerHTML = conFoto
     .map((r) => {
       const [fecha, url, , likes, alcance] = r;
@@ -838,7 +851,7 @@ async function pintarPublicado() {
       return `<button data-url="${url}">
         <img src="datos/miniaturas/${fecha.replace(/-/g, '')}-${code}.jpg" alt="" loading="lazy"
              onerror="this.style.visibility='hidden'">
-        <span class="num">♥ ${likes} · ${alcance}</span>
+        <span class="num">${ICO.corazon}${likes} · ${alcance}</span>
       </button>`;
     })
     .join('');
@@ -854,11 +867,11 @@ function abrirPublicada(url) {
     <div class="cuando">${fecha} · ${tipo}</div>
     <div class="tema">${escapar(tema)}</div>
     <div class="cifras">
-      <span><b>${likes}</b><span>me gusta</span></span>
-      <span><b>${alcance}</b><span>alcance</span></span>
-      <span><b>${vistas || '—'}</b><span>vistas</span></span>
+      <span><b>${likes}</b><span>likes</span></span>
+      <span><b>${alcance}</b><span>reach</span></span>
+      <span><b>${vistas || '—'}</b><span>views</span></span>
     </div>
-    <a href="${enlace}" target="_blank" rel="noopener">Abrir en Instagram ↗</a>`;
+    <a href="${enlace}" target="_blank" rel="noopener">Open in Instagram ↗</a>`;
   $('#hoja').hidden = false;
 }
 
@@ -875,7 +888,7 @@ function pintarSesion() {
   const b = $('#sesion');
   b.hidden = false;
   const fila = $('#mas-sesion');
-  fila.querySelector('span').textContent = PUEDE_GUARDAR ? `Salir${LOGIN ? ` (@${LOGIN})` : ''}` : 'Entrar con GitHub';
+  fila.querySelector('span').textContent = PUEDE_GUARDAR ? `Sign out${LOGIN ? ` (@${LOGIN})` : ''}` : 'Sign in with GitHub';
   fila.href = PUEDE_GUARDAR ? '/api/auth?salir=1' : '/entrar.html';
   fila.classList.toggle('peligro', PUEDE_GUARDAR);
   if (PUEDE_GUARDAR) {
@@ -884,20 +897,20 @@ function pintarSesion() {
     b.classList.add('avatar');
     b.href = '/api/auth?salir=1';
     b.classList.remove('sin');
-    b.title = 'Salir de este aparato';
+    b.title = 'Sign out on this device';
   } else {
-    b.textContent = 'Entrar';
+    b.textContent = 'Sign in';
     b.href = '/entrar.html';
     b.classList.add('sin');
     b.classList.remove('avatar');
-    b.title = 'Entrar con GitHub para poder aprobar';
+    b.title = 'Sign in with GitHub to approve';
   }
 }
 $('#mas-sesion').addEventListener('click', (e) => {
-  if (PUEDE_GUARDAR && !confirm(`¿Salir de Marble en este aparato${LOGIN ? ` (@${LOGIN})` : ''}?`)) e.preventDefault();
+  if (PUEDE_GUARDAR && !confirm(`Sign out of Marble on this device${LOGIN ? ` (@${LOGIN})` : ''}?`)) e.preventDefault();
 });
 $('#sesion').addEventListener('click', (e) => {
-  if (PUEDE_GUARDAR && !confirm(`¿Salir de Marble en este aparato${LOGIN ? ` (@${LOGIN})` : ''}?`)) e.preventDefault();
+  if (PUEDE_GUARDAR && !confirm(`Sign out of Marble on this device${LOGIN ? ` (@${LOGIN})` : ''}?`)) e.preventDefault();
 });
 
 async function cargarFlujo() {
@@ -958,8 +971,8 @@ function aplicarEdiciones() {
 
 function horaNY(iso, conDia = true) {
   const d = new Date(iso);
-  const dia = d.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'America/New_York' });
-  const hora = d.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
+  const dia = d.toLocaleDateString('en-US', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'America/New_York' });
+  const hora = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
   return conDia ? `${dia}, ${hora}` : hora;
 }
 
@@ -970,25 +983,25 @@ function accionesFlujo(p) {
   const b = (accion, texto, clase = '') => `<button class="fl ${clase}" data-accion="${accion}" data-clave="${p.clave}">${texto}</button>`;
   const enCola = (PROGRAMADO.posts || {})[p.clave];
   if (enCola && enCola.redes.every((r) => r.estado === 'en cola')) {
-    return `<div class="fl-fila"><span class="fl-dice">Confirmado · sale ${horaNY(enCola.redes[0].cuando)}</span>${b('quitar', 'Quitar de la cola', 'fl-suave')}</div>`;
+    return `<div class="fl-fila"><span class="fl-dice">Confirmed · goes out ${horaNY(enCola.redes[0].cuando)}</span>${b('quitar', 'Remove from queue', 'fl-suave')}</div>`;
   }
   if (enCola) return '';
   switch (f.fase) {
     case 'aprobado':
-      return `<div class="fl-fila"><span class="fl-dice">✓ Aprobado · lo estoy preparando</span>${b('editar', 'Editar')}${b('recuperar', 'Deshacer', 'fl-suave')}</div>`;
+      return `<div class="fl-fila"><span class="fl-dice">${ICO.check}Approved · I'm preparing it</span>${b('editar', 'Edit')}${b('recuperar', 'Undo', 'fl-suave')}</div>`;
     case 'preparado': {
       const prep = Object.values(f.preparado || {}).flatMap((e) => e.redes.map((r) => ({ ...r, tipo: e.tipo })));
       const primera = prep.map((r) => r.cuando).sort()[0];
-      const donde = [...new Set(prep.map((r) => r.tipo === 'historia' ? 'historia' : r.red === 'ig' ? 'Instagram' : 'Facebook'))].join(' + ');
-      return `<div class="fl-prep">Sale <b>${primera ? horaNY(primera) : '—'}</b> · ${donde}</div>
-        <div class="fl-fila">${b('confirmar', 'Aprobar todo', 'fl-si')}${b('editar', 'Editar')}${b('cambios', 'Cambios')}</div>`;
+      const donde = [...new Set(prep.map((r) => r.tipo === 'historia' ? 'story' : r.red === 'ig' ? 'Instagram' : 'Facebook'))].join(' + ');
+      return `<div class="fl-prep">Goes out <b>${primera ? horaNY(primera) : '—'}</b> · ${donde}</div>
+        <div class="fl-fila">${b('confirmar', 'Approve all', 'fl-si')}${b('editar', 'Edit')}${b('cambios', 'Changes')}</div>`;
     }
     case 'descartado':
-      return `<div class="fl-fila"><span class="fl-dice">En el archivo</span>${b('recuperar', 'Recuperar', 'fl-suave')}</div>`;
+      return `<div class="fl-fila"><span class="fl-dice">In the archive</span>${b('recuperar', 'Restore', 'fl-suave')}</div>`;
     default:
-      return `${f.fase === 'cambios' && f.nota ? `<p class="fl-nota">Cambios pedidos: “${escapar(f.nota)}”</p>` : ''}
-        <div class="fl-fila">${b('aprobar', 'Aprobar', 'fl-si')}${b('editar', 'Editar')}</div>
-        <div class="fl-fila fl-segunda">${b('descartar', 'Descartar (al archivo)', 'fl-suave')}</div>`;
+      return `${f.fase === 'cambios' && f.nota ? `<p class="fl-nota">Changes requested: “${escapar(f.nota)}”</p>` : ''}
+        <div class="fl-fila">${b('aprobar', 'Approve', 'fl-si')}${b('editar', 'Edit')}</div>
+        <div class="fl-fila fl-segunda">${b('descartar', 'Archive', 'fl-suave')}</div>`;
   }
 }
 
@@ -997,11 +1010,11 @@ function cajaSugerir(p) {
   if (grupoDe(p) === 'publicado') return '';
   const sug = flujoDe(p).sugerencias || [];
   const lista = sug.map((x) => `<li class="${x.hecha ? 'hecha' : ''}"><span class="tarea">${escapar(x.texto)}</span>${x.hecha
-    ? `<small>${x.respuesta ? escapar(/^hech/i.test(x.respuesta) ? x.respuesta : 'Hecho: ' + x.respuesta) : 'Hecho'}</small>` : '<small>Pendiente: lo hago en el próximo repaso</small>'}</li>`).join('');
+    ? `<small>${x.respuesta ? escapar(/^hech/i.test(x.respuesta) ? x.respuesta : 'Done: ' + x.respuesta) : 'Done'}</small>` : '<small>Pending: I will do it in the next check</small>'}</li>`).join('');
   return `<div class="sugerir">${lista ? `<ul>${lista}</ul>` : ''}
     <form class="sugerir-form" data-clave="${p.clave}">
-      <textarea rows="1" placeholder="Sugerir un cambio…"></textarea>
-      <button type="submit">Enviar</button>
+      <textarea rows="1" placeholder="Suggest a change…"></textarea>
+      <button type="submit">Send</button>
     </form></div>`;
 }
 
@@ -1010,20 +1023,20 @@ function pintarIdeasPedidas() {
   const deEsta = (FLUJO.ideas || []).filter((x) => (x.marca || 'creartbox') === MARCA);
   const pend = deEsta.filter((x) => !x.hecha);
   const hechas = deEsta.filter((x) => x.hecha).slice(-2);
-  $('#ideas-pedidas').innerHTML = [...pend.map((x) => `<li>${escapar(x.texto)}<small>Pendiente: la preparo en el próximo repaso</small></li>`),
-    ...hechas.map((x) => `<li class="hecha"><span class="tarea">${escapar(x.texto)}</span><small>${x.respuesta ? escapar(/^hech/i.test(x.respuesta) ? x.respuesta : 'Hecha: ' + x.respuesta) : 'Hecha'}</small></li>`)].join('');
+  $('#ideas-pedidas').innerHTML = [...pend.map((x) => `<li>${escapar(x.texto)}<small>Pending: I will prepare it in the next check</small></li>`),
+    ...hechas.map((x) => `<li class="hecha"><span class="tarea">${escapar(x.texto)}</span><small>${x.respuesta ? escapar(/^hech/i.test(x.respuesta) ? x.respuesta : 'Done: ' + x.respuesta) : 'Done'}</small></li>`)].join('');
 }
 
 $('#idea-form').addEventListener('submit', async (ev) => {
   ev.preventDefault();
   ev.stopPropagation();
-  if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); setTimeout(() => { location.href = '/entrar.html'; }, 900); return; }
+  if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); setTimeout(() => { location.href = '/entrar.html'; }, 900); return; }
   const t = ev.target.querySelector('textarea');
   const texto = t.value.trim();
-  if (!texto) { aviso('Escribe primero la idea.'); t.focus(); return; }
+  if (!texto) { aviso('Write the idea first.'); t.focus(); return; }
   const b = ev.target.querySelector('button');
   if (b.disabled) return;
-  b.disabled = true; b.textContent = 'Enviando…';
+  b.disabled = true; b.textContent = 'Sending…';
   try {
     const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin',
       headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accion: 'idea', nota: texto, marca: MARCA }) });
@@ -1033,9 +1046,9 @@ $('#idea-form').addEventListener('submit', async (ev) => {
     t.value = ''; t.style.height = '';
     pintarIdeasPedidas();
     t.blur();
-    aviso('Apuntada. La preparo en el próximo «check».');
+    aviso(`Noted. I'll prepare it in the next "check".`);
   } catch (e) { aviso(e.message, true); }
-  b.disabled = false; b.textContent = 'Enviar';
+  b.disabled = false; b.textContent = 'Send';
 });
 
 // En el iPhone, tocar «Enviar» con el teclado abierto cierra primero el
@@ -1053,20 +1066,20 @@ document.addEventListener('submit', async (ev) => {
   if (!f) return;
   ev.preventDefault();
   if (f.dataset.enviando) return;
-  if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); setTimeout(() => { location.href = '/entrar.html'; }, 900); return; }
+  if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); setTimeout(() => { location.href = '/entrar.html'; }, 900); return; }
   const t = f.querySelector('textarea');
   const texto = t.value.trim();
-  if (!texto) { aviso('Escribe primero qué cambiar.'); t.focus(); return; }
+  if (!texto) { aviso('Write what to change first.'); t.focus(); return; }
   const b = f.querySelector('button');
-  f.dataset.enviando = '1'; b.disabled = true; b.textContent = 'Enviando…';
+  f.dataset.enviando = '1'; b.disabled = true; b.textContent = 'Sending…';
   try {
     await llamarFlujo(f.dataset.clave, 'sugerir', { nota: texto });
     t.blur();
-    aviso('Apuntado. Lo cambio en el próximo «check».');
+    aviso(`Noted. I'll change it in the next "check".`);
     repintar();
   } catch (e) {
     aviso(e.message, true);
-    delete f.dataset.enviando; b.disabled = false; b.textContent = 'Enviar';
+    delete f.dataset.enviando; b.disabled = false; b.textContent = 'Send';
   }
 });
 // El campo crece con lo que se escribe.
@@ -1097,17 +1110,17 @@ async function llamarFlujo(clave, accion, extra = {}) {
 }
 
 const DICHO = {
-  aprobar: 'Aprobado. Lo preparo y te aviso para confirmar.',
-  descartar: 'Al archivo. Lo tienes en Ideas › Archivo.',
-  luego: 'Aparcado. Lo tienes en Ideas › Más adelante.',
-  recuperar: 'Vuelve a ideas.',
-  cambios: 'Apuntado. Lo cambio y vuelve a confirmar.',
-  editar: 'Guardado.',
-  confirmar: 'Aprobado: sale solo a su hora.',
-  blogAprobar: 'Aprobado para el blog. Lo publico en la web.',
-  blogDescartar: 'Fuera del blog. Lo tienes en Ideas › Archivo.',
-  blogRecuperar: 'Vuelve a las ideas del blog.',
-  quitar: 'Fuera de la cola. Vuelve a «para confirmar».',
+  aprobar: `Approved. I'll prepare it and let you know when it's ready to confirm.`,
+  descartar: 'Archived. You can find it in Ideas › Archive.',
+  luego: 'Parked. You can find it in Ideas › Later.',
+  recuperar: 'Back in ideas.',
+  cambios: `Noted. I'll make the change and send it back to confirm.`,
+  editar: 'Saved.',
+  confirmar: 'Approved: goes out automatically on time.',
+  blogAprobar: `Approved for blog. I'll publish it on the website.`,
+  blogDescartar: 'Off the blog. You can find it in Ideas › Archive.',
+  blogRecuperar: 'Back in blog ideas.',
+  quitar: 'Removed from queue. Back in "To confirm".',
 };
 
 /** Repinta lo que se esté viendo, sin perder el sitio. */
@@ -1136,7 +1149,7 @@ document.addEventListener('click', (ev) => {
   ev.preventDefault();
   const { clave, accion, red } = b.dataset;
   if (!PUEDE_GUARDAR) {
-    aviso('Primero entra con GitHub (una vez en este aparato).');
+    aviso('Sign in with GitHub first (once on this device).');
     setTimeout(() => { location.href = '/entrar.html'; }, 900);
     return;
   }
@@ -1161,8 +1174,8 @@ function pintarConfirmar() {
   });
   const listos = fichas.filter((p) => faseDe(p) === 'preparado').length;
   $('#resumen-confirmar').textContent = fichas.length
-    ? `${listos === 1 ? '1 listo' : `${listos} listos`} para confirmar${fichas.length - listos ? ` · ${fichas.length - listos === 1 ? '1 aprobado' : `${fichas.length - listos} aprobados`} que estoy preparando` : ''}. Nada sale sin «Confirmar publicación».`
-    : 'Nada pendiente. Lo que apruebes en Ideas aparecerá aquí cuando esté preparado.';
+    ? `${listos === 1 ? '1 ready' : `${listos} ready`} to confirm${fichas.length - listos ? ` · ${fichas.length - listos === 1 ? '1 approved' : `${fichas.length - listos} approved`} that I'm preparing` : ''}. Nothing goes out until you approve it.`
+    : 'Nothing pending. What you approve in Ideas will show up here once it is ready.';
   $('#historias-conf').hidden = true;
   pintarPorMeses(cont, fichas);
   observarLienzos();
@@ -1181,8 +1194,8 @@ function aLocalNY(iso) {
 
 function pintarFotosEditor() {
   $('#ed-fotos').innerHTML = fotosEditor.length
-    ? fotosEditor.map((u, i) => `<span class="ed-foto"><img src="${u}" alt=""><button type="button" data-quitar="${i}" aria-label="Quitar">×</button></span>`).join('')
-    : '<small>Sin fotos subidas: se usa la de la ficha.</small>';
+    ? fotosEditor.map((u, i) => `<span class="ed-foto"><img src="${u}" alt=""><button type="button" data-quitar="${i}" aria-label="Remove">×</button></span>`).join('')
+    : '<small>No photos uploaded: the card photo is used.</small>';
   $('#ed-modo').hidden = !fotosEditor.length;
   pintarEncuadre();
 }
@@ -1239,12 +1252,12 @@ function abrirEditor(p, modo) {
   const f = flujoDe(p);
   const ed = f.edicion || {};
   const notaSolo = modo === 'cambios';
-  $('#editor-titulo').textContent = notaSolo ? 'Pedir cambios' : f.fase === 'preparado' ? 'Editar lo preparado' : 'Editar la idea';
+  $('#editor-titulo').textContent = notaSolo ? 'Request changes' : f.fase === 'preparado' ? 'Edit the prepared post' : 'Edit the idea';
   $('#editor-ayuda').textContent = notaSolo
-    ? 'Dime qué cambiar. Lo arreglo y vuelve a «para confirmar».'
+    ? `Tell me what to change. I'll fix it and it goes back to "To confirm".`
     : f.fase === 'preparado'
-      ? 'Ya está preparado: el texto de cada red y la hora se cambian al momento. Una foto nueva hace que lo vuelva a montar.'
-      : 'Es la idea: un solo texto. Cuando la apruebes, la adapto yo a Instagram, Facebook y lo que haga falta.';
+      ? 'Already prepared: the text for each network and the time change right away. A new photo means I rebuild it.'
+      : 'This is the idea: a single text. Once you approve it, I adapt it for Instagram, Facebook and whatever else is needed.';
   $('#editor-campos').hidden = notaSolo;
   $('#editor-nota-campo').hidden = !notaSolo;
   $('#ed-nota').value = notaSolo ? (f.nota || '') : '';
@@ -1307,22 +1320,22 @@ async function subirArchivo(a) {
 // aquí se reduce y se pasa a JPEG, y se sube como cualquier otra.
 $('#ed-url-ok').addEventListener('click', async () => {
   const url = $('#ed-url').value.trim();
-  if (!/^https:\/\//.test(url)) return aviso('Pega una dirección que empiece por https://', true);
-  aviso('Trayendo la foto…');
+  if (!/^https:\/\//.test(url)) return aviso('Paste a URL that starts with https://', true);
+  aviso('Fetching the photo…');
   try {
     const r = await fetch('/api/traer?url=' + encodeURIComponent(url), { credentials: 'same-origin' });
     if (!r.ok) { const j = await r.json().catch(() => ({})); throw new Error(j.error || `Error ${r.status}`); }
     await subirArchivo(await r.blob());
     $('#ed-url').value = '';
-    aviso('Foto añadida. Falta darle a Guardar.');
-  } catch (err) { aviso(`No se pudo: ${err.message}`, true); }
+    aviso('Photo added. Now tap Save.');
+  } catch (err) { aviso(`Failed: ${err.message}`, true); }
 });
 
 $('#ed-archivo').addEventListener('change', async (e) => {
   const archivos = [...e.target.files];
   e.target.value = '';
   for (const a of archivos) {
-    aviso(`Subiendo ${a.name}…`);
+    aviso(`Uploading ${a.name}…`);
     try {
       const r = await fetch('/api/subir', { method: 'POST', credentials: 'same-origin',
         headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ datos: await aJPEG(a) }) });
@@ -1330,9 +1343,9 @@ $('#ed-archivo').addEventListener('change', async (e) => {
       if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
       fotosEditor.push(j.url);
       pintarFotosEditor();
-    } catch (err) { aviso(`No se pudo subir: ${err.message}`, true); return; }
+    } catch (err) { aviso(`Upload failed: ${err.message}`, true); return; }
   }
-  aviso('Fotos subidas. Falta darle a Guardar.');
+  aviso('Photos uploaded. Now tap Save.');
 });
 
 $('#editor-form').addEventListener('submit', async (e) => {
@@ -1469,7 +1482,7 @@ function articuloDe(p) {
   const igual = (x, y) => x && y && x.replace(/\/$/, '') === y.replace(/\/$/, '');
   const a = DATOS.marcas[MARCA].posts.find((x) => x.esBlog && (x.slug === p.blog || igual(x.url, p.url)));
   if (!a) return '';
-  return `<p class="articulo-blog">📝 Artículo del blog: <b>${escapar(a.title)}</b> · ${a.estadoWeb === 'publish' ? 'publicado' : 'borrador, sale en la web con este post'}</p>`;
+  return `<p class="articulo-blog">${ICO.doc}Blog article: <b>${escapar(a.title)}</b> · ${a.estadoWeb === 'publish' ? 'published' : 'draft, goes live on the website with this post'}</p>`;
 }
 
 /** Los posts de redes que mandan a un artículo (su enlace es el del artículo). */
@@ -1486,21 +1499,21 @@ function tarjetaBlog(a) {
   const btn = (accion, texto, clase = '') => `<button class="fl ${clase}" data-accion="${accion}" data-clave="${escapar(a.clave)}">${texto}</button>`;
   const cuando = posts.find((p) => p.publicaEl)?.publicaEl;
   let acciones;
-  if (publicado) acciones = `<a class="fl" href="${escapar(a.url)}" target="_blank" rel="noopener">Ver en la web ↗</a>`;
-  else if (fase === 'aprobado') acciones = `<span class="fl-dice">✓ Aprobado para el blog · sale en la web ${cuando ? `el ${cuando.split('-').reverse().slice(0, 2).join('/')}, con su post` : 'en el próximo check'}</span>
-      ${btn('blogRecuperar', 'Deshacer', 'fl-suave')}<button class="fl blog-publicar">Publicar ya</button>`;
-  else if (fase === 'descartado') acciones = btn('blogRecuperar', 'Recuperar', 'fl-suave');
-  else acciones = `${btn('blogAprobar', 'Aprobar para el blog', 'fl-si')}${btn('blogDescartar', 'Descartar', 'fl-suave')}`;
+  if (publicado) acciones = `<a class="fl" href="${escapar(a.url)}" target="_blank" rel="noopener">View on website ↗</a>`;
+  else if (fase === 'aprobado') acciones = `<span class="fl-dice">${ICO.check}Approved for blog · goes live on the website ${cuando ? `on ${cuando.split('-').slice(1).join('/')}, with its post` : 'in the next check'}</span>
+      ${btn('blogRecuperar', 'Undo', 'fl-suave')}<button class="fl blog-publicar">Publish now</button>`;
+  else if (fase === 'descartado') acciones = btn('blogRecuperar', 'Restore', 'fl-suave');
+  else acciones = `${btn('blogAprobar', 'Approve for blog', 'fl-si')}${btn('blogDescartar', 'Archive', 'fl-suave')}`;
   return `<article class="blog-art" data-slug="${escapar(a.slug)}">
     ${a.image ? `<img class="blog-foto" src="${escapar(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : ''}
     <div class="blog-cuerpo">
-      <p class="blog-estado ${publicado ? 'pub' : 'borr'}">📝 Blog · ${publicado ? 'publicado en la web' : 'borrador'}</p>
+      <p class="blog-estado ${publicado ? 'pub' : 'borr'}">${ICO.doc}Blog · ${publicado ? 'published on the website' : 'draft'}</p>
       <h3>${escapar(a.title)}</h3>
       ${a.excerpt ? `<p class="blog-entradilla">${escapar(a.excerpt)}</p>` : ''}
       <p class="blog-redes">${posts.length
-        ? 'Con su post en redes: ' + posts.map((p) => `<button class="blog-post" data-clave="${escapar(p.clave)}">${escapar(p.title)} · ${escapar(p.publicaEl || p.date || '')}</button>`).join(' ')
-        : '<span class="tenue">Sin post en redes: si lo apruebas, te propongo uno.</span>'}</p>
-      <details class="blog-texto"><summary>Leer el artículo entero</summary>${markdownSimple(a.cuerpo)}</details>
+        ? 'With its social post: ' + posts.map((p) => `<button class="blog-post" data-clave="${escapar(p.clave)}">${escapar(p.title)} · ${escapar(p.publicaEl || p.date || '')}</button>`).join(' ')
+        : '<span class="tenue">No social post: if you approve it, I will suggest one.</span>'}</p>
+      <details class="blog-texto"><summary>Read the full article</summary>${markdownSimple(a.cuerpo)}</details>
       <div class="blog-acciones">${acciones}</div>
       ${publicado ? '' : cajaSugerir(a)}
     </div>
@@ -1516,10 +1529,10 @@ function pintarBlog() {
       const fa = postsDeArticulo(a)[0], fb = postsDeArticulo(b)[0];
       return (fa ? 0 : 1) - (fb ? 0 : 1) || String(fa?.date || a.date).localeCompare(String(fb?.date || b.date));
     });
-  $('#resumen-blog').textContent = `${todos.length - borr.length} publicados en festivaladar.com · ${borr.length} borradores. ` +
-    'Un borrador sale en la web al pulsar «Publicar en la web», o el día que se publica el post de redes que lo anuncia.';
+  $('#resumen-blog').textContent = `${todos.length - borr.length} published on festivaladar.com · ${borr.length} drafts. ` +
+    'A draft goes live on the website when you tap "Publish to website", or on the day the social post announcing it goes out.';
   $('#filtros-blog').querySelectorAll('.chip').forEach((c) => c.classList.toggle('activo', c.dataset.filtro === filtroBlog));
-  $('#lista-blog').innerHTML = lista.map((a) => tarjetaBlog(a)).join('') || '<p class="vacio">Nada por aquí.</p>';
+  $('#lista-blog').innerHTML = lista.map((a) => tarjetaBlog(a)).join('') || '<p class="vacio">Nothing here.</p>';
 }
 
 $('#filtros-blog').addEventListener('click', (e) => {
@@ -1540,18 +1553,18 @@ for (const donde of ['#lista-blog', '#fichas']) $(donde).addEventListener('click
   e.stopPropagation();
   const art = btn.closest('.blog-art');
   const a = DATOS.marcas[MARCA].posts.find((x) => x.esBlog && x.slug === art.dataset.slug);
-  if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); return; }
-  if (!confirm(`¿Publicar «${a.title}» en festivaladar.com ahora?`)) return;
-  btn.disabled = true; btn.textContent = 'Publicando…';
+  if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
+  if (!confirm(`Publish "${a.title}" on festivaladar.com now?`)) return;
+  btn.disabled = true; btn.textContent = 'Publishing…';
   try {
     const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ slug: a.slug, accion: 'blogPublicar' }) });
     const j = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
     a.estadoWeb = 'publish';
-    aviso('Publicado. En un par de minutos está en festivaladar.com.');
+    aviso('Published. It will be on festivaladar.com in a couple of minutes.');
     repintar();
-  } catch (err) { btn.disabled = false; btn.textContent = 'Publicar en la web'; aviso(err.message, true); }
+  } catch (err) { btn.disabled = false; btn.textContent = 'Publish to website'; aviso(err.message, true); }
 });
 
 // ── La entrada: elegir la cuenta ──────────────────────────────────────
@@ -1579,16 +1592,16 @@ async function pintarCuentas() {
     const proxima = enCola.map((r) => r.cuando).sort()[0];
     const conectada = CONECTADAS[m];
     const estado = conectada === true
-      ? '<span class="cuenta-ok">Publica sola</span>'
+      ? '<span class="cuenta-ok">Posts automatically</span>'
       : conectada === false
-        ? '<span class="cuenta-falta">Falta conectar con Meta para publicar</span>'
+        ? '<span class="cuenta-falta">Connect Meta to publish</span>'
         : '';
     return `<button class="cuenta-tarjeta" data-marca="${m}">
       <img class="cuenta-avatar" src="${d.cuentas.avatar}" alt="">
       <span class="cuenta-texto">
         <b>${escapar(d.marca.org)}</b>
         <small>@${escapar(d.cuentas.ig)} · ${escapar(d.cuentas.fb)}</small>
-        <span class="cuenta-cifras">${porConfirmar ? `<em>${porConfirmar} por confirmar</em> · ` : ''}${ideas} ${ideas === 1 ? 'idea' : 'ideas'} · ${enCola.length} en cola${proxima ? ` · próxima ${new Date(proxima).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'America/New_York' })}` : ''}</span>
+        <span class="cuenta-cifras">${porConfirmar ? `<em>${porConfirmar} to confirm</em> · ` : ''}${ideas} ${ideas === 1 ? 'idea' : 'ideas'} · ${enCola.length} queued${proxima ? ` · next ${new Date(proxima).toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'America/New_York' })}` : ''}</span>
         ${estado}
       </span>
       <span class="cuenta-flecha">›</span>
@@ -1597,7 +1610,7 @@ async function pintarCuentas() {
   MARCA = antes;
   const falta = Object.values(CONECTADAS).some((v) => v === false);
   $('#cuentas-lista').innerHTML = tarjetas.join('')
-    + (falta ? '<p class="aviso-suave">Para conectar una cuenta: <a href="/api/meta-conectar">Conectar con Meta</a> y marca en Facebook las dos Páginas. Puedes trabajar ya en las dos; lo que confirmes de una cuenta sin conectar espera en la cola.</p>' : '');
+    + (falta ? '<p class="aviso-suave">To connect an account: <a href="/api/meta-conectar">Connect with Meta</a> and select both Pages on Facebook. You can already work on both; anything you confirm for an unconnected account waits in the queue.</p>' : '');
 }
 
 function entrarEnCuenta(m) {
@@ -1750,11 +1763,11 @@ function eventosCalendario() {
 }
 
 const NOMBRE_RED = { ig: 'IG', fb: 'FB' };
-const horaMadrid = (iso) => new Date(iso).toLocaleTimeString('es-ES', {
+const horaMadrid = (iso) => new Date(iso).toLocaleTimeString('en-US', {
   hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid',
 });
 const largo = (fecha, opciones) => new Date(fecha + 'T12:00:00Z')
-  .toLocaleDateString('es-ES', { ...opciones, timeZone: 'UTC' });
+  .toLocaleDateString('en-US', { ...opciones, timeZone: 'UTC' });
 
 async function pintarCalendario() {
   await cargarHistorico();
@@ -1779,7 +1792,7 @@ async function pintarCalendario() {
     const cuantas = marcas.length;
     celdas += `<button class="cal-celda${fecha === hoy ? ' hoy' : ''}${fecha === calDia ? ' sel' : ''}"
         data-fecha="${fecha}"
-        aria-label="${largo(fecha, { day: 'numeric', month: 'long' })}${cuantas ? `: ${cuantas}` : ''}${concierto ? ', concierto' : ''}">
+        aria-label="${largo(fecha, { day: 'numeric', month: 'long' })}${cuantas ? `: ${cuantas}` : ''}${concierto ? ', concert' : ''}">
       <span class="cal-num">${d}</span>
       <span class="cal-marcas">${marcas.slice(0, 4)
         .map((e) => `<i class="cal-marca ${e.forma} ${e.estado}"></i>`).join('')}${cuantas > 4 ? `<small class="cal-mas">+${cuantas - 4}</small>` : ''}</span>
@@ -1791,7 +1804,7 @@ async function pintarCalendario() {
 }
 
 function filaCalendario(e) {
-  const sello = e.estado === 'idea' ? 'idea o por confirmar' : e.estado === 'programado' ? 'en cola' : (e.salio ? 'salió' : 'publicado');
+  const sello = e.estado === 'idea' ? 'idea or to confirm' : e.estado === 'programado' ? 'queued' : (e.salio ? 'out' : 'published');
   const redes = (e.redes || []).map((r) => NOMBRE_RED[r] || r).join('+');
   const cuando = e.hora ? `${e.hora} NY · ${horaMadrid(e.iso)} Madrid` : '';
   const meta = [sello, cuando, redes].filter(Boolean).join(' · ');
@@ -1802,9 +1815,9 @@ function filaCalendario(e) {
   return `<button class="cal-item" ${e.url ? `data-url="${e.url}"` : `data-clave="${e.clave}"`}>
     ${mini}
     <span class="cal-texto">
-      <span class="cal-meta"><span class="cal-tipo ${e.forma}">${e.forma === 'historia' ? 'Historia' : 'Post'}</span><i class="cal-marca ${e.forma} ${e.estado}"></i>${escapar(meta)}</span>
+      <span class="cal-meta"><span class="cal-tipo ${e.forma}">${e.forma === 'historia' ? 'Story' : 'Post'}</span><i class="cal-marca ${e.forma} ${e.estado}"></i>${escapar(meta)}</span>
       <b>${escapar(e.titulo)}</b>
-      ${e.falta ? '<span class="cal-falta">falta material</span>' : ''}
+      ${e.falta ? '<span class="cal-falta">missing</span>' : ''}
     </span>
   </button>`;
 }
@@ -1812,7 +1825,7 @@ function filaCalendario(e) {
 function pintarDiaCalendario(por) {
   const cont = $('#cal-dia');
   if (!calDia) {
-    cont.innerHTML = '<p class="aviso-suave">Nada este mes.</p>';
+    cont.innerHTML = '<p class="aviso-suave">Nothing this month.</p>';
     return;
   }
   const dia = por.get(calDia) || [];
@@ -1821,7 +1834,7 @@ function pintarDiaCalendario(por) {
   cont.innerHTML = `
     <h3>${largo(calDia, { weekday: 'long', day: 'numeric', month: 'long' })}</h3>
     ${concierto ? `<p class="cal-aviso-concierto"><b>${escapar(concierto.titulo)}</b>${concierto.sitio ? ' · ' + escapar(concierto.sitio) : ''}</p>` : ''}
-    ${cosas.length ? cosas.map(filaCalendario).join('') : '<p class="aviso-suave">Nada este día.</p>'}`;
+    ${cosas.length ? cosas.map(filaCalendario).join('') : '<p class="aviso-suave">Nothing on this day.</p>'}`;
 }
 
 /** Cambia de mes. Si el día elegido no cae en el nuevo, se elige el primero con algo. */
@@ -1858,7 +1871,7 @@ $('#cal-dia').addEventListener('click', (e) => {
 });
 
 /** Enseña el apartado que toque y pinta solo ese. */
-const TITULOS = { ideas: 'Ideas', confirmar: 'Para confirmar', programado: 'Programado', publicado: 'Publicado', calendario: 'Calendario', blog: 'Blog', meses: 'Meses', mas: 'Más' };
+const TITULOS = { ideas: 'Ideas', confirmar: 'To confirm', programado: 'Scheduled', publicado: 'Published', calendario: 'Calendar', blog: 'Blog', meses: 'Months', mas: 'More' };
 
 function mostrarVista() {
   const enCuentas = vista === 'cuentas';
@@ -1896,7 +1909,7 @@ function mostrarVista() {
 }
 
 // ── Los meses: la entrada ──────────────────────────────────────────────
-const MESES_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+const MESES_ES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 function nombreMes(m) { const [a, n] = m.split('-').map(Number); const t = `${MESES_ES[n - 1]} ${a}`; return t[0].toUpperCase() + t.slice(1); }
 /** Cada cuenta cierra sus meses: los de ADAR se guardan como «adar:AAAA-MM». */
 const claveMes = (m) => (MARCA === 'creartbox' ? m : `${MARCA}:${m}`);
@@ -1936,19 +1949,19 @@ async function pintarMeses() {
     const terminado = cerrados[claveMes(m)] && cerrados[claveMes(m)].terminado;
     const pasado = m < hoy;
     return `<article class="mes-tarjeta${m === hoy ? ' actual' : ''}${terminado ? ' terminado' : ''}" data-mes="${m}">
-      <div class="mes-cab"><h3>${nombreMes(m)}</h3>${m === hoy ? '<span class="mes-hoy">este mes</span>' : ''}</div>
-      ${minis ? `<div class="mes-minis">${minis}</div>` : '<p class="mes-vacio">Nada todavía.</p>'}
-      <p class="mes-cifras"><b>${r.post || 0}</b> posts · <b>${r.historia || 0}</b> historias</p>
+      <div class="mes-cab"><h3>${nombreMes(m)}</h3>${m === hoy ? '<span class="mes-hoy">this month</span>' : ''}</div>
+      ${minis ? `<div class="mes-minis">${minis}</div>` : '<p class="mes-vacio">Nothing yet.</p>'}
+      <p class="mes-cifras"><b>${r.post || 0}</b> posts · <b>${r.historia || 0}</b> stories</p>
       <div class="mes-barra-pct"><i style="width:${pct}%"></i></div>
-      <p class="mes-estado">${pct}% resuelto · ${r.publicado || 0} publicados · ${r.programado || 0} en cola · ${r.idea || 0} por confirmar o ideas</p>
-      <label class="mes-check"><input type="checkbox" data-mes="${m}" ${terminado ? 'checked' : ''}> Mes terminado${pasado ? '' : ', todo programado'}</label>
+      <p class="mes-estado">${pct}% done · ${r.publicado || 0} published · ${r.programado || 0} queued · ${r.idea || 0} to confirm or ideas</p>
+      <label class="mes-check"><input type="checkbox" data-mes="${m}" ${terminado ? 'checked' : ''}> Month done${pasado ? '' : ', all scheduled'}</label>
     </article>`;
   };
   // Los meses que ya pasaron, al archivo: plegados al final.
   const vivos = meses.filter((m) => m >= hoy);
   const pasados = meses.filter((m) => m < hoy).reverse();
   $('#meses-lista').innerHTML = vivos.map(tarjeta).join('')
-    + (pasados.length ? `<details class="meses-archivo"><summary>Meses pasados (${pasados.length})</summary>
+    + (pasados.length ? `<details class="meses-archivo"><summary>Past months (${pasados.length})</summary>
         <div class="meses-lista">${pasados.map(tarjeta).join('')}</div></details>` : '');
 }
 
@@ -1956,14 +1969,14 @@ $('#meses-lista').addEventListener('click', async (e) => {
   const cb = e.target.closest('input[type="checkbox"][data-mes]');
   if (cb) {
     e.stopPropagation();
-    if (!PUEDE_GUARDAR) { cb.checked = !cb.checked; aviso('Primero entra con GitHub (una vez en este aparato).'); return; }
+    if (!PUEDE_GUARDAR) { cb.checked = !cb.checked; aviso('Sign in with GitHub first (once on this device).'); return; }
     try {
       const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ accion: 'mes', mes: claveMes(cb.dataset.mes), terminado: cb.checked }) });
       const j = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
       FLUJO.meses = j.meses;
-      aviso(cb.checked ? `${nombreMes(cb.dataset.mes)}: terminado.` : `${nombreMes(cb.dataset.mes)}: abierto otra vez.`);
+      aviso(cb.checked ? `${nombreMes(cb.dataset.mes)}: done.` : `${nombreMes(cb.dataset.mes)}: reopened.`);
       pintarMeses();
     } catch (err) { cb.checked = !cb.checked; aviso(err.message, true); }
     return;
@@ -1997,7 +2010,7 @@ function pintarSaltos() {
     .map(mesDe).filter(Boolean))].sort();
   const corto = (m) => { const [a, n] = m.split('-').map(Number); const t = MESES_ES[n - 1].slice(0, 3); return t[0].toUpperCase() + t.slice(1) + (a !== new Date().getFullYear() ? ` ${String(a).slice(2)}` : ''); };
   $('#mes-saltos').innerHTML = meses.map((m) => `<button data-mes="${m}">${corto(m)}</button>`).join('')
-    + (vista === 'ideas' && ideasDeBlog(filtro === 'archivo').length ? '<button data-mes="blog">📝 Blog</button>' : '');
+    + (vista === 'ideas' && ideasDeBlog(filtro === 'archivo').length ? `<button data-mes="blog">${ICO.doc}Blog</button>` : '');
 }
 $('#mes-saltos').addEventListener('click', (e) => {
   const b = e.target.closest('button[data-mes]');
@@ -2056,8 +2069,8 @@ async function estadoAvisos() {
   if (!conPush) {
     activar.hidden = true;
     texto.textContent = iOS && !instalada
-      ? 'Para recibir avisos, instala la app: en el navegador, Compartir › «Añadir a pantalla de inicio», y ábrela desde el icono.'
-      : 'Este navegador no puede recibir avisos.';
+      ? 'To get notifications, install the app: in the browser, Share › "Add to Home Screen", then open it from the icon.'
+      : 'This browser cannot receive notifications.';
     return;
   }
   const reg = await navigator.serviceWorker.ready;
@@ -2070,21 +2083,21 @@ async function estadoAvisos() {
   const activos = vale && Notification.permission === 'granted';
   activar.hidden = !!activos || Notification.permission === 'denied';
   probar.hidden = !activos;
-  texto.textContent = activos
-    ? '🔔 Avisos activados en este aparato.'
+  texto.innerHTML = activos
+    ? `${ICO.campana}Notifications are on for this device.`
     : Notification.permission === 'denied'
-      ? 'Los avisos están bloqueados para esta app. Actívalos en los ajustes del móvil (Notificaciones › Marble).'
-      : 'Avisos en el móvil: cuando haya algo para confirmar y cuando salga cada publicación.';
+      ? 'Notifications are blocked for this app. Turn them on in your phone settings (Notifications › Marble).'
+      : 'Notifications on your phone: when something needs confirming and when each post goes out.';
 }
 
 $('#avisos-activar').addEventListener('click', async () => {
   const b = $('#avisos-activar');
-  if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); return; }
-  b.disabled = true; b.textContent = 'Activando…';
+  if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
+  b.disabled = true; b.textContent = 'Turning on…';
   try {
-    if ((await Notification.requestPermission()) !== 'granted') throw new Error('Sin permiso para avisar.');
+    if ((await Notification.requestPermission()) !== 'granted') throw new Error('No permission to send notifications.');
     const { publica } = await (await fetch('/api/avisos', { credentials: 'same-origin' })).json();
-    if (!publica) throw new Error('Los avisos no están listos en el servidor.');
+    if (!publica) throw new Error('Notifications are not set up on the server.');
     const reg = await navigator.serviceWorker.ready;
     const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64uABytes(publica) });
     const dispositivo = /iPhone/.test(navigator.userAgent) ? 'iPhone' : /iPad/.test(navigator.userAgent) ? 'iPad' : /Android/.test(navigator.userAgent) ? 'Android' : /Mac/.test(navigator.userAgent) ? 'Mac' : 'Ordenador';
@@ -2092,9 +2105,9 @@ $('#avisos-activar').addEventListener('click', async () => {
       body: JSON.stringify({ accion: 'alta', sub: sub.toJSON(), dispositivo }) });
     const j = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
-    aviso('Avisos activados. Te ha llegado uno de prueba.');
+    aviso('Notifications on. A test one is on its way.');
   } catch (e) { aviso(e.message, true); }
-  b.disabled = false; b.textContent = '🔔 Activar avisos';
+  b.disabled = false; b.innerHTML = `${ICO.campana}Turn on notifications`;
   estadoAvisos();
 });
 $('#avisos-probar').addEventListener('click', async () => {
@@ -2102,7 +2115,7 @@ $('#avisos-probar').addEventListener('click', async () => {
     const r = await fetch('/api/avisos', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accion: 'prueba' }) });
     const j = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
-    aviso(j.enviados ? `Enviado a ${j.enviados} aparato(s).` : 'No hay aparatos con avisos.');
+    aviso(j.enviados ? `Sent to ${j.enviados} device(s).` : 'No devices have notifications on.');
   } catch (e) { aviso(e.message, true); }
 });
 
@@ -2147,9 +2160,9 @@ async function recargar({ callado = false } = {}) {
       mostrarVista();
       requestAnimationFrame(() => window.scrollTo(0, y));
     }
-    if (!callado) aviso('Actualizado.');
+    if (!callado) aviso('Refreshed.');
   } catch (e) {
-    if (!callado) aviso('No se pudo actualizar: ' + e.message, true);
+    if (!callado) aviso('Refresh failed: ' + e.message, true);
   } finally {
     recargando = false;
   }
@@ -2176,16 +2189,16 @@ async function recargar({ callado = false } = {}) {
     if (dy <= 0) { pon(0); return; }
     if (window.scrollY > 0) { inicio = null; pon(0); return; }
     if (e.cancelable) e.preventDefault();
-    pon(dy, dy >= UMBRAL ? 'Suelta para actualizar' : 'Desliza para actualizar');
+    pon(dy, dy >= UMBRAL ? 'Release to refresh' : 'Pull to refresh');
   }, { passive: false });
   document.addEventListener('touchend', async () => {
     if (inicio === null) return;
     inicio = null;
     if (dy >= UMBRAL) {
-      ind.classList.add('girando'); pon(UMBRAL, 'Actualizando…');
+      ind.classList.add('girando'); pon(UMBRAL, 'Refreshing…');
       await recargar({ callado: true });
       ind.classList.remove('girando');
-      pon(UMBRAL, 'Al día ✓');
+      pon(UMBRAL, 'Up to date');
       setTimeout(() => pon(0), 600);
     } else pon(0);
     dy = 0;
@@ -2199,4 +2212,4 @@ document.addEventListener('visibilitychange', () => {
   else if (fueraDesde && Date.now() - fueraDesde > 60000) recargar({ callado: true });
 });
 
-arrancar().catch((e) => aviso('No se pudieron cargar los datos: ' + e.message, true));
+arrancar().catch((e) => aviso('Could not load data: ' + e.message, true));

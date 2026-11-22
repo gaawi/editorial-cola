@@ -8,7 +8,7 @@ import { credenciales, variables, MARCAS } from './_cuentas.js';
 export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
-  if (!(await conSesion(req))) return res.status(401).send(JSON.stringify({ ok: false, error: 'sin sesión' }));
+  if (!(await conSesion(req))) return res.status(401).send(JSON.stringify({ ok: false, error: 'not signed in' }));
 
   // ?resumen=1: solo qué marcas tienen sus variables puestas (para la entrada
   // de la app). No llama a Meta ni enseña ningún valor.

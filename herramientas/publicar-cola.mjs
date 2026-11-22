@@ -92,7 +92,7 @@ async function aviso(titulo, texto, url) {
   } catch { /* sin avisos.json o sin red: no pasa nada */ }
 }
 const primeraLinea = (t) => String(t || '').split('\n').find((l) => l.trim()) || '';
-const queEs = (e, r) => e.tipo === 'historia' ? 'Historia' : r.red === 'ig' ? 'Instagram' : 'Facebook';
+const queEs = (e, r) => e.tipo === 'historia' ? 'Story' : r.red === 'ig' ? 'Instagram' : 'Facebook';
 
 async function guardar(mensaje) {
   cola.actualizado = new Date().toISOString().slice(0, 10);
@@ -116,7 +116,7 @@ for (const { clave, e, r } of pendientes) {
     console.log(`Atrasado, no sale solo: ${nombre}`);
     if (!ENSAYO) {
       r.estado = 'atrasado'; await guardar(`Cola: ${clave} (${r.red}) atrasado, se deja para decidir`);
-      await aviso(`⏸ No salió a su hora (${MARCAS[marcaDe(clave, e)].nombre})`, `${queEs(e, r)}: ${primeraLinea(r.texto) || clave}. Lo dejo para que decidas.`, '/');
+      await aviso(`Did not go out on time (${MARCAS[marcaDe(clave, e)].nombre})`, `${queEs(e, r)}: ${primeraLinea(r.texto) || clave}. Leaving it for you to decide.`, '/');
     }
     continue;
   }
@@ -128,7 +128,7 @@ for (const { clave, e, r } of pendientes) {
     console.error(`  ✗ Repaso previo: ${problemas.join('; ')}`);
     if (!ENSAYO) {
       fallos++; r.estado = 'error'; r.error = `Repaso previo: ${problemas.join('; ')}`; await guardar(`No sale: ${clave} (${r.red}), ${problemas[0]}`);
-      await aviso(`✗ No sale (${MARCAS[marcaDe(clave, e)].nombre})`, `${queEs(e, r)}: ${problemas[0]}`, '/');
+      await aviso(`Not going out (${MARCAS[marcaDe(clave, e)].nombre})`, `${queEs(e, r)}: ${problemas[0]}`, '/');
     }
     continue;
   }
@@ -155,14 +155,14 @@ for (const { clave, e, r } of pendientes) {
     }
     console.log(`  ✓ ${hecho.enlace}`);
     await guardar(`Publicado: ${clave} en ${r.red === 'ig' ? 'Instagram' : 'Facebook'}`);
-    await aviso(`✓ Publicado en ${queEs(e, r)} · ${MARCAS[marca].nombre}`, primeraLinea(r.texto) || clave, hecho.enlace || '/');
+    await aviso(`${e.tipo === 'historia' ? 'Story published' : `Published on ${queEs(e, r)}`} · ${MARCAS[marca].nombre}`, primeraLinea(r.texto) || clave, hecho.enlace || '/');
   } catch (err) {
     fallos++;
     r.estado = 'error';
     r.error = err.message;
     console.error(`  ✗ ${err.message}`);
     await guardar(`Falló: ${clave} en ${r.red === 'ig' ? 'Instagram' : 'Facebook'}`);
-    await aviso(`✗ Falló en ${queEs(e, r)} · ${MARCAS[marca].nombre}`, err.message.slice(0, 140), '/');
+    await aviso(`Failed on ${queEs(e, r)} · ${MARCAS[marca].nombre}`, err.message.slice(0, 140), '/');
   }
 }
 process.exit(fallos ? 1 : 0);

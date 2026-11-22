@@ -39,6 +39,10 @@ al prepararla se publica también el artículo (`status: publish`). Braña
 Sonora lleva el logotipo del Ministerio de Cultura en todo lo que se difunda
 (obligatorio por las bases). Correo de contacto: leiguardamusic@gmail.com.
 Amigos del Festival: 10, 30 y 50 € al año, se puede regalar.
+Cada ficha de ADAR puede llevar `blog: '<slug>'` (su artículo). En cada check,
+publicar (status publish, fecha de hoy) los artículos en borrador cuyo post
+de redes salga en las próximas 48 horas; la app también tiene el botón
+«Publicar en la web» en la pestaña Blog (api/blog.js).
 
 ## Lo que Guillermo ya ha dicho (no volver a preguntarlo)
 

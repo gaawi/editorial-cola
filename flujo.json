@@ -1430,6 +1430,23 @@
      "hecha": false
     }
    ]
+  },
+  "es/ritmo-con-senas": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T12:38:33.022Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "Foto de ellos",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T12:38:33.022Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

@@ -37,8 +37,8 @@ export function credencial(req) {
   return c && c.token ? c : null;
 }
 
-async function gh(token, ruta, opciones = {}) {
-  const r = await fetch(`https://api.github.com/repos/${REPO}${ruta}`, {
+async function gh(token, ruta, opciones = {}, repo = REPO) {
+  const r = await fetch(`https://api.github.com/repos/${repo}${ruta}`, {
     ...opciones,
     headers: {
       Authorization: `Bearer ${token}`,
@@ -88,3 +88,27 @@ export async function cambiarJSON(token, ruta, vacio, cambiar, mensaje) {
 }
 
 export const RAW = `https://raw.githubusercontent.com/${REPO}/${RAMA}/`;
+
+/**
+ * Cambia un archivo de texto de otro repositorio (el de la web de ADAR, para
+ * publicar un artículo del blog). `cambiar` recibe el texto y devuelve el
+ * nuevo, o false para no tocar nada. Reintenta si otro escribió a la vez.
+ */
+export async function cambiarTexto(token, repo, ruta, cambiar, mensaje) {
+  for (let i = 0; i < 4; i++) {
+    const r = await gh(token, `/contents/${ruta}?ref=${RAMA}`, {}, repo);
+    if (r.status === 404) throw Object.assign(new Error('No existe ' + ruta), { codigo: 404 });
+    if (!r.ok) throw new Error(`GitHub ${r.status} al leer ${ruta}`);
+    const j = await r.json();
+    const texto = Buffer.from(j.content, 'base64').toString('utf8');
+    const nuevo = cambiar(texto);
+    if (nuevo === false || nuevo === texto) return texto;
+    const w = await gh(token, `/contents/${ruta}`, {
+      method: 'PUT',
+      body: JSON.stringify({ message: mensaje, content: Buffer.from(nuevo, 'utf8').toString('base64'), branch: RAMA, sha: j.sha }),
+    }, repo);
+    if (w.ok) return nuevo;
+    if (w.status !== 409 && w.status !== 422) throw new Error(`GitHub ${w.status} al escribir ${ruta}`);
+  }
+  throw new Error('Otro guardado se cruzó cuatro veces seguidas. Inténtalo otra vez.');
+}

@@ -44,6 +44,7 @@
     <button class="pest" data-vista="programado">Programado</button>
     <button class="pest" data-vista="publicado">Publicado</button>
     <button class="pest" data-vista="calendario">Calendario</button>
+    <button class="pest" data-vista="blog" id="pest-blog" hidden>Blog</button>
   </nav>
 
   <div id="vista-ideas">
@@ -93,6 +94,16 @@
       <span><i class="cal-barra"></i>concierto</span>
     </p>
     <section id="cal-dia" class="cal-dia"></section>
+  </div>
+
+  <!-- El blog de la web (solo ADAR): borradores y publicados -->
+  <div id="vista-blog" hidden>
+    <p class="aviso-suave" id="resumen-blog"></p>
+    <nav class="filtros" id="filtros-blog">
+      <button class="chip activo" data-filtro="draft">Borradores</button>
+      <button class="chip" data-filtro="publish">Publicados</button>
+    </nav>
+    <div id="lista-blog" class="blog-lista"></div>
   </div>
 
   <div id="vista-publicado" hidden>

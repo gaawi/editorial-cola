@@ -243,6 +243,13 @@ for (const nombre of marcas) {
         // Encuadre por formato: { story: { x, y } }.
         encuadres: p.encuadres || null,
         clave: clave(p),
+        // Los artículos del blog de la web: la app los enseña en «Blog», con
+        // su estado en la web (borrador o publicado) y el texto entero.
+        esBlog: !!p.esBlog,
+        // En los posts de redes: el slug de su artículo del blog, si lo tiene.
+        blog: p.blog || null,
+        estadoWeb: p.esBlog ? p.status : null,
+        cuerpo: p.esBlog ? p.body : null,
         lang: p.lang,
         slug: p.slug,
         kind: p.kind,

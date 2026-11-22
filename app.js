@@ -297,6 +297,7 @@ function tarjeta(p, opciones = {}) {
     ${!faseDe(p) && p.ventana && HOY > p.ventana.hasta && grupoDe(p) === 'idea'
       ? `<p class="porque archivo-nota"><b>Archivada sola:</b> su momento era hasta el ${p.ventana.hasta.split('-').reverse().slice(0, 2).join('/')} y ya pasó.</p>`
       : p.porque && grupoDe(p) !== 'publicado' ? `<p class="porque"><b>Por qué:</b> ${escapar(p.porque)}</p>` : ''}
+    ${articuloDe(p)}
     <div class="acciones-flujo">${accionesFlujo(p)}</div>
     ${cajaSugerir(p)}
     ${grupoDe(p) === 'idea' ? '' : '<button class="abrir">Ver en Facebook y como historia ›</button>'}`;
@@ -1358,8 +1359,117 @@ function cambiarMarca(m) {
   $('#marca-nombre').textContent = DATOS.marcas[MARCA].marca.org;
   $('#marca-avatar').src = CUENTAS.avatar;
   document.body.dataset.marca = MARCA;
+  // El blog es de la web de ADAR: CreArtBox no tiene.
+  $('#pest-blog').hidden = !DATOS.marcas[MARCA].posts.some((p) => p.esBlog);
+  if (vista === 'blog' && $('#pest-blog').hidden) vista = 'ideas';
   if (DATOS.marcas[MARCA].posts[0]?._orig) pintarCuentaConfirmar();
 }
+
+// ── El blog de la web ─────────────────────────────────────────────────
+// Los artículos de festivaladar.com/es/blog: los borradores, para leerlos y
+// publicarlos con un botón, y los publicados. Cada uno dice qué posts de
+// redes llevan a él, y cada post de redes, a qué artículo lleva.
+let filtroBlog = 'draft';
+
+/** Markdown sencillo de los artículos: titulares, negritas, cursivas, listas y citas. */
+function markdownSimple(md) {
+  const enLinea = (t) => escapar(t)
+    .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+    .replace(/\*(.+?)\*/g, '<i>$1</i>')
+    .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  return String(md || '').replace(/<[^>]+>/g, '').split(/\n{2,}/).map((b) => {
+    const t = b.trim();
+    if (!t) return '';
+    const h = t.match(/^(#{1,6})\s+(.*)$/);
+    if (h) return `<h4>${enLinea(h[2])}</h4>`;
+    if (/^[-*]\s/m.test(t) && t.split('\n').every((l) => /^[-*]\s/.test(l.trim()))) {
+      return `<ul>${t.split('\n').map((l) => `<li>${enLinea(l.trim().replace(/^[-*]\s+/, ''))}</li>`).join('')}</ul>`;
+    }
+    if (t.startsWith('>')) return `<blockquote>${enLinea(t.replace(/^>\s?/gm, ''))}</blockquote>`;
+    return `<p>${enLinea(t).replace(/\n/g, '<br>')}</p>`;
+  }).join('');
+}
+
+/** En la tarjeta de un post de redes: el artículo del blog al que lleva. */
+function articuloDe(p) {
+  if (p.esBlog) return '';
+  const igual = (x, y) => x && y && x.replace(/\/$/, '') === y.replace(/\/$/, '');
+  const a = DATOS.marcas[MARCA].posts.find((x) => x.esBlog && (x.slug === p.blog || igual(x.url, p.url)));
+  if (!a) return '';
+  return `<p class="articulo-blog">📝 Artículo del blog: <b>${escapar(a.title)}</b> · ${a.estadoWeb === 'publish' ? 'publicado' : 'borrador, sale en la web con este post'}</p>`;
+}
+
+/** Los posts de redes que mandan a un artículo (su enlace es el del artículo). */
+function postsDeArticulo(a) {
+  const igual = (x, y) => x && y && x.replace(/\/$/, '') === y.replace(/\/$/, '');
+  return DATOS.marcas[MARCA].posts.filter((p) => !p.esBlog && (p.blog === a.slug || igual(p.url, a.url)));
+}
+
+function pintarBlog() {
+  const todos = DATOS.marcas[MARCA].posts.filter((p) => p.esBlog);
+  const borr = todos.filter((a) => a.estadoWeb !== 'publish');
+  const lista = (filtroBlog === 'publish' ? todos.filter((a) => a.estadoWeb === 'publish') : borr)
+    .sort((a, b) => {
+      // Primero los que tienen un post de redes esperando, por su fecha.
+      const fa = postsDeArticulo(a)[0], fb = postsDeArticulo(b)[0];
+      return (fa ? 0 : 1) - (fb ? 0 : 1) || String(fa?.date || a.date).localeCompare(String(fb?.date || b.date));
+    });
+  $('#resumen-blog').textContent = `${todos.length - borr.length} publicados en festivaladar.com · ${borr.length} borradores. ` +
+    'Un borrador sale en la web al pulsar «Publicar en la web», o el día que se publica el post de redes que lo anuncia.';
+  $('#filtros-blog').querySelectorAll('.chip').forEach((c) => c.classList.toggle('activo', c.dataset.filtro === filtroBlog));
+  $('#lista-blog').innerHTML = lista.map((a) => {
+    const posts = postsDeArticulo(a);
+    const publicado = a.estadoWeb === 'publish';
+    return `<article class="blog-art" data-slug="${escapar(a.slug)}">
+      ${a.image ? `<img class="blog-foto" src="${escapar(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+      <div class="blog-cuerpo">
+        <p class="blog-estado ${publicado ? 'pub' : 'borr'}">${publicado ? 'Publicado en la web' : 'Borrador'}${a.date ? ` · ${escapar(a.date)}` : ''}</p>
+        <h3>${escapar(a.title)}</h3>
+        ${a.excerpt ? `<p class="blog-entradilla">${escapar(a.excerpt)}</p>` : ''}
+        <p class="blog-redes">${posts.length
+          ? 'En redes: ' + posts.map((p) => `<button class="blog-post" data-clave="${escapar(p.clave)}">${escapar(p.title)} · ${escapar(p.publicaEl || p.date || '')}</button>`).join(' ')
+          : '<span class="tenue">Sin post en redes todavía.</span>'}</p>
+        <details class="blog-texto"><summary>Leer el artículo entero</summary>${markdownSimple(a.cuerpo)}</details>
+        <div class="blog-acciones">
+          ${publicado
+            ? `<a class="fl" href="${escapar(a.url)}" target="_blank" rel="noopener">Ver en la web ↗</a>`
+            : `<button class="fl fl-si blog-publicar">Publicar en la web</button>`}
+        </div>
+      </div>
+    </article>`;
+  }).join('') || '<p class="vacio">Nada por aquí.</p>';
+}
+
+$('#filtros-blog').addEventListener('click', (e) => {
+  const b = e.target.closest('.chip');
+  if (!b) return;
+  filtroBlog = b.dataset.filtro;
+  pintarBlog();
+});
+$('#lista-blog').addEventListener('click', async (e) => {
+  const post = e.target.closest('.blog-post');
+  if (post) {
+    const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === post.dataset.clave);
+    if (p) abrir(p);
+    return;
+  }
+  const btn = e.target.closest('.blog-publicar');
+  if (!btn) return;
+  const art = btn.closest('.blog-art');
+  const a = DATOS.marcas[MARCA].posts.find((x) => x.esBlog && x.slug === art.dataset.slug);
+  if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); return; }
+  if (!confirm(`¿Publicar «${a.title}» en festivaladar.com ahora?`)) return;
+  btn.disabled = true; btn.textContent = 'Publicando…';
+  try {
+    const r = await fetch('/api/blog', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug: a.slug, accion: 'publicar' }) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
+    a.estadoWeb = 'publish';
+    aviso('Publicado. En un par de minutos está en festivaladar.com.');
+    pintarBlog();
+  } catch (err) { btn.disabled = false; btn.textContent = 'Publicar en la web'; aviso(err.message, true); }
+});
 
 // ── La entrada: elegir la cuenta ──────────────────────────────────────
 // Lo primero es decir de qué cuenta se habla, para no aprobar lo de una
@@ -1678,12 +1788,14 @@ function mostrarVista() {
   $('#vista-confirmar').hidden = vista !== 'confirmar';
   $('#vista-publicado').hidden = vista !== 'publicado';
   $('#vista-calendario').hidden = vista !== 'calendario';
+  $('#vista-blog').hidden = vista !== 'blog';
   if (enCuentas) pintarCuentas();
   else if (enMeses) pintarMeses();
   else if (vista === 'ideas') pintarLista();
   else if (vista === 'programado') pintarProgramado();
   else if (vista === 'confirmar') pintarConfirmar();
   else if (vista === 'calendario') pintarCalendario();
+  else if (vista === 'blog') pintarBlog();
   else { pintarPublicadas(); pintarPublicado(); }
 }
 

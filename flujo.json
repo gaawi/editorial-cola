@@ -1858,6 +1858,23 @@
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ]
+  },
+  "es/propuestas-adar-2027": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:30:25.692Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "Haz uno separado para lo de y si Adar suena en ti pueblo?",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:30:25.692Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

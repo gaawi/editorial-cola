@@ -1846,6 +1846,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:41:26.773Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:36:40.324Z"
     }
    ],
    "sugerencias": [
@@ -1856,6 +1861,12 @@
      "hecha": true,
      "respuesta": "No hay ninguno igual. En redes salieron los ganadores del concurso (2025 y 2026) y un vídeo del concierto en un hórreo (junio 2024), pero no uno sobre cómo suena por dentro. Ojo: en la web está «Por qué tocar Bach en un hórreo» (25 ago), que no salió en redes; si prefieres ese, lo cambio.",
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
+    },
+    {
+     "texto": "Encuadra mejor la foto y pon más fotos",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:36:40.324Z",
+     "hecha": false
     }
    ]
   },

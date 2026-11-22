@@ -173,7 +173,7 @@ function pintarLista() {
   // descartado y lo que todavía no toca; «Todas» lo enseña entero.
   // Ideas: todas juntas, por fecha. Archivo: lo descartado, que se guarda
   // por si vuelve a servir.
-  const posts = fichasDe('idea').filter((p) => {
+  const posts = fichasDe('idea').filter((p) => !p.esBlog).filter((p) => {
     const fase = faseDe(p);
     // Lo que ya pasó su fecha se archiva solo, con una nota que lo dice.
     const caducada = !fase && p.ventana && HOY > p.ventana.hasta;
@@ -188,7 +188,33 @@ function pintarLista() {
   // solo una historia, que lleva su sello y se ve en 9:16. Se decide igual.
   $('#historias').hidden = true;
   pintarPorMeses(cont, posts.sort((a, b) => (mesDe(a) || '').localeCompare(mesDe(b) || '') || a.date.localeCompare(b.date)));
+  // Las ideas para el blog: los borradores de la web, después de los meses.
+  const blog = ideasDeBlog(filtro === 'archivo');
+  if (blog.length) {
+    const h = document.createElement('h3');
+    h.className = 'mes-separador';
+    h.id = `sep-${vista}-blog`;
+    h.textContent = filtro === 'archivo' ? 'Blog descartado' : 'Ideas para el blog';
+    cont.appendChild(h);
+    const caja = document.createElement('div');
+    caja.className = 'blog-lista en-ideas';
+    caja.innerHTML = blog.map((a) => tarjetaBlog(a)).join('');
+    cont.appendChild(caja);
+  }
+  if (posts.length || blog.length) $('#vacio').hidden = true;
   observarLienzos();
+}
+
+/** Los borradores del blog que esperan decisión (o los descartados, en el archivo). */
+function ideasDeBlog(archivo) {
+  return DATOS.marcas[MARCA].posts
+    .filter((a) => a.esBlog && a.estadoWeb !== 'publish')
+    .filter((a) => archivo ? flujoDe(a).faseBlog === 'descartado' : flujoDe(a).faseBlog !== 'descartado')
+    .sort((a, b) => {
+      // Primero los que acompañan a un post de redes, por la fecha de ese post.
+      const pa = postsDeArticulo(a)[0], pb = postsDeArticulo(b)[0];
+      return (pa ? 0 : 1) - (pb ? 0 : 1) || String(pa?.publicaEl || pa?.date || a.date).localeCompare(String(pb?.publicaEl || pb?.date || b.date));
+    });
 }
 
 /**
@@ -1039,6 +1065,9 @@ const DICHO = {
   cambios: 'Apuntado. Lo cambio y vuelve a confirmar.',
   editar: 'Guardado.',
   confirmar: 'Aprobado: sale solo a su hora.',
+  blogAprobar: 'Aprobado para el blog. Lo publico en la web.',
+  blogDescartar: 'Fuera del blog. Lo tienes en Ideas › Archivo.',
+  blogRecuperar: 'Vuelve a las ideas del blog.',
   quitar: 'Fuera de la cola. Vuelve a «para confirmar».',
 };
 
@@ -1335,7 +1364,10 @@ async function arrancar() {
 
   const pedida = location.hash.slice(1);
   cambiarMarca(DATOS.marcas[pedida] ? pedida : MARCA);
-  if (DATOS.marcas[pedida]) vista = 'meses';
+  if (DATOS.marcas[pedida]) {
+    vista = 'ideas';
+    document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x.dataset.vista === vista));
+  }
   pintarCuentaConfirmar();
   mostrarVista();
 }
@@ -1405,6 +1437,35 @@ function postsDeArticulo(a) {
   return DATOS.marcas[MARCA].posts.filter((p) => !p.esBlog && (p.blog === a.slug || igual(p.url, a.url)));
 }
 
+/** Un artículo del blog: foto, estado, entradilla, sus posts de redes, el texto entero y los botones. */
+function tarjetaBlog(a) {
+  const posts = postsDeArticulo(a);
+  const publicado = a.estadoWeb === 'publish';
+  const fase = flujoDe(a).faseBlog;
+  const btn = (accion, texto, clase = '') => `<button class="fl ${clase}" data-accion="${accion}" data-clave="${escapar(a.clave)}">${texto}</button>`;
+  const cuando = posts.find((p) => p.publicaEl)?.publicaEl;
+  let acciones;
+  if (publicado) acciones = `<a class="fl" href="${escapar(a.url)}" target="_blank" rel="noopener">Ver en la web ↗</a>`;
+  else if (fase === 'aprobado') acciones = `<span class="fl-dice">✓ Aprobado para el blog · sale en la web ${cuando ? `el ${cuando.split('-').reverse().slice(0, 2).join('/')}, con su post` : 'en el próximo check'}</span>
+      ${btn('blogRecuperar', 'Deshacer', 'fl-suave')}<button class="fl blog-publicar">Publicar ya</button>`;
+  else if (fase === 'descartado') acciones = btn('blogRecuperar', 'Recuperar', 'fl-suave');
+  else acciones = `${btn('blogAprobar', 'Aprobar para el blog', 'fl-si')}${btn('blogDescartar', 'Descartar', 'fl-suave')}`;
+  return `<article class="blog-art" data-slug="${escapar(a.slug)}">
+    ${a.image ? `<img class="blog-foto" src="${escapar(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+    <div class="blog-cuerpo">
+      <p class="blog-estado ${publicado ? 'pub' : 'borr'}">📝 Blog · ${publicado ? 'publicado en la web' : 'borrador'}</p>
+      <h3>${escapar(a.title)}</h3>
+      ${a.excerpt ? `<p class="blog-entradilla">${escapar(a.excerpt)}</p>` : ''}
+      <p class="blog-redes">${posts.length
+        ? 'Con su post en redes: ' + posts.map((p) => `<button class="blog-post" data-clave="${escapar(p.clave)}">${escapar(p.title)} · ${escapar(p.publicaEl || p.date || '')}</button>`).join(' ')
+        : '<span class="tenue">Sin post en redes: si lo apruebas, te propongo uno.</span>'}</p>
+      <details class="blog-texto"><summary>Leer el artículo entero</summary>${markdownSimple(a.cuerpo)}</details>
+      <div class="blog-acciones">${acciones}</div>
+      ${publicado ? '' : cajaSugerir(a)}
+    </div>
+  </article>`;
+}
+
 function pintarBlog() {
   const todos = DATOS.marcas[MARCA].posts.filter((p) => p.esBlog);
   const borr = todos.filter((a) => a.estadoWeb !== 'publish');
@@ -1417,27 +1478,7 @@ function pintarBlog() {
   $('#resumen-blog').textContent = `${todos.length - borr.length} publicados en festivaladar.com · ${borr.length} borradores. ` +
     'Un borrador sale en la web al pulsar «Publicar en la web», o el día que se publica el post de redes que lo anuncia.';
   $('#filtros-blog').querySelectorAll('.chip').forEach((c) => c.classList.toggle('activo', c.dataset.filtro === filtroBlog));
-  $('#lista-blog').innerHTML = lista.map((a) => {
-    const posts = postsDeArticulo(a);
-    const publicado = a.estadoWeb === 'publish';
-    return `<article class="blog-art" data-slug="${escapar(a.slug)}">
-      ${a.image ? `<img class="blog-foto" src="${escapar(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : ''}
-      <div class="blog-cuerpo">
-        <p class="blog-estado ${publicado ? 'pub' : 'borr'}">${publicado ? 'Publicado en la web' : 'Borrador'}${a.date ? ` · ${escapar(a.date)}` : ''}</p>
-        <h3>${escapar(a.title)}</h3>
-        ${a.excerpt ? `<p class="blog-entradilla">${escapar(a.excerpt)}</p>` : ''}
-        <p class="blog-redes">${posts.length
-          ? 'En redes: ' + posts.map((p) => `<button class="blog-post" data-clave="${escapar(p.clave)}">${escapar(p.title)} · ${escapar(p.publicaEl || p.date || '')}</button>`).join(' ')
-          : '<span class="tenue">Sin post en redes todavía.</span>'}</p>
-        <details class="blog-texto"><summary>Leer el artículo entero</summary>${markdownSimple(a.cuerpo)}</details>
-        <div class="blog-acciones">
-          ${publicado
-            ? `<a class="fl" href="${escapar(a.url)}" target="_blank" rel="noopener">Ver en la web ↗</a>`
-            : `<button class="fl fl-si blog-publicar">Publicar en la web</button>`}
-        </div>
-      </div>
-    </article>`;
-  }).join('') || '<p class="vacio">Nada por aquí.</p>';
+  $('#lista-blog').innerHTML = lista.map((a) => tarjetaBlog(a)).join('') || '<p class="vacio">Nada por aquí.</p>';
 }
 
 $('#filtros-blog').addEventListener('click', (e) => {
@@ -1446,7 +1487,7 @@ $('#filtros-blog').addEventListener('click', (e) => {
   filtroBlog = b.dataset.filtro;
   pintarBlog();
 });
-$('#lista-blog').addEventListener('click', async (e) => {
+for (const donde of ['#lista-blog', '#fichas']) $(donde).addEventListener('click', async (e) => {
   const post = e.target.closest('.blog-post');
   if (post) {
     const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === post.dataset.clave);
@@ -1455,6 +1496,7 @@ $('#lista-blog').addEventListener('click', async (e) => {
   }
   const btn = e.target.closest('.blog-publicar');
   if (!btn) return;
+  e.stopPropagation();
   const art = btn.closest('.blog-art');
   const a = DATOS.marcas[MARCA].posts.find((x) => x.esBlog && x.slug === art.dataset.slug);
   if (!PUEDE_GUARDAR) { aviso('Primero entra con GitHub (una vez en este aparato).'); return; }
@@ -1467,7 +1509,7 @@ $('#lista-blog').addEventListener('click', async (e) => {
     if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
     a.estadoWeb = 'publish';
     aviso('Publicado. En un par de minutos está en festivaladar.com.');
-    pintarBlog();
+    repintar();
   } catch (err) { btn.disabled = false; btn.textContent = 'Publicar en la web'; aviso(err.message, true); }
 });
 
@@ -1522,7 +1564,9 @@ function entrarEnCuenta(m) {
   cambiarMarca(m);
   // El calendario de una marca no tiene por qué dejar a la otra en el mismo día.
   calMes = null; calDia = null; MES = null;
-  vista = 'meses';
+  // Se entra por Ideas, con todos los meses; «‹ Meses» lleva al resumen.
+  vista = 'ideas';
+  document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x.dataset.vista === vista));
   history.replaceState(null, '', '#' + m);
   mostrarVista();
   window.scrollTo(0, 0);
@@ -1897,10 +1941,11 @@ function pintarSaltos() {
   if (!conLista) return;
   const grupo = vista === 'ideas' ? 'idea' : 'confirmar';
   const meses = [...new Set(DATOS.marcas[MARCA].posts
-    .filter((p) => grupoDe(p) === grupo && !(grupo === 'idea' && (faseDe(p) === 'descartado' || (!faseDe(p) && p.ventana && HOY > p.ventana.hasta))))
+    .filter((p) => !p.esBlog && grupoDe(p) === grupo && !(grupo === 'idea' && (faseDe(p) === 'descartado' || (!faseDe(p) && p.ventana && HOY > p.ventana.hasta))))
     .map(mesDe).filter(Boolean))].sort();
   const corto = (m) => { const [a, n] = m.split('-').map(Number); const t = MESES_ES[n - 1].slice(0, 3); return t[0].toUpperCase() + t.slice(1) + (a !== new Date().getFullYear() ? ` ${String(a).slice(2)}` : ''); };
-  $('#mes-saltos').innerHTML = meses.map((m) => `<button data-mes="${m}">${corto(m)}</button>`).join('');
+  $('#mes-saltos').innerHTML = meses.map((m) => `<button data-mes="${m}">${corto(m)}</button>`).join('')
+    + (vista === 'ideas' && ideasDeBlog(filtro === 'archivo').length ? '<button data-mes="blog">📝 Blog</button>' : '');
 }
 $('#mes-saltos').addEventListener('click', (e) => {
   const b = e.target.closest('button[data-mes]');

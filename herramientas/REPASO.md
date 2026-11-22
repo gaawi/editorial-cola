@@ -43,6 +43,11 @@ Cada ficha de ADAR puede llevar `blog: '<slug>'` (su artículo). En cada check,
 publicar (status publish, fecha de hoy) los artículos en borrador cuyo post
 de redes salga en las próximas 48 horas; la app también tiene el botón
 «Publicar en la web» en la pestaña Blog (api/blog.js).
+En Ideas salen también las «Ideas para el blog» (los borradores): él decide
+con «Aprobar para el blog» (`flujo.json → posts[es/slug].faseBlog =
+"aprobado"`) o «Descartar». Lo aprobado se publica en la web el día de su
+post de redes (o en el siguiente check si no tiene); a lo aprobado sin post,
+proponerle uno. La app entra directamente en Ideas; los meses, con «‹ Meses».
 
 ## Lo que Guillermo ya ha dicho (no volver a preguntarlo)
 

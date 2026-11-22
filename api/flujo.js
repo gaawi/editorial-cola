@@ -15,7 +15,7 @@ import { marcaDe } from './_cuentas.js';
 
 const VACIO = { _ayuda: 'Lo escribe la app (api/flujo.js). fase: aprobado · preparado · confirmado · luego (más adelante) · descartado (archivo) · cambios.', posts: {} };
 const VACIO_COLA = { posts: {} };
-const ACCIONES = ['aprobar', 'descartar', 'luego', 'sugerir', 'recuperar', 'cambios', 'editar', 'confirmar', 'quitar'];
+const ACCIONES = ['aprobar', 'descartar', 'luego', 'sugerir', 'recuperar', 'cambios', 'editar', 'confirmar', 'quitar', 'blogAprobar', 'blogDescartar', 'blogRecuperar'];
 
 // La hora se escribe en hora de Nueva York («2026-11-17T18:00») y aquí se
 // pasa a un instante de verdad, con su cambio de horario.
@@ -141,6 +141,16 @@ export default async function handler(req, res) {
       if (accion === 'sugerir') {
         if (!nota.trim()) throw Object.assign(new Error('Escribe la sugerencia.'), { codigo: 400 });
         (g.sugerencias ||= []).push({ texto: nota.trim(), quien: yo.login, fecha: ahora, hecha: false });
+        (g.historial ||= []).push({ accion, quien: yo.login, fecha: ahora });
+        return;
+      }
+      // Los artículos del blog van aparte de las redes: `faseBlog`. Aprobado
+      // quiere decir que Claude lo publica en la web (el día de su post de
+      // redes, o en el siguiente check si no tiene).
+      if (accion.startsWith('blog')) {
+        if (accion === 'blogAprobar') g.faseBlog = 'aprobado';
+        else if (accion === 'blogDescartar') g.faseBlog = 'descartado';
+        else delete g.faseBlog;
         (g.historial ||= []).push({ accion, quien: yo.login, fecha: ahora });
         return;
       }

@@ -191,12 +191,31 @@ function mazo(cont, items) {
     barra.className = 'mazo-barra';
     barra.innerHTML = `<button class="mazo-paso" data-d="-1" aria-label="Previous card"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
       <span class="mazo-donde"><b></b><small></small></span>
+      <span class="mazo-extra">
+        <button class="mazo-boton" data-accion="filtro" aria-label="Show archive"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="5" rx="1.5"/><path d="M5.5 9v9.5a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5V9M10 13h4"/></svg></button>
+        <button class="mazo-boton" data-accion="nueva" aria-label="Suggest a new idea"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+      </span>
       <button class="mazo-paso" data-d="1" aria-label="Next card"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
       <i class="mazo-progreso"><i></i></i>`;
     cont.parentNode.insertBefore(barra, cont);
     barra.addEventListener('click', (e) => {
       const b = e.target.closest('.mazo-paso');
       if (b) irACarta(cont, posMazo(cont) + Number(b.dataset.d));
+      const x = e.target.closest('.mazo-boton');
+      if (!x) return;
+      // Full-screen cards on the phone have no room for the filters and the
+      // new-idea box: they live behind these two buttons.
+      if (x.dataset.accion === 'nueva') {
+        const caja = $('#idea-nueva');
+        caja.classList.toggle('abierta');
+        if (caja.classList.contains('abierta')) caja.querySelector('textarea')?.focus();
+      } else if (vista === 'blog') {
+        filtroBlog = filtroBlog === 'publish' ? 'draft' : 'publish'; pintarBlog();
+      } else {
+        filtro = filtro === 'archivo' ? 'ahora' : 'archivo';
+        $('#filtros').querySelectorAll('.chip').forEach((c) => c.classList.toggle('activo', c.dataset.filtro === filtro));
+        pintarLista();
+      }
     });
     let tic = null;
     cont.addEventListener('scroll', () => {
@@ -204,7 +223,7 @@ function mazo(cont, items) {
       tic = requestAnimationFrame(() => pintarBarraMazo(cont));
     }, { passive: true });
   }
-  barra.hidden = items.length === 0;
+  barra.hidden = items.length === 0 && vista === 'confirmar';
   const clave = cont.id + ':' + vista + ':' + MARCA;
   cont.dataset.clave = clave;
   const ir = Math.min(POS_MAZO[clave] || 0, Math.max(0, items.length - 1));
@@ -222,6 +241,11 @@ function pintarBarraMazo(cont) {
   barra.querySelector('.mazo-progreso i').style.width = `${((i + 1) / n) * 100}%`;
   barra.querySelector('[data-d="-1"]').disabled = i <= 0;
   barra.querySelector('[data-d="1"]').disabled = i >= n - 1;
+  const fil = barra.querySelector('[data-accion="filtro"]');
+  fil.hidden = vista === 'confirmar';
+  fil.classList.toggle('on', vista === 'blog' ? filtroBlog === 'publish' : filtro === 'archivo');
+  fil.setAttribute('aria-label', vista === 'blog' ? (filtroBlog === 'publish' ? 'Show drafts' : 'Show published') : (filtro === 'archivo' ? 'Back to ideas' : 'Show archive'));
+  barra.querySelector('[data-accion="nueva"]').hidden = vista !== 'ideas';
   // The next and previous cards get drawn ahead of time.
   for (const j of [i, i + 1, i - 1]) dibujarTarjeta(cont.children[j]?.querySelector('.tarjeta'));
 }
@@ -1956,6 +1980,9 @@ function mostrarVista() {
   const enCuentas = vista === 'cuentas';
   document.body.dataset.marca = enCuentas ? '' : MARCA;
   document.body.classList.toggle('con-pestanas', !enCuentas);
+  // Review views are full-screen flashcards on the phone (see estilo.css).
+  document.body.classList.toggle('modo-tarjeta', ['ideas', 'confirmar', 'blog'].includes(vista));
+  $('#idea-nueva').classList.remove('abierta');
   const enMeses = vista === 'meses';
   $('#vista-cuentas').hidden = !enCuentas;
   $('#marca').hidden = enCuentas || !!actual;
@@ -2256,14 +2283,16 @@ async function recargar({ callado = false } = {}) {
     if (texto) ind.querySelector('span').textContent = texto;
   };
   document.addEventListener('touchstart', (e) => {
-    if (recargando || window.scrollY > 0 || abierto() || e.touches.length !== 1) { inicio = null; return; }
+    // Inside a full-screen card that is scrolled down, pulling scrolls the card.
+    const carta = e.target.closest && e.target.closest('.slide');
+    if (recargando || window.scrollY > 0 || (carta && carta.scrollTop > 0) || abierto() || e.touches.length !== 1) { inicio = null; return; }
     inicio = e.touches[0].clientY; dy = 0;
   }, { passive: true });
   document.addEventListener('touchmove', (e) => {
     if (inicio === null) return;
     dy = (e.touches[0].clientY - inicio) * 0.55;
     if (dy <= 0) { pon(0); return; }
-    if (window.scrollY > 0) { inicio = null; pon(0); return; }
+    if (window.scrollY > 0 || (e.target.closest && e.target.closest('.slide')?.scrollTop > 0)) { inicio = null; pon(0); return; }
     if (e.cancelable) e.preventDefault();
     pon(dy, dy >= UMBRAL ? 'Release to refresh' : 'Pull to refresh');
   }, { passive: false });

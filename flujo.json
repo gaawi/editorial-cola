@@ -1306,9 +1306,29 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-12T20:22:18.984Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:44:57.179Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/winterlight-lottery-tonight": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-03T12:00:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-lottery-tonight-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "en/winterlight-tonight": {
    "historial": [
@@ -1316,9 +1336,29 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-12T20:22:22.192Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:44:58.622Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "en/winterlight-tonight": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-11T12:00:00-05:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-tonight-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/santa-cecilia-2026": {
    "historial": [
@@ -1326,9 +1366,50 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-21T18:41:13.599Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:44:49.669Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/santa-cecilia-2026": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-22T19:30:00+01:00",
+       "texto": "Hoy es Santa Cecilia, el día de la música. 🎶\n\nY nos acordamos de las noches de este verano: iglesias, hórreos, monasterios y aldeas llenas de gente escuchando en silencio.\n\nGracias a quienes tocaron, a quienes abrieron sus pueblos y a quienes vinieron.\n\nYa estamos preparando la próxima edición.\n\n#FestivalADAR #SantaCecilia #DíaDeLaMúsica #Asturias #MúsicaClásica",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-santa-cecilia-2026-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-11-22T19:32:00+01:00",
+       "texto": "Hoy es Santa Cecilia, el día de la música. 🎶\n\nY nos acordamos de las noches de este verano: iglesias, hórreos, monasterios y aldeas llenas de gente escuchando en silencio.\n\nGracias a quienes tocaron, a quienes abrieron sus pueblos y a quienes vinieron.\n\nYa estamos preparando la próxima edición.\n\nhttps://festivaladar.com/es/\n\n#FestivalADAR #SantaCecilia #DíaDeLaMúsica #Asturias #MúsicaClásica",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-santa-cecilia-2026-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/santa-cecilia-2026#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-22T20:30:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-santa-cecilia-2026-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/propuestas-artisticas-2027": {
    "historial": [
@@ -1336,9 +1417,50 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-21T18:41:21.889Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:44:50.737Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/propuestas-artisticas-2027": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-24T19:30:00+01:00",
+       "texto": "Estamos seleccionando propuestas para ADAR 2027. 🎻\n\nLa VII edición será en agosto de 2027, en iglesias, monasterios, hórreos y aldeas de Asturias.\n\nProgramamos música clásica y de cámara, música antigua, creación contemporánea, jazz, músicas tradicionales y proyectos interdisciplinares. Nos gustan especialmente las propuestas con una identidad clara, y las que traen estrenos, actividades educativas o algo que hacer con el territorio.\n\n¿Cómo? Escríbenos a leiguardamusic@gmail.com con el asunto «PROPUESTA ADAR · nombre del artista o ensemble». Incluye biografía, programa, enlaces a grabaciones en directo, caché orientativo y disponibilidad en agosto de 2027.\n\nTodos los detalles en festivaladar.com\n\nCompártelo con quien creas que encaja. 🙌\n\n#FestivalADAR #ConvocatoriaArtistas #MúsicaDeCámara #Asturias #ADAR2027",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-propuestas-artisticas-2027-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-11-24T19:32:00+01:00",
+       "texto": "Estamos seleccionando propuestas para ADAR 2027. 🎻\n\nLa VII edición será en agosto de 2027, en iglesias, monasterios, hórreos y aldeas de Asturias.\n\nProgramamos música clásica y de cámara, música antigua, creación contemporánea, jazz, músicas tradicionales y proyectos interdisciplinares. Nos gustan especialmente las propuestas con una identidad clara, y las que traen estrenos, actividades educativas o algo que hacer con el territorio.\n\n¿Cómo? Escríbenos a leiguardamusic@gmail.com con el asunto «PROPUESTA ADAR · nombre del artista o ensemble». Incluye biografía, programa, enlaces a grabaciones en directo, caché orientativo y disponibilidad en agosto de 2027.\n\nhttps://festivaladar.com/es/propuestas-artisticas/\n\nCompártelo con quien creas que encaja. 🙌\n\n#FestivalADAR #ConvocatoriaArtistas #MúsicaDeCámara #Asturias #ADAR2027",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-propuestas-artisticas-2027-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/propuestas-artisticas-2027#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-25T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-propuestas-artisticas-2027-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/ayuntamientos-y-espacios-2027": {
    "historial": [
@@ -1346,9 +1468,50 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-21T18:41:30.023Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:44:51.965Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/ayuntamientos-y-espacios-2027": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-26T19:30:00+01:00",
+       "texto": "¿Y si ADAR suena en tu pueblo? 📍\n\nDesde 2021 llevamos música a iglesias, monasterios, palacios, hórreos, mercados y campos de aldea de Asturias. Cada sitio se elige por lo que es, no como decorado.\n\nPara 2027 buscamos ayuntamientos, asociaciones vecinales y culturales, propietarios de espacios patrimoniales y salas que quieran acoger un concierto o un paseo sonoro.\n\nSi te apetece, escríbenos a leiguardamusic@gmail.com y lo hablamos.\n\nY si conoces a alguien en tu concejo a quien le pueda interesar, pásaselo.\n\nLas sedes en festivaladar.com\n\n#FestivalADAR #Asturias #MedioRural #PatrimonioAsturiano #CulturaRural",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ayuntamientos-y-espacios-2027-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-11-26T19:32:00+01:00",
+       "texto": "¿Y si ADAR suena en tu pueblo? 📍\n\nDesde 2021 llevamos música a iglesias, monasterios, palacios, hórreos, mercados y campos de aldea de Asturias. Cada sitio se elige por lo que es, no como decorado.\n\nPara 2027 buscamos ayuntamientos, asociaciones vecinales y culturales, propietarios de espacios patrimoniales y salas que quieran acoger un concierto o un paseo sonoro.\n\nSi te apetece, escríbenos a leiguardamusic@gmail.com y lo hablamos.\n\nY si conoces a alguien en tu concejo a quien le pueda interesar, pásaselo.\n\nhttps://festivaladar.com/es/sedes/\n\n#FestivalADAR #Asturias #MedioRural #PatrimonioAsturiano #CulturaRural",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ayuntamientos-y-espacios-2027-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/ayuntamientos-y-espacios-2027#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-11-27T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ayuntamientos-y-espacios-2027-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/recuerdo-2021-primer-concierto": {
    "historial": [
@@ -1356,9 +1519,52 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-21T18:41:40.994Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:44:54.535Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/recuerdo-2021-primer-concierto": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-04T19:30:00+01:00",
+       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana. Esa noche empezó a orbayar y no se pudo tocar el programa entero. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nLa historia completa, en el blog de festivaladar.com\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+       "imagenes": [
+        "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg",
+        "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image72.jpg",
+        "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image67.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-12-04T19:32:00+01:00",
+       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana. Esa noche empezó a orbayar y no se pudo tocar el programa entero. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+       "imagenes": [
+        "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg"
+       ]
+      }
+     ]
+    },
+    "es/recuerdo-2021-primer-concierto#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-05T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-recuerdo-2021-primer-concierto-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/amigos-giving-tuesday": {
    "historial": [
@@ -1366,9 +1572,50 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-21T18:41:47.690Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:44:53.043Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/amigos-giving-tuesday": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-01T19:30:00+01:00",
+       "texto": "Hoy es #GivingTuesday, el día de dar. 💛\n\nLas entradas de ADAR son gratuitas, pero el aforo es pequeño y muchos conciertos se llenan el mismo día que se anuncian. Los Amigos del Festival tienen su plaza asegurada en cada edición.\n\nColaborador · 10 € al año: sostienes el festival, recibes el boletín y tu nombre va en el muro de Amigos.\nAmigo · 30 € al año: además, reserva anticipada en todos los conciertos.\nAmigo VIP · 50 € al año: además, asientos VIP, la celebración privada con los artistas residentes, grabaciones inéditas y la camiseta de edición limitada.\n\nCada aportación se queda en las aldeas: en conciertos gratuitos donde casi nunca llega la música en directo.\n\nHazte Amigo en festivaladar.com\n\n#FestivalADAR #AmigosDelFestival #GivingTuesday #Asturias #CulturaRural",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-amigos-giving-tuesday-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-12-01T19:32:00+01:00",
+       "texto": "Hoy es #GivingTuesday, el día de dar. 💛\n\nLas entradas de ADAR son gratuitas, pero el aforo es pequeño y muchos conciertos se llenan el mismo día que se anuncian. Los Amigos del Festival tienen su plaza asegurada en cada edición.\n\nColaborador · 10 € al año: sostienes el festival, recibes el boletín y tu nombre va en el muro de Amigos.\nAmigo · 30 € al año: además, reserva anticipada en todos los conciertos.\nAmigo VIP · 50 € al año: además, asientos VIP, la celebración privada con los artistas residentes, grabaciones inéditas y la camiseta de edición limitada.\n\nCada aportación se queda en las aldeas: en conciertos gratuitos donde casi nunca llega la música en directo.\n\nhttps://festivaladar.com/es/amigos-del-festival/\n\n#FestivalADAR #AmigosDelFestival #GivingTuesday #Asturias #CulturaRural",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-amigos-giving-tuesday-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/amigos-giving-tuesday#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-01T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-amigos-giving-tuesday-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/video-bach-en-leiguarda": {
    "historial": [
@@ -1454,9 +1701,50 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:39:00.683Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-22T12:44:55.887Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/dia-educacion-escuelas-rurales": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-24T12:00:00+01:00",
+       "texto": "Hoy es el Día Internacional de la Educación. 📚\n\nCon Braña Sonora estamos preparando materiales para escuelas rurales de Asturias: grabaciones de la tonada, de las brañas y de los oficios de cada concejo, con propuestas para clase en castellano y en asturiano.\n\n¿Das clase en una escuela rural del occidente asturiano? Escríbenos a leiguardamusic@gmail.com y te contamos cómo participar. Sin coste para el centro.\n\nMás en festivaladar.com\n\n#BrañaSonora #FestivalADAR #DíaInternacionalDeLaEducación #EscuelaRural #Asturias",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-dia-educacion-escuelas-rurales-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2027-01-24T12:02:00+01:00",
+       "texto": "Hoy es el Día Internacional de la Educación. 📚\n\nCon Braña Sonora estamos preparando materiales para escuelas rurales de Asturias: grabaciones de la tonada, de las brañas y de los oficios de cada concejo, con propuestas para clase en castellano y en asturiano.\n\n¿Das clase en una escuela rural del occidente asturiano? Escríbenos a leiguardamusic@gmail.com y te contamos cómo participar. Sin coste para el centro.\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #DíaInternacionalDeLaEducación #EscuelaRural #Asturias",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-dia-educacion-escuelas-rurales-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/dia-educacion-escuelas-rurales#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-24T18:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-dia-educacion-escuelas-rurales-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/post-paseo-sonoro": {
    "historial": [

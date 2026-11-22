@@ -6,7 +6,7 @@ self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
 self.addEventListener('push', (e) => {
   let d = {};
   try { d = e.data ? e.data.json() : {}; } catch { d = { titulo: e.data && e.data.text() }; }
-  e.waitUntil(self.registration.showNotification(d.titulo || 'Aprobar', {
+  e.waitUntil(self.registration.showNotification(d.titulo || 'Marble', {
     body: d.texto || '',
     icon: '/iconos/icono-192.png',
     badge: '/iconos/icono-192.png',

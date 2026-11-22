@@ -760,7 +760,7 @@ function volver() {
   $('#lista').classList.add('activa');
   $('#atras').hidden = true;
   $('#marca').hidden = vista === 'cuentas';
-  $('#titulo').textContent = 'Aprobar';
+  $('#titulo').textContent = 'Marble';
   mostrarVista();
 }
 
@@ -2011,7 +2011,7 @@ async function estadoAvisos() {
   texto.textContent = activos
     ? '🔔 Avisos activados en este aparato.'
     : Notification.permission === 'denied'
-      ? 'Los avisos están bloqueados para esta app. Actívalos en los ajustes del móvil (Notificaciones › Aprobar).'
+      ? 'Los avisos están bloqueados para esta app. Actívalos en los ajustes del móvil (Notificaciones › Marble).'
       : 'Avisos en el móvil: cuando haya algo para confirmar y cuando salga cada publicación.';
 }
 

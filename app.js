@@ -746,6 +746,7 @@ function abrir(p) {
   $('#detalle').classList.add('activa');
   $('#atras').hidden = false;
   $('#marca').hidden = true;
+  document.body.classList.add('en-detalle');
   $('#titulo').textContent = p.title;
   pintarEstadoActual();
   pintarProgramar();
@@ -760,6 +761,7 @@ function volver() {
   $('#lista').classList.add('activa');
   $('#atras').hidden = true;
   $('#marca').hidden = vista === 'cuentas';
+  document.body.classList.remove('en-detalle');
   $('#titulo').textContent = 'Marble';
   mostrarVista();
 }
@@ -867,8 +869,14 @@ let LOGIN = '';
 function pintarSesion() {
   const b = $('#sesion');
   b.hidden = false;
+  const fila = $('#mas-sesion');
+  fila.querySelector('span').textContent = PUEDE_GUARDAR ? `Salir${LOGIN ? ` (@${LOGIN})` : ''}` : 'Entrar con GitHub';
+  fila.href = PUEDE_GUARDAR ? '/api/auth?salir=1' : '/entrar.html';
+  fila.classList.toggle('peligro', PUEDE_GUARDAR);
   if (PUEDE_GUARDAR) {
-    b.textContent = LOGIN ? '@' + LOGIN : 'Sesión';
+    // Un círculo con la inicial, como la foto de perfil de una app.
+    b.textContent = (LOGIN || '?').slice(0, 1).toUpperCase();
+    b.classList.add('avatar');
     b.href = '/api/auth?salir=1';
     b.classList.remove('sin');
     b.title = 'Salir de este aparato';
@@ -876,9 +884,13 @@ function pintarSesion() {
     b.textContent = 'Entrar';
     b.href = '/entrar.html';
     b.classList.add('sin');
+    b.classList.remove('avatar');
     b.title = 'Entrar con GitHub para poder aprobar';
   }
 }
+$('#mas-sesion').addEventListener('click', (e) => {
+  if (PUEDE_GUARDAR && !confirm(`¿Salir de Marble en este aparato${LOGIN ? ` (@${LOGIN})` : ''}?`)) e.preventDefault();
+});
 $('#sesion').addEventListener('click', (e) => {
   if (PUEDE_GUARDAR && !confirm(`¿Salir de Marble en este aparato${LOGIN ? ` (@${LOGIN})` : ''}?`)) e.preventDefault();
 });
@@ -1412,6 +1424,8 @@ function cambiarMarca(m) {
   CUENTAS = DATOS.marcas[MARCA].cuentas;
   $('#marca-nombre').textContent = DATOS.marcas[MARCA].marca.org;
   $('#marca-avatar').src = CUENTAS.avatar;
+  $('#mas-avatar').src = CUENTAS.avatar;
+  $('#mas-cuenta').textContent = DATOS.marcas[MARCA].marca.org;
   document.body.dataset.marca = MARCA;
   // El blog es de la web de ADAR: CreArtBox no tiene.
   $('#pest-blog').hidden = !DATOS.marcas[MARCA].posts.some((p) => p.esBlog);
@@ -1839,15 +1853,26 @@ $('#cal-dia').addEventListener('click', (e) => {
 });
 
 /** Enseña el apartado que toque y pinta solo ese. */
+const TITULOS = { ideas: 'Ideas', confirmar: 'Para confirmar', programado: 'Programado', publicado: 'Publicado', calendario: 'Calendario', blog: 'Blog', meses: 'Meses', mas: 'Más' };
+
 function mostrarVista() {
   const enCuentas = vista === 'cuentas';
   document.body.dataset.marca = enCuentas ? '' : MARCA;
+  document.body.classList.toggle('con-pestanas', !enCuentas);
   const enMeses = vista === 'meses';
   $('#vista-cuentas').hidden = !enCuentas;
   $('#marca').hidden = enCuentas || !!actual;
   $('#vista-meses').hidden = !enMeses;
-  $('#pestanas').hidden = enMeses || enCuentas;
-  $('#mes-barra').hidden = enMeses || enCuentas;
+  $('#vista-mas').hidden = vista !== 'mas';
+  $('#pestanas').hidden = enCuentas;
+  $('#mes-barra').hidden = !(vista === 'ideas' || vista === 'confirmar');
+  // Título grande, como en las apps del iPhone, con la cuenta encima.
+  $('#cabeza-vista').hidden = enCuentas;
+  $('#titulo-grande').textContent = TITULOS[vista] || '';
+  $('#cabeza-cuenta').textContent = DATOS.marcas[MARCA].marca.org;
+  // En el móvil, Programado, Publicado y Meses viven dentro de «Más».
+  const enMas = ['mas', 'programado', 'publicado', 'meses'].includes(vista);
+  document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x.dataset.vista === vista || (x.dataset.vista === 'mas' && enMas)));
   pintarSaltos();
   $('#vista-ideas').hidden = vista !== 'ideas';
   $('#vista-programado').hidden = vista !== 'programado';
@@ -1985,6 +2010,15 @@ function irAMes(m) {
 }
 
 $('#mes-volver').addEventListener('click', () => { MES = null; vista = 'meses'; mostrarVista(); window.scrollTo(0, 0); });
+
+$('#vista-mas').addEventListener('click', (e) => {
+  const f = e.target.closest('.fila[data-ir]');
+  if (!f) return;
+  if (f.dataset.ir === 'cuentas') { $('#marca').click(); return; }
+  vista = f.dataset.ir;
+  mostrarVista();
+  window.scrollTo(0, 0);
+});
 
 $('#pestanas').addEventListener('click', (e) => {
   const b = e.target.closest('.pest');

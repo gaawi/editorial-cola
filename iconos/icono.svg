@@ -1,20 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <defs>
-    <radialGradient id="canica" cx="0.36" cy="0.32" r="0.75">
-      <stop offset="0" stop-color="#FFF6C2"/>
-      <stop offset="0.3" stop-color="#F5D72F"/>
-      <stop offset="1" stop-color="#C08F00"/>
-    </radialGradient>
-  </defs>
-  <rect width="512" height="512" rx="112" fill="#1c1917"/>
-  <!-- La rampa en zigzag: la idea va bajando, tramo a tramo, hasta publicarse -->
-  <path d="M96 96 L376 156 L136 250 L376 318 L170 410" fill="none" stroke="#78716c" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- El rastro -->
-  <circle cx="176" cy="113" r="11" fill="#F5D72F" opacity=".3"/>
-  <circle cx="296" cy="139" r="12" fill="#F5D72F" opacity=".42"/>
-  <circle cx="256" cy="203" r="13" fill="#F5D72F" opacity=".55"/>
-  <circle cx="256" cy="284" r="14" fill="#F5D72F" opacity=".7"/>
-  <!-- La canica, al final de la rampa -->
-  <circle cx="300" cy="352" r="58" fill="url(#canica)"/>
-  <circle cx="281" cy="330" r="14" fill="#fff" opacity=".85"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs>
+ <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2522"/><stop offset="1" stop-color="#121010"/></linearGradient>
+ <radialGradient id="bola" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFFBE0"/><stop offset="0.22" stop-color="#FFE45C"/><stop offset="0.65" stop-color="#F5C400"/><stop offset="1" stop-color="#A87600"/></radialGradient>
+ <linearGradient id="pista" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#d6d0c4" stop-opacity=".95"/></linearGradient>
+ <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#F5D72F" stop-opacity=".45"/><stop offset="1" stop-color="#F5D72F" stop-opacity="0"/></radialGradient>
+ <filter id="sombra" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<rect width="512" height="512" rx="114" fill="url(#fondo)"/>
+<path d="M112 372 L112 158 Q112 124 138 148 L256 262 L374 148 Q400 124 400 158 L400 286" fill="none" stroke="url(#pista)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M400 300 L400 318" stroke="#F5D72F" stroke-opacity=".5" stroke-width="44" stroke-linecap="round"/>
+<circle cx="400" cy="380" r="96" fill="url(#halo)"/>
+<circle cx="400" cy="374" r="58" fill="url(#bola)" filter="url(#sombra)"/>
+<ellipse cx="382" cy="351" rx="17" ry="12" fill="#fff" opacity=".9"/>
 </svg>

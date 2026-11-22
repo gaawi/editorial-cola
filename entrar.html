@@ -3,44 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Marble</title>
+<meta name="theme-color" content="#151312">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Marble">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Marble</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Literata:opsz,wght@7..72,700&display=swap">
 <style>
   /* Los estilos van aquí dentro: estilo.css está detrás de la puerta y la
      puerta no puede depender de lo que hay al otro lado. */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  :root { --papel: #faf8f3; --tinta: #1c1917; --suave: #57534e; --filete: #e7e5e4; --no: #b91c1c; }
-  html, body { background: var(--papel); color: var(--tinta);
-    font-family: Archivo, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
-  .btn { min-height: 48px; border-radius: 12px; font: inherit; font-size: 15px; font-weight: 600;
-    border: 1px solid; cursor: pointer; }
-  body { display: grid; place-items: center; min-height: 100svh; padding: 24px; }
-  .puerta { text-align: center; max-width: 320px; }
-  .puerta h1 { font-family: Literata, Georgia, serif; font-size: 24px; margin-bottom: 8px; }
-  .puerta p { color: var(--suave); font-size: 14px; line-height: 1.5; margin-bottom: 24px; }
-  .puerta .lema { font-size: 15px; margin: -2px 0 18px; }
-  .puerta .btn { width: 100%; background: #1c1917; border-color: #1c1917; color: #fff; }
-  .puerta .mal { color: var(--no); font-size: 13px; margin-top: 14px; }
+  html, body { height: 100%; }
+  body {
+    min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    padding: calc(48px + env(safe-area-inset-top)) 28px calc(28px + env(safe-area-inset-bottom));
+    color: #f6f2ea; font-family: Archivo, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(120% 70% at 75% 78%, rgba(245, 215, 47, .22) 0, rgba(245, 215, 47, 0) 55%),
+      radial-gradient(90% 60% at 10% 0%, rgba(255, 255, 255, .06) 0, rgba(255, 255, 255, 0) 60%),
+      linear-gradient(180deg, #24201d 0%, #121010 100%);
+    overflow: hidden;
+  }
+  /* La rampa de fondo: el recorrido de la canica, muy sutil */
+  .rampa { position: fixed; inset: 0; z-index: 0; opacity: .14; pointer-events: none; }
+  .centro, .abajo { position: relative; z-index: 1; width: 100%; max-width: 360px; }
+  .centro { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .logo { width: 116px; height: 116px; border-radius: 27px; box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 0.5px rgba(255,255,255,.08); animation: sube .7s cubic-bezier(.2,.8,.2,1) both; }
+  h1 { font-family: Literata, Georgia, serif; font-weight: 700; font-size: 44px; letter-spacing: -0.035em; margin-top: 26px; animation: sube .7s .08s cubic-bezier(.2,.8,.2,1) both; }
+  .lema { font-size: 17px; color: rgba(246,242,234,.72); margin-top: 8px; animation: sube .7s .14s cubic-bezier(.2,.8,.2,1) both; }
+  .pasos { display: flex; gap: 8px; justify-content: center; margin-top: 26px; font-size: 12px; color: rgba(246,242,234,.55); flex-wrap: wrap; animation: sube .7s .2s cubic-bezier(.2,.8,.2,1) both; }
+  .pasos span { display: inline-flex; align-items: center; gap: 6px; }
+  .pasos span + span::before { content: '›'; opacity: .5; margin-right: 2px; }
+  .pasos b { width: 7px; height: 7px; border-radius: 50%; background: radial-gradient(circle at 36% 32%, #FFF6C2, #F5D72F 35%, #C08F00); }
+  .abajo { animation: sube .7s .26s cubic-bezier(.2,.8,.2,1) both; }
+  .btn {
+    width: 100%; min-height: 54px; border: 0; border-radius: 16px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: #f6f2ea; color: #151312; font: 600 16px Archivo, system-ui, sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .btn:active { transform: scale(.985); }
+  .btn:disabled { opacity: .7; }
+  .btn svg { width: 22px; height: 22px; }
+  .nota { text-align: center; font-size: 12.5px; line-height: 1.5; color: rgba(246,242,234,.5); margin-top: 14px; }
+  .mal { text-align: center; color: #ffb4a8; font-size: 13px; margin-top: 12px; }
+  @keyframes sube { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
 </style>
 </head>
 <body>
-<div class="puerta">
-  <img src="/iconos/icono-192.png" alt="" width="88" height="88" style="border-radius:20px;margin-bottom:16px">
+<svg class="rampa" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <path d="M-20 120 L300 210 L60 360 L340 470 L80 620 L420 760" fill="none" stroke="#f6f2ea" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div class="centro">
+  <img class="logo" src="/iconos/icono-512.png" alt="Marble">
   <h1>Marble</h1>
   <p class="lema">De la idea a la publicación.</p>
-  <p>Los borradores no son públicos. Entra con la cuenta de GitHub que puede escribir en el repositorio.</p>
-  <button id="entrar" class="btn">Entrar con GitHub</button>
+  <div class="pasos"><span><b></b>Idea</span><span>Aprobada</span><span>Preparada</span><span>Publicada</span></div>
+</div>
+<div class="abajo">
+  <button id="entrar" class="btn">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+    Continuar con GitHub
+  </button>
   <p class="mal" id="mal" hidden></p>
+  <p class="nota">Solo para el equipo de CreArtBox y Festival ADAR.<br>Los borradores no son públicos.</p>
 </div>
 <script>
 // En la misma página, sin ventana emergente: en la app instalada del iPhone
 // una ventana aparte se abre en Safari y la sesión no llegaría a la app.
 document.getElementById('entrar').addEventListener('click', function () {
-  this.disabled = true; this.textContent = 'Abriendo GitHub…';
+  this.disabled = true; this.lastChild.textContent = ' Abriendo GitHub…';
   location.href = '/api/auth';
 });
 function fallo(t) { var e = document.getElementById('mal'); e.textContent = t; e.hidden = false; }

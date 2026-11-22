@@ -43,14 +43,35 @@
     </div>
     <h2 class="meses-titulo">¿Qué cuenta?</h2>
     <div id="cuentas-lista" class="cuentas-lista"></div>
-    <div class="avisos" id="avisos">
+  </section>
+  <div class="cabeza-vista" id="cabeza-vista" hidden>
+    <p class="cabeza-cuenta" id="cabeza-cuenta"></p>
+    <h2 class="titulo-grande" id="titulo-grande"></h2>
+  </div>
+  <!-- Más: lo que no cabe en la barra de abajo, como en Ajustes del iPhone -->
+  <section id="vista-mas" class="mas" hidden>
+    <div class="grupo">
+      <p class="grupo-titulo">Ver</p>
+      <button class="fila" data-ir="meses"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Meses</span><em>›</em></button>
+      <button class="fila" data-ir="programado"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Programado</span><em>›</em></button>
+      <button class="fila" data-ir="publicado"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Publicado</span><em>›</em></button>
+    </div>
+    <div class="grupo">
+      <p class="grupo-titulo">Cuenta</p>
+      <button class="fila" data-ir="cuentas"><img id="mas-avatar" alt=""><span>Cambiar de cuenta</span><small id="mas-cuenta"></small><em>›</em></button>
+    </div>
+    <div class="grupo avisos" id="avisos">
+      <p class="grupo-titulo">Avisos</p>
       <p class="avisos-texto" id="avisos-texto">Avisos en el móvil: cuando haya algo para confirmar y cuando salga cada publicación.</p>
       <div class="avisos-botones"><button class="fl fl-si" id="avisos-activar">🔔 Activar avisos</button><button class="fl" id="avisos-probar" hidden>Probar</button></div>
     </div>
+    <div class="grupo">
+      <a class="fila fila-salir" id="mas-sesion" href="/entrar.html"><span>Entrar con GitHub</span></a>
+    </div>
+    <p class="mas-pie">Marble · De la idea a la publicación.</p>
   </section>
   <!-- Dentro de una cuenta: los meses, con su resumen -->
   <section id="vista-meses" class="meses">
-    <h2 class="meses-titulo">Meses</h2>
     <p class="aviso-suave">Toca un mes para trabajar en él. Marca «Mes terminado» cuando esté todo programado.</p>
     <div id="meses-lista" class="meses-lista"></div>
   </section>
@@ -58,13 +79,17 @@
     <button id="mes-volver" class="mes-volver">‹ Meses</button>
     <nav id="mes-saltos" class="mes-saltos" aria-label="Ir a un mes"></nav>
   </div>
+  <!-- Las pestañas: abajo en el móvil (como una app), a la izquierda en el ordenador -->
   <nav class="pestanas" id="pestanas">
-    <button class="pest activo" data-vista="ideas">Ideas</button>
-    <button class="pest" data-vista="confirmar">Confirmar<span class="cuenta-pest" id="cuenta-confirmar"></span></button>
-    <button class="pest" data-vista="programado">Programado</button>
-    <button class="pest" data-vista="publicado">Publicado</button>
-    <button class="pest" data-vista="calendario">Calendario</button>
-    <button class="pest" data-vista="blog" id="pest-blog" hidden>Blog</button>
+    <div class="lateral-marca"><img src="/iconos/icono.svg" alt="" width="34" height="34"><b>Marble</b></div>
+    <button class="pest activo" data-vista="ideas"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg><span>Ideas</span></button>
+    <button class="pest" data-vista="confirmar"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></svg><span>Confirmar</span><i class="cuenta-pest" id="cuenta-confirmar"></i></button>
+    <button class="pest solo-lateral" data-vista="programado"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Programado</span></button>
+    <button class="pest solo-lateral" data-vista="publicado"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Publicado</span></button>
+    <button class="pest" data-vista="calendario"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Calendario</span></button>
+    <button class="pest" data-vista="blog" id="pest-blog" hidden><svg viewBox="0 0 24 24"><path d="M6 3.5h8l4 4V20a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 20z"/><path d="M14 3.5V8h4M9 12h6M9 15.5h6"/></svg><span>Blog</span></button>
+    <button class="pest solo-lateral" data-vista="meses"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Meses</span></button>
+    <button class="pest solo-movil" data-vista="mas"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18.5" cy="12" r="1.6"/></svg><span>Más</span></button>
   </nav>
 
   <div id="vista-ideas">

@@ -2255,12 +2255,14 @@ function pendientesRevision() {
       for (const r of e.redes) {
         const red = e.tipo === 'historia' ? 'story' : r.red;
         const enCola = ((PROGRAMADO.posts || {})[k]?.redes || []).some((x) => x.red === r.red && x.estado);
-        if (!enCola) listos.push({ tipo: 'confirmar', p, red, cuando: r.cuando, texto: r.texto || '' });
+        // Already queued or published, or its time has passed: not for review.
+        const pasado = new Date(r.cuando) < new Date();
+        if (!enCola && !pasado) listos.push({ tipo: 'confirmar', p, red, cuando: r.cuando, texto: r.texto || '' });
       }
     }
   }
   listos.sort((a, b) => String(a.cuando).localeCompare(String(b.cuando)) || ['ig', 'fb', 'story'].indexOf(a.red) - ['ig', 'fb', 'story'].indexOf(b.red));
-  const ideas = posts.filter((p) => !p.esBlog && grupoDe(p) === 'idea' && !faseDe(p)
+  const ideas = posts.filter((p) => !p.esBlog && grupoDe(p) === 'idea' && !faseDe(p) && !p.publicadoEn
       && !(p.ventana && HOY > p.ventana.hasta) && estadoDe(p).estado !== 'descartado')
     .sort((a, b) => (mesDe(a) || '').localeCompare(mesDe(b) || '') || a.date.localeCompare(b.date))
     .map((p) => ({ tipo: 'idea', p, red: p.formato === 'historia' ? 'story' : 'ig', texto: p.pies?.ig?.texto || '' }));
@@ -2293,7 +2295,12 @@ function cabeceraRevision(it, i, n) {
     : it.tipo === 'idea'
       ? `<span class="rv-etapa-tag">Idea</span><span>Approve the idea and I prepare it${p.publicaEl ? ` · for ${escapar(p.publicaEl)}` : ''}</span>`
       : `<span class="rv-etapa-tag">Blog article</span><span>Goes live on festivaladar.com</span>`;
+  // Where this card is in the process: a small timeline.
+  const pasos = it.tipo === 'blog' ? ['Draft', 'Your OK', 'Live on the website'] : ['Idea', 'Preparing', 'Final OK', 'Published'];
+  const aqui = it.tipo === 'idea' ? 0 : it.tipo === 'confirmar' ? 2 : 1;
+  const linea = `<ol class="rv-linea">${pasos.map((t, k) => `<li class="${k < aqui ? 'hecho' : k === aqui ? 'aqui' : ''}">${t}</li>`).join('')}</ol>`;
   return `<header class="rv-cab"><span class="rv-red">${donde}</span><span class="rv-n">${i + 1}/${n}</span></header>
+    ${linea}
     <div class="rv-etapa rv-etapa-${it.tipo}">${etapa}</div>`;
 }
 

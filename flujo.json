@@ -1371,9 +1371,15 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-22T12:44:49.669Z"
+    },
+    {
+     "accion": "descartar",
+     "quien": "claude",
+     "fecha": "2026-11-22T22:20:43.435179+00:00",
+     "nota": "Archived: it was for Nov 22 (Saint Cecilia) and that day passed without the final OK."
     }
    ],
-   "fase": "preparado",
+   "fase": "descartado",
    "preparado": {
     "es/santa-cecilia-2026": {
      "tipo": "post",

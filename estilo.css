@@ -1287,3 +1287,28 @@ body.en-revision .aviso { z-index: 450; bottom: calc(80px + env(safe-area-inset-
 .rv-fin .rv-si { flex: none; padding: 0 22px; margin-top: 10px; }
 .rv-b[hidden], .rv-si[hidden] { display: none; }
 .rv-si span { white-space: nowrap; }
+
+/* Review: each phase has its own background, and a timeline on top */
+.rv-slide.rv-es-idea { background: linear-gradient(180deg, #4a0f1d 0%, #2a0811 100%); }
+.rv-slide.rv-es-confirmar { background: linear-gradient(180deg, #0b3a2c 0%, #062019 100%); }
+.revision:has(.rv-slide.actual.rv-es-idea) .rv-barra { background: #24070e; }
+.revision:has(.rv-slide.actual.rv-es-confirmar) .rv-barra { background: #05190f; }
+.revision:has(.rv-slide.actual.rv-es-blog) .rv-barra { background: #2b1d07; }
+.rv-etapa-idea { background: rgba(255, 92, 120, .16); color: #ffd6dd; }
+.rv-etapa-idea .rv-etapa-tag { background: #ff4d6d; color: #fff; }
+.rv-si.rv-si-idea { background: #ff4d6d; color: #fff; }
+.rv-etapa-confirmar { background: rgba(184, 242, 74, .14); color: #e6ffc2; }
+.rv-linea { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; flex: none; }
+.rv-linea li { flex: 1; font-size: 10.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; text-align: center; padding: 7px 2px 0; position: relative; color: rgba(255,255,255,.4); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rv-linea li::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; border-radius: 2px; background: rgba(255,255,255,.18); }
+.rv-linea li.hecho { color: rgba(255,255,255,.7); }
+.rv-linea li.hecho::before { background: rgba(255,255,255,.6); }
+.rv-linea li.aqui { color: #fff; }
+.rv-es-idea .rv-linea li.aqui::before { background: #ff4d6d; }
+.rv-es-confirmar .rv-linea li.aqui::before { background: var(--lima); }
+.rv-es-blog .rv-linea li { color: rgba(43,29,7,.4); }
+.rv-es-blog .rv-linea li::before { background: rgba(43,29,7,.15); }
+.rv-es-blog .rv-linea li.hecho { color: rgba(43,29,7,.7); }
+.rv-es-blog .rv-linea li.hecho::before { background: rgba(43,29,7,.5); }
+.rv-es-blog .rv-linea li.aqui { color: #2b1d07; }
+.rv-es-blog .rv-linea li.aqui::before { background: #E59A1D; }

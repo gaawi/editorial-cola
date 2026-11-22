@@ -995,3 +995,16 @@ body.con-pestanas .aviso { bottom: calc(76px + env(safe-area-inset-bottom)); }
 /* En la portada (elegir cuenta) ya está el logo grande: arriba, solo la sesión. */
 body:not(.con-pestanas):not(.en-detalle) .barra .logo-marca,
 body:not(.con-pestanas):not(.en-detalle) .barra h1#titulo { visibility: hidden; }
+
+/* Deslizar para actualizar */
+.tirar {
+  position: fixed; left: 50%; top: calc(env(safe-area-inset-top) + 58px); z-index: 80;
+  display: flex; align-items: center; gap: 8px; margin-left: -96px; width: 192px; justify-content: center;
+  padding: 8px 14px; border-radius: 999px; background: var(--carbon); color: #fff; font-size: 13px; font-weight: 600;
+  opacity: 0; transform: translateY(-60px); pointer-events: none; transition: transform .2s ease, opacity .2s ease;
+  box-shadow: 0 8px 24px rgba(28,25,23,.25);
+}
+.tirar i { width: 14px; height: 14px; border-radius: 50%; background: var(--canica-esfera); flex: none; }
+.tirar.girando i { animation: rueda .7s linear infinite; }
+@keyframes rueda { from { transform: translateX(-3px) rotate(0); } 50% { transform: translateX(3px) rotate(180deg); } to { transform: translateX(-3px) rotate(360deg); } }
+html { overscroll-behavior-y: none; }

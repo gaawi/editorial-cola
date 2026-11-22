@@ -2020,6 +2020,7 @@ $('#vista-mas').addEventListener('click', (e) => {
   const f = e.target.closest('.fila[data-ir]');
   if (!f) return;
   if (f.dataset.ir === 'cuentas') { $('#marca').click(); return; }
+  if (f.dataset.ir === 'actualizar') { recargar(); return; }
   vista = f.dataset.ir;
   mostrarVista();
   window.scrollTo(0, 0);
@@ -2108,5 +2109,94 @@ $('#avisos-probar').addEventListener('click', async () => {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(() => estadoAvisos()).catch(() => estadoAvisos());
 } else estadoAvisos();
+
+// ── Actualizar: deslizar hacia abajo ────────────────────────────────────
+// Con la app abierta mucho rato, lo que cambió (un check, lo que publicó la
+// cola) no se veía. Deslizando hacia abajo desde arriba del todo se vuelve a
+// leer todo sin perder el sitio; si hay versión nueva de la app, se recarga
+// entera. Y al volver a la app tras un rato fuera, se actualiza sola.
+let VERSION_APP = null;
+const versionApp = async () => {
+  try { const r = await fetch('/app.js', { method: 'HEAD', cache: 'no-store' }); return r.headers.get('etag') || r.headers.get('last-modified'); }
+  catch { return null; }
+};
+versionApp().then((v) => { VERSION_APP = v; });
+
+let recargando = false;
+async function recargar({ callado = false } = {}) {
+  if (recargando) return;
+  recargando = true;
+  try {
+    const v = await versionApp();
+    if (VERSION_APP && v && v !== VERSION_APP) { location.reload(); return; }
+    DATOS = await (await fetch('datos/posts.json?t=' + Date.now(), { cache: 'no-store' })).json();
+    try {
+      const r = await fetch('datos/programado.json?t=' + Date.now(), { cache: 'no-store' });
+      if (r.ok) PROGRAMADO = await r.json();
+    } catch {}
+    textosDeMetricool();
+    for (const k of Object.keys(HISTORICOS)) delete HISTORICOS[k];
+    await cargarFlujo();
+    cambiarMarca(MARCA);
+    pintarCuentaConfirmar();
+    if (actual) {
+      const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === actual.clave);
+      if (p) { actual = p; repintar(); } else volver();
+    } else {
+      const y = window.scrollY;
+      mostrarVista();
+      requestAnimationFrame(() => window.scrollTo(0, y));
+    }
+    if (!callado) aviso('Actualizado.');
+  } catch (e) {
+    if (!callado) aviso('No se pudo actualizar: ' + e.message, true);
+  } finally {
+    recargando = false;
+  }
+}
+
+(() => {
+  const ind = $('#tirar');
+  const UMBRAL = 72;
+  let inicio = null, dy = 0;
+  const abierto = () => !$('#visor').hidden || !$('#hoja').hidden || document.querySelector('#editor:not([hidden])');
+  const pon = (d, texto) => {
+    ind.style.transform = `translateY(${Math.min(d, 110) - 60}px)`;
+    ind.style.opacity = String(Math.min(1, d / UMBRAL));
+    ind.querySelector('i').style.transform = `rotate(${d * 4}deg)`;
+    if (texto) ind.querySelector('span').textContent = texto;
+  };
+  document.addEventListener('touchstart', (e) => {
+    if (recargando || window.scrollY > 0 || abierto() || e.touches.length !== 1) { inicio = null; return; }
+    inicio = e.touches[0].clientY; dy = 0;
+  }, { passive: true });
+  document.addEventListener('touchmove', (e) => {
+    if (inicio === null) return;
+    dy = (e.touches[0].clientY - inicio) * 0.55;
+    if (dy <= 0) { pon(0); return; }
+    if (window.scrollY > 0) { inicio = null; pon(0); return; }
+    if (e.cancelable) e.preventDefault();
+    pon(dy, dy >= UMBRAL ? 'Suelta para actualizar' : 'Desliza para actualizar');
+  }, { passive: false });
+  document.addEventListener('touchend', async () => {
+    if (inicio === null) return;
+    inicio = null;
+    if (dy >= UMBRAL) {
+      ind.classList.add('girando'); pon(UMBRAL, 'Actualizando…');
+      await recargar({ callado: true });
+      ind.classList.remove('girando');
+      pon(UMBRAL, 'Al día ✓');
+      setTimeout(() => pon(0), 600);
+    } else pon(0);
+    dy = 0;
+  });
+})();
+
+// Al volver a la app después de un rato fuera, se pone al día sola.
+let fueraDesde = 0;
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) fueraDesde = Date.now();
+  else if (fueraDesde && Date.now() - fueraDesde > 60000) recargar({ callado: true });
+});
 
 arrancar().catch((e) => aviso('No se pudieron cargar los datos: ' + e.message, true));

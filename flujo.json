@@ -2016,6 +2016,16 @@
      "hecha": false
     }
    ]
+  },
+  "es/dia-montanas-somiedo": {
+   "historial": [
+    {
+     "accion": "descartar",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:36:45.111Z"
+    }
+   ],
+   "fase": "descartado"
   }
  },
  "ideas": [

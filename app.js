@@ -163,21 +163,83 @@ function reparte(fichas) {
  * Las tarjetas, una detrás de otra y con un rótulo cada vez que cambia el
  * mes: se ven todos los meses seguidos, sin tener que salir y entrar en otro.
  */
-function pintarPorMeses(cont, fichas) {
-  let ultimo = null;
-  for (const p of fichas) {
-    const m = mesDe(p);
-    if (!MES && m && m !== ultimo) {
-      const h = document.createElement('h3');
-      h.className = 'mes-separador';
-      h.id = `sep-${vista}-${m}`;
-      h.textContent = nombreMes(m);
-      cont.appendChild(h);
-      ultimo = m;
-    }
-    cont.appendChild(tarjeta(p));
-  }
+function pintarPorMeses(cont, fichas, extra = []) {
+  mazo(cont, [...fichas.map((p) => ({ nodo: tarjeta(p), mes: mesDe(p), etiqueta: nombreMes(mesDe(p) || HOY.slice(0, 7)) })), ...extra]);
 }
+
+// ── Flashcards ──────────────────────────────────────────────────────────
+// Every review view shows one card at a time: swipe sideways (or use the
+// arrows, or ← → on a keyboard) to move. The position is kept per view, so
+// after approving a card the next one is right there.
+const POS_MAZO = {};
+function mazo(cont, items) {
+  cont.classList.add('mazo');
+  cont.innerHTML = '';
+  items.forEach((it, i) => {
+    const s = document.createElement('div');
+    s.className = 'slide';
+    s.dataset.i = i;
+    if (it.mes) s.dataset.mes = it.mes;
+    s.dataset.etiqueta = it.etiqueta || '';
+    s.appendChild(it.nodo);
+    cont.appendChild(s);
+  });
+  // The bar on top: where you are, and the arrows.
+  let barra = cont.previousElementSibling;
+  if (!barra || !barra.classList.contains('mazo-barra')) {
+    barra = document.createElement('div');
+    barra.className = 'mazo-barra';
+    barra.innerHTML = `<button class="mazo-paso" data-d="-1" aria-label="Previous card"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="mazo-donde"><b></b><small></small></span>
+      <button class="mazo-paso" data-d="1" aria-label="Next card"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <i class="mazo-progreso"><i></i></i>`;
+    cont.parentNode.insertBefore(barra, cont);
+    barra.addEventListener('click', (e) => {
+      const b = e.target.closest('.mazo-paso');
+      if (b) irACarta(cont, posMazo(cont) + Number(b.dataset.d));
+    });
+    let tic = null;
+    cont.addEventListener('scroll', () => {
+      cancelAnimationFrame(tic);
+      tic = requestAnimationFrame(() => pintarBarraMazo(cont));
+    }, { passive: true });
+  }
+  barra.hidden = items.length === 0;
+  const clave = cont.id + ':' + vista + ':' + MARCA;
+  cont.dataset.clave = clave;
+  const ir = Math.min(POS_MAZO[clave] || 0, Math.max(0, items.length - 1));
+  requestAnimationFrame(() => { cont.scrollLeft = ir * cont.clientWidth; pintarBarraMazo(cont); });
+}
+const posMazo = (cont) => Math.round(cont.scrollLeft / Math.max(1, cont.clientWidth));
+function pintarBarraMazo(cont) {
+  const barra = cont.previousElementSibling;
+  const n = cont.children.length;
+  const i = Math.min(posMazo(cont), n - 1);
+  POS_MAZO[cont.dataset.clave] = i;
+  if (!barra || !n) return;
+  barra.querySelector('b').textContent = `${i + 1} / ${n}`;
+  barra.querySelector('small').textContent = cont.children[i]?.dataset.etiqueta || '';
+  barra.querySelector('.mazo-progreso i').style.width = `${((i + 1) / n) * 100}%`;
+  barra.querySelector('[data-d="-1"]').disabled = i <= 0;
+  barra.querySelector('[data-d="1"]').disabled = i >= n - 1;
+  // The next and previous cards get drawn ahead of time.
+  for (const j of [i, i + 1, i - 1]) dibujarTarjeta(cont.children[j]?.querySelector('.tarjeta'));
+}
+function irACarta(cont, i) {
+  const n = cont.children.length;
+  if (!n) return;
+  i = Math.max(0, Math.min(n - 1, i));
+  cont.scrollTo({ left: i * cont.clientWidth, behavior: 'smooth' });
+  // Back to the top of the card if you had scrolled down reading it.
+  const arriba = cont.getBoundingClientRect().top + window.scrollY - (($('.barra')?.offsetHeight || 0) + 70);
+  if (window.scrollY > arriba) window.scrollTo({ top: Math.max(0, arriba), behavior: 'smooth' });
+}
+document.addEventListener('keydown', (e) => {
+  if (e.target.closest('input, textarea, [contenteditable]') || actual) return;
+  if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+  const cont = [...document.querySelectorAll('.mazo')].find((c) => c.offsetParent !== null);
+  if (cont) { e.preventDefault(); irACarta(cont, posMazo(cont) + (e.key === 'ArrowRight' ? 1 : -1)); }
+});
 
 function pintarLista() {
   const cont = $('#fichas');
@@ -200,20 +262,15 @@ function pintarLista() {
   // En Ideas no hay fila de circulitos: todo va al muro, también lo que es
   // solo una historia, que lleva su sello y se ve en 9:16. Se decide igual.
   $('#historias').hidden = true;
-  pintarPorMeses(cont, posts.sort((a, b) => (mesDe(a) || '').localeCompare(mesDe(b) || '') || a.date.localeCompare(b.date)));
-  // Las ideas para el blog: los borradores de la web, después de los meses.
+  // Las ideas para el blog: los borradores de la web, después de los meses,
+  // en el mismo mazo.
   const blog = ideasDeBlog(filtro === 'archivo');
-  if (blog.length) {
-    const h = document.createElement('h3');
-    h.className = 'mes-separador';
-    h.id = `sep-${vista}-blog`;
-    h.textContent = filtro === 'archivo' ? 'Archived blog posts' : 'Blog ideas';
-    cont.appendChild(h);
-    const caja = document.createElement('div');
-    caja.className = 'blog-lista en-ideas';
-    caja.innerHTML = blog.map((a) => tarjetaBlog(a)).join('');
-    cont.appendChild(caja);
-  }
+  const cartasBlog = blog.map((a) => {
+    const t = document.createElement('template');
+    t.innerHTML = tarjetaBlog(a).trim();
+    return { nodo: t.content.firstElementChild, mes: 'blog', etiqueta: filtro === 'archivo' ? 'Archived blog post' : 'Blog idea' };
+  });
+  pintarPorMeses(cont, posts.sort((a, b) => (mesDe(a) || '').localeCompare(mesDe(b) || '') || a.date.localeCompare(b.date)), cartasBlog);
   if (posts.length || blog.length) $('#vacio').hidden = true;
   observarLienzos();
 }
@@ -350,12 +407,29 @@ function tarjeta(p, opciones = {}) {
  * cuando se asoma por la pantalla y no antes.
  */
 let vigia = null;
+/** Draws a card's preview once (when it comes into view, or is next in the deck). */
+async function dibujarTarjeta(t) {
+  if (!t || t.dataset.dibujada) return;
+  t.dataset.dibujada = '1';
+  vigia?.unobserve(t);
+  const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === t.dataset.clave);
+  const hueco = t.querySelector('.hueco-ig');
+  if (!p || !hueco) return;
+  try {
+    hueco.replaceChildren(await (p.formato === 'historia' ? pintarHistoria(p) : pintarInstagram(p)));
+  } catch (err) {
+    hueco.innerHTML = `<div class="espera-lienzo">Couldn't render</div>`;
+  }
+}
+
 function observarLienzos() {
   vigia?.disconnect();
   vigia = new IntersectionObserver(async (entradas) => {
     for (const en of entradas) {
       if (!en.isIntersecting) continue;
       vigia.unobserve(en.target);
+      if (en.target.dataset.dibujada) continue;
+      en.target.dataset.dibujada = '1';
       const clave = en.target.dataset.clave;
       const p = DATOS.marcas[MARCA].posts.find((x) => x.clave === clave);
       const hueco = en.target.querySelector('.hueco-ig');
@@ -365,7 +439,7 @@ function observarLienzos() {
         hueco.innerHTML = `<div class="espera-lienzo">Couldn't render</div>`;
       }
     }
-  }, { rootMargin: '600px 0px' });
+  }, { rootMargin: '600px 100%' });
   document.querySelectorAll('.tarjeta').forEach((t) => vigia.observe(t));
 }
 
@@ -1532,7 +1606,12 @@ function pintarBlog() {
   $('#resumen-blog').textContent = `${todos.length - borr.length} published on festivaladar.com · ${borr.length} drafts. ` +
     'A draft goes live on the website when you tap "Publish to website", or on the day the social post announcing it goes out.';
   $('#filtros-blog').querySelectorAll('.chip').forEach((c) => c.classList.toggle('activo', c.dataset.filtro === filtroBlog));
-  $('#lista-blog').innerHTML = lista.map((a) => tarjetaBlog(a)).join('') || '<p class="vacio">Nothing here.</p>';
+  mazo($('#lista-blog'), lista.map((a) => {
+    const t = document.createElement('template');
+    t.innerHTML = tarjetaBlog(a).trim();
+    return { nodo: t.content.firstElementChild, etiqueta: a.estadoWeb === 'publish' ? 'Published article' : 'Draft' };
+  }));
+  if (!lista.length) $('#lista-blog').innerHTML = '<p class="vacio">Nothing here.</p>';
 }
 
 $('#filtros-blog').addEventListener('click', (e) => {
@@ -2018,13 +2097,10 @@ $('#mes-saltos').addEventListener('click', (e) => {
   irAMes(b.dataset.mes);
 });
 function irAMes(m) {
-  const h = document.getElementById(`sep-${vista}-${m}`);
-  if (!h) return;
-  const arriba = ($('.barra')?.offsetHeight || 0) + 8;
-  const ve = () => window.scrollTo(0, h.getBoundingClientRect().top + window.scrollY - arriba);
-  // Las imágenes de arriba se dibujan después y empujan la lista: se vuelve
-  // a colocar cuando han tenido tiempo de asentarse.
-  ve(); setTimeout(ve, 350); setTimeout(ve, 900);
+  // In the flashcards: jump to the first card of that month (or of the blog).
+  const cont = vista === 'confirmar' ? $('#fichas-conf') : $('#fichas');
+  const s = cont && cont.querySelector(`.slide[data-mes="${m}"]`);
+  if (s) irACarta(cont, Number(s.dataset.i));
 }
 
 $('#mes-volver').addEventListener('click', () => { MES = null; vista = 'meses'; mostrarVista(); window.scrollTo(0, 0); });

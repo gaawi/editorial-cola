@@ -1235,3 +1235,36 @@ body.en-revision .aviso { z-index: 450; bottom: calc(80px + env(safe-area-inset-
   .marca #marca-nombre { display: none; }
   .marca { padding: 4px; }
 }
+
+/* Review: where it goes and what you approve, at a glance */
+.rv-cab { gap: 10px; }
+.rv-red { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.rv-red b { font-family: var(--display); font-weight: 800; font-size: 19px; letter-spacing: -0.02em; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rv-logos { display: inline-flex; gap: 4px; flex: none; }
+.logo-red { width: 32px; height: 32px; display: block; }
+.rv-etapa { flex: none; display: flex; align-items: center; gap: 8px; font-size: 12.5px; padding: 7px 10px; border-radius: 12px; }
+.rv-etapa-tag { font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: 11px; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+.rv-etapa span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rv-etapa-confirmar { background: rgba(184, 242, 74, .14); color: #e6ffc2; }
+.rv-etapa-confirmar .rv-etapa-tag { background: var(--lima); color: var(--tinta); }
+.rv-etapa-idea { background: rgba(107, 59, 255, .22); color: #ddd3ff; }
+.rv-etapa-idea .rv-etapa-tag { background: var(--violeta); color: #fff; }
+.rv-etapa-blog { background: rgba(229, 154, 29, .16); color: #7a4a00; }
+.rv-etapa-blog .rv-etapa-tag { background: #E59A1D; color: #fff; }
+.rv-tipo { display: none; }
+/* Blog cards look like paper, not like a social post */
+.rv-slide.rv-es-blog { background: #fbf3e4; color: #2b1d07; }
+.rv-slide.rv-es-blog .rv-red b, .rv-slide.rv-es-blog .rv-blog-titulo { color: #2b1d07; }
+.rv-slide.rv-es-blog .rv-pie { color: #4a3615; }
+.rv-slide.rv-es-blog .rv-porque { color: #7a6340; }
+.rv-slide.rv-es-blog .rv-porque b { color: #b06d00; }
+.rv-slide.rv-es-blog .rv-n { color: #a08a64; }
+/* Facebook preview: the image, with the Facebook header so it reads as Facebook */
+.rv-media .fb.rv-fb { width: min(100cqw, 80cqh); background: #fff; border-radius: 12px; overflow: hidden; color: #050505; }
+.rv-media .fb.rv-fb .fb-texto, .rv-media .fb.rv-fb .fb-acciones { display: none; }
+.rv-pie.rv-sin { color: #8d88ad; font-style: italic; }
+/* The decision button says what it does, in the stage's colour */
+.rv-si.rv-si-idea { background: var(--violeta); color: #fff; }
+.rv-si.rv-si-idea i { background: #fff; }
+.rv-si.rv-si-blog { background: #E59A1D; color: #fff; }
+.rv-si.rv-si-blog i { background: #fff; }

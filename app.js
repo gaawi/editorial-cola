@@ -2229,23 +2229,44 @@ if ('serviceWorker' in navigator) {
 
 
 // ── Review mode ─────────────────────────────────────────────────────────
-// «Review»: everything that needs a decision, one post at a time, full
-// screen, no logo, no scrolling. Order: ready to confirm, then ideas, then
-// blog ideas. The bottom bar is the navigation and the decision; ⋯ has the
-// rest (edit, changes, archive, suggest). Exit goes back to the app.
+// «Review»: everything that needs a decision, one card at a time, full
+// screen, no scrolling. Every card says loud and clear:
+//   · where it goes: the Instagram / Facebook / story mark, or the blog;
+//   · what you are approving: an IDEA (Claude prepares it next) or a post
+//     READY TO GO OUT (it goes into the queue and publishes on time).
+// Ready posts come one card per network (Instagram, Facebook, story), each
+// approved on its own. Order: ready to post, ideas, blog articles.
 let RV = { items: [], hechos: {} };
+
+const MARCAS_RED = {
+  ig: '<svg class="logo-red" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gIg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".6" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#gIg)"/><rect x="6" y="6" width="12" height="12" rx="3.6" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.2" cy="7.8" r="1" fill="#fff"/></svg>',
+  fb: '<svg class="logo-red" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1877F2"/><path d="M13.3 19.5v-6h2l.3-2.4h-2.3V9.6c0-.7.2-1.2 1.2-1.2h1.2V6.3c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.8h-2v2.4h2v6z" fill="#fff"/></svg>',
+  story: '<svg class="logo-red" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gSt" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".5" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><circle cx="12" cy="12" r="10" fill="none" stroke="url(#gSt)" stroke-width="2.6"/><circle cx="12" cy="12" r="6.3" fill="url(#gSt)"/><path d="M12 9v6M9 12h6" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  blog: '<svg class="logo-red" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="6" fill="#E59A1D"/><path d="M8 5.5h6l3 3V18a.5.5 0 0 1-.5.5h-8.5A.5.5 0 0 1 7.5 18V6a.5.5 0 0 1 .5-.5z" fill="#fff"/><path d="M10 11h5M10 13.5h5M10 16h3.5" stroke="#E59A1D" stroke-width="1.3" stroke-linecap="round"/></svg>',
+};
+const NOMBRE_DESTINO = { ig: 'Instagram post', fb: 'Facebook post', story: 'Instagram story', blog: 'Blog article' };
 
 function pendientesRevision() {
   const posts = DATOS.marcas[MARCA].posts;
-  const conf = posts.filter((p) => !p.esBlog && faseDe(p) === 'preparado' && grupoDe(p) === 'confirmar')
-    .sort((a, b) => String(preparadoDe(a)?.redes?.[0]?.cuando || a.date).localeCompare(String(preparadoDe(b)?.redes?.[0]?.cuando || b.date)))
-    .map((p) => ({ tipo: 'confirmar', p }));
+  // Ready to go out: one card per network still waiting for its approval.
+  const listos = [];
+  for (const p of posts.filter((x) => !x.esBlog && faseDe(x) === 'preparado' && grupoDe(x) === 'confirmar')) {
+    for (const [k, e] of Object.entries(preparadoDe(p) ? flujoDe(p).preparado || {} : {})) {
+      for (const r of e.redes) {
+        const red = e.tipo === 'historia' ? 'story' : r.red;
+        const enCola = ((PROGRAMADO.posts || {})[k]?.redes || []).some((x) => x.red === r.red && x.estado);
+        if (!enCola) listos.push({ tipo: 'confirmar', p, red, cuando: r.cuando, texto: r.texto || '' });
+      }
+    }
+  }
+  listos.sort((a, b) => String(a.cuando).localeCompare(String(b.cuando)) || ['ig', 'fb', 'story'].indexOf(a.red) - ['ig', 'fb', 'story'].indexOf(b.red));
   const ideas = posts.filter((p) => !p.esBlog && grupoDe(p) === 'idea' && !faseDe(p)
       && !(p.ventana && HOY > p.ventana.hasta) && estadoDe(p).estado !== 'descartado')
     .sort((a, b) => (mesDe(a) || '').localeCompare(mesDe(b) || '') || a.date.localeCompare(b.date))
-    .map((p) => ({ tipo: 'idea', p }));
-  const blog = ideasDeBlog(false).filter((a) => flujoDe(a).faseBlog !== 'aprobado').map((p) => ({ tipo: 'blog', p }));
-  return [...conf, ...ideas, ...blog];
+    .map((p) => ({ tipo: 'idea', p, red: p.formato === 'historia' ? 'story' : 'ig', texto: p.pies?.ig?.texto || '' }));
+  const blog = ideasDeBlog(false).filter((a) => flujoDe(a).faseBlog !== 'aprobado')
+    .map((p) => ({ tipo: 'blog', p, red: 'blog', texto: p.excerpt || '' }));
+  return [...listos, ...ideas, ...blog];
 }
 
 function pintarBotonRevisar() {
@@ -2256,23 +2277,40 @@ function pintarBotonRevisar() {
   $('#revisar-n').textContent = n ? String(n) : '';
 }
 
+function cabeceraRevision(it, i, n) {
+  const p = it.p;
+  // Where it goes: big network mark(s).
+  let donde;
+  if (it.tipo === 'idea') {
+    const redes = p.formato === 'historia' ? ['story'] : ['ig', 'fb', 'story'];
+    donde = `<span class="rv-logos">${redes.map((r) => MARCAS_RED[r]).join('')}</span><b>${p.formato === 'historia' ? 'Instagram story' : 'Post + story'}</b>`;
+  } else {
+    donde = `<span class="rv-logos">${MARCAS_RED[it.red]}</span><b>${NOMBRE_DESTINO[it.red]}</b>`;
+  }
+  // What you are approving.
+  const etapa = it.tipo === 'confirmar'
+    ? `<span class="rv-etapa-tag">Ready to post</span><span>Goes out ${escapar(horaNY(it.cuando))}</span>`
+    : it.tipo === 'idea'
+      ? `<span class="rv-etapa-tag">Idea</span><span>Approve the idea and I prepare it${p.publicaEl ? ` · for ${escapar(p.publicaEl)}` : ''}</span>`
+      : `<span class="rv-etapa-tag">Blog article</span><span>Goes live on festivaladar.com</span>`;
+  return `<header class="rv-cab"><span class="rv-red">${donde}</span><span class="rv-n">${i + 1}/${n}</span></header>
+    <div class="rv-etapa rv-etapa-${it.tipo}">${etapa}</div>`;
+}
+
 function abrirRevision() {
   RV = { items: pendientesRevision(), hechos: {} };
   if (!RV.items.length) { aviso('Nothing to review right now.'); return; }
   const mazoEl = $('#rv-mazo');
   mazoEl.innerHTML = RV.items.map((it, i) => {
     const p = it.p;
-    const tipo = { confirmar: 'To confirm', idea: 'Idea', blog: 'Blog idea' }[it.tipo];
-    const prep = it.tipo === 'confirmar' ? preparadoDe(p) : null;
-    const cuando = prep?.redes?.[0]?.cuando ? horaNY(prep.redes[0].cuando) : (p.publicaEl || p.date || '');
-    const texto = it.tipo === 'blog' ? (p.excerpt || '') : (prep?.redes?.find((r) => r.red === 'ig')?.texto || p.pies?.ig?.texto || '');
-    return `<section class="rv-slide" data-i="${i}">
-      <header class="rv-cab"><span class="rv-tipo rv-${it.tipo}">${tipo}</span><span class="rv-cuando">${escapar(String(cuando))}</span><span class="rv-n">${i + 1}/${RV.items.length}</span></header>
+    const pie = it.red === 'story' && it.tipo === 'confirmar' ? '' : it.texto;
+    return `<section class="rv-slide rv-es-${it.tipo} rv-red-${it.red}" data-i="${i}">
+      ${cabeceraRevision(it, i, RV.items.length)}
       <div class="rv-media">${it.tipo === 'blog'
         ? `${p.image ? `<img class="rv-blog-foto" src="${escapar(p.image)}" alt="">` : ''}<h2 class="rv-blog-titulo">${escapar(p.title)}</h2>`
         : '<div class="espera-lienzo">…</div>'}</div>
-      <button class="rv-pie" data-i="${i}">${escapar(texto)}</button>
-      ${p.porque ? `<p class="rv-porque"><b>Why:</b> ${escapar(p.porque)}</p>` : ''}
+      ${pie ? `<button class="rv-pie" data-i="${i}">${escapar(pie)}</button>` : it.red === 'story' ? '<p class="rv-pie rv-sin">Stories have no caption: the stickers carry the details.</p>' : ''}
+      ${p.porque && it.tipo !== 'confirmar' ? `<p class="rv-porque"><b>Why:</b> ${escapar(p.porque)}</p>` : ''}
       <div class="rv-sello" hidden></div>
     </section>`;
   }).join('');
@@ -2289,11 +2327,16 @@ async function dibujarRevision(i) {
   s.dataset.dibujada = '1';
   const media = s.querySelector('.rv-media');
   try {
-    const el = await (it.p.formato === 'historia' ? pintarHistoria(it.p) : pintarInstagram(it.p));
-    el.classList.add(it.p.formato === 'historia' ? 'rv-historia' : 'rv-ig');
+    const historia = it.red === 'story' || it.p.formato === 'historia';
+    const el = await (historia ? pintarHistoria(it.p) : it.red === 'fb' ? pintarFacebook(it.p) : pintarInstagram(it.p));
+    el.classList.add(historia ? 'rv-historia' : it.red === 'fb' ? 'rv-fb' : 'rv-ig');
     media.replaceChildren(el);
   } catch { media.innerHTML = `<div class="espera-lienzo">Couldn't render</div>`; }
 }
+
+const ETIQUETA_SI = (it) => it.tipo === 'idea' ? 'Approve idea'
+  : it.tipo === 'blog' ? 'Approve article'
+    : { ig: 'Post to Instagram', fb: 'Post to Facebook', story: 'Post the story' }[it.red];
 
 const posRevision = () => Math.round($('#rv-mazo').scrollLeft / Math.max(1, $('#rv-mazo').clientWidth));
 function pintarBarraRevision() {
@@ -2303,8 +2346,10 @@ function pintarBarraRevision() {
   $('#rv-atras').disabled = i <= 0;
   $('#rv-alante').disabled = i >= RV.items.length - 1;
   const hecho = RV.hechos[i];
-  $('#rv-si').querySelector('span').textContent = hecho || { confirmar: 'Approve all', idea: 'Approve', blog: 'Approve for blog' }[it.tipo];
-  $('#rv-si').disabled = !!hecho;
+  const si = $('#rv-si');
+  si.querySelector('span').textContent = hecho || ETIQUETA_SI(it);
+  si.disabled = !!hecho;
+  si.className = `rv-si rv-si-${it.tipo}`;
   for (const j of [i, i + 1, i - 1]) dibujarRevision(j);
 }
 function irRevision(i) {
@@ -2321,14 +2366,14 @@ function cerrarRevision() {
   pintarBotonRevisar();
 }
 
-async function decidirRevision(accion, texto) {
+async function decidirRevision(accion, texto, extra) {
   const i = posRevision();
   const it = RV.items[i];
   if (!it) return;
   if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
   try {
     $('#rv-si').disabled = true;
-    await llamarFlujo(it.p.clave, accion);
+    await llamarFlujo(it.p.clave, accion, extra);
     RV.hechos[i] = texto;
     const sello = $('#rv-mazo').children[i].querySelector('.rv-sello');
     sello.innerHTML = `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>${escapar(texto)}`;
@@ -2345,9 +2390,11 @@ $('#rv-alante').addEventListener('click', () => irRevision(posRevision() + 1));
 $('#rv-si').addEventListener('click', () => {
   const it = RV.items[posRevision()];
   if (!it) return;
-  if (it.tipo === 'confirmar') decidirRevision('confirmar', 'Approved: goes out on time');
-  else if (it.tipo === 'idea') decidirRevision('aprobar', 'Approved: I will prepare it');
-  else decidirRevision('blogAprobar', 'Approved for blog');
+  if (it.tipo === 'confirmar') {
+    const dice = { ig: 'Scheduled on Instagram', fb: 'Scheduled on Facebook', story: 'Story scheduled' }[it.red];
+    decidirRevision('confirmar', dice, { red: it.red });
+  } else if (it.tipo === 'idea') decidirRevision('aprobar', 'Idea approved: I will prepare it');
+  else decidirRevision('blogAprobar', 'Article approved');
 });
 let ticRv = null;
 $('#rv-mazo').addEventListener('scroll', () => { cancelAnimationFrame(ticRv); ticRv = requestAnimationFrame(pintarBarraRevision); }, { passive: true });
@@ -2367,7 +2414,7 @@ $('#rv-mas').addEventListener('click', () => {
   if (!it) return;
   const op = (a, t, cls = '') => `<button class="rv-op ${cls}" data-op="${a}">${t}</button>`;
   const ops = it.tipo === 'confirmar'
-    ? op('editar', 'Edit') + op('cambios', 'Request changes') + op('sugerir', 'Suggest a change') + op('ver', 'See Facebook and story')
+    ? op('editar', 'Edit') + op('cambios', 'Request changes') + op('sugerir', 'Suggest a change') + op('ver', 'Open the full post')
     : it.tipo === 'idea'
       ? op('editar', 'Edit') + op('sugerir', 'Suggest a change') + op('descartar', 'Archive', 'peligro')
       : op('publicar', 'Publish to website now') + op('sugerir', 'Suggest a change') + op('blogDescartar', 'Archive', 'peligro');

@@ -1696,6 +1696,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:38:33.022Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:38:52.083Z"
     }
    ],
    "sugerencias": [
@@ -1707,7 +1712,8 @@
      "respuesta": "Puesta una foto suya, de su propio dossier (tiene poca resolución; si tienen una mejor la cambio). Con el logo de la UE y el Goethe.",
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "es/dia-educacion-escuelas-rurales": {
    "historial": [

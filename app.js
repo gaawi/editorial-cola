@@ -1998,6 +1998,7 @@ function mostrarVista() {
   const enMas = ['mas', 'programado', 'publicado', 'meses'].includes(vista);
   document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x.dataset.vista === vista || (x.dataset.vista === 'mas' && enMas)));
   pintarSaltos();
+  pintarBotonRevisar();
   $('#vista-ideas').hidden = vista !== 'ideas';
   $('#vista-programado').hidden = vista !== 'programado';
   $('#vista-confirmar').hidden = vista !== 'confirmar';
@@ -2225,6 +2226,193 @@ $('#avisos-probar').addEventListener('click', async () => {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(() => estadoAvisos()).catch(() => estadoAvisos());
 } else estadoAvisos();
+
+
+// ── Review mode ─────────────────────────────────────────────────────────
+// «Review»: everything that needs a decision, one post at a time, full
+// screen, no logo, no scrolling. Order: ready to confirm, then ideas, then
+// blog ideas. The bottom bar is the navigation and the decision; ⋯ has the
+// rest (edit, changes, archive, suggest). Exit goes back to the app.
+let RV = { items: [], hechos: {} };
+
+function pendientesRevision() {
+  const posts = DATOS.marcas[MARCA].posts;
+  const conf = posts.filter((p) => !p.esBlog && faseDe(p) === 'preparado' && grupoDe(p) === 'confirmar')
+    .sort((a, b) => String(preparadoDe(a)?.redes?.[0]?.cuando || a.date).localeCompare(String(preparadoDe(b)?.redes?.[0]?.cuando || b.date)))
+    .map((p) => ({ tipo: 'confirmar', p }));
+  const ideas = posts.filter((p) => !p.esBlog && grupoDe(p) === 'idea' && !faseDe(p)
+      && !(p.ventana && HOY > p.ventana.hasta) && estadoDe(p).estado !== 'descartado')
+    .sort((a, b) => (mesDe(a) || '').localeCompare(mesDe(b) || '') || a.date.localeCompare(b.date))
+    .map((p) => ({ tipo: 'idea', p }));
+  const blog = ideasDeBlog(false).filter((a) => flujoDe(a).faseBlog !== 'aprobado').map((p) => ({ tipo: 'blog', p }));
+  return [...conf, ...ideas, ...blog];
+}
+
+function pintarBotonRevisar() {
+  const b = $('#revisar');
+  if (!b || !DATOS) return;
+  const n = pendientesRevision().length;
+  b.hidden = vista === 'cuentas' || !!actual || n === 0;
+  $('#revisar-n').textContent = n ? String(n) : '';
+}
+
+function abrirRevision() {
+  RV = { items: pendientesRevision(), hechos: {} };
+  if (!RV.items.length) { aviso('Nothing to review right now.'); return; }
+  const mazoEl = $('#rv-mazo');
+  mazoEl.innerHTML = RV.items.map((it, i) => {
+    const p = it.p;
+    const tipo = { confirmar: 'To confirm', idea: 'Idea', blog: 'Blog idea' }[it.tipo];
+    const prep = it.tipo === 'confirmar' ? preparadoDe(p) : null;
+    const cuando = prep?.redes?.[0]?.cuando ? horaNY(prep.redes[0].cuando) : (p.publicaEl || p.date || '');
+    const texto = it.tipo === 'blog' ? (p.excerpt || '') : (prep?.redes?.find((r) => r.red === 'ig')?.texto || p.pies?.ig?.texto || '');
+    return `<section class="rv-slide" data-i="${i}">
+      <header class="rv-cab"><span class="rv-tipo rv-${it.tipo}">${tipo}</span><span class="rv-cuando">${escapar(String(cuando))}</span><span class="rv-n">${i + 1}/${RV.items.length}</span></header>
+      <div class="rv-media">${it.tipo === 'blog'
+        ? `${p.image ? `<img class="rv-blog-foto" src="${escapar(p.image)}" alt="">` : ''}<h2 class="rv-blog-titulo">${escapar(p.title)}</h2>`
+        : '<div class="espera-lienzo">…</div>'}</div>
+      <button class="rv-pie" data-i="${i}">${escapar(texto)}</button>
+      ${p.porque ? `<p class="rv-porque"><b>Why:</b> ${escapar(p.porque)}</p>` : ''}
+      <div class="rv-sello" hidden></div>
+    </section>`;
+  }).join('');
+  $('#revision').hidden = false;
+  document.body.classList.add('en-revision');
+  mazoEl.scrollLeft = 0;
+  pintarBarraRevision();
+}
+
+async function dibujarRevision(i) {
+  const it = RV.items[i];
+  const s = $('#rv-mazo').children[i];
+  if (!it || !s || s.dataset.dibujada || it.tipo === 'blog') return;
+  s.dataset.dibujada = '1';
+  const media = s.querySelector('.rv-media');
+  try {
+    const el = await (it.p.formato === 'historia' ? pintarHistoria(it.p) : pintarInstagram(it.p));
+    el.classList.add(it.p.formato === 'historia' ? 'rv-historia' : 'rv-ig');
+    media.replaceChildren(el);
+  } catch { media.innerHTML = `<div class="espera-lienzo">Couldn't render</div>`; }
+}
+
+const posRevision = () => Math.round($('#rv-mazo').scrollLeft / Math.max(1, $('#rv-mazo').clientWidth));
+function pintarBarraRevision() {
+  const i = Math.min(posRevision(), RV.items.length - 1);
+  const it = RV.items[i];
+  if (!it) return;
+  $('#rv-atras').disabled = i <= 0;
+  $('#rv-alante').disabled = i >= RV.items.length - 1;
+  const hecho = RV.hechos[i];
+  $('#rv-si').querySelector('span').textContent = hecho || { confirmar: 'Approve all', idea: 'Approve', blog: 'Approve for blog' }[it.tipo];
+  $('#rv-si').disabled = !!hecho;
+  for (const j of [i, i + 1, i - 1]) dibujarRevision(j);
+}
+function irRevision(i) {
+  const m = $('#rv-mazo');
+  i = Math.max(0, Math.min(RV.items.length - 1, i));
+  m.scrollTo({ left: i * m.clientWidth, behavior: 'smooth' });
+}
+function cerrarRevision() {
+  $('#revision').hidden = true;
+  $('#rv-menu').hidden = true;
+  $('#rv-texto').hidden = true;
+  document.body.classList.remove('en-revision');
+  repintar();
+  pintarBotonRevisar();
+}
+
+async function decidirRevision(accion, texto) {
+  const i = posRevision();
+  const it = RV.items[i];
+  if (!it) return;
+  if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
+  try {
+    $('#rv-si').disabled = true;
+    await llamarFlujo(it.p.clave, accion);
+    RV.hechos[i] = texto;
+    const sello = $('#rv-mazo').children[i].querySelector('.rv-sello');
+    sello.innerHTML = `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>${escapar(texto)}`;
+    sello.hidden = false;
+    pintarBarraRevision();
+    setTimeout(() => { if (posRevision() === i && i < RV.items.length - 1) irRevision(i + 1); }, 650);
+  } catch (e) { aviso(e.message, true); pintarBarraRevision(); }
+}
+
+$('#revisar').addEventListener('click', abrirRevision);
+$('#rv-salir').addEventListener('click', cerrarRevision);
+$('#rv-atras').addEventListener('click', () => irRevision(posRevision() - 1));
+$('#rv-alante').addEventListener('click', () => irRevision(posRevision() + 1));
+$('#rv-si').addEventListener('click', () => {
+  const it = RV.items[posRevision()];
+  if (!it) return;
+  if (it.tipo === 'confirmar') decidirRevision('confirmar', 'Approved: goes out on time');
+  else if (it.tipo === 'idea') decidirRevision('aprobar', 'Approved: I will prepare it');
+  else decidirRevision('blogAprobar', 'Approved for blog');
+});
+let ticRv = null;
+$('#rv-mazo').addEventListener('scroll', () => { cancelAnimationFrame(ticRv); ticRv = requestAnimationFrame(pintarBarraRevision); }, { passive: true });
+// The caption: tap to read it whole, tap again to close.
+$('#rv-mazo').addEventListener('click', (e) => {
+  const b = e.target.closest('.rv-pie');
+  if (!b) return;
+  const it = RV.items[Number(b.dataset.i)];
+  const caja = $('#rv-texto');
+  caja.innerHTML = `<p>${escapar(b.textContent)}</p>${it.p.falta ? `<p class="rv-falta"><b>Missing:</b> ${escapar(it.p.falta)}</p>` : ''}<small>Tap to close</small>`;
+  caja.hidden = false;
+});
+$('#rv-texto').addEventListener('click', () => { $('#rv-texto').hidden = true; });
+// ⋯: the other decisions.
+$('#rv-mas').addEventListener('click', () => {
+  const it = RV.items[posRevision()];
+  if (!it) return;
+  const op = (a, t, cls = '') => `<button class="rv-op ${cls}" data-op="${a}">${t}</button>`;
+  const ops = it.tipo === 'confirmar'
+    ? op('editar', 'Edit') + op('cambios', 'Request changes') + op('sugerir', 'Suggest a change') + op('ver', 'See Facebook and story')
+    : it.tipo === 'idea'
+      ? op('editar', 'Edit') + op('sugerir', 'Suggest a change') + op('descartar', 'Archive', 'peligro')
+      : op('publicar', 'Publish to website now') + op('sugerir', 'Suggest a change') + op('blogDescartar', 'Archive', 'peligro');
+  $('#rv-menu-caja').innerHTML = `<p class="rv-menu-titulo">${escapar(it.p.title)}</p>${ops}${op('cerrar', 'Cancel', 'suave')}`;
+  $('#rv-menu').hidden = false;
+});
+$('#rv-menu').addEventListener('click', async (e) => {
+  if (e.target.id === 'rv-menu') { $('#rv-menu').hidden = true; return; }
+  const b = e.target.closest('.rv-op');
+  if (!b) return;
+  const it = RV.items[posRevision()];
+  $('#rv-menu').hidden = true;
+  const op = b.dataset.op;
+  if (op === 'cerrar') return;
+  if (op === 'editar') return abrirEditor(it.p, 'editar');
+  if (op === 'cambios') return abrirEditor(it.p, 'cambios');
+  if (op === 'ver') { cerrarRevision(); return abrir(it.p); }
+  if (op === 'descartar') return decidirRevision('descartar', 'Archived');
+  if (op === 'blogDescartar') return decidirRevision('blogDescartar', 'Archived');
+  if (op === 'publicar') {
+    if (!confirm(`Publish "${it.p.title}" on festivaladar.com now?`)) return;
+    try {
+      const r = await fetch('/api/flujo', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug: it.p.slug, accion: 'blogPublicar' }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
+      it.p.estadoWeb = 'publish';
+      RV.hechos[posRevision()] = 'Published';
+      pintarBarraRevision();
+      aviso('Published. It will be on festivaladar.com in a couple of minutes.');
+    } catch (err) { aviso(err.message, true); }
+    return;
+  }
+  if (op === 'sugerir') {
+    const t = prompt('What should change?');
+    if (!t || !t.trim()) return;
+    try { await llamarFlujo(it.p.clave, 'sugerir', { nota: t.trim() }); aviso('Noted. I will do it in the next check.'); }
+    catch (err) { aviso(err.message, true); }
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if ($('#revision').hidden || e.target.closest('input, textarea')) return;
+  if (e.key === 'Escape') cerrarRevision();
+  if (e.key === 'ArrowRight') irRevision(posRevision() + 1);
+  if (e.key === 'ArrowLeft') irRevision(posRevision() - 1);
+});
 
 // ── Actualizar: deslizar hacia abajo ────────────────────────────────────
 // Con la app abierta mucho rato, lo que cambió (un check, lo que publicó la

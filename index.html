@@ -27,6 +27,7 @@
   <img class="logo-marca" src="/iconos/icono-192.png" alt="" width="28" height="28">
   <span class="marca-palabra" aria-label="Marble">marble<i>.</i></span>
   <h1 id="titulo">Marble</h1>
+  <button id="revisar" class="revisar" hidden aria-label="Start review"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg><span>Review</span><i id="revisar-n"></i></button>
   <a id="sesion" class="sesion" href="/entrar.html" hidden>Sign in</a>
   <button id="marca" class="marca" hidden aria-label="Switch account"><img id="marca-avatar" alt=""><span id="marca-nombre">CreArtBox</span></button>
 </header>
@@ -235,6 +236,20 @@
       <button type="submit" class="btn btn-si" id="ed-guardar">Save</button>
     </div>
   </form>
+</div>
+
+<!-- Review mode: full screen, one post at a time, no scrolling -->
+<div id="revision" class="revision" hidden>
+  <div class="rv-mazo" id="rv-mazo"></div>
+  <div class="rv-texto" id="rv-texto" hidden></div>
+  <div class="rv-menu" id="rv-menu" hidden><div class="rv-menu-caja" id="rv-menu-caja"></div></div>
+  <nav class="rv-barra" aria-label="Review">
+    <button class="rv-b rv-salir" id="rv-salir" aria-label="Exit review"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Exit</span></button>
+    <button class="rv-b" id="rv-atras" aria-label="Previous"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="rv-si" id="rv-si"><i></i><span>Approve</span></button>
+    <button class="rv-b" id="rv-mas" aria-label="More actions"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18.5" cy="12" r="1.4"/></svg></button>
+    <button class="rv-b" id="rv-alante" aria-label="Next"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </nav>
 </div>
 
 <div id="aviso" class="aviso" hidden></div>

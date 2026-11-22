@@ -1652,6 +1652,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:37:39.934Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:37:50.073Z"
     }
    ],
    "sugerencias": [
@@ -1663,7 +1668,8 @@
      "respuesta": "Cambiadas por 10 fotos del archivo de 2026 que no salieron como portada en Instagram (las comparé con todo lo publicado).",
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "es/brana-sonora-anuncio": {
    "historial": [

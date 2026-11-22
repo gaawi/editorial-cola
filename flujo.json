@@ -1827,6 +1827,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:40:48.531Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:37:38.190Z"
     }
    ],
    "sugerencias": [
@@ -1837,6 +1842,12 @@
      "hecha": true,
      "respuesta": "Carrusel con las fotos de prensa de Andrea Casarrubios, Caroline Shaw y Jessie Montgomery (de sus webs), con el crédito en el pie. El artículo del blog ya está escrito (en borrador): sale en la web el mismo día.",
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
+    },
+    {
+     "texto": "No me gusta lo de la cuota",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:37:38.190Z",
+     "hecha": false
     }
    ]
   },

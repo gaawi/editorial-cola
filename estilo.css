@@ -1268,3 +1268,22 @@ body.en-revision .aviso { z-index: 450; bottom: calc(80px + env(safe-area-inset-
 .rv-si.rv-si-idea i { background: #fff; }
 .rv-si.rv-si-blog { background: #E59A1D; color: #fff; }
 .rv-si.rv-si-blog i { background: #fff; }
+
+/* Review, e-ink style: one card, instant change, Kindle tap zones */
+.rv-mazo { overflow: hidden !important; scroll-snap-type: none !important; position: relative; }
+.rv-slide { display: none !important; flex: none; width: 100%; }
+.rv-slide.actual { display: flex !important; }
+.rv-zona { position: absolute; top: calc(env(safe-area-inset-top) + 96px); bottom: 150px; width: 26%; z-index: 2; background: transparent; display: flex; align-items: center; padding: 0 8px; }
+.rv-zona[hidden] { display: none; }
+.rv-zona-izq { left: 0; justify-content: flex-start; }
+.rv-zona-der { right: 0; justify-content: flex-end; }
+.rv-zona span { width: 40px; height: 40px; border-radius: 50%; background: rgba(15, 13, 31, 0.55); color: #fff; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 0 0.5px rgba(255,255,255,.25); }
+.rv-zona span .ico { margin: 0; width: 20px; height: 20px; }
+.rv-zona:active span { background: var(--lima); color: var(--tinta); }
+.rv-es-blog ~ .rv-zona span, .revision:has(.rv-slide.actual.rv-es-blog) .rv-zona span { background: rgba(43, 29, 7, 0.55); }
+.rv-fin { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 24px; color: #d9d4f5; }
+.rv-fin[hidden] { display: none; }
+.rv-fin-titulo { font-family: var(--display); font-weight: 800; font-size: 32px; letter-spacing: -0.03em; color: var(--lima); }
+.rv-fin .rv-si { flex: none; padding: 0 22px; margin-top: 10px; }
+.rv-b[hidden], .rv-si[hidden] { display: none; }
+.rv-si span { white-space: nowrap; }

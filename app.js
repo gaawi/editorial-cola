@@ -2289,7 +2289,7 @@ function cabeceraRevision(it, i, n) {
   }
   // What you are approving.
   const etapa = it.tipo === 'confirmar'
-    ? `<span class="rv-etapa-tag">Ready to post</span><span>Goes out ${escapar(horaNY(it.cuando))}</span>`
+    ? `<span class="rv-etapa-tag">Final OK</span><span>Already prepared · publishes ${escapar(horaNY(it.cuando))}</span>`
     : it.tipo === 'idea'
       ? `<span class="rv-etapa-tag">Idea</span><span>Approve the idea and I prepare it${p.publicaEl ? ` · for ${escapar(p.publicaEl)}` : ''}</span>`
       : `<span class="rv-etapa-tag">Blog article</span><span>Goes live on festivaladar.com</span>`;
@@ -2316,7 +2316,20 @@ function abrirRevision() {
   }).join('');
   $('#revision').hidden = false;
   document.body.classList.add('en-revision');
-  mazoEl.scrollLeft = 0;
+  RV.pos = 0;
+  mostrarCartaRevision();
+}
+
+// E-ink style: only the current card is on screen; it changes instantly.
+function mostrarCartaRevision() {
+  const cartas = [...$('#rv-mazo').children];
+  RV.pos = Math.max(0, Math.min(RV.items.length - 1, RV.pos || 0));
+  cartas.forEach((c, j) => {
+    c.classList.toggle('actual', j === RV.pos);
+    const n = c.querySelector('.rv-n');
+    if (n) n.textContent = `${j + 1}/${cartas.length}`;
+  });
+  $('#rv-fin').hidden = cartas.length > 0;
   pintarBarraRevision();
 }
 
@@ -2336,12 +2349,17 @@ async function dibujarRevision(i) {
 
 const ETIQUETA_SI = (it) => it.tipo === 'idea' ? 'Approve idea'
   : it.tipo === 'blog' ? 'Approve article'
-    : { ig: 'Post to Instagram', fb: 'Post to Facebook', story: 'Post the story' }[it.red];
+    : 'OK, publish';
 
-const posRevision = () => Math.round($('#rv-mazo').scrollLeft / Math.max(1, $('#rv-mazo').clientWidth));
+const posRevision = () => RV.pos || 0;
 function pintarBarraRevision() {
   const i = Math.min(posRevision(), RV.items.length - 1);
   const it = RV.items[i];
+  $('#rv-si').hidden = !it; $('#rv-mas').hidden = !it;
+  $('#rv-atras').disabled = i <= 0;
+  $('#rv-alante').disabled = !it || i >= RV.items.length - 1;
+  $('#rv-zona-izq').hidden = i <= 0;
+  $('#rv-zona-der').hidden = !it || i >= RV.items.length - 1;
   if (!it) return;
   $('#rv-atras').disabled = i <= 0;
   $('#rv-alante').disabled = i >= RV.items.length - 1;
@@ -2353,9 +2371,8 @@ function pintarBarraRevision() {
   for (const j of [i, i + 1, i - 1]) dibujarRevision(j);
 }
 function irRevision(i) {
-  const m = $('#rv-mazo');
-  i = Math.max(0, Math.min(RV.items.length - 1, i));
-  m.scrollTo({ left: i * m.clientWidth, behavior: 'smooth' });
+  RV.pos = Math.max(0, Math.min(RV.items.length - 1, i));
+  mostrarCartaRevision();
 }
 function cerrarRevision() {
   $('#revision').hidden = true;
@@ -2374,12 +2391,11 @@ async function decidirRevision(accion, texto, extra) {
   try {
     $('#rv-si').disabled = true;
     await llamarFlujo(it.p.clave, accion, extra);
-    RV.hechos[i] = texto;
-    const sello = $('#rv-mazo').children[i].querySelector('.rv-sello');
-    sello.innerHTML = `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>${escapar(texto)}`;
-    sello.hidden = false;
-    pintarBarraRevision();
-    setTimeout(() => { if (posRevision() === i && i < RV.items.length - 1) irRevision(i + 1); }, 650);
+    // Reviewed: out of the deck at once; the next card takes its place.
+    RV.items.splice(i, 1);
+    $('#rv-mazo').children[i].remove();
+    aviso(texto);
+    mostrarCartaRevision();
   } catch (e) { aviso(e.message, true); pintarBarraRevision(); }
 }
 
@@ -2396,8 +2412,11 @@ $('#rv-si').addEventListener('click', () => {
   } else if (it.tipo === 'idea') decidirRevision('aprobar', 'Idea approved: I will prepare it');
   else decidirRevision('blogAprobar', 'Article approved');
 });
-let ticRv = null;
-$('#rv-mazo').addEventListener('scroll', () => { cancelAnimationFrame(ticRv); ticRv = requestAnimationFrame(pintarBarraRevision); }, { passive: true });
+// Kindle-style page turns: tap the right side to go forward, the left side
+// to go back. The small buttons sit at mid-height, within thumb reach.
+$('#rv-zona-izq').addEventListener('click', () => irRevision(posRevision() - 1));
+$('#rv-zona-der').addEventListener('click', () => irRevision(posRevision() + 1));
+$('#rv-fin-salir').addEventListener('click', cerrarRevision);
 // The caption: tap to read it whole, tap again to close.
 $('#rv-mazo').addEventListener('click', (e) => {
   const b = e.target.closest('.rv-pie');
@@ -2441,8 +2460,10 @@ $('#rv-menu').addEventListener('click', async (e) => {
       const j = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
       it.p.estadoWeb = 'publish';
-      RV.hechos[posRevision()] = 'Published';
-      pintarBarraRevision();
+      const k = posRevision();
+      RV.items.splice(k, 1);
+      $('#rv-mazo').children[k].remove();
+      mostrarCartaRevision();
       aviso('Published. It will be on festivaladar.com in a couple of minutes.');
     } catch (err) { aviso(err.message, true); }
     return;

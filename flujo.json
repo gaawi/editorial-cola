@@ -2026,6 +2026,23 @@
     }
    ],
    "fase": "descartado"
+  },
+  "es/recuerdo-2025-la-ballena": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:36:58.699Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "Más fotos",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T16:36:58.699Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

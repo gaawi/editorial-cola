@@ -1413,6 +1413,23 @@
      "hecha": false
     }
    ]
+  },
+  "es/brana-sonora-anuncio": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T12:38:18.521Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "Hay Que anadir logos y hablar de la grant y del proyecto en slides",
+     "quien": "gaawi",
+     "fecha": "2026-11-22T12:38:18.521Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

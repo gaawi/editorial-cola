@@ -40,6 +40,9 @@ function render(status, payload) {
   window.addEventListener('message', receive, false);
   // El CMS espera este primer aviso para empezar el diálogo.
   if (window.opener) window.opener.postMessage('authorizing:github', '*');
+  // Sin ventana que espere (se entró en la misma página, como hace la app
+  // instalada en el iPhone): de vuelta a la app, o a la puerta con el error.
+  else location.replace(${JSON.stringify(status === 'success' ? '/' : '/entrar.html?error=' + encodeURIComponent(payload.error || ''))});
 })();
 </script>
 </body></html>`;

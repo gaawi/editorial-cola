@@ -861,14 +861,36 @@ function abrirPublicada(url) {
 // ordenador. Hace falta haber entrado con GitHub una vez en cada aparato.
 let FLUJO = { posts: {} };
 let PUEDE_GUARDAR = false;
+let LOGIN = '';
+
+/** Arriba: «Entrar» si no hay sesión para guardar; si la hay, quién es (tocando, salir). */
+function pintarSesion() {
+  const b = $('#sesion');
+  b.hidden = false;
+  if (PUEDE_GUARDAR) {
+    b.textContent = LOGIN ? '@' + LOGIN : 'Sesión';
+    b.href = '/api/auth?salir=1';
+    b.classList.remove('sin');
+    b.title = 'Salir de este aparato';
+  } else {
+    b.textContent = 'Entrar';
+    b.href = '/entrar.html';
+    b.classList.add('sin');
+    b.title = 'Entrar con GitHub para poder aprobar';
+  }
+}
+$('#sesion').addEventListener('click', (e) => {
+  if (PUEDE_GUARDAR && !confirm(`¿Salir de Marble en este aparato${LOGIN ? ` (@${LOGIN})` : ''}?`)) e.preventDefault();
+});
 
 async function cargarFlujo() {
   try {
     const r = await fetch('/api/flujo', { cache: 'no-store', credentials: 'same-origin' });
     const j = await r.json().catch(() => ({}));
-    if (r.ok && j.flujo) { FLUJO = j.flujo; PUEDE_GUARDAR = true; }
+    if (r.ok && j.flujo) { FLUJO = j.flujo; PUEDE_GUARDAR = true; LOGIN = j.login || ''; }
     else if (j.entrar) $('#entrar-aviso').hidden = false;
   } catch {}
+  pintarSesion();
   if (!FLUJO.posts) FLUJO.posts = {};
   aplicarEdiciones();
 }

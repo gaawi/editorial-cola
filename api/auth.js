@@ -19,6 +19,15 @@ function randomState() {
 }
 
 export default function handler(req, res) {
+  // ?salir=1: cerrar la sesión en este aparato (borra las dos cookies).
+  if (req.query && req.query.salir) {
+    res.setHeader('Set-Cookie', [
+      'cola_preview=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0',
+      'cola_gh=; Path=/api; HttpOnly; Secure; SameSite=Lax; Max-Age=0',
+    ]);
+    res.writeHead(302, { Location: '/entrar.html' });
+    return res.end();
+  }
   const clientId = process.env.GITHUB_CLIENT_ID;
   if (!clientId) {
     res.status(500).send('Falta GITHUB_CLIENT_ID en las variables de entorno.');

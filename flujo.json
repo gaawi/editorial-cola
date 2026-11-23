@@ -1819,6 +1819,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:38:18.521Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:26:31.917Z"
     }
    ],
    "sugerencias": [
@@ -1829,6 +1834,12 @@
      "hecha": true,
      "respuesta": "Ahora es un carrusel de 4: portada, qué hacemos, transmisión y creación, y la ayuda del Ministerio (salvaguarda del Patrimonio Cultural Inmaterial, julio 2026 a diciembre 2027). Logos del Ministerio y de ADAR en la portada, la última y la historia. También en el resto de posts de Braña Sonora.",
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
+    },
+    {
+     "texto": "los logos se ven horrible con el fondo blanco, eres mucho mejopr diseñador, usa png",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:26:31.917Z",
+     "hecha": false
     }
    ]
   },

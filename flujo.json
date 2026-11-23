@@ -1518,9 +1518,21 @@
      "quien": "gaawi",
      "fecha": "2026-11-23T00:12:34.172Z",
      "nota": "Se monta la foto con el texto"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-23T00:15:23.760Z",
+     "respuesta": "Changed the photo: the title no longer sits on the violinist (dark monastery space above the musicians). The Instagram post and story you already approved use the new image too."
+    },
+    {
+     "accion": "cambios-hechos",
+     "quien": "claude",
+     "fecha": "2026-11-23T00:15:25.016946+00:00",
+     "nota": "Changed the photo: the title no longer sits on the violinist (dark monastery space above the musicians). The Instagram post and story you already approved use the new image too."
     }
    ],
-   "fase": "cambios",
+   "fase": "preparado",
    "preparado": {
     "es/ayuntamientos-y-espacios-2027": {
      "tipo": "post",
@@ -1556,8 +1568,7 @@
       }
      ]
     }
-   },
-   "nota": "Se monta la foto con el texto"
+   }
   },
   "es/recuerdo-2021-primer-concierto": {
    "historial": [
@@ -1640,9 +1651,21 @@
      "quien": "gaawi",
      "fecha": "2026-11-23T00:13:02.958Z",
      "nota": "La line negra se monta con festival adar"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-23T00:15:24.981Z",
+     "respuesta": "Fixed: the black line no longer runs into «FESTIVAL ADAR» on the Facebook image. The story you approved was fine and stays as it is."
+    },
+    {
+     "accion": "cambios-hechos",
+     "quien": "claude",
+     "fecha": "2026-11-23T00:15:25.016946+00:00",
+     "nota": "Fixed: the black line no longer runs into «FESTIVAL ADAR» on the Facebook image. The story you approved was fine and stays as it is."
     }
    ],
-   "fase": "cambios",
+   "fase": "preparado",
    "preparado": {
     "es/amigos-giving-tuesday": {
      "tipo": "post",
@@ -1678,8 +1701,7 @@
       }
      ]
     }
-   },
-   "nota": "La line negra se monta con festival adar"
+   }
   },
   "es/video-bach-en-leiguarda": {
    "historial": [

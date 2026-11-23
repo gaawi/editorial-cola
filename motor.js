@@ -375,7 +375,9 @@ export function crearMotor(B) {
         const conLogo = post.logo && post.logo.src && (fmt === 'story' ? post.logo.historia : (post.logo.diapositivas || []).includes(idx));
         const altoLogo = conLogo ? Math.round(W * (fmt === 'story' ? 0.20 : 0.16) * 1.15) + Math.round(pad * 0.5) : 0;
         const suelo = H - safeBottom - Math.round(pad * 1.4) - altoLogo;
-        const af = encajar(ctx, slide.title, W - pad * 2 - safeRight, suelo - techo, TW, DISPLAY, Math.round(W * 0.16), Math.round(W * 0.05), PLOMO);
+        // The short black rule goes above the title: leave it room so it never
+        // runs into the «FESTIVAL ADAR» label (it did on the wide Facebook image).
+        const af = encajar(ctx, slide.title, W - pad * 2 - safeRight, (suelo - techo) * (conPeg ? 1 : 0.78), TW, DISPLAY, Math.round(W * 0.16), Math.round(W * 0.05), PLOMO);
         ctx.font = `${TW} ${af.size}px ${DISPLAY}`; ctx.fillStyle = tinta;
         const ay = suelo - af.lines.length * af.size * PLOMO + af.size * 0.82;
         ctx.fillRect(pad, ay - af.size * 1.15, Math.round(W * 0.16), Math.max(5, Math.round(W * 0.008)));

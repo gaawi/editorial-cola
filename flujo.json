@@ -1512,9 +1512,15 @@
      "quien": "gaawi",
      "fecha": "2026-11-23T00:12:02.264Z",
      "red": "ig"
+    },
+    {
+     "accion": "cambios",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T00:12:34.172Z",
+     "nota": "Se monta la foto con el texto"
     }
    ],
-   "fase": "preparado",
+   "fase": "cambios",
    "preparado": {
     "es/ayuntamientos-y-espacios-2027": {
      "tipo": "post",
@@ -1550,7 +1556,8 @@
       }
      ]
     }
-   }
+   },
+   "nota": "Se monta la foto con el texto"
   },
   "es/recuerdo-2021-primer-concierto": {
    "historial": [

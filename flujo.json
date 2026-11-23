@@ -2817,6 +2817,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:40:35.344Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:41:10.785Z"
     }
    ],
    "sugerencias": [
@@ -2826,7 +2831,8 @@
      "fecha": "2026-11-23T16:40:35.344Z",
      "hecha": false
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/por-que-documentamos-todo": {
    "historial": [

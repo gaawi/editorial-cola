@@ -2624,6 +2624,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T12:25:48.383Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T19:10:47.094Z"
     }
    ],
    "sugerencias": [
@@ -2634,6 +2639,12 @@
      "hecha": true,
      "respuesta": "Done: new photo (the glowing lights of the night sound walk in Leiguarda), title «¡Felices fiestas!», stickers «Leiguarda · Asturias» and «Nos vemos en 2027», and a warmer Christmas caption.",
      "fechaRespuesta": "2026-11-23T14:18:18.782963+00:00"
+    },
+    {
+     "texto": "Los gráficos alrededor de la foto más navideños",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T19:10:47.094Z",
+     "hecha": false
     }
    ]
   },

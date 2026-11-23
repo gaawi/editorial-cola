@@ -1922,6 +1922,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T12:26:31.917Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T19:12:35.134Z"
     }
    ],
    "sugerencias": [
@@ -1940,6 +1945,12 @@
      "hecha": true,
      "respuesta": "Done: the logos are now transparent PNGs with no white box. Over the photo the ADAR logo is white; on the yellow slide it is dark. Same for the EU and Goethe logos on the Orchestra Improvvisata posts.",
      "fechaRespuesta": "2026-11-23T14:18:18.782963+00:00"
+    },
+    {
+     "texto": "La foto del hórreo primera no me gusta",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T19:12:35.134Z",
+     "hecha": false
     }
    ]
   },

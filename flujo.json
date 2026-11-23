@@ -2669,6 +2669,16 @@
      "hecha": false
     }
    ]
+  },
+  "es/por-que-adar-es-gratis": {
+   "historial": [
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:36:25.323Z"
+    }
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

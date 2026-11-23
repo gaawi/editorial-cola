@@ -2280,6 +2280,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:36:58.699Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:25:08.128Z"
     }
    ],
    "sugerencias": [
@@ -2291,7 +2296,8 @@
      "respuesta": "Ahora son 7 fotos de The Whale.",
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "es/brana-sonora-vaqueiros": {
    "historial": [

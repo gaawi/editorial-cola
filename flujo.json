@@ -2029,9 +2029,14 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T15:17:10.259Z"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:34:12.871Z"
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "es/dia-educacion-escuelas-rurales": {
      "tipo": "post",

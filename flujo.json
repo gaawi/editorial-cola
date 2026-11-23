@@ -2790,6 +2790,16 @@
      "hecha": false
     }
    ]
+  },
+  "es/como-elegimos-un-sitio": {
+   "historial": [
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:39:53.203Z"
+    }
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

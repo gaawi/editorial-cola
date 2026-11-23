@@ -1992,6 +1992,11 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-22T12:52:55.397Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T15:17:10.259Z"
     }
    ],
    "fase": "preparado",
@@ -2030,7 +2035,15 @@
       }
      ]
     }
-   }
+   },
+   "sugerencias": [
+    {
+     "texto": "solo hay que mejorar los logo en png",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T15:17:10.259Z",
+     "hecha": false
+    }
+   ]
   },
   "es/post-paseo-sonoro": {
    "historial": [

@@ -2061,6 +2061,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:36:40.324Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:24:44.925Z"
     }
    ],
    "sugerencias": [
@@ -2079,6 +2084,12 @@
      "hecha": true,
      "respuesta": "Portada nueva: el hórreo de La Figal encendido al anochecer, con el título en el cielo. Detrás, 4 fotos del concierto dentro (Ignacio Prego al clave, el teclado, él de cerca y el público).",
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
+    },
+    {
+     "texto": "la ultima foto se corta la cabeza, esta fotos mejor en su aspect ratio original",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:24:44.925Z",
+     "hecha": false
     }
    ]
   },

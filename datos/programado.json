@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-23T16:33:26.905Z",
+ "actualizado": "2026-11-23T16:34:12.871Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -1289,6 +1289,48 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-recuerdo-2025-la-ballena-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/dia-educacion-escuelas-rurales": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2027-01-24T12:00:00+01:00",
+     "texto": "Hoy es el Día Internacional de la Educación. 📚\n\nCon Braña Sonora estamos preparando materiales para escuelas rurales de Asturias: grabaciones de la tonada, de las brañas y de los oficios de cada concejo, con propuestas para clase en castellano y en asturiano.\n\n¿Das clase en una escuela rural del occidente asturiano? Escríbenos a leiguardamusic@gmail.com y te contamos cómo participar. Sin coste para el centro.\n\nMás en festivaladar.com\n\n#BrañaSonora #FestivalADAR #DíaInternacionalDeLaEducación #EscuelaRural #Asturias",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-dia-educacion-escuelas-rurales-ig-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2027-01-24T12:02:00+01:00",
+     "texto": "Hoy es el Día Internacional de la Educación. 📚\n\nCon Braña Sonora estamos preparando materiales para escuelas rurales de Asturias: grabaciones de la tonada, de las brañas y de los oficios de cada concejo, con propuestas para clase en castellano y en asturiano.\n\n¿Das clase en una escuela rural del occidente asturiano? Escríbenos a leiguardamusic@gmail.com y te contamos cómo participar. Sin coste para el centro.\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #DíaInternacionalDeLaEducación #EscuelaRural #Asturias",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-dia-educacion-escuelas-rurales-fb-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/dia-educacion-escuelas-rurales#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2027-01-24T18:00:00+01:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-dia-educacion-escuelas-rurales-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

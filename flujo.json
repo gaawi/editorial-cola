@@ -2133,6 +2133,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:30:25.692Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:27:25.063Z"
     }
    ],
    "sugerencias": [
@@ -2144,7 +2149,8 @@
      "respuesta": "Separado: el artículo de propuestas ya solo habla de propuestas, y hay uno nuevo, «¿Y si ADAR suena en tu pueblo?», que acompaña al post de ayuntamientos del 26.",
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/el-orballo-del-primer-concierto": {
    "historial": [

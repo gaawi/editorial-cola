@@ -1316,3 +1316,20 @@ body.en-revision .aviso { z-index: 450; bottom: calc(80px + env(safe-area-inset-
 .barra .logo-marca, .barra .marca-palabra, .lateral-marca { cursor: pointer; }
 
 body.en-detalle { overflow: auto !important; }
+
+/* Review: the Facebook card looks like the real Facebook post */
+.rv-media .fb.rv-fb { width: 100%; max-width: 520px; max-height: 100cqh; display: flex; flex-direction: column; overflow: hidden; border-radius: 14px; background: #fff; color: #050505; }
+.rv-media .fb.rv-fb .fb-cab { display: flex; align-items: center; gap: 10px; padding: 10px 12px 6px; flex: none; }
+.rv-media .fb.rv-fb .fb-av { width: 40px; height: 40px; border-radius: 50%; object-fit: contain; background: #fff; box-shadow: 0 0 0 1px #e4e6eb; flex: none; }
+.rv-media .fb.rv-fb .fb-nombre { font-weight: 700; font-size: 15px; }
+.rv-media .fb.rv-fb .fb-meta { font-size: 12px; color: #65676b; display: flex; align-items: center; gap: 4px; }
+.rv-media .fb.rv-fb .fb-meta .ico { width: 12px; height: 12px; margin: 0; }
+.rv-media .fb.rv-fb .fb-texto { display: block !important; flex: none; padding: 2px 12px 8px; font-size: 14px; line-height: 1.38; white-space: pre-wrap;
+  overflow: hidden; display: -webkit-box !important; -webkit-box-orient: vertical; -webkit-line-clamp: 7; }
+.rv-media .fb.rv-fb > canvas, .rv-media .fb.rv-fb > img, .rv-media .fb.rv-fb > .foto-suelta {
+  flex: 1 1 auto; min-height: 0; width: 100%; height: auto; max-height: 52cqh; object-fit: cover; display: block; background: #000; }
+.rv-media .fb.rv-fb .fb-acciones { display: flex !important; justify-content: space-around; flex: none; padding: 8px 6px; border-top: 1px solid #e4e6eb; font-size: 13px; font-weight: 600; color: #65676b; }
+.rv-media .fb.rv-fb .fb-acciones span { display: inline-flex; align-items: center; gap: 6px; }
+.rv-media .fb.rv-fb .fb-acciones svg { width: 18px; height: 18px; }
+.rv-media .fb.rv-fb .fb-texto { padding-bottom: 0 !important; margin-bottom: 8px; cursor: pointer; }
+.rv-media .fb.rv-fb > canvas, .rv-media .fb.rv-fb > img, .rv-media .fb.rv-fb > .foto-suelta { object-fit: contain; }

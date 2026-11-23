@@ -2328,7 +2328,8 @@ function abrirRevision() {
   const mazoEl = $('#rv-mazo');
   mazoEl.innerHTML = RV.items.map((it, i) => {
     const p = it.p;
-    const pie = it.red === 'story' && it.tipo === 'confirmar' ? '' : it.texto;
+    // Facebook shows its text inside the post (above the image), like Facebook.
+    const pie = (it.red === 'story' && it.tipo === 'confirmar') || it.red === 'fb' ? '' : it.texto;
     return `<section class="rv-slide rv-es-${it.tipo} rv-red-${it.red}" data-i="${i}">
       ${cabeceraRevision(it, i, RV.items.length)}
       <div class="rv-media">${it.tipo === 'blog'
@@ -2452,6 +2453,15 @@ $('#rv-mazo').addEventListener('click', (e) => {
   caja.hidden = false;
 });
 $('#rv-texto').addEventListener('click', () => { $('#rv-texto').hidden = true; });
+// Tap the Facebook text to read it whole, as it will be published.
+$('#rv-mazo').addEventListener('click', (e) => {
+  const t = e.target.closest('.rv-fb .fb-texto');
+  if (!t) return;
+  const it = RV.items[posRevision()];
+  const caja = $('#rv-texto');
+  caja.innerHTML = `<p>${escapar(it.texto || it.p.pies?.fb?.texto || '')}</p><small>Tap to close</small>`;
+  caja.hidden = false;
+});
 // ⋯: the other decisions.
 $('#rv-mas').addEventListener('click', () => {
   const it = RV.items[posRevision()];

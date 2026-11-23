@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-23T16:32:16.340Z",
+ "actualizado": "2026-11-23T16:33:07.526Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -1171,6 +1171,32 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-recuerdo-2021-primer-concierto-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/amigos-giving-tuesday": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-01T19:30:00+01:00",
+     "texto": "Hoy es #GivingTuesday, el día de dar. 💛\n\nLas entradas de ADAR son gratuitas, pero el aforo es pequeño y muchos conciertos se llenan el mismo día que se anuncian. Los Amigos del Festival tienen su plaza asegurada en cada edición.\n\nColaborador · 10 € al año: sostienes el festival, recibes el boletín y tu nombre va en el muro de Amigos.\nAmigo · 30 € al año: además, reserva anticipada en todos los conciertos.\nAmigo VIP · 50 € al año: además, asientos VIP, la celebración privada con los artistas residentes, grabaciones inéditas y la camiseta de edición limitada.\n\nCada aportación se queda en las aldeas: en conciertos gratuitos donde casi nunca llega la música en directo.\n\nHazte Amigo en festivaladar.com\n\n#FestivalADAR #AmigosDelFestival #GivingTuesday #Asturias #CulturaRural",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-amigos-giving-tuesday-ig-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-01T19:32:00+01:00",
+     "texto": "Hoy es #GivingTuesday, el día de dar. 💛\n\nLas entradas de ADAR son gratuitas, pero el aforo es pequeño y muchos conciertos se llenan el mismo día que se anuncian. Los Amigos del Festival tienen su plaza asegurada en cada edición.\n\nColaborador · 10 € al año: sostienes el festival, recibes el boletín y tu nombre va en el muro de Amigos.\nAmigo · 30 € al año: además, reserva anticipada en todos los conciertos.\nAmigo VIP · 50 € al año: además, asientos VIP, la celebración privada con los artistas residentes, grabaciones inéditas y la camiseta de edición limitada.\n\nCada aportación se queda en las aldeas: en conciertos gratuitos donde casi nunca llega la música en directo.\n\nhttps://festivaladar.com/es/amigos-del-festival/\n\n#FestivalADAR #AmigosDelFestival #GivingTuesday #Asturias #CulturaRural",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-amigos-giving-tuesday-fb-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

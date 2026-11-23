@@ -114,14 +114,17 @@ export default async function handler(req, res) {
         if (!f || f.fase !== 'preparado' || !f.preparado) return res.status(409).json({ error: 'Not ready yet: it cannot be confirmed.' });
         // `red`: se puede aprobar por partes (ig, fb, story). Sin `red`, todo.
         const red = ['ig', 'fb', 'story'].includes(b.red) ? b.red : null;
-        const toca = (k, r) => !red || (red === 'story' ? k.includes('#') : !k.includes('#') && r.red === red);
-        const elegidas = Object.entries(f.preparado).flatMap(([k, e]) => e.redes.filter((r) => toca(k, r)));
+        // A story is any entry of type «historia» (a post's story, or a
+        // story-only post, whose key has no «#»).
+        const esHistoria = (k, e) => (e && e.tipo === 'historia') || k.includes('#');
+        const toca = (k, r, e) => !red || (red === 'story' ? esHistoria(k, e) : !esHistoria(k, e) && r.red === red);
+        const elegidas = Object.entries(f.preparado).flatMap(([k, e]) => e.redes.filter((r) => toca(k, r, e)));
         if (!elegidas.length) return res.status(409).json({ error: 'Nothing is ready for that network.' });
         const pasado = elegidas.find((r) => new Date(r.cuando) < new Date());
         if (pasado) return res.status(409).json({ error: 'The scheduled time has passed. Change the date and confirm again.' });
         cola = await cambiarJSON(yo.token, 'datos/programado.json', VACIO_COLA, (d) => {
           for (const [k, e] of Object.entries(f.preparado)) {
-            const nuevas = e.redes.filter((r) => toca(k, r)).map((r) => ({ ...r, estado: 'en cola', via: 'meta' }));
+            const nuevas = e.redes.filter((r) => toca(k, r, e)).map((r) => ({ ...r, estado: 'en cola', via: 'meta' }));
             if (!nuevas.length) continue;
             const ya = d.posts[k] ? d.posts[k].redes.filter((r) => !nuevas.some((n) => n.red === r.red)) : [];
             // La marca dice por qué cuenta sale (lib/cuentas.mjs).

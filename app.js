@@ -863,6 +863,8 @@ function abrir(p) {
   $('#atras').hidden = false;
   $('#marca').hidden = true;
   document.body.classList.add('en-detalle');
+  // An open post scrolls normally (the full-screen card mode locks scrolling).
+  document.body.classList.remove('modo-tarjeta');
   $('#titulo').textContent = p.title;
   pintarEstadoActual();
   pintarProgramar();

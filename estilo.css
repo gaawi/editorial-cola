@@ -1314,3 +1314,5 @@ body.en-revision .aviso { z-index: 450; bottom: calc(80px + env(safe-area-inset-
 .rv-es-blog .rv-linea li.aqui::before { background: #E59A1D; }
 
 .barra .logo-marca, .barra .marca-palabra, .lateral-marca { cursor: pointer; }
+
+body.en-detalle { overflow: auto !important; }

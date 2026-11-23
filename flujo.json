@@ -2657,7 +2657,9 @@
      "texto": "donde esta todas la s fotos?",
      "quien": "gaawi",
      "fecha": "2026-11-23T15:16:36.778Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Added 26 photos: 13 inside the article (2021, the concejos, the hórreos and the sixth edition) and a 13-photo gallery at the end, with every year from 2021 to 2026.",
+     "fechaRespuesta": "2026-11-23T17:42:51.413Z"
     }
    ]
   },
@@ -2879,7 +2881,9 @@
      "texto": "hay mejores fotos",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:40:35.344Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "New photos. The installation folder only had one photo and it was almost black, so I used the As Quintas concert of Aug 9, 2023, played inside her tulle and projections: a new cover and 3 photos in the text.",
+     "fechaRespuesta": "2026-11-23T17:42:51.413Z"
     }
    ],
    "faseBlog": "aprobado"
@@ -2902,7 +2906,9 @@
      "texto": "hay mejores fotos",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:41:00.195Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "New cover (Puerma 2025, the audience under the hórreo) and 6 photos in the text: Obona, Bedón, Grado, Casantos, Susacasa and Ayalgas. The old cover was also used in another article.",
+     "fechaRespuesta": "2026-11-23T17:42:51.413Z"
     }
    ],
    "faseBlog": "aprobado"

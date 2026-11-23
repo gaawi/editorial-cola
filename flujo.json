@@ -2834,6 +2834,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:41:00.195Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:41:03.656Z"
     }
    ],
    "sugerencias": [
@@ -2843,7 +2848,8 @@
      "fecha": "2026-11-23T16:41:00.195Z",
      "hecha": false
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

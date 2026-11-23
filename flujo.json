@@ -2856,6 +2856,16 @@
     }
    ],
    "faseBlog": "aprobado"
+  },
+  "es/el-programa-antes-del-concierto": {
+   "historial": [
+    {
+     "accion": "blogDescartar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:41:19.568Z"
+    }
+   ],
+   "faseBlog": "descartado"
   }
  },
  "ideas": [

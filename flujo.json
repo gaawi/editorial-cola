@@ -2526,6 +2526,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T12:28:42.901Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T15:16:36.778Z"
     }
    ],
    "sugerencias": [
@@ -2536,6 +2541,12 @@
      "hecha": true,
      "respuesta": "Rewritten from scratch in a calm, grateful tone: «Seis veranos de ADAR: un repaso y muchas gracias». Six short sections, from the 2021 orballo to the 2026 edition, thanking audiences, villages, musicians and partners. Only facts from the website.",
      "fechaRespuesta": "2026-11-23T14:18:18.782963+00:00"
+    },
+    {
+     "texto": "donde esta todas la s fotos?",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T15:16:36.778Z",
+     "hecha": false
     }
    ]
   },

@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-23T16:34:12.871Z",
+ "actualizado": "2026-11-23T16:34:13.886Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -1331,6 +1331,51 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-dia-educacion-escuelas-rurales-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/ritmo-con-senas": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2027-01-27T19:30:00+01:00",
+     "texto": "¿Se puede dirigir una orquesta solo con señas? 👋\n\nSí. Es el Ritmo con Señas, creado por el argentino Santiago Vázquez. Él lo define así: «es un lenguaje, un juego y un sistema pedagógico».\n\nUna persona dirige con las manos, los brazos y el cuerpo. Las demás improvisan, se escuchan y se contestan. Basta con escuchar, aunque no sepas leer música.\n\nEs lo que trae a Leiguarda Orchestra Improvvisata.\n\nDesliza. 👉\n\n#FestivalADAR #OrchestraImprovvisata #RitmoConSeñas #Improvisación #CultureMovesEurope",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-ig-1.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-ig-2.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-ig-3.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-ig-4.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2027-01-27T19:32:00+01:00",
+     "texto": "¿Se puede dirigir una orquesta solo con señas? 👋\n\nSí. Es el Ritmo con Señas, creado por el argentino Santiago Vázquez. Él lo define así: «es un lenguaje, un juego y un sistema pedagógico».\n\nUna persona dirige con las manos, los brazos y el cuerpo. Las demás improvisan, se escuchan y se contestan. Basta con escuchar, aunque no sepas leer música.\n\nEs lo que trae a Leiguarda Orchestra Improvvisata.\n\nDesliza. 👉\n\nhttps://festivaladar.com/es/financiacion-europea/\n\n#FestivalADAR #OrchestraImprovvisata #RitmoConSeñas #Improvisación #CultureMovesEurope",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-fb-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/ritmo-con-senas#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2027-01-28T13:00:00+01:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ritmo-con-senas-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

@@ -1944,6 +1944,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T15:17:09.754Z"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:34:13.886Z"
     }
    ],
    "sugerencias": [
@@ -1962,7 +1967,7 @@
      "hecha": false
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "es/ritmo-con-senas": {
      "tipo": "post",

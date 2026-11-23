@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-23T16:33:17.963Z",
+ "actualizado": "2026-11-23T16:33:26.905Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -1241,6 +1241,54 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-post-compositoras-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/recuerdo-2025-la-ballena": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-17T19:30:00+01:00",
+     "texto": "Un día, un pueblo se despierta y encuentra una ballena tendida en lo alto de una montaña. 🐋\n\nEsa es la historia de The Whale, el espectáculo con el que el ensemble Ballarte cerró su semana de residencia en ADAR el 7 de agosto de 2025, en el monasterio de San Antolín de Bedón (Llanes).\n\nMúsica antigua, electrónica, voz y proyecciones: Berta Ares (violín), María del Buey (visuales y voz), Nacho Laguna (tiorba, guitarras y electrónica) y Giulio Tanasini (viola da gamba), que además escribió el relato.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #Ballarte #TheWhale #MúsicaAntigua #Llanes #Asturias",
+     "imagenes": [
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_4.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_2.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_1.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_3.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_5.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_6.jpg",
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_7.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-17T19:32:00+01:00",
+     "texto": "Un día, un pueblo se despierta y encuentra una ballena tendida en lo alto de una montaña. 🐋\n\nEsa es la historia de The Whale, el espectáculo con el que el ensemble Ballarte cerró su semana de residencia en ADAR el 7 de agosto de 2025, en el monasterio de San Antolín de Bedón (Llanes).\n\nMúsica antigua, electrónica, voz y proyecciones: Berta Ares (violín), María del Buey (visuales y voz), Nacho Laguna (tiorba, guitarras y electrónica) y Giulio Tanasini (viola da gamba), que además escribió el relato.\n\nhttps://festivaladar.com/es/blog/una-ballena-en-un-monasterio/\n\n#FestivalADAR #Ballarte #TheWhale #MúsicaAntigua #Llanes #Asturias",
+     "imagenes": [
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_Fotos/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB/25.08.07_The%20Whale%20%C2%B7%20Monasterio%20S.%20Antol%C3%ADn%20de%20Bed%C3%B3n_WEB_4.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/recuerdo-2025-la-ballena#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-18T13:00:00+01:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-recuerdo-2025-la-ballena-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

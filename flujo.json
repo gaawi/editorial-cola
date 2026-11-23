@@ -2800,6 +2800,16 @@
     }
    ],
    "faseBlog": "aprobado"
+  },
+  "es/la-tiendina-sube-a-la-aldea": {
+   "historial": [
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:40:26.096Z"
+    }
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

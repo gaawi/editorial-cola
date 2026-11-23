@@ -2221,6 +2221,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:33:53.640Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:29:39.529Z"
     }
    ],
    "sugerencias": [
@@ -2232,7 +2237,8 @@
      "respuesta": "Añadidos al final los logos de la Unión Europea y del Goethe-Institut.",
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/que-es-un-paseo-sonoro": {
    "historial": [

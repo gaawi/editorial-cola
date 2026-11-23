@@ -51,7 +51,8 @@ for (const f of plan) {
     // Las fotos tal cual: el carrusel son ellas (hasta 10), Facebook la primera.
     // Las fotos de la ficha se publican tal cual (ya recortadas si hacía falta).
     const enteras = p.fotos && p.fotos.length;
-    const ig = enteras ? p.fotos.slice(0, 10) : [...await copia(hechas.ig, 'ig', 10), ...(p.fotosExtra || [])].slice(0, 10);
+    // «apaisado»: the cover is drawn landscape (like Facebook) so the full photos behind it keep their proportions.
+    const ig = enteras ? p.fotos.slice(0, 10) : [...await copia(p.apaisado ? hechas.fb : hechas.ig, 'ig', 10), ...(p.fotosExtra || [])].slice(0, 10);
     const fb = enteras ? [p.fotos[0]] : await copia(hechas.fb, 'fb', 1);
     const colab = f.colaboradores || p.colaboradores || [];
     prep[f.clave] = { tipo: 'post', redes: [

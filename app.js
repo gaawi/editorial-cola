@@ -700,7 +700,8 @@ async function pintarInstagram(p) {
   const piezas = piezasDe(p);
   const slides = piezas.fotos || [...piezas.slides, ...(piezas.extra || [])];
   const caja = document.createElement('div');
-  caja.className = 'ig';
+  // «apaisado»: a landscape carousel (1.91:1), so photos keep their proportions.
+  caja.className = p.apaisado ? 'ig apaisado' : 'ig';
   caja.innerHTML = `
     <div class="ig-cab">
       <img class="ig-av" src="${CUENTAS.avatar}" alt="">
@@ -722,7 +723,7 @@ async function pintarInstagram(p) {
       ? fotoSuelta(piezas.fotos[i], p.fotosEnteras, p.encuadre)
       : i >= piezas.slides.length
         ? fotoSuelta(slides[i], true)
-        : await lienzo(p, slides[i], i, slides.length, 'ig'));
+        : await lienzo(p, slides[i], i, slides.length, p.apaisado ? 'fb' : 'ig'));
   }
 
   // Los puntos y el contador siguen al dedo, como en la app.

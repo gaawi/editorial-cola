@@ -1362,3 +1362,7 @@ body.en-detalle { overflow: auto !important; }
   #fichas .mes-separador, #fichas-conf .mes-separador, #lista-blog .mes-separador { grid-column: 1 / -1; }
   #fichas .blog-art, #lista-blog .blog-art { margin: 0; }
 }
+
+/* Landscape carousel (apaisado): the photos keep their proportions */
+.ig.apaisado .ig-carrete canvas, .ig.apaisado .ig-carrete .foto-suelta { aspect-ratio: 1200 / 628 !important; object-fit: cover; }
+.rv-media .ig.rv-ig.apaisado { width: 100cqw; }

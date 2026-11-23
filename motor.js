@@ -307,11 +307,12 @@ export function crearMotor(B) {
     // Logo de quien financia o apoya, cuando la ficha lo pide (`logo`):
     // { src, diapositivas: [1], historia: true }. Abajo a la derecha, sobre
     // una placa blanca para que se lea en cualquier fondo.
-    async function logo(enEsta, fondo) {
+    async function logo(enEsta, fondo, sobreFoto = false) {
       const L = post.logo;
       if (!L || !L.src || !enEsta) return;
       try {
-        const img = await cargarFoto(L.src);
+        // Logos go without a plate: a white version over photos (srcOscuro), the normal one on light or yellow.
+        const img = await cargarFoto(sobreFoto && L.srcOscuro ? L.srcOscuro : L.src);
         // Los logos institucionales son tiras anchas (escudo + nombre): a un
         // 16 % del ancho no se leían. Las tiras, más grandes que un logo cuadrado.
         const tira = img.naturalWidth / img.naturalHeight > 2.5;
@@ -416,7 +417,7 @@ export function crearMotor(B) {
         pegatinas(inicioPeg);
         // En la historia, el logo encima de las pegatinas para no taparlas.
         await logo(post.logo && (fmt === 'story' ? post.logo.historia : (post.logo.diapositivas || []).includes(idx)),
-          fmt === 'story' && nPeg ? inicioPeg - Math.round(W * 0.05) : undefined);
+          fmt === 'story' && nPeg ? inicioPeg - Math.round(W * 0.05) : undefined, true);
         return;
       }
 

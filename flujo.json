@@ -2288,6 +2288,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T12:24:44.925Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T19:10:18.333Z"
     }
    ],
    "sugerencias": [
@@ -2315,7 +2320,8 @@
      "respuesta": "Done: it is now a landscape carousel, so the four concert photos go whole, in their original proportions, and nobody loses their head. The cover is drawn landscape too.",
      "fechaRespuesta": "2026-11-23T14:18:18.782963+00:00"
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "es/propuestas-adar-2027": {
    "historial": [

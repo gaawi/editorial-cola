@@ -2746,6 +2746,23 @@
     }
    ],
    "faseBlog": "aprobado"
+  },
+  "es/por-que-encargamos-musica-nueva": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:38:46.281Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "\"Nosotros lo hicimos en nuestro primer concierto, y seguimos \" suena mucho a escrito por IA",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:38:46.281Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

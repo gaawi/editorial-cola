@@ -1501,6 +1501,11 @@
      "quien": "gaawi",
      "fecha": "2026-11-23T00:04:51.468Z",
      "red": "story"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-23T00:06:21.141Z"
     }
    ],
    "fase": "preparado",
@@ -1511,7 +1516,7 @@
       {
        "red": "ig",
        "cuando": "2026-11-26T19:30:00+01:00",
-       "texto": "¿Y si ADAR suena en tu pueblo? 📍\n\nDesde 2021 llevamos música a iglesias, monasterios, palacios, hórreos, mercados y campos de aldea de Asturias. Cada sitio se elige por lo que es, no como decorado.\n\nPara 2027 buscamos ayuntamientos, asociaciones vecinales y culturales, propietarios de espacios patrimoniales y salas que quieran acoger un concierto o un paseo sonoro.\n\nSi te apetece, escríbenos a leiguardamusic@gmail.com y lo hablamos.\n\nY si conoces a alguien en tu concejo a quien le pueda interesar, pásaselo.\n\nLas sedes en festivaladar.com\n\n#FestivalADAR #Asturias #MedioRural #PatrimonioAsturiano #CulturaRural",
+       "texto": "¿Y si ADAR suena en tu pueblo? 📍\n\nDesde 2021 llevamos música a iglesias, monasterios, palacios, hórreos, mercados y campos de aldea de Asturias. Este verano sonó en el hórreo de La Figal, en el Parador de Corias y en el monasterio de Villanueva de Oscos.\n\nPara 2027 buscamos ayuntamientos, asociaciones vecinales y culturales, propietarios de espacios patrimoniales y salas que quieran acoger un concierto o un paseo sonoro.\n\nSi te apetece, escríbenos a leiguardamusic@gmail.com y lo hablamos.\n\nY si conoces a alguien en tu concejo a quien le pueda interesar, pásaselo.\n\nLas sedes en festivaladar.com\n\n#FestivalADAR #Asturias #MedioRural #PatrimonioAsturiano #CulturaRural",
        "imagenes": [
         "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ayuntamientos-y-espacios-2027-ig-1.jpg"
        ]
@@ -1519,7 +1524,7 @@
       {
        "red": "fb",
        "cuando": "2026-11-26T19:32:00+01:00",
-       "texto": "¿Y si ADAR suena en tu pueblo? 📍\n\nDesde 2021 llevamos música a iglesias, monasterios, palacios, hórreos, mercados y campos de aldea de Asturias. Cada sitio se elige por lo que es, no como decorado.\n\nPara 2027 buscamos ayuntamientos, asociaciones vecinales y culturales, propietarios de espacios patrimoniales y salas que quieran acoger un concierto o un paseo sonoro.\n\nSi te apetece, escríbenos a leiguardamusic@gmail.com y lo hablamos.\n\nY si conoces a alguien en tu concejo a quien le pueda interesar, pásaselo.\n\nhttps://festivaladar.com/es/sedes/\n\n#FestivalADAR #Asturias #MedioRural #PatrimonioAsturiano #CulturaRural",
+       "texto": "¿Y si ADAR suena en tu pueblo? 📍\n\nDesde 2021 llevamos música a iglesias, monasterios, palacios, hórreos, mercados y campos de aldea de Asturias. Este verano sonó en el hórreo de La Figal, en el Parador de Corias y en el monasterio de Villanueva de Oscos.\n\nPara 2027 buscamos ayuntamientos, asociaciones vecinales y culturales, propietarios de espacios patrimoniales y salas que quieran acoger un concierto o un paseo sonoro.\n\nSi te apetece, escríbenos a leiguardamusic@gmail.com y lo hablamos.\n\nY si conoces a alguien en tu concejo a quien le pueda interesar, pásaselo.\n\nhttps://festivaladar.com/es/sedes/\n\n#FestivalADAR #Asturias #MedioRural #PatrimonioAsturiano #CulturaRural",
        "imagenes": [
         "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ayuntamientos-y-espacios-2027-fb-1.jpg"
        ]

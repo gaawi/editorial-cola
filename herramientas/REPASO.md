@@ -73,7 +73,12 @@ proponerle uno. La app entra directamente en Ideas; los meses, con «‹ Meses»
   (`fotosEnteras: true`), y del mismo formato dentro de un carrusel.
 - Fuentes de la marca: Literata Display (titulares) y Archivo, como en
   `creartbox.nyc/brand.html`. Ya están en `kit-brands.ts`.
-- Textos: frases cortas, que no suene a IA, **nunca la raya «—»**. La
+- Textos: frases cortas, que no suene a IA, **nunca la raya «—»**.
+  **Nada de frases hechas de IA** (pedido el 23 nov 2026), ni en posts ni en
+  el blog: «No es X, es Y», «X, no Y», «no como decorado», «no solo… sino»,
+  «Esa es una decisión, no un descuido», «no es casualidad», «de verdad»,
+  «Y eso…», definir algo por lo que no es, tríos retóricos. Mejor un dato
+  concreto (un sitio, una fecha, un nombre) que una frase redonda. La
   convocatoria es «Open Call», nunca «Calls for Scores». La Open Call en
   plan guía, sencilla.
 - Nunca «link in bio»: siempre a la web, «Tickets at creartbox.nyc», «Apply:

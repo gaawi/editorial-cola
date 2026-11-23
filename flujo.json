@@ -1634,9 +1634,15 @@
      "quien": "gaawi",
      "fecha": "2026-11-23T00:12:42.635Z",
      "red": "story"
+    },
+    {
+     "accion": "cambios",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T00:13:02.958Z",
+     "nota": "La line negra se monta con festival adar"
     }
    ],
-   "fase": "preparado",
+   "fase": "cambios",
    "preparado": {
     "es/amigos-giving-tuesday": {
      "tipo": "post",
@@ -1672,7 +1678,8 @@
       }
      ]
     }
-   }
+   },
+   "nota": "La line negra se monta con festival adar"
   },
   "es/video-bach-en-leiguarda": {
    "historial": [

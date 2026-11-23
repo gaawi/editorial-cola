@@ -2412,6 +2412,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:34:37.038Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:36:52.468Z"
     }
    ],
    "sugerencias": [
@@ -2431,7 +2436,8 @@
      "respuesta": "Cambiado a «uno de los favoritos del público», también en el título. Y una galería con 6 fotos (Museo de las Ayalgas 2023 y Leiguarda 2025).",
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/horreos-y-paneras-concurso": {
    "historial": [

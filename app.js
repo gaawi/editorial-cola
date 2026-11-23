@@ -2337,8 +2337,8 @@ function abrirRevision() {
       <div class="rv-media">${it.tipo === 'blog'
         ? `${p.image ? `<img class="rv-blog-foto" src="${escapar(p.image)}" alt="">` : ''}<h2 class="rv-blog-titulo">${escapar(p.title)}</h2>`
         : '<div class="espera-lienzo">…</div>'}</div>
-      ${pie ? `<button class="rv-pie" data-i="${i}">${escapar(pie)}</button>` : it.red === 'story' ? '<p class="rv-pie rv-sin">Stories have no caption: the stickers carry the details.</p>' : ''}
-      ${p.porque && it.tipo !== 'confirmar' ? `<p class="rv-porque"><b>Why:</b> ${escapar(p.porque)}</p>` : ''}
+      ${pie || p.porque || p.falta ? `<button class="rv-pie" data-i="${i}"><span class="rv-pie-txt">${escapar((pie || (p.porque ? 'Why: ' + p.porque : '')).replace(/\s*\n+\s*/g, ' '))}</span><span class="rv-leer">Read more</span></button>`
+        : it.red === 'story' ? '<p class="rv-pie rv-sin">Stories have no caption: the stickers carry the details.</p>' : ''}
       <div class="rv-sello" hidden></div>
     </section>`;
   }).join('');
@@ -2469,10 +2469,12 @@ $('#rv-fin-salir').addEventListener('click', cerrarRevision);
 // The caption: tap to read it whole, tap again to close.
 $('#rv-mazo').addEventListener('click', (e) => {
   const b = e.target.closest('.rv-pie');
-  if (!b) return;
+  if (!b || b.classList.contains('rv-sin')) return;
   const it = RV.items[Number(b.dataset.i)];
   const caja = $('#rv-texto');
-  caja.innerHTML = `<p>${escapar(b.textContent)}</p>${it.p.falta ? `<p class="rv-falta"><b>Missing:</b> ${escapar(it.p.falta)}</p>` : ''}<small>Tap to close</small>`;
+  // Everything that doesn't fit on the card: the whole caption, the why, what's missing.
+  const texto = it.red === 'fb' ? (it.texto || it.p.pies?.fb?.texto || '') : it.texto;
+  caja.innerHTML = `${texto ? `<p>${escapar(texto)}</p>` : ''}${it.p.porque ? `<p class="rv-falta-why"><b>Why:</b> ${escapar(it.p.porque)}</p>` : ''}${it.p.falta ? `<p class="rv-falta"><b>Missing:</b> ${escapar(it.p.falta)}</p>` : ''}<small>Tap to close</small>`;
   caja.hidden = false;
 });
 $('#rv-texto').addEventListener('click', () => { $('#rv-texto').hidden = true; });

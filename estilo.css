@@ -1345,3 +1345,13 @@ body.en-detalle { overflow: auto !important; }
 .rv-slide-paso .ico { margin: 0; width: 18px; height: 18px; }
 .rv-slide-n { font-size: 13px; color: #fff; font-weight: 600; min-width: 92px; text-align: center; }
 .rv-slide-n b { font-weight: 800; }
+/* Flash check: two lines of text + «Read more», so the picture gets the room */
+.rv-pie { display: flex !important; flex-direction: column; align-items: flex-start; gap: 2px; -webkit-line-clamp: unset; overflow: visible; }
+.rv-pie-txt { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; white-space: pre-line; font-size: 13px; line-height: 1.35; }
+.rv-leer { font-size: 12.5px; font-weight: 700; color: var(--lima); }
+.rv-es-blog .rv-leer { color: #b06d00; }
+.rv-pie.rv-sin { display: block !important; }
+.rv-porque { display: none !important; }
+.rv-falta-why b { color: var(--lima); }
+.rv-media .fb.rv-fb .fb-texto { -webkit-line-clamp: 3 !important; }
+.rv-media .fb.rv-fb > canvas, .rv-media .fb.rv-fb > img, .rv-media .fb.rv-fb > .foto-suelta { max-height: 62cqh; }

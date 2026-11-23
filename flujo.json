@@ -1816,6 +1816,11 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-22T16:43:41.325Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:34:01.410Z"
     }
    ],
    "sugerencias": [
@@ -1826,6 +1831,12 @@
      "hecha": true,
      "respuesta": "Cambiadas por 10 fotos del archivo de 2026 que no salieron como portada en Instagram (las comparé con todo lo publicado).",
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
+    },
+    {
+     "texto": "pon otra foto de portada",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:34:01.410Z",
+     "hecha": false
     }
    ],
    "fase": "preparado",

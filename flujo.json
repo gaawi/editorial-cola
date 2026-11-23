@@ -1586,9 +1586,14 @@
      "accion": "preparar",
      "quien": "claude",
      "fecha": "2026-11-22T16:43:44.399Z"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:32:16.340Z"
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "es/recuerdo-2021-primer-concierto": {
      "tipo": "post",

@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-23T00:12:42.635Z",
+ "actualizado": "2026-11-23T16:32:16.340Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -1127,6 +1127,50 @@
      "texto": "",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-amigos-giving-tuesday-st-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/recuerdo-2021-primer-concierto": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-04T19:30:00+01:00",
+     "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nLa historia completa, en el blog de festivaladar.com\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+     "imagenes": [
+      "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg",
+      "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image72.jpg",
+      "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image67.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-04T19:32:00+01:00",
+     "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+     "imagenes": [
+      "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/recuerdo-2021-primer-concierto#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-05T13:00:00+01:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-recuerdo-2021-primer-concierto-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

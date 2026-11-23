@@ -1336,3 +1336,12 @@ body.en-detalle { overflow: auto !important; }
 
 .revisar .ico { fill: #fff; stroke: none; }
 @media (max-width: 420px) { .revisar span { display: none; } .revisar { padding: 0 10px; } }
+/* Flash check: carousel control */
+.rv-media { flex-direction: column; gap: 6px; }
+.rv-media .ig.rv-ig .paso, .rv-media .ig.rv-ig .ig-cuenta { display: none !important; }
+.rv-media .ig.rv-ig { width: min(100cqw, calc((100cqh - 44px) * 0.8)); }
+.rv-slides { flex: none; position: relative; z-index: 3; display: inline-flex; align-items: center; gap: 10px; padding: 3px; border-radius: 999px; background: rgba(255,255,255,.12); }
+.rv-slide-paso { width: 36px; height: 36px; border-radius: 50%; background: #fff; color: var(--tinta); display: inline-flex; align-items: center; justify-content: center; }
+.rv-slide-paso .ico { margin: 0; width: 18px; height: 18px; }
+.rv-slide-n { font-size: 13px; color: #fff; font-weight: 600; min-width: 92px; text-align: center; }
+.rv-slide-n b { font-weight: 800; }

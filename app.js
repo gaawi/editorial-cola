@@ -2372,6 +2372,27 @@ async function dibujarRevision(i) {
     const el = await (historia ? pintarHistoria(it.p) : it.red === 'fb' ? pintarFacebook(it.p) : pintarInstagram(it.p));
     el.classList.add(historia ? 'rv-historia' : it.red === 'fb' ? 'rv-fb' : 'rv-ig');
     media.replaceChildren(el);
+    // Carousel: a clear «‹ 2/5 ›» control under the image to go through the
+    // slides (the screen sides turn cards, not slides).
+    const tira = el.querySelector('.ig-carrete .tira');
+    const n = tira ? tira.children.length : 0;
+    if (n > 1) {
+      const ctl = document.createElement('div');
+      ctl.className = 'rv-slides';
+      ctl.innerHTML = `<button class="rv-slide-paso" data-d="-1" aria-label="Previous slide"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <span class="rv-slide-n"><b>1</b>/${n} · carousel</span>
+        <button class="rv-slide-paso" data-d="1" aria-label="Next slide"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>`;
+      media.appendChild(ctl);
+      const pinta = () => { ctl.querySelector('b').textContent = String(Math.round(tira.scrollLeft / Math.max(1, tira.clientWidth)) + 1); };
+      tira.addEventListener('scroll', () => requestAnimationFrame(pinta), { passive: true });
+      ctl.addEventListener('click', (e) => {
+        const b = e.target.closest('.rv-slide-paso');
+        if (!b) return;
+        e.stopPropagation();
+        tira.scrollTo({ left: (Math.round(tira.scrollLeft / tira.clientWidth) + Number(b.dataset.d)) * tira.clientWidth });
+        setTimeout(pinta, 60);
+      });
+    }
   } catch { media.innerHTML = `<div class="espera-lienzo">Couldn't render</div>`; }
 }
 

@@ -1744,6 +1744,12 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:33:04.748Z"
+    },
+    {
+     "accion": "descartar",
+     "quien": "claude",
+     "fecha": "2026-11-23T17:37:53.313Z",
+     "nota": "Pidió olvidar la idea en la app."
     }
    ],
    "sugerencias": [
@@ -1759,10 +1765,12 @@
      "texto": "olvida esta idea",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:33:04.748Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Done, dropped. It is out of Confirm and won't go out.",
+     "fechaRespuesta": "2026-11-23T17:37:53.313Z"
     }
    ],
-   "fase": "preparado",
+   "fase": "descartado",
    "preparado": {
     "es/amigos-regalo-navidad": {
      "tipo": "post",
@@ -1821,6 +1829,21 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:34:01.410Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-23T17:37:12.027Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-23T17:37:32.462Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-23T17:37:39.044Z"
     }
    ],
    "sugerencias": [
@@ -1836,7 +1859,9 @@
      "texto": "pon otra foto de portada",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:34:01.410Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "New cover: the violinist from the final night in Leiguarda (Aug 16). The eclipse photo moves to slide 2. The story is framed on her face and now goes out the next day, Dec 30 at 13:00.",
+     "fechaRespuesta": "2026-11-23T17:37:53.313Z"
     }
    ],
    "fase": "preparado",
@@ -1849,12 +1874,12 @@
        "cuando": "2026-12-29T19:30:00+01:00",
        "texto": "ADAR 2026, en fotos que todavía no habíamos enseñado. 📸\n\nLa VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda.\n\nGracias a los músicos, a los vecinos y a quienes vinieron.\n\n¿Cuál fue tu noche?\n\n#FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
        "imagenes": [
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_9.jpg",
         "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_3.jpg",
         "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_4.jpg",
         "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/05.08.26_Parador%20de%20Corias_Fotos/05.08.26_Parador%20de%20Corias_WEB/05.08.26_Parador%20de%20Corias_WEB_4.jpg",
         "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/11.08.26_El%20Franco_Fotos/11.08.26_El%20Franco_WEB/11.08.26_El%20Franco_WEB_3.jpg",
         "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_2.jpg",
-        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_3.jpg",
         "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_3.jpg",
         "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_4.jpg",
         "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.15_Iglesia%20de%20Leiguarda_Fotos/26.08.15_Iglesia%20de%20Leiguarda_WEB/26.08.15_Iglesia%20de%20Leiguarda_WEB_5.jpg",
@@ -1866,7 +1891,7 @@
        "cuando": "2026-12-29T19:32:00+01:00",
        "texto": "ADAR 2026, en fotos que todavía no habíamos enseñado. 📸\n\nLa VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda.\n\nGracias a los músicos, a los vecinos y a quienes vinieron.\n\n¿Cuál fue tu noche?\n\nhttps://festivaladar.com/es/\n\n#FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
        "imagenes": [
-        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_3.jpg"
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_9.jpg"
        ]
       }
      ]
@@ -1964,7 +1989,9 @@
      "texto": "solo hay que mejorar los logo en png",
      "quien": "gaawi",
      "fecha": "2026-11-23T15:17:09.754Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Re-rendered with the new transparent logos (no white box). The queued images were replaced; the date stays Jan 27.",
+     "fechaRespuesta": "2026-11-23T17:37:53.313Z"
     }
    ],
    "fase": "confirmado",
@@ -2083,7 +2110,9 @@
      "texto": "solo hay que mejorar los logo en png",
      "quien": "gaawi",
      "fecha": "2026-11-23T15:17:10.259Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Re-rendered with the new transparent logos (no white box) on the post, Facebook and the story. The date stays Jan 24.",
+     "fechaRespuesta": "2026-11-23T17:37:53.313Z"
     }
    ]
   },
@@ -2645,7 +2674,9 @@
      "texto": "lo de contennedor es un poco duro,",
      "quien": "gaawi",
      "fecha": "2026-11-23T15:15:23.433Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Rewritten. \"Contenedor\" is gone, and so is everything the published Bach article already says. It is now about the 2025 Hórreos y Paneras contest: Susacasa (Gozón, Aug 5) and Puerma (Las Regueras, Aug 11), what the musicians heard inside, La Figal in 2026, and the 2027 rules in March. It links once to the Bach article. The Instagram idea that announces it is now \"Los hórreos del festival\", about those three places.",
+     "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
    ]
   },
@@ -2672,7 +2703,9 @@
      "texto": "demasiado largo y demasiad tipo IA, mas como un periodico..con un reporter",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:36:08.392Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Rewritten as a short local newspaper story (about 360 words): a dateline, then who, what, where and when, then the details. New title: \"Leiguarda, escenario de un videoarte sobre Bach\".",
+     "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
    ]
   },
@@ -2692,6 +2725,12 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:37:10.830Z"
+    },
+    {
+     "accion": "blog descartado",
+     "quien": "claude",
+     "fecha": "2026-11-23T17:37:53.313Z",
+     "nota": "Pidió olvidarlo en la app."
     }
    ],
    "sugerencias": [
@@ -2699,9 +2738,12 @@
      "texto": "olvida esto",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:37:10.830Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Done, dropped from the blog ideas.",
+     "fechaRespuesta": "2026-11-23T17:37:53.313Z"
     }
-   ]
+   ],
+   "faseBlog": "descartado"
   },
   "es/una-birbyne-en-leiguarda": {
    "historial": [
@@ -2716,7 +2758,9 @@
      "texto": "no es un flauta, es un clarinete",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:37:33.300Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Fixed. It now says clarinet everywhere (a Lithuanian folk single-reed clarinet), title included.",
+     "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
    ]
   },
@@ -2733,7 +2777,9 @@
      "texto": "no me gustam no hable de menhir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:37:49.067Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Rewritten with no menhir anywhere. New title: \"Geopunción: música colocada en un punto del paisaje\". It covers the Leiguarda dovecote walk, the first concert in 2021, the eclipse and the Belmonte panera. The collective's name (Menhir) was also removed; tell me if you want it back.",
+     "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
    ]
   },
@@ -2760,7 +2806,9 @@
      "texto": "\"Nosotros lo hicimos en nuestro primer concierto, y seguimos \" suena mucho a escrito por IA",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:38:46.281Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "That line now reads: \"En ADAR encargamos una pieza nueva para el primer concierto, en 2021. Desde entonces hemos seguido encargando música.\" I also cut other stock phrases. It now ends on Braña Sonora's composition residencies.",
+     "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
    ]
   },
@@ -2787,7 +2835,9 @@
      "texto": "quita lode Grado, un socio recurrente",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:39:29.379Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Removed \"un socio recurrente\" and the whole section around it. In its place is a plain list of the earlier concerts in Grado (2022 and 2023).",
+     "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
    ]
   },

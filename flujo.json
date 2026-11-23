@@ -2866,6 +2866,16 @@
     }
    ],
    "faseBlog": "descartado"
+  },
+  "es/el-mapa-de-adar-catorce-concejos": {
+   "historial": [
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:41:39.187Z"
+    }
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

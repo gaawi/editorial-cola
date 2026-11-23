@@ -1999,7 +1999,9 @@ function mostrarVista() {
   document.body.dataset.marca = enCuentas ? '' : MARCA;
   document.body.classList.toggle('con-pestanas', !enCuentas);
   // Review views are full-screen flashcards on the phone (see estilo.css).
-  document.body.classList.toggle('modo-tarjeta', ['ideas', 'confirmar', 'blog'].includes(vista));
+  // No full-screen lock in the normal views: they scroll. The no-scroll,
+  // full-screen mode is only Flash check.
+  document.body.classList.remove('modo-tarjeta');
   $('#idea-nueva').classList.remove('abierta');
   const enMeses = vista === 'meses';
   $('#vista-cuentas').hidden = !enCuentas;
@@ -2324,7 +2326,7 @@ function cabeceraRevision(it, i, n) {
 
 function abrirRevision() {
   RV = { items: pendientesRevision(), hechos: {} };
-  if (!RV.items.length) { aviso('Nothing to review right now.'); return; }
+  if (!RV.items.length) { aviso('Nothing to check right now.'); return; }
   const mazoEl = $('#rv-mazo');
   mazoEl.innerHTML = RV.items.map((it, i) => {
     const p = it.p;

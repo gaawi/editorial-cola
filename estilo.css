@@ -1333,3 +1333,6 @@ body.en-detalle { overflow: auto !important; }
 .rv-media .fb.rv-fb .fb-acciones svg { width: 18px; height: 18px; }
 .rv-media .fb.rv-fb .fb-texto { padding-bottom: 0 !important; margin-bottom: 8px; cursor: pointer; }
 .rv-media .fb.rv-fb > canvas, .rv-media .fb.rv-fb > img, .rv-media .fb.rv-fb > .foto-suelta { object-fit: contain; }
+
+.revisar .ico { fill: #fff; stroke: none; }
+@media (max-width: 420px) { .revisar span { display: none; } .revisar { padding: 0 10px; } }

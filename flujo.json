@@ -1719,6 +1719,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:36:53.143Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:24:56.345Z"
     }
    ],
    "sugerencias": [
@@ -1730,7 +1735,8 @@
      "respuesta": "Añadida en el texto: «dos noches en la casa de ADAR en Leiguarda». Falta saber precio, fechas en que se puede usar y si incluye algo más: lo dejo apuntado en la ficha.",
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "es/adar-2026-en-fotos": {
    "historial": [

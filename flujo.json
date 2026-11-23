@@ -2773,6 +2773,23 @@
     }
    ],
    "faseBlog": "aprobado"
+  },
+  "es/grado-tres-eventos-en-una-noche": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:39:29.379Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "quita lode Grado, un socio recurrente",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:39:29.379Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

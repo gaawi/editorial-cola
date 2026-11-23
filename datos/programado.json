@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-23T00:02:38.979Z",
+ "actualizado": "2026-11-23T00:04:51.468Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -1079,6 +1079,22 @@
      "texto": "Estamos seleccionando propuestas para ADAR 2027. 🎻\n\nLa VII edición será en agosto de 2027, en iglesias, monasterios, hórreos y aldeas de Asturias.\n\nProgramamos música clásica y de cámara, música antigua, creación contemporánea, jazz, músicas tradicionales y proyectos interdisciplinares. Nos gustan especialmente las propuestas con una identidad clara, y las que traen estrenos, actividades educativas o algo que hacer con el territorio.\n\n¿Cómo? Escríbenos a leiguardamusic@gmail.com con el asunto «PROPUESTA ADAR · nombre del artista o ensemble». Incluye biografía, programa, enlaces a grabaciones en directo, caché orientativo y disponibilidad en agosto de 2027.\n\nTodos los detalles en festivaladar.com\n\nCompártelo con quien creas que encaja. 🙌\n\n#FestivalADAR #ConvocatoriaArtistas #MúsicaDeCámara #Asturias #ADAR2027",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-propuestas-artisticas-2027-ig-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/ayuntamientos-y-espacios-2027#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-11-27T13:00:00+01:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ayuntamientos-y-espacios-2027-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

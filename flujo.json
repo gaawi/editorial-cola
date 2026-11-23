@@ -2642,6 +2642,16 @@
      "hecha": false
     }
    ]
+  },
+  "es/y-si-adar-suena-en-tu-pueblo": {
+   "historial": [
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:35:04.312Z"
+    }
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

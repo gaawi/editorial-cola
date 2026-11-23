@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-23T16:33:07.526Z",
+ "actualizado": "2026-11-23T16:33:17.963Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -1197,6 +1197,50 @@
      "texto": "Hoy es #GivingTuesday, el día de dar. 💛\n\nLas entradas de ADAR son gratuitas, pero el aforo es pequeño y muchos conciertos se llenan el mismo día que se anuncian. Los Amigos del Festival tienen su plaza asegurada en cada edición.\n\nColaborador · 10 € al año: sostienes el festival, recibes el boletín y tu nombre va en el muro de Amigos.\nAmigo · 30 € al año: además, reserva anticipada en todos los conciertos.\nAmigo VIP · 50 € al año: además, asientos VIP, la celebración privada con los artistas residentes, grabaciones inéditas y la camiseta de edición limitada.\n\nCada aportación se queda en las aldeas: en conciertos gratuitos donde casi nunca llega la música en directo.\n\nhttps://festivaladar.com/es/amigos-del-festival/\n\n#FestivalADAR #AmigosDelFestival #GivingTuesday #Asturias #CulturaRural",
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-amigos-giving-tuesday-fb-1.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/post-compositoras": {
+   "tipo": "post",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-20T13:00:00+01:00",
+     "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-andrea-casarrubios-45.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-caroline-shaw-45.jpg",
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-jessie-montgomery-45.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-20T13:02:00+01:00",
+     "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-andrea-casarrubios-45.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    }
+   ],
+   "marca": "adar"
+  },
+  "es/post-compositoras#historia": {
+   "tipo": "historia",
+   "redes": [
+    {
+     "red": "ig",
+     "cuando": "2026-12-21T13:00:00+01:00",
+     "texto": "",
+     "imagenes": [
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-post-compositoras-st-1.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

@@ -172,7 +172,30 @@ function pintarPorMeses(cont, fichas, extra = []) {
 // arrows, or ← → on a keyboard) to move. The position is kept per view, so
 // after approving a card the next one is right there.
 const POS_MAZO = {};
+// On the computer the review views are the scrolling grid, as before: the
+// one-card-at-a-time deck is for the phone (and Flash check, everywhere).
+const EN_ORDENADOR = matchMedia('(min-width: 1000px)');
+EN_ORDENADOR.addEventListener('change', () => { if (!actual && DATOS) mostrarVista(); });
+function rejillaPorMeses(cont, items) {
+  cont.classList.remove('mazo');
+  cont.innerHTML = '';
+  const barra = cont.previousElementSibling;
+  if (barra && barra.classList.contains('mazo-barra')) barra.hidden = true;
+  let ultimo = null;
+  for (const it of items) {
+    if (it.mes && it.mes !== ultimo) {
+      const h = document.createElement('h3');
+      h.className = 'mes-separador';
+      h.id = `sep-${vista}-${it.mes}`;
+      h.textContent = it.mes === 'blog' ? 'Blog ideas' : it.etiqueta || nombreMes(it.mes);
+      cont.appendChild(h);
+      ultimo = it.mes;
+    }
+    cont.appendChild(it.nodo);
+  }
+}
 function mazo(cont, items) {
+  if (EN_ORDENADOR.matches) return rejillaPorMeses(cont, items);
   cont.classList.add('mazo');
   cont.innerHTML = '';
   items.forEach((it, i) => {
@@ -2145,6 +2168,11 @@ $('#mes-saltos').addEventListener('click', (e) => {
   irAMes(b.dataset.mes);
 });
 function irAMes(m) {
+  if (EN_ORDENADOR.matches) {
+    const h = document.getElementById(`sep-${vista}-${m}`);
+    if (h) window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - (($('.barra')?.offsetHeight || 0) + 8), behavior: 'smooth' });
+    return;
+  }
   // In the flashcards: jump to the first card of that month (or of the blog).
   const cont = vista === 'confirmar' ? $('#fichas-conf') : $('#fichas');
   const s = cont && cont.querySelector(`.slide[data-mes="${m}"]`);

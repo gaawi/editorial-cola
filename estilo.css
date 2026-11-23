@@ -1355,3 +1355,10 @@ body.en-detalle { overflow: auto !important; }
 .rv-falta-why b { color: var(--lima); }
 .rv-media .fb.rv-fb .fb-texto { -webkit-line-clamp: 3 !important; }
 .rv-media .fb.rv-fb > canvas, .rv-media .fb.rv-fb > img, .rv-media .fb.rv-fb > .foto-suelta { max-height: 62cqh; }
+/* Computer: the review views are the grid again */
+@media (min-width: 1000px) {
+  #fichas:not(.mazo), #fichas-conf:not(.mazo) { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; align-items: start; }
+  #lista-blog:not(.mazo) { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; align-items: start; }
+  #fichas .mes-separador, #fichas-conf .mes-separador, #lista-blog .mes-separador { grid-column: 1 / -1; }
+  #fichas .blog-art, #lista-blog .blog-art { margin: 0; }
+}

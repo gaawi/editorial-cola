@@ -2685,6 +2685,23 @@
     }
    ],
    "faseBlog": "aprobado"
+  },
+  "es/el-eclipse-que-apago-asturias": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:37:10.830Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "olvida esto",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:37:10.830Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

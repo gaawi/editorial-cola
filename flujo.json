@@ -1668,9 +1668,14 @@
      "quien": "claude",
      "fecha": "2026-11-23T00:15:25.016946+00:00",
      "nota": "Fixed: the black line no longer runs into «FESTIVAL ADAR» on the Facebook image. The story you approved was fine and stays as it is."
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:33:07.526Z"
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "es/amigos-giving-tuesday": {
      "tipo": "post",

@@ -2323,6 +2323,23 @@
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
    ]
+  },
+  "es/felices-fiestas-2026": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:25:48.383Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "algo mas navideño no\n?",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T12:25:48.383Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

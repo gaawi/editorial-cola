@@ -2736,6 +2736,16 @@
      "hecha": false
     }
    ]
+  },
+  "es/monasterios-mil-anos-de-acustica": {
+   "historial": [
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-23T16:38:16.453Z"
+    }
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

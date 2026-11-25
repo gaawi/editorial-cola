@@ -1945,6 +1945,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T19:12:35.134Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:27:50.917Z"
     }
    ],
    "sugerencias": [
@@ -1968,6 +1973,12 @@
      "texto": "La foto del hórreo primera no me gusta",
      "quien": "gaawi",
      "fecha": "2026-11-23T19:12:35.134Z",
+     "hecha": false
+    },
+    {
+     "texto": "La foto no está bien algo más tipo cartel",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:27:50.917Z",
      "hecha": false
     }
    ]

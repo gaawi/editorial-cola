@@ -2773,6 +2773,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T15:16:36.778Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:34:18.127Z"
     }
    ],
    "sugerencias": [
@@ -2792,7 +2797,8 @@
      "respuesta": "Added 26 photos: 13 inside the article (2021, the concejos, the hórreos and the sixth edition) and a 13-photo gallery at the end, with every year from 2021 to 2026.",
      "fechaRespuesta": "2026-11-23T17:42:51.413Z"
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/el-horreo-como-sala-de-conciertos": {
    "historial": [

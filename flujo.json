@@ -1856,6 +1856,12 @@
      "quien": "gaawi",
      "fecha": "2026-11-25T00:27:13.208Z",
      "red": "fb"
+    },
+    {
+     "accion": "confirmar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:27:19.327Z",
+     "red": "story"
     }
    ],
    "sugerencias": [
@@ -1876,7 +1882,7 @@
      "fechaRespuesta": "2026-11-23T17:37:53.313Z"
     }
    ],
-   "fase": "preparado",
+   "fase": "confirmado",
    "preparado": {
     "es/adar-2026-en-fotos": {
      "tipo": "post",

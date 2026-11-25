@@ -2923,6 +2923,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:37:33.300Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:34:44.162Z"
     }
    ],
    "sugerencias": [
@@ -2934,7 +2939,8 @@
      "respuesta": "Fixed. It now says clarinet everywhere (a Lithuanian folk single-reed clarinet), title included.",
      "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/menhir-geopuncion-paisaje": {
    "historial": [

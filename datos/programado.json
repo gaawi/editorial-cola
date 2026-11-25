@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-25T00:27:06.462Z",
+ "actualizado": "2026-11-25T00:27:13.208Z",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -1413,6 +1413,16 @@
       "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_4.jpg",
       "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.15_Iglesia%20de%20Leiguarda_Fotos/26.08.15_Iglesia%20de%20Leiguarda_WEB/26.08.15_Iglesia%20de%20Leiguarda_WEB_5.jpg",
       "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_8.jpg"
+     ],
+     "estado": "en cola",
+     "via": "meta"
+    },
+    {
+     "red": "fb",
+     "cuando": "2026-12-29T19:32:00+01:00",
+     "texto": "ADAR 2026, en fotos que todavía no habíamos enseñado. 📸\n\nLa VI edición, del 3 al 16 de agosto. Un hórreo en Salas, el Parador de Corias, El Franco, Villanueva de Oscos, el eclipse, la panera de La Casona de Belmonte y las dos noches finales en la iglesia de Leiguarda.\n\nGracias a los músicos, a los vecinos y a quienes vinieron.\n\n¿Cuál fue tu noche?\n\nhttps://festivaladar.com/es/\n\n#FestivalADAR #ADAR2026 #Asturias #MúsicaClásica #MedioRural",
+     "imagenes": [
+      "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_9.jpg"
      ],
      "estado": "en cola",
      "via": "meta"

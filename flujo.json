@@ -2224,6 +2224,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:40:10.895Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:29:21.781Z"
     }
    ],
    "sugerencias": [
@@ -2235,7 +2240,8 @@
      "respuesta": "En internet no encuentro fotos de vaqueiros o tonada que podamos usar sin derechos (Wikimedia no deja descargar desde aquí). He puesto una foto nuestra de vecinos en un concierto al aire libre. Si tenéis fotos del trabajo de campo de Braña Sonora, la cambio.",
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "es/post-compositoras": {
    "historial": [

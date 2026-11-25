@@ -2817,6 +2817,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:30:18.400Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:30:26.081Z"
     }
    ],
    "sugerencias": [
@@ -2832,6 +2837,12 @@
      "texto": "Pon fotos del rodaje",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:30:18.400Z",
+     "hecha": false
+    },
+    {
+     "texto": "Pidemelas",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:30:26.081Z",
      "hecha": false
     }
    ]

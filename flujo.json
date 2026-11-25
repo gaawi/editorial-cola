@@ -3030,6 +3030,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:39:29.379Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:40:20.508Z"
     }
    ],
    "sugerencias": [
@@ -3041,7 +3046,8 @@
      "respuesta": "Removed \"un socio recurrente\" and the whole section around it. In its place is a plain list of the earlier concerts in Grado (2022 and 2023).",
      "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/como-elegimos-un-sitio": {
    "historial": [

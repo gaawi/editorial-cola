@@ -2960,6 +2960,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:37:49.067Z"
+    },
+    {
+     "accion": "blogDescartar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:40:03.686Z"
     }
    ],
    "sugerencias": [
@@ -2971,7 +2976,8 @@
      "respuesta": "Rewritten with no menhir anywhere. New title: \"Geopunción: música colocada en un punto del paisaje\". It covers the Leiguarda dovecote walk, the first concert in 2021, the eclipse and the Belmonte panera. The collective's name (Menhir) was also removed; tell me if you want it back.",
      "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
-   ]
+   ],
+   "faseBlog": "descartado"
   },
   "es/monasterios-mil-anos-de-acustica": {
    "historial": [

@@ -2794,6 +2794,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T15:15:23.433Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:31:29.056Z"
     }
    ],
    "sugerencias": [
@@ -2804,6 +2809,12 @@
      "hecha": true,
      "respuesta": "Rewritten. \"Contenedor\" is gone, and so is everything the published Bach article already says. It is now about the 2025 Hórreos y Paneras contest: Susacasa (Gozón, Aug 5) and Puerma (Las Regueras, Aug 11), what the musicians heard inside, La Figal in 2026, and the 2027 rules in March. It links once to the Bach article. The Instagram idea that announces it is now \"Los hórreos del festival\", about those three places.",
      "fechaRespuesta": "2026-11-23T17:38:29.444Z"
+    },
+    {
+     "texto": "Más fotos, las tengo que poder ver todas",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:31:29.056Z",
+     "hecha": false
     }
    ]
   },

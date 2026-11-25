@@ -2812,6 +2812,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:36:08.392Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:30:18.400Z"
     }
    ],
    "sugerencias": [
@@ -2822,6 +2827,12 @@
      "hecha": true,
      "respuesta": "Rewritten as a short local newspaper story (about 360 words): a dateline, then who, what, where and when, then the details. New title: \"Leiguarda, escenario de un videoarte sobre Bach\".",
      "fechaRespuesta": "2026-11-23T17:38:29.444Z"
+    },
+    {
+     "texto": "Pon fotos del rodaje",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:30:18.400Z",
+     "hecha": false
     }
    ]
   },

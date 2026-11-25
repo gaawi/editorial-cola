@@ -2571,6 +2571,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:34:49.617Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:36:24.280Z"
     }
    ],
    "sugerencias": [
@@ -2582,7 +2587,8 @@
      "respuesta": "Tenía razón: la foto era de un monasterio. Ahora la portada es el hórreo de La Figal, y al final van los ganadores: La Figal, Susacasa y Puerma.",
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/germanavicius-california-sketches": {
    "historial": [

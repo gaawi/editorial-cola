@@ -2995,6 +2995,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:38:46.281Z"
+    },
+    {
+     "accion": "blogDescartar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:40:10.476Z"
     }
    ],
    "sugerencias": [
@@ -3006,7 +3011,8 @@
      "respuesta": "That line now reads: \"En ADAR encargamos una pieza nueva para el primer concierto, en 2021. Desde entonces hemos seguido encargando música.\" I also cut other stock phrases. It now ends on Braña Sonora's composition residencies.",
      "fechaRespuesta": "2026-11-23T17:38:29.444Z"
     }
-   ]
+   ],
+   "faseBlog": "descartado"
   },
   "es/taramundi-cuchillos-y-mussorgsky": {
    "historial": [

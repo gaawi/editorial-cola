@@ -2458,6 +2458,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:33:08.915Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:33:03.749Z"
     }
    ],
    "sugerencias": [
@@ -2469,7 +2474,8 @@
      "respuesta": "Dos apartados nuevos: «La llamamos Centro ADAR» y «Los vecinos, lo primero» (el primer concierto de 2021, la espicha de clausura). Y una galería con 6 fotos de la casa.",
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/brana-sonora": {
    "historial": [

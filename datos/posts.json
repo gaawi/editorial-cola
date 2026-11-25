@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-23T17:53:57.682Z",
+ "generado": "2026-11-25T15:17:00.910Z",
  "origen": "gaawi/adar",
  "marcas": {
   "creartbox": {
@@ -41,7 +41,8 @@
      "family": "Literata Display",
      "href": "https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,72,400;0,72,500;1,72,400;1,72,500&display=swap"
     },
-    "displayTracking": -0.015
+    "displayTracking": -0.015,
+    "firma": "trapecio"
    },
    "cuentas": {
     "ig": "creartboxnyc",
@@ -232,6 +233,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -328,6 +330,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -420,6 +423,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Es el anuncio general de Winterlight: sirve de base para todo lo demás del concierto hasta el 4 de diciembre.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -507,6 +511,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -594,6 +599,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -681,6 +687,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -768,6 +775,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -855,6 +863,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El 15 queda justo un mes para que cierre la Open Call. La cuenta atrás empuja a quien lo iba dejando para más tarde.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -943,6 +952,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Petroushka es la pieza que vende el concierto. A tres semanas y media toca contar por qué merece la pena venir.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1028,6 +1038,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Queda un día de early bird a $19. Que se acabe mañana es la mejor razón para comprar hoy.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1113,6 +1124,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Junta las dos cosas que estamos promocionando: el concierto y la Open Call. Enseña que de la convocatoria sale música que se toca de verdad.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1209,6 +1221,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El 26 es Acción de Gracias: dar las gracias ese día es natural y no vende nada. Hace de respiro entre posts de venta y prepara el Giving Tuesday del 1 de diciembre.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1291,6 +1304,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "La web lo anunció el 11 de noviembre: cuanto antes se cuente, más gente entra. Y lleva a la sala a quien nunca ha venido a un concierto nuestro.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
@@ -1393,6 +1407,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El sorteo cierra el 3 a medianoche: la víspera es el último empujón. Da para una historia, no para un post.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1480,6 +1495,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El proyecto de Guillermo, el jueves 19 en Hunters Point. Tres días antes da tiempo a apuntarlo, y el lunes 16 no choca con nada.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1556,6 +1572,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El proyecto de Josefina, el sábado 21 en Flushing. El miércoles 18 está libre (Petroushka el 17, Ravel el 19) y quedan tres días.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1634,6 +1651,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Dos conciertos de Guillermo y Josefina en bibliotecas de Queens el 19 y el 21. El lunes 16 da tiempo a que la gente lo apunte, y no choca con Petroushka (17) ni con Ravel (19).",
      "pegatinasMuro": true,
      "fondoAmbar": true,
@@ -1729,6 +1747,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El mismo día del concierto de Hunters Point: una historia para quien pasa cerca. No da para post.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1814,6 +1833,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El mismo día del concierto de Flushing, a primera hora: es a mediodía. Una historia basta.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1899,6 +1919,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El 3 de diciembre cierra el sorteo a medianoche y ese día no hay nada: el empujón final, sin repetir el «last call» del día 2.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -1984,6 +2005,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El día del concierto: la última llamada para quien aún no tiene entrada, y para que se vea que es hoy.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -2069,6 +2091,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El 27 es Black Friday y la gente está buscando regalos. Dos entradas para Navidad encajan justo ahí.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -2160,6 +2183,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Queda una semana para que cierre la Open Call. El último aviso suele ser el que más envíos trae.",
      "pegatinasMuro": true,
      "fondoAmbar": true,
@@ -2261,6 +2285,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -2335,6 +2360,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -2413,6 +2439,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Las proyecciones con ilustraciones antiguas de los cuentos son lo más visual de la noche, y eso en Instagram funciona.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -2498,6 +2525,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Un estreno mundial es noticia por sí solo, y a diez días del concierto empuja la venta final. Además el 1 es Giving Tuesday.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -2588,6 +2616,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Es la semana del concierto: recordatorio para quien todavía no tiene entrada.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
@@ -2673,6 +2702,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -2747,6 +2777,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Víspera del concierto. Una historia dura un día, igual que el aviso.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -2821,6 +2852,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -2930,6 +2962,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3019,6 +3052,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3109,6 +3143,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3192,6 +3227,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3268,6 +3304,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3352,6 +3389,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3428,6 +3466,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3508,6 +3547,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3592,6 +3632,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3668,6 +3709,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3752,6 +3794,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3836,6 +3879,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -3912,6 +3956,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4000,6 +4045,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4092,6 +4138,7 @@
      "fotosEnteras": true,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Cierra Currents dando las gracias y enseña cómo es un concierto nuestro a quien no vino, justo mientras vendemos Winterlight.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4182,6 +4229,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4262,6 +4310,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4338,6 +4387,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4414,6 +4464,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4505,6 +4556,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4581,6 +4633,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Enseña lo que hacemos fuera de la sala, sin entrada. Equilibra tanto post de venta.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4663,6 +4716,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Recuerda que Winterlight es el siguiente concierto. Hace de puente entre el early bird y Petroushka.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -4755,7 +4809,8 @@
      "400 32px \"Chivo\"",
      "700 32px \"Chivo\"",
      "500 24px \"Chivo Mono\""
-    ]
+    ],
+    "firma": null
    },
    "cuentas": {
     "ig": "festivaladar",
@@ -4943,6 +4998,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5030,6 +5086,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5117,6 +5174,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5204,6 +5262,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5291,6 +5350,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5378,6 +5438,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5464,6 +5525,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5551,6 +5613,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5639,6 +5702,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5726,6 +5790,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5813,6 +5878,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5900,6 +5966,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -5987,6 +6054,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6075,6 +6143,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6162,6 +6231,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6249,6 +6319,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6307,6 +6378,534 @@
     {
      "publicadoEn": null,
      "ventana": {
+      "desde": "2026-11-25",
+      "hasta": "2026-12-25",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "fotosExtra": [],
+     "apaisado": false,
+     "adorno": null,
+     "porque": null,
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "logo": null,
+     "sinMarca": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "es/una-casa-abierta-en-la-aldea",
+     "esBlog": true,
+     "blog": null,
+     "estadoWeb": "draft",
+     "cuerpo": "En abril de 2025, María Bosque Senero contaba en elDiario.es [la historia de Lucía Camón](https://www.eldiario.es/aragon/zaragoza/madrid-torralba-ribota-decada-residencias-artisticas-casa-deshabitada-abuela_1_12196886.html). Es artista y gestora cultural. Heredó la casa de su bisabuela en Torralba de Ribota, un pueblo de unos cien habitantes en la comarca de Calatayud. Se fue de Madrid a vivir allí y la convirtió en un espacio de residencias.\n\nLos artistas trabajan en calma unos días. Antes de volver a la ciudad dejan algo en el pueblo: una exposición, un concierto, una performance o un vídeo. Según Camón, en la última década se han abierto unas diez casas más en Torralba, y varios artistas se han quedado a vivir o pasan allí temporadas.\n\nLeímos el reportaje con mucha atención, porque nuestra sede tiene casi la misma cifra al lado: Leiguarda también tiene un centenar de habitantes.\n\n## La regla de dejar algo\n\nLo que más nos gustó de Torralba es una costumbre sencilla. Quien llega a trabajar, antes de irse, enseña lo que ha hecho a la gente del pueblo.\n\nEn ADAR hacemos algo parecido. En agosto de 2026, el trío The Rest Project presentó *Equilibrium* en la panera de La Casona de Belmonte. Era su muestra de residencia, con poemas de Joan Margarit. El público vio una obra recién hecha, todavía en proceso.\n\nNos parece justo. Una aldea que acoge a unos artistas durante semanas tiene derecho a saber qué estaban haciendo.\n\n## Leiguarda 47\n\nNuestra sede es una casa restaurada en la montaña. Tiene alojamiento, una sala de ensayo con piano de cola, un estudio de producción y un espacio para conciertos. La sala de ensayo era una cuadra.\n\nDesde 2020 han pasado por ella más de dieciocho artistas de España, Italia, Alemania y Países Bajos. Conviven en la casa y comen en la misma mesa. Muchos salen a andar por el valle que luego van a tocar. Los primeros vecinos que conocen son los de Leiguarda.\n\nEntre este otoño y junio de 2027 habrá nuevas residencias, con el apoyo de Culture Moves Europe, el programa de movilidad de Europa Creativa. Una de ellas será la de Orchestra Improvvisata, un proyecto social italiano que hace tocar juntos a niños, principiantes, personas con discapacidad y profesionales.\n\n## Lo que no podemos prometer\n\nCamón habla de casas que se reabren. Nosotros no tenemos ese dato en Leiguarda y no vamos a inventarlo. Un festival no repuebla una aldea.\n\nLo que sí vemos es más pequeño. En el primer concierto, en agosto de 2021, vinieron más de 120 personas a una aldea de cien vecinos. Los conciertos de clausura de 2025 y 2026 acabaron con una espicha en la que se mezclaron la gente del pueblo y la de fuera. Los músicos se quedaron a la espicha, con un culín de sidra en la mano.\n\n## Una pregunta para quien venga\n\nEn la convocatoria de compositor residente pedimos a alguien interesado en trabajar con lo que tiene alrededor. Después de leer sobre Torralba, nos gustaría añadir una pregunta a las entrevistas: ¿qué vas a dejar en el pueblo antes de irte?\n\nSi trabajas en música y te interesa una residencia en Leiguarda, escríbenos a leiguardamusic@gmail.com.",
+     "lang": "es",
+     "slug": "una-casa-abierta-en-la-aldea",
+     "kind": "post",
+     "title": "Una casa abierta en una aldea de cien vecinos",
+     "excerpt": "En Torralba de Ribota, Lucía Camón convirtió la casa de su bisabuela en un lugar de residencias artísticas. Leímos su historia pensando en Leiguarda 47 y en lo que pedimos a quien viene a crear aquí.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_4.jpg",
+     "url": "https://festivaladar.com/es/blog/una-casa-abierta-en-la-aldea/",
+     "date": "2026-11-25",
+     "tags": [
+      "residencias",
+      "Leiguarda",
+      "medio rural",
+      "Culture Moves Europe"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Una casa abierta en una aldea de cien vecinos",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La regla de dejar algo",
+       "body": "Lo que más nos gustó de Torralba es una costumbre sencilla. Quien llega a trabajar, antes de irse, enseña lo que ha hecho a la gente del pueblo. En ADAR hacemos algo parecido."
+      },
+      {
+       "type": "text",
+       "title": "Leiguarda 47",
+       "body": "Nuestra sede es una casa restaurada en la montaña. Tiene alojamiento, una sala de ensayo con piano de cola, un estudio de producción y un espacio para conciertos. La sala de ensayo era una cuadra."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Una casa abierta en una aldea de cien vecinos\n\nEn Torralba de Ribota, Lucía Camón convirtió la casa de su bisabuela en un lugar de residencias artísticas. Leímos su historia pensando en Leiguarda 47 y en lo que pedimos a quien viene a crear aquí.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #residencias",
+       "asomo": "Una casa abierta en una aldea de cien vecinos En Torralba de Ribota, Lucía Camón convirtió la casa de su bisabuela en un luga…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Una casa abierta en una aldea de cien vecinos\n\nEn Torralba de Ribota, Lucía Camón convirtió la casa de su bisabuela en un lugar de residencias artísticas. Leímos su historia pensando en Leiguarda 47 y en lo que pedimos a quien viene a crear aquí.\n\nhttps://festivaladar.com/es/blog/una-casa-abierta-en-la-aldea/\n\n#FestivalADAR #Asturias",
+       "asomo": "Una casa abierta en una aldea de cien vecinos En Torralba de Ribota, Lucía Camón convirtió la casa de su bisabuela en un lugar de residencias artísticas. Leímos su historia pensando en Leiguarda 47 y en lo que pedimos a quien viene a crear aquí. https://festivaladar.com/es/blog/una-casa-abierta-en-la-aldea/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-25",
+      "hasta": "2026-12-25",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "fotosExtra": [],
+     "apaisado": false,
+     "adorno": null,
+     "porque": null,
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "logo": null,
+     "sinMarca": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "es/museo-o-taller",
+     "esBlog": true,
+     "blog": null,
+     "estadoWeb": "draft",
+     "cuerpo": "En septiembre de 2026, el periodista Alan Rusbridger publicó en *Prospect* un artículo titulado [«What is the future of the classical festival?»](https://www.prospectmagazine.co.uk/culture/74613/what-is-the-future-of-the-classical-festival). Había ido a la Schubertiade, que cumplía cincuenta años. Es un festival pequeño y muy respetado que se celebra en dos pueblos del oeste de Austria, Hohenems y Schwarzenberg.\n\nLe gustaron mucho los conciertos. Aun así, volvió con una pregunta. Algunos críticos describen la Schubertiade como un museo de la música escrita entre 1700 y 1900. Rusbridger plantea que el festival tiene que decidir qué quiere ser: un lugar que conserva y reinterpreta un repertorio, o un lugar que además redescubre y encarga música nueva.\n\nLa pregunta vale para cualquier festival. También para uno que toca en hórreos.\n\n## Lo que hicimos desde 2021\n\nEl primer concierto de ADAR fue el 14 de agosto de 2021, en el campo de la iglesia de Leiguarda. Sonaron Mendelssohn, Haydn, Falla, John Harbison y *Atlantic*, de Marcos Fernández.\n\nEn 2024 el programa del festival combinaba obras de Mozart, Debussy y Vivaldi con encargos a Andrea Casarrubios y a otras compositoras actuales.\n\n## El museo también hace falta\n\nRusbridger no desprecia la conservación, y nosotros tampoco. Buena parte de lo que tocamos es música de hace dos o tres siglos. En la última noche de 2026 sonaron Vivaldi en el arreglo de Bach, Mendelssohn y Brahms.\n\nTocar ese repertorio en un monasterio o en una iglesia de aldea tiene sentido. Mucha de esa música se escribió para espacios de piedra parecidos. Además, quien vive lejos de una sala de conciertos no suele oír este repertorio en directo. Para esa persona, Bach en la iglesia de su concejo también es una novedad.\n\n## El taller\n\nLa otra parte del trabajo es encargar. En ADAR lo hacemos con una residencia de composición. En 2026 el compositor residente fue Zygmund de Somogyi. En la convocatoria pedimos a alguien interesado en trabajar con los intérpretes y con el lugar. El compositor está en la sede con los músicos delante y comprueba en el momento si una idea funciona.\n\nA veces la obra nueva resulta ser la más cercana del programa. En el mercado de Pola de Somiedo sonó *Afilador*, de Andrea Casarrubios. La pieza parte del afilador ambulante que iba de pueblo en pueblo con su silbato. Mucha gente del público se acordaba de verlo pasar por su calle.\n\n## Lo que viene\n\nEn 2027 el taller crece. Dentro de **Braña Sonora**, tres compositoras y compositores harán residencias en el territorio y trabajarán con las grabaciones del proyecto: cultura vaqueira, hórreos y paneras, tonada. Sus obras se estrenarán en el Festival ADAR de agosto de 2027, en los mismos lugares donde se grabó el material.\n\nUn encargo puede salir regular. Puede no conectar con el público. Cuesta un dinero que podría ir a algo más seguro. Seguimos haciéndolo porque una partitura nueva sigue existiendo cuando acaba agosto, y otros grupos pueden tocarla después en otras ciudades.\n\nNuestra respuesta a Rusbridger es intentar tener las dos cosas en el mismo programa: música de hace tres siglos y música escrita para el sitio donde suena.",
+     "lang": "es",
+     "slug": "museo-o-taller",
+     "kind": "post",
+     "title": "¿Museo o taller? Lo que un festival decide cuando encarga una obra",
+     "excerpt": "Alan Rusbridger se preguntaba este verano si los festivales de música clásica son una forma de conservación o un sitio donde se crea. Nosotros nos lo preguntamos desde 2021.",
+     "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image72.jpg",
+     "url": "https://festivaladar.com/es/blog/museo-o-taller/",
+     "date": "2026-11-25",
+     "tags": [
+      "encargos",
+      "obra nueva",
+      "compositor residente",
+      "programación"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "¿Museo o taller? Lo que un festival decide cuando encarga una obra",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Lo que hicimos desde 2021",
+       "body": "El primer concierto de ADAR fue el 14 de agosto de 2021, en el campo de la iglesia de Leiguarda. Sonaron Mendelssohn, Haydn, Falla, John Harbison y Atlantic, de Marcos Fernández."
+      },
+      {
+       "type": "text",
+       "title": "El museo también hace falta",
+       "body": "Rusbridger no desprecia la conservación, y nosotros tampoco. Buena parte de lo que tocamos es música de hace dos o tres siglos. En la última noche de 2026 sonaron Vivaldi en el arreglo de Bach, Mendelssohn y Brahms."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "¿Museo o taller? Lo que un festival decide cuando encarga una obra\n\nAlan Rusbridger se preguntaba este verano si los festivales de música clásica son una forma de conservación o un sitio donde se crea. Nosotros nos lo preguntamos desde 2021.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #encargos",
+       "asomo": "¿Museo o taller? Lo que un festival decide cuando encarga una obra Alan Rusbridger se preguntaba este verano si los festivale…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "¿Museo o taller? Lo que un festival decide cuando encarga una obra\n\nAlan Rusbridger se preguntaba este verano si los festivales de música clásica son una forma de conservación o un sitio donde se crea. Nosotros nos lo preguntamos desde 2021.\n\nhttps://festivaladar.com/es/blog/museo-o-taller/\n\n#FestivalADAR #Asturias",
+       "asomo": "¿Museo o taller? Lo que un festival decide cuando encarga una obra Alan Rusbridger se preguntaba este verano si los festivales de música clásica son una forma de conservación o un sitio donde se crea. Nosotros nos lo preguntamos desde 2021. https://festivaladar.com/es/blog/museo-o-taller/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-25",
+      "hasta": "2026-12-25",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "fotosExtra": [],
+     "apaisado": false,
+     "adorno": null,
+     "porque": null,
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "logo": null,
+     "sinMarca": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "es/el-silencio-de-una-aldea",
+     "esBlog": true,
+     "blog": null,
+     "estadoWeb": "draft",
+     "cuerpo": "En febrero de 2024, elDiario.es publicó [un adelanto de *¡Silencio!*](https://www.eldiario.es/madrid/somos/lee-adelanto-silencio-manifiesto-pedro-bravo-ruido-inquietud-prisa_1_10911339.html), el libro de Pedro Bravo contra el ruido, la inquietud y la prisa. Empieza con un mirlo que canta en una calle de Madrid llena de tráfico. Los mirlos de ciudad han subido el volumen para que se les oiga.\n\nBravo repasa la ecología acústica, la disciplina que fundaron en los años sesenta R. Murray Schafer y el World Soundscape Project. Habla de Gordon Hempton, que se dedica a proteger lugares tranquilos. Y señala una contradicción. Cuando un paisaje silencioso se convierte en atracción turística, llega gente, y con la gente llega el ruido que lo hacía especial.\n\nEsa frase nos tocó de cerca.\n\n## Lo que el silencio nos da\n\nBuena parte de lo que hace ADAR depende del silencio del medio rural.\n\nEn un paseo sonoro, un instrumento a cuarenta metros se oye porque el ruido de fondo es casi nulo. En una ciudad, el tráfico se come esas distancias.\n\nEn Leiguarda 47, nuestra sede, los artistas pueden ensayar a las siete de la mañana o a medianoche. No hay aire acondicionado zumbando ni coches de fondo. Lo mencionan siempre.\n\nEn los monasterios, el público baja la voz al entrar sin que nadie se lo pida. El silencio durante la música es difícil de conseguir en una sala normal.\n\nY el 12 de agosto de 2026, en el Alto de La Corredoria, durante el eclipse, bajó la temperatura y los pájaros se callaron. Ese silencio formaba parte del concierto.\n\n## Lo que llevamos nosotros\n\nAhora la parte incómoda. Un concierto en una aldea trae coches por carreteras de montaña. Trae voces a la entrada, aplausos y, al final, una espicha. Llevamos gente a sitios donde normalmente se oyen las vacas y el río.\n\nNo creemos que eso sea malo. Durante una tarde, una aldea con poca gente tiene vida. Pero el aviso de Bravo nos sirve para pensar en cómo lo hacemos.\n\n## Algunas cosas que ya hacemos\n\nLos sitios son pequeños. Un concierto en un monasterio rural reúne a unas ochenta personas. En un hórreo caben muchas menos. En La Figal de Xugabolos, en Salas, cabía tan poca gente que en 2026 hubo dos pases de media hora.\n\nLa técnica que llevamos es ligera. Es música de cámara, pensada para sonar en salas pequeñas.\n\nCada sitio lo elegimos hablando antes con quien lo cuida. Esa persona sabe a qué hora da el sol de lado, cuánta gente cabe realmente y qué se puede tocar y qué no.\n\n## Escuchar antes de tocar\n\nAntes de decidir dónde se toca, vamos al sitio. Damos palmadas y hablamos en voz alta. Escuchamos cuánto tarda el sonido en apagarse. Es un método poco glamuroso, pero nos obliga a escuchar el lugar antes de llenarlo de música.\n\nEn **Braña Sonora** queremos ir más allá. Vamos a grabar el paisaje sonoro de brañas, hórreos y oficios con técnicas que guardan cómo suena el espacio. Será un archivo de cómo sonaban estos sitios en 2026 y 2027.\n\nSi alguna vez vienes a un concierto de ADAR, te proponemos algo sencillo. Llega diez minutos antes, apaga el motor y escucha cómo suena la aldea antes de que empiece la música.",
+     "lang": "es",
+     "slug": "el-silencio-de-una-aldea",
+     "kind": "post",
+     "title": "El silencio de una aldea también hay que cuidarlo",
+     "excerpt": "Pedro Bravo escribió un manifiesto contra el ruido y avisó de algo incómodo: allí donde llega la ciudad, llega el ruido. Un festival en el campo también lleva coches y gente. Pensamos en cómo hacerlo con cuidado.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.12_Monasterio%20de%20Obona_Fotos/25.08.12_Monasterio%20de%20Obona_WEB/25.08.12_Monasterio%20de%20Obona_WEB_6.jpg",
+     "url": "https://festivaladar.com/es/blog/el-silencio-de-una-aldea/",
+     "date": "2026-11-25",
+     "tags": [
+      "silencio",
+      "paisaje sonoro",
+      "escucha",
+      "medio rural"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "El silencio de una aldea también hay que cuidarlo",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Lo que el silencio nos da",
+       "body": "Buena parte de lo que hace ADAR depende del silencio del medio rural. En un paseo sonoro, un instrumento a cuarenta metros se oye porque el ruido de fondo es casi nulo. En una ciudad, el tráfico se come esas distancias."
+      },
+      {
+       "type": "text",
+       "title": "Lo que llevamos nosotros",
+       "body": "Ahora la parte incómoda. Un concierto en una aldea trae coches por carreteras de montaña. Trae voces a la entrada, aplausos y, al final, una espicha. Llevamos gente a sitios donde normalmente se oyen las vacas y el río."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "El silencio de una aldea también hay que cuidarlo\n\nPedro Bravo escribió un manifiesto contra el ruido y avisó de algo incómodo: allí donde llega la ciudad, llega el ruido. Un festival en el campo también lleva coches y gente. Pensamos en cómo hacerlo con cuidado.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #silencio",
+       "asomo": "El silencio de una aldea también hay que cuidarlo Pedro Bravo escribió un manifiesto contra el ruido y avisó de algo incómodo…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "El silencio de una aldea también hay que cuidarlo\n\nPedro Bravo escribió un manifiesto contra el ruido y avisó de algo incómodo: allí donde llega la ciudad, llega el ruido. Un festival en el campo también lleva coches y gente. Pensamos en cómo hacerlo con cuidado.\n\nhttps://festivaladar.com/es/blog/el-silencio-de-una-aldea/\n\n#FestivalADAR #Asturias",
+       "asomo": "El silencio de una aldea también hay que cuidarlo Pedro Bravo escribió un manifiesto contra el ruido y avisó de algo incómodo: allí donde llega la ciudad, llega el ruido. Un festival en el campo también lleva coches y gente. Pensamos en cómo hacerlo con cuidado. https://festivaladar.com/es/blog/el-silencio-de-una-aldea/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-25",
+      "hasta": "2026-12-25",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "fotosExtra": [],
+     "apaisado": false,
+     "adorno": null,
+     "porque": null,
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "logo": null,
+     "sinMarca": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "es/el-orgullo-de-las-branas",
+     "esBlog": true,
+     "blog": null,
+     "estadoWeb": "draft",
+     "cuerpo": "En julio de 2025, Raquel L. Murias publicó en elDiario.es [un retrato de Juan Gayo](https://www.eldiario.es/asturias/juan-gayo-ultimo-vaqueiro-alzada-impulso-orgullo-branas-fiesta-trashumancia_1_12476310.html). El artículo lo presenta como el último vaqueiro de alzada nacido en una braña. Nació hace 65 años en Las Tabiernas, en Tineo.\n\nDe niño tenía dos casas y dos escuelas. Pasaba seis meses en cada una, según dónde estuviera el ganado. Cuenta que, cuando bajaba a la villa, se escondía por vergüenza. Ser vaqueiro era algo que se callaba.\n\nAntes de cumplir los treinta decidió darle a esa cultura una fiesta propia. La idea salió en Navelgas, en agosto de 1987. Así nació la Fiesta de la Trashumancia, que se celebra cada 8 de septiembre. Según él, fue la primera vez que la gente de fuera miró las costumbres vaqueiras con admiración.\n\nHoy Las Tabiernas casi no tiene vecinos. Juan vive en Tineo y sube cada día a atender a sus animales.\n\n## La vergüenza también es un dato\n\nNos quedamos con una parte del artículo que no tiene que ver con la música. Durante generaciones, quien vivía en la braña aprendió que su forma de vida valía menos. Eso deja huella. Hace que la gente desconfíe de quien llega con una grabadora.\n\nLo tenemos muy presente en **Braña Sonora**, el proyecto que empezamos en julio de 2026 con una ayuda del Ministerio de Cultura para la salvaguarda del Patrimonio Cultural Inmaterial. Uno de sus tres ejes es la cultura vaqueira de alzada: la subida a las brañas en mayo y junio y la bajada en septiembre y octubre.\n\nHemos tocado en Tineo. El 12 de agosto de 2025 llenamos el monasterio de Obona. Pero un concierto dura una hora y luego nos vamos. Grabar la memoria de alguien pide otro trato.\n\n## Cómo queremos trabajar\n\nHay reglas que pusimos antes de empezar. Nadie se graba sin su permiso. Cada persona escucha lo suyo y lo revisa antes de que se publique. Grabamos en los concejos donde ADAR ya trabaja, con gente que nos conoce o que conoce a alguien que nos conoce.\n\nJuan Gayo dice otra cosa que nos parece útil. Ahora hay mucha gente que se declara vaqueira, y a él eso le preocupa. Prefiere que se cuide el origen. Para un archivo, eso significa anotar bien quién canta, de dónde es, a quién se lo oyó y cuándo. Una tonada sin esos datos se queda en una canción bonita.\n\n## Lo que vuelve al territorio\n\nLo grabado volverá a los concejos de donde sale. Una parte irá a las escuelas rurales, con materiales para clase en castellano y en asturiano. Otra estará en un archivo abierto. Y tres compositoras y compositores harán residencias con ese material. Sus obras se estrenarán en el Festival ADAR de agosto de 2027, en los sitios donde se grabó.\n\nEl artículo cuenta que los jóvenes preguntan cada vez más por cómo vivían los vaqueiros. Nos gustaría que algún día esas preguntas tuvieran un sitio donde escuchar las respuestas, con las voces de quienes las vivieron.\n\n## Si conoces a alguien\n\nSi en tu familia alguien subió a la braña, cantaba tonadas o sabe cómo era aquella vida, escríbenos a leiguardamusic@gmail.com. Iremos con tiempo y sin prisa, y con la grabadora apagada hasta que nos digan que sí.\n\n*Braña Sonora cuenta con el apoyo del Ministerio de Cultura del Gobierno de España.*",
+     "lang": "es",
+     "slug": "el-orgullo-de-las-branas",
+     "kind": "post",
+     "title": "El orgullo de las brañas: por qué Braña Sonora graba con quien lo vivió",
+     "excerpt": "Juan Gayo nació en una braña de Tineo y de niño se escondía por vergüenza. Su historia nos hizo pensar en cómo queremos grabar la cultura vaqueira en Braña Sonora.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_3.jpg",
+     "url": "https://festivaladar.com/es/blog/el-orgullo-de-las-branas/",
+     "date": "2026-11-25",
+     "tags": [
+      "Braña Sonora",
+      "cultura vaqueira",
+      "patrimonio inmaterial",
+      "Tineo"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "El orgullo de las brañas: por qué Braña Sonora graba con quien lo vivió",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "La vergüenza también es un dato",
+       "body": "Nos quedamos con una parte del artículo que no tiene que ver con la música. Durante generaciones, quien vivía en la braña aprendió que su forma de vida valía menos. Eso deja huella. Hace que la gente desconfíe de quien llega con una grabadora."
+      },
+      {
+       "type": "text",
+       "title": "Cómo queremos trabajar",
+       "body": "Hay reglas que pusimos antes de empezar. Nadie se graba sin su permiso. Cada persona escucha lo suyo y lo revisa antes de que se publique. Grabamos en los concejos donde ADAR ya trabaja, con gente que nos conoce o que conoce a alguien que nos conoce."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "El orgullo de las brañas: por qué Braña Sonora graba con quien lo vivió\n\nJuan Gayo nació en una braña de Tineo y de niño se escondía por vergüenza. Su historia nos hizo pensar en cómo queremos grabar la cultura vaqueira en Braña Sonora.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #BrañaSonora",
+       "asomo": "El orgullo de las brañas: por qué Braña Sonora graba con quien lo vivió Juan Gayo nació en una braña de Tineo y de niño se es…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "El orgullo de las brañas: por qué Braña Sonora graba con quien lo vivió\n\nJuan Gayo nació en una braña de Tineo y de niño se escondía por vergüenza. Su historia nos hizo pensar en cómo queremos grabar la cultura vaqueira en Braña Sonora.\n\nhttps://festivaladar.com/es/blog/el-orgullo-de-las-branas/\n\n#FestivalADAR #Asturias",
+       "asomo": "El orgullo de las brañas: por qué Braña Sonora graba con quien lo vivió Juan Gayo nació en una braña de Tineo y de niño se escondía por vergüenza. Su historia nos hizo pensar en cómo queremos grabar la cultura vaqueira en Braña Sonora. https://festivaladar.com/es/blog/el-orgullo-de-las-branas/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-25",
+      "hasta": "2026-12-25",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "fotosExtra": [],
+     "apaisado": false,
+     "adorno": null,
+     "porque": null,
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "logo": null,
+     "sinMarca": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "es/el-horreo-ya-es-patrimonio-inmaterial",
+     "esBlog": true,
+     "blog": null,
+     "estadoWeb": "draft",
+     "cuerpo": "En abril de 2026, el Consejo de Ministros aprobó el real decreto que declara los hórreos del norte de la península Manifestación Representativa del Patrimonio Cultural Inmaterial. Lo contó [elDiario.es Asturias](https://www.eldiario.es/asturias/gobierno-aprueba-definitivamente-declaracion-horreos-norte-peninsula-patrimonio-cultural-inmaterial_1_13112576.html). La declaración incluye los de Asturias, Galicia, León, Cantabria, Navarra y el País Vasco.\n\nLa palabra importante es *inmaterial*. El decreto protege la madera y la piedra, y también lo que la gente hacía con ellas, y quiere que ese saber pase de una generación a otra.\n\n## Los riesgos que nombra el decreto\n\nEl artículo recoge los riesgos que señala el Ministerio. Uno es que el hórreo pierda su función. Otro, que todos acaben pareciéndose. También habla de la desconexión entre generaciones y de la pérdida del contexto cultural.\n\nEl primero lo vemos cada vez que visitamos una aldea. Ya no se guarda grano en los hórreos. Sin uso, se abandonan. Sin mantenimiento, la madera se pudre.\n\nEl Principado da otras cifras en la misma noticia. Ha apoyado obras en 334 construcciones tradicionales, con más de 2,5 millones de euros. Con el proyecto *Pegoyu, almacén de hórreos* ha recuperado 103 conjuntos de piezas de hórreos en ruina. Además, está seleccionando unos cien hórreos y paneras para pedir que sean Bien de Interés Cultural.\n\n## Un uso nuevo, por unas horas\n\nEn la primavera de 2025 convocamos el primer Concurso de Hórreos y Paneras. Bastaba con mandar tres fotos: una vista general, un detalle y el entorno. Llegaron candidaturas de toda Asturias.\n\nEl 5 de agosto de 2025 tocamos en la panera de Susacasa Agrocultural, en Gozón. Keko Marcos y Sandra Murillo la han adaptado para usos comunitarios. Allí sonaron la tiorba de Nacho Laguna y la voz de María del Buey. El 11 de agosto tocó un cuarteto en la casería de Paz Mesa y Xandru González, en Puerma, Las Regueras. En 2026, Ignacio Prego abrió la edición con un recital de clave en La Figal de Xugabolos, en Salas. Cabía tan poca gente que hubo dos pases de media hora.\n\nUn concierto no devuelve al hórreo su función. Dentro ya no hay grano. Lo que hace es dar una razón para abrirlo, limpiarlo y enseñarlo. Mucha gente nos escribió orgullosa del hórreo o la panera que tenía en su finca.\n\n## Lo que aprendimos dentro\n\nUn hórreo suena como una caja de madera. La madera suaviza los agudos y devuelve un sonido seco y cercano. El público se sienta a un metro de los intérpretes y oye el roce del arco.\n\nPara nosotros ese sonido también es parte del patrimonio. Por eso **Braña Sonora**, nuestro proyecto de patrimonio inmaterial, va a grabar el paisaje sonoro de hórreos y paneras. Queremos guardar cómo suena por dentro una construcción de madera sobre pegollos, y también el golpe de la madera cuando se trabaja en ella.\n\n## Después del decreto\n\nUn decreto da reconocimiento legal. El trabajo diario sigue en manos de las familias que tienen un hórreo en la finca y deciden arreglar el tejado o cambiar una tabla.\n\nLas bases del Concurso de Hórreos y Paneras 2027 se publican en marzo. Si tienes un hórreo o una panera y te gustaría oír música dentro, ve preparando las fotos. Puedes escribirnos a leiguardamusic@gmail.com.",
+     "lang": "es",
+     "slug": "el-horreo-ya-es-patrimonio-inmaterial",
+     "kind": "post",
+     "title": "El hórreo ya es patrimonio inmaterial. ¿Y ahora qué hacemos con él?",
+     "excerpt": "En abril de 2026 el Gobierno declaró los hórreos del norte Patrimonio Cultural Inmaterial. El decreto habla de un riesgo que conocemos bien: que el hórreo pierda su uso. Contamos qué hemos aprendido tocando dentro.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_5.jpg",
+     "url": "https://festivaladar.com/es/blog/el-horreo-ya-es-patrimonio-inmaterial/",
+     "date": "2026-11-25",
+     "tags": [
+      "hórreos",
+      "paneras",
+      "patrimonio inmaterial",
+      "concurso"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "El hórreo ya es patrimonio inmaterial. ¿Y ahora qué hacemos con él?",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Los riesgos que nombra el decreto",
+       "body": "El artículo recoge los riesgos que señala el Ministerio. Uno es que el hórreo pierda su función. Otro, que todos acaben pareciéndose. También habla de la desconexión entre generaciones y de la pérdida del contexto cultural."
+      },
+      {
+       "type": "text",
+       "title": "Un uso nuevo, por unas horas",
+       "body": "En la primavera de 2025 convocamos el primer Concurso de Hórreos y Paneras. Bastaba con mandar tres fotos: una vista general, un detalle y el entorno. Llegaron candidaturas de toda Asturias."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "El hórreo ya es patrimonio inmaterial. ¿Y ahora qué hacemos con él?\n\nEn abril de 2026 el Gobierno declaró los hórreos del norte Patrimonio Cultural Inmaterial. El decreto habla de un riesgo que conocemos bien: que el hórreo pierda su uso. Contamos qué hemos aprendido tocando dentro.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #hórreos",
+       "asomo": "El hórreo ya es patrimonio inmaterial. ¿Y ahora qué hacemos con él? En abril de 2026 el Gobierno declaró los hórreos del nort…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "El hórreo ya es patrimonio inmaterial. ¿Y ahora qué hacemos con él?\n\nEn abril de 2026 el Gobierno declaró los hórreos del norte Patrimonio Cultural Inmaterial. El decreto habla de un riesgo que conocemos bien: que el hórreo pierda su uso. Contamos qué hemos aprendido tocando dentro.\n\nhttps://festivaladar.com/es/blog/el-horreo-ya-es-patrimonio-inmaterial/\n\n#FestivalADAR #Asturias",
+       "asomo": "El hórreo ya es patrimonio inmaterial. ¿Y ahora qué hacemos con él? En abril de 2026 el Gobierno declaró los hórreos del norte Patrimonio Cultural Inmaterial. El decreto habla de un riesgo que conocemos bien: que el hórreo pierda su uso. Contamos qué hemos aprendido tocando dentro. https://festivaladar.com/es/blog/el-horreo-ya-es-patrimonio-inmaterial/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
+      "desde": "2026-11-25",
+      "hasta": "2026-12-25",
+      "ancla": null,
+      "porque": "No cuelga de ningún concierto: cuenta desde su propia fecha."
+     },
+     "tipo": null,
+     "concierto": null,
+     "estilo": "cinta",
+     "estilos": null,
+     "cifra": null,
+     "tabla": null,
+     "falta": null,
+     "fotos": [],
+     "fotosEnteras": false,
+     "fotosExtra": [],
+     "apaisado": false,
+     "adorno": null,
+     "porque": null,
+     "pegatinasMuro": false,
+     "fondoAmbar": false,
+     "logo": null,
+     "sinMarca": false,
+     "colaboradores": null,
+     "kicker": null,
+     "formato": null,
+     "publicaEl": null,
+     "pegatinas": null,
+     "cartel": null,
+     "trapecio": null,
+     "encuadre": null,
+     "encuadres": null,
+     "clave": "es/cuando-un-festival-no-vive-de-la-taquilla",
+     "esBlog": true,
+     "blog": null,
+     "estadoWeb": "draft",
+     "cuerpo": "En junio de 2026, Nando Cruz publicó en elDiario.es [un recuento de festivales cancelados](https://www.eldiario.es/cultura/musica/festivales-no-les-salen-cuentas-veintena-han-sido-cancelados-ano-problemas-viabilidad_1_13298013.html). Eran una veintena, y hasta treinta si se cuentan todas las causas. El motivo más repetido era la venta floja de entradas. Detrás venían la falta de apoyo institucional, los cachés que suben y la producción cada vez más cara.\n\nEl artículo habla de festivales grandes, de pop y de rock, con miles de personas. ADAR es otra escala. Aun así lo leímos con atención, porque toca una pregunta que nos hacen a menudo: ¿cómo se paga un festival que no cobra entrada?\n\n## Lo que cuesta un concierto gratis\n\nUn concierto de ADAR tiene los gastos de cualquier concierto: músicos, viajes, alojamiento, técnica, grabación y seguros. La diferencia es de dónde sale el dinero.\n\nUna parte la ponen las ayudas públicas y los patrocinadores. En las últimas ediciones nos han apoyado el Principado de Asturias, Caja Rural y Culture Moves Europe. Otra parte la ponen los **Amigos del Festival**, con cuotas de 10, 30 o 50 euros al año.\n\nLa taquilla no existe. Así que el riesgo que describe el artículo, el de un verano con pocas entradas vendidas, no nos afecta de la misma manera.\n\n## Nuestro riesgo es otro\n\nDepender de ayudas tiene su propia fragilidad. Una convocatoria puede no salir. Puede salir tarde. Puede cambiar de criterios de un año para otro. Un festival que vive de entradas sufre si el público no compra. Uno como el nuestro sufre si una ayuda no llega a tiempo.\n\nPor eso los Amigos nos importan tanto. Son pocos euros por persona. Son cuotas anuales y no dependen de que salga una convocatoria.\n\n## Para qué sirve la puerta abierta\n\nHay un motivo para no cobrar que no tiene que ver con las cuentas. En un pueblo pequeño, el precio decide quién entra. El vecino que nunca ha ido a un concierto de cámara no paga por probar.\n\nEn agosto de 2025, el crítico David Nice estuvo en [Kovachevitsa, una aldea de Bulgaria](https://theartsdesk.com/classical-music/theartsdesk-kovachevitsa-top-bulgarians-and-friends-make-peerless-music-remote-village), y lo contó en *theartsdesk*. El pueblo tiene unos treinta vecinos y un festival de cámara desde 2018. En uno de los conciertos, en el pueblo vecino de Dobrinishte, mucha gente del público no había ido nunca a un concierto. Aplaudía y se reía con ganas.\n\nNo tenemos un recuento de cuánta gente viene a ADAR por primera vez a un concierto de cámara. Sí tenemos algunos datos de público. En agosto de 2021, en el primer concierto, vinieron más de 120 personas a Leiguarda, una aldea de un centenar de habitantes. El 12 de agosto de 2025 se llenó el monasterio de Obona, en Tineo, con un programa de cámara de sesenta y dos minutos.\n\n## El problema de lo gratis\n\nLo gratis tiene un problema práctico. Los sitios son pequeños y muchos conciertos se llenan el mismo día que se anuncian. Hay gente que se queda fuera. Por eso los Amigos tienen reserva anticipada a partir de la cuota de 30 euros.\n\nNo tenemos una solución perfecta para esto. Preferimos un concierto lleno con gente que se queda en la puerta a una iglesia medio vacía porque la entrada cuesta veinte euros.\n\n## Si quieres ayudar\n\nPuedes hacerte Amigo del Festival o regalarlo. Escríbenos a leiguardamusic@gmail.com o entra en la página de Amigos.",
+     "lang": "es",
+     "slug": "cuando-un-festival-no-vive-de-la-taquilla",
+     "kind": "post",
+     "title": "Cuando un festival no vive de la taquilla",
+     "excerpt": "En 2026 se cancelaron una veintena de festivales en España, sobre todo por falta de venta de entradas. ADAR no vende entradas. Contamos qué lo sostiene y qué nos preocupa.",
+     "image": "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_6.jpg",
+     "url": "https://festivaladar.com/es/blog/cuando-un-festival-no-vive-de-la-taquilla/",
+     "date": "2026-11-25",
+     "tags": [
+      "acceso cultural",
+      "Amigos del Festival",
+      "modelo",
+      "medio rural"
+     ],
+     "slides": [
+      {
+       "type": "cover",
+       "title": "Cuando un festival no vive de la taquilla",
+       "body": ""
+      },
+      {
+       "type": "text",
+       "title": "Lo que cuesta un concierto gratis",
+       "body": "Un concierto de ADAR tiene los gastos de cualquier concierto: músicos, viajes, alojamiento, técnica, grabación y seguros. La diferencia es de dónde sale el dinero. Una parte la ponen las ayudas públicas y los patrocinadores."
+      },
+      {
+       "type": "text",
+       "title": "Nuestro riesgo es otro",
+       "body": "Depender de ayudas tiene su propia fragilidad. Una convocatoria puede no salir. Puede salir tarde. Puede cambiar de criterios de un año para otro. Un festival que vive de entradas sufre si el público no compra."
+      }
+     ],
+     "pies": {
+      "ig": {
+       "texto": "Cuando un festival no vive de la taquilla\n\nEn 2026 se cancelaron una veintena de festivales en España, sobre todo por falta de venta de entradas. ADAR no vende entradas. Contamos qué lo sostiene y qué nos preocupa.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #accesocultural",
+       "asomo": "Cuando un festival no vive de la taquilla En 2026 se cancelaron una veintena de festivales en España, sobre todo por falta de…",
+       "limite": 2200
+      },
+      "fb": {
+       "texto": "Cuando un festival no vive de la taquilla\n\nEn 2026 se cancelaron una veintena de festivales en España, sobre todo por falta de venta de entradas. ADAR no vende entradas. Contamos qué lo sostiene y qué nos preocupa.\n\nhttps://festivaladar.com/es/blog/cuando-un-festival-no-vive-de-la-taquilla/\n\n#FestivalADAR #Asturias",
+       "asomo": "Cuando un festival no vive de la taquilla En 2026 se cancelaron una veintena de festivales en España, sobre todo por falta de venta de entradas. ADAR no vende entradas. Contamos qué lo sostiene y qué nos preocupa. https://festivaladar.com/es/blog/cuando-un-festival-no-vive-de-la-taquilla/ #FestivalADAR #Asturias",
+       "limite": 63206
+      }
+     },
+     "heredado": {
+      "estado": "",
+      "nota": "",
+      "publicado": {}
+     }
+    },
+    {
+     "publicadoEn": null,
+     "ventana": {
       "desde": "2026-10-01",
       "hasta": "2026-10-31",
       "ancla": null,
@@ -6323,6 +6922,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6410,6 +7010,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6428,12 +7029,12 @@
      "esBlog": true,
      "blog": null,
      "estadoWeb": "draft",
-     "cuerpo": "Cuando un festival programa mujeres compositoras, aparece siempre alguien preguntando si es una cuota. La pregunta lleva dentro una suposición: que hay que **renunciar a algo** para incluirlas.\n\nNuestra experiencia dice lo contrario, y es fácil de comprobar. Repasemos quién ha pasado por aquí.\n\n## La nómina\n\n**Andrea Casarrubios**, violonchelista y compositora española: obra estrenada en el **Carnegie Hall**, encargos de la **Sinfónica de Chicago** y de **Sphinx Virtuosi**, **nominación al Grammy** en 2025, doctorado con John Corigliano. Su música ha sonado en varias ediciones de ADAR y ella misma dio un recital en la iglesia de Leiguarda en 2025.\n\n**Caroline Shaw**: la compositora más joven en ganar el **Pulitzer de música**. Su pieza *Blueprint* sonó en la iglesia de Santa María de Sabada, en Lastres, en 2022.\n\n**Jessie Montgomery**: una de las voces más programadas de Estados Unidos hoy. Su dúo para violín y violonchelo formó parte del concierto del mercado de Pola de Somiedo en 2024.\n\n**Celeste Oram**, neozelandesa residente en Nueva York: compositora y diseñadora de proyecciones, autora de *Toccata & Bruise*, la instalación que presentamos en 2023.\n\n**Mizuko Kaji**, arquitecta y diseñadora de escenografías: llenó de tul el escenario del Auditorio As Quintas en 2023, en la primera instalación de artista internacional del festival.\n\nY en el terreno de la interpretación y la creación visual, el festival se sostiene sobre nombres como **Josefina Urraca** (codirectora y pianista), **Jone de la Fuente**, **Almudena Arribas**, **Natania Hoffman**, **María del Buey**, **Berta Ares**, **Coco Moya** o **Sarah K. Williams**.\n\n## Encontrarlas es fácil\n\n**Pulitzer, Grammy, Carnegie Hall, Sinfónica de Chicago.** Si programar mujeres exigiera bajar el nivel, esta lista sería otra.\n\nLa realidad de quien programa hoy es más simple de lo que el debate sugiere: **la música contemporánea está llena de compositoras excelentes**, y muchas de ellas están escribiendo las obras más interesantes del momento. Están ahí, con catálogos amplios, y sus piezas funcionan con el público.\n\nLo que requiere una decisión consciente es **no dejar que la inercia elija por ti.** La inercia del repertorio clásico tiene doscientos años de sesgo acumulado, y si programas «lo de siempre» sin pensar, el resultado será «lo de siempre».\n\n## El detalle que más nos importa\n\nFíjate en algo de la lista anterior: casi todas ellas son **compositoras vivas.**\n\nEso nos importa todavía más que el género. Un programa que mezcla a Vivaldi con Jessie Montgomery, o a Boccherini con Casarrubios, le está diciendo al público algo muy concreto: **que esto sigue.** La música clásica es un oficio que alguien está practicando ahora mismo, en algún sitio, y que puede hablar de la pandemia, del afilador que pasaba por tu calle o del paisaje que tienes delante.\n\nEn el medio rural asturiano, donde la lucha es contra la idea de que lo importante ya pasó o pasa lejos, ese mensaje importa mucho.\n\n## Cómo funciona en la práctica\n\nLa receta que usamos es sencilla: **poner lo nuevo dentro de lo conocido.**\n\nNadie programa una noche entera de música de 2024 en un pueblo donde no hay costumbre de conciertos. Pero un programa que va de Boccherini a Debussy, luego a tres piezas de Casarrubios y cierra con Dvořák funciona perfectamente. El público entra por lo que reconoce, se queda por curiosidad, y descubre que lo desconocido no le ha hecho daño.\n\nTambién se nota otra cosa: **cuando la compositora está en la sala** (tocando su propia obra, como hizo Casarrubios en Leiguarda), la música contemporánea es una persona a la que puedes ver respirar, y luego saludar en la espicha. Cuesta mucho menos escuchar con simpatía a alguien a quien vas a conocer en media hora.\n\n## Sin etiqueta\n\nAsí que lo llamamos programar bien.\n\nBuscamos la mejor música que podamos conseguir, de gente que esté haciendo algo que nos parezca necesario, y la ponemos en el sitio donde signifique más. La lista sale así: llena de mujeres y de gente viva.",
+     "cuerpo": "Desde 2022 hay obras de compositoras en los programas de ADAR. Aquí repasamos quiénes son, qué obra suya ha sonado y dónde.\n\n## Andrea Casarrubios\n\nEs violonchelista y compositora española. Hizo un doctorado en composición con John Corigliano. Su obra *SEVEN* se estrenó en el **Carnegie Hall**. Ha recibido encargos de la **Sinfónica de Chicago** y de **Sphinx Virtuosi**. Su disco *SEVEN* tuvo una **nominación al Grammy** en 2025.\n\nEn 2024 su música sonó en varios conciertos de la cuarta edición. En el mercado de Pola de Somiedo tocamos *Mensajes de Agua* y *Afilador*. La prensa de ese verano habló de encargos del festival a Casarrubios.\n\nEn 2025 ella misma dio un recital en la iglesia de Leiguarda. Tocó sus *Tres piezas para violonchelo y piano* y *SEVEN* para violonchelo solo, junto a Boccherini, Debussy y Dvořák.\n\n## Caroline Shaw\n\nSu pieza *Blueprint* sonó en la segunda edición, en 2022. Lo tocamos en seis conciertos: El Franco, Soto del Barco, la iglesia de Santa María de Sabada en Lastres, Llanes, el palacio de Miranda-Valdecarzana en Grado y la clausura en Belmonte de Miranda.\n\n## Celeste Oram\n\nEs compositora y diseñadora de proyecciones. Nació en Nueva Zelanda y vive en Nueva York. En 2023 cedió al festival su pieza *Toccata and Bruise*, una instalación audiovisual sobre el tacto. La presentamos en la sede de ADAR, en Leiguarda.\n\n## Mizuko Kaji\n\nEs arquitecta y diseñadora de escenografías. En 2023 llenó de tul el escenario del Auditorio As Quintas, en El Franco. Con ella empezamos a invitar a artistas internacionales a hacer instalaciones en el festival.\n\n## Las intérpretes\n\nEn el escenario también hay muchas mujeres. **Josefina Urraca** es pianista y codirige el festival. Han tocado o creado con nosotros **Jone de la Fuente**, **Almudena Arribas**, **Natania Hoffman**, **María del Buey**, **Berta Ares**, **Coco Moya** y **Sarah K. Williams**, entre otras.\n\n## Cómo las programamos\n\nCasi todas son compositoras vivas. Sus obras van en el mismo programa que la música de siempre.\n\nEn el recital de Casarrubios en Leiguarda, por ejemplo, el programa empezó con Boccherini y Debussy. Luego vinieron sus piezas y terminó con Dvořák. Quien venía por los clásicos escuchó también música escrita hace pocos años.\n\nCuando la compositora está en la sala, además, el público puede hablar con ella después del concierto.",
      "lang": "es",
      "slug": "las-compositoras-que-programamos",
      "kind": "post",
-     "title": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)",
-     "excerpt": "Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es fácil.",
+     "title": "Las compositoras que programamos",
+     "excerpt": "Andrea Casarrubios, Caroline Shaw, Celeste Oram y Mizuko Kaji. Repasamos qué obras de compositoras y creadoras han sonado en ADAR, dónde y en qué año.",
      "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/10_Concierto_en_la_Iglesia_de_Santa_Maria_de_Sabada_Colunga/PXL_20220810_175359505.jpg",
      "url": "https://festivaladar.com/es/blog/las-compositoras-que-programamos/",
      "date": "2026-09-24",
@@ -6441,34 +7042,34 @@
       "compositoras",
       "programación",
       "Caroline Shaw",
-      "Jessie Montgomery"
+      "Andrea Casarrubios"
      ],
      "slides": [
       {
        "type": "cover",
-       "title": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)",
+       "title": "Las compositoras que programamos",
        "body": ""
       },
       {
        "type": "text",
-       "title": "La nómina",
-       "body": "Andrea Casarrubios, violonchelista y compositora española: obra estrenada en el Carnegie Hall, encargos de la Sinfónica de Chicago y de Sphinx Virtuosi, nominación al Grammy en 2025, doctorado con John Corigliano."
+       "title": "Andrea Casarrubios",
+       "body": "Es violonchelista y compositora española. Hizo un doctorado en composición con John Corigliano. Su obra SEVEN se estrenó en el Carnegie Hall. Ha recibido encargos de la Sinfónica de Chicago y de Sphinx Virtuosi."
       },
       {
        "type": "text",
-       "title": "Encontrarlas es fácil",
-       "body": "Pulitzer, Grammy, Carnegie Hall, Sinfónica de Chicago. Si programar mujeres exigiera bajar el nivel, esta lista sería otra."
+       "title": "Caroline Shaw",
+       "body": "Su pieza Blueprint sonó en la segunda edición, en 2022. Lo tocamos en seis conciertos: El Franco, Soto del Barco, la iglesia de Santa María de Sabada en Lastres, Llanes, el palacio de Miranda-Valdecarzana en Grado y la clausura en Belmonte de Miranda."
       }
      ],
      "pies": {
       "ig": {
-       "texto": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)\n\nCasarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es fácil.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #compositoras",
-       "asomo": "Las compositoras que programamos (y por qué no lo llamamos «cuota») Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Or…",
+       "texto": "Las compositoras que programamos\n\nAndrea Casarrubios, Caroline Shaw, Celeste Oram y Mizuko Kaji. Repasamos qué obras de compositoras y creadoras han sonado en ADAR, dónde y en qué año.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #compositoras",
+       "asomo": "Las compositoras que programamos Andrea Casarrubios, Caroline Shaw, Celeste Oram y Mizuko Kaji. Repasamos qué obras de compos…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Las compositoras que programamos (y por qué no lo llamamos «cuota»)\n\nCasarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es fácil.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Asturias",
-       "asomo": "Las compositoras que programamos (y por qué no lo llamamos «cuota») Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji. Repasamos las creadoras que han pasado por ADAR y explicamos por qué programarlas es fácil. https://festivaladar.com/es/blog/las-compositoras-que-programamos/ #FestivalADAR #Asturias",
+       "texto": "Las compositoras que programamos\n\nAndrea Casarrubios, Caroline Shaw, Celeste Oram y Mizuko Kaji. Repasamos qué obras de compositoras y creadoras han sonado en ADAR, dónde y en qué año.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Asturias",
+       "asomo": "Las compositoras que programamos Andrea Casarrubios, Caroline Shaw, Celeste Oram y Mizuko Kaji. Repasamos qué obras de compositoras y creadoras han sonado en ADAR, dónde y en qué año. https://festivaladar.com/es/blog/las-compositoras-que-programamos/ #FestivalADAR #Asturias",
        "limite": 63206
       }
      },
@@ -6497,6 +7098,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6584,6 +7186,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6672,6 +7275,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6690,12 +7294,12 @@
      "esBlog": true,
      "blog": null,
      "estadoWeb": "draft",
-     "cuerpo": "Programar a Mozart tiene una ventaja clara: **sabes lo que vas a tener.** La partitura existe y lleva doscientos años funcionando.\n\nEncargar una obra nueva es lo contrario. Pagas por algo que todavía no existe y que no puedes escuchar antes de decidir. Quizá no le guste al público. Ni el propio compositor sabe del todo cómo va a salir.\n\nEn ADAR encargamos una pieza nueva para el primer concierto, en 2021. Desde entonces hemos seguido encargando música.\n\n## Una pieza nueva la primera noche\n\nEl **14 de agosto de 2021**, en el campo de la iglesia de Leiguarda, el concierto inaugural tenía Mendelssohn, Haydn, Falla y John Harbison. También tenía ***Atlantic*, de Marcos Fernández, escrita para esa noche.**\n\nEl festival no tenía ediciones anteriores ni un presupuesto fijo. Esa noche, además, orbayó. Lo prudente habría sido tocar solo repertorio conocido y dejar los estrenos para más adelante.\n\nLo hicimos a propósito. Queríamos que desde el primer concierto se supiera que ADAR iba a sumar obras al repertorio.\n\n## Programar y producir\n\nMuchos festivales eligen bien entre la música que ya existe y la traen a su público. Es un trabajo difícil y la gente lo agradece.\n\nOtros, además, encargan obras. Cuando termina la edición hay una partitura más, y otros músicos pueden tocarla en otros sitios durante años. *Atlantic* puede sonar algún día en Berlín. Se estrenó en un prado de Leiguarda.\n\n## Lo que le pedimos a un compositor\n\nEn la convocatoria de compositor residente buscamos a alguien interesado en **procesos situados**, en trabajar con intérpretes y en **crear con escucha del contexto**. La residencia da tiempo para componer, **probar material con los intérpretes** y escribir **una pieza situada en diálogo con el territorio.**\n\nDicho de otra forma: queremos una obra que tenga que ver con el lugar donde se estrena.\n\nTrabajar así tiene una ventaja práctica. El compositor está **en la sede, con los músicos delante**, y comprueba si una idea suena como pensaba. Puede corregir o tirar lo que no funciona. La obra llega al estreno ya probada.\n\n## El afilador en Pola de Somiedo\n\nEn el mercado de Pola de Somiedo tocamos *Afilador*, de **Andrea Casarrubios**. La pieza parte del afilador ambulante, que iba de pueblo en pueblo anunciándose con un silbato. Mucha gente del público se acordaba de verlo pasar por su calle.\n\nEse día, la obra contemporánea fue la más cercana del programa.\n\n## El riesgo\n\nUn encargo puede salir regular. Puede no conectar con el público. Cuesta un dinero que podría gastarse en cosas más seguras. Y quien viene a escuchar a Vivaldi no ha pedido una obra de 2026.\n\nAun así lo mantenemos, con una residencia de composición y una convocatoria propia. Dentro del proyecto Braña Sonora habrá tres residencias de composición, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027.",
+     "cuerpo": "Programar a Mozart tiene una ventaja clara: **sabes lo que vas a tener.** La partitura existe y lleva doscientos años funcionando.\n\nEncargar una obra nueva es lo contrario. Pagas por algo que todavía no existe y que no puedes escuchar antes de decidir. Quizá no le guste al público. Ni el propio compositor sabe del todo cómo va a salir.\n\nEn ADAR lo hacemos igualmente.\n\n## Música de ahora desde el primer concierto\n\nEl **14 de agosto de 2021**, en el campo de la iglesia de Leiguarda, el concierto inaugural tenía Mendelssohn, Haydn y Falla. También tenía música de John Harbison y ***Atlantic*, de Marcos Fernández**.\n\nEn 2024 dimos un paso más. El programa de esa edición combinaba obras de Mozart, Debussy y Vivaldi con **encargos a Andrea Casarrubios** y a otras compositoras actuales.\n\n## Programar y producir\n\nMuchos festivales eligen bien entre la música que ya existe y la traen a su público. Es un trabajo difícil y la gente lo agradece.\n\nOtros, además, encargan obras. Cuando termina la edición hay una partitura más, y otros músicos pueden tocarla en otros sitios durante años.\n\n## Lo que le pedimos a un compositor\n\nEn la convocatoria de compositor residente buscamos a alguien interesado en **procesos situados**, en trabajar con intérpretes y en **crear con escucha del contexto**. La residencia da tiempo para componer, **probar material con los intérpretes** y escribir **una pieza situada en diálogo con el territorio.**\n\nDicho de otra forma: queremos una obra que tenga que ver con el lugar donde se estrena.\n\nTrabajar así tiene una ventaja práctica. El compositor está **en la sede, con los músicos delante**, y comprueba si una idea suena como pensaba. Puede corregir o tirar lo que no funciona. La obra llega al estreno ya probada.\n\n## El afilador en Pola de Somiedo\n\nEn el mercado de Pola de Somiedo tocamos *Afilador*, de **Andrea Casarrubios**. La pieza parte del afilador ambulante, que iba de pueblo en pueblo anunciándose con un silbato. Mucha gente del público se acordaba de verlo pasar por su calle.\n\nEse día, la obra contemporánea fue la más cercana del programa.\n\n## El riesgo\n\nUn encargo puede salir regular. Puede no conectar con el público. Cuesta un dinero que podría gastarse en cosas más seguras. Y quien viene a escuchar a Vivaldi no ha pedido una obra de 2026.\n\nAun así lo mantenemos, con una residencia de composición y una convocatoria propia. Dentro del proyecto Braña Sonora habrá tres residencias de composición, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027.",
      "lang": "es",
      "slug": "por-que-encargamos-musica-nueva",
      "kind": "post",
      "title": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva",
-     "excerpt": "El 14 de agosto de 2021, en su primer concierto, ADAR estrenó Atlantic, de Marcos Fernández, escrita para esa noche. Desde entonces seguimos encargando obra nueva. Contamos por qué y qué riesgos tiene.",
+     "excerpt": "Encargar una obra es pagar por música que todavía no existe. En ADAR lo hacemos, con encargos como los de Andrea Casarrubios en 2024 y una residencia de composición. Contamos por qué y qué riesgos tiene.",
      "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg",
      "url": "https://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/",
      "date": "2026-09-14",
@@ -6713,8 +7317,8 @@
       },
       {
        "type": "text",
-       "title": "Una pieza nueva la primera noche",
-       "body": "El 14 de agosto de 2021, en el campo de la iglesia de Leiguarda, el concierto inaugural tenía Mendelssohn, Haydn, Falla y John Harbison. También tenía Atlantic, de Marcos Fernández, escrita para esa noche."
+       "title": "Música de ahora desde el primer concierto",
+       "body": "El 14 de agosto de 2021, en el campo de la iglesia de Leiguarda, el concierto inaugural tenía Mendelssohn, Haydn y Falla. También tenía música de John Harbison y Atlantic, de Marcos Fernández."
       },
       {
        "type": "text",
@@ -6724,13 +7328,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva\n\nEl 14 de agosto de 2021, en su primer concierto, ADAR estrenó Atlantic, de Marcos Fernández, escrita para esa noche. Desde entonces seguimos encargando obra nueva. Contamos por qué y qué riesgos tiene.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #encargos",
-       "asomo": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva El 14 de agosto de 2021, en su primer concierto, ADAR…",
+       "texto": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva\n\nEncargar una obra es pagar por música que todavía no existe. En ADAR lo hacemos, con encargos como los de Andrea Casarrubios en 2024 y una residencia de composición. Contamos por qué y qué riesgos tiene.\n\nArtículo completo en el enlace de la bio ↗\n\n#FestivalADAR #Asturias #MúsicaClásica #MedioRural #encargos",
+       "asomo": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva Encargar una obra es pagar por música que todavía no …",
        "limite": 2200
       },
       "fb": {
-       "texto": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva\n\nEl 14 de agosto de 2021, en su primer concierto, ADAR estrenó Atlantic, de Marcos Fernández, escrita para esa noche. Desde entonces seguimos encargando obra nueva. Contamos por qué y qué riesgos tiene.\n\nhttps://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/\n\n#FestivalADAR #Asturias",
-       "asomo": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva El 14 de agosto de 2021, en su primer concierto, ADAR estrenó Atlantic, de Marcos Fernández, escrita para esa noche. Desde entonces seguimos encargando obra nueva. Contamos por qué y qué riesgos tiene. https://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/ #FestivalADAR #Asturias",
+       "texto": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva\n\nEncargar una obra es pagar por música que todavía no existe. En ADAR lo hacemos, con encargos como los de Andrea Casarrubios en 2024 y una residencia de composición. Contamos por qué y qué riesgos tiene.\n\nhttps://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/\n\n#FestivalADAR #Asturias",
+       "asomo": "Pagar por música que todavía no existe: por qué ADAR encarga obra nueva Encargar una obra es pagar por música que todavía no existe. En ADAR lo hacemos, con encargos como los de Andrea Casarrubios en 2024 y una residencia de composición. Contamos por qué y qué riesgos tiene. https://festivaladar.com/es/blog/por-que-encargamos-musica-nueva/ #FestivalADAR #Asturias",
        "limite": 63206
       }
      },
@@ -6759,6 +7363,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6847,6 +7452,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6934,6 +7540,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -6952,7 +7559,7 @@
      "esBlog": true,
      "blog": null,
      "estadoWeb": "draft",
-     "cuerpo": "El **14 de agosto de 2024** tocamos en el **Mercado de Pola de Somiedo**. Es, probablemente, el concierto de ADAR con el vecindario más singular: **Somiedo alberga la mayor población de oso pardo de España.**\n\nParque Natural. **Reserva de la Biosfera** de la UNESCO. Brañas, teitos, montaña alta. Esa tarde, un quinteto de cámara tocando Mozart y Vivaldi en el mercado del pueblo.\n\n## Por qué un mercado\n\nLo cómodo habría sido un templo. Elegimos **el mercado**.\n\nUn mercado es el sitio más civil que tiene un pueblo: es donde la gente **compra, discute el precio de las cosas y se pone al día.** Es la infraestructura de la vida cotidiana.\n\nMeter ahí música de cámara tiene un efecto muy concreto: **elimina la ceremonia.** Nadie tiene que vestirse de nada ni sentirse fuera de lugar. Estás en el mercado de tu pueblo. Si te apetece entrar, entras. El umbral psicológico, ese que hace que muchísima gente no pise nunca un auditorio, desaparece.\n\nHay un segundo efecto: al día siguiente, el mercado sigue siendo el mercado, pero **se queda con la memoria** del concierto.\n\n## Un programa que no se cortó un pelo\n\nTocaron **Guillermo Laporta** (flauta), **Mario Molina** (piano), **Jone de la Fuente** (violín), **Almudena Arribas** (viola) y **Natania Hoffman** (violonchelo). Y el programa fue este:\n\n- **Andrea Casarrubios** · *Mensajes de Agua*\n- **Mozart** · Cuarteto para piano en mi bemol mayor, K. 493\n- **Andrea Casarrubios** · *Afilador*\n- **Debussy** · *Petite Suite*\n- **Richard Strauss** · *Morgen!*\n- **Jessie Montgomery** · Dúo para violín y violonchelo\n- **Vivaldi** · *La Notte*\n\nMira la mezcla: dos compositoras vivas (**Casarrubios** y **Jessie Montgomery**, una de las voces más programadas de Estados Unidos hoy) en el mismo programa que Mozart, Debussy, Strauss y Vivaldi, en el mercado de un pueblo de montaña. Nadie pidió una versión más fácil, y nadie se fue.\n\nUn detalle que nos encanta: *Afilador*. Casarrubios escribió una pieza a partir de la figura del afilador (el oficio ambulante que iba de pueblo en pueblo con su rueda, anunciándose con un silbato). Tocar eso en Somiedo, delante de gente que recuerda perfectamente al afilador pasando por su calle, es hacer que la música contemporánea hable de algo que el público conoce mejor que el compositor.\n\n## La palabra «sostenible», dicha en serio\n\nEn un sitio como Somiedo preferimos ser concretos.\n\nUn concejo de montaña como Somiedo vive una tensión que se conoce bien: **el paisaje es su mayor riqueza y su mayor limitación.** El oso pardo atrae visitantes, pero convivir con él tiene costes para quien tiene ganado. La belleza trae turismo de verano y se lleva a la gente joven el resto del año.\n\nUn concierto no resuelve nada de eso, pero **da una razón más para venir**, además del paisaje. Y da a los que viven allí un motivo para quedarse una tarde de agosto en su propio pueblo, en vez de bajar a la ciudad a buscar algo que hacer.\n\nCuando decimos que la cultura puede ser una **palanca de desarrollo rural**, hablamos de esto: de sumar una razón más a la lista de razones para que un sitio siga vivo.\n\n## Lo que se oye en la montaña\n\nHay una última cosa, y es puramente física. **En Somiedo se oye distinto.**\n\nLa altitud, el aire limpio, la absoluta falta de ruido de fondo. Un pianissimo que en una ciudad se perdería del todo, allí llega entero. El silencio entre dos movimientos se puede escuchar.\n\nLos músicos lo notan siempre y siempre lo comentan. Tocar donde no hay ruido es un lujo que ningún dinero compra en una capital.",
+     "cuerpo": "El **14 de agosto de 2024** tocamos en el **Mercado de Pola de Somiedo**. Es, probablemente, el concierto de ADAR con el vecindario más singular: **Somiedo alberga la mayor población de oso pardo de España.**\n\nParque Natural. **Reserva de la Biosfera** de la UNESCO. Brañas, teitos, montaña alta. Esa tarde, un quinteto de cámara tocando Mozart y Vivaldi en el mercado del pueblo.\n\n## Por qué un mercado\n\nLo cómodo habría sido un templo. Elegimos **el mercado**.\n\nUn mercado es el sitio más civil que tiene un pueblo: es donde la gente **compra, discute el precio de las cosas y se pone al día.** Es la infraestructura de la vida cotidiana.\n\nMeter ahí música de cámara tiene un efecto muy concreto: **elimina la ceremonia.** Nadie tiene que vestirse de nada ni sentirse fuera de lugar. Estás en el mercado de tu pueblo. Si te apetece entrar, entras. El umbral psicológico, ese que hace que muchísima gente no pise nunca un auditorio, desaparece.\n\nHay un segundo efecto: al día siguiente, el mercado sigue siendo el mercado, pero **se queda con la memoria** del concierto.\n\n## Un programa que no se cortó un pelo\n\nTocaron **Guillermo Laporta** (flauta), **Mario Molina** (piano), **Jone de la Fuente** (violín), **Almudena Arribas** (viola) y **Natania Hoffman** (violonchelo). Y el programa fue este:\n\n- **Andrea Casarrubios** · *Mensajes de Agua*\n- **Mozart** · Cuarteto para piano en mi bemol mayor, K. 493\n- **Andrea Casarrubios** · *Afilador*\n- **Debussy** · *Petite Suite*\n- **Richard Strauss** · *Morgen!*\n- **Vivaldi** · *La Notte*\n\nDos obras de **Andrea Casarrubios**, compositora viva, sonaron en el mismo programa que Mozart, Debussy, Strauss y Vivaldi, en el mercado de un pueblo de montaña.\n\nUn detalle que nos encanta: *Afilador*. Casarrubios escribió una pieza a partir de la figura del afilador (el oficio ambulante que iba de pueblo en pueblo con su rueda, anunciándose con un silbato). Tocar eso en Somiedo, delante de gente que recuerda perfectamente al afilador pasando por su calle, es hacer que la música contemporánea hable de algo que el público conoce mejor que el compositor.\n\n## La palabra «sostenible», dicha en serio\n\nEn un sitio como Somiedo preferimos ser concretos.\n\nUn concejo de montaña como Somiedo vive una tensión que se conoce bien: **el paisaje es su mayor riqueza y su mayor limitación.** El oso pardo atrae visitantes, pero convivir con él tiene costes para quien tiene ganado. La belleza trae turismo de verano y se lleva a la gente joven el resto del año.\n\nUn concierto no resuelve nada de eso, pero **da una razón más para venir**, además del paisaje. Y da a los que viven allí un motivo para quedarse una tarde de agosto en su propio pueblo, en vez de bajar a la ciudad a buscar algo que hacer.\n\nCuando decimos que la cultura puede ser una **palanca de desarrollo rural**, hablamos de esto: de sumar una razón más a la lista de razones para que un sitio siga vivo.\n\n## Lo que se oye en la montaña\n\nHay una última cosa, y es puramente física. **En Somiedo se oye distinto.**\n\nLa altitud, el aire limpio, la absoluta falta de ruido de fondo. Un pianissimo que en una ciudad se perdería del todo, allí llega entero. El silencio entre dos movimientos se puede escuchar.\n\nLos músicos lo notan siempre y siempre lo comentan. Tocar donde no hay ruido es un lujo que ningún dinero compra en una capital.",
      "lang": "es",
      "slug": "somiedo-musica-donde-viven-los-osos",
      "kind": "post",
@@ -7022,6 +7629,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7110,6 +7718,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7197,6 +7806,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7215,7 +7825,7 @@
      "esBlog": true,
      "blog": null,
      "estadoWeb": "draft",
-     "cuerpo": "En la primavera de 2025 convocamos el primer **Concurso de Hórreos y Paneras**. Buscábamos tres hórreos o paneras de Asturias para hacer dentro micro-conciertos de música de cámara durante la quinta edición del festival, del 4 al 17 de agosto. *La Nueva España* lo contó el 20 de mayo.\n\nPor qué tocamos en sitios así ya lo explicamos en [¿Por qué tocar a Bach en un hórreo?](/es/blog/por-que-tocar-bach-en-un-horreo/). Aquí contamos cómo fue el concurso.\n\n## Cómo funcionaba\n\nPara participar bastaba con mandar unas fotos por correo o por WhatsApp: una vista general, un detalle y el entorno.\n\nLlegaron candidaturas de toda Asturias. Mucha gente nos escribió orgullosa del hórreo o la panera que tenía en su finca.\n\nMiramos tres cosas en cada candidatura: el valor arquitectónico, el entorno y sus posibilidades como escenario. Queríamos que el concierto cuidara el edificio, el paisaje y a la gente del lugar. Los músicos salieron de la red del festival y cada concierto se grabó en vídeo.\n\n## Susacasa, en Gozón\n\nEl festival de 2025 empezó el 5 de agosto en **Susacasa Agrocultural**, en Gozón. Es un proyecto de permacultura de **Keko Marcos y Sandra Murillo**. Han adaptado una gran panera para usos comunitarios y la usan para actividades ecológicas, educativas y culturales.\n\nA las ocho de la tarde tocaron **Nacho Laguna** (tiorba) y **María del Buey** (voz y visuales). Hicieron una selección de su álbum *Ferrarese*, con repertorio barroco ibérico e improvisación. La tiorba es un laúd del siglo XVII con un cuello larguísimo.\n\n## La casería de Puerma, en Las Regueras\n\nEl 11 de agosto tocamos en la casería de **Paz Mesa y Xandru González**, en Puerma (Las Regueras). Fue un cuarteto: Guillermo Laporta (flauta), Jone de la Fuente (violín), Almudena Arribas (viola) y Natania Hoffman (violonchelo).\n\n## Lo que notaron los músicos\n\nUn hórreo es madera sobre pegollos, con paredes de tabla y aire por debajo. Al tocar dentro, suena como una caja de resonancia, parecido al cuerpo de un instrumento. La madera suaviza los agudos y devuelve un sonido cálido, seco y muy cercano.\n\nCaben muy pocas personas, así que el público se sienta a un metro de quien toca. Se oye la respiración, el roce del arco, el clic de una llave. A esa distancia no hay dónde esconder nada.\n\nEl hórreo se hizo para guardar el grano, la matanza y la cosecha, a salvo de la humedad y de los ratones. Aquellas tardes, durante una hora, dentro hubo música y gente escuchando.\n\n## Lo que vino después\n\nEl concurso siguió en 2026. **La Figal de Xugabolos**, en Casazorrina (Salas), abrió la VI edición el 4 de agosto con un recital de clave de Ignacio Prego. Cabía tan poca gente que hubo dos pases de media hora.\n\nLas bases del Concurso de Hórreos y Paneras 2027 se publican en marzo. Si tienes un hórreo o una panera y te gustaría oír música dentro, ve preparando las fotos.",
+     "cuerpo": "En la primavera de 2025 convocamos el primer **Concurso de Hórreos y Paneras**. Buscábamos tres hórreos o paneras de Asturias para hacer dentro micro-conciertos de música de cámara durante la quinta edición del festival, del 4 al 17 de agosto. *La Nueva España* lo contó el 20 de mayo.\n\nPor qué tocamos en sitios así ya lo explicamos en [¿Por qué tocar a Bach en un hórreo?](/es/blog/por-que-tocar-bach-en-un-horreo/). Aquí contamos cómo fue el concurso.\n\n## Cómo funcionaba\n\nPara participar bastaba con mandar unas fotos por correo o por WhatsApp: una vista general, un detalle y el entorno.\n\nLlegaron candidaturas de toda Asturias. Mucha gente nos escribió orgullosa del hórreo o la panera que tenía en su finca.\n\nMiramos tres cosas en cada candidatura: el valor arquitectónico, el entorno y sus posibilidades como escenario. Queríamos que el concierto cuidara el edificio, el paisaje y a la gente del lugar. Los músicos salieron de la red del festival y cada concierto se grabó en vídeo.\n\n## Susacasa, en Gozón\n\nEl festival de 2025 empezó el 5 de agosto en **Susacasa Agrocultural**, en Gozón. Es un proyecto de permacultura de **Keko Marcos y Sandra Murillo**. Han adaptado una gran panera para usos comunitarios y la usan para actividades ecológicas, educativas y culturales.\n\nA las ocho de la tarde tocaron **Nacho Laguna** (tiorba) y **María del Buey** (voz y visuales). Hicieron una selección de su álbum *Ferrarese*, con repertorio barroco ibérico e improvisación. La tiorba es un laúd del siglo XVII con un cuello larguísimo.\n\n![Susacasa Agrocultural, Gozón, 5 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_1.jpg)\n\n![Susacasa Agrocultural, Gozón, 5 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_2.jpg)\n\n![Susacasa Agrocultural, Gozón, 5 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_3.jpg)\n\n![Susacasa Agrocultural, Gozón, 5 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_4.jpg)\n\n![Susacasa Agrocultural, Gozón, 5 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_5.jpg)\n\n![Susacasa Agrocultural, Gozón, 5 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_6.jpg)\n\n## La casería de Puerma, en Las Regueras\n\nEl 11 de agosto tocamos en la casería de **Paz Mesa y Xandru González**, en Puerma (Las Regueras). Fue un cuarteto: Guillermo Laporta (flauta), Jone de la Fuente (violín), Almudena Arribas (viola) y Natania Hoffman (violonchelo).\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_1.jpg)\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_2.jpg)\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_3.jpg)\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_4.jpg)\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_5.jpg)\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_6.jpg)\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_7.jpg)\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_8.jpg)\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_9.jpg)\n\n![Casería de Paz Mesa y Xandru González, Puerma, Las Regueras, 11 de agosto de 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_10.jpg)\n\n## Lo que notaron los músicos\n\nUn hórreo es madera sobre pegollos, con paredes de tabla y aire por debajo. Al tocar dentro, suena como una caja de resonancia, parecido al cuerpo de un instrumento. La madera suaviza los agudos y devuelve un sonido cálido, seco y muy cercano.\n\nCaben muy pocas personas, así que el público se sienta a un metro de quien toca. Se oye la respiración, el roce del arco, el clic de una llave. A esa distancia no hay dónde esconder nada.\n\nEl hórreo se hizo para guardar el grano, la matanza y la cosecha, a salvo de la humedad y de los ratones. Aquellas tardes, durante una hora, dentro hubo música y gente escuchando.\n\n## Lo que vino después\n\nEl concurso siguió en 2026. **La Figal de Xugabolos**, en Casazorrina (Salas), abrió la VI edición el 4 de agosto con un recital de clave de Ignacio Prego. Cabía tan poca gente que hubo dos pases de media hora.\n\n![La Figal de Xugabolos, Casazorrina, Salas, 4 de agosto de 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_1.jpg)\n\n![La Figal de Xugabolos, Casazorrina, Salas, 4 de agosto de 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_2.jpg)\n\n![La Figal de Xugabolos, Casazorrina, Salas, 4 de agosto de 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_3.jpg)\n\n![La Figal de Xugabolos, Casazorrina, Salas, 4 de agosto de 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_4.jpg)\n\n![La Figal de Xugabolos, Casazorrina, Salas, 4 de agosto de 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_5.jpg)\n\n![La Figal de Xugabolos, Casazorrina, Salas, 4 de agosto de 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_6.jpg)\n\n![La Figal de Xugabolos, Casazorrina, Salas, 4 de agosto de 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_7.jpg)\n\n![La Figal de Xugabolos, Casazorrina, Salas, 4 de agosto de 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_8.jpg)\n\nLas bases del Concurso de Hórreos y Paneras 2027 se publican en marzo. Si tienes un hórreo o una panera y te gustaría oír música dentro, ve preparando las fotos.",
      "lang": "es",
      "slug": "el-horreo-como-sala-de-conciertos",
      "kind": "post",
@@ -7285,6 +7895,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7372,6 +7983,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7460,6 +8072,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7478,7 +8091,7 @@
      "esBlog": true,
      "blog": null,
      "estadoWeb": "draft",
-     "cuerpo": "Todo festival tiene una noche cero: esa en la que aún no se sabe si el proyecto va a existir o va a quedarse en una buena intención. La nuestra fue el **14 de agosto de 2021**, en el campo de la iglesia de Leiguarda.\n\nLlovió.\n\n## Una semana de sol y justo esa noche, orballo\n\nHabía hecho sol toda la semana. Ese día, cuando el escenario ya estaba montado (un gran **marco amarillo** plantado en la hierba, con la aldea de Leiguarda de telón de fondo), apareció el **orballo**: esa lluvia fina asturiana que no llega a mojar de golpe pero que no para nunca.\n\nPara un concierto al aire libre con instrumentos de cuerda y madera, el orballo obliga a decidir sobre la marcha y a cuidar los instrumentos. Eso hicimos.\n\nQuien estuvo allí lo cuenta siempre igual: la aldea difuminada entre la bruma, el marco amarillo, la música saliendo hacia un paisaje mojado.\n\n## Más de 120 personas en una aldea de cien habitantes\n\nEl dato que todavía nos emociona: **se juntaron más de 120 personas.** En una aldea de apenas un centenar de habitantes. Aquella noche había más gente en el campo de la iglesia de Leiguarda que vecinos censados en Leiguarda.\n\nEso contestó la pregunta que nos hacían todos: *¿pero irá alguien?* Sí, va gente.\n\n## Lo que se tocó aquella noche\n\nEl programa ya contenía, en germen, todo lo que ADAR sería después. Obras de **Mendelssohn, Haydn y Falla**, el repertorio clásico y la tradición española, junto a **John Harbison**, compositor estadounidense contemporáneo. Y una pieza nueva: ***Atlantic*, de Marcos Fernández, escrita expresamente para la ocasión.**\n\n**En su primerísimo concierto, un festival sin presupuesto ni historial encargó una obra nueva.** Podríamos haber tocado solo repertorio seguro. Decidimos que, si esto iba a existir, iba a existir creando cosas. Ese encargo de 2021 fue el primero de todos los que han venido después.\n\n## Lo que aprendimos con la lluvia\n\nAquella noche nos dio, sin pretenderlo, las tres reglas con las que seguimos trabajando cinco ediciones más tarde:\n\n**Que el sitio manda.** El orballo, la luz y la temperatura no se controlan. Hay que elegir un sitio que valga la pena aunque te llueva encima. Todo lo demás se improvisa.\n\n**Que el público rural existe y está esperando.** Había ganas acumuladas de que pasara algo así, y no hubo que bajar el nivel.\n\n**Que un imprevisto puede ser el mejor recuerdo.** El concierto que salió mal según el plan es el que más se cuenta.\n\n## Cinco años después\n\nDe aquella noche salió el compromiso de volver cada agosto. Volvimos en 2022, 2023, 2024, 2025 y 2026, ampliando cada vez el mapa de concejos, de espacios y de artistas. De un campo de iglesia con un marco amarillo a monasterios, palacios, mercados, hórreos, un parador y un alto de monte en pleno eclipse total de sol.\n\nTodo esto empezó con **120 personas de pie bajo el orballo**, en un pueblo de cien habitantes.\n\nGracias a quienes vinieron aquella noche sin saber a qué venían. Sin vosotros, no habría habido segunda.",
+     "cuerpo": "Todo festival tiene una noche cero: esa en la que aún no se sabe si el proyecto va a existir o va a quedarse en una buena intención. La nuestra fue el **14 de agosto de 2021**, en el campo de la iglesia de Leiguarda.\n\nLlovió.\n\n## Una semana de sol y justo esa noche, orballo\n\nHabía hecho sol toda la semana. Ese día, cuando el escenario ya estaba montado (un gran **marco amarillo** plantado en la hierba, con la aldea de Leiguarda de telón de fondo), apareció el **orballo**: esa lluvia fina asturiana que no llega a mojar de golpe pero que no para nunca.\n\nPara un concierto al aire libre con instrumentos de cuerda y madera, el orballo obliga a decidir sobre la marcha y a cuidar los instrumentos. Eso hicimos.\n\nQuien estuvo allí lo cuenta siempre igual: la aldea difuminada entre la bruma, el marco amarillo, la música saliendo hacia un paisaje mojado.\n\n## Más de 120 personas en una aldea de cien habitantes\n\nEl dato que todavía nos emociona: **se juntaron más de 120 personas.** En una aldea de apenas un centenar de habitantes. Aquella noche había más gente en el campo de la iglesia de Leiguarda que vecinos censados en Leiguarda.\n\nEso contestó la pregunta que nos hacían todos: *¿pero irá alguien?* Sí, va gente.\n\n## Lo que se tocó aquella noche\n\nSonaron obras de **Mendelssohn, Haydn y Falla**. También sonó música de **John Harbison**, compositor estadounidense contemporáneo, y ***Atlantic*, de Marcos Fernández**.\n\nYa en ese primer programa había clásicos junto a música de ahora. Lo seguimos haciendo cada verano.\n\n## Lo que aprendimos con la lluvia\n\nAquella noche nos dio, sin pretenderlo, las tres reglas con las que seguimos trabajando cinco ediciones más tarde:\n\n**Que el sitio manda.** El orballo, la luz y la temperatura no se controlan. Hay que elegir un sitio que valga la pena aunque te llueva encima. Todo lo demás se improvisa.\n\n**Que el público rural existe y está esperando.** Había ganas acumuladas de que pasara algo así, y no hubo que bajar el nivel.\n\n**Que un imprevisto puede ser el mejor recuerdo.** El concierto que salió mal según el plan es el que más se cuenta.\n\n## Cinco años después\n\nDe aquella noche salió el compromiso de volver cada agosto. Volvimos en 2022, 2023, 2024, 2025 y 2026, ampliando cada vez el mapa de concejos, de espacios y de artistas. De un campo de iglesia con un marco amarillo a monasterios, palacios, mercados, hórreos, un parador y un alto de monte en pleno eclipse total de sol.\n\nTodo esto empezó con **120 personas de pie bajo el orballo**, en un pueblo de cien habitantes.\n\nGracias a quienes vinieron aquella noche sin saber a qué venían. Sin vosotros, no habría habido segunda.",
      "lang": "es",
      "slug": "el-orballo-del-primer-concierto",
      "kind": "post",
@@ -7547,6 +8160,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7565,7 +8179,7 @@
      "esBlog": true,
      "blog": null,
      "estadoWeb": "draft",
-     "cuerpo": "El 16 de agosto terminó la sexta edición de ADAR en la iglesia parroquial de Leiguarda. Sonaron Vivaldi en el arreglo de Bach, Mendelssohn, Brahms, Ravel, Ligeti y Lang. Después abrimos la espicha.\n\nCon la sidra todavía en la mesa, nos acordamos de la primera noche. Aquí va un repaso de estos seis veranos y unas cuantas gracias.\n\n## Una noche de orballo en 2021\n\nFundamos la asociación en 2020, en Leiguarda. Guillermo toca la flauta y Josefina, el piano. Un año después llegó el primer concierto.\n\nFue el 14 de agosto de 2021, en el campo de la iglesia. Plantamos un gran marco amarillo en la hierba, con la aldea detrás. Toda la semana había hecho sol. Esa noche empezó a orbayar.\n\n![El marco amarillo en el campo de la iglesia, Leiguarda, 2021](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image69.jpg)\n\nVinieron más de 120 personas. Leiguarda tiene un centenar de habitantes.\n\nTocamos Mendelssohn, Haydn, Falla y John Harbison. También estrenamos *Atlantic*, de Marcos Fernández, escrita para esa noche. Fue el primer encargo del festival.\n\n![Leiguarda, 2021](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image72.jpg)\n\nDe aquella noche salió el compromiso de volver cada agosto. Hemos vuelto cinco veces.\n\n## Catorce concejos en seis veranos\n\nEl mapa del festival suma hoy 39 actividades en 14 concejos. Empezó con un solo punto, el campo de la iglesia de Leiguarda.\n\n![Palacio de Miranda-Valdecarzana, Grado, 2022](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/12_Concierto_en_el_Palacio_de_Miranda-Valdecarzana_Grado_2022/PXL_20220812_183731546~2.jpg)\n\nHemos tocado en cuatro monasterios: Santa María la Real de Obona, en Tineo; San Antolín de Bedón, en Llanes; San Salvador de Cornellana, en Salas, y el de Villanueva de Oscos. El 12 de agosto de 2025 llenamos Obona con un concierto de cámara de sesenta y dos minutos.\n\n![Monasterio de Obona, Tineo, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.12_Monasterio%20de%20Obona_Fotos/25.08.12_Monasterio%20de%20Obona_WEB/25.08.12_Monasterio%20de%20Obona_WEB_6.jpg)\n\nEl 12 de agosto de 2023 hicimos un paseo sonoro en el Museo de las Ayalgas, en Silviella. Las suites de Bach sonaron entre motos antiguas, cunas del siglo XVIII y aperos de labranza. Esa misma noche hubo otro paseo en Leiguarda, con video mapping sobre la fachada de piedra de la iglesia.\n\n![Museo de las Ayalgas, Silviella, 2023](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/12_Paseo_sonoro_en_el_Museo_de_las_Ayalgas_Belmonte_de_Miranda/10.jpg)\n\nEn Pola de Somiedo, el mercado hizo de auditorio. En Taramundi tocamos Telemann, Falla y Mussorgsky.\n\n![Mercado de Pola de Somiedo, 2024](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/14_Concierto_en_el_Mercado_de_Pola_de_Somiedo/Pola_01_00_52_08.jpg)\n\nLos monasterios nos han enseñado mucho de acústica. Los hórreos, de cercanía.\n\n## Los hórreos y la gente que los cuida\n\nEn 2025 convocamos el primer concurso de hórreos y paneras. Bastaba con mandar unas fotos: vista general, detalle y entorno. Llegaron candidaturas de toda Asturias.\n\nEl 5 de agosto de 2025 empezamos en Susacasa Agrocultural, en Gozón. Allí Keko Marcos y Sandra Murillo han adaptado una gran panera para usos comunitarios. Dentro sonaron la tiorba de Nacho Laguna y la voz de María del Buey. El 11 de agosto tocamos en la casería de Paz Mesa y Xandru González, en Puerma, Las Regueras.\n\n![Susacasa Agrocultural, Gozón, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_5.jpg)\n\nUn hórreo suena como una caja de madera. El público se sienta a un metro de los intérpretes y oye el roce del arco.\n\nEn 2026 la edición se abrió el 4 de agosto en La Figal de Xugabolos, en Casazorrina, Salas. Ignacio Prego tocó el clave dentro del hórreo. Cabía tan poca gente que hubo dos pases de media hora.\n\n![Ignacio Prego en La Figal de Xugabolos, Salas, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_2.jpg)\n\n## La sexta edición\n\nDel hórreo de Salas fuimos al Parador de Corias. En su biblioteca, María Martínez, Frederieke Saeijs y Josefina tocaron *La forma de la memoria*.\n\n![Parador de Corias, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/05.08.26_Parador%20de%20Corias_Fotos/05.08.26_Parador%20de%20Corias_WEB/05.08.26_Parador%20de%20Corias_WEB_2.jpg)\n\nMaria Florea, Lara Fernández y Daniel Claret llevaron *The Rest is Silence* a As Quintas. Dos días después tocaron en quinteto en el monasterio de Villanueva de Oscos. El colectivo Menhir, Coco Moya e Iván Cebrián, preparó un recorrido sonoro por el palomar de Leiguarda.\n\n![As Quintas, El Franco, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/11.08.26_El%20Franco_Fotos/11.08.26_El%20Franco_WEB/11.08.26_El%20Franco_WEB_4.jpg)\n\nEl 12 de agosto tocamos durante el eclipse total de sol. Era el primero visible desde la España peninsular desde 1905. Durante la totalidad bajó la temperatura y los pájaros se callaron.\n\n![Durante el eclipse, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_3.jpg)\n\nEn la panera de La Casona de Belmonte, el trío The Rest Project presentó *Equilibrium*, su muestra de residencia, con poemas de Joan Margarit. Las dos últimas noches fueron en la iglesia de Leiguarda. Allí Žilvinas Brazauskas tocó la birbynė, un instrumento de pastores lituanos documentado desde 1625.\n\n![La Casona de Belmonte, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_4.jpg)\n\n![Iglesia de Leiguarda, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_6.jpg)\n\nZygmund de Somogyi fue el compositor residente. Guillermo Ordás se encargó de filmar y documentar la edición.\n\n## Gracias\n\nAl público. A las 120 personas del orballo y a todas las que han venido después, por carreteras de montaña, a bancos de iglesia y a la hierba.\n\nA los vecinos de Leiguarda, que acogen la sede todo el año.\n\nA los ayuntamientos anfitriones, a las parroquias y a quienes cuidan los monasterios, palacios y capillas donde hemos tocado. A cada familia que nos abrió su hórreo o su panera.\n\nA los músicos, que tocaron con lluvia, bajo bóvedas frías y dentro de una caja de madera, y luego se quedaron a la espicha.\n\nA quienes trabajan con nosotros cerca de casa, de la Panadería Hermanos Marrón a Costel Marin, en Menes, que construye elementos de escenografía.\n\nA nuestros embajadores: Laude Martínez, Pepe Luis Alba, Esther Vergara Prieto, Juan Manuel Sánchez Trujillo, Isabel Vergara Prieto y Miguel Antón García.\n\nAl Principado de Asturias, a Caja Rural y a Culture Moves Europe, que ayudan a que todos los conciertos sean de entrada libre. A los Amigos del Festival, que sostienen el proyecto entre una edición y otra.\n\n## Lo que viene\n\nYa estamos con la séptima edición, en agosto de 2027. Estamos leyendo propuestas de músicos y ensembles. Entre este otoño y junio de 2027 habrá residencias en Leiguarda, con el apoyo de Culture Moves Europe.\n\nTenemos curiosidad por la música que saldrá de esas semanas en la sede, y por los sitios nuevos que irán apareciendo.\n\nGracias por estos seis veranos. Nos vemos en agosto.\n\n## Galería\n\n![Leiguarda, 2021](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg)\n\n![As Quintas, El Franco, 2022](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/08_Concierto_visual_en_El_Franco/PXL_20220808_193950958~2.jpg)\n\n![Santa María de Sábada, Colunga, 2022](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/10_Concierto_en_la_Iglesia_de_Santa_Maria_de_Sabada_Colunga/PXL_20220810_185227295.jpg)\n\n![Leiguarda, 2023](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/13_Concierto_visual_de_clausura_en_Leiguarda_2023/08.jpg)\n\n![As Quintas, El Franco, 2023](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/09_Concierto_en_El_Franco/IMG_3237.jpeg)\n\n![Palacio de Miranda-Valdecarzana, Grado, 2024](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/17_Concierto_en_el_Palacio_de_Miranda-Valdecarzana_Grado_2024/34.jpg)\n\n![Invernadero de cristal, Leiguarda, 2024](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/18_Concierto_de_clausura_en_el_Invernadero_de_cristal_Leiguarda_2024/Timeline%201_01_00_09_23.jpg)\n\n![Claustro del Parador de Corias, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.15_Claustro%20del%20Parador%20de%20Corias_Fotos/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB_4.jpg)\n\n![Monasterio de Villanueva de Oscos, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.14_Monasterio%20de%20Villanueva%20de%20Oscos_Fotos/25.08.14_Monasterio%20de%20Villanueva%20de%20Oscos_WEB/25.08.14_Monasterio%20de%20Villanueva%20de%20Oscos_WEB_5.jpg)\n\n![Invernadero de cristal, Leiguarda, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.17_Iglesia%20e%20invernadero%20de%20cristal_Fotos/25.08.17_Iglesia%20e%20invernadero%20de%20cristal_WEB/25.08.17_Iglesia%20e%20invernadero%20de%20cristal_WEB_3.jpg)\n\n![Aula del Oro, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/07.08.26_Aula%20del%20oro_Fotos/07.08.26_Aula%20del%20oro_WEB/07.08.26_Aula%20del%20oro_WEB_3.jpg)\n\n![Villanueva de Oscos, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_1.jpg)\n\n![Iglesia de Leiguarda, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.15_Iglesia%20de%20Leiguarda_Fotos/26.08.15_Iglesia%20de%20Leiguarda_WEB/26.08.15_Iglesia%20de%20Leiguarda_WEB_3.jpg)",
+     "cuerpo": "El 16 de agosto terminó la sexta edición de ADAR en la iglesia parroquial de Leiguarda. Sonaron Vivaldi en el arreglo de Bach, Mendelssohn, Brahms, Ravel, Ligeti y Lang. Después abrimos la espicha.\n\nCon la sidra todavía en la mesa, nos acordamos de la primera noche. Aquí va un repaso de estos seis veranos y unas cuantas gracias.\n\n## Una noche de orballo en 2021\n\nFundamos la asociación en 2020, en Leiguarda. Guillermo toca la flauta y Josefina, el piano. Un año después llegó el primer concierto.\n\nFue el 14 de agosto de 2021, en el campo de la iglesia. Plantamos un gran marco amarillo en la hierba, con la aldea detrás. Toda la semana había hecho sol. Esa noche empezó a orbayar.\n\n![El marco amarillo en el campo de la iglesia, Leiguarda, 2021](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image69.jpg)\n\nVinieron más de 120 personas. Leiguarda tiene un centenar de habitantes.\n\nTocamos Mendelssohn, Haydn, Falla y John Harbison. También tocamos *Atlantic*, de Marcos Fernández.\n\n![Leiguarda, 2021](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image72.jpg)\n\nDe aquella noche salió el compromiso de volver cada agosto. Hemos vuelto cinco veces.\n\n## Catorce concejos en seis veranos\n\nEl mapa del festival suma hoy 39 actividades en 14 concejos. Empezó con un solo punto, el campo de la iglesia de Leiguarda.\n\n![Palacio de Miranda-Valdecarzana, Grado, 2022](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/12_Concierto_en_el_Palacio_de_Miranda-Valdecarzana_Grado_2022/PXL_20220812_183731546~2.jpg)\n\nHemos tocado en cuatro monasterios: Santa María la Real de Obona, en Tineo; San Antolín de Bedón, en Llanes; San Salvador de Cornellana, en Salas, y el de Villanueva de Oscos. El 12 de agosto de 2025 llenamos Obona con un concierto de cámara de sesenta y dos minutos.\n\n![Monasterio de Obona, Tineo, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.12_Monasterio%20de%20Obona_Fotos/25.08.12_Monasterio%20de%20Obona_WEB/25.08.12_Monasterio%20de%20Obona_WEB_6.jpg)\n\nEl 12 de agosto de 2023 hicimos un paseo sonoro en el Museo de las Ayalgas, en Silviella. Las suites de Bach sonaron entre motos antiguas, cunas del siglo XVIII y aperos de labranza. Esa misma noche hubo otro paseo en Leiguarda, con video mapping sobre la fachada de piedra de la iglesia.\n\n![Museo de las Ayalgas, Silviella, 2023](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/12_Paseo_sonoro_en_el_Museo_de_las_Ayalgas_Belmonte_de_Miranda/10.jpg)\n\nEn Pola de Somiedo, el mercado hizo de auditorio. En Taramundi tocamos Telemann, Falla y Mussorgsky.\n\n![Mercado de Pola de Somiedo, 2024](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/14_Concierto_en_el_Mercado_de_Pola_de_Somiedo/Pola_01_00_52_08.jpg)\n\nLos monasterios nos han enseñado mucho de acústica. Los hórreos, de cercanía.\n\n## Los hórreos y la gente que los cuida\n\nEn 2025 convocamos el primer concurso de hórreos y paneras. Bastaba con mandar unas fotos: vista general, detalle y entorno. Llegaron candidaturas de toda Asturias.\n\nEl 5 de agosto de 2025 empezamos en Susacasa Agrocultural, en Gozón. Allí Keko Marcos y Sandra Murillo han adaptado una gran panera para usos comunitarios. Dentro sonaron la tiorba de Nacho Laguna y la voz de María del Buey. El 11 de agosto tocamos en la casería de Paz Mesa y Xandru González, en Puerma, Las Regueras.\n\n![Susacasa Agrocultural, Gozón, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_5.jpg)\n\nUn hórreo suena como una caja de madera. El público se sienta a un metro de los intérpretes y oye el roce del arco.\n\nEn 2026 la edición se abrió el 4 de agosto en La Figal de Xugabolos, en Casazorrina, Salas. Ignacio Prego tocó el clave dentro del hórreo. Cabía tan poca gente que hubo dos pases de media hora.\n\n![Ignacio Prego en La Figal de Xugabolos, Salas, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_2.jpg)\n\n## La sexta edición\n\nDel hórreo de Salas fuimos al Parador de Corias. En su biblioteca, María Martínez, Frederieke Saeijs y Josefina tocaron *La forma de la memoria*.\n\n![Parador de Corias, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/05.08.26_Parador%20de%20Corias_Fotos/05.08.26_Parador%20de%20Corias_WEB/05.08.26_Parador%20de%20Corias_WEB_2.jpg)\n\nMaria Florea, Lara Fernández y Daniel Claret llevaron *The Rest is Silence* a As Quintas. Dos días después tocaron en quinteto en el monasterio de Villanueva de Oscos. El colectivo Menhir, Coco Moya e Iván Cebrián, preparó un recorrido sonoro por el palomar de Leiguarda.\n\n![As Quintas, El Franco, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/11.08.26_El%20Franco_Fotos/11.08.26_El%20Franco_WEB/11.08.26_El%20Franco_WEB_4.jpg)\n\nEl 12 de agosto tocamos durante el eclipse total de sol. Era el primero visible desde la España peninsular desde 1905. Durante la totalidad bajó la temperatura y los pájaros se callaron.\n\n![Durante el eclipse, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Eclipse_Fotos/13.08.26_Eclipse_WEB/13.08.26_Eclipse_WEB_3.jpg)\n\nEn la panera de La Casona de Belmonte, el trío The Rest Project presentó *Equilibrium*, su muestra de residencia, con poemas de Joan Margarit. Las dos últimas noches fueron en la iglesia de Leiguarda. Allí Žilvinas Brazauskas tocó la birbynė, un instrumento de pastores lituanos documentado desde 1625.\n\n![La Casona de Belmonte, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/14.08.26_La%20casona%20de%20Belmonte_Fotos/14.08.26_La%20casona%20de%20Belmonte_WEB/14.08.26_La%20casona%20de%20Belmonte_WEB_4.jpg)\n\n![Iglesia de Leiguarda, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_Fotos/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB/26.08.16_Iglesia%20de%20Leiguarda%20Concierto%20Final_WEB_6.jpg)\n\nZygmund de Somogyi fue el compositor residente. Guillermo Ordás se encargó de filmar y documentar la edición.\n\n## Gracias\n\nAl público. A las 120 personas del orballo y a todas las que han venido después, por carreteras de montaña, a bancos de iglesia y a la hierba.\n\nA los vecinos de Leiguarda, que acogen la sede todo el año.\n\nA los ayuntamientos anfitriones, a las parroquias y a quienes cuidan los monasterios, palacios y capillas donde hemos tocado. A cada familia que nos abrió su hórreo o su panera.\n\nA los músicos, que tocaron con lluvia, bajo bóvedas frías y dentro de una caja de madera, y luego se quedaron a la espicha.\n\nA quienes trabajan con nosotros cerca de casa, de la Panadería Hermanos Marrón a Costel Marin, en Menes, que construye elementos de escenografía.\n\nA nuestros embajadores: Laude Martínez, Pepe Luis Alba, Esther Vergara Prieto, Juan Manuel Sánchez Trujillo, Isabel Vergara Prieto y Miguel Antón García.\n\nAl Principado de Asturias, a Caja Rural y a Culture Moves Europe, que ayudan a que todos los conciertos sean de entrada libre. A los Amigos del Festival, que sostienen el proyecto entre una edición y otra.\n\n## Lo que viene\n\nYa estamos con la séptima edición, en agosto de 2027. Estamos leyendo propuestas de músicos y ensembles. Entre este otoño y junio de 2027 habrá residencias en Leiguarda, con el apoyo de Culture Moves Europe.\n\nTenemos curiosidad por la música que saldrá de esas semanas en la sede, y por los sitios nuevos que irán apareciendo.\n\nGracias por estos seis veranos. Nos vemos en agosto.\n\n## Galería\n\n![Leiguarda, 2021](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg)\n\n![As Quintas, El Franco, 2022](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/08_Concierto_visual_en_El_Franco/PXL_20220808_193950958~2.jpg)\n\n![Santa María de Sábada, Colunga, 2022](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2022/10_Concierto_en_la_Iglesia_de_Santa_Maria_de_Sabada_Colunga/PXL_20220810_185227295.jpg)\n\n![Leiguarda, 2023](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/13_Concierto_visual_de_clausura_en_Leiguarda_2023/08.jpg)\n\n![As Quintas, El Franco, 2023](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2023/09_Concierto_en_El_Franco/IMG_3237.jpeg)\n\n![Palacio de Miranda-Valdecarzana, Grado, 2024](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/17_Concierto_en_el_Palacio_de_Miranda-Valdecarzana_Grado_2024/34.jpg)\n\n![Invernadero de cristal, Leiguarda, 2024](https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2024/18_Concierto_de_clausura_en_el_Invernadero_de_cristal_Leiguarda_2024/Timeline%201_01_00_09_23.jpg)\n\n![Claustro del Parador de Corias, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.15_Claustro%20del%20Parador%20de%20Corias_Fotos/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB_4.jpg)\n\n![Monasterio de Villanueva de Oscos, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.14_Monasterio%20de%20Villanueva%20de%20Oscos_Fotos/25.08.14_Monasterio%20de%20Villanueva%20de%20Oscos_WEB/25.08.14_Monasterio%20de%20Villanueva%20de%20Oscos_WEB_5.jpg)\n\n![Invernadero de cristal, Leiguarda, 2025](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.17_Iglesia%20e%20invernadero%20de%20cristal_Fotos/25.08.17_Iglesia%20e%20invernadero%20de%20cristal_WEB/25.08.17_Iglesia%20e%20invernadero%20de%20cristal_WEB_3.jpg)\n\n![Aula del Oro, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/07.08.26_Aula%20del%20oro_Fotos/07.08.26_Aula%20del%20oro_WEB/07.08.26_Aula%20del%20oro_WEB_3.jpg)\n\n![Villanueva de Oscos, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/13.08.26_Villanueva%20de%20Oscos_Fotos/13.08.26_Villanueva%20de%20Oscos_WEB/13.08.26_Villanueva%20de%20Oscos_WEB_1.jpg)\n\n![Iglesia de Leiguarda, 2026](https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/26.08.15_Iglesia%20de%20Leiguarda_Fotos/26.08.15_Iglesia%20de%20Leiguarda_WEB/26.08.15_Iglesia%20de%20Leiguarda_WEB_3.jpg)",
      "lang": "es",
      "slug": "seis-ediciones-de-adar",
      "kind": "post",
@@ -7635,6 +8249,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7722,6 +8337,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7809,6 +8425,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7896,6 +8513,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -7983,6 +8601,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -8070,6 +8689,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -8158,6 +8778,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": null,
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -8245,6 +8866,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El 22 es Santa Cecilia, el día de la música. Además rompe casi dos meses sin publicar: lo último fue la Open Call del 26 de septiembre.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -8320,6 +8942,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Ya estamos programando la VII edición (agosto de 2027). Cuanto antes lleguen las propuestas, más donde elegir. Lo pidió Guillermo el 20 de noviembre.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
@@ -8406,6 +9029,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Los ayuntamientos cierran presupuestos y agenda del año que viene en invierno. Es el momento de que un concejo o una sala piense en acoger un concierto en 2027. Lo pidió Guillermo el 20 de noviembre.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
@@ -8492,6 +9116,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Él pidió vídeos de otros años. Este es el mejor que tenemos y su artículo del blog está en borrador: al aprobarlo, publico también el artículo en la web.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -8568,6 +9193,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El 1 de diciembre es el GivingTuesday, el día internacional de dar. Empieza la campaña de Amigos de cara a Navidad. Lo pidió Guillermo el 20 de noviembre.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
@@ -8659,6 +9285,7 @@
      "fotosEnteras": true,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Él pidió fotos de otros años. Es la historia que mejor cuenta qué es ADAR, y su artículo está en borrador: al aprobarlo, publico también el artículo.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -8699,13 +9326,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nLa historia completa, en el blog de festivaladar.com\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y Atlantic, de Marcos Fernández.\n\nLa historia completa, en el blog de festivaladar.com\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
        "asomo": "Así empezó todo. 📸 14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR. Había hecho sol toda la…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
-       "asomo": "Así empezó todo. 📸 14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR. Había hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma. Sonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández. https://festivaladar.com/es/blog/el-orballo-del-primer-concierto/ #FestivalADAR #Leiguar…",
+       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y Atlantic, de Marcos Fernández.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+       "asomo": "Así empezó todo. 📸 14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR. Había hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma. Sonaron Mendelssohn, Haydn, Falla, John Harbison y Atlantic, de Marcos Fernández. https://festivaladar.com/es/blog/el-orballo-del-primer-concierto/ #FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
        "limite": 63206
       }
      },
@@ -8738,6 +9365,7 @@
       "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_1.jpg"
      ],
      "apaisado": true,
+     "adorno": null,
      "porque": "Mantiene vivo el Concurso de Hórreos (el post de los ganadores de 2025 es el que más alcance ha tenido nunca) y avisa de que las bases de 2027 salen en marzo. Su artículo está en borrador: al aprobarlo, lo publico.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -8813,6 +9441,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El 11 de diciembre es el Día Internacional de las Montañas. Somiedo, las brañas y la montaña preparan el terreno para Braña Sonora en enero. Su artículo está en borrador: al aprobarlo, lo publico.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -8889,6 +9518,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "A diez días de Nochebuena. La web dice que la membresía se puede regalar: es un regalo sin envío, que llega a tiempo. Segunda ola de la campaña de Amigos.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
@@ -8984,6 +9614,7 @@
      "fotosEnteras": true,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Él pidió fotos y vídeos del año pasado. La noche de The Whale es de las más especiales de 2025 y su artículo está en borrador: al aprobarlo, lo publico.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -9058,12 +9689,12 @@
      "falta": null,
      "fotos": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-andrea-casarrubios-45.jpg",
-      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-caroline-shaw-45.jpg",
-      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-jessie-montgomery-45.jpg"
+      "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-caroline-shaw-45.jpg"
      ],
      "fotosEnteras": true,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Un post de ideas, no de fechas, para la semana tranquila antes de Navidad. Su artículo está en borrador: al aprobarlo, lo publico.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -9104,13 +9735,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
+       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade y Caroline Shaw por Simon van Boxtel.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
        "asomo": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼 Andrea Casarrubios, Caroline Shaw…",
        "limite": 2200
       },
       "fb": {
-       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
-       "asomo": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼 Andrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji… Sus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota. Fotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web. https://festivaladar.com/es/blog/las-compositoras-que-programamos/ #FestivalADAR #Compositoras #MujeresEnLa…",
+       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade y Caroline Shaw por Simon van Boxtel.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
+       "asomo": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼 Andrea Casarrubios, Caroline Shaw, Celeste Oram, Mizuko Kaji… Sus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota. Fotos: Andrea Casarrubios por Titilayo Ayangade y Caroline Shaw por Simon van Boxtel. https://festivaladar.com/es/blog/las-compositoras-que-programamos/ #FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
        "limite": 63206
       }
      },
@@ -9139,6 +9770,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": "navidad",
      "porque": "Felicitación de Navidad. Mantiene la cuenta viva en las fiestas sin pedir nada.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
@@ -9233,6 +9865,7 @@
      "fotosEnteras": true,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Resumen del año la última semana de diciembre, cuando todo el mundo mira atrás. Él pidió fotos de este año y de otros.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -9304,7 +9937,7 @@
      },
      "tipo": null,
      "concierto": null,
-     "estilo": "cielo",
+     "estilo": "ambar",
      "estilos": null,
      "cifra": null,
      "tabla": null,
@@ -9313,8 +9946,9 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "En enero empieza Braña Sonora, el proyecto paralelo al festival con el apoyo del Ministerio de Cultura. Es la noticia más importante del invierno.",
-     "pegatinasMuro": false,
+     "pegatinasMuro": true,
      "fondoAmbar": true,
      "logo": {
       "src": "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/logos-brana-sonora-claro.png",
@@ -9330,7 +9964,18 @@
      "kicker": "Nuevo proyecto",
      "formato": null,
      "publicaEl": "2027-01-08",
-     "pegatinas": null,
+     "pegatinas": [
+      {
+       "texto": "¡Nuevo proyecto!",
+       "senal": true
+      },
+      {
+       "texto": "Julio 2026 · diciembre 2027"
+      },
+      {
+       "texto": "Vaqueiros · hórreos · tonada"
+      }
+     ],
      "cartel": null,
      "trapecio": null,
      "encuadre": null,
@@ -9376,13 +10021,13 @@
      ],
      "pies": {
       "ig": {
-       "texto": "Empezamos Braña Sonora. 🌿\n\nUn proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano:\n\n🐄 la cultura vaqueira de alzada y sus brañas,\n🌾 el paisaje sonoro de los hórreos, las paneras y los oficios,\n🎙️ la memoria oral musical, con la tonada asturiana.\n\nVamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027. También habrá materiales para escuelas rurales.\n\nBraña Sonora cuenta con una ayuda del Ministerio de Cultura para proyectos de salvaguarda del Patrimonio Cultural Inmaterial, y dura de julio de 2026 a diciembre de 2027.\n\nDesliza para saber más. 👉\n\nMás en festivaladar.com\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #Asturias #CulturaVaqueira #Tonada #MinisterioDeCultura",
-       "asomo": "Empezamos Braña Sonora. 🌿 Un proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio ru…",
+       "texto": "¡Nuevo proyecto! Empezamos Braña Sonora. 🌿\n\nUn proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano:\n\n🐄 la cultura vaqueira de alzada y sus brañas,\n🌾 el paisaje sonoro de los hórreos, las paneras y los oficios,\n🎙️ la memoria oral musical, con la tonada asturiana.\n\nVamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027. También habrá materiales para escuelas rurales.\n\nBraña Sonora cuenta con una ayuda del Ministerio de Cultura para proyectos de salvaguarda del Patrimonio Cultural Inmaterial, y dura de julio de 2026 a diciembre de 2027.\n\nDesliza para saber más. 👉\n\nMás en festivaladar.com\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #Asturias #CulturaVaqueira #Tonada #MinisterioDeCultura",
+       "asomo": "¡Nuevo proyecto! Empezamos Braña Sonora. 🌿 Un proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio …",
        "limite": 2200
       },
       "fb": {
-       "texto": "Empezamos Braña Sonora. 🌿\n\nUn proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano:\n\n🐄 la cultura vaqueira de alzada y sus brañas,\n🌾 el paisaje sonoro de los hórreos, las paneras y los oficios,\n🎙️ la memoria oral musical, con la tonada asturiana.\n\nVamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027. También habrá materiales para escuelas rurales.\n\nBraña Sonora cuenta con una ayuda del Ministerio de Cultura para proyectos de salvaguarda del Patrimonio Cultural Inmaterial, y dura de julio de 2026 a diciembre de 2027.\n\nDesliza para saber más. 👉\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #Asturias #CulturaVaqueira #Tonada #MinisterioDeCultura",
-       "asomo": "Empezamos Braña Sonora. 🌿 Un proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano: 🐄 la cultura vaqueira de alzada y sus brañas, 🌾 el paisaje sonoro de los hórreos, las paneras y los oficios, 🎙️ la memoria oral musical, con la tonada asturiana. Vamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las o…",
+       "texto": "¡Nuevo proyecto! Empezamos Braña Sonora. 🌿\n\nUn proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano:\n\n🐄 la cultura vaqueira de alzada y sus brañas,\n🌾 el paisaje sonoro de los hórreos, las paneras y los oficios,\n🎙️ la memoria oral musical, con la tonada asturiana.\n\nVamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores residentes, y las obras nuevas se estrenarán en el Festival ADAR de agosto de 2027. También habrá materiales para escuelas rurales.\n\nBraña Sonora cuenta con una ayuda del Ministerio de Cultura para proyectos de salvaguarda del Patrimonio Cultural Inmaterial, y dura de julio de 2026 a diciembre de 2027.\n\nDesliza para saber más. 👉\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #Asturias #CulturaVaqueira #Tonada #MinisterioDeCultura",
+       "asomo": "¡Nuevo proyecto! Empezamos Braña Sonora. 🌿 Un proyecto de ADAR, paralelo al festival, para escuchar y guardar el patrimonio vivo del medio rural asturiano: 🐄 la cultura vaqueira de alzada y sus brañas, 🌾 el paisaje sonoro de los hórreos, las paneras y los oficios, 🎙️ la memoria oral musical, con la tonada asturiana. Vamos a grabar en los concejos donde ya trabaja el festival, con las personas que guardan ese saber. Con ese archivo trabajarán compositoras y compositores re…",
        "limite": 63206
       }
      },
@@ -9411,7 +10056,8 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
-     "porque": "Segundo post de Braña Sonora. En vez de explicar qué es una braña (en Asturias se sabe), pregunta por los recuerdos de cada uno: da conversación y nos trae gente para el archivo.",
+     "adorno": null,
+     "porque": "Segundo post de Braña Sonora, cuatro días después del anuncio: cuenta qué financia la ayuda del Ministerio y qué vamos a hacer, paso a paso.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
      "logo": {
@@ -9440,8 +10086,8 @@
      "lang": "es",
      "slug": "brana-sonora-vaqueiros",
      "kind": "social",
-     "title": "¿Tú también subías a la braña?",
-     "excerpt": "¿Tú también subías a la braña?",
+     "title": "Qué es Braña Sonora, paso a paso",
+     "excerpt": "Qué es Braña Sonora, paso a paso",
      "image": "https://creartbox-media-cdn.b-cdn.net/adarimages/residency/IMG_2788.jpeg",
      "url": "https://festivaladar.com/es/",
      "date": "2027-01-12",
@@ -9452,19 +10098,19 @@
      "slides": [
       {
        "type": "cover",
-       "title": "¿Tú también subías a la braña?",
+       "title": "Qué es Braña Sonora, paso a paso",
        "body": ""
       }
      ],
      "pies": {
       "ig": {
-       "texto": "¿Tú también subías a la braña? ⛰️\n\nEn Asturias la braña no hace falta explicarla. Es el verano de los abuelos con el ganado, la cabaña, el camino de subida en mayo y el de bajada en octubre. Y lo que se cantaba por el camino.\n\nCon Braña Sonora queremos escuchar esas historias y guardarlas antes de que se pierdan.\n\nCuéntanos en los comentarios: ¿quién subía en tu familia? ¿A qué braña? ¿Qué se cantaba?\n\n#BrañaSonora #FestivalADAR #CulturaVaqueira #Brañas #Asturias #PatrimonioInmaterial",
-       "asomo": "¿Tú también subías a la braña? ⛰️ En Asturias la braña no hace falta explicarla. Es el verano de los abuelos con el ganado, l…",
+       "texto": "Braña Sonora, paso a paso. 🌿\n\nEl Ministerio de Cultura nos ha dado una ayuda para proyectos de salvaguarda del Patrimonio Cultural Inmaterial. Con ella hacemos Braña Sonora, de julio de 2026 a diciembre de 2027.\n\n1. Grabar. En los concejos donde ya trabaja ADAR, con quienes guardan ese saber: la cultura vaqueira de las brañas, el sonido de los hórreos, las paneras y los oficios, y la tonada.\n2. Devolverlo a las escuelas rurales, con materiales en castellano y en asturiano.\n3. Crear. Tres compositoras y compositores harán residencias con ese archivo, y sus obras se estrenarán en el Festival ADAR de agosto de 2027.\n4. Compartirlo en un archivo abierto.\n\nNadie se graba sin su permiso, y cada persona revisa lo suyo antes de publicarlo.\n\nMás en festivaladar.com\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #CulturaVaqueira #MinisterioDeCultura #Asturias",
+       "asomo": "Braña Sonora, paso a paso. 🌿 El Ministerio de Cultura nos ha dado una ayuda para proyectos de salvaguarda del Patrimonio Cul…",
        "limite": 2200
       },
       "fb": {
-       "texto": "¿Tú también subías a la braña? ⛰️\n\nEn Asturias la braña no hace falta explicarla. Es el verano de los abuelos con el ganado, la cabaña, el camino de subida en mayo y el de bajada en octubre. Y lo que se cantaba por el camino.\n\nCon Braña Sonora queremos escuchar esas historias y guardarlas antes de que se pierdan.\n\nCuéntanos en los comentarios: ¿quién subía en tu familia? ¿A qué braña? ¿Qué se cantaba?\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #CulturaVaqueira #Brañas #Asturias #PatrimonioInmaterial",
-       "asomo": "¿Tú también subías a la braña? ⛰️ En Asturias la braña no hace falta explicarla. Es el verano de los abuelos con el ganado, la cabaña, el camino de subida en mayo y el de bajada en octubre. Y lo que se cantaba por el camino. Con Braña Sonora queremos escuchar esas historias y guardarlas antes de que se pierdan. Cuéntanos en los comentarios: ¿quién subía en tu familia? ¿A qué braña? ¿Qué se cantaba? https://festivaladar.com/es/ #BrañaSonora #FestivalADAR #CulturaVaqueira #Brañ…",
+       "texto": "Braña Sonora, paso a paso. 🌿\n\nEl Ministerio de Cultura nos ha dado una ayuda para proyectos de salvaguarda del Patrimonio Cultural Inmaterial. Con ella hacemos Braña Sonora, de julio de 2026 a diciembre de 2027.\n\n1. Grabar. En los concejos donde ya trabaja ADAR, con quienes guardan ese saber: la cultura vaqueira de las brañas, el sonido de los hórreos, las paneras y los oficios, y la tonada.\n2. Devolverlo a las escuelas rurales, con materiales en castellano y en asturiano.\n3. Crear. Tres compositoras y compositores harán residencias con ese archivo, y sus obras se estrenarán en el Festival ADAR de agosto de 2027.\n4. Compartirlo en un archivo abierto.\n\nNadie se graba sin su permiso, y cada persona revisa lo suyo antes de publicarlo.\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #CulturaVaqueira #MinisterioDeCultura #Asturias",
+       "asomo": "Braña Sonora, paso a paso. 🌿 El Ministerio de Cultura nos ha dado una ayuda para proyectos de salvaguarda del Patrimonio Cultural Inmaterial. Con ella hacemos Braña Sonora, de julio de 2026 a diciembre de 2027. 1. Grabar. En los concejos donde ya trabaja ADAR, con quienes guardan ese saber: la cultura vaqueira de las brañas, el sonido de los hórreos, las paneras y los oficios, y la tonada. 2. Devolverlo a las escuelas rurales, con materiales en castellano y en asturiano. 3. …",
        "limite": 63206
       }
      },
@@ -9493,6 +10139,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El 17 es San Antón, patrón de los animales, con bendiciones de ganado por toda Asturias. Buen día para pedir que nos presenten a vaqueiros, cantadores y artesanos.",
      "pegatinasMuro": true,
      "fondoAmbar": false,
@@ -9586,6 +10233,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Anuncia la llegada de Orchestra Improvvisata a Leiguarda con Culture Moves Europe. Es la residencia que financia Culture Moves Europe (Unión Europea).",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -9669,6 +10317,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "El 24 de enero es el Día Internacional de la Educación. Braña Sonora tiene una parte para escuelas rurales y este es el día para pedir que se apunten.",
      "pegatinasMuro": false,
      "fondoAmbar": false,
@@ -9762,6 +10411,7 @@
      "fotosEnteras": false,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Explica el Ritmo con Señas en un carrusel antes de que llegue Orchestra Improvvisata: es lo que más curiosidad va a dar.",
      "pegatinasMuro": false,
      "fondoAmbar": true,
@@ -9865,6 +10515,7 @@
      "fotosEnteras": true,
      "fotosExtra": [],
      "apaisado": false,
+     "adorno": null,
      "porque": "Enlaza con Braña Sonora (escuchar el paisaje) y explica nuestro formato más querido. Su artículo está en borrador: al aprobarlo, lo publico.",
      "pegatinasMuro": false,
      "fondoAmbar": false,

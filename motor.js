@@ -325,12 +325,91 @@ export function crearMotor(B) {
       } catch { /* sin logo antes que sin imagen */ }
     }
 
+    // CreArtBox's signature (B.firma = 'trapecio'): the sticker lines go centered and
+    // straight inside an amber trapezoid, like the cover of its printed program.
+    // From the top edge it bleeds and opens upwards; lower down it floats.
+    function pegatinasTrapecio(yInicio) {
+      const lineas = post.pegatinas.slice(0, 3).map((peg) => ({ texto: String(peg.texto || peg).toUpperCase(), senal: peg.senal === true }));
+      const cuerpo = Math.round(W * 0.03);
+      const paso = Math.round(cuerpo * 2.25);
+      const esp = Math.round(cuerpo * 0.24);
+      rotulo(ctx, cuerpo, B.onAccent || B.ink, esp);
+      const ancho = Math.max(...lineas.map((l) => ctx.measureText(l.texto).width));
+      sinEspaciado(ctx);
+      const sangra = yInicio == null;
+      const y0 = sangra ? 0 : yInicio;
+      const dentro = sangra ? safeTop + Math.round(H * 0.04) : Math.round(cuerpo * 1.5);
+      const alto = dentro + paso * (lineas.length - 1) + Math.round(cuerpo * 2.1);
+      const cx = W / 2;
+      const abajo = Math.min(W - pad, ancho + Math.round(W * 0.2));
+      const arriba = Math.min(W, abajo + Math.round(W * 0.14));
+      ctx.beginPath();
+      ctx.moveTo(cx - arriba / 2, y0);
+      ctx.lineTo(cx + arriba / 2, y0);
+      ctx.lineTo(cx + abajo / 2, y0 + alto);
+      ctx.lineTo(cx - abajo / 2, y0 + alto);
+      ctx.closePath();
+      ctx.fillStyle = B.accent; ctx.fill();
+      const tinta = B.onAccent || B.ink;
+      ctx.textAlign = 'center';
+      lineas.forEach((l, i) => {
+        const y = y0 + dentro + cuerpo + i * paso;
+        rotulo(ctx, cuerpo, tinta, esp);
+        ctx.fillText(l.texto, cx, y);
+        if (l.senal) {
+          // The line to act on gets the two side rules of the program cover.
+          const w2 = ctx.measureText(l.texto).width;
+          const raya = Math.round(W * 0.04), hueco = Math.round(W * 0.018);
+          ctx.fillRect(cx - w2 / 2 - hueco - raya, y - Math.round(cuerpo * 0.36), raya, 2);
+          ctx.fillRect(cx + w2 / 2 + hueco, y - Math.round(cuerpo * 0.36), raya, 2);
+        }
+        sinEspaciado(ctx);
+      });
+      ctx.textAlign = 'left';
+      return y0 + alto;
+    }
+
+    // Christmas trim (`adorno: 'navidad'`, asked Nov 25): a garland of warm bulbs
+    // across the top and light snow. Seeded, so every render is the same.
+    function navidad() {
+      let semilla = 7;
+      const azar = () => ((semilla = (semilla * 16807) % 2147483647) / 2147483647);
+      // Snow: small soft dots, denser at the top.
+      for (let i = 0; i < Math.round(W * 0.12); i++) {
+        const x = azar() * W, y = Math.pow(azar(), 1.6) * H;
+        const r = W * (0.0018 + azar() * 0.0042);
+        const gr = ctx.createRadialGradient(x, y, 0, x, y, r * 2.2);
+        gr.addColorStop(0, 'rgba(255,255,255,0.9)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(x, y, r * 2.2, 0, Math.PI * 2); ctx.fill();
+      }
+      // Garland: two swags hanging from the top edge, with glowing bulbs.
+      const colores = ['#E8433A', '#F5D72F', '#3FA65A', '#F7F1E1'];
+      const cuelga = H * (fmt === 'fb' ? 0.10 : 0.045);
+      const tramos = fmt === 'fb' ? 3 : 2;
+      ctx.lineWidth = Math.max(2, W * 0.003); ctx.strokeStyle = 'rgba(20,16,12,0.85)';
+      let n = 0;
+      for (let t = 0; t < tramos; t++) {
+        const x0 = (W / tramos) * t, x1 = (W / tramos) * (t + 1), cx = (x0 + x1) / 2;
+        const punto = (u) => ({ x: x0 + (x1 - x0) * u, y: 4 * cuelga * u * (1 - u) + 2 });
+        ctx.beginPath(); ctx.moveTo(x0, 2); ctx.quadraticCurveTo(cx, cuelga * 2, x1, 2); ctx.stroke();
+        for (let k = 1; k < 6; k++) {
+          const { x, y } = punto(k / 6);
+          const c = colores[n++ % colores.length], r = W * 0.011;
+          const halo = ctx.createRadialGradient(x, y + r, 0, x, y + r, r * 4);
+          halo.addColorStop(0, c + 'AA'); halo.addColorStop(1, c + '00');
+          ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(x, y + r, r * 4, 0, Math.PI * 2); ctx.fill();
+          ctx.fillStyle = c; ctx.beginPath(); ctx.ellipse(x, y + r * 1.1, r * 0.7, r, 0, 0, Math.PI * 2); ctx.fill();
+        }
+      }
+    }
+
     function pegatinas(yInicio) {
       // En el muro solo si la ficha lo pide (`pegatinasMuro`): hay posts que
       // quieren el titular y los datos pegados a la foto, como la historia.
       // Solo en la portada; en Facebook nunca, que es apaisado y no cabe.
       const enMuro = post.pegatinasMuro && fmt === 'ig' && idx === 0;
       if ((fmt !== 'story' && !enMuro) || !post.pegatinas || !post.pegatinas.length) return;
+      if (B.firma === 'trapecio') return pegatinasTrapecio(yInicio);
       const alto = Math.round(W * 0.075);
       const cuerpo = Math.round(alto * 0.42);
       let y = yInicio ?? safeTop + Math.round(H * 0.055);
@@ -366,8 +445,10 @@ export function crearMotor(B) {
       // Ámbar: el fondo entero del color de señal, el titular grande en negro
       // y las pegatinas. Sin foto. Para avisos que tienen que saltar a la vista.
       if (estilo === 'ambar') {
-        const tinta = B.onAccent || B.ink;
-        ctx.fillStyle = B.accent; ctx.fillRect(0, 0, W, H);
+        // CreArtBox: the same notice on sala (ink), and the amber goes to the trapezoid.
+        const trap = B.firma === 'trapecio';
+        const tinta = trap ? B.paper : (B.onAccent || B.ink);
+        ctx.fillStyle = trap ? B.ink : B.accent; ctx.fillRect(0, 0, W, H);
         const conPeg = (fmt === 'story' || (post.pegatinasMuro && fmt === 'ig')) && post.pegatinas && post.pegatinas.length;
         const arriba = pad + safeTop;
         if (!conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(SELLO, pad, arriba + rotSize); sinEspaciado(ctx); }
@@ -381,9 +462,14 @@ export function crearMotor(B) {
         const af = encajar(ctx, slide.title, W - pad * 2 - safeRight, (suelo - techo) * (conPeg ? 1 : 0.78), TW, DISPLAY, Math.round(W * 0.16), Math.round(W * 0.05), PLOMO);
         ctx.font = `${TW} ${af.size}px ${DISPLAY}`; ctx.fillStyle = tinta;
         const ay = suelo - af.lines.length * af.size * PLOMO + af.size * 0.82;
-        ctx.fillRect(pad, ay - af.size * 1.15, Math.round(W * 0.16), Math.max(5, Math.round(W * 0.008)));
-        af.lines.forEach((l, i) => ctx.fillText(l, pad, ay + i * af.size * PLOMO));
-        if (conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(SELLO, pad, H - safeBottom - Math.round(pad * 0.55)); sinEspaciado(ctx); }
+        // CreArtBox centers it under its centered trapezoid, like its program cover.
+        const ax = trap ? W / 2 : pad;
+        const raya = Math.round(W * 0.16);
+        ctx.fillRect(trap ? ax - raya / 2 : pad, ay - af.size * 1.15, raya, Math.max(5, Math.round(W * 0.008)));
+        if (trap) ctx.textAlign = 'center';
+        af.lines.forEach((l, i) => ctx.fillText(l, ax, ay + i * af.size * PLOMO));
+        if (conPeg) { rotulo(ctx, rotSize, tinta, Math.round(rotSize * 0.16)); ctx.fillText(SELLO, ax, H - safeBottom - Math.round(pad * 0.55)); sinEspaciado(ctx); }
+        ctx.textAlign = 'left';
         pegatinas();
         await logo(post.logo && (fmt === 'story' ? post.logo.historia : (post.logo.diapositivas || []).includes(idx)));
         return;
@@ -397,6 +483,7 @@ export function crearMotor(B) {
         const g = ctx.createLinearGradient(0, 0, 0, H * 0.45);
         g.addColorStop(0, rgba(B.ink, 0.55)); g.addColorStop(1, rgba(B.ink, 0));
         ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.45);
+        if (post.adorno === 'navidad') navidad();
         const arriba = pad + safeTop;
         rotulo(ctx, rotSize, B.overPhotoInk, Math.round(rotSize * 0.16));
         ctx.fillText(SELLO, pad, arriba + rotSize);

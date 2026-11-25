@@ -133,6 +133,8 @@ function marcaParaDibujar(b) {
     fontsHref: b.fontsHref, fontLoads: b.fontLoads,
     // Titulares fijados al corte de display y con el tracking del manual.
     displayPin: b.displayPin, displayTracking: b.displayTracking,
+    // The brand's graphic signature: CreArtBox draws its stickers as a trapezoid (asked Nov 25).
+    firma: b.firma || null,
   };
 }
 
@@ -220,6 +222,7 @@ for (const nombre of marcas) {
         // Detrás de la portada dibujada: fotos tal cual, ya recortadas.
         fotosExtra: (p.fotosExtra || []).map(urlImagen),
         apaisado: !!p.apaisado,
+        adorno: p.adorno || null,
         // Por qué este post y ese día, en una o dos frases.
         porque: p.porque || null,
         pegatinasMuro: !!p.pegatinasMuro,

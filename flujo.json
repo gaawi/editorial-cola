@@ -1601,7 +1601,7 @@
       {
        "red": "ig",
        "cuando": "2026-12-04T19:30:00+01:00",
-       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nLa historia completa, en el blog de festivaladar.com\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y Atlantic, de Marcos Fernández.\n\nLa historia completa, en el blog de festivaladar.com\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
        "imagenes": [
         "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg",
         "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image72.jpg",
@@ -1611,7 +1611,7 @@
       {
        "red": "fb",
        "cuando": "2026-12-04T19:32:00+01:00",
-       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y una obra nueva escrita para esa noche: Atlantic, de Marcos Fernández.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
+       "texto": "Así empezó todo. 📸\n\n14 de agosto de 2021, campo de la iglesia de Leiguarda. Primer concierto de ADAR.\n\nHabía hecho sol toda la semana y esa noche empezó a orbayar. Aun así vinieron más de 120 personas, en una aldea de apenas cien vecinos, y la música sonó entre la bruma.\n\nSonaron Mendelssohn, Haydn, Falla, John Harbison y Atlantic, de Marcos Fernández.\n\nhttps://festivaladar.com/es/blog/el-orballo-del-primer-concierto/\n\n#FestivalADAR #Leiguarda #Asturias #2021 #Recuerdos",
        "imagenes": [
         "https://creartbox-media-cdn.b-cdn.net/adarimages/ADAR_Eventos/2021/14_Concierto_de_Inauguracion_en_Leiguarda/image71.jpg"
        ]
@@ -1978,19 +1978,25 @@
      "texto": "La foto del hórreo primera no me gusta",
      "quien": "gaawi",
      "fecha": "2026-11-23T19:12:35.134Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Now a poster: yellow background, \"Braña Sonora\" in large type, the stickers \"¡Nuevo proyecto!\", \"Julio 2026 · diciembre 2027\" and \"Vaqueiros · hórreos · tonada\", and the Ministry logo. No hórreo photo. The caption opens with \"¡Nuevo proyecto!\".",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     },
     {
      "texto": "La foto no está bien algo más tipo cartel",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:27:50.917Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Now a poster: yellow background, \"Braña Sonora\" in large type, the stickers \"¡Nuevo proyecto!\", \"Julio 2026 · diciembre 2027\" and \"Vaqueiros · hórreos · tonada\", and the Ministry logo. No hórreo photo. The caption opens with \"¡Nuevo proyecto!\".",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     },
     {
      "texto": "Es un nuevo proyecto!",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:28:07.634Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Now a poster: yellow background, \"Braña Sonora\" in large type, the stickers \"¡Nuevo proyecto!\", \"Julio 2026 · diciembre 2027\" and \"Vaqueiros · hórreos · tonada\", and the Ministry logo. No hórreo photo. The caption opens with \"¡Nuevo proyecto!\".",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ]
   },
@@ -2183,6 +2189,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:29:58.442Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-25T15:17:24.686Z"
     }
    ],
    "sugerencias": [
@@ -2203,7 +2214,47 @@
      "fechaRespuesta": "2026-11-23T14:18:18.782963+00:00"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/post-paseo-sonoro": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-30T19:30:00+01:00",
+       "texto": "En un paseo sonoro, decides tú. 🚶\n\nLos músicos se reparten por un espacio y el público lo recorre: eliges el orden, la distancia y cuánto te quedas delante de cada cosa. Nadie sale con el mismo concierto.\n\nEl 15 de agosto de 2025 lo hicimos en el claustro del Parador de Corias (Cangas del Narcea): un violonchelo junto al seto, un violín bajo los arcos y el público paseando por el jardín.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #PaseoSonoro #ParadorDeCorias #CangasDelNarcea #Asturias",
+       "imagenes": [
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.15_Claustro%20del%20Parador%20de%20Corias_Fotos/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB_4.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.15_Claustro%20del%20Parador%20de%20Corias_Fotos/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB_2.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.15_Claustro%20del%20Parador%20de%20Corias_Fotos/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB_5.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.15_Claustro%20del%20Parador%20de%20Corias_Fotos/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB_7.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.15_Claustro%20del%20Parador%20de%20Corias_Fotos/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB_6.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2027-01-30T19:32:00+01:00",
+       "texto": "En un paseo sonoro, decides tú. 🚶\n\nLos músicos se reparten por un espacio y el público lo recorre: eliges el orden, la distancia y cuánto te quedas delante de cada cosa. Nadie sale con el mismo concierto.\n\nEl 15 de agosto de 2025 lo hicimos en el claustro del Parador de Corias (Cangas del Narcea): un violonchelo junto al seto, un violín bajo los arcos y el público paseando por el jardín.\n\nhttps://festivaladar.com/es/blog/que-es-un-paseo-sonoro/\n\n#FestivalADAR #PaseoSonoro #ParadorDeCorias #CangasDelNarcea #Asturias",
+       "imagenes": [
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.15_Claustro%20del%20Parador%20de%20Corias_Fotos/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB/25.08.15_Claustro%20del%20Parador%20de%20Corias_WEB_4.jpg"
+       ]
+      }
+     ]
+    },
+    "es/post-paseo-sonoro#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-31T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-post-paseo-sonoro-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/orchestra-improvvisata-anuncio": {
    "historial": [
@@ -2231,7 +2282,9 @@
      "texto": "La foto bien pero está pixelada",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:29:39.930Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Their photo is only 720 px wide, and their website has no bigger one. Could you ask them for a high-resolution photo? I'll swap it in when it arrives.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ]
   },
@@ -2246,6 +2299,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:29:21.781Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-25T15:17:23.190Z"
     }
    ],
    "sugerencias": [
@@ -2258,7 +2316,43 @@
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/brana-sonora-buscamos-portadores": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-17T12:00:00+01:00",
+       "texto": "Hoy es San Antón, y en muchos pueblos de Asturias se bendice al ganado. 🐄\n\nPara Braña Sonora buscamos a las personas que guardan esa memoria: vaqueiros y vaqueiras, cantadores y cantadoras de tonada, constructores en piedra seca, panaderas, ferradores y otros oficios.\n\n¿Tienes un abuelo que cantaba en la braña? ¿Una vecina que sabe cómo se hacía una panera? Escríbenos a leiguardamusic@gmail.com\n\nSolo grabamos con permiso, y cada persona revisa lo suyo antes de que se publique.\n\nMás en festivaladar.com\n\n#BrañaSonora #FestivalADAR #SanAntón #CulturaVaqueira #Tonada #Asturias",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-brana-sonora-buscamos-portadores-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2027-01-17T12:02:00+01:00",
+       "texto": "Hoy es San Antón, y en muchos pueblos de Asturias se bendice al ganado. 🐄\n\nPara Braña Sonora buscamos a las personas que guardan esa memoria: vaqueiros y vaqueiras, cantadores y cantadoras de tonada, constructores en piedra seca, panaderas, ferradores y otros oficios.\n\n¿Tienes un abuelo que cantaba en la braña? ¿Una vecina que sabe cómo se hacía una panera? Escríbenos a leiguardamusic@gmail.com\n\nSolo grabamos con permiso, y cada persona revisa lo suyo antes de que se publique.\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #SanAntón #CulturaVaqueira #Tonada #Asturias",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-brana-sonora-buscamos-portadores-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/brana-sonora-buscamos-portadores#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-18T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-brana-sonora-buscamos-portadores-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/post-compositoras": {
    "historial": [
@@ -2314,17 +2408,16 @@
       {
        "red": "ig",
        "cuando": "2026-12-20T13:00:00+01:00",
-       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
+       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade y Caroline Shaw por Simon van Boxtel.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
        "imagenes": [
         "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-andrea-casarrubios-45.jpg",
-        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-caroline-shaw-45.jpg",
-        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-jessie-montgomery-45.jpg"
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-caroline-shaw-45.jpg"
        ]
       },
       {
        "red": "fb",
        "cuando": "2026-12-20T13:02:00+01:00",
-       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Jessie Montgomery, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade, Caroline Shaw por Simon van Boxtel y Jessie Montgomery, de su web.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
+       "texto": "Pulitzer, Grammy, Carnegie Hall. Así es la lista de compositoras que han sonado en ADAR. 🎼\n\nAndrea Casarrubios, Caroline Shaw, Celeste Oram, Mizuko Kaji…\n\nSus obras son de lo mejor que se escribe hoy, y en cada edición el público lo nota.\n\nFotos: Andrea Casarrubios por Titilayo Ayangade y Caroline Shaw por Simon van Boxtel.\n\nhttps://festivaladar.com/es/blog/las-compositoras-que-programamos/\n\n#FestivalADAR #Compositoras #MujeresEnLaMúsica #MúsicaContemporánea #Asturias",
        "imagenes": [
         "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/compositora-andrea-casarrubios-45.jpg"
        ]
@@ -2367,6 +2460,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-23T19:10:18.333Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-25T15:17:18.928Z"
     }
    ],
    "sugerencias": [
@@ -2395,7 +2493,46 @@
      "fechaRespuesta": "2026-11-23T14:18:18.782963+00:00"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/como-suena-un-horreo": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-07T19:30:00+01:00",
+       "texto": "Los hórreos del festival 🌾\n\nEn 2025 tocamos en Susacasa Agrocultural, en Gozón, y en la casería de Paz Mesa y Xandru González, en Puerma (Las Regueras).\n\nEn 2026 fue La Figal de Xugabolos, en Casazorrina (Salas). Ignacio Prego dio allí un recital de clave el 4 de agosto.\n\n¿Tienes un hórreo o una panera? Las bases del Concurso de Hórreos y Paneras 2027 se publican en marzo.\n\nLo contamos en el blog de festivaladar.com\n\n#FestivalADAR #Hórreos #Paneras #PatrimonioAsturiano #Asturias",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-como-suena-un-horreo-ig-1.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2026/04.08.26_La%20Figal%20de%20Xugabolos_Fotos/04.08.26_La%20Figal%20de%20Xugabolos_WEB/04.08.26_La%20Figal%20de%20Xugabolos_WEB_2.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.05_Susacasa%20Agrocultural_Fotos/25.08.05_Susacasa%20Agrocultural_WEB/25.08.05_Susacasa%20Agrocultural_WEB_1.jpg",
+        "https://creartbox-archive.b-cdn.net/adarimages/ADAR_Eventos/2025/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_Fotos/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB/25.08.11_Caser%C3%ADa%20de%20Paz%20Mesa%20y%20Xandru%20Gonz%C3%A1lez_WEB_1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-12-07T19:32:00+01:00",
+       "texto": "Los hórreos del festival 🌾\n\nEn 2025 tocamos en Susacasa Agrocultural, en Gozón, y en la casería de Paz Mesa y Xandru González, en Puerma (Las Regueras).\n\nEn 2026 fue La Figal de Xugabolos, en Casazorrina (Salas). Ignacio Prego dio allí un recital de clave el 4 de agosto.\n\n¿Tienes un hórreo o una panera? Las bases del Concurso de Hórreos y Paneras 2027 se publican en marzo.\n\nhttps://festivaladar.com/es/blog/el-horreo-como-sala-de-conciertos/\n\n#FestivalADAR #Hórreos #Paneras #PatrimonioAsturiano #Asturias",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-como-suena-un-horreo-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/como-suena-un-horreo#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-08T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-como-suena-un-horreo-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/propuestas-adar-2027": {
    "historial": [
@@ -2448,7 +2585,9 @@
      "texto": "Atlantic no se escribió para esa ocasión",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:31:05.303Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Fixed: Atlantic is now just one piece on the 2021 program. I removed the same claim from \"Seis veranos\", \"Por qué encargamos música nueva\" and the Dec 4 Instagram post, which is already queued.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ]
   },
@@ -2718,6 +2857,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:29:12.624Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-25T15:17:21.847Z"
     }
    ],
    "sugerencias": [
@@ -2733,10 +2877,48 @@
      "texto": "No me convence … tiene que hablar más de la grant y del proyecto que del nombre",
      "quien": "gaawi",
      "fecha": "2026-11-23T19:13:15.780Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Rewritten around the grant and the project. New title: \"Qué es Braña Sonora, paso a paso\". The caption explains the Ministry of Culture grant (July 2026 to December 2027) and the four steps: record, take it back to rural schools, three composition residencies with premieres in August 2027, and an open archive. Prepared for Jan 12.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/brana-sonora-vaqueiros": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-12T19:30:00+01:00",
+       "texto": "Braña Sonora, paso a paso. 🌿\n\nEl Ministerio de Cultura nos ha dado una ayuda para proyectos de salvaguarda del Patrimonio Cultural Inmaterial. Con ella hacemos Braña Sonora, de julio de 2026 a diciembre de 2027.\n\n1. Grabar. En los concejos donde ya trabaja ADAR, con quienes guardan ese saber: la cultura vaqueira de las brañas, el sonido de los hórreos, las paneras y los oficios, y la tonada.\n2. Devolverlo a las escuelas rurales, con materiales en castellano y en asturiano.\n3. Crear. Tres compositoras y compositores harán residencias con ese archivo, y sus obras se estrenarán en el Festival ADAR de agosto de 2027.\n4. Compartirlo en un archivo abierto.\n\nNadie se graba sin su permiso, y cada persona revisa lo suyo antes de publicarlo.\n\nMás en festivaladar.com\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #CulturaVaqueira #MinisterioDeCultura #Asturias",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-brana-sonora-vaqueiros-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2027-01-12T19:32:00+01:00",
+       "texto": "Braña Sonora, paso a paso. 🌿\n\nEl Ministerio de Cultura nos ha dado una ayuda para proyectos de salvaguarda del Patrimonio Cultural Inmaterial. Con ella hacemos Braña Sonora, de julio de 2026 a diciembre de 2027.\n\n1. Grabar. En los concejos donde ya trabaja ADAR, con quienes guardan ese saber: la cultura vaqueira de las brañas, el sonido de los hórreos, las paneras y los oficios, y la tonada.\n2. Devolverlo a las escuelas rurales, con materiales en castellano y en asturiano.\n3. Crear. Tres compositoras y compositores harán residencias con ese archivo, y sus obras se estrenarán en el Festival ADAR de agosto de 2027.\n4. Compartirlo en un archivo abierto.\n\nNadie se graba sin su permiso, y cada persona revisa lo suyo antes de publicarlo.\n\nhttps://festivaladar.com/es/\n\n#BrañaSonora #FestivalADAR #PatrimonioInmaterial #CulturaVaqueira #MinisterioDeCultura #Asturias",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-brana-sonora-vaqueiros-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/brana-sonora-vaqueiros#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2027-01-13T13:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-brana-sonora-vaqueiros-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/felices-fiestas-2026": {
    "historial": [
@@ -2754,6 +2936,11 @@
      "accion": "aprobar",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:26:32.674Z"
+    },
+    {
+     "accion": "preparar",
+     "quien": "claude",
+     "fecha": "2026-11-25T15:17:20.324Z"
     }
    ],
    "sugerencias": [
@@ -2769,10 +2956,48 @@
      "texto": "Los gráficos alrededor de la foto más navideños",
      "quien": "gaawi",
      "fecha": "2026-11-23T19:10:47.094Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Added a garland of red, yellow, green and white lights across the top and light snow over the photo, on the post, Facebook and the story. Prepared for Dec 23, with the story on Dec 24.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ],
-   "fase": "aprobado"
+   "fase": "preparado",
+   "preparado": {
+    "es/felices-fiestas-2026": {
+     "tipo": "post",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-23T12:00:00+01:00",
+       "texto": "¡Felices fiestas desde Leiguarda! 🎄✨\n\nEste año hubo luces en hórreos, iglesias y campos de aldea, y mucha gente escuchando a nuestro lado. Gracias por venir y por abrirnos vuestros pueblos.\n\nOs deseamos una Navidad tranquila, con buena música y buena mesa. Nos vemos en 2027.\n\n#FestivalADAR #FelicesFiestas #Navidad #FelizNavidad #Asturias #Leiguarda",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-felices-fiestas-2026-ig-1.jpg"
+       ]
+      },
+      {
+       "red": "fb",
+       "cuando": "2026-12-23T12:02:00+01:00",
+       "texto": "¡Felices fiestas desde Leiguarda! 🎄✨\n\nEste año hubo luces en hórreos, iglesias y campos de aldea, y mucha gente escuchando a nuestro lado. Gracias por venir y por abrirnos vuestros pueblos.\n\nOs deseamos una Navidad tranquila, con buena música y buena mesa. Nos vemos en 2027.\n\nhttps://festivaladar.com/es/\n\n#FestivalADAR #FelicesFiestas #Navidad #FelizNavidad #Asturias #Leiguarda",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-felices-fiestas-2026-fb-1.jpg"
+       ]
+      }
+     ]
+    },
+    "es/felices-fiestas-2026#historia": {
+     "tipo": "historia",
+     "redes": [
+      {
+       "red": "ig",
+       "cuando": "2026-12-24T12:00:00+01:00",
+       "texto": "",
+       "imagenes": [
+        "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-felices-fiestas-2026-st-1.jpg"
+       ]
+      }
+     ]
+    }
+   }
   },
   "es/seis-ediciones-de-adar": {
    "historial": [
@@ -2838,7 +3063,9 @@
      "texto": "Más fotos, las tengo que poder ver todas",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:31:29.056Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Added every photo there is: Susacasa 2025 (6), Puerma 2025 (10) and La Figal 2026 (8), in a gallery after each place, whole and uncropped.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ]
   },
@@ -2883,13 +3110,17 @@
      "texto": "Pon fotos del rodaje",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:30:18.400Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "There are no filming photos in the archive. Please send me the ones you have (or the folder) and I'll add them.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     },
     {
      "texto": "Pidemelas",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:30:26.081Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "There are no filming photos in the archive. Please send me the ones you have (or the folder) and I'll add them.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ]
   },
@@ -3152,7 +3383,9 @@
      "texto": "Montgomery no se toco",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:32:40.514Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Montgomery removed. I also took her out of \"Las compositoras\" and out of the Dec 20 Instagram post, which is already queued: its carousel now has Casarrubios and Shaw.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ]
   },
@@ -3179,7 +3412,9 @@
      "texto": "Esto de la cuota no lo entiendo..",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:33:55.556Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "Rewritten without the quota idea. Title: \"Las compositoras que programamos\". One section each for Casarrubios, Shaw, Oram and Kaji: what was played, where and when.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ]
   },
@@ -3222,7 +3457,9 @@
      "texto": "Poner la foto de la nueva España?",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:38:52.330Z",
-     "hecha": false
+     "hecha": true,
+     "respuesta": "I can't find an image of the La Nueva España clipping in the archive (the press post only has a concert photo). If you send me a photo or scan of the clipping, I'll add it.",
+     "fechaRespuesta": "2026-11-25T15:17:44.330Z"
     }
    ]
   },

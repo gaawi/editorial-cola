@@ -2205,6 +2205,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T12:39:36.976Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:29:39.930Z"
     }
    ],
    "sugerencias": [
@@ -2215,6 +2220,12 @@
      "hecha": true,
      "respuesta": "Foto de fondo: el grupo tocando en círculo, de su dossier. Con el logo de la UE y el Goethe-Institut (obligatorio en Culture Moves Europe).",
      "fechaRespuesta": "2026-11-22T12:53:11.607065Z"
+    },
+    {
+     "texto": "La foto bien pero está pixelada",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:29:39.930Z",
+     "hecha": false
     }
    ]
   },

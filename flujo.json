@@ -2651,6 +2651,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T19:10:47.094Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:26:32.674Z"
     }
    ],
    "sugerencias": [
@@ -2668,7 +2673,8 @@
      "fecha": "2026-11-23T19:10:47.094Z",
      "hecha": false
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "es/seis-ediciones-de-adar": {
    "historial": [

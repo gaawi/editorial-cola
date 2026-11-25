@@ -3184,6 +3184,16 @@
     }
    ],
    "faseBlog": "aprobado"
+  },
+  "es/de-nueva-york-a-una-aldea": {
+   "historial": [
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:38:37.193Z"
+    }
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

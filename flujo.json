@@ -3152,6 +3152,16 @@
      "hecha": false
     }
    ]
+  },
+  "es/equilibrium-residencia-la-casona": {
+   "historial": [
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:36:02.456Z"
+    }
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

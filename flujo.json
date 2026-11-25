@@ -3090,6 +3090,23 @@
     }
    ],
    "faseBlog": "aprobado"
+  },
+  "es/somiedo-musica-donde-viven-los-osos": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:32:40.514Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "Montgomery no se toco",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:32:40.514Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

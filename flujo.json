@@ -2596,6 +2596,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:35:17.730Z"
+    },
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:37:21.909Z"
     }
    ],
    "sugerencias": [
@@ -2607,7 +2612,8 @@
      "respuesta": "Cambiada por la foto de Žilvinas Brazauskas de su página de artista en la web.",
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
     }
-   ]
+   ],
+   "faseBlog": "aprobado"
   },
   "es/dia-montanas-somiedo": {
    "historial": [

@@ -2428,6 +2428,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-22T16:31:38.186Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:31:05.303Z"
     }
    ],
    "sugerencias": [
@@ -2438,6 +2443,12 @@
      "hecha": true,
      "respuesta": "Quitado del artículo y de la entradilla. Ahora: «el orballo obliga a decidir sobre la marcha y a cuidar los instrumentos. Y eso hicimos.» También lo he quitado del post del 4 de diciembre (ya preparado otra vez).",
      "fechaRespuesta": "2026-11-22T16:44:18.774657+00:00"
+    },
+    {
+     "texto": "Atlantic no se escribió para esa ocasión",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:31:05.303Z",
+     "hecha": false
     }
    ]
   },

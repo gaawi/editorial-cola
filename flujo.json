@@ -3123,6 +3123,23 @@
     }
    ],
    "faseBlog": "aprobado"
+  },
+  "es/las-compositoras-que-programamos": {
+   "historial": [
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:33:55.556Z"
+    }
+   ],
+   "sugerencias": [
+    {
+     "texto": "Esto de la cuota no lo entiendo..",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:33:55.556Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

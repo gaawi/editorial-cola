@@ -2661,6 +2661,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-23T19:13:15.780Z"
+    },
+    {
+     "accion": "aprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:29:12.624Z"
     }
    ],
    "sugerencias": [
@@ -2678,7 +2683,8 @@
      "fecha": "2026-11-23T19:13:15.780Z",
      "hecha": false
     }
-   ]
+   ],
+   "fase": "aprobado"
   },
   "es/felices-fiestas-2026": {
    "historial": [

@@ -3207,6 +3207,16 @@
      "hecha": false
     }
    ]
+  },
+  "es/andrea-casarrubios-seven": {
+   "historial": [
+    {
+     "accion": "blogAprobar",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:39:09.622Z"
+    }
+   ],
+   "faseBlog": "aprobado"
   }
  },
  "ideas": [

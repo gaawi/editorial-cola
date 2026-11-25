@@ -3191,9 +3191,22 @@
      "accion": "blogAprobar",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:38:37.193Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:38:52.330Z"
     }
    ],
-   "faseBlog": "aprobado"
+   "faseBlog": "aprobado",
+   "sugerencias": [
+    {
+     "texto": "Poner la foto de la nueva España?",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:38:52.330Z",
+     "hecha": false
+    }
+   ]
   }
  },
  "ideas": [

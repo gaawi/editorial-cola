@@ -1950,6 +1950,11 @@
      "accion": "sugerir",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:27:50.917Z"
+    },
+    {
+     "accion": "sugerir",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:28:07.634Z"
     }
    ],
    "sugerencias": [
@@ -1979,6 +1984,12 @@
      "texto": "La foto no está bien algo más tipo cartel",
      "quien": "gaawi",
      "fecha": "2026-11-25T00:27:50.917Z",
+     "hecha": false
+    },
+    {
+     "texto": "Es un nuevo proyecto!",
+     "quien": "gaawi",
+     "fecha": "2026-11-25T00:28:07.634Z",
      "hecha": false
     }
    ]

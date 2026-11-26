@@ -47,6 +47,8 @@
     </div>
     <h2 class="meses-titulo">Which account?</h2>
     <div id="cuentas-lista" class="cuentas-lista"></div>
+    <button id="ver-publicado" class="ver-publicado"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.9"/></svg>
+      <span><b>Published</b><small>Instagram, Facebook and blog · both accounts · live likes</small></span><span class="cuenta-flecha">›</span></button>
   </section>
   <div class="cabeza-vista" id="cabeza-vista" hidden>
     <p class="cabeza-cuenta" id="cabeza-cuenta"></p>
@@ -253,6 +255,30 @@
     <button class="rv-si" id="rv-si"><i></i><span>Approve</span></button>
     <button class="rv-b" id="rv-mas" aria-label="More actions"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18.5" cy="12" r="1.4"/></svg></button>
     <button class="rv-b" id="rv-alante" aria-label="Next"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </nav>
+</div>
+
+<div id="pub" class="pub" hidden>
+  <header class="pub-cab">
+    <button class="pub-volver" id="pub-volver" aria-label="Back"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <b class="pub-titulo">Published</b>
+    <span class="pub-vivo" id="pub-vivo"></span>
+  </header>
+  <nav class="pub-redes" id="pub-redes">
+    <button data-red="ig" class="on">Instagram</button><button data-red="fb">Facebook</button><button data-red="blog">Blog</button>
+  </nav>
+  <nav class="pub-marcas" id="pub-marcas">
+    <button data-marca="" class="on">Both</button><button data-marca="adar">Festival ADAR</button><button data-marca="creartbox">CreArtBox</button>
+  </nav>
+  <div class="pub-feed" id="pub-feed"></div>
+</div>
+<div id="lector" class="revision lector" hidden>
+  <div class="rv-mazo"><section class="rv-slide rv-es-blog actual"><div class="rv-media" id="lector-media"></div></section></div>
+  <nav class="rv-barra">
+    <button class="rv-b rv-salir" id="lector-salir"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Close</span></button>
+    <button class="rv-b" id="lector-atras" aria-label="Previous page"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <a class="rv-si rv-si-blog" id="lector-web" target="_blank" rel="noopener"><span>Open on the website</span></a>
+    <button class="rv-b" id="lector-alante" aria-label="Next page"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
   </nav>
 </div>
 

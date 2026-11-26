@@ -2854,3 +2854,216 @@ document.addEventListener('click', (e) => {
   const m = e.target.closest('.nota-marca');
   if (m && !String(getSelection()).trim()) { e.stopPropagation(); aviso('Your note: ' + m.dataset.nota); }
 }, true);
+
+// ── Published: everything that went out, both accounts mixed (Nov 26) ───
+// Instagram and Facebook as they look on the networks, with likes, comments
+// and shares read live from Meta; the blog as a paginated magazine.
+const PUB = { red: 'ig', marca: '', posts: [], despues: {}, reloj: null, hora: null };
+const numero = (n) => n == null ? '' : n >= 10000 ? (n / 1000).toFixed(0) + 'K' : n >= 1000 ? (n / 1000).toFixed(1).replace('.0', '') + 'K' : String(n);
+const marcasPub = () => PUB.marca ? [PUB.marca] : Object.keys(DATOS.marcas);
+
+function abrirPublicado() {
+  $('#pub').hidden = false;
+  document.body.classList.add('en-pub');
+  cargarPublicado(true);
+  clearInterval(PUB.reloj);
+  // Live: the counters refresh every 45 seconds while the view is open.
+  PUB.reloj = setInterval(() => { if (!document.hidden && PUB.red !== 'blog') refrescarContadores(); }, 45000);
+}
+function cerrarPublicado() {
+  $('#pub').hidden = true;
+  document.body.classList.remove('en-pub');
+  clearInterval(PUB.reloj);
+}
+$('#ver-publicado').addEventListener('click', abrirPublicado);
+$('#pub-volver').addEventListener('click', cerrarPublicado);
+$('#pub-redes').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  PUB.red = b.dataset.red;
+  $('#pub-redes').querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b));
+  cargarPublicado(true);
+});
+$('#pub-marcas').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  PUB.marca = b.dataset.marca;
+  $('#pub-marcas').querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b));
+  cargarPublicado(true);
+});
+
+async function pedirPublicado(marca, red, despues) {
+  const r = await fetch(`/api/meta-estado?publicado=${red}&marca=${marca}${despues ? '&despues=' + encodeURIComponent(despues) : ''}`, { credentials: 'same-origin', cache: 'no-store' });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok || !j.ok) throw new Error(j.error || `Error ${r.status}`);
+  return j;
+}
+
+// Without a connection to Meta: the last saved history (numbers from that day).
+async function historicoDe(marca, red) {
+  const r = await fetch(`datos/historico-${marca}.json`, { cache: 'no-store' });
+  const d = await r.json();
+  if (red === 'fb') return (d.facebook || []).map((x) => ({ id: x.url, url: x.url, hora: x.fecha + 'T12:00:00Z', texto: x.texto || '', imagenes: x.imagen ? [x.imagen] : [], likes: null, comentarios: null, compartidos: null }));
+  return d.posts.map(([fecha, url, tipo, likes]) => {
+    const code = (url.match(/\/(?:p|reel)\/([^/]+)/) || [])[1] || '';
+    const t = d.textos[url] || {};
+    return { id: url, url, hora: t.hora || fecha, texto: t.texto || '', tipo, imagenes: [`datos/miniaturas/${fecha.replace(/-/g, '')}-${code}.jpg`], cuadrada: true, likes, comentarios: t.comentarios ?? null, compartidos: null };
+  });
+}
+
+async function cargarPublicado(desdeCero) {
+  const feed = $('#pub-feed');
+  if (PUB.red === 'blog') return pintarBlogPublicado();
+  const red = PUB.red;
+  if (desdeCero) { PUB.posts = []; PUB.despues = {}; PUB.fuente = 'vivo'; feed.innerHTML = '<p class="pub-espera">Loading…</p>'; }
+  const nuevos = [];
+  for (const m of marcasPub()) {
+    if (!desdeCero && !PUB.despues[m]) continue;
+    try {
+      const j = await pedirPublicado(m, red, desdeCero ? null : PUB.despues[m]);
+      PUB.despues[m] = j.despues;
+      nuevos.push(...j.posts.map((x) => ({ ...x, marca: m })));
+    } catch (e) {
+      if (!desdeCero) continue;
+      PUB.fuente = 'archivo';
+      PUB.despues[m] = null;
+      try { nuevos.push(...(await historicoDe(m, red)).map((x) => ({ ...x, marca: m }))); } catch {}
+    }
+  }
+  if (red !== PUB.red) return;
+  PUB.posts.push(...nuevos);
+  PUB.posts.sort((a, b) => String(b.hora).localeCompare(String(a.hora)));
+  PUB.hora = new Date();
+  pintarFeed();
+}
+
+function pintarFeed() {
+  const feed = $('#pub-feed');
+  const pinta = PUB.red === 'fb' ? tarjetaFbPub : tarjetaIgPub;
+  feed.innerHTML = PUB.posts.length ? PUB.posts.map(pinta).join('') : '<p class="pub-espera">Nothing published yet.</p>';
+  if (Object.values(PUB.despues).some(Boolean)) feed.insertAdjacentHTML('beforeend', '<button class="pub-mas" id="pub-mas">Load more</button>');
+  pintarVivo();
+}
+function pintarVivo() {
+  $('#pub-vivo').innerHTML = PUB.red === 'blog' ? ''
+    : PUB.fuente === 'archivo' ? '<i class="apagado"></i>Saved numbers'
+      : `<i></i>Live · ${PUB.hora ? PUB.hora.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : ''}`;
+}
+$('#pub-feed').addEventListener('click', (e) => {
+  if (e.target.closest('#pub-mas')) { e.target.closest('#pub-mas').textContent = 'Loading…'; cargarPublicado(false); return; }
+  const paso = e.target.closest('.pub-paso');
+  if (paso) {
+    const tira = paso.parentElement.querySelector('.tira');
+    tira.scrollBy({ left: Number(paso.dataset.d) * tira.clientWidth, behavior: 'smooth' });
+    return;
+  }
+  const art = e.target.closest('.pub-articulo');
+  if (art) abrirLector(art.dataset.marca, art.dataset.clave);
+});
+// The carousel dots follow the finger.
+$('#pub-feed').addEventListener('scroll', (e) => {
+  const tira = e.target;
+  if (!tira.classList || !tira.classList.contains('tira')) return;
+  const i = Math.round(tira.scrollLeft / Math.max(1, tira.clientWidth));
+  const caja = tira.closest('.pub-post');
+  caja.querySelectorAll('.ig-puntos i').forEach((d, j) => d.classList.toggle('on', j === i));
+  const c = caja.querySelector('.ig-cuenta'); if (c) c.textContent = `${i + 1}/${tira.children.length}`;
+}, true);
+
+async function refrescarContadores() {
+  const red = PUB.red;
+  for (const m of marcasPub()) {
+    try {
+      const j = await pedirPublicado(m, red);
+      for (const x of j.posts) {
+        const viejo = PUB.posts.find((y) => y.id === x.id);
+        if (viejo) Object.assign(viejo, { likes: x.likes, comentarios: x.comentarios, compartidos: x.compartidos });
+        const el = document.querySelector(`.pub-post[data-id="${CSS.escape(x.id)}"]`);
+        if (!el) continue;
+        for (const [k, v] of [['likes', x.likes], ['comentarios', x.comentarios], ['compartidos', x.compartidos]]) {
+          el.querySelectorAll(`[data-n="${k}"]`).forEach((n) => {
+            const t = numero(v);
+            if (n.textContent !== t) { n.textContent = t; n.classList.remove('sube'); void n.offsetWidth; n.classList.add('sube'); }
+          });
+        }
+      }
+      PUB.fuente = 'vivo';
+    } catch {}
+  }
+  PUB.hora = new Date();
+  pintarVivo();
+}
+
+function cuentaDe(m) { return DATOS.marcas[m].cuentas; }
+function fechaIg(h) {
+  const d = new Date(h), dias = (Date.now() - d) / 864e5;
+  if (dias < 1) return `${Math.max(1, Math.round(dias * 24))} hours ago`;
+  if (dias < 7) return `${Math.round(dias)} days ago`;
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', ...(d.getFullYear() !== new Date().getFullYear() ? { year: 'numeric' } : {}) });
+}
+function fotosPub(x, apaisado) {
+  const n = x.imagenes.length;
+  return `<div class="ig-carrete pub-carrete${apaisado ? ' fb-fotos' : ''}${x.cuadrada ? ' cuadrada' : ''}"><div class="tira">${x.imagenes.map((u) => `<img src="${escapar(u)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`).join('')}</div>
+    ${n > 1 ? `<span class="ig-cuenta">1/${n}</span><button class="pub-paso atras" data-d="-1" aria-label="Previous">‹</button><button class="pub-paso alante" data-d="1" aria-label="Next">›</button>` : ''}
+    ${x.tipo === 'reel' || x.tipo === 'video' || x.video ? '<span class="pub-reel"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>' : ''}</div>
+    ${n > 1 && !apaisado ? `<div class="ig-puntos">${x.imagenes.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}`;
+}
+function tarjetaIgPub(x) {
+  const c = cuentaDe(x.marca);
+  const n = (k, v) => v == null ? '' : `<span class="pub-num" data-n="${k}">${numero(v)}</span>`;
+  return `<article class="ig pub-post" data-id="${escapar(x.id)}">
+    <div class="ig-cab"><img class="ig-av" src="${c.avatar}" alt=""><span class="ig-usuario"><b>${escapar(c.ig)}</b></span><span class="ig-mas">•••</span></div>
+    ${fotosPub(x)}
+    <div class="ig-acciones pub-acciones"><span>${ICONOS.corazon}${n('likes', x.likes)}</span><span>${ICONOS.comentar}${n('comentarios', x.comentarios)}</span><span>${ICONOS.enviar}${n('compartidos', x.compartidos)}</span><span class="guardar">${ICONOS.guardar}</span></div>
+    ${x.likes != null ? `<div class="pub-likes"><b><span data-n="likes">${numero(x.likes)}</span> likes</b></div>` : ''}
+    <div class="ig-pie"><b>${escapar(c.ig)}</b> ${pintarPie(x.texto, 2, 'mas', 'more', false)}</div>
+    ${x.comentarios ? `<div class="pub-coment">View all <span data-n="comentarios">${numero(x.comentarios)}</span> comments</div>` : ''}
+    <a class="ig-hora pub-hora" href="${escapar(x.url)}" target="_blank" rel="noopener">${fechaIg(x.hora)} · open on Instagram</a>
+  </article>`;
+}
+function tarjetaFbPub(x) {
+  const c = cuentaDe(x.marca);
+  const d = new Date(x.hora);
+  const cuando = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + ' at ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  const reacciones = x.likes != null ? `<span class="pub-fb-reac"><i class="r-like"><svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM9 20h7.5a2 2 0 0 0 2-1.6l1.3-6A2 2 0 0 0 17.8 10H14l.6-3.3A1.8 1.8 0 0 0 11.5 5L9 10z"/></svg></i><i class="r-love"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.4A4 4 0 0 1 12 8a4 4 0 0 1 7 2.6C19 15.6 12 20 12 20z"/></svg></i><span data-n="likes">${numero(x.likes)}</span></span>` : '<span></span>';
+  const resto = [x.comentarios ? `<span data-n="comentarios">${numero(x.comentarios)}</span> comments` : '', x.compartidos ? `<span data-n="compartidos">${numero(x.compartidos)}</span> shares` : ''].filter(Boolean).join(' · ');
+  return `<article class="fb pub-post pub-fb" data-id="${escapar(x.id)}">
+    <div class="fb-cab"><img class="fb-av" src="${c.avatar}" alt=""><span><div class="fb-nombre">${escapar(c.fb)}</div><div class="fb-meta">${cuando} · ${ICO.globo}</div></span></div>
+    ${x.texto ? `<div class="fb-texto">${pintarPie(x.texto, 5, 'mas', 'See more', true)}</div>` : ''}
+    ${x.imagenes.length ? fotosPub(x, true) : ''}
+    <div class="pub-fb-cifras">${reacciones}<span>${resto}</span></div>
+    <div class="fb-acciones"><span>${ICONOS.pulgar} Like</span><span>${ICONOS.comentar} Comment</span><span>${ICONOS.compartir} Share</span></div>
+    <a class="pub-hora pub-hora-fb" href="${escapar(x.url)}" target="_blank" rel="noopener">Open on Facebook</a>
+  </article>`;
+}
+
+// The blog: published articles, newest first, as magazine covers.
+function pintarBlogPublicado() {
+  const arts = marcasPub().flatMap((m) => DATOS.marcas[m].posts.filter((a) => a.esBlog && a.estadoWeb === 'publish').map((a) => ({ a, m })))
+    .sort((x, y) => String(y.a.date).localeCompare(String(x.a.date)));
+  $('#pub-feed').innerHTML = arts.length ? `<div class="pub-revistas">${arts.map(({ a, m }) => `<button class="pub-articulo" data-marca="${m}" data-clave="${escapar(a.clave)}">
+      ${a.image ? `<img src="${escapar(a.image)}" alt="" loading="lazy">` : ''}
+      <span class="pub-art-texto"><small>${escapar(DATOS.marcas[m].marca.org)} · ${escapar(String(a.date).slice(0, 10))}</small><b>${escapar(a.title)}</b>${a.excerpt ? `<em>${escapar(a.excerpt)}</em>` : ''}</span></button>`).join('')}</div>`
+    : '<p class="pub-espera">No published articles for this account.</p>';
+  pintarVivo();
+}
+
+// The reader: one article, page by page, like Flash check's magazine.
+function abrirLector(m, clave) {
+  const a = DATOS.marcas[m].posts.find((x) => x.clave === clave);
+  if (!a) return;
+  $('#lector-media').innerHTML = revistaDe(a);
+  $('#lector-web').href = a.url;
+  $('#lector').hidden = false;
+  requestAnimationFrame(() => prepararRevista($('#lector .rv-slide')));
+}
+const revLector = () => $('#lector .rv-revista');
+$('#lector-salir').addEventListener('click', () => { $('#lector').hidden = true; });
+$('#lector-atras').addEventListener('click', () => { const r = revLector(); irPagina(r, Number(r.dataset.p) - 1); });
+$('#lector-alante').addEventListener('click', () => { const r = revLector(); irPagina(r, Number(r.dataset.p) + 1); });
+let lectorToque = null;
+$('#lector').addEventListener('touchstart', (e) => { lectorToque = e.touches.length === 1 && !e.target.closest('.rv-barra') ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : null; }, { passive: true });
+$('#lector').addEventListener('touchend', (e) => {
+  if (!lectorToque || String(getSelection()).trim()) { lectorToque = null; return; }
+  const t = e.changedTouches[0], dx = t.clientX - lectorToque.x, dy = t.clientY - lectorToque.y;
+  lectorToque = null;
+  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4) { const r = revLector(); irPagina(r, Number(r.dataset.p) + (dx < 0 ? 1 : -1)); }
+});

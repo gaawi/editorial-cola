@@ -164,6 +164,11 @@ export default async function handler(req, res) {
         // `cita`: the words he highlighted, so the note points at them.
         const cita = typeof b.cita === 'string' ? b.cita.trim().slice(0, 500) : '';
         (g.sugerencias ||= []).push({ texto: nota.trim(), ...(cita ? { cita } : {}), quien: yo.login, fecha: ahora, hecha: false });
+        // Notes on something already published on Instagram or Facebook
+        // (key pb/<brand>-<network>-<id>): where it is, so the check can find it.
+        if (clave.startsWith('pb/') && typeof b.url === 'string' && /^https:\/\//.test(b.url)) {
+          g.publicado = { url: b.url.slice(0, 500), red: b.red === 'fb' ? 'fb' : 'ig', marca: b.marca === 'adar' ? 'adar' : 'creartbox' };
+        }
         (g.historial ||= []).push({ accion, quien: yo.login, fecha: ahora });
         return;
       }

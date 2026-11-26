@@ -1499,3 +1499,11 @@ body.en-pub { overflow: hidden; }
 .rv-revista.en-portada .rv-paginas { visibility: hidden; }
 .rv-slide.rv-es-blog .rv-revista .rv-portada { background: #fbf3e4; }
 .lector .rv-revista .rv-portada { background: #fbf3e4; }
+/* Notes on published posts */
+.pub-notas { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 8px 12px 2px; }
+.pub-nota { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #ddd; background: #fff; border-radius: 999px; padding: 6px 12px; font: 600 12.5px var(--ui, system-ui); color: #333; }
+.pub-nota .ico { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+.pub-nota-n { font: 600 12px var(--ui, system-ui); color: #6B3BFF; }
+.pub-nota-h { font: 600 12px var(--ui, system-ui); color: #2e9d57; }
+.pub-post .ig-pie, .pub-post .fb-texto { -webkit-user-select: text; user-select: text; }
+.lector #lector-nota .ico { width: 20px; height: 20px; }

@@ -1131,7 +1131,7 @@ function accionesFlujo(p) {
 
 /** El campo de sugerir cambios, con lo ya sugerido encima. */
 function cajaSugerir(p) {
-  if (grupoDe(p) === 'publicado') return '';
+  // Published too (Nov 26): a note on something already out is still a change to make.
   const sug = flujoDe(p).sugerencias || [];
   const lista = sug.map((x) => `<li class="${x.hecha ? 'hecha' : ''}">${x.cita ? `<q class="sug-cita">${escapar(x.cita)}</q>` : ''}<span class="tarea">${escapar(x.texto)}</span>${x.hecha
     ? `<small>${x.respuesta ? escapar(/^hech/i.test(x.respuesta) ? x.respuesta : 'Done: ' + x.respuesta) : 'Done'}</small>` : '<small>Pending: I will do it in the next check</small>'}</li>`).join('');
@@ -2811,7 +2811,7 @@ document.addEventListener('selectionchange', () => {
   const zona = nodo && nodo.closest && nodo.closest('[data-clave-notas]');
   if (!texto || !zona || texto.length > 500) { if (!botonNota.matches(':active')) botonNota.hidden = true; return; }
   const r = sel.getRangeAt(0).getBoundingClientRect();
-  seleccion = { texto, clave: zona.dataset.claveNotas, rango: sel.getRangeAt(0).cloneRange() };
+  seleccion = { texto, clave: zona.dataset.claveNotas, extra: extraNota(zona), rango: sel.getRangeAt(0).cloneRange() };
   botonNota.hidden = false;
   const ancho = botonNota.offsetWidth || 120;
   botonNota.style.left = Math.max(8, Math.min(innerWidth - ancho - 8, r.left + r.width / 2 - ancho / 2)) + 'px';
@@ -2829,7 +2829,8 @@ botonNota.addEventListener('click', async () => {
   const nota = prompt(`Note or change for «${s.texto.length > 80 ? s.texto.slice(0, 80) + '…' : s.texto}»`);
   if (!nota || !nota.trim()) return;
   try {
-    await llamarFlujo(s.clave, 'sugerir', { nota: nota.trim(), cita: s.texto });
+    await llamarFlujo(s.clave, 'sugerir', { nota: nota.trim(), cita: s.texto, ...s.extra });
+    pintarNotasPub(s.clave);
     try { const m = document.createElement('mark'); m.className = 'nota-marca'; m.dataset.nota = nota.trim(); s.rango.surroundContents(m); } catch { /* across paragraphs: saved, not drawn */ }
     getSelection().removeAllRanges();
     aviso('Note saved. I will do it in the next check.');
@@ -2944,6 +2945,7 @@ function pintarFeed() {
   const pinta = PUB.red === 'fb' ? tarjetaFbPub : tarjetaIgPub;
   feed.innerHTML = PUB.posts.length ? PUB.posts.map(pinta).join('') : '<p class="pub-espera">Nothing published yet.</p>';
   if (Object.values(PUB.despues).some(Boolean)) feed.insertAdjacentHTML('beforeend', '<button class="pub-mas" id="pub-mas">Load more</button>');
+  feed.querySelectorAll('.pub-post[data-clave-notas]').forEach((el) => marcarCitas(el, el.dataset.claveNotas));
   pintarVivo();
 }
 function pintarVivo() {
@@ -2951,7 +2953,13 @@ function pintarVivo() {
     : PUB.fuente === 'archivo' ? '<i class="apagado"></i>Saved numbers'
       : `<i></i>Live · ${PUB.hora ? PUB.hora.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : ''}`;
 }
-$('#pub-feed').addEventListener('click', (e) => {
+$('#pub-feed').addEventListener('click', async (e) => {
+  const bn = e.target.closest('.pub-nota');
+  if (bn) {
+    const card = bn.closest('[data-clave-notas]');
+    await notaEntera(card.dataset.claveNotas, extraNota(card));
+    return;
+  }
   if (e.target.closest('#pub-mas')) { e.target.closest('#pub-mas').textContent = 'Loading…'; cargarPublicado(false); return; }
   const paso = e.target.closest('.pub-paso');
   if (paso) {
@@ -3010,10 +3018,25 @@ function fotosPub(x, apaisado) {
     ${x.tipo === 'reel' || x.tipo === 'video' || x.video ? '<span class="pub-reel"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>' : ''}</div>
     ${n > 1 && !apaisado ? `<div class="ig-puntos">${x.imagenes.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}`;
 }
+// A published Meta post gets its own key for notes: pb/<brand>-<network>-<id>.
+const claveMeta = (x, red) => `pb/${x.marca}-${red}-${String(x.id).replace(/^https?:\/\/[^/]+\/(?:p|reel)\//, '').replace(/[^\w-]/g, '')}`;
+const zonaNotas = (x, red) => `data-clave-notas="${escapar(claveMeta(x, red))}" data-url="${escapar(x.url)}" data-red="${red}" data-marca="${x.marca}"`;
+function extraNota(zona) {
+  return zona.dataset.url ? { url: zona.dataset.url, red: zona.dataset.red, marca: zona.dataset.marca } : {};
+}
+function notasDe(clave) { return ((FLUJO.posts || {})[clave]?.sugerencias || []); }
+function pieNotas(clave) {
+  const pend = notasDe(clave).filter((n) => !n.hecha).length;
+  const hechas = notasDe(clave).filter((n) => n.hecha).length;
+  return `<div class="pub-notas" data-clave="${escapar(clave)}"><button class="pub-nota"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>Add a note or change</button>${pend ? `<span class="pub-nota-n">${pend} pending</span>` : ''}${hechas ? `<span class="pub-nota-h">${hechas} done</span>` : ''}</div>`;
+}
+function pintarNotasPub(clave) {
+  document.querySelectorAll(`.pub-notas[data-clave="${CSS.escape(clave)}"]`).forEach((el) => { el.outerHTML = pieNotas(clave); });
+}
 function tarjetaIgPub(x) {
   const c = cuentaDe(x.marca);
   const n = (k, v) => v == null ? '' : `<span class="pub-num" data-n="${k}">${numero(v)}</span>`;
-  return `<article class="ig pub-post" data-id="${escapar(x.id)}">
+  return `<article class="ig pub-post" data-id="${escapar(x.id)}" ${zonaNotas(x, 'ig')}>
     <div class="ig-cab"><img class="ig-av" src="${c.avatar}" alt=""><span class="ig-usuario"><b>${escapar(c.ig)}</b></span><span class="ig-mas">•••</span></div>
     ${fotosPub(x)}
     <div class="ig-acciones pub-acciones"><span>${ICONOS.corazon}${n('likes', x.likes)}</span><span>${ICONOS.comentar}${n('comentarios', x.comentarios)}</span><span>${ICONOS.enviar}${n('compartidos', x.compartidos)}</span><span class="guardar">${ICONOS.guardar}</span></div>
@@ -3021,6 +3044,7 @@ function tarjetaIgPub(x) {
     <div class="ig-pie"><b>${escapar(c.ig)}</b> ${pintarPie(x.texto, 2, 'mas', 'more', false)}</div>
     ${x.comentarios ? `<div class="pub-coment">View all <span data-n="comentarios">${numero(x.comentarios)}</span> comments</div>` : ''}
     <a class="ig-hora pub-hora" href="${escapar(x.url)}" target="_blank" rel="noopener">${fechaIg(x.hora)} · open on Instagram</a>
+    ${pieNotas(claveMeta(x, 'ig'))}
   </article>`;
 }
 function tarjetaFbPub(x) {
@@ -3029,13 +3053,14 @@ function tarjetaFbPub(x) {
   const cuando = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + ' at ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
   const reacciones = x.likes != null ? `<span class="pub-fb-reac"><i class="r-like"><svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM9 20h7.5a2 2 0 0 0 2-1.6l1.3-6A2 2 0 0 0 17.8 10H14l.6-3.3A1.8 1.8 0 0 0 11.5 5L9 10z"/></svg></i><i class="r-love"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.4A4 4 0 0 1 12 8a4 4 0 0 1 7 2.6C19 15.6 12 20 12 20z"/></svg></i><span data-n="likes">${numero(x.likes)}</span></span>` : '<span></span>';
   const resto = [x.comentarios ? `<span data-n="comentarios">${numero(x.comentarios)}</span> comments` : '', x.compartidos ? `<span data-n="compartidos">${numero(x.compartidos)}</span> shares` : ''].filter(Boolean).join(' · ');
-  return `<article class="fb pub-post pub-fb" data-id="${escapar(x.id)}">
+  return `<article class="fb pub-post pub-fb" data-id="${escapar(x.id)}" ${zonaNotas(x, 'fb')}>
     <div class="fb-cab"><img class="fb-av" src="${c.avatar}" alt=""><span><div class="fb-nombre">${escapar(c.fb)}</div><div class="fb-meta">${cuando} · ${ICO.globo}</div></span></div>
     ${x.texto ? `<div class="fb-texto">${pintarPie(x.texto, 5, 'mas', 'See more', true)}</div>` : ''}
     ${x.imagenes.length ? fotosPub(x, true) : ''}
     <div class="pub-fb-cifras">${reacciones}<span>${resto}</span></div>
     <div class="fb-acciones"><span>${ICONOS.pulgar} Like</span><span>${ICONOS.comentar} Comment</span><span>${ICONOS.compartir} Share</span></div>
     <a class="pub-hora pub-hora-fb" href="${escapar(x.url)}" target="_blank" rel="noopener">Open on Facebook</a>
+    ${pieNotas(claveMeta(x, 'fb'))}
   </article>`;
 }
 
@@ -3056,6 +3081,7 @@ function abrirLector(m, clave) {
   if (!a) return;
   $('#lector-media').innerHTML = revistaDe(a);
   $('#lector-web').href = a.url;
+  $('#lector').dataset.marca = m;
   $('#lector').hidden = false;
   requestAnimationFrame(() => prepararRevista($('#lector .rv-slide')));
 }
@@ -3094,3 +3120,16 @@ document.addEventListener('click', (e) => {
   const r = rev.getBoundingClientRect();
   irPagina(rev, Number(rev.dataset.p || 0) + (e.clientX - r.left < r.width / 2 ? -1 : 1));
 });
+
+// A note on the whole post or article (no words selected).
+async function notaEntera(clave, extra = {}) {
+  if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
+  const nota = prompt('What should change? (It is already published: I will fix it where it can be edited.)');
+  if (!nota || !nota.trim()) return;
+  try {
+    await llamarFlujo(clave, 'sugerir', { nota: nota.trim(), ...extra });
+    pintarNotasPub(clave);
+    aviso('Note saved. I will do it in the next check.');
+  } catch (err) { aviso(err.message, true); }
+}
+$('#lector-nota').addEventListener('click', () => { const r = revLector(); if (r) notaEntera(r.dataset.claveNotas, { marca: $('#lector').dataset.marca }); });

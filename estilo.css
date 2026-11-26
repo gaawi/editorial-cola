@@ -1408,3 +1408,12 @@ body.en-detalle { overflow: auto !important; }
 .rv-pagnum { flex: none; margin: 6px 0 0; text-align: center; font: 600 12px var(--ui, system-ui); color: #a08a64; }
 .rv-slide.rv-es-blog .rv-zona span, .revision:has(.rv-es-blog.actual) .rv-zona span { background: rgba(43,29,7,0.12); color: #2b1d07; }
 .revision:has(.rv-es-blog.actual) .rv-zona span { opacity: 0.5; transform: scale(0.8); }
+
+/* ── Highlight + note ── */
+.nota-sel { position: fixed; z-index: 400; display: flex; align-items: center; gap: 6px; padding: 9px 14px; border: 0; border-radius: 999px; background: #6B3BFF; color: #fff; font: 600 14px var(--ui, system-ui); box-shadow: 0 6px 18px rgba(20,16,43,0.35); }
+.nota-sel[hidden] { display: none; }
+.nota-sel .ico { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+mark.nota-marca { background: #ffe27a; color: inherit; border-radius: 3px; padding: 0 1px; box-shadow: 0 2px 0 #f2b800; cursor: pointer; }
+.sug-cita { display: block; font-style: italic; color: #7a6340; margin-bottom: 2px; }
+.sug-cita::before { content: '«'; } .sug-cita::after { content: '»'; }
+.rv-paginas, .rv-texto, .blog-texto { -webkit-user-select: text; user-select: text; }

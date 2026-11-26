@@ -1133,7 +1133,7 @@ function accionesFlujo(p) {
 function cajaSugerir(p) {
   if (grupoDe(p) === 'publicado') return '';
   const sug = flujoDe(p).sugerencias || [];
-  const lista = sug.map((x) => `<li class="${x.hecha ? 'hecha' : ''}"><span class="tarea">${escapar(x.texto)}</span>${x.hecha
+  const lista = sug.map((x) => `<li class="${x.hecha ? 'hecha' : ''}">${x.cita ? `<q class="sug-cita">${escapar(x.cita)}</q>` : ''}<span class="tarea">${escapar(x.texto)}</span>${x.hecha
     ? `<small>${x.respuesta ? escapar(/^hech/i.test(x.respuesta) ? x.respuesta : 'Done: ' + x.respuesta) : 'Done'}</small>` : '<small>Pending: I will do it in the next check</small>'}</li>`).join('');
   return `<div class="sugerir">${lista ? `<ul>${lista}</ul>` : ''}
     <form class="sugerir-form" data-clave="${p.clave}">
@@ -1637,7 +1637,7 @@ function tarjetaBlog(a) {
       <p class="blog-redes">${posts.length
         ? 'With its social post: ' + posts.map((p) => `<button class="blog-post" data-clave="${escapar(p.clave)}">${escapar(p.title)} · ${escapar(p.publicaEl || p.date || '')}</button>`).join(' ')
         : '<span class="tenue">No social post: if you approve it, I will suggest one.</span>'}</p>
-      <details class="blog-texto"><summary>Read the full article</summary>${markdownSimple(a.cuerpo)}</details>
+      <details class="blog-texto" data-clave-notas="${escapar(a.clave)}"><summary>Read the full article</summary>${markdownSimple(a.cuerpo)}</details>
       <div class="blog-acciones">${acciones}</div>
       ${publicado ? '' : cajaSugerir(a)}
     </div>
@@ -2403,7 +2403,7 @@ function empezarRevision(tipo) {
 // A blog article as a magazine: a cover, then the text in pages, with the
 // photos where they are in the article and their captions under them.
 function revistaDe(p) {
-  return `<div class="rv-revista" data-p="0" data-n="1"><div class="rv-paginas">
+  return `<div class="rv-revista" data-p="0" data-n="1" data-clave-notas="${escapar(p.clave)}"><div class="rv-paginas">
     <section class="rv-portada">${p.image ? `<img src="${escapar(p.image)}" alt="">` : ''}
       <p class="rv-portada-sello">${ICO.doc}Blog article</p>
       <h2 class="rv-blog-titulo">${escapar(p.title)}</h2>
@@ -2437,6 +2437,7 @@ function prepararRevista(s) {
     rev.dataset.n = String(Math.max(1, Math.round(pag.scrollWidth / w)));
     irPagina(rev, Number(rev.dataset.p || 0));
   };
+  if (!rev.dataset.oye) marcarCitas(rev, rev.dataset.claveNotas);
   medir();
   if (!rev.dataset.oye) {
     rev.dataset.oye = '1';
@@ -2603,6 +2604,8 @@ $('#revision').addEventListener('touchstart', (e) => {
 }, { passive: true });
 $('#revision').addEventListener('touchend', (e) => {
   if (!rvToque) return;
+  // Dragging to select words is not a page turn.
+  if (String(getSelection()).trim()) { rvToque = null; return; }
   const t = e.changedTouches[0];
   const dx = t.clientX - rvToque.x, dy = t.clientY - rvToque.y;
   rvToque = null;
@@ -2618,18 +2621,26 @@ $('#rv-mazo').addEventListener('click', (e) => {
   const caja = $('#rv-texto');
   // Everything that doesn't fit on the card: the whole caption, the why, what's missing.
   const texto = it.red === 'fb' ? (it.texto || it.p.pies?.fb?.texto || '') : it.texto;
+  caja.dataset.claveNotas = it.p.clave;
   caja.innerHTML = `${texto ? `<p>${escapar(texto)}</p>` : ''}${it.p.porque ? `<p class="rv-falta-why"><b>Why:</b> ${escapar(it.p.porque)}</p>` : ''}${it.p.falta ? `<p class="rv-falta"><b>Missing:</b> ${escapar(it.p.falta)}</p>` : ''}<small>Tap to close</small>`;
   caja.hidden = false;
+  marcarCitas(caja, it.p.clave);
 });
-$('#rv-texto').addEventListener('click', () => { $('#rv-texto').hidden = true; });
+// Tap closes the caption, unless he is selecting words to add a note.
+$('#rv-texto').addEventListener('click', (e) => {
+  if (String(getSelection()).trim() || e.target.closest('.nota-marca')) return;
+  $('#rv-texto').hidden = true;
+});
 // Tap the Facebook text to read it whole, as it will be published.
 $('#rv-mazo').addEventListener('click', (e) => {
   const t = e.target.closest('.rv-fb .fb-texto');
   if (!t) return;
   const it = RV.items[posRevision()];
   const caja = $('#rv-texto');
+  caja.dataset.claveNotas = it.p.clave;
   caja.innerHTML = `<p>${escapar(it.texto || it.p.pies?.fb?.texto || '')}</p><small>Tap to close</small>`;
   caja.hidden = false;
+  marcarCitas(caja, it.p.clave);
 });
 // ⋯: the other decisions.
 $('#rv-mas').addEventListener('click', () => {
@@ -2778,3 +2789,68 @@ document.addEventListener('visibilitychange', () => {
 });
 
 arrancar().catch((e) => aviso('Could not load data: ' + e.message, true));
+
+// ── Highlight words and add a note (Nov 26) ─────────────────────────────
+// Select a word or a sentence in an article or a caption: an «Add note»
+// button appears under it. The note is saved as a suggestion with the quoted
+// words (`cita`), and they stay highlighted until the next check does it.
+const botonNota = document.createElement('button');
+botonNota.className = 'nota-sel';
+botonNota.hidden = true;
+botonNota.innerHTML = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg><span>Add note</span>';
+document.body.appendChild(botonNota);
+let seleccion = null;
+document.addEventListener('selectionchange', () => {
+  const sel = getSelection();
+  const texto = String(sel || '').replace(/\s+/g, ' ').trim();
+  const nodo = sel && sel.anchorNode && (sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement);
+  const zona = nodo && nodo.closest && nodo.closest('[data-clave-notas]');
+  if (!texto || !zona || texto.length > 500) { if (!botonNota.matches(':active')) botonNota.hidden = true; return; }
+  const r = sel.getRangeAt(0).getBoundingClientRect();
+  seleccion = { texto, clave: zona.dataset.claveNotas, rango: sel.getRangeAt(0).cloneRange() };
+  botonNota.hidden = false;
+  const ancho = botonNota.offsetWidth || 120;
+  botonNota.style.left = Math.max(8, Math.min(innerWidth - ancho - 8, r.left + r.width / 2 - ancho / 2)) + 'px';
+  // Under the selection: the phone's own menu (Copy…) goes above it.
+  const abajo = r.bottom + 14;
+  botonNota.style.top = (abajo + 44 > innerHeight - 90 ? Math.max(8, r.top - 56) : abajo) + 'px';
+});
+// pointerdown, so the selection is still there when the button is pressed.
+botonNota.addEventListener('pointerdown', (e) => e.preventDefault());
+botonNota.addEventListener('click', async () => {
+  const s = seleccion;
+  botonNota.hidden = true;
+  if (!s) return;
+  if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
+  const nota = prompt(`Note or change for «${s.texto.length > 80 ? s.texto.slice(0, 80) + '…' : s.texto}»`);
+  if (!nota || !nota.trim()) return;
+  try {
+    await llamarFlujo(s.clave, 'sugerir', { nota: nota.trim(), cita: s.texto });
+    try { const m = document.createElement('mark'); m.className = 'nota-marca'; m.dataset.nota = nota.trim(); s.rango.surroundContents(m); } catch { /* across paragraphs: saved, not drawn */ }
+    getSelection().removeAllRanges();
+    aviso('Note saved. I will do it in the next check.');
+  } catch (err) { aviso(err.message, true); }
+});
+// The notes not done yet, highlighted where they point.
+function marcarCitas(raiz, clave) {
+  const pend = ((FLUJO.posts || {})[clave]?.sugerencias || []).filter((x) => !x.hecha && x.cita);
+  for (const x of pend) {
+    const caminante = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT);
+    let n;
+    while ((n = caminante.nextNode())) {
+      const k = n.nodeValue.replace(/\s+/g, ' ').indexOf(x.cita);
+      if (k < 0 || n.parentElement.closest('.nota-marca')) continue;
+      try {
+        const r = document.createRange();
+        r.setStart(n, k); r.setEnd(n, k + x.cita.length);
+        const m = document.createElement('mark'); m.className = 'nota-marca'; m.dataset.nota = x.texto;
+        r.surroundContents(m);
+      } catch {}
+      break;
+    }
+  }
+}
+document.addEventListener('click', (e) => {
+  const m = e.target.closest('.nota-marca');
+  if (m && !String(getSelection()).trim()) { e.stopPropagation(); aviso('Your note: ' + m.dataset.nota); }
+}, true);

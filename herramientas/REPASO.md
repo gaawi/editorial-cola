@@ -144,7 +144,8 @@ qué parte de la foto se ve; en el motor es `encuadre` de la ficha) y
 ## Sugerencias
 
 `posts[clave].sugerencias` son cambios que él escribe en el campo «Sugerir un
-cambio…» de cada post. En cada repaso, aplicar todas las pendientes (en la
+cambio…» de cada post. Si traen `cita`, son notas que hizo subrayando esas
+palabras en el texto (desde el 26 nov): el cambio va justo ahí. En cada repaso, aplicar todas las pendientes (en la
 ficha de adar, en lo preparado o en `edicion`, donde toque) y marcarlas
 `"hecha": true` con una `"respuesta"` corta de qué se ha hecho. Si una pide
 algo que no se puede, `hecha: true` y la respuesta dice por qué. No cambian

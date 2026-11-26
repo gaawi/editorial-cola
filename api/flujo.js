@@ -161,7 +161,9 @@ export default async function handler(req, res) {
       const g = d.posts[clave] || (d.posts[clave] = { historial: [] });
       if (accion === 'sugerir') {
         if (!nota.trim()) throw Object.assign(new Error('Write the suggestion.'), { codigo: 400 });
-        (g.sugerencias ||= []).push({ texto: nota.trim(), quien: yo.login, fecha: ahora, hecha: false });
+        // `cita`: the words he highlighted, so the note points at them.
+        const cita = typeof b.cita === 'string' ? b.cita.trim().slice(0, 500) : '';
+        (g.sugerencias ||= []).push({ texto: nota.trim(), ...(cita ? { cita } : {}), quien: yo.login, fecha: ahora, hecha: false });
         (g.historial ||= []).push({ accion, quien: yo.login, fecha: ahora });
         return;
       }

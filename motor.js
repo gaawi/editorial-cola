@@ -328,11 +328,51 @@ export function crearMotor(B) {
     // CreArtBox's signature (B.firma = 'trapecio'): the sticker lines go centered and
     // straight inside an amber trapezoid, like the cover of its printed program.
     // From the top edge it bleeds and opens upwards; lower down it floats.
+    // Over a photo the trapezoid goes at the bottom, bleeding off the edge
+    // like the program cover: at the top it covered the heads (Nov 26).
+    // The text ends above Instagram's reply bar. Returns where it starts.
+    function trapecioAbajoTop() {
+      const n = Math.min(3, (post.pegatinas || []).length);
+      const cuerpo = Math.round(W * 0.03), paso = Math.round(cuerpo * 2.25);
+      const limite = fmt === 'story' ? Math.round(H * 0.885) : H - Math.round(pad * 0.75);
+      return limite - cuerpo - (n - 1) * paso - Math.round(cuerpo * 1.6);
+    }
+    const trapecioAbajo = () => B.firma === 'trapecio' && estilo !== 'ambar' && (post.pegatinas || []).length
+      && (fmt === 'story' || (post.pegatinasMuro && fmt === 'ig' && idx === 0));
+
     function pegatinasTrapecio(yInicio) {
       const lineas = post.pegatinas.slice(0, 3).map((peg) => ({ texto: String(peg.texto || peg).toUpperCase(), senal: peg.senal === true }));
       const cuerpo = Math.round(W * 0.03);
       const paso = Math.round(cuerpo * 2.25);
       const esp = Math.round(cuerpo * 0.24);
+      if (yInicio == null && trapecioAbajo()) {
+        rotulo(ctx, cuerpo, B.onAccent || B.ink, esp);
+        const ancho = Math.max(...lineas.map((l) => ctx.measureText(l.texto).width));
+        sinEspaciado(ctx);
+        const y0 = trapecioAbajoTop(), cx = W / 2;
+        const arriba = Math.min(W - pad, ancho + Math.round(W * 0.16));
+        const abajo = Math.min(W, arriba + Math.round(W * 0.2));
+        ctx.beginPath();
+        ctx.moveTo(cx - arriba / 2, y0); ctx.lineTo(cx + arriba / 2, y0);
+        ctx.lineTo(cx + abajo / 2, H); ctx.lineTo(cx - abajo / 2, H);
+        ctx.closePath(); ctx.fillStyle = B.accent; ctx.fill();
+        const tinta = B.onAccent || B.ink;
+        ctx.textAlign = 'center';
+        lineas.forEach((l, i) => {
+          const y = y0 + Math.round(cuerpo * 1.6) + cuerpo * 0.8 + i * paso;
+          rotulo(ctx, cuerpo, tinta, esp);
+          ctx.fillText(l.texto, cx, y);
+          if (l.senal) {
+            const w2 = ctx.measureText(l.texto).width;
+            const raya = Math.round(W * 0.04), hueco = Math.round(W * 0.018);
+            ctx.fillRect(cx - w2 / 2 - hueco - raya, y - Math.round(cuerpo * 0.36), raya, 2);
+            ctx.fillRect(cx + w2 / 2 + hueco, y - Math.round(cuerpo * 0.36), raya, 2);
+          }
+          sinEspaciado(ctx);
+        });
+        ctx.textAlign = 'left';
+        return y0;
+      }
       rotulo(ctx, cuerpo, B.onAccent || B.ink, esp);
       const ancho = Math.max(...lineas.map((l) => ctx.measureText(l.texto).width));
       sinEspaciado(ctx);
@@ -924,7 +964,9 @@ export function crearMotor(B) {
       const maxTitleH = H * (fmt === 'story' ? 0.30 : 0.34);
       const fit = encajar(ctx, slide.title, W - pad * 2 - safeRight, maxTitleH, TW, DISPLAY, Math.round(W * 0.072), Math.round(W * 0.034), PLOMO);
       const lineH = Math.round(fit.size * PLOMO);
-      const baseY = H - pad - safeBottom;
+      // With CreArtBox's trapezoid at the bottom, the title sits just above it.
+      const conTrapecio = trapecioAbajo();
+      const baseY = conTrapecio ? trapecioAbajoTop() - Math.round(pad * 0.75) : H - pad - safeBottom;
       const startY = baseY - fit.lines.length * lineH + lineH * 0.8;
 
       ctx.fillStyle = B.accent;
@@ -938,9 +980,11 @@ export function crearMotor(B) {
       ctx.fillStyle = B.overPhotoInk;
       fit.lines.forEach((l, i) => ctx.fillText(l, pad, startY + i * lineH));
 
-      rotulo(ctx, rotSize, TINTA_MUDA, 0);
-      ctx.fillText(SITIO, pad, H - Math.round(pad * 0.4) - safeBottom);
-      sinEspaciado(ctx);
+      if (!conTrapecio) {
+        rotulo(ctx, rotSize, TINTA_MUDA, 0);
+        ctx.fillText(SITIO, pad, H - Math.round(pad * 0.4) - safeBottom);
+        sinEspaciado(ctx);
+      }
       pegatinas();
       return;
     }

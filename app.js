@@ -2803,39 +2803,50 @@ botonNota.className = 'nota-sel';
 botonNota.hidden = true;
 botonNota.innerHTML = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg><span>Add note</span>';
 document.body.appendChild(botonNota);
-let seleccion = null;
+let seleccion = null, ocultarNota = null;
+// On iPhone the button stays put at the bottom of the screen while words are
+// being selected: next to the selection it went under the status bar or hid
+// while the handles were dragged (Nov 26).
 document.addEventListener('selectionchange', () => {
   const sel = getSelection();
   const texto = String(sel || '').replace(/\s+/g, ' ').trim();
   const nodo = sel && sel.anchorNode && (sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement);
   const zona = nodo && nodo.closest && nodo.closest('[data-clave-notas]');
-  if (!texto || !zona || texto.length > 500) { if (!botonNota.matches(':active')) botonNota.hidden = true; return; }
-  const r = sel.getRangeAt(0).getBoundingClientRect();
-  seleccion = { texto, clave: zona.dataset.claveNotas, extra: extraNota(zona), rango: sel.getRangeAt(0).cloneRange() };
+  if (!texto || !zona || texto.length > 1500) {
+    // A short grace: tapping the button can clear the selection first.
+    clearTimeout(ocultarNota);
+    ocultarNota = setTimeout(() => { botonNota.hidden = true; }, 700);
+    return;
+  }
+  clearTimeout(ocultarNota);
+  seleccion = { texto: texto.slice(0, 500), clave: zona.dataset.claveNotas, extra: extraNota(zona), rango: sel.getRangeAt(0).cloneRange() };
+  botonNota.querySelector('span').textContent = `Add note · ${texto.split(' ').length} ${texto.split(' ').length === 1 ? 'word' : 'words'}`;
   botonNota.hidden = false;
-  const ancho = botonNota.offsetWidth || 120;
-  botonNota.style.left = Math.max(8, Math.min(innerWidth - ancho - 8, r.left + r.width / 2 - ancho / 2)) + 'px';
-  // Under the selection: the phone's own menu (Copy…) goes above it.
-  const abajo = r.bottom + 14;
-  botonNota.style.top = (abajo + 44 > innerHeight - 90 ? Math.max(8, r.top - 56) : abajo) + 'px';
 });
-// pointerdown, so the selection is still there when the button is pressed.
-botonNota.addEventListener('pointerdown', (e) => e.preventDefault());
-botonNota.addEventListener('click', async () => {
+let notaEnCurso = false;
+async function accionNota() {
   const s = seleccion;
+  if (!s || notaEnCurso) return;
+  notaEnCurso = true;
   botonNota.hidden = true;
-  if (!s) return;
-  if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
-  const nota = prompt(`Note or change for «${s.texto.length > 80 ? s.texto.slice(0, 80) + '…' : s.texto}»`);
-  if (!nota || !nota.trim()) return;
   try {
+    if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
+    const nota = prompt(`Note or change for «${s.texto.length > 80 ? s.texto.slice(0, 80) + '…' : s.texto}»`);
+    if (!nota || !nota.trim()) return;
     await llamarFlujo(s.clave, 'sugerir', { nota: nota.trim(), cita: s.texto, ...s.extra });
     pintarNotasPub(s.clave);
     try { const m = document.createElement('mark'); m.className = 'nota-marca'; m.dataset.nota = nota.trim(); s.rango.surroundContents(m); } catch { /* across paragraphs: saved, not drawn */ }
     getSelection().removeAllRanges();
+    seleccion = null;
     aviso('Note saved. I will do it in the next check.');
   } catch (err) { aviso(err.message, true); }
-});
+  finally { notaEnCurso = false; }
+}
+// Touch: act on touchstart and cancel the default, so the touch does not clear
+// the selection before the button gets it. Mouse: a normal click.
+botonNota.addEventListener('touchstart', (e) => { e.preventDefault(); accionNota(); }, { passive: false });
+botonNota.addEventListener('mousedown', (e) => e.preventDefault());
+botonNota.addEventListener('click', accionNota);
 // The notes not done yet, highlighted where they point.
 function marcarCitas(raiz, clave) {
   const pend = ((FLUJO.posts || {})[clave]?.sugerencias || []).filter((x) => !x.hecha && x.cita);

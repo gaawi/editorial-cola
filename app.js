@@ -2353,28 +2353,126 @@ function cabeceraRevision(it, i, n) {
     <div class="rv-etapa rv-etapa-${it.tipo}">${etapa}</div>`;
 }
 
+// Before starting: what do you want to approve? Each kind is worked on its own.
+const TIPOS_REVISION = [
+  ['idea', 'Ideas', 'Approve or archive new ideas'],
+  ['confirmar', 'Ready to publish', 'Final OK on prepared posts and stories'],
+  ['blog', 'Blog articles', 'Read them like a magazine and approve'],
+];
 function abrirRevision() {
-  RV = { items: pendientesRevision(), hechos: {} };
-  if (!RV.items.length) { aviso('Nothing to check right now.'); return; }
+  const todos = pendientesRevision();
+  if (!todos.length) { aviso('Nothing to check right now.'); return; }
+  const n = (t) => todos.filter((x) => x.tipo === t).length;
+  $('#rv-elige').innerHTML = `<div class="rv-elige-caja"><p class="rv-elige-titulo">What do you want to approve?</p>
+    ${TIPOS_REVISION.map(([t, titulo, que]) => `<button class="rv-elige-op rv-elige-${t}" data-tipo="${t}" ${n(t) ? '' : 'disabled'}>
+      <span><b>${titulo}</b><small>${que}</small></span><i>${n(t)}</i></button>`).join('')}
+    <button class="rv-elige-salir" data-tipo="">Cancel</button></div>`;
+  $('#rv-mazo').innerHTML = '';
+  $('#rv-fin').hidden = true;
+  $('#rv-elige').hidden = false;
+  $('#revision').hidden = false;
+  document.body.classList.add('en-revision');
+}
+$('#rv-elige').addEventListener('click', (e) => {
+  const b = e.target.closest('button');
+  if (!b || b.disabled) return;
+  $('#rv-elige').hidden = true;
+  if (!b.dataset.tipo) return cerrarRevision();
+  empezarRevision(b.dataset.tipo);
+});
+
+function empezarRevision(tipo) {
+  RV = { tipo, items: pendientesRevision().filter((x) => x.tipo === tipo), hechos: {} };
   const mazoEl = $('#rv-mazo');
   mazoEl.innerHTML = RV.items.map((it, i) => {
     const p = it.p;
     // Facebook shows its text inside the post (above the image), like Facebook.
-    const pie = (it.red === 'story' && it.tipo === 'confirmar') || it.red === 'fb' ? '' : it.texto;
+    const pie = (it.red === 'story' && it.tipo === 'confirmar') || it.red === 'fb' || it.tipo === 'blog' ? '' : it.texto;
     return `<section class="rv-slide rv-es-${it.tipo} rv-red-${it.red}" data-i="${i}">
       ${cabeceraRevision(it, i, RV.items.length)}
-      <div class="rv-media">${it.tipo === 'blog'
-        ? `${p.image ? `<img class="rv-blog-foto" src="${escapar(p.image)}" alt="">` : ''}<h2 class="rv-blog-titulo">${escapar(p.title)}</h2>`
-        : '<div class="espera-lienzo">…</div>'}</div>
-      ${pie || p.porque || p.falta ? `<button class="rv-pie" data-i="${i}"><span class="rv-pie-txt">${escapar((pie || (p.porque ? 'Why: ' + p.porque : '')).replace(/\s*\n+\s*/g, ' '))}</span><span class="rv-leer">Read more</span></button>`
+      <div class="rv-media">${it.tipo === 'blog' ? revistaDe(p) : '<div class="espera-lienzo">…</div>'}</div>
+      ${it.tipo !== 'blog' && (pie || p.porque || p.falta) ? `<button class="rv-pie" data-i="${i}"><span class="rv-pie-txt">${escapar((pie || (p.porque ? 'Why: ' + p.porque : '')).replace(/\s*\n+\s*/g, ' '))}</span><span class="rv-leer">Read more</span></button>`
         : it.red === 'story' ? '<p class="rv-pie rv-sin">Stories have no caption: the stickers carry the details.</p>' : ''}
       <div class="rv-sello" hidden></div>
     </section>`;
   }).join('');
-  $('#revision').hidden = false;
-  document.body.classList.add('en-revision');
   RV.pos = 0;
   mostrarCartaRevision();
+}
+
+// A blog article as a magazine: a cover, then the text in pages, with the
+// photos where they are in the article and their captions under them.
+function revistaDe(p) {
+  return `<div class="rv-revista" data-p="0" data-n="1"><div class="rv-paginas">
+    <section class="rv-portada">${p.image ? `<img src="${escapar(p.image)}" alt="">` : ''}
+      <p class="rv-portada-sello">${ICO.doc}Blog article</p>
+      <h2 class="rv-blog-titulo">${escapar(p.title)}</h2>
+      ${p.excerpt ? `<p class="rv-portada-entradilla">${escapar(p.excerpt)}</p>` : ''}
+      <p class="rv-portada-ayuda">Tap the sides or swipe to turn the page</p></section>
+    <div class="rv-articulo">${markdownRevista(p.cuerpo)}</div></div>
+    <p class="rv-pagnum"></p></div>`;
+}
+function markdownRevista(md) {
+  // Photos written as HTML become markdown first, so they keep their place.
+  const limpio = String(md || '')
+    .replace(/\]\(\/(?!\/)/g, '](https://festivaladar.com/')
+    .replace(/<a[^>]*>\s*(<img[^>]*>)\s*<\/a>/gi, '$1')
+    .replace(/<img[^>]*src="([^"]+)"[^>]*?(?:alt="([^"]*)")?[^>]*>/gi, (m, src, alt) => `\n\n![${alt || ''}](${src})\n\n`);
+  const figuras = [];
+  const conMarcas = limpio.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (m, alt, src) => {
+    figuras.push(`<figure><img src="${escapar(src)}" alt="">${alt ? `<figcaption>${escapar(alt)}</figcaption>` : ''}</figure>`);
+    return `\n\nFIGURA${figuras.length - 1}FIN\n\n`;
+  });
+  return markdownSimple(conMarcas).replace(/<p>\s*FIGURA(\d+)FIN\s*<\/p>/g, (m, k) => figuras[Number(k)]);
+}
+function prepararRevista(s) {
+  const rev = s && s.querySelector('.rv-revista');
+  if (!rev) return;
+  const pag = rev.querySelector('.rv-paginas');
+  const medir = () => {
+    const w = rev.clientWidth;
+    if (!w) return;
+    rev.style.setProperty('--pw', w + 'px');
+    rev.style.setProperty('--ph', pag.clientHeight + 'px');
+    rev.dataset.n = String(Math.max(1, Math.round(pag.scrollWidth / w)));
+    irPagina(rev, Number(rev.dataset.p || 0));
+  };
+  medir();
+  if (!rev.dataset.oye) {
+    rev.dataset.oye = '1';
+    // Photos change the layout as they arrive: count the pages again.
+    rev.querySelectorAll('img').forEach((im) => im.addEventListener('load', medir, { once: true }));
+  }
+}
+function irPagina(rev, p) {
+  const n = Number(rev.dataset.n || 1);
+  p = Math.max(0, Math.min(n - 1, p));
+  rev.dataset.p = String(p);
+  rev.querySelector('.rv-paginas').scrollLeft = p * rev.clientWidth;
+  rev.querySelector('.rv-pagnum').textContent = p === 0 ? `Cover · ${n} pages` : `Page ${p + 1} of ${n}`;
+  pintarZonas();
+}
+// Inside a card: the pages of an article or the slides of a carousel.
+function interiorDe(i = posRevision()) {
+  const s = $('#rv-mazo').children[i];
+  if (!s) return null;
+  const rev = s.querySelector('.rv-revista');
+  if (rev) return { p: Number(rev.dataset.p || 0), n: Number(rev.dataset.n || 1), ir: (q) => irPagina(rev, q) };
+  const tira = s.querySelector('.ig-carrete .tira');
+  if (tira && tira.children.length > 1) {
+    return { p: Math.round(tira.scrollLeft / Math.max(1, tira.clientWidth)), n: tira.children.length,
+      ir: (q) => { tira.scrollTo({ left: q * tira.clientWidth }); setTimeout(pintarZonas, 400); } };
+  }
+  return null;
+}
+function pintarZonas() {
+  const x = interiorDe();
+  $('#rv-zona-izq').hidden = !x || x.p <= 0;
+  $('#rv-zona-der').hidden = !x || x.p >= x.n - 1;
+}
+function pasoInterior(d) {
+  const x = interiorDe();
+  if (x) x.ir(Math.max(0, Math.min(x.n - 1, x.p + d)));
 }
 
 // E-ink style: only the current card is on screen; it changes instantly.
@@ -2388,6 +2486,8 @@ function mostrarCartaRevision() {
   });
   $('#rv-fin').hidden = cartas.length > 0;
   pintarBarraRevision();
+  prepararRevista(cartas[RV.pos]);
+  pintarZonas();
 }
 
 async function dibujarRevision(i) {
@@ -2413,7 +2513,8 @@ async function dibujarRevision(i) {
         <button class="rv-slide-paso" data-d="1" aria-label="Next slide"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>`;
       media.appendChild(ctl);
       const pinta = () => { ctl.querySelector('b').textContent = String(Math.round(tira.scrollLeft / Math.max(1, tira.clientWidth)) + 1); };
-      tira.addEventListener('scroll', () => requestAnimationFrame(pinta), { passive: true });
+      tira.addEventListener('scroll', () => requestAnimationFrame(() => { pinta(); if (i === posRevision()) pintarZonas(); }), { passive: true });
+      if (i === posRevision()) pintarZonas();
       ctl.addEventListener('click', (e) => {
         const b = e.target.closest('.rv-slide-paso');
         if (!b) return;
@@ -2436,9 +2537,7 @@ function pintarBarraRevision() {
   $('#rv-si').hidden = !it; $('#rv-mas').hidden = !it;
   $('#rv-atras').disabled = i <= 0;
   $('#rv-alante').disabled = !it || i >= RV.items.length - 1;
-  $('#rv-zona-izq').hidden = i <= 0;
-  $('#rv-zona-der').hidden = !it || i >= RV.items.length - 1;
-  if (!it) return;
+  if (!it) { $('#rv-zona-izq').hidden = true; $('#rv-zona-der').hidden = true; return; }
   $('#rv-atras').disabled = i <= 0;
   $('#rv-alante').disabled = i >= RV.items.length - 1;
   const hecho = RV.hechos[i];
@@ -2454,6 +2553,7 @@ function irRevision(i) {
 }
 function cerrarRevision() {
   $('#revision').hidden = true;
+  $('#rv-elige').hidden = true;
   $('#rv-menu').hidden = true;
   $('#rv-texto').hidden = true;
   document.body.classList.remove('en-revision');
@@ -2490,11 +2590,26 @@ $('#rv-si').addEventListener('click', () => {
   } else if (it.tipo === 'idea') decidirRevision('aprobar', 'Idea approved: I will prepare it');
   else decidirRevision('blogAprobar', 'Article approved');
 });
-// Kindle-style page turns: tap the right side to go forward, the left side
-// to go back. The small buttons sit at mid-height, within thumb reach.
-$('#rv-zona-izq').addEventListener('click', () => irRevision(posRevision() - 1));
-$('#rv-zona-der').addEventListener('click', () => irRevision(posRevision() + 1));
+// Kindle-style taps at mid-height and swipes move inside the card (the next
+// photo of a carousel, the next page of an article). Only the bottom bar
+// changes card.
+$('#rv-zona-izq').addEventListener('click', () => pasoInterior(-1));
+$('#rv-zona-der').addEventListener('click', () => pasoInterior(1));
+let rvToque = null;
+$('#revision').addEventListener('touchstart', (e) => {
+  // The carousel strip scrolls by itself; the bar and the menus are not swipes.
+  if (e.touches.length !== 1 || e.target.closest('.ig-carrete .tira, .rv-barra, .rv-menu, .rv-elige, .rv-texto')) { rvToque = null; return; }
+  rvToque = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+}, { passive: true });
+$('#revision').addEventListener('touchend', (e) => {
+  if (!rvToque) return;
+  const t = e.changedTouches[0];
+  const dx = t.clientX - rvToque.x, dy = t.clientY - rvToque.y;
+  rvToque = null;
+  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4) pasoInterior(dx < 0 ? 1 : -1);
+});
 $('#rv-fin-salir').addEventListener('click', cerrarRevision);
+$('#rv-fin-otra').addEventListener('click', abrirRevision);
 // The caption: tap to read it whole, tap again to close.
 $('#rv-mazo').addEventListener('click', (e) => {
   const b = e.target.closest('.rv-pie');

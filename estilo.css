@@ -1366,3 +1366,45 @@ body.en-detalle { overflow: auto !important; }
 /* Landscape carousel (apaisado): the photos keep their proportions */
 .ig.apaisado .ig-carrete canvas, .ig.apaisado .ig-carrete .foto-suelta { aspect-ratio: 1200 / 628 !important; object-fit: cover; }
 .rv-media .ig.rv-ig.apaisado { width: 100cqw; }
+
+/* ── Flash check: choose what to approve (Nov 26) ── */
+.rv-elige { position: absolute; inset: 0; z-index: 30; background: var(--tinta, #14102B); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.rv-elige[hidden] { display: none; }
+.rv-elige-caja { width: min(440px, 100%); display: flex; flex-direction: column; gap: 12px; }
+.rv-elige-titulo { font-family: var(--display); font-weight: 800; font-size: 28px; letter-spacing: -0.03em; line-height: 1.1; color: #fff; margin: 0 0 8px; }
+.rv-elige-op { display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; padding: 18px; border: 0; border-radius: 16px; font: inherit; cursor: pointer; }
+.rv-elige-op span { display: flex; flex-direction: column; gap: 3px; }
+.rv-elige-op b { font-size: 18px; }
+.rv-elige-op small { font-size: 13px; opacity: 0.75; }
+.rv-elige-op i { font-style: normal; font-weight: 800; font-size: 20px; min-width: 40px; height: 40px; border-radius: 20px; display: grid; place-items: center; background: rgba(0,0,0,0.12); }
+.rv-elige-idea { background: #ff6b5e; color: #2a0805; }
+.rv-elige-confirmar { background: #B8F24A; color: #14102B; }
+.rv-elige-blog { background: #fbf3e4; color: #2b1d07; }
+.rv-elige-op:disabled { opacity: 0.35; cursor: default; }
+.rv-elige-salir { margin-top: 6px; background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; border-radius: 14px; padding: 14px; font: inherit; font-weight: 600; cursor: pointer; }
+.rv-fin .rv-fin-b { margin-top: 10px; color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 14px; padding: 12px 18px; }
+
+/* ── Flash check: blog articles read like a magazine, page by page ── */
+.rv-media:has(.rv-revista) { display: block; container-type: normal; }
+.rv-revista { position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; }
+.rv-paginas { flex: 1; min-height: 0; overflow: hidden; column-width: var(--pw, 100vw); column-gap: 0; column-fill: auto;
+  font-family: Georgia, 'Literata', serif; font-size: 17px; line-height: 1.55; color: #2b1d07; }
+.rv-paginas > * { box-sizing: border-box; }
+.rv-portada { break-after: column; height: var(--ph, 100%); display: flex; flex-direction: column; justify-content: center; gap: 10px; overflow: hidden; }
+.rv-portada img { width: 100%; max-height: 55%; object-fit: cover; border-radius: 10px; display: block; }
+.rv-portada-sello { margin: 6px 0 0; font: 700 11px/1 var(--ui, system-ui); letter-spacing: 0.1em; text-transform: uppercase; color: #b06d00; display: flex; align-items: center; gap: 6px; }
+.rv-portada .rv-blog-titulo { font-size: 28px; color: #2b1d07; }
+.rv-portada-entradilla { margin: 0; font-size: 17px; font-style: italic; color: #4a3615; }
+.rv-portada-ayuda { margin: 6px 0 0; font: 12px var(--ui, system-ui); color: #a08a64; }
+.rv-articulo p { margin: 0 0 0.8em; }
+.rv-articulo > p:first-child::first-letter { font-family: var(--display); font-weight: 800; float: left; font-size: 3.4em; line-height: 0.85; margin: 4px 8px 0 0; color: #b06d00; }
+.rv-articulo h4 { font-family: var(--display); font-size: 20px; letter-spacing: -0.02em; line-height: 1.2; margin: 0.6em 0 0.4em; break-after: avoid; }
+.rv-articulo ul { margin: 0 0 0.8em; padding-left: 1.1em; }
+.rv-articulo blockquote { margin: 0 0 0.8em; padding-left: 12px; border-left: 3px solid #b06d00; font-style: italic; }
+.rv-articulo a { color: #8a4f00; }
+.rv-articulo figure { margin: 0.2em 0 1em; break-inside: avoid; }
+.rv-articulo figure img { width: 100%; max-height: calc(var(--ph, 600px) - 64px); object-fit: contain; display: block; border-radius: 6px; background: #efe5d2; }
+.rv-articulo figcaption { font: 12px/1.35 var(--ui, system-ui); color: #7a6340; margin-top: 5px; }
+.rv-pagnum { flex: none; margin: 6px 0 0; text-align: center; font: 600 12px var(--ui, system-ui); color: #a08a64; }
+.rv-slide.rv-es-blog .rv-zona span, .revision:has(.rv-es-blog.actual) .rv-zona span { background: rgba(43,29,7,0.12); color: #2b1d07; }
+.revision:has(.rv-es-blog.actual) .rv-zona span { opacity: 0.5; transform: scale(0.8); }

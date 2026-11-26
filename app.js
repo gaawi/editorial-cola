@@ -2831,8 +2831,9 @@ async function accionNota() {
   botonNota.hidden = true;
   try {
     if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
-    const nota = prompt(`Note or change for «${s.texto.length > 80 ? s.texto.slice(0, 80) + '…' : s.texto}»`);
-    if (!nota || !nota.trim()) return;
+    // Our own box, not prompt(): iPhone did not show the prompt from this tap.
+    const nota = await pedirNota(s.texto);
+    if (!nota) return;
     await llamarFlujo(s.clave, 'sugerir', { nota: nota.trim(), cita: s.texto, ...s.extra });
     pintarNotasPub(s.clave);
     try { const m = document.createElement('mark'); m.className = 'nota-marca'; m.dataset.nota = nota.trim(); s.rango.surroundContents(m); } catch { /* across paragraphs: saved, not drawn */ }
@@ -2844,7 +2845,10 @@ async function accionNota() {
 }
 // Touch: act on touchstart and cancel the default, so the touch does not clear
 // the selection before the button gets it. Mouse: a normal click.
-botonNota.addEventListener('touchstart', (e) => { e.preventDefault(); accionNota(); }, { passive: false });
+// touchstart keeps the selection; the box opens on touchend, which iPhone
+// counts as a real tap (so the keyboard can come up).
+botonNota.addEventListener('touchstart', (e) => { e.preventDefault(); }, { passive: false });
+botonNota.addEventListener('touchend', (e) => { e.preventDefault(); accionNota(); }, { passive: false });
 botonNota.addEventListener('mousedown', (e) => e.preventDefault());
 botonNota.addEventListener('click', accionNota);
 // The notes not done yet, highlighted where they point.
@@ -3173,8 +3177,8 @@ document.addEventListener('click', (e) => {
 // A note on the whole post or article (no words selected).
 async function notaEntera(clave, extra = {}) {
   if (!PUEDE_GUARDAR) { aviso('Sign in with GitHub first (once on this device).'); return; }
-  const nota = prompt('What should change? (It is already published: I will fix it where it can be edited.)');
-  if (!nota || !nota.trim()) return;
+  const nota = await pedirNota('');
+  if (!nota) return;
   try {
     await llamarFlujo(clave, 'sugerir', { nota: nota.trim(), ...extra });
     pintarNotasPub(clave);
@@ -3196,4 +3200,32 @@ function irAlCalendario(m) {
   vista = 'calendario';
   document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x.dataset.vista === vista));
   mostrarVista();
+}
+
+// The note box: the quoted words on top, a text field, Cancel and Save.
+const cajaNota = document.createElement('div');
+cajaNota.className = 'caja-nota';
+cajaNota.hidden = true;
+cajaNota.innerHTML = `<form class="caja-nota-hoja"><p class="caja-nota-titulo">Add a note or change</p><q class="caja-nota-cita"></q>
+  <textarea rows="4" placeholder="What should change? E.g. shorter, or change it to…"></textarea>
+  <div class="caja-nota-botones"><button type="button" class="caja-nota-no">Cancel</button><button type="submit" class="caja-nota-si">Save note</button></div></form>`;
+document.body.appendChild(cajaNota);
+function pedirNota(cita) {
+  return new Promise((listo) => {
+    const ta = cajaNota.querySelector('textarea');
+    const q = cajaNota.querySelector('.caja-nota-cita');
+    q.textContent = cita.length > 160 ? cita.slice(0, 160) + '…' : cita;
+    q.hidden = !cita;
+    ta.value = '';
+    cajaNota.hidden = false;
+    setTimeout(() => ta.focus(), 30);
+    const cerrar = (valor) => {
+      cajaNota.hidden = true;
+      cajaNota.querySelector('form').onsubmit = null;
+      cajaNota.querySelector('.caja-nota-no').onclick = null;
+      listo(valor);
+    };
+    cajaNota.querySelector('form').onsubmit = (e) => { e.preventDefault(); cerrar(ta.value.trim() || null); };
+    cajaNota.querySelector('.caja-nota-no').onclick = () => cerrar(null);
+  });
 }

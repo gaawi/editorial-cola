@@ -3251,9 +3251,14 @@
      "accion": "blogAprobar",
      "quien": "gaawi",
      "fecha": "2026-11-23T16:39:03.456Z"
+    },
+    {
+     "accion": "blog a borrador",
+     "quien": "claude",
+     "fecha": "2026-11-26T19:43:03.228Z",
+     "nota": "Pidió quitarlo de la web: no está bien."
     }
-   ],
-   "faseBlog": "aprobado"
+   ]
   },
   "es/grado-tres-eventos-en-una-noche": {
    "historial": [

@@ -1488,3 +1488,8 @@ body.en-pub { overflow: hidden; }
 .lector .rv-slide { padding: calc(env(safe-area-inset-top) + 16px) 18px 10px; }
 .lector .rv-si { text-decoration: none; display: flex; align-items: center; justify-content: center; }
 .pub-carrete.cuadrada .tira img { aspect-ratio: 1; }
+/* Published: the header slides away on scroll down, back on scroll up. */
+.pub { position: fixed; }
+.pub-arriba { position: absolute; top: 0; left: 0; right: 0; z-index: 2; transition: transform 0.25s ease; will-change: transform; }
+.pub-arriba.oculto { transform: translateY(-100%); }
+.pub-feed { padding-top: var(--alto-arriba, 150px); }

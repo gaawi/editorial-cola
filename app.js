@@ -3067,3 +3067,17 @@ $('#lector').addEventListener('touchend', (e) => {
   lectorToque = null;
   if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4) { const r = revLector(); irPagina(r, Number(r.dataset.p) + (dx < 0 ? 1 : -1)); }
 });
+
+// The Published header hides while scrolling down and comes back on the way up.
+(() => {
+  const feed = $('#pub-feed'), arriba = $('#pub-arriba');
+  let ultimo = 0;
+  const medir = () => feed.style.setProperty('--alto-arriba', arriba.offsetHeight + 'px');
+  new ResizeObserver(medir).observe(arriba);
+  feed.addEventListener('scroll', () => {
+    const y = feed.scrollTop;
+    if (Math.abs(y - ultimo) < 6) return;
+    arriba.classList.toggle('oculto', y > ultimo && y > arriba.offsetHeight);
+    ultimo = y;
+  }, { passive: true });
+})();

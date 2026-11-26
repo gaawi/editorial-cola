@@ -1493,3 +1493,9 @@ body.en-pub { overflow: hidden; }
 .pub-arriba { position: absolute; top: 0; left: 0; right: 0; z-index: 2; transition: transform 0.25s ease; will-change: transform; }
 .pub-arriba.oculto { transform: translateY(-100%); }
 .pub-feed { padding-top: var(--alto-arriba, 150px); }
+/* The cover sits over the pages instead of being their first column. */
+.rv-revista .rv-portada { position: absolute; top: 0; left: 0; right: 0; bottom: 26px; height: auto; break-after: auto; z-index: 1; background: inherit; }
+.rv-revista:not(.en-portada) .rv-portada { display: none; }
+.rv-revista.en-portada .rv-paginas { visibility: hidden; }
+.rv-slide.rv-es-blog .rv-revista .rv-portada { background: #fbf3e4; }
+.lector .rv-revista .rv-portada { background: #fbf3e4; }

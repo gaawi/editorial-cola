@@ -2403,13 +2403,13 @@ function empezarRevision(tipo) {
 // A blog article as a magazine: a cover, then the text in pages, with the
 // photos where they are in the article and their captions under them.
 function revistaDe(p) {
-  return `<div class="rv-revista" data-p="0" data-n="1" data-clave-notas="${escapar(p.clave)}"><div class="rv-paginas">
+  return `<div class="rv-revista" data-p="0" data-n="1" data-clave-notas="${escapar(p.clave)}">
     <section class="rv-portada">${p.image ? `<img src="${escapar(p.image)}" alt="">` : ''}
       <p class="rv-portada-sello">${ICO.doc}Blog article</p>
       <h2 class="rv-blog-titulo">${escapar(p.title)}</h2>
       ${p.excerpt ? `<p class="rv-portada-entradilla">${escapar(p.excerpt)}</p>` : ''}
-      <p class="rv-portada-ayuda">Tap the sides or swipe to turn the page</p></section>
-    <div class="rv-articulo">${markdownRevista(p.cuerpo)}</div></div>
+      <p class="rv-portada-ayuda">Tap the right half to turn the page, the left half to go back</p></section>
+    <div class="rv-paginas"><div class="rv-articulo">${markdownRevista(p.cuerpo)}</div></div>
     <p class="rv-pagnum"></p></div>`;
 }
 function markdownRevista(md) {
@@ -2434,7 +2434,9 @@ function prepararRevista(s) {
     if (!w) return;
     rev.style.setProperty('--pw', w + 'px');
     rev.style.setProperty('--ph', pag.clientHeight + 'px');
-    rev.dataset.n = String(Math.max(1, Math.round(pag.scrollWidth / w)));
+    // The cover is its own page, outside the columns (Safari left an empty
+    // page after it when it was the first column).
+    rev.dataset.n = String(1 + Math.max(1, Math.round(pag.scrollWidth / w)));
     irPagina(rev, Number(rev.dataset.p || 0));
   };
   if (!rev.dataset.oye) marcarCitas(rev, rev.dataset.claveNotas);
@@ -2449,7 +2451,8 @@ function irPagina(rev, p) {
   const n = Number(rev.dataset.n || 1);
   p = Math.max(0, Math.min(n - 1, p));
   rev.dataset.p = String(p);
-  rev.querySelector('.rv-paginas').scrollLeft = p * rev.clientWidth;
+  rev.classList.toggle('en-portada', p === 0);
+  if (p > 0) rev.querySelector('.rv-paginas').scrollLeft = (p - 1) * rev.clientWidth;
   rev.querySelector('.rv-pagnum').textContent = p === 0 ? `Cover · ${n} pages` : `Page ${p + 1} of ${n}`;
   pintarZonas();
 }
@@ -2458,7 +2461,8 @@ function interiorDe(i = posRevision()) {
   const s = $('#rv-mazo').children[i];
   if (!s) return null;
   const rev = s.querySelector('.rv-revista');
-  if (rev) return { p: Number(rev.dataset.p || 0), n: Number(rev.dataset.n || 1), ir: (q) => irPagina(rev, q) };
+  // Articles turn with the halves of the page itself, not with the side buttons.
+  if (rev) return { revista: true, p: Number(rev.dataset.p || 0), n: Number(rev.dataset.n || 1), ir: (q) => irPagina(rev, q) };
   const tira = s.querySelector('.ig-carrete .tira');
   if (tira && tira.children.length > 1) {
     return { p: Math.round(tira.scrollLeft / Math.max(1, tira.clientWidth)), n: tira.children.length,
@@ -2468,8 +2472,8 @@ function interiorDe(i = posRevision()) {
 }
 function pintarZonas() {
   const x = interiorDe();
-  $('#rv-zona-izq').hidden = !x || x.p <= 0;
-  $('#rv-zona-der').hidden = !x || x.p >= x.n - 1;
+  $('#rv-zona-izq').hidden = !x || x.revista || x.p <= 0;
+  $('#rv-zona-der').hidden = !x || x.revista || x.p >= x.n - 1;
 }
 function pasoInterior(d) {
   const x = interiorDe();
@@ -3081,3 +3085,12 @@ $('#lector').addEventListener('touchend', (e) => {
     ultimo = y;
   }, { passive: true });
 })();
+
+// Kindle: in an article, a tap on the right half of the page turns forward and
+// on the left half goes back. Not when selecting words, a link or a note.
+document.addEventListener('click', (e) => {
+  const rev = e.target.closest && e.target.closest('.rv-revista');
+  if (!rev || e.target.closest('a, mark, button') || String(getSelection()).trim()) return;
+  const r = rev.getBoundingClientRect();
+  irPagina(rev, Number(rev.dataset.p || 0) + (e.clientX - r.left < r.width / 2 ? -1 : 1));
+});

@@ -1136,8 +1136,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ayuntamientos-y-espacios-2027-ig-1.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.instagram.com/p/DgN-FzWmPhF/",
+     "id": "18227713417340936",
+     "publicadoEl": "2026-11-26T20:32:10.181Z"
     }
    ],
    "marca": "adar"

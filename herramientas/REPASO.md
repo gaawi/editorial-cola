@@ -39,7 +39,11 @@ al prepararla se publica también el artículo (`status: publish`). Braña
 Sonora lleva el logotipo del Ministerio de Cultura en todo lo que se difunda
 (obligatorio por las bases). Correo de contacto: leiguardamusic@gmail.com.
 Amigos del Festival: 10, 30 y 50 € al año, se puede regalar.
-Cada ficha de ADAR puede llevar `blog: '<slug>'` (su artículo). En cada check,
+Cada artículo del blog lleva siempre fotos dentro del texto, de 3 a 5, cada
+una junto al párrafo del que habla y con su pie (`![pie](url)`: el texto
+alternativo sale como pie en la web y en la app). Pie corto y con datos:
+quién o qué, sitio y fecha. Pedido el 26 nov: los mejores irán al magazine
+impreso del verano. Cada ficha de ADAR puede llevar `blog: '<slug>'` (su artículo). En cada check,
 publicar (status publish, fecha de hoy) los artículos en borrador cuyo post
 de redes salga en las próximas 48 horas; la app también tiene el botón
 «Publicar en la web» en la pestaña Blog (api/flujo.js, acción blogPublicar).

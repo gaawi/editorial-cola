@@ -445,26 +445,32 @@ export function crearMotor(B) {
 
     // The brand stamp. CreArtBox's is a small amber trapezoid with its name
     // inside, like a record label's cartouche (Nov 26); ADAR keeps the text.
+    // The brand stamp. CreArtBox's is a small solid amber trapezoid with the
+    // exact proportions of the one on its printed program cover (top 74 % of
+    // the base, height 42 % of the base), no text inside, and the name in
+    // small letters beside it (Nov 26). ADAR keeps the text alone.
     function sello(x, y) {
       if (!SELLO) return;
       if (B.firma !== 'trapecio') { ctx.fillText(SELLO, x, y); return; }
-      const antes = { font: ctx.font, fill: ctx.fillStyle, align: ctx.textAlign };
-      const t = Math.round(rotSize * 1.05);
-      ctx.font = `${B.labelWeight} ${t}px ${LABEL}`;
-      try { ctx.letterSpacing = Math.round(t * 0.3) + 'px'; } catch {}
-      const w = ctx.measureText(SELLO).width;
-      const h = Math.round(t * 2.3), ancho = Math.round(w + t * 2.6), inclina = Math.round(h * 0.4);
-      const x0 = antes.align === 'center' ? x - ancho / 2 : antes.align === 'right' ? x - ancho : x;
-      const yc = y - t * 0.36, arriba = yc - h / 2;
+      const base = Math.round(rotSize * 2.6);
+      const techo = Math.round(base * 0.739), alto = Math.round(base * 0.42);
+      const hueco = Math.round(rotSize * 0.7);
+      const alin = ctx.textAlign;
+      const txt = ctx.measureText(SELLO).width;
+      const total = base + hueco + txt;
+      const x0 = alin === 'center' ? x - total / 2 : alin === 'right' ? x - total : x;
+      // Sits on the text's baseline, the same height as the capitals.
+      const abajoY = y, arribaY = y - alto;
+      const tinta = ctx.fillStyle;
       ctx.beginPath();
-      ctx.moveTo(x0 + inclina, arriba); ctx.lineTo(x0 + ancho - inclina, arriba);
-      ctx.lineTo(x0 + ancho, arriba + h); ctx.lineTo(x0, arriba + h);
+      ctx.moveTo(x0 + (base - techo) / 2, arribaY); ctx.lineTo(x0 + (base + techo) / 2, arribaY);
+      ctx.lineTo(x0 + base, abajoY); ctx.lineTo(x0, abajoY);
       ctx.closePath();
       ctx.fillStyle = B.accent; ctx.fill();
-      ctx.fillStyle = B.onAccent || B.ink; ctx.textAlign = 'center';
-      ctx.fillText(SELLO, x0 + ancho / 2 + t * 0.15, yc + t * 0.38);
-      sinEspaciado(ctx);
-      ctx.font = antes.font; ctx.fillStyle = antes.fill; ctx.textAlign = antes.align;
+      ctx.fillStyle = tinta;
+      ctx.textAlign = 'left';
+      ctx.fillText(SELLO, x0 + base + hueco, y);
+      ctx.textAlign = alin;
     }
 
     function pegatinas(yInicio) {
@@ -998,7 +1004,7 @@ export function crearMotor(B) {
       if (B.firma !== 'trapecio') ctx.fillRect(pad, startY - lineH * 0.8 - Math.round(rotSize * 2.2), Math.round(W * 0.09), Math.max(3, Math.round(W * 0.005)));
       // Una señal por pantalla: la lleva el filete. El sello baja a dim.
       rotulo(ctx, rotSize, TINTA_DIM, Math.round(rotSize * 0.16));
-      sello(pad, startY - lineH * 0.8 - Math.round(rotSize * (B.firma === 'trapecio' ? 1.5 : 0.75)));
+      sello(pad, startY - lineH * 0.8 - Math.round(rotSize * (B.firma === 'trapecio' ? 1.1 : 0.75)));
       sinEspaciado(ctx);
 
       ctx.font = `${TW} ${fit.size}px ${DISPLAY}`;

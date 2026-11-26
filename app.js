@@ -2940,10 +2940,29 @@ async function cargarPublicado(desdeCero) {
   pintarFeed();
 }
 
+// What is approved and waiting in the queue, for this network, soonest first.
+function programadosPub(red) {
+  const ahora = new Date();
+  const fuera = [];
+  for (const [k, e] of Object.entries(PROGRAMADO.posts || {})) {
+    const clave = k.split('#')[0];
+    const marca = e.marca && DATOS.marcas[e.marca] ? e.marca : clave.startsWith('es/') ? 'adar' : 'creartbox';
+    if (!marcasPub().includes(marca)) continue;
+    const historia = e.tipo === 'historia' || k.includes('#');
+    for (const r of e.redes || []) {
+      if (r.estado !== 'en cola' || new Date(r.cuando) <= ahora || r.red !== red) continue;
+      fuera.push({ id: k + '|' + r.red, clave, marca, hora: r.cuando, texto: r.texto || '', imagenes: r.imagenes || [], historia,
+        tipo: (r.imagenes || []).length > 1 ? 'carrusel' : 'imagen', programado: true, likes: null, comentarios: null, compartidos: null });
+    }
+  }
+  return fuera.sort((a, b) => String(a.hora).localeCompare(String(b.hora)));
+}
 function pintarFeed() {
   const feed = $('#pub-feed');
   const pinta = PUB.red === 'fb' ? tarjetaFbPub : tarjetaIgPub;
-  feed.innerHTML = PUB.posts.length ? PUB.posts.map(pinta).join('') : '<p class="pub-espera">Nothing published yet.</p>';
+  const prog = programadosPub(PUB.red);
+  feed.innerHTML = (prog.length ? `<h3 class="pub-grupo">Scheduled · ${prog.length}</h3>${prog.map(pinta).join('')}<h3 class="pub-grupo">Published</h3>` : '')
+    + (PUB.posts.length ? PUB.posts.map(pinta).join('') : '<p class="pub-espera">Nothing published yet.</p>');
   if (Object.values(PUB.despues).some(Boolean)) feed.insertAdjacentHTML('beforeend', '<button class="pub-mas" id="pub-mas">Load more</button>');
   feed.querySelectorAll('.pub-post[data-clave-notas]').forEach((el) => marcarCitas(el, el.dataset.claveNotas));
   pintarVivo();
@@ -3020,9 +3039,13 @@ function fotosPub(x, apaisado) {
 }
 // A published Meta post gets its own key for notes: pb/<brand>-<network>-<id>.
 const claveMeta = (x, red) => `pb/${x.marca}-${red}-${String(x.id).replace(/^https?:\/\/[^/]+\/(?:p|reel)\//, '').replace(/[^\w-]/g, '')}`;
-const zonaNotas = (x, red) => `data-clave-notas="${escapar(claveMeta(x, red))}" data-url="${escapar(x.url)}" data-red="${red}" data-marca="${x.marca}"`;
+const zonaNotas = (x, red) => x.programado ? `data-clave-notas="${escapar(x.clave)}" data-marca="${x.marca}"`
+  : `data-clave-notas="${escapar(claveMeta(x, red))}" data-url="${escapar(x.url)}" data-red="${red}" data-marca="${x.marca}"`;
+const clavePub = (x, red) => x.programado ? x.clave : claveMeta(x, red);
+// The small note on what is still to go out.
+const notaProgramado = (x) => x.programado ? `<div class="pub-cuando"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Scheduled${x.historia ? ' story' : ''} · goes out ${escapar(horaNY(x.hora))} (New York)</div>` : '';
 function extraNota(zona) {
-  return zona.dataset.url ? { url: zona.dataset.url, red: zona.dataset.red, marca: zona.dataset.marca } : {};
+  return zona.dataset.url ? { url: zona.dataset.url, red: zona.dataset.red, marca: zona.dataset.marca } : zona.dataset.marca ? { marca: zona.dataset.marca } : {};
 }
 function notasDe(clave) { return ((FLUJO.posts || {})[clave]?.sugerencias || []); }
 function pieNotas(clave) {
@@ -3036,15 +3059,22 @@ function pintarNotasPub(clave) {
 function tarjetaIgPub(x) {
   const c = cuentaDe(x.marca);
   const n = (k, v) => v == null ? '' : `<span class="pub-num" data-n="${k}">${numero(v)}</span>`;
-  return `<article class="ig pub-post" data-id="${escapar(x.id)}" ${zonaNotas(x, 'ig')}>
+  if (x.historia) return `<article class="pub-post pub-story-card" data-id="${escapar(x.id)}" ${zonaNotas(x, 'ig')}>
+    ${notaProgramado(x)}
+    <div class="pub-story"><img src="${escapar(x.imagenes[0] || '')}" alt="" loading="lazy">
+      <div class="pub-story-cab"><img src="${c.avatar}" alt=""><b>${escapar(c.ig)}</b></div></div>
+    ${pieNotas(clavePub(x, 'ig'))}
+  </article>`;
+  return `<article class="ig pub-post${x.programado ? ' es-programado' : ''}" data-id="${escapar(x.id)}" ${zonaNotas(x, 'ig')}>
+    ${notaProgramado(x)}
     <div class="ig-cab"><img class="ig-av" src="${c.avatar}" alt=""><span class="ig-usuario"><b>${escapar(c.ig)}</b></span><span class="ig-mas">•••</span></div>
     ${fotosPub(x)}
     <div class="ig-acciones pub-acciones"><span>${ICONOS.corazon}${n('likes', x.likes)}</span><span>${ICONOS.comentar}${n('comentarios', x.comentarios)}</span><span>${ICONOS.enviar}${n('compartidos', x.compartidos)}</span><span class="guardar">${ICONOS.guardar}</span></div>
     ${x.likes != null ? `<div class="pub-likes"><b><span data-n="likes">${numero(x.likes)}</span> likes</b></div>` : ''}
     <div class="ig-pie"><b>${escapar(c.ig)}</b> ${pintarPie(x.texto, 2, 'mas', 'more', false)}</div>
     ${x.comentarios ? `<div class="pub-coment">View all <span data-n="comentarios">${numero(x.comentarios)}</span> comments</div>` : ''}
-    <a class="ig-hora pub-hora" href="${escapar(x.url)}" target="_blank" rel="noopener">${fechaIg(x.hora)} · open on Instagram</a>
-    ${pieNotas(claveMeta(x, 'ig'))}
+    ${x.programado ? '' : `<a class="ig-hora pub-hora" href="${escapar(x.url)}" target="_blank" rel="noopener">${fechaIg(x.hora)} · open on Instagram</a>`}
+    ${pieNotas(clavePub(x, 'ig'))}
   </article>`;
 }
 function tarjetaFbPub(x) {
@@ -3053,25 +3083,33 @@ function tarjetaFbPub(x) {
   const cuando = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + ' at ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
   const reacciones = x.likes != null ? `<span class="pub-fb-reac"><i class="r-like"><svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM9 20h7.5a2 2 0 0 0 2-1.6l1.3-6A2 2 0 0 0 17.8 10H14l.6-3.3A1.8 1.8 0 0 0 11.5 5L9 10z"/></svg></i><i class="r-love"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.4A4 4 0 0 1 12 8a4 4 0 0 1 7 2.6C19 15.6 12 20 12 20z"/></svg></i><span data-n="likes">${numero(x.likes)}</span></span>` : '<span></span>';
   const resto = [x.comentarios ? `<span data-n="comentarios">${numero(x.comentarios)}</span> comments` : '', x.compartidos ? `<span data-n="compartidos">${numero(x.compartidos)}</span> shares` : ''].filter(Boolean).join(' · ');
-  return `<article class="fb pub-post pub-fb" data-id="${escapar(x.id)}" ${zonaNotas(x, 'fb')}>
+  return `<article class="fb pub-post pub-fb${x.programado ? ' es-programado' : ''}" data-id="${escapar(x.id)}" ${zonaNotas(x, 'fb')}>
+    ${notaProgramado(x)}
     <div class="fb-cab"><img class="fb-av" src="${c.avatar}" alt=""><span><div class="fb-nombre">${escapar(c.fb)}</div><div class="fb-meta">${cuando} · ${ICO.globo}</div></span></div>
     ${x.texto ? `<div class="fb-texto">${pintarPie(x.texto, 5, 'mas', 'See more', true)}</div>` : ''}
     ${x.imagenes.length ? fotosPub(x, true) : ''}
     <div class="pub-fb-cifras">${reacciones}<span>${resto}</span></div>
     <div class="fb-acciones"><span>${ICONOS.pulgar} Like</span><span>${ICONOS.comentar} Comment</span><span>${ICONOS.compartir} Share</span></div>
-    <a class="pub-hora pub-hora-fb" href="${escapar(x.url)}" target="_blank" rel="noopener">Open on Facebook</a>
-    ${pieNotas(claveMeta(x, 'fb'))}
+    ${x.programado ? '' : `<a class="pub-hora pub-hora-fb" href="${escapar(x.url)}" target="_blank" rel="noopener">Open on Facebook</a>`}
+    ${pieNotas(clavePub(x, 'fb'))}
   </article>`;
 }
 
 // The blog: published articles, newest first, as magazine covers.
 function pintarBlogPublicado() {
-  const arts = marcasPub().flatMap((m) => DATOS.marcas[m].posts.filter((a) => a.esBlog && a.estadoWeb === 'publish').map((a) => ({ a, m })))
-    .sort((x, y) => String(y.a.date).localeCompare(String(x.a.date)));
-  $('#pub-feed').innerHTML = arts.length ? `<div class="pub-revistas">${arts.map(({ a, m }) => `<button class="pub-articulo" data-marca="${m}" data-clave="${escapar(a.clave)}">
+  const de = (filtro) => marcasPub().flatMap((m) => DATOS.marcas[m].posts.filter((a) => a.esBlog && filtro(a, m)).map((a) => ({ a, m })));
+  const arts = de((a) => a.estadoWeb === 'publish').sort((x, y) => String(y.a.date).localeCompare(String(x.a.date)));
+  // Approved for the blog and still a draft: it goes live with its social post.
+  const antes = MARCA;
+  const aprobados = de((a, m) => { MARCA = m; return a.estadoWeb !== 'publish' && flujoDe(a).faseBlog === 'aprobado'; });
+  MARCA = antes;
+  const cuando = ({ a, m }) => { const p = DATOS.marcas[m].posts.find((x) => !x.esBlog && x.blog === a.slug && x.publicaEl); return p ? p.publicaEl : null; };
+  const tarjeta = ({ a, m }, prox) => `<button class="pub-articulo" data-marca="${m}" data-clave="${escapar(a.clave)}">
       ${a.image ? `<img src="${escapar(a.image)}" alt="" loading="lazy">` : ''}
-      <span class="pub-art-texto"><small>${escapar(DATOS.marcas[m].marca.org)} · ${escapar(String(a.date).slice(0, 10))}</small><b>${escapar(a.title)}</b>${a.excerpt ? `<em>${escapar(a.excerpt)}</em>` : ''}</span></button>`).join('')}</div>`
-    : '<p class="pub-espera">No published articles for this account.</p>';
+      <span class="pub-art-texto">${prox !== undefined ? `<span class="pub-cuando">Approved · goes live on the website ${prox ? 'on ' + escapar(prox) + ', with its post' : 'in the next check'}</span>` : ''}
+        <small>${escapar(DATOS.marcas[m].marca.org)} · ${escapar(String(a.date).slice(0, 10))}</small><b>${escapar(a.title)}</b>${a.excerpt ? `<em>${escapar(a.excerpt)}</em>` : ''}</span></button>`;
+  $('#pub-feed').innerHTML = (aprobados.length ? `<h3 class="pub-grupo">Approved, not live yet · ${aprobados.length}</h3><div class="pub-revistas">${aprobados.map((x) => tarjeta(x, cuando(x))).join('')}</div><h3 class="pub-grupo">Published</h3>` : '')
+    + (arts.length ? `<div class="pub-revistas">${arts.map((x) => tarjeta(x)).join('')}</div>` : '<p class="pub-espera">No published articles for this account.</p>');
   pintarVivo();
 }
 
@@ -3133,3 +3171,18 @@ async function notaEntera(clave, extra = {}) {
   } catch (err) { aviso(err.message, true); }
 }
 $('#lector-nota').addEventListener('click', () => { const r = revLector(); if (r) notaEntera(r.dataset.claveNotas, { marca: $('#lector').dataset.marca }); });
+
+// Calendar link at the top of Published. With both accounts, choose which.
+$('#pub-cal').addEventListener('click', () => {
+  if (PUB.marca) return irAlCalendario(PUB.marca);
+  $('#pub-cal-menu').hidden = !$('#pub-cal-menu').hidden;
+});
+$('#pub-cal-menu').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) irAlCalendario(b.dataset.marca); });
+function irAlCalendario(m) {
+  $('#pub-cal-menu').hidden = true;
+  cerrarPublicado();
+  entrarEnCuenta(m);
+  vista = 'calendario';
+  document.querySelectorAll('.pest').forEach((x) => x.classList.toggle('activo', x.dataset.vista === vista));
+  mostrarVista();
+}

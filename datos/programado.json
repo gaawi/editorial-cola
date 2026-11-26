@@ -629,8 +629,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-thanksgiving-thanks-st-1.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.instagram.com/stories/creartboxnyc/4039055996865063254",
+     "id": "18148689331599222",
+     "publicadoEl": "2026-11-26T17:10:27.050Z"
     }
    ]
   },

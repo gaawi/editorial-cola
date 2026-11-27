@@ -1,6 +1,6 @@
 {
  "_ayuda": "Copia de lo que hay en Metricool (programado y publicado), con su hora de Nueva York, estado por red y el texto tal como está allí. Se sincroniza desde Metricool; los borradores no cuentan.",
- "actualizado": "2026-11-26",
+ "actualizado": "2026-11-27",
  "calendario": "https://app.metricool.com/planner/calendar?blogId=7487042",
  "posts": {
   "en/currents-programme-online": {
@@ -1120,8 +1120,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/es-ayuntamientos-y-espacios-2027-st-1.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.instagram.com/stories/festivaladar/4039636971269726612",
+     "id": "18155724838526771",
+     "publicadoEl": "2026-11-27T12:24:41.277Z"
     }
    ],
    "marca": "adar"

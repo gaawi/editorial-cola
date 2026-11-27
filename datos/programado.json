@@ -663,8 +663,11 @@
      "imagenes": [
       "https://raw.githubusercontent.com/gaawi/editorial-cola/main/imagenes/en-winterlight-gift-fb-1.jpg"
      ],
-     "estado": "en cola",
-     "via": "meta"
+     "estado": "publicado",
+     "via": "meta",
+     "url": "https://www.facebook.com/473145069546753_1892784542853811",
+     "id": "473145069546753_1892784542853811",
+     "publicadoEl": "2026-11-27T17:32:31.773Z"
     }
    ]
   },
